@@ -1,16 +1,23 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:flutter/widgets.dart';
+
+//Helpers
 import '../../helper/extensions/context_extensions.dart';
 import '../../helper/utils/constants.dart';
 import '../../helper/utils/form_validator.dart';
+
+//Providers
 import '../../providers/all_providers.dart';
+
+//States
 import '../../providers/states/auth_state.dart';
+
+//Routing
 import '../../routes/app_router.dart';
+
+//Widgets
 import '../widgets/common/custom_dialog.dart';
 import '../widgets/common/custom_text_button.dart';
 import '../widgets/common/custom_textfield.dart';
@@ -83,22 +90,24 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
   CustomTextButton buildConfirmButton({
     required String email,
     required String password,
-    required String fullName,
-    required String address,
+    required String firstName,
+    required String lastName,
+    required String middleName,
     required String contact,
   }) {
     return CustomTextButton.gradient(
       width: double.infinity,
       onPressed: () {
-        if (formKey.currentState!.validate()) {
+        if (formKey.currentState!.validate() && password.isNotEmpty) {
           formKey.currentState!.save();
           ref.read(authProvider.notifier).register(
-            email: email,
-            password: password,
-            fullName: fullName,
-            address: address,
-            contact: contact,
-          );
+                email: email,
+                password: password,
+                firstName: firstName,
+                lastName: lastName,
+                middleName: middleName,
+                phoneNumber: contact,
+              );
         }
       },
       gradient: Constants.buttonGradientOrange,
@@ -119,7 +128,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
         },
         child: const Center(
           child: Text(
-            'Подтвердить',
+            'ПОДТВЕРДИТЬ',
             style: TextStyle(
               color: Colors.white,
               fontSize: 15,
@@ -146,9 +155,9 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
       barrierColor: Constants.barrierColor.withOpacity(0.75),
       builder: (ctx) {
         return CustomDialog.alert(
-          title: 'Register Failed',
+          title: 'Ошибка',
           body: reason,
-          buttonText: 'Retry',
+          buttonText: 'Повторить',
         );
       },
     );
@@ -160,15 +169,17 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
     final emailController = useTextEditingController(text: '');
     final passwordController = useTextEditingController(text: '');
     final cPasswordController = useTextEditingController(text: '');
-    final fullNameController = useTextEditingController(text: '');
-    final addressController = useTextEditingController(text: '');
+    final firstNameController = useTextEditingController(text: '');
+    final lastNameController = useTextEditingController(text: '');
+    final middleNameController = useTextEditingController(text: '');
     final contactController = useTextEditingController(text: '');
 
     void onAuthStateAuthenticated(String? currentUserFullName) {
       emailController.clear();
+      firstNameController.clear();
+      lastNameController.clear();
+      middleNameController.clear();
       passwordController.clear();
-      fullNameController.clear();
-      addressController.clear();
       cPasswordController.clear();
       contactController.clear();
       _formHasData = false;
@@ -177,7 +188,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
 
     ref.listen<AuthState>(
       authProvider,
-          (previous, authState) async => authState.maybeWhen(
+      (previous, authState) async => authState.maybeWhen(
         authenticated: onAuthStateAuthenticated,
         failed: onAuthStateFailed,
         orElse: () {},
@@ -209,15 +220,17 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
 
                   if (userDetailsState.value)
                     _UserDetailFields(
-                      fullNameController: fullNameController,
+                      firstNameController: firstNameController,
+                      lastNameController: lastNameController,
+                      middleNameController: middleNameController,
                       emailController: emailController,
-                      addressController: addressController,
+                      passwordController: passwordController,
                       contactController: contactController,
                     )
                   else
                     _PasswordDetailFields(
-                      passwordController: passwordController,
                       cPasswordController: cPasswordController,
+                      passwordController: passwordController,
                     ),
                 ],
               ),
@@ -239,12 +252,13 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                 child: userDetailsState.value
                     ? buildNextButton(userDetailsState)
                     : buildConfirmButton(
-                  email: emailController.text,
-                  password: passwordController.text,
-                  fullName: fullNameController.text,
-                  address: addressController.text,
-                  contact: contactController.text,
-                ),
+                        email: emailController.text,
+                        password: passwordController.text,
+                        firstName: firstNameController.text,
+                        lastName: lastNameController.text,
+                        middleName: middleNameController.text,
+                        contact: contactController.text,
+                      ),
               ),
             )
           ],
@@ -255,15 +269,19 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
 }
 
 class _UserDetailFields extends StatelessWidget {
-  final TextEditingController fullNameController;
+  final TextEditingController firstNameController;
+  final TextEditingController lastNameController;
+  final TextEditingController middleNameController;
   final TextEditingController contactController;
-  final TextEditingController addressController;
+  final TextEditingController passwordController;
   final TextEditingController emailController;
 
   const _UserDetailFields({
-    required this.fullNameController,
+    required this.firstNameController,
+    required this.lastNameController,
+    required this.middleNameController,
     required this.emailController,
-    required this.addressController,
+    required this.passwordController,
     required this.contactController,
   });
 
@@ -273,16 +291,38 @@ class _UserDetailFields extends StatelessWidget {
       children: [
         //Full name
         CustomTextField(
-          controller: fullNameController,
-          floatingText: 'ФИО',
-          hintText: 'Введите ФИО',
+          controller: firstNameController,
+          floatingText: 'Имя',
+          hintText: 'Введите имя',
+          autofocus: true,
           keyboardType: TextInputType.name,
           textInputAction: TextInputAction.next,
-          validator: FormValidator.fullNameValidator,
+          validator: FormValidator.NameValidator,
         ),
 
         const SizedBox(height: 25),
 
+        CustomTextField(
+          controller: lastNameController,
+          floatingText: 'Фамилия',
+          hintText: 'Введите фамилию',
+          keyboardType: TextInputType.name,
+          textInputAction: TextInputAction.next,
+          validator: FormValidator.NameValidator,
+        ),
+
+        const SizedBox(height: 25),
+
+        CustomTextField(
+          controller: middleNameController,
+          floatingText: 'Отчество',
+          hintText: 'Введите отчество',
+          keyboardType: TextInputType.name,
+          textInputAction: TextInputAction.next,
+          validator: FormValidator.NameValidator,
+        ),
+
+        const SizedBox(height: 25),
         //Email
         CustomTextField(
           controller: emailController,
@@ -295,22 +335,10 @@ class _UserDetailFields extends StatelessWidget {
 
         const SizedBox(height: 25),
 
-        //Address
-        CustomTextField(
-          controller: addressController,
-          floatingText: 'Адрес',
-          hintText: 'Введите адрес',
-          keyboardType: TextInputType.streetAddress,
-          textInputAction: TextInputAction.next,
-          validator: FormValidator.addressValidator,
-        ),
-
-        const SizedBox(height: 25),
-
         //Contact
         CustomTextField(
           controller: contactController,
-          floatingText: 'Contact',
+          floatingText: 'Телефон',
           hintText: 'Введите номер телефона',
           keyboardType: TextInputType.phone,
           textInputAction: TextInputAction.done,
@@ -318,9 +346,7 @@ class _UserDetailFields extends StatelessWidget {
           prefix: Row(
             mainAxisSize: MainAxisSize.min,
             children: const [
-              Padding(
-                padding: EdgeInsets.fromLTRB(17, 0, 5, 0)
-              ),
+              Padding(padding: EdgeInsets.fromLTRB(17, 0, 5, 0)),
               Text(
                 '+996',
                 style: TextStyle(
@@ -334,6 +360,18 @@ class _UserDetailFields extends StatelessWidget {
               )
             ],
           ),
+        ),
+
+        const SizedBox(height: 25),
+
+        CustomTextField(
+          controller: passwordController,
+          autofocus: true,
+          floatingText: 'Пароль',
+          hintText: 'Введите пароль',
+          keyboardType: TextInputType.visiblePassword,
+          textInputAction: TextInputAction.next,
+          validator: FormValidator.passwordValidator,
         ),
       ],
     );
@@ -353,24 +391,11 @@ class _PasswordDetailFields extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        //Password
-        CustomTextField(
-          controller: passwordController,
-          autofocus: true,
-          floatingText: 'Пароль',
-          hintText: 'Введите пароль',
-          keyboardType: TextInputType.visiblePassword,
-          textInputAction: TextInputAction.next,
-          validator: FormValidator.passwordValidator,
-        ),
-
-        const SizedBox(height: 25),
-
         //Confirm Password
         CustomTextField(
           controller: cPasswordController,
           floatingText: 'Подтверждение пароля',
-          hintText: 'Повторите пароль',
+          hintText: 'Подтвердите пароль',
           keyboardType: TextInputType.visiblePassword,
           textInputAction: TextInputAction.done,
           validator: (confirmPw) => FormValidator.confirmPasswordValidator(

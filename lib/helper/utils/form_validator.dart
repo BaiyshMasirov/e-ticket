@@ -51,7 +51,7 @@ class FormValidator{
   }
 
   /// A method containing validation logic for full name input.
-  static String? fullNameValidator(String? fullName) {
+  static String?  NameValidator(String? fullName) {
     if (fullName != null && fullName.isValidFullName) return null;
     return Constants.invalidFullNameError;
   }

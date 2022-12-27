@@ -3,7 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'helper/utils/custom_theme.dart';
-void main() {
+
+//Services
+import 'services/local_storage/key_value_storage_base.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await KeyValueStorageBase.init();
   runApp(const MyApp());
 }
 
@@ -24,5 +30,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

@@ -1,11 +1,10 @@
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+//Enums
 import '../enums/user_role_enum.dart';
 
 //Models
-import '../models/user_model.dart';
+import '../models/user/user_model.dart';
 
 //Services
 import '../services/local_storage/key_value_storage_service.dart';
@@ -17,7 +16,7 @@ import 'states/auth_state.dart';
 import 'states/future_state.dart';
 
 final changePasswordStateProvider = StateProvider<FutureState<String>>(
-      (ref) => const FutureState<String>.idle(),
+  (ref) => const FutureState<String>.idle(),
 );
 
 class AuthProvider extends StateNotifier<AuthState> {
@@ -38,15 +37,16 @@ class AuthProvider extends StateNotifier<AuthState> {
     init();
   }
 
-  int get currentUserId => _currentUser!.userId!;
+  String get currentUserId => _currentUser!.userId!;
 
-  String get currentUserFullName => _currentUser!.fullName;
+  String get currentUserFullName =>
+      _currentUser!.firstName +
+      _currentUser!.lastName +
+      _currentUser!.middleName;
 
   String get currentUserEmail => _currentUser!.email;
 
-  String get currentUserAddress => _currentUser!.address;
-
-  String get currentUserContact => _currentUser!.contact;
+  String get currentUserContact => _currentUser!.phoneNumber;
 
   String get currentUserPassword => _password;
 
@@ -66,7 +66,7 @@ class AuthProvider extends StateNotifier<AuthState> {
     if (!authenticated || _currentUser == null || _password.isEmpty) {
       logout();
     } else {
-      state = AuthState.authenticated(fullName: _currentUser!.fullName);
+      state = AuthState.authenticated(fullName: _currentUser!.firstName);
     }
   }
 
@@ -81,7 +81,7 @@ class AuthProvider extends StateNotifier<AuthState> {
         data: data,
         updateTokenCallback: updateToken,
       );
-      state = AuthState.authenticated(fullName: _currentUser!.fullName);
+      state = AuthState.authenticated(fullName: _currentUser!.firstName);
       _updatePassword(password);
       _updateAuthProfile();
     } on NetworkException catch (e) {
@@ -92,28 +92,28 @@ class AuthProvider extends StateNotifier<AuthState> {
   Future<void> register({
     required String email,
     required String password,
-    required String fullName,
-    required String contact,
-    required String address,
-    UserRole role = UserRole.API_USER,
+    required String firstName,
+    required String lastName,
+    required String middleName,
+    required String phoneNumber,
   }) async {
-    if (contact.startsWith('0')) contact = contact.substring(1);
-    contact = '+92$contact';
+    if (phoneNumber.startsWith('0')) phoneNumber = phoneNumber.substring(1);
+    phoneNumber = '996$phoneNumber';
     final user = UserModel(
-      userId: null,
-      fullName: fullName,
-      email: email,
-      address: address,
-      contact: contact,
-      role: role,
-    );
+        userId: null,
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        middleName: middleName,
+        phoneNumber: phoneNumber,
+        password: password);
     state = const AuthState.authenticating();
     try {
-      _currentUser = await _authRepository.sendRegisterData(
+      final result = await _authRepository.sendRegisterData(
         data: user.toJson(),
         updateTokenCallback: updateToken,
       );
-      state = AuthState.authenticated(fullName: _currentUser!.fullName);
+      state = AuthState.authenticated(fullName: user.firstName);
       _updatePassword(password);
       _updateAuthProfile();
     } on NetworkException catch (e) {

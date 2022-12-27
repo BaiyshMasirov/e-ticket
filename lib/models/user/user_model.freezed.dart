@@ -21,12 +21,13 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserModel {
   @JsonKey(includeIfNull: false)
-  int? get userId => throw _privateConstructorUsedError;
-  String get fullName => throw _privateConstructorUsedError;
+  String? get userId => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String get address => throw _privateConstructorUsedError;
-  String get contact => throw _privateConstructorUsedError;
-  UserRole get role => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
+  String get middleName => throw _privateConstructorUsedError;
+  String get password => throw _privateConstructorUsedError;
+  String get phoneNumber => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,12 +40,13 @@ abstract class $UserModelCopyWith<$Res> {
   factory $UserModelCopyWith(UserModel value, $Res Function(UserModel) then) =
       _$UserModelCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(includeIfNull: false) int? userId,
-      String fullName,
+      {@JsonKey(includeIfNull: false) String? userId,
       String email,
-      String address,
-      String contact,
-      UserRole role});
+      String firstName,
+      String lastName,
+      String middleName,
+      String password,
+      String phoneNumber});
 }
 
 /// @nodoc
@@ -58,37 +60,42 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
   @override
   $Res call({
     Object? userId = freezed,
-    Object? fullName = freezed,
     Object? email = freezed,
-    Object? address = freezed,
-    Object? contact = freezed,
-    Object? role = freezed,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
+    Object? middleName = freezed,
+    Object? password = freezed,
+    Object? phoneNumber = freezed,
   }) {
     return _then(_value.copyWith(
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      fullName: fullName == freezed
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      address: address == freezed
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
+      firstName: firstName == freezed
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
               as String,
-      contact: contact == freezed
-          ? _value.contact
-          : contact // ignore: cast_nullable_to_non_nullable
+      lastName: lastName == freezed
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
               as String,
-      role: role == freezed
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as UserRole,
+      middleName: middleName == freezed
+          ? _value.middleName
+          : middleName // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -100,12 +107,13 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
       __$$_UserModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(includeIfNull: false) int? userId,
-      String fullName,
+      {@JsonKey(includeIfNull: false) String? userId,
       String email,
-      String address,
-      String contact,
-      UserRole role});
+      String firstName,
+      String lastName,
+      String middleName,
+      String password,
+      String phoneNumber});
 }
 
 /// @nodoc
@@ -121,37 +129,42 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? userId = freezed,
-    Object? fullName = freezed,
     Object? email = freezed,
-    Object? address = freezed,
-    Object? contact = freezed,
-    Object? role = freezed,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
+    Object? middleName = freezed,
+    Object? password = freezed,
+    Object? phoneNumber = freezed,
   }) {
     return _then(_$_UserModel(
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      fullName: fullName == freezed
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      address: address == freezed
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
+      firstName: firstName == freezed
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
               as String,
-      contact: contact == freezed
-          ? _value.contact
-          : contact // ignore: cast_nullable_to_non_nullable
+      lastName: lastName == freezed
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
               as String,
-      role: role == freezed
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as UserRole,
+      middleName: middleName == freezed
+          ? _value.middleName
+          : middleName // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -161,32 +174,35 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
 class _$_UserModel implements _UserModel {
   const _$_UserModel(
       {@JsonKey(includeIfNull: false) required this.userId,
-      required this.fullName,
       required this.email,
-      required this.address,
-      required this.contact,
-      required this.role});
+      required this.firstName,
+      required this.lastName,
+      required this.middleName,
+      required this.password,
+      required this.phoneNumber});
 
   factory _$_UserModel.fromJson(Map<String, dynamic> json) =>
       _$$_UserModelFromJson(json);
 
   @override
   @JsonKey(includeIfNull: false)
-  final int? userId;
-  @override
-  final String fullName;
+  final String? userId;
   @override
   final String email;
   @override
-  final String address;
+  final String firstName;
   @override
-  final String contact;
+  final String lastName;
   @override
-  final UserRole role;
+  final String middleName;
+  @override
+  final String password;
+  @override
+  final String phoneNumber;
 
   @override
   String toString() {
-    return 'UserModel(userId: $userId, fullName: $fullName, email: $email, address: $address, contact: $contact, role: $role)';
+    return 'UserModel(userId: $userId, email: $email, firstName: $firstName, lastName: $lastName, middleName: $middleName, password: $password, phoneNumber: $phoneNumber)';
   }
 
   @override
@@ -195,11 +211,14 @@ class _$_UserModel implements _UserModel {
         (other.runtimeType == runtimeType &&
             other is _$_UserModel &&
             const DeepCollectionEquality().equals(other.userId, userId) &&
-            const DeepCollectionEquality().equals(other.fullName, fullName) &&
             const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.address, address) &&
-            const DeepCollectionEquality().equals(other.contact, contact) &&
-            const DeepCollectionEquality().equals(other.role, role));
+            const DeepCollectionEquality().equals(other.firstName, firstName) &&
+            const DeepCollectionEquality().equals(other.lastName, lastName) &&
+            const DeepCollectionEquality()
+                .equals(other.middleName, middleName) &&
+            const DeepCollectionEquality().equals(other.password, password) &&
+            const DeepCollectionEquality()
+                .equals(other.phoneNumber, phoneNumber));
   }
 
   @JsonKey(ignore: true)
@@ -207,11 +226,12 @@ class _$_UserModel implements _UserModel {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(userId),
-      const DeepCollectionEquality().hash(fullName),
       const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(address),
-      const DeepCollectionEquality().hash(contact),
-      const DeepCollectionEquality().hash(role));
+      const DeepCollectionEquality().hash(firstName),
+      const DeepCollectionEquality().hash(lastName),
+      const DeepCollectionEquality().hash(middleName),
+      const DeepCollectionEquality().hash(password),
+      const DeepCollectionEquality().hash(phoneNumber));
 
   @JsonKey(ignore: true)
   @override
@@ -226,29 +246,32 @@ class _$_UserModel implements _UserModel {
 
 abstract class _UserModel implements UserModel {
   const factory _UserModel(
-      {@JsonKey(includeIfNull: false) required final int? userId,
-      required final String fullName,
+      {@JsonKey(includeIfNull: false) required final String? userId,
       required final String email,
-      required final String address,
-      required final String contact,
-      required final UserRole role}) = _$_UserModel;
+      required final String firstName,
+      required final String lastName,
+      required final String middleName,
+      required final String password,
+      required final String phoneNumber}) = _$_UserModel;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$_UserModel.fromJson;
 
   @override
   @JsonKey(includeIfNull: false)
-  int? get userId;
-  @override
-  String get fullName;
+  String? get userId;
   @override
   String get email;
   @override
-  String get address;
+  String get firstName;
   @override
-  String get contact;
+  String get lastName;
   @override
-  UserRole get role;
+  String get middleName;
+  @override
+  String get password;
+  @override
+  String get phoneNumber;
   @override
   @JsonKey(ignore: true)
   _$$_UserModelCopyWith<_$_UserModel> get copyWith =>

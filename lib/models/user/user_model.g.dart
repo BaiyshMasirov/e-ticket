@@ -7,12 +7,13 @@ part of 'user_model.dart';
 // **************************************************************************
 
 _$_UserModel _$$_UserModelFromJson(Map<String, dynamic> json) => _$_UserModel(
-      userId: json['userId'] as int?,
-      fullName: json['fullName'] as String,
+      userId: json['userId'] as String?,
       email: json['email'] as String,
-      address: json['address'] as String,
-      contact: json['contact'] as String,
-      role: $enumDecode(_$UserRoleEnumMap, json['role']),
+      firstName: json['firstName'] as String,
+      lastName: json['lastName'] as String,
+      middleName: json['middleName'] as String,
+      password: json['password'] as String,
+      phoneNumber: json['phoneNumber'] as String,
     );
 
 Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) {
@@ -25,16 +26,11 @@ Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) {
   }
 
   writeNotNull('userId', instance.userId);
-  val['fullName'] = instance.fullName;
   val['email'] = instance.email;
-  val['address'] = instance.address;
-  val['contact'] = instance.contact;
-  val['role'] = _$UserRoleEnumMap[instance.role]!;
+  val['firstName'] = instance.firstName;
+  val['lastName'] = instance.lastName;
+  val['middleName'] = instance.middleName;
+  val['password'] = instance.password;
+  val['phoneNumber'] = instance.phoneNumber;
   return val;
 }
-
-const _$UserRoleEnumMap = {
-  UserRole.ADMIN: 'admin',
-  UserRole.API_USER: 'api_user',
-  UserRole.SUPER_USER: 'super_user',
-};

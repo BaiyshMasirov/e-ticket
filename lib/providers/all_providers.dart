@@ -36,7 +36,7 @@ import 'states/forgot_password_state.dart';
 
 //Services
 final keyValueStorageServiceProvider = Provider<KeyValueStorageService>(
-      (ref) => KeyValueStorageService(),
+  (ref) => KeyValueStorageService(),
 );
 
 final _dioProvider = Provider<Dio>((ref) {
@@ -51,14 +51,8 @@ final _dioServiceProvider = Provider<DioService>((ref) {
   // Order of interceptors very important
   return DioService(
     dioClient: _dio,
-    interceptors: [
-      ApiInterceptor(ref),
-      if (kDebugMode) LoggingInterceptor(),
-      RefreshTokenInterceptor(dioClient: _dio, ref: ref)
-    ],
   );
 });
-
 final _apiServiceProvider = Provider<ApiService>((ref) {
   final _dioService = ref.watch(_dioServiceProvider);
   return ApiService(_dioService);
@@ -89,4 +83,3 @@ final forgotPasswordProvider = StateNotifierProvider.autoDispose<
     initialState: const ForgotPasswordState.email(),
   );
 });
-

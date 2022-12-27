@@ -20,7 +20,7 @@ class NetworkException with _$NetworkException {
   }) = _FetchDataException;
 
   const factory NetworkException.ApiException({
-    required String name,
+    required bool succeed,
     required String message,
   }) = _ApiException;
 
@@ -80,26 +80,28 @@ class NetworkException with _$NetworkException {
             );
           case DioErrorType.response:
           case DioErrorType.other:
-            if(error.message.contains(ExceptionConstants.SocketException)) {
+            if (error.message.contains(ExceptionConstants.SocketException)) {
               return const NetworkException.FetchDataException(
                 name: ExceptionConstants.FetchDataException,
                 message: 'No internet connectivity',
               );
             }
-            final name = error.response?.data['headers']['error'] as String;
-            final message = error.response?.data['headers']['message'] as String;
-            switch (name) {
+            final succeed = error.response?.data['succeed'] as bool;
+            final message = error.response?.data['messages'][0] as String;
+
+            return NetworkException.ApiException(
+              succeed: succeed,
+              message: message,
+            );
+          /* switch (name) {
               case ExceptionConstants.TokenExpiredException:
                 return NetworkException.TokenExpiredException(
-                  name: name,
+                  name: "Token expired",
                   message: message,
                 );
-              default:
-                return NetworkException.ApiException(
-                  name: name,
-                  message: message,
-                );
-            }
+              default: 
+             
+            }*/
         }
       } else {
         return const NetworkException.UnrecognizedException(

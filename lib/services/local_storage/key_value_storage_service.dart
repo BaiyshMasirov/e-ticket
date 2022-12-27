@@ -1,12 +1,11 @@
 import 'dart:convert';
 
 import '../../helper/utils/typedefs.dart';
-import '../../models/user_model.dart';
+import '../../models/user/user_model.dart';
 import '../../providers/states/auth_state.dart';
 import 'key_value_storage_base.dart';
 
 class KeyValueStorageService {
-
   /// The name of auth token key
   static const _authTokenKey = 'authToken';
 
@@ -35,7 +34,7 @@ class KeyValueStorageService {
   /// Returns last authenticated user
   UserModel? getAuthUser() {
     final user = _keyValueStorage.getCommon<String>(_authUserKey);
-    if(user == null) return null;
+    if (user == null) return null;
     return UserModel.fromJson(jsonDecode(user) as JSON);
   }
 
@@ -55,7 +54,7 @@ class KeyValueStorageService {
   /// asynchronous, we don't care about it's completion which is why we don't
   /// use `await` and let it execute in the background.
   void setAuthState(AuthState authState) {
-    if(authState is AUTHENTICATED) {
+    if (authState is AUTHENTICATED) {
       _keyValueStorage.setCommon<bool>(_authStateKey, true);
     }
   }

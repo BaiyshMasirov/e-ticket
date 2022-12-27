@@ -1,11 +1,12 @@
 //models
+import 'package:e_ti_app/models/user/result.dart';
+
 import '../../helper/utils/typedefs.dart';
-import '../../models/user_model.dart';
+import '../../models/user/user_model.dart';
 
 //services
 import '../networking/api_endpoint.dart';
 import '../networking/api_service.dart';
-
 
 class AuthRepository {
   final ApiService _apiService;
@@ -27,18 +28,18 @@ class AuthRepository {
     );
   }
 
-  Future<UserModel> sendRegisterData({
+  Future<Result> sendRegisterData({
     required JSON data,
     required void Function(String newToken) updateTokenCallback,
   }) async {
-    return await _apiService.setData<UserModel>(
+    return await _apiService.setData<Result>(
       endpoint: ApiEndpoint.auth(AuthEndpoint.REGISTER),
       data: data,
       requiresAuthToken: false,
       converter: (response) {
-        updateTokenCallback(response['body']['token'] as String);
-        data['user_id'] = response['body']['user_id'];
-        return UserModel.fromJson(data);
+        /* updateTokenCallback(response['body']['token'] as String);
+        data['user_id'] = response['body']['user_id'];*/
+        return Result.fromJson(data);
       },
     );
   }

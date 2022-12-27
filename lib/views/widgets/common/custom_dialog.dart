@@ -78,7 +78,7 @@ class CustomDialog extends StatelessWidget {
               ),
             ),
             height: 40,
-            width: 60,
+            width: 100,
             onPressed: () {
               trueButtonPressed?.call();
               AppRouter.pop();
@@ -128,12 +128,12 @@ class _CustomDialogWithAlert extends CustomDialog {
     required String buttonText,
     VoidCallback? onButtonPressed,
   }) : super._(
-    title: title,
-    body: body,
-    buttonText: buttonText,
-    trueButtonPressed: onButtonPressed,
-    type: CustomDialogType.ALERT,
-  );
+          title: title,
+          body: body,
+          buttonText: buttonText,
+          trueButtonPressed: onButtonPressed,
+          type: CustomDialogType.ALERT,
+        );
 }
 
 class _CustomDialogWithConfirm extends CustomDialog {
@@ -145,12 +145,12 @@ class _CustomDialogWithConfirm extends CustomDialog {
     VoidCallback? falseButtonPressed,
     VoidCallback? trueButtonPressed,
   }) : super._(
-    title: title,
-    body: body,
-    falseButtonText: falseButtonText,
-    trueButtonText: trueButtonText,
-    falseButtonPressed: falseButtonPressed,
-    trueButtonPressed: trueButtonPressed,
-    type: CustomDialogType.CONFIRM,
-  );
+          title: title,
+          body: body,
+          falseButtonText: falseButtonText,
+          trueButtonText: trueButtonText,
+          falseButtonPressed: falseButtonPressed,
+          trueButtonPressed: trueButtonPressed,
+          type: CustomDialogType.CONFIRM,
+        );
 }

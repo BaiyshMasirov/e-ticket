@@ -16,13 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NetworkException {
-  String get name => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String message) FormatException,
     required TResult Function(String name, String message) FetchDataException,
-    required TResult Function(String name, String message) ApiException,
+    required TResult Function(bool succeed, String message) ApiException,
     required TResult Function(String name, String message)
         TokenExpiredException,
     required TResult Function(String name, String message)
@@ -39,7 +38,7 @@ mixin _$NetworkException {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -52,7 +51,7 @@ mixin _$NetworkException {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -117,7 +116,7 @@ abstract class $NetworkExceptionCopyWith<$Res> {
   factory $NetworkExceptionCopyWith(
           NetworkException value, $Res Function(NetworkException) then) =
       _$NetworkExceptionCopyWithImpl<$Res>;
-  $Res call({String name, String message});
+  $Res call({String message});
 }
 
 /// @nodoc
@@ -131,14 +130,9 @@ class _$NetworkExceptionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? name = freezed,
     Object? message = freezed,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -226,7 +220,7 @@ class _$_FormatException implements _FormatException {
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String message) FormatException,
     required TResult Function(String name, String message) FetchDataException,
-    required TResult Function(String name, String message) ApiException,
+    required TResult Function(bool succeed, String message) ApiException,
     required TResult Function(String name, String message)
         TokenExpiredException,
     required TResult Function(String name, String message)
@@ -246,7 +240,7 @@ class _$_FormatException implements _FormatException {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -262,7 +256,7 @@ class _$_FormatException implements _FormatException {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -339,7 +333,6 @@ abstract class _FormatException implements NetworkException {
       {required final String name,
       required final String message}) = _$_FormatException;
 
-  @override
   String get name;
   @override
   String get message;
@@ -429,7 +422,7 @@ class _$_FetchDataException implements _FetchDataException {
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String message) FormatException,
     required TResult Function(String name, String message) FetchDataException,
-    required TResult Function(String name, String message) ApiException,
+    required TResult Function(bool succeed, String message) ApiException,
     required TResult Function(String name, String message)
         TokenExpiredException,
     required TResult Function(String name, String message)
@@ -449,7 +442,7 @@ class _$_FetchDataException implements _FetchDataException {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -465,7 +458,7 @@ class _$_FetchDataException implements _FetchDataException {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -542,7 +535,6 @@ abstract class _FetchDataException implements NetworkException {
       {required final String name,
       required final String message}) = _$_FetchDataException;
 
-  @override
   String get name;
   @override
   String get message;
@@ -559,7 +551,7 @@ abstract class _$$_ApiExceptionCopyWith<$Res>
           _$_ApiException value, $Res Function(_$_ApiException) then) =
       __$$_ApiExceptionCopyWithImpl<$Res>;
   @override
-  $Res call({String name, String message});
+  $Res call({bool succeed, String message});
 }
 
 /// @nodoc
@@ -575,14 +567,14 @@ class __$$_ApiExceptionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? name = freezed,
+    Object? succeed = freezed,
     Object? message = freezed,
   }) {
     return _then(_$_ApiException(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
+      succeed: succeed == freezed
+          ? _value.succeed
+          : succeed // ignore: cast_nullable_to_non_nullable
+              as bool,
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -594,16 +586,16 @@ class __$$_ApiExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ApiException implements _ApiException {
-  const _$_ApiException({required this.name, required this.message});
+  const _$_ApiException({required this.succeed, required this.message});
 
   @override
-  final String name;
+  final bool succeed;
   @override
   final String message;
 
   @override
   String toString() {
-    return 'NetworkException.ApiException(name: $name, message: $message)';
+    return 'NetworkException.ApiException(succeed: $succeed, message: $message)';
   }
 
   @override
@@ -611,14 +603,14 @@ class _$_ApiException implements _ApiException {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ApiException &&
-            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.succeed, succeed) &&
             const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(succeed),
       const DeepCollectionEquality().hash(message));
 
   @JsonKey(ignore: true)
@@ -631,7 +623,7 @@ class _$_ApiException implements _ApiException {
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String message) FormatException,
     required TResult Function(String name, String message) FetchDataException,
-    required TResult Function(String name, String message) ApiException,
+    required TResult Function(bool succeed, String message) ApiException,
     required TResult Function(String name, String message)
         TokenExpiredException,
     required TResult Function(String name, String message)
@@ -643,7 +635,7 @@ class _$_ApiException implements _ApiException {
         ReceiveTimeoutException,
     required TResult Function(String name, String message) SendTimeoutException,
   }) {
-    return ApiException(name, message);
+    return ApiException(succeed, message);
   }
 
   @override
@@ -651,7 +643,7 @@ class _$_ApiException implements _ApiException {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -659,7 +651,7 @@ class _$_ApiException implements _ApiException {
     TResult Function(String name, String message)? ReceiveTimeoutException,
     TResult Function(String name, String message)? SendTimeoutException,
   }) {
-    return ApiException?.call(name, message);
+    return ApiException?.call(succeed, message);
   }
 
   @override
@@ -667,7 +659,7 @@ class _$_ApiException implements _ApiException {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -677,7 +669,7 @@ class _$_ApiException implements _ApiException {
     required TResult orElse(),
   }) {
     if (ApiException != null) {
-      return ApiException(name, message);
+      return ApiException(succeed, message);
     }
     return orElse();
   }
@@ -741,11 +733,10 @@ class _$_ApiException implements _ApiException {
 
 abstract class _ApiException implements NetworkException {
   const factory _ApiException(
-      {required final String name,
+      {required final bool succeed,
       required final String message}) = _$_ApiException;
 
-  @override
-  String get name;
+  bool get succeed;
   @override
   String get message;
   @override
@@ -835,7 +826,7 @@ class _$_TokenExpiredException implements _TokenExpiredException {
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String message) FormatException,
     required TResult Function(String name, String message) FetchDataException,
-    required TResult Function(String name, String message) ApiException,
+    required TResult Function(bool succeed, String message) ApiException,
     required TResult Function(String name, String message)
         TokenExpiredException,
     required TResult Function(String name, String message)
@@ -855,7 +846,7 @@ class _$_TokenExpiredException implements _TokenExpiredException {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -871,7 +862,7 @@ class _$_TokenExpiredException implements _TokenExpiredException {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -948,7 +939,6 @@ abstract class _TokenExpiredException implements NetworkException {
       {required final String name,
       required final String message}) = _$_TokenExpiredException;
 
-  @override
   String get name;
   @override
   String get message;
@@ -1039,7 +1029,7 @@ class _$_UnrecognizedException implements _UnrecognizedException {
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String message) FormatException,
     required TResult Function(String name, String message) FetchDataException,
-    required TResult Function(String name, String message) ApiException,
+    required TResult Function(bool succeed, String message) ApiException,
     required TResult Function(String name, String message)
         TokenExpiredException,
     required TResult Function(String name, String message)
@@ -1059,7 +1049,7 @@ class _$_UnrecognizedException implements _UnrecognizedException {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -1075,7 +1065,7 @@ class _$_UnrecognizedException implements _UnrecognizedException {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -1152,7 +1142,6 @@ abstract class _UnrecognizedException implements NetworkException {
       {required final String name,
       required final String message}) = _$_UnrecognizedException;
 
-  @override
   String get name;
   @override
   String get message;
@@ -1241,7 +1230,7 @@ class _$_CancelException implements _CancelException {
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String message) FormatException,
     required TResult Function(String name, String message) FetchDataException,
-    required TResult Function(String name, String message) ApiException,
+    required TResult Function(bool succeed, String message) ApiException,
     required TResult Function(String name, String message)
         TokenExpiredException,
     required TResult Function(String name, String message)
@@ -1261,7 +1250,7 @@ class _$_CancelException implements _CancelException {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -1277,7 +1266,7 @@ class _$_CancelException implements _CancelException {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -1354,7 +1343,6 @@ abstract class _CancelException implements NetworkException {
       {required final String name,
       required final String message}) = _$_CancelException;
 
-  @override
   String get name;
   @override
   String get message;
@@ -1446,7 +1434,7 @@ class _$_ConnectTimeoutException implements _ConnectTimeoutException {
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String message) FormatException,
     required TResult Function(String name, String message) FetchDataException,
-    required TResult Function(String name, String message) ApiException,
+    required TResult Function(bool succeed, String message) ApiException,
     required TResult Function(String name, String message)
         TokenExpiredException,
     required TResult Function(String name, String message)
@@ -1466,7 +1454,7 @@ class _$_ConnectTimeoutException implements _ConnectTimeoutException {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -1482,7 +1470,7 @@ class _$_ConnectTimeoutException implements _ConnectTimeoutException {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -1559,7 +1547,6 @@ abstract class _ConnectTimeoutException implements NetworkException {
       {required final String name,
       required final String message}) = _$_ConnectTimeoutException;
 
-  @override
   String get name;
   @override
   String get message;
@@ -1651,7 +1638,7 @@ class _$_ReceiveTimeoutException implements _ReceiveTimeoutException {
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String message) FormatException,
     required TResult Function(String name, String message) FetchDataException,
-    required TResult Function(String name, String message) ApiException,
+    required TResult Function(bool succeed, String message) ApiException,
     required TResult Function(String name, String message)
         TokenExpiredException,
     required TResult Function(String name, String message)
@@ -1671,7 +1658,7 @@ class _$_ReceiveTimeoutException implements _ReceiveTimeoutException {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -1687,7 +1674,7 @@ class _$_ReceiveTimeoutException implements _ReceiveTimeoutException {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -1764,7 +1751,6 @@ abstract class _ReceiveTimeoutException implements NetworkException {
       {required final String name,
       required final String message}) = _$_ReceiveTimeoutException;
 
-  @override
   String get name;
   @override
   String get message;
@@ -1854,7 +1840,7 @@ class _$_SendTimeoutException implements _SendTimeoutException {
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String message) FormatException,
     required TResult Function(String name, String message) FetchDataException,
-    required TResult Function(String name, String message) ApiException,
+    required TResult Function(bool succeed, String message) ApiException,
     required TResult Function(String name, String message)
         TokenExpiredException,
     required TResult Function(String name, String message)
@@ -1874,7 +1860,7 @@ class _$_SendTimeoutException implements _SendTimeoutException {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -1890,7 +1876,7 @@ class _$_SendTimeoutException implements _SendTimeoutException {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String message)? FormatException,
     TResult Function(String name, String message)? FetchDataException,
-    TResult Function(String name, String message)? ApiException,
+    TResult Function(bool succeed, String message)? ApiException,
     TResult Function(String name, String message)? TokenExpiredException,
     TResult Function(String name, String message)? UnrecognizedException,
     TResult Function(String name, String message)? CancelException,
@@ -1967,7 +1953,6 @@ abstract class _SendTimeoutException implements NetworkException {
       {required final String name,
       required final String message}) = _$_SendTimeoutException;
 
-  @override
   String get name;
   @override
   String get message;

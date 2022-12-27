@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
+import 'package:e_ti_app/models/user/result.dart';
 
 //Exceptions
 import '../../helper/utils/typedefs.dart';
 import 'network_exception.dart';
-
 
 /// A service class that wraps the [Dio] instance and provides methods for
 /// basic network requests.
@@ -21,10 +21,9 @@ class DioService {
   /// the underlying [Dio] client.
   ///
   /// Attaches any external [Interceptor]s to the underlying [_dio] client.
-  DioService({required Dio dioClient, Iterable<Interceptor>? interceptors})
-      : _dio = dioClient, _cancelToken = CancelToken() {
-    if (interceptors != null) _dio.interceptors.addAll(interceptors);
-  }
+  DioService({required Dio dioClient})
+      : _dio = dioClient,
+        _cancelToken = CancelToken() {}
 
   /// This method invokes the [cancel()] method on either the input
   /// [cancelToken] or internal [_cancelToken] to pre-maturely end all
@@ -80,20 +79,15 @@ class DioService {
   /// the **default** [cancelToken] inside [DioService] is used.
   ///
   /// [options] are special instructions that can be merged with the request.
-  Future<JSON> post({
+  Future<Response> post({
     required String endpoint,
     JSON? data,
     Options? options,
     CancelToken? cancelToken,
   }) async {
     try {
-      final response = await _dio.post<JSON>(
-        endpoint,
-        data: data,
-        options: options,
-        cancelToken: cancelToken ?? _cancelToken,
-      );
-      return response.data as JSON;
+      final response = await _dio.post(endpoint, options: options, data: data);
+      return response;
     } on Exception catch (ex) {
       throw NetworkException.getDioException(ex);
     }
