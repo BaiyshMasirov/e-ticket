@@ -109,7 +109,7 @@ class AuthProvider extends StateNotifier<AuthState> {
         password: password);
     state = const AuthState.authenticating();
     try {
-      final result = await _authRepository.sendRegisterData(
+      await _authRepository.sendRegisterData(
         data: user.toJson(),
         updateTokenCallback: updateToken,
       );

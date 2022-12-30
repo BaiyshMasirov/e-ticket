@@ -79,7 +79,7 @@ class DioService {
   /// the **default** [cancelToken] inside [DioService] is used.
   ///
   /// [options] are special instructions that can be merged with the request.
-  Future<Response> post({
+  Future<JSON> post({
     required String endpoint,
     JSON? data,
     Options? options,
@@ -87,7 +87,7 @@ class DioService {
   }) async {
     try {
       final response = await _dio.post(endpoint, options: options, data: data);
-      return response;
+      return response.data as JSON;
     } on Exception catch (ex) {
       throw NetworkException.getDioException(ex);
     }
