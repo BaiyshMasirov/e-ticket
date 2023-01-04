@@ -22,7 +22,7 @@ class AuthRepository {
       data: data,
       requiresAuthToken: false,
       converter: (response) {
-        updateTokenCallback(response['body']['token'] as String);
+        updateTokenCallback(response['token']['jwtToken'] as String);
         return UserModel.fromJson(response['body'] as JSON);
       },
     );
@@ -37,8 +37,7 @@ class AuthRepository {
       data: data,
       requiresAuthToken: false,
       converter: (response) {
-        /* updateTokenCallback(response['body']['token'] as String);
-        data['user_id'] = response['body']['user_id'];*/
+        updateTokenCallback(response['token']['jwtToken'] as String);
         return UserModel.fromJson(data);
       },
     );
