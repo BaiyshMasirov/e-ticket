@@ -16,7 +16,7 @@ import '../services/networking/interceptors/refresh_token_interceptor.dart';
 //Repository imports
 import '../services/repositories/auth_repository.dart';
 import '../services/repositories/bookings_repository.dart';
-import '../services/repositories/movies_repository.dart';
+import '../services/repositories/events_repository.dart';
 import '../services/repositories/payments_repository.dart';
 import '../services/repositories/shows_repository.dart';
 import '../services/repositories/theaters_repository.dart';
@@ -24,8 +24,8 @@ import '../services/repositories/theaters_repository.dart';
 //Provider imports
 import 'auth_provider.dart';
 import 'bookings_provider.dart';
+import 'event_provider.dart';
 import 'forgot_password_provider.dart';
-import 'movies_provider.dart';
 import 'payments_provider.dart';
 import 'shows_provider.dart';
 import 'theaters_provider.dart';
@@ -82,4 +82,13 @@ final forgotPasswordProvider = StateNotifierProvider.autoDispose<
     authRepository: _authRepository,
     initialState: const ForgotPasswordState.email(),
   );
+});
+final _eventsRepositoryProvider = Provider<EventRepository>((ref) {
+  final _apiService = ref.watch(_apiServiceProvider);
+  return EventRepository(apiService: _apiService);
+});
+
+final eventProvider = Provider<EventProvider>((ref) {
+  final _eventRepo = ref.watch(_eventsRepositoryProvider);
+  return EventProvider(_eventRepo);
 });
