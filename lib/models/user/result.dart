@@ -8,5 +8,5 @@ class Result {
   factory Result.fromJson(Map<String, dynamic> json) => Result(
       isSuccess: json["succeed"] as bool,
       message: json["messages"][0] as String,
-      token: json["token"][0] as String);
+      token: json["jwtToken"][0] as String);
 }

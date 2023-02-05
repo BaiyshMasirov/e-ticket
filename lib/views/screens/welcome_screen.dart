@@ -81,7 +81,7 @@ class WelcomeScreen extends ConsumerWidget {
             const SizedBox(height: 50),
 
             //User Details
-     /*       const Flexible(
+            const Flexible(
               child: SizedBox(
                 width: double.infinity,
                 child: UserProfileDetails(),
@@ -96,7 +96,7 @@ class WelcomeScreen extends ConsumerWidget {
             const SizedBox(height: 20),
 
             //Browse Movies Button
-            const BrowseMoviesButton(),*/
+            const BrowseMoviesButton(), 
 
             const SizedBox(height: Constants.bottomInsetsLow + 5),
           ],

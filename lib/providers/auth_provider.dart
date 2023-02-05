@@ -1,3 +1,4 @@
+import 'package:e_ti_app/models/user/register_model.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 //Enums
@@ -39,14 +40,11 @@ class AuthProvider extends StateNotifier<AuthState> {
 
   String get currentUserId => _currentUser!.userId!;
 
-  String get currentUserFullName =>
-      _currentUser!.firstName +
-      _currentUser!.lastName +
-      _currentUser!.middleName;
+  String get currentUserFullName => _currentUser!.Name;
 
-  String get currentUserEmail => _currentUser!.email;
+  String get currentUserEmail => _currentUser!.Email;
 
-  String get currentUserContact => _currentUser!.phoneNumber;
+  String get currentUserContact => _currentUser!.PhoneNumber;
 
   String get currentUserPassword => _password;
 
@@ -66,7 +64,7 @@ class AuthProvider extends StateNotifier<AuthState> {
     if (!authenticated || _currentUser == null || _password.isEmpty) {
       logout();
     } else {
-      state = AuthState.authenticated(fullName: _currentUser!.firstName);
+      state = AuthState.authenticated(fullName: _currentUser!.Name);
     }
   }
 
@@ -81,7 +79,7 @@ class AuthProvider extends StateNotifier<AuthState> {
         data: data,
         updateTokenCallback: updateToken,
       );
-      state = AuthState.authenticated(fullName: _currentUser!.firstName);
+      state = AuthState.authenticated(fullName: _currentUser!.PhoneNumber);
       _updatePassword(password);
       _updateAuthProfile();
     } on NetworkException catch (e) {
@@ -99,8 +97,7 @@ class AuthProvider extends StateNotifier<AuthState> {
   }) async {
     if (phoneNumber.startsWith('0')) phoneNumber = phoneNumber.substring(1);
     phoneNumber = '996$phoneNumber';
-    final user = UserModel(
-        userId: null,
+    final user = RegisterModel(
         email: email,
         firstName: firstName,
         lastName: lastName,

@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                     gradient: Constants.buttonGradientRed,
                     child: const Center(
                       child: Text(
-                        'LOGIN',
+                        'Войти',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 15,
@@ -105,7 +105,7 @@ class HomeScreen extends StatelessWidget {
               border: Border.all(color: Constants.primaryColor, width: 4),
               child: const Center(
                 child: Text(
-                  'REGISTER',
+                  'Регистрация',
                   style: TextStyle(
                     color: Constants.primaryColor,
                     fontSize: 15,

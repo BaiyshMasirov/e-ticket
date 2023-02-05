@@ -2,8 +2,9 @@
 import 'package:e_ti_app/routes/route.dart';
 import 'package:flutter/material.dart';
 
- //Routes
+//Routes
 import '../views/screens/app_startup_screen.dart';
+import '../views/screens/login_screen.dart';
 import '../views/screens/register_screen.dart';
 
 /// A utility class provides basic methods for navigation.
@@ -13,7 +14,8 @@ class AppRouter {
   const AppRouter._();
 
   /// The global key used to access navigator without context
-  static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
 
   /// The name of the route that loads on app startup
   static const String initialRoute = Routes.AppStartupScreenRoute;
@@ -37,15 +39,17 @@ class AppRouter {
           builder: (_) => const RegisterScreen(),
           settings: const RouteSettings(name: Routes.RegisterScreenRoute),
         );
-     /* case Routes.HomeScreenRoute:
-        return MaterialPageRoute<dynamic>(
-          builder: (_) => const HomeScreen(),
-          settings: const RouteSettings(name: Routes.HomeScreenRoute),
-        );
+
       case Routes.LoginScreenRoute:
         return MaterialPageRoute<dynamic>(
           builder: (_) => const LoginScreen(),
           settings: const RouteSettings(name: Routes.LoginScreenRoute),
+        );
+
+      /* case Routes.HomeScreenRoute:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => const HomeScreen(),
+          settings: const RouteSettings(name: Routes.HomeScreenRoute),
         );
 
       case Routes.ForgotPasswordScreenRoute:

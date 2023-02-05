@@ -9,12 +9,9 @@ part 'user_model.g.dart';
 class UserModel with _$UserModel {
   const factory UserModel(
       {@JsonKey(includeIfNull: false) required String? userId,
-      required String email,
-      required String firstName,
-      required String lastName,
-      required String middleName,
-      required String password,
-      required String phoneNumber}) = _UserModel;
+      required String Name,
+      required String Email,
+      required String PhoneNumber}) = _UserModel;
 
   factory UserModel.fromJson(JSON json) => _$UserModelFromJson(json);
 }

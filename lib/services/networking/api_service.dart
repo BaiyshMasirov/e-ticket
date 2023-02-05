@@ -123,7 +123,7 @@ class ApiService implements ApiInterface {
     final result = await _dioService.post(
         endpoint: endpoint, data: data, cancelToken: cancelToken);
 
-    return converter(result as JSON);
+    return converter(result);
   }
 
   /// An implementation of the base method for updating [data]

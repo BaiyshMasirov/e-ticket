@@ -8,12 +8,9 @@ part of 'user_model.dart';
 
 _$_UserModel _$$_UserModelFromJson(Map<String, dynamic> json) => _$_UserModel(
       userId: json['userId'] as String?,
-      email: json['email'] as String,
-      firstName: json['firstName'] as String,
-      lastName: json['lastName'] as String,
-      middleName: json['middleName'] as String,
-      password: json['password'] as String,
-      phoneNumber: json['phoneNumber'] as String,
+      Name: json['Name'] as String,
+      Email: json['Email'] as String,
+      PhoneNumber: json['PhoneNumber'] as String,
     );
 
 Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) {
@@ -26,11 +23,8 @@ Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) {
   }
 
   writeNotNull('userId', instance.userId);
-  val['email'] = instance.email;
-  val['firstName'] = instance.firstName;
-  val['lastName'] = instance.lastName;
-  val['middleName'] = instance.middleName;
-  val['password'] = instance.password;
-  val['phoneNumber'] = instance.phoneNumber;
+  val['Name'] = instance.Name;
+  val['Email'] = instance.Email;
+  val['PhoneNumber'] = instance.PhoneNumber;
   return val;
 }

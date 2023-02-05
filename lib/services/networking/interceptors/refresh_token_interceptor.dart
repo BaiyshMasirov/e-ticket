@@ -9,7 +9,6 @@ import '../../../providers/all_providers.dart';
 //Endpoints
 import '../api_endpoint.dart';
 
-
 /// A class that holds intercepting logic for refreshing expired tokens. This
 /// is the last interceptor in the queue.
 class RefreshTokenInterceptor extends Interceptor {
@@ -20,7 +19,8 @@ class RefreshTokenInterceptor extends Interceptor {
   RefreshTokenInterceptor({
     required Dio dioClient,
     required Ref ref,
-  }) : _dio = dioClient, _ref = ref;
+  })  : _dio = dioClient,
+        _ref = ref;
 
   /// The name of the exception on which this interceptor is triggered.
   // ignore: non_constant_identifier_names
@@ -42,9 +42,9 @@ class RefreshTokenInterceptor extends Interceptor {
   /// changing according to your own API. **
   @override
   void onError(
-      DioError dioError,
-      ErrorInterceptorHandler handler,
-      ) async {
+    DioError dioError,
+    ErrorInterceptorHandler handler,
+  ) async {
     if (dioError.response != null) {
       if (dioError.response!.data != null) {
         final headers = dioError.response!.data['headers'] as JSON;
@@ -61,7 +61,7 @@ class RefreshTokenInterceptor extends Interceptor {
           //Get auth details for refresh token request
           final kVStorageService = _ref.read(keyValueStorageServiceProvider);
           final data = {
-            'email': kVStorageService.getAuthUser()!.email,
+            'email': kVStorageService.getAuthUser()!.Email,
             'password': await kVStorageService.getAuthPassword(),
             'oldToken': await kVStorageService.getAuthToken(),
           };

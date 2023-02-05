@@ -1,9 +1,8 @@
 //models
 import 'package:e_ti_app/models/user/result.dart';
-
 import '../../helper/utils/typedefs.dart';
 import '../../models/user/user_model.dart';
-
+import 'package:jwt_decode/jwt_decode.dart';
 //services
 import '../networking/api_endpoint.dart';
 import '../networking/api_service.dart';
@@ -23,7 +22,8 @@ class AuthRepository {
       requiresAuthToken: false,
       converter: (response) {
         updateTokenCallback(response['token']['jwtToken'] as String);
-        return UserModel.fromJson(response['body'] as JSON);
+        return UserModel.fromJson(
+            Jwt.parseJwt(response['token']['jwtToken'] as String));
       },
     );
   }
@@ -38,7 +38,8 @@ class AuthRepository {
       requiresAuthToken: false,
       converter: (response) {
         updateTokenCallback(response['token']['jwtToken'] as String);
-        return UserModel.fromJson(data);
+        return UserModel.fromJson(
+            Jwt.parseJwt(response['token']['jwtToken'] as String));
       },
     );
   }
