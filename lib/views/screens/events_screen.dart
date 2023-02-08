@@ -12,11 +12,11 @@ import '../../providers/all_providers.dart';
 //Routing
 import '../../providers/event_provider.dart';
 import '../../routes/app_router.dart';
-import '../sceletons/movies_skeleton_loader.dart';
+import '../sceletons/events_skeleton_loader.dart';
 import '../widgets/common/error_response_handler.dart';
 import '../widgets/events/event_backdrop_view.dart';
-import '../widgets/events/movie_carousel.dart';
-import '../widgets/events/movie_icons_row.dart';
+import '../widgets/events/event_carousel.dart';
+import '../widgets/events/event_icons_row.dart';
 
 class EventsScreen extends HookConsumerWidget {
   const EventsScreen();
@@ -41,7 +41,7 @@ class EventsScreen extends HookConsumerWidget {
                 children: [
                   //page controller bg
                   Positioned.fill(
-                    child: MovieBackdropView(
+                    child: EventBackdropView(
                       backgroundImageController: backgroundImageController,
                       movies: movies,
                     ),
@@ -74,9 +74,9 @@ class EventsScreen extends HookConsumerWidget {
                   Positioned(
                     bottom: -50,
                     top: screenHeight * 0.27,
-                    child: MoviesCarousel(
+                    child: EventsCarousel(
                       backgroundImageController: backgroundImageController,
-                      movies: movies,
+                      events: movies,
                     ),
                   ),
 
@@ -85,13 +85,13 @@ class EventsScreen extends HookConsumerWidget {
                     top: 0,
                     left: 0,
                     right: 0,
-                    child: MoviesIconsRow(),
+                    child: EventsIconsRow(),
                   )
                 ],
               ),
             );
           },
-          loading: () => const MoviesSkeletonLoader(),
+          loading: () => const EventsSkeletonLoader(),
           error: (error, st) => ErrorResponseHandler(
             error: error,
             stackTrace: st,

@@ -1,5 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:e_ti_app/views/widgets/events/white_movie_container.dart';
+import 'package:e_ti_app/views/widgets/events/white_event_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -12,46 +12,46 @@ import '../../../providers/event_provider.dart';
 import '../../../routes/app_router.dart';
 import '../../../routes/route.dart';
 
-class MoviesCarousel extends StatefulHookConsumerWidget {
+class EventsCarousel extends StatefulHookConsumerWidget {
   final PageController backgroundImageController;
-  final List<EventModel> movies;
+  final List<EventModel> events;
 
-  const MoviesCarousel({
+  const EventsCarousel({
     required this.backgroundImageController,
-    required this.movies,
+    required this.events,
   });
 
   @override
-  __MoviesCarouselState createState() => __MoviesCarouselState();
+  __EventsCarouselState createState() => __EventsCarouselState();
 }
 
-class __MoviesCarouselState extends ConsumerState<MoviesCarousel> {
+class __EventsCarouselState extends ConsumerState<EventsCarousel> {
   late int _currentIndex;
 
-  List<EventModel> get movies => widget.movies;
+  List<EventModel> get events => widget.events;
 
   @override
   Widget build(BuildContext context) {
     useEffect(() {
-      _currentIndex = movies.length ~/ 2;
+      _currentIndex = events.length ~/ 2;
     }, const []);
     return CarouselSlider.builder(
       carouselController: CarouselController(),
       options: getCarouselOptions(),
-      itemCount: movies.length,
-      itemBuilder: (ctx, i, _) => WhiteMovieContainer(
+      itemCount: events.length,
+      itemBuilder: (ctx, i, _) => WhiteEventContainer(
         isCurrent: _currentIndex == i,
-        movie: movies[i],
+        event: events[i],
         onViewDetails: () {
-          final leftIndex = (i - 1) % movies.length;
-          final rightIndex = (i + 1) % movies.length;
-          ref.read(selectedMovieProvider.state).update((_) => movies[i]);
+          final leftIndex = (i - 1) % events.length;
+          final rightIndex = (i + 1) % events.length;
+          ref.read(selectedMovieProvider.state).update((_) => events[i]);
           ref
               .read(leftMovieProvider.state)
-              .update((state) => movies[leftIndex]);
+              .update((state) => events[leftIndex]);
           ref
               .read(rightMovieProvider.state)
-              .update((state) => movies[rightIndex]);
+              .update((state) => events[rightIndex]);
           AppRouter.pushNamed(Routes.MovieDetailsScreenRoute);
         },
       ),

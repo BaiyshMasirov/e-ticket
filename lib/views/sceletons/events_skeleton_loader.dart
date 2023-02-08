@@ -7,8 +7,8 @@ import '../../helper/extensions/context_extensions.dart';
 //Widgets
 import '../widgets/common/shimmer_loader.dart';
 
-class MoviesSkeletonLoader extends StatelessWidget {
-  const MoviesSkeletonLoader();
+class EventsSkeletonLoader extends StatelessWidget {
+  const EventsSkeletonLoader();
 
   @override
   Widget build(BuildContext context) {

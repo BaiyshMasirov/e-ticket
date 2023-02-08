@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import '../../../helper/extensions/context_extensions.dart';
 import '../common/custom_chips_list.dart';
 
-class MovieOverviewColumn extends StatelessWidget {
-  const MovieOverviewColumn({
+class EventOverviewColumn extends StatelessWidget {
+  const EventOverviewColumn({
     Key? key,
     required this.movie,
   }) : super(key: key);
