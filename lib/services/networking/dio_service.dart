@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-import 'package:e_ti_app/models/user/result.dart';
 
 //Exceptions
 import '../../helper/utils/typedefs.dart';
@@ -21,9 +20,11 @@ class DioService {
   /// the underlying [Dio] client.
   ///
   /// Attaches any external [Interceptor]s to the underlying [_dio] client.
-  DioService({required Dio dioClient})
+  DioService({required Dio dioClient, Iterable<Interceptor>? interceptors})
       : _dio = dioClient,
-        _cancelToken = CancelToken() {}
+        _cancelToken = CancelToken() {
+    if (interceptors != null) _dio.interceptors.addAll(interceptors);
+  }
 
   /// This method invokes the [cancel()] method on either the input
   /// [cancelToken] or internal [_cancelToken] to pre-maturely end all
@@ -48,20 +49,20 @@ class DioService {
   /// the **default** [cancelToken] inside [DioService] is used.
   ///
   /// [options] are special instructions that can be merged with the request.
-  Future<JSON> get({
+  Future<List<dynamic>> get({
     required String endpoint,
     JSON? queryParams,
     Options? options,
     CancelToken? cancelToken,
   }) async {
     try {
-      final response = await _dio.get<JSON>(
+      final response = await _dio.get(
         endpoint,
         queryParameters: queryParams,
         options: options,
         cancelToken: cancelToken ?? _cancelToken,
       );
-      return response.data as JSON;
+      return response.data;
     } on Exception catch (ex) {
       throw NetworkException.getDioException(ex);
     }

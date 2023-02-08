@@ -33,13 +33,15 @@ class ApiInterceptor extends Interceptor {
   /// with your custom [DioError].
   @override
   void onRequest(
-      RequestOptions options,
-      RequestInterceptorHandler handler,
-      ) async {
+    RequestOptions options,
+    RequestInterceptorHandler handler,
+  ) async {
     if (options.headers.containsKey('requiresAuthToken')) {
-      if(options.headers['requiresAuthToken'] == true){
-        final token = await _ref.read(keyValueStorageServiceProvider).getAuthToken();
-        options.headers.addAll(<String, Object?>{'Authorization': 'Bearer $token'});
+      if (options.headers['requiresAuthToken'] == true) {
+        final token =
+            await _ref.read(keyValueStorageServiceProvider).getAuthToken();
+        options.headers
+            .addAll(<String, Object?>{'Authorization': 'Bearer $token'});
       }
 
       options.headers.remove('requiresAuthToken');
@@ -74,10 +76,11 @@ class ApiInterceptor extends Interceptor {
   /// with your custom [DioError].
   @override
   void onResponse(
-      Response response,
-      ResponseInterceptorHandler handler,
-      ) {
-    final success = response.data['headers']['success'] == 1;
+    Response response,
+    ResponseInterceptorHandler handler,
+  ) {
+    final success =
+        response.statusCode == 200 || response.data['succeed'] == true;
 
     if (success) return handler.next(response);
 

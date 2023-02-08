@@ -20,19 +20,19 @@ EventModel _$EventModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$EventModel {
-  String get Id => throw _privateConstructorUsedError;
-  String get Name => throw _privateConstructorUsedError;
-  String get Description => throw _privateConstructorUsedError;
-  DateTime get StartDate => throw _privateConstructorUsedError;
-  DateTime get EndDate => throw _privateConstructorUsedError;
-  int get Status => throw _privateConstructorUsedError;
-  String get Image => throw _privateConstructorUsedError;
-  int get AgeLimit => throw _privateConstructorUsedError;
-  double get MinPrice => throw _privateConstructorUsedError;
-  int get Sold => throw _privateConstructorUsedError;
-  int get Count => throw _privateConstructorUsedError;
-  String get LocationName => throw _privateConstructorUsedError;
-  String get LocationId => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  DateTime get startDate => throw _privateConstructorUsedError;
+  DateTime get endDate => throw _privateConstructorUsedError;
+  int get status => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
+  int get ageLimit => throw _privateConstructorUsedError;
+  double get minPrice => throw _privateConstructorUsedError;
+  int get sold => throw _privateConstructorUsedError;
+  int get count => throw _privateConstructorUsedError;
+  String get locationName => throw _privateConstructorUsedError;
+  String get locationId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,19 +46,19 @@ abstract class $EventModelCopyWith<$Res> {
           EventModel value, $Res Function(EventModel) then) =
       _$EventModelCopyWithImpl<$Res>;
   $Res call(
-      {String Id,
-      String Name,
-      String Description,
-      DateTime StartDate,
-      DateTime EndDate,
-      int Status,
-      String Image,
-      int AgeLimit,
-      double MinPrice,
-      int Sold,
-      int Count,
-      String LocationName,
-      String LocationId});
+      {String id,
+      String name,
+      String description,
+      DateTime startDate,
+      DateTime endDate,
+      int status,
+      String image,
+      int ageLimit,
+      double minPrice,
+      int sold,
+      int count,
+      String locationName,
+      String locationId});
 }
 
 /// @nodoc
@@ -71,72 +71,72 @@ class _$EventModelCopyWithImpl<$Res> implements $EventModelCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? Id = freezed,
-    Object? Name = freezed,
-    Object? Description = freezed,
-    Object? StartDate = freezed,
-    Object? EndDate = freezed,
-    Object? Status = freezed,
-    Object? Image = freezed,
-    Object? AgeLimit = freezed,
-    Object? MinPrice = freezed,
-    Object? Sold = freezed,
-    Object? Count = freezed,
-    Object? LocationName = freezed,
-    Object? LocationId = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? startDate = freezed,
+    Object? endDate = freezed,
+    Object? status = freezed,
+    Object? image = freezed,
+    Object? ageLimit = freezed,
+    Object? minPrice = freezed,
+    Object? sold = freezed,
+    Object? count = freezed,
+    Object? locationName = freezed,
+    Object? locationId = freezed,
   }) {
     return _then(_value.copyWith(
-      Id: Id == freezed
-          ? _value.Id
-          : Id // ignore: cast_nullable_to_non_nullable
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
-      Name: Name == freezed
-          ? _value.Name
-          : Name // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      Description: Description == freezed
-          ? _value.Description
-          : Description // ignore: cast_nullable_to_non_nullable
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
-      StartDate: StartDate == freezed
-          ? _value.StartDate
-          : StartDate // ignore: cast_nullable_to_non_nullable
+      startDate: startDate == freezed
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      EndDate: EndDate == freezed
-          ? _value.EndDate
-          : EndDate // ignore: cast_nullable_to_non_nullable
+      endDate: endDate == freezed
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      Status: Status == freezed
-          ? _value.Status
-          : Status // ignore: cast_nullable_to_non_nullable
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
               as int,
-      Image: Image == freezed
-          ? _value.Image
-          : Image // ignore: cast_nullable_to_non_nullable
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String,
-      AgeLimit: AgeLimit == freezed
-          ? _value.AgeLimit
-          : AgeLimit // ignore: cast_nullable_to_non_nullable
+      ageLimit: ageLimit == freezed
+          ? _value.ageLimit
+          : ageLimit // ignore: cast_nullable_to_non_nullable
               as int,
-      MinPrice: MinPrice == freezed
-          ? _value.MinPrice
-          : MinPrice // ignore: cast_nullable_to_non_nullable
+      minPrice: minPrice == freezed
+          ? _value.minPrice
+          : minPrice // ignore: cast_nullable_to_non_nullable
               as double,
-      Sold: Sold == freezed
-          ? _value.Sold
-          : Sold // ignore: cast_nullable_to_non_nullable
+      sold: sold == freezed
+          ? _value.sold
+          : sold // ignore: cast_nullable_to_non_nullable
               as int,
-      Count: Count == freezed
-          ? _value.Count
-          : Count // ignore: cast_nullable_to_non_nullable
+      count: count == freezed
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
               as int,
-      LocationName: LocationName == freezed
-          ? _value.LocationName
-          : LocationName // ignore: cast_nullable_to_non_nullable
+      locationName: locationName == freezed
+          ? _value.locationName
+          : locationName // ignore: cast_nullable_to_non_nullable
               as String,
-      LocationId: LocationId == freezed
-          ? _value.LocationId
-          : LocationId // ignore: cast_nullable_to_non_nullable
+      locationId: locationId == freezed
+          ? _value.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -150,19 +150,19 @@ abstract class _$$_EventModelCopyWith<$Res>
       __$$_EventModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String Id,
-      String Name,
-      String Description,
-      DateTime StartDate,
-      DateTime EndDate,
-      int Status,
-      String Image,
-      int AgeLimit,
-      double MinPrice,
-      int Sold,
-      int Count,
-      String LocationName,
-      String LocationId});
+      {String id,
+      String name,
+      String description,
+      DateTime startDate,
+      DateTime endDate,
+      int status,
+      String image,
+      int ageLimit,
+      double minPrice,
+      int sold,
+      int count,
+      String locationName,
+      String locationId});
 }
 
 /// @nodoc
@@ -177,72 +177,72 @@ class __$$_EventModelCopyWithImpl<$Res> extends _$EventModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? Id = freezed,
-    Object? Name = freezed,
-    Object? Description = freezed,
-    Object? StartDate = freezed,
-    Object? EndDate = freezed,
-    Object? Status = freezed,
-    Object? Image = freezed,
-    Object? AgeLimit = freezed,
-    Object? MinPrice = freezed,
-    Object? Sold = freezed,
-    Object? Count = freezed,
-    Object? LocationName = freezed,
-    Object? LocationId = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? startDate = freezed,
+    Object? endDate = freezed,
+    Object? status = freezed,
+    Object? image = freezed,
+    Object? ageLimit = freezed,
+    Object? minPrice = freezed,
+    Object? sold = freezed,
+    Object? count = freezed,
+    Object? locationName = freezed,
+    Object? locationId = freezed,
   }) {
     return _then(_$_EventModel(
-      Id: Id == freezed
-          ? _value.Id
-          : Id // ignore: cast_nullable_to_non_nullable
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
-      Name: Name == freezed
-          ? _value.Name
-          : Name // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      Description: Description == freezed
-          ? _value.Description
-          : Description // ignore: cast_nullable_to_non_nullable
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
-      StartDate: StartDate == freezed
-          ? _value.StartDate
-          : StartDate // ignore: cast_nullable_to_non_nullable
+      startDate: startDate == freezed
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      EndDate: EndDate == freezed
-          ? _value.EndDate
-          : EndDate // ignore: cast_nullable_to_non_nullable
+      endDate: endDate == freezed
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      Status: Status == freezed
-          ? _value.Status
-          : Status // ignore: cast_nullable_to_non_nullable
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
               as int,
-      Image: Image == freezed
-          ? _value.Image
-          : Image // ignore: cast_nullable_to_non_nullable
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String,
-      AgeLimit: AgeLimit == freezed
-          ? _value.AgeLimit
-          : AgeLimit // ignore: cast_nullable_to_non_nullable
+      ageLimit: ageLimit == freezed
+          ? _value.ageLimit
+          : ageLimit // ignore: cast_nullable_to_non_nullable
               as int,
-      MinPrice: MinPrice == freezed
-          ? _value.MinPrice
-          : MinPrice // ignore: cast_nullable_to_non_nullable
+      minPrice: minPrice == freezed
+          ? _value.minPrice
+          : minPrice // ignore: cast_nullable_to_non_nullable
               as double,
-      Sold: Sold == freezed
-          ? _value.Sold
-          : Sold // ignore: cast_nullable_to_non_nullable
+      sold: sold == freezed
+          ? _value.sold
+          : sold // ignore: cast_nullable_to_non_nullable
               as int,
-      Count: Count == freezed
-          ? _value.Count
-          : Count // ignore: cast_nullable_to_non_nullable
+      count: count == freezed
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
               as int,
-      LocationName: LocationName == freezed
-          ? _value.LocationName
-          : LocationName // ignore: cast_nullable_to_non_nullable
+      locationName: locationName == freezed
+          ? _value.locationName
+          : locationName // ignore: cast_nullable_to_non_nullable
               as String,
-      LocationId: LocationId == freezed
-          ? _value.LocationId
-          : LocationId // ignore: cast_nullable_to_non_nullable
+      locationId: locationId == freezed
+          ? _value.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -252,53 +252,53 @@ class __$$_EventModelCopyWithImpl<$Res> extends _$EventModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_EventModel implements _EventModel {
   const _$_EventModel(
-      {required this.Id,
-      required this.Name,
-      required this.Description,
-      required this.StartDate,
-      required this.EndDate,
-      required this.Status,
-      required this.Image,
-      required this.AgeLimit,
-      required this.MinPrice,
-      required this.Sold,
-      required this.Count,
-      required this.LocationName,
-      required this.LocationId});
+      {required this.id,
+      required this.name,
+      required this.description,
+      required this.startDate,
+      required this.endDate,
+      required this.status,
+      required this.image,
+      required this.ageLimit,
+      required this.minPrice,
+      required this.sold,
+      required this.count,
+      required this.locationName,
+      required this.locationId});
 
   factory _$_EventModel.fromJson(Map<String, dynamic> json) =>
       _$$_EventModelFromJson(json);
 
   @override
-  final String Id;
+  final String id;
   @override
-  final String Name;
+  final String name;
   @override
-  final String Description;
+  final String description;
   @override
-  final DateTime StartDate;
+  final DateTime startDate;
   @override
-  final DateTime EndDate;
+  final DateTime endDate;
   @override
-  final int Status;
+  final int status;
   @override
-  final String Image;
+  final String image;
   @override
-  final int AgeLimit;
+  final int ageLimit;
   @override
-  final double MinPrice;
+  final double minPrice;
   @override
-  final int Sold;
+  final int sold;
   @override
-  final int Count;
+  final int count;
   @override
-  final String LocationName;
+  final String locationName;
   @override
-  final String LocationId;
+  final String locationId;
 
   @override
   String toString() {
-    return 'EventModel(Id: $Id, Name: $Name, Description: $Description, StartDate: $StartDate, EndDate: $EndDate, Status: $Status, Image: $Image, AgeLimit: $AgeLimit, MinPrice: $MinPrice, Sold: $Sold, Count: $Count, LocationName: $LocationName, LocationId: $LocationId)';
+    return 'EventModel(id: $id, name: $name, description: $description, startDate: $startDate, endDate: $endDate, status: $status, image: $image, ageLimit: $ageLimit, minPrice: $minPrice, sold: $sold, count: $count, locationName: $locationName, locationId: $locationId)';
   }
 
   @override
@@ -306,41 +306,41 @@ class _$_EventModel implements _EventModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_EventModel &&
-            const DeepCollectionEquality().equals(other.Id, Id) &&
-            const DeepCollectionEquality().equals(other.Name, Name) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
-                .equals(other.Description, Description) &&
-            const DeepCollectionEquality().equals(other.StartDate, StartDate) &&
-            const DeepCollectionEquality().equals(other.EndDate, EndDate) &&
-            const DeepCollectionEquality().equals(other.Status, Status) &&
-            const DeepCollectionEquality().equals(other.Image, Image) &&
-            const DeepCollectionEquality().equals(other.AgeLimit, AgeLimit) &&
-            const DeepCollectionEquality().equals(other.MinPrice, MinPrice) &&
-            const DeepCollectionEquality().equals(other.Sold, Sold) &&
-            const DeepCollectionEquality().equals(other.Count, Count) &&
+                .equals(other.description, description) &&
+            const DeepCollectionEquality().equals(other.startDate, startDate) &&
+            const DeepCollectionEquality().equals(other.endDate, endDate) &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality().equals(other.image, image) &&
+            const DeepCollectionEquality().equals(other.ageLimit, ageLimit) &&
+            const DeepCollectionEquality().equals(other.minPrice, minPrice) &&
+            const DeepCollectionEquality().equals(other.sold, sold) &&
+            const DeepCollectionEquality().equals(other.count, count) &&
             const DeepCollectionEquality()
-                .equals(other.LocationName, LocationName) &&
+                .equals(other.locationName, locationName) &&
             const DeepCollectionEquality()
-                .equals(other.LocationId, LocationId));
+                .equals(other.locationId, locationId));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(Id),
-      const DeepCollectionEquality().hash(Name),
-      const DeepCollectionEquality().hash(Description),
-      const DeepCollectionEquality().hash(StartDate),
-      const DeepCollectionEquality().hash(EndDate),
-      const DeepCollectionEquality().hash(Status),
-      const DeepCollectionEquality().hash(Image),
-      const DeepCollectionEquality().hash(AgeLimit),
-      const DeepCollectionEquality().hash(MinPrice),
-      const DeepCollectionEquality().hash(Sold),
-      const DeepCollectionEquality().hash(Count),
-      const DeepCollectionEquality().hash(LocationName),
-      const DeepCollectionEquality().hash(LocationId));
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(startDate),
+      const DeepCollectionEquality().hash(endDate),
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(image),
+      const DeepCollectionEquality().hash(ageLimit),
+      const DeepCollectionEquality().hash(minPrice),
+      const DeepCollectionEquality().hash(sold),
+      const DeepCollectionEquality().hash(count),
+      const DeepCollectionEquality().hash(locationName),
+      const DeepCollectionEquality().hash(locationId));
 
   @JsonKey(ignore: true)
   @override
@@ -355,49 +355,49 @@ class _$_EventModel implements _EventModel {
 
 abstract class _EventModel implements EventModel {
   const factory _EventModel(
-      {required final String Id,
-      required final String Name,
-      required final String Description,
-      required final DateTime StartDate,
-      required final DateTime EndDate,
-      required final int Status,
-      required final String Image,
-      required final int AgeLimit,
-      required final double MinPrice,
-      required final int Sold,
-      required final int Count,
-      required final String LocationName,
-      required final String LocationId}) = _$_EventModel;
+      {required final String id,
+      required final String name,
+      required final String description,
+      required final DateTime startDate,
+      required final DateTime endDate,
+      required final int status,
+      required final String image,
+      required final int ageLimit,
+      required final double minPrice,
+      required final int sold,
+      required final int count,
+      required final String locationName,
+      required final String locationId}) = _$_EventModel;
 
   factory _EventModel.fromJson(Map<String, dynamic> json) =
       _$_EventModel.fromJson;
 
   @override
-  String get Id;
+  String get id;
   @override
-  String get Name;
+  String get name;
   @override
-  String get Description;
+  String get description;
   @override
-  DateTime get StartDate;
+  DateTime get startDate;
   @override
-  DateTime get EndDate;
+  DateTime get endDate;
   @override
-  int get Status;
+  int get status;
   @override
-  String get Image;
+  String get image;
   @override
-  int get AgeLimit;
+  int get ageLimit;
   @override
-  double get MinPrice;
+  double get minPrice;
   @override
-  int get Sold;
+  int get sold;
   @override
-  int get Count;
+  int get count;
   @override
-  String get LocationName;
+  String get locationName;
   @override
-  String get LocationId;
+  String get locationId;
   @override
   @JsonKey(ignore: true)
   _$$_EventModelCopyWith<_$_EventModel> get copyWith =>

@@ -27,7 +27,7 @@ class MovieBackdropView extends HookWidget {
       controller: backgroundImageController,
       itemCount: movies.length,
       itemBuilder: (ctx, i) => CachedNetworkImage(
-        imageUrl: movies[i].Image,
+        imageUrl: movies[i].image,
         fit: BoxFit.cover,
         placeholder: (_, __) => const MoviePosterPlaceholder(
           childXAlign: Alignment.topCenter,

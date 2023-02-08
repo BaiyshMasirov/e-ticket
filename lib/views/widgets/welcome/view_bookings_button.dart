@@ -16,7 +16,7 @@ class ViewBookingsButton extends StatelessWidget {
       border: Border.all(color: Constants.primaryColor, width: 4),
       child: const Center(
         child: Text(
-          'VIEW BOOKINGS',
+          'Посмотреть бронь',
           style: TextStyle(
             color: Constants.primaryColor,
             fontSize: 15,

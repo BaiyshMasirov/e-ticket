@@ -16,12 +16,12 @@ class MovieOverviewColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     late List<String> hashTags =
-        [movie.LocationName, movie.Name, movie.Description].toList();
+        [movie.locationName, movie.name, movie.description].toList();
     return Column(
       children: [
         //Title
         Text(
-          movie.Name,
+          movie.name,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: context.headline2.copyWith(

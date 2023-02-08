@@ -18,7 +18,7 @@ class BrowseMoviesButton extends StatelessWidget {
       gradient: Constants.buttonGradientOrange,
       child: const Center(
         child: Text(
-          'BROWSE MOVIES',
+          'Посмотреть события',
           style: TextStyle(
             color: Colors.white,
             fontSize: 15,

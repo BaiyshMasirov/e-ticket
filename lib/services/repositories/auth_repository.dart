@@ -1,5 +1,4 @@
 //models
-import 'package:e_ti_app/models/user/result.dart';
 import '../../helper/utils/typedefs.dart';
 import '../../models/user/user_model.dart';
 import 'package:jwt_decode/jwt_decode.dart';

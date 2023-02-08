@@ -40,7 +40,7 @@ class EventProvider {
     EventType? eventType,
   }) async {
     final QueryParams? queryParams = {
-      if (eventType != null) 'type': eventType.toJson,
+      // if (eventType != null) 'type': eventType.toJson,
     };
     return await _eventRepository.fetchAll(queryParameters: queryParams);
   }

@@ -1,5 +1,6 @@
 // ignore_for_file: constant_identifier_names
 import 'package:e_ti_app/routes/route.dart';
+import 'package:e_ti_app/views/screens/events_screen.dart';
 import 'package:flutter/material.dart';
 
 //Routes
@@ -45,7 +46,11 @@ class AppRouter {
           builder: (_) => const LoginScreen(),
           settings: const RouteSettings(name: Routes.LoginScreenRoute),
         );
-
+      case Routes.MoviesScreenRoute:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => const EventsScreen(),
+          settings: const RouteSettings(name: Routes.MoviesScreenRoute),
+        );
       /* case Routes.HomeScreenRoute:
         return MaterialPageRoute<dynamic>(
           builder: (_) => const HomeScreen(),

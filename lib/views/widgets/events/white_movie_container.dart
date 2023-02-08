@@ -41,7 +41,7 @@ class WhiteMovieContainer extends HookWidget {
           children: [
             //Poster image
             CustomNetworkImage(
-              imageUrl: movie.Image,
+              imageUrl: movie.image,
               height: constraints.minHeight * 0.58,
               fit: BoxFit.fill,
               onTap: onViewDetails,
@@ -66,7 +66,7 @@ class WhiteMovieContainer extends HookWidget {
                 color: Constants.scaffoldColor,
                 child: const Center(
                   child: Text(
-                    'VIEW DETAILS',
+                    'Купить',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 15,

@@ -123,7 +123,7 @@ class RefreshTokenInterceptor extends Interceptor {
       debugPrint('\tResponse: ${response.data}');
 
       //Check new token success
-      final success = response.data?['headers']['success'] == 1;
+      final success = response.data?['succeed'] == true;
 
       if (success) {
         debugPrint('<-- END REFRESH');

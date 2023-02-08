@@ -63,7 +63,7 @@ class ApiEndpoint {
   ///
   /// Specify movie [id] for any endpoints involving a specific movie.
   static String movies(MovieEndpoint endpoint, {int? id}) {
-    var path = '/movies';
+    var path = '$baseUrl/api/Event/get-events';
     switch (endpoint) {
       case MovieEndpoint.BASE:
         return path;

@@ -71,7 +71,7 @@ class WelcomeScreen extends ConsumerWidget {
 
             //Welcome
             Text(
-              'Welcome',
+              'Добро пожаловать',
               style: context.headline1.copyWith(
                 color: Constants.primaryColor,
                 fontSize: 45,
@@ -96,7 +96,7 @@ class WelcomeScreen extends ConsumerWidget {
             const SizedBox(height: 20),
 
             //Browse Movies Button
-            const BrowseMoviesButton(), 
+            const BrowseMoviesButton(),
 
             const SizedBox(height: Constants.bottomInsetsLow + 5),
           ],
@@ -105,5 +105,3 @@ class WelcomeScreen extends ConsumerWidget {
     );
   }
 }
-
-

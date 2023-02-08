@@ -32,7 +32,7 @@ class Routes {
   static const String UserBookingsScreenRoute = '/user-bookings-screen';
 
   /// The name of the route for movies screen.
-  static const String MoviesScreenRoute = '/movies-screen';
+  static const String MoviesScreenRoute = '/events_screen';
 
   /// The name of the route for movie details screen.
   static const String MovieDetailsScreenRoute = '/movie-details-screen';

@@ -51,6 +51,10 @@ final _dioServiceProvider = Provider<DioService>((ref) {
   // Order of interceptors very important
   return DioService(
     dioClient: _dio,
+    interceptors: [
+      ApiInterceptor(ref),
+      RefreshTokenInterceptor(dioClient: _dio, ref: ref)
+    ],
   );
 });
 final _apiServiceProvider = Provider<ApiService>((ref) {

@@ -8,35 +8,35 @@ part 'event_model.g.dart';
 @freezed
 class EventModel with _$EventModel {
   const factory EventModel(
-      {required String Id,
-      required String Name,
-      required String Description,
-      required DateTime StartDate,
-      required DateTime EndDate,
-      required int Status,
-      required String Image,
-      required int AgeLimit,
-      required double MinPrice,
-      required int Sold,
-      required int Count,
-      required String LocationName,
-      required String LocationId}) = _EventModel;
+      {required String id,
+      required String name,
+      required String description,
+      required DateTime startDate,
+      required DateTime endDate,
+      required int status,
+      required String image,
+      required int ageLimit,
+      required double minPrice,
+      required int sold,
+      required int count,
+      required String locationName,
+      required String locationId}) = _EventModel;
 
   factory EventModel.initial() {
     return EventModel(
-        Id: '',
-        Name: '',
-        Description: '',
-        StartDate: DateTime.now(),
-        EndDate: DateTime.now(),
-        Status: 0,
-        Image: '',
-        AgeLimit: 0,
-        MinPrice: 0,
-        Sold: 0,
-        Count: 0,
-        LocationName: '',
-        LocationId: '');
+        id: '',
+        name: '',
+        description: '',
+        startDate: DateTime.now(),
+        endDate: DateTime.now(),
+        status: 0,
+        image: '',
+        ageLimit: 0,
+        minPrice: 0,
+        sold: 0,
+        count: 0,
+        locationName: '',
+        locationId: '');
   }
 
   factory EventModel.fromJson(JSON json) => _$EventModelFromJson(json);

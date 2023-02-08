@@ -51,7 +51,7 @@ class ApiService implements ApiInterface {
     );
 
     //Items of table as json
-    final body = data['body'] as List<Object?>;
+    final body = data as List<Object?>;
 
     //Returning the deserialized objects
     return body.map((dataMap) => converter(dataMap as JSON)).toList();
@@ -92,7 +92,7 @@ class ApiService implements ApiInterface {
     );
 
     //Returning the deserialized object
-    return converter(data['body'] as JSON);
+    return converter(data as JSON);
   }
 
   /// An implementation of the base method for inserting [data] at
@@ -121,7 +121,11 @@ class ApiService implements ApiInterface {
   }) async {
     //Entire map of response
     final result = await _dioService.post(
-        endpoint: endpoint, data: data, cancelToken: cancelToken);
+        endpoint: endpoint,
+        data: data,
+        options: Options(
+            headers: <String, Object?>{'requiresAuthToken': requiresAuthToken}),
+        cancelToken: cancelToken);
 
     return converter(result);
   }
