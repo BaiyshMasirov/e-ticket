@@ -8,12 +8,12 @@ import 'constants.dart';
 /// A utility class that holds methods for validating different textFields.
 /// This class has no constructor and all methods are `static`.
 @immutable
-class FormValidator{
+class FormValidator {
   const FormValidator._();
 
   /// A method containing validation logic for email input.
-  static String? emailValidator(String? email){
-    if(email == null || email.isEmpty) {
+  static String? emailValidator(String? email) {
+    if (email == null || email.isEmpty) {
       return Constants.emptyEmailInputError;
     } else if (!email.isValidEmail) {
       return Constants.invalidEmailError;
@@ -24,6 +24,7 @@ class FormValidator{
   /// A method containing validation logic for password input.
   static String? passwordValidator(String? password) {
     if (password!.isEmpty) return Constants.emptyPasswordInputError;
+    if (password.length < 8) return Constants.lengthPasswordInputError;
     return null;
   }
 
@@ -43,15 +44,14 @@ class FormValidator{
   static String? newPasswordValidator(String? newPw, String currentPw) {
     if (newPw!.isEmpty) {
       return Constants.emptyPasswordInputError;
-    }
-    else if(newPw == currentPw) {
+    } else if (newPw == currentPw) {
       return Constants.invalidNewPwError;
     }
     return null;
   }
 
   /// A method containing validation logic for full name input.
-  static String?  NameValidator(String? fullName) {
+  static String? NameValidator(String? fullName) {
     if (fullName != null && fullName.isValidFullName) return null;
     return Constants.invalidFullNameError;
   }
@@ -105,9 +105,8 @@ class FormValidator{
   }
 
   /// A method containing validation logic for single otp digit input.
-  static String? otpDigitValidator(String? digit){
+  static String? otpDigitValidator(String? digit) {
     if (digit != null && digit.isValidOtpDigit) return null;
     return '!';
   }
-
 }

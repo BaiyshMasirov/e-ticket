@@ -1,12 +1,13 @@
 // ignore_for_file: constant_identifier_names
 import 'package:e_ti_app/routes/route.dart';
 import 'package:e_ti_app/views/screens/events_screen.dart';
+import 'package:e_ti_app/views/widgets/common/custom_successful.dart';
 import 'package:flutter/material.dart';
 
 //Routes
 import '../views/screens/app_startup_screen.dart';
-import '../views/screens/login_screen.dart';
-import '../views/screens/register_screen.dart';
+import '../views/screens/sign_in/login_screen.dart';
+import '../views/screens/sign_in/register_screen.dart';
 
 /// A utility class provides basic methods for navigation.
 /// This class has no constructor and all variables are `static`.
@@ -50,6 +51,12 @@ class AppRouter {
         return MaterialPageRoute<dynamic>(
           builder: (_) => const EventsScreen(),
           settings: const RouteSettings(name: Routes.MoviesScreenRoute),
+        );
+
+      case Routes.CustomSuccessScreenRoute:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => const CustomSuccessful(),
+          settings: const RouteSettings(name: Routes.CustomSuccessScreenRoute),
         );
       /* case Routes.HomeScreenRoute:
         return MaterialPageRoute<dynamic>(

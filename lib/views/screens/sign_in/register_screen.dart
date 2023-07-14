@@ -1,28 +1,32 @@
+import 'package:e_ti_app/helper/utils/assets_helper.dart';
+import 'package:e_ti_app/views/widgets/common/custom_successful.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 //Helpers
-import '../../helper/extensions/context_extensions.dart';
-import '../../helper/utils/constants.dart';
-import '../../helper/utils/form_validator.dart';
+import '../../../helper/extensions/context_extensions.dart';
+import '../../../helper/utils/constants.dart';
+import '../../../helper/utils/form_validator.dart';
 
 //Providers
-import '../../providers/all_providers.dart';
+import '../../../helper/utils/text_styles.dart';
+import '../../../providers/all_providers.dart';
 
 //States
-import '../../providers/states/auth_state.dart';
+import '../../../providers/states/auth_state.dart';
 
 //Routing
-import '../../routes/app_router.dart';
+import '../../../routes/app_router.dart';
 
 //Widgets
-import '../widgets/common/custom_dialog.dart';
-import '../widgets/common/custom_text_button.dart';
-import '../widgets/common/custom_textfield.dart';
-import '../widgets/common/rounded_bottom_container.dart';
-import '../widgets/common/scrollable_column.dart';
+import '../../../routes/route.dart';
+import '../../widgets/common/custom_dialog.dart';
+import '../../widgets/common/custom_text_button.dart';
+import '../../widgets/common/custom_textfield.dart';
+import '../../widgets/common/rounded_bottom_container.dart';
+import '../../widgets/common/scrollable_column.dart';
 
 class RegisterScreen extends StatefulHookConsumerWidget {
   const RegisterScreen();
@@ -98,6 +102,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
     return CustomTextButton.gradient(
       width: double.infinity,
       onPressed: () {
+        // AppRouter.pushNamed(Routes.CustomSuccessScreenRoute);
         if (formKey.currentState!.validate() && password.isNotEmpty) {
           formKey.currentState!.save();
           ref.read(authProvider.notifier).register(
@@ -183,6 +188,25 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
       cPasswordController.clear();
       contactController.clear();
       _formHasData = false;
+      // AppRouter.pushNamed(Routes.CustomSuccessScreenRoute);
+
+      // Navigator.of(context).push(
+      //   MaterialPageRoute(
+      //       builder: (context) => CustomSuccessful(
+      //             textSuccess: 'Success',
+      //             textButton: "Enter",
+      //             onPressed: () {
+      //               buildConfirmButton(
+      //                 email: emailController.text,
+      //                 password: passwordController.text,
+      //                 firstName: firstNameController.text,
+      //                 lastName: lastNameController.text,
+      //                 middleName: middleNameController.text,
+      //                 contact: contactController.text,
+      //               );
+      //             },
+      //           )),
+      // );
       AppRouter.popUntilRoot();
     }
 
@@ -207,17 +231,33 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
               child: RoundedBottomContainer(
                 onBackTap: onBackTap(userDetailsState),
                 children: [
-                  //Page name
-                  Text(
-                    'Регистрация',
-                    style: context.headline3.copyWith(
-                      color: Colors.white,
-                      fontSize: 32,
+                  const SizedBox(height: 40),
+                  if (userDetailsState.value)
+                    const SizedBox(
+                      child: CircleAvatar(
+                        radius: 120.0,
+                        backgroundColor: Colors.white,
+                        child: CircleAvatar(
+                          radius: 120.0,
+                          backgroundImage: AssetImage(AssetsHelper.personLogo),
+                        ),
+                      ),
+                    )
+                  else
+                    const Image(
+                      image: AssetImage(AssetsHelper.lockLogo),
                     ),
-                  ),
-
-                  const SizedBox(height: 20),
-
+                  userDetailsState.value
+                      ? const SizedBox.shrink()
+                      : const SizedBox(height: 35),
+                  userDetailsState.value
+                      ? const SizedBox.shrink()
+                      : Text(
+                          'Придумайте надежный пароль',
+                          textAlign: TextAlign.center,
+                          style: UtilTextStyles.lockText,
+                        ),
+                  const SizedBox(height: 60),
                   if (userDetailsState.value)
                     _UserDetailFields(
                       firstNameController: firstNameController,
@@ -236,14 +276,14 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
               ),
             ),
 
-            const Spacer(),
+            // const Spacer(),
 
             //Button
             Padding(
               padding: const EdgeInsets.fromLTRB(
-                20,
+                10,
                 40,
-                20,
+                10,
                 Constants.bottomInsets,
               ),
               child: AnimatedSwitcher(
@@ -292,7 +332,6 @@ class _UserDetailFields extends StatelessWidget {
         //Full name
         CustomTextField(
           controller: firstNameController,
-          floatingText: 'Имя',
           hintText: 'Введите имя',
           autofocus: true,
           keyboardType: TextInputType.name,
@@ -304,7 +343,6 @@ class _UserDetailFields extends StatelessWidget {
 
         CustomTextField(
           controller: lastNameController,
-          floatingText: 'Фамилия',
           hintText: 'Введите фамилию',
           keyboardType: TextInputType.name,
           textInputAction: TextInputAction.next,
@@ -315,7 +353,6 @@ class _UserDetailFields extends StatelessWidget {
 
         CustomTextField(
           controller: middleNameController,
-          floatingText: 'Отчество',
           hintText: 'Введите отчество',
           keyboardType: TextInputType.name,
           textInputAction: TextInputAction.next,
@@ -326,7 +363,6 @@ class _UserDetailFields extends StatelessWidget {
         //Email
         CustomTextField(
           controller: emailController,
-          floatingText: 'Электронная почта',
           hintText: 'Введите электронную почту',
           keyboardType: TextInputType.emailAddress,
           textInputAction: TextInputAction.next,
@@ -338,7 +374,6 @@ class _UserDetailFields extends StatelessWidget {
         //Contact
         CustomTextField(
           controller: contactController,
-          floatingText: 'Телефон',
           hintText: 'Введите номер телефона',
           keyboardType: TextInputType.phone,
           textInputAction: TextInputAction.done,
@@ -351,7 +386,7 @@ class _UserDetailFields extends StatelessWidget {
                 '+996',
                 style: TextStyle(
                   fontSize: 18,
-                  color: Constants.textWhite80Color,
+                  color: Constants.barrierColorLight,
                 ),
               ),
               Padding(
@@ -367,7 +402,6 @@ class _UserDetailFields extends StatelessWidget {
         CustomTextField(
           controller: passwordController,
           autofocus: true,
-          floatingText: 'Пароль',
           hintText: 'Введите пароль',
           keyboardType: TextInputType.visiblePassword,
           textInputAction: TextInputAction.next,
@@ -394,7 +428,6 @@ class _PasswordDetailFields extends StatelessWidget {
         //Confirm Password
         CustomTextField(
           controller: cPasswordController,
-          floatingText: 'Подтверждение пароля',
           hintText: 'Подтвердите пароль',
           keyboardType: TextInputType.visiblePassword,
           textInputAction: TextInputAction.done,

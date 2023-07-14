@@ -46,7 +46,7 @@ class CustomTextField extends StatefulWidget {
     this.hintText,
     this.hintStyle = const TextStyle(
       fontSize: 17,
-      color: Constants.textWhite80Color,
+      color: Constants.textFieldStyleText,
     ),
     this.errorStyle = const TextStyle(
       height: 0,
@@ -54,7 +54,7 @@ class CustomTextField extends StatefulWidget {
     ),
     this.inputStyle = const TextStyle(
       fontSize: 17,
-      color: Constants.textWhite80Color,
+      color: Constants.barrierColor,
     ),
     this.contentPadding = const EdgeInsets.fromLTRB(17, 10, 1, 10),
     required this.keyboardType,
@@ -86,7 +86,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   }
 
   void _onChanged(String value) {
-    if(widget.onChanged != null){
+    if (widget.onChanged != null) {
       _runValidator(value);
       widget.onChanged!(value);
     }
@@ -108,27 +108,25 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   OutlineInputBorder _focusedBorder() {
     return const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(9)),
+      borderRadius: BorderRadius.all(Radius.circular(40)),
       borderSide: BorderSide(
-        color: Constants.primaryColor,
-        width: 2,
+        color: Constants.redColor,
       ),
     );
   }
 
   OutlineInputBorder _normalBorder() {
     return const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(9)),
+      borderRadius: BorderRadius.all(Radius.circular(40)),
       borderSide: BorderSide.none,
     );
   }
 
   OutlineInputBorder _errorBorder() {
     return const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(9)),
+      borderRadius: BorderRadius.all(Radius.circular(40)),
       borderSide: BorderSide(
         color: Constants.redColor,
-        width: 1,
       ),
     );
   }
@@ -148,7 +146,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 widget.floatingText!,
                 style: widget.floatingStyle ??
                     context.bodyText1.copyWith(
-                      color: Constants.textGreyColor,
+                      color: Constants.textFieldStyleText,
                       fontSize: 17,
                     ),
               ),
@@ -158,72 +156,73 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ],
 
         //TextField
-        SizedBox(
-          height: widget.height,
-          width: widget.width,
-          child: TextFormField(
-            controller: widget.controller,
-            textAlign: widget.textAlign,
-            autofocus: widget.autofocus,
-            maxLength: widget.maxLength,
-            keyboardType: widget.keyboardType,
-            textInputAction: widget.textInputAction,
-            style: widget.inputStyle,
-            showCursor: widget.showCursor,
-            maxLengthEnforcement: MaxLengthEnforcement.enforced,
-            textAlignVertical: TextAlignVertical.center,
-            autovalidateMode: AutovalidateMode.disabled,
-            cursorColor: Colors.white,
-            obscureText: isPasswordField && hidePassword,
-            validator: _runValidator,
-            onFieldSubmitted: _runValidator,
-            onSaved: _onSaved,
-            onChanged: _onChanged,
-            decoration: InputDecoration(
-              hintText: widget.hintText,
-              hintStyle: widget.hintStyle,
-              errorStyle: widget.errorStyle,
-              fillColor: widget.fillColor,
-              prefixIcon: widget.prefix,
-              contentPadding: widget.contentPadding,
-              isDense: true,
-              filled: true,
-              counterText: '',
-              border: _normalBorder(),
-              focusedBorder: _focusedBorder(),
-              focusedErrorBorder: _focusedBorder(),
-              errorBorder: showErrorBorder ? _errorBorder() : null,
-              suffixIcon: isPasswordField
-                  ? InkWell(
-                onTap: _togglePasswordVisibility,
-                child: const Icon(
-                  Icons.remove_red_eye_sharp,
-                  color: Constants.textGreyColor,
-                  size: 22,
-                ),
-              )
-                  : null,
+        TextFormField(
+          controller: widget.controller,
+          textAlign: widget.textAlign,
+          autofocus: widget.autofocus,
+          maxLength: widget.maxLength,
+          keyboardType: widget.keyboardType,
+          textInputAction: widget.textInputAction,
+          style: widget.inputStyle,
+          showCursor: widget.showCursor,
+          maxLengthEnforcement: MaxLengthEnforcement.enforced,
+          textAlignVertical: TextAlignVertical.center,
+          autovalidateMode: AutovalidateMode.disabled,
+          cursorColor: Colors.white,
+          obscureText: isPasswordField && hidePassword,
+          validator: _runValidator,
+          onFieldSubmitted: _runValidator,
+          onSaved: _onSaved,
+          onChanged: _onChanged,
+          decoration: InputDecoration(
+            hintText: widget.hintText,
+            hintStyle: widget.hintStyle,
+
+            errorStyle: const TextStyle(color: Constants.redColor),
+            // labelStyle: TextStyle(fontSize: 18.0),
+            fillColor: Colors.white,
+            prefixIcon: widget.prefix,
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 25.0,
+              vertical: 16.0,
             ),
+            isDense: true,
+            filled: true,
+            counterText: '',
+            border: _normalBorder(),
+            focusedBorder: _focusedBorder(),
+            focusedErrorBorder: _focusedBorder(),
+            errorBorder: showErrorBorder ? _errorBorder() : null,
+            suffixIcon: isPasswordField
+                ? InkWell(
+                    onTap: _togglePasswordVisibility,
+                    child: const Padding(
+                      padding: EdgeInsets.only(right: 15),
+                      child: Icon(
+                        Icons.remove_red_eye_sharp,
+                        color: Constants.textGreyColor,
+                        size: 22,
+                      ),
+                    ),
+                  )
+                : null,
           ),
         ),
 
         //Error text
-        if (hasError) ...[
-          const SizedBox(height: 2),
-          SizedBox(
-            width: widget.width,
-            child: Align(
-              alignment: widget.errorAlign,
-              child: Text(
-                errorText!,
-                style: context.bodyText1.copyWith(
-                  fontSize: 16,
-                  color: Constants.primaryColor,
-                ),
-              ),
-            ),
-          ),
-        ]
+        // if (hasError) ...[
+        //   // const SizedBox(height: 1),
+        //   Align(
+        //     alignment: widget.errorAlign,
+        //     child: Text(
+        //       errorText!,
+        //       style: context.bodyText1.copyWith(
+        //         fontSize: 14,
+        //         color: Constants.primaryColor,
+        //       ),
+        //     ),
+        //   ),
+        // ]
       ],
     );
   }

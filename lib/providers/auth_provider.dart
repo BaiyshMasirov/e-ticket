@@ -40,11 +40,11 @@ class AuthProvider extends StateNotifier<AuthState> {
 
   String get currentUserId => _currentUser!.userId!;
 
-  String get currentUserFullName => _currentUser!.Name;
+  String get currentUserFullName => _currentUser?.Name ?? '';
 
-  String get currentUserEmail => _currentUser!.Email;
+  String get currentUserEmail => _currentUser?.Email ?? "";
 
-  String get currentUserContact => _currentUser!.PhoneNumber;
+  String get currentUserContact => _currentUser?.PhoneNumber ?? '';
 
   String get currentUserPassword => _password;
 
@@ -137,7 +137,11 @@ class AuthProvider extends StateNotifier<AuthState> {
 
   void _updateAuthProfile() {
     _keyValueStorageService.setAuthState(state);
-    _keyValueStorageService.setAuthUser(_currentUser!);
+    if (_currentUser != null) {
+      _keyValueStorageService.setAuthUser(_currentUser!);
+    } else {
+      // Обработка случая, когда _currentUser равен null
+    }
   }
 
   void logout() {

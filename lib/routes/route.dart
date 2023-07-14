@@ -54,4 +54,8 @@ class Routes {
 
   /// The name of the route for payment/booking confirmation screen.
   static const String ConfirmationScreenRoute = '/confirmation-screen';
+
+  static const String PasswordScreenRoute = '/register-password-screen';
+
+  static const String CustomSuccessScreenRoute = '/success-screen';
 }

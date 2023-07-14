@@ -47,10 +47,10 @@ class RefreshTokenInterceptor extends Interceptor {
   ) async {
     if (dioError.response != null) {
       if (dioError.response!.data != null) {
-        final headers = dioError.response!.data['headers'] as JSON;
+        final headers = dioError.response!.data["messages"];
 
         //Check error type to be token expired error
-        var error = headers['error'] as String;
+        var error = headers[0];
         if (error == TokenExpiredException) {
           //Make new dio and lock old one
           final tokenDio = Dio();

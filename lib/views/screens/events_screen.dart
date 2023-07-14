@@ -19,7 +19,7 @@ import '../widgets/events/event_carousel.dart';
 import '../widgets/events/event_icons_row.dart';
 
 class EventsScreen extends HookConsumerWidget {
-  const EventsScreen();
+  const EventsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

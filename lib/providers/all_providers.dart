@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 //Service imports
@@ -10,25 +9,16 @@ import '../services/networking/dio_service.dart';
 
 //Interceptor imports
 import '../services/networking/interceptors/api_interceptor.dart';
-import '../services/networking/interceptors/logging_interceptor.dart';
 import '../services/networking/interceptors/refresh_token_interceptor.dart';
 
 //Repository imports
 import '../services/repositories/auth_repository.dart';
-import '../services/repositories/bookings_repository.dart';
 import '../services/repositories/events_repository.dart';
-import '../services/repositories/payments_repository.dart';
-import '../services/repositories/shows_repository.dart';
-import '../services/repositories/theaters_repository.dart';
 
 //Provider imports
 import 'auth_provider.dart';
-import 'bookings_provider.dart';
 import 'event_provider.dart';
 import 'forgot_password_provider.dart';
-import 'payments_provider.dart';
-import 'shows_provider.dart';
-import 'theaters_provider.dart';
 
 //State imports
 import 'states/auth_state.dart';

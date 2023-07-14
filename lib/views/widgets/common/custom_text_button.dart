@@ -61,19 +61,14 @@ class CustomTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.theme;
     final textButtonTheme = theme.textButtonTheme;
-    return TextButton(
-      style: textButtonTheme.style!.copyWith(
-        overlayColor: MaterialStateProperty.all(
-          disabled ? Constants.scaffoldGreyColor : theme.primaryColor,
-        ),
-      ),
-      onPressed: disabled ? (){} : onPressed,
+    return InkWell(
+      onTap: disabled ? () {} : onPressed,
       child: Container(
         height: height,
         width: width,
         padding: padding,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadius),
+          borderRadius: BorderRadius.circular(40.0),
           border: border,
           gradient: disabled ? Constants.buttonGradientGrey : gradient,
           color: color,
@@ -96,16 +91,16 @@ class _CustomTextButtonWithGradient extends CustomTextButton {
     required VoidCallback onPressed,
     required Gradient gradient,
   }) : super(
-    key: key,
-    height: height,
-    width: width,
-    padding: padding,
-    borderRadius: borderRadius,
-    child: child,
-    disabled: disabled ?? false,
-    onPressed: onPressed,
-    gradient: gradient,
-  );
+          key: key,
+          height: height,
+          width: width,
+          padding: padding,
+          borderRadius: borderRadius,
+          child: child,
+          disabled: disabled ?? false,
+          onPressed: onPressed,
+          gradient: gradient,
+        );
 }
 
 class _CustomTextButtonOutlined extends CustomTextButton {
@@ -120,14 +115,14 @@ class _CustomTextButtonOutlined extends CustomTextButton {
     required Widget child,
     required VoidCallback onPressed,
   }) : super(
-    key: key,
-    height: height,
-    width: width,
-    padding: padding,
-    borderRadius: borderRadius,
-    border: border,
-    disabled: disabled ?? false,
-    child: child,
-    onPressed: onPressed,
-  );
+          key: key,
+          height: height,
+          width: width,
+          padding: padding,
+          borderRadius: borderRadius,
+          border: border,
+          disabled: disabled ?? false,
+          child: child,
+          onPressed: onPressed,
+        );
 }

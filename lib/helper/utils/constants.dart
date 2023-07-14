@@ -14,11 +14,15 @@ class Constants {
   /// The color value for red color in the app.
   static const Color redColor = Color(0xFFed0000);
 
+  static const Color whiteColor = Colors.white;
+
   /// The color value for orange color in the app.
   static const Color orangeColor = Color(0xFFf04f00);
 
   /// The color value for rating stars in the app.
   static const Color starsColor = Color(0xFFf78040);
+
+  static const Color textFieldStyleText = Color(0xFFA5A5A5);
 
   /// The color value for dark grey skeleton containers in the app.
   static const Color darkSkeletonColor = Color(0xFF656565);
@@ -29,6 +33,10 @@ class Constants {
   /// The red [LinearGradient] for buttons in the app.
   static const Gradient buttonGradientRed = LinearGradient(
     colors: [primaryColor, redColor],
+  );
+
+  static const Gradient buttonGradientWhite = LinearGradient(
+    colors: [whiteColor, whiteColor],
   );
 
   /// The orange [LinearGradient] for buttons in the app.
@@ -90,6 +98,8 @@ class Constants {
   /// The color value for light grey [CustomDialog] in the app.
   static const Color barrierColorLight = Color(0xBF000000);
 
+  static const Color backColor = Color(0xBF0FAC0C);
+
   /// The TextStyle for Lato font in the app.
   static TextStyle latoFont = GoogleFonts.lato().copyWith(color: Colors.black);
 
@@ -121,7 +131,7 @@ class Constants {
 
   /// The regular expression for validating emails in the app.
   static RegExp emailRegex = RegExp(
-      r'^[a-zA-Z0-9.a-zA-Z0-9.!#$%&*+-=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+$',
+    r'^[a-zA-Z0-9.a-zA-Z0-9.!#$%&*+-=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+$',
   );
 
   /// The regular expression for validating contacts in the app.
@@ -134,13 +144,15 @@ class Constants {
   static RegExp zipCodeRegex = RegExp(r'^\d{5}$');
 
   /// The regular expression for validating credit card numbers in the app.
-  static RegExp creditCardNumberRegex = RegExp(r'^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$');
+  static RegExp creditCardNumberRegex =
+      RegExp(r'^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$');
 
   /// The regular expression for validating credit card CVV in the app.
   static RegExp creditCardCVVRegex = RegExp(r'^[0-9]{3}$');
 
   /// The regular expression for validating credit card expiry in the app.
-  static RegExp creditCardExpiryRegex = RegExp(r'(0[1-9]|10|11|12)/20[0-9]{2}$');
+  static RegExp creditCardExpiryRegex =
+      RegExp(r'(0[1-9]|10|11|12)/20[0-9]{2}$');
 
   /// The regular expression for validating credit card expiry in the app.
   static final RegExp otpDigitRegex = RegExp('^[0-9]{1}\$');
@@ -153,6 +165,10 @@ class Constants {
 
   /// The error message for empty password input.
   static const emptyPasswordInputError = 'Please enter a password';
+
+  /// The error message for empty password input.
+  static const lengthPasswordInputError =
+      'Пароль должен быть не менее 8 символов';
 
   /// The error message for invalid confirm password input.
   static const invalidConfirmPwError = "Passwords don't match";
@@ -188,7 +204,8 @@ class Constants {
   static const invalidCreditCardCVVError = 'Please enter a valid CVV';
 
   /// The error message for invalid credit card expiry input.
-  static const invalidCreditCardExpiryError = 'Please enter a valid expiry date';
+  static const invalidCreditCardExpiryError =
+      'Please enter a valid expiry date';
 
   static T? toNull<T>(Object? _) => null;
 }

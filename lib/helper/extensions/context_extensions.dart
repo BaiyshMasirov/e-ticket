@@ -5,7 +5,7 @@ extension ContextUtils on BuildContext {
   double get screenWidth => MediaQuery.of(this).size.width;
   ThemeData get theme => Theme.of(this);
   TextTheme get textTheme => theme.textTheme;
-  TextStyle get headline1 => textTheme.headline1!;
+  TextStyle get headline1 => textTheme.displayLarge!;
   TextStyle get headline2 => textTheme.headline2!;
   TextStyle get headline3 => textTheme.headline3!;
   TextStyle get headline4 => textTheme.headline4!;

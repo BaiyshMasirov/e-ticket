@@ -1,14 +1,26 @@
 import 'package:flutter/foundation.dart';
 
-/// A utility class that holds constants for assets strings.
-/// This class has no constructor and all variables are `static`.
 @immutable
 class AssetsHelper {
   const AssetsHelper._();
 
-  /// The path for face id image asset
   static const String faceId = 'assets/face_id.png';
 
-  /// The path for Pakistani flag image asset
   static const String pkFlag = 'assets/pk_flag.png';
+
+  static const String logoIcon = 'assets/logo-icon.png';
+
+  static const String personLogo = 'assets/person.png';
+
+  static const String lockLogo = 'assets/lock-logo.png';
+
+  static const String checkLogo = 'assets/check_logo.png';
+
+  static const String userLogo = 'assets/user_logo.png';
+
+  static const String notifyLogo = 'assets/notify_logo.png';
+
+  static const String tiketLogo = 'assets/ticket_logo.png';
+
+  static const String homeLogo = 'assets/home_logo.png';
 }
