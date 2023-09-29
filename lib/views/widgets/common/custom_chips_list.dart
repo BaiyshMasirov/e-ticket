@@ -43,8 +43,7 @@ class CustomChipsList extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 for (var i = 0; i < chipContents.length; i++)
-                  Padding(
-                    padding: EdgeInsets.only(left: i == 0 ? 0 : chipGap),
+                  Expanded(
                     child: buildChipListItem(i),
                   )
               ],

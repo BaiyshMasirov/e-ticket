@@ -15,13 +15,12 @@ class EventOverviewColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    late List<String> hashTags =
-        [movie.locationName, movie.name, movie.description].toList();
+    late List<String> hashTags = [movie.name].toList();
     return Column(
       children: [
         //Title
         Text(
-          movie.name,
+          movie.locationName,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: context.headline2.copyWith(

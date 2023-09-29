@@ -42,7 +42,7 @@ class ApiService implements ApiInterface {
     required T Function(JSON responseBody) converter,
   }) async {
     //Entire map of response
-    final data = await _dioService.get(
+    final data = await _dioService.getPagination(
       endpoint: endpoint,
       options: Options(
           headers: <String, Object?>{'requiresAuthToken': requiresAuthToken}),

@@ -23,16 +23,19 @@ mixin _$EventModel {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  DateTime get startDate => throw _privateConstructorUsedError;
-  DateTime get endDate => throw _privateConstructorUsedError;
+  String get startDate => throw _privateConstructorUsedError;
+  String get endDate => throw _privateConstructorUsedError;
   int get status => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
   int get ageLimit => throw _privateConstructorUsedError;
-  double get minPrice => throw _privateConstructorUsedError;
+  int get minPrice => throw _privateConstructorUsedError;
   int get sold => throw _privateConstructorUsedError;
   int get count => throw _privateConstructorUsedError;
   String get locationName => throw _privateConstructorUsedError;
   String get locationId => throw _privateConstructorUsedError;
+  String get poster => throw _privateConstructorUsedError;
+  int get type => throw _privateConstructorUsedError;
+  String get video => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,20 +48,24 @@ abstract class $EventModelCopyWith<$Res> {
   factory $EventModelCopyWith(
           EventModel value, $Res Function(EventModel) then) =
       _$EventModelCopyWithImpl<$Res>;
-  $Res call(
-      {String id,
-      String name,
-      String description,
-      DateTime startDate,
-      DateTime endDate,
-      int status,
-      String image,
-      int ageLimit,
-      double minPrice,
-      int sold,
-      int count,
-      String locationName,
-      String locationId});
+  $Res call({
+    String id,
+    String name,
+    String description,
+    String startDate,
+    String endDate,
+    int status,
+    String image,
+    int ageLimit,
+    int minPrice,
+    int sold,
+    int count,
+    String locationName,
+    String locationId,
+    String poster,
+    int type,
+    String video,
+  });
 }
 
 /// @nodoc
@@ -84,6 +91,9 @@ class _$EventModelCopyWithImpl<$Res> implements $EventModelCopyWith<$Res> {
     Object? count = freezed,
     Object? locationName = freezed,
     Object? locationId = freezed,
+    Object? poster = freezed,
+    Object? type = freezed,
+    Object? video = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -101,11 +111,11 @@ class _$EventModelCopyWithImpl<$Res> implements $EventModelCopyWith<$Res> {
       startDate: startDate == freezed
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
       endDate: endDate == freezed
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -121,7 +131,7 @@ class _$EventModelCopyWithImpl<$Res> implements $EventModelCopyWith<$Res> {
       minPrice: minPrice == freezed
           ? _value.minPrice
           : minPrice // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
       sold: sold == freezed
           ? _value.sold
           : sold // ignore: cast_nullable_to_non_nullable
@@ -138,6 +148,18 @@ class _$EventModelCopyWithImpl<$Res> implements $EventModelCopyWith<$Res> {
           ? _value.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String,
+      poster: poster == freezed
+          ? _value.poster
+          : poster // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as int,
+      video: video == freezed
+          ? _value.video
+          : video // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -149,20 +171,24 @@ abstract class _$$_EventModelCopyWith<$Res>
           _$_EventModel value, $Res Function(_$_EventModel) then) =
       __$$_EventModelCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String id,
-      String name,
-      String description,
-      DateTime startDate,
-      DateTime endDate,
-      int status,
-      String image,
-      int ageLimit,
-      double minPrice,
-      int sold,
-      int count,
-      String locationName,
-      String locationId});
+  $Res call({
+    String id,
+    String name,
+    String description,
+    String startDate,
+    String endDate,
+    int status,
+    String image,
+    int ageLimit,
+    int minPrice,
+    int sold,
+    int count,
+    String locationName,
+    String locationId,
+    String poster,
+    int type,
+    String video,
+  });
 }
 
 /// @nodoc
@@ -190,6 +216,9 @@ class __$$_EventModelCopyWithImpl<$Res> extends _$EventModelCopyWithImpl<$Res>
     Object? count = freezed,
     Object? locationName = freezed,
     Object? locationId = freezed,
+    Object? poster = freezed,
+    Object? type = freezed,
+    Object? video = freezed,
   }) {
     return _then(_$_EventModel(
       id: id == freezed
@@ -207,11 +236,11 @@ class __$$_EventModelCopyWithImpl<$Res> extends _$EventModelCopyWithImpl<$Res>
       startDate: startDate == freezed
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
       endDate: endDate == freezed
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -227,7 +256,7 @@ class __$$_EventModelCopyWithImpl<$Res> extends _$EventModelCopyWithImpl<$Res>
       minPrice: minPrice == freezed
           ? _value.minPrice
           : minPrice // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
       sold: sold == freezed
           ? _value.sold
           : sold // ignore: cast_nullable_to_non_nullable
@@ -244,6 +273,18 @@ class __$$_EventModelCopyWithImpl<$Res> extends _$EventModelCopyWithImpl<$Res>
           ? _value.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String,
+      poster: poster == freezed
+          ? _value.poster
+          : poster // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as int,
+      video: video == freezed
+          ? _value.video
+          : video // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -251,20 +292,24 @@ class __$$_EventModelCopyWithImpl<$Res> extends _$EventModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_EventModel implements _EventModel {
-  const _$_EventModel(
-      {required this.id,
-      required this.name,
-      required this.description,
-      required this.startDate,
-      required this.endDate,
-      required this.status,
-      required this.image,
-      required this.ageLimit,
-      required this.minPrice,
-      required this.sold,
-      required this.count,
-      required this.locationName,
-      required this.locationId});
+  const _$_EventModel({
+    required this.id,
+    required this.name,
+    required this.description,
+    required this.startDate,
+    required this.endDate,
+    required this.status,
+    required this.image,
+    required this.ageLimit,
+    required this.minPrice,
+    required this.sold,
+    required this.count,
+    required this.locationName,
+    required this.locationId,
+    required this.poster,
+    required this.type,
+    required this.video,
+  });
 
   factory _$_EventModel.fromJson(Map<String, dynamic> json) =>
       _$$_EventModelFromJson(json);
@@ -276,9 +321,9 @@ class _$_EventModel implements _EventModel {
   @override
   final String description;
   @override
-  final DateTime startDate;
+  final String startDate;
   @override
-  final DateTime endDate;
+  final String endDate;
   @override
   final int status;
   @override
@@ -286,7 +331,7 @@ class _$_EventModel implements _EventModel {
   @override
   final int ageLimit;
   @override
-  final double minPrice;
+  final int minPrice;
   @override
   final int sold;
   @override
@@ -295,10 +340,16 @@ class _$_EventModel implements _EventModel {
   final String locationName;
   @override
   final String locationId;
+  @override
+  final String poster;
+  @override
+  final int type;
+  @override
+  final String video;
 
   @override
   String toString() {
-    return 'EventModel(id: $id, name: $name, description: $description, startDate: $startDate, endDate: $endDate, status: $status, image: $image, ageLimit: $ageLimit, minPrice: $minPrice, sold: $sold, count: $count, locationName: $locationName, locationId: $locationId)';
+    return 'EventModel(id: $id, name: $name, description: $description, startDate: $startDate, endDate: $endDate, status: $status, image: $image, ageLimit: $ageLimit, minPrice: $minPrice, sold: $sold, count: $count, locationName: $locationName, locationId: $locationId, poster: $poster, type: $type, video: $video)';
   }
 
   @override
@@ -321,26 +372,33 @@ class _$_EventModel implements _EventModel {
             const DeepCollectionEquality()
                 .equals(other.locationName, locationName) &&
             const DeepCollectionEquality()
-                .equals(other.locationId, locationId));
+                .equals(other.locationId, locationId) &&
+            const DeepCollectionEquality().equals(other.poster, poster) &&
+            const DeepCollectionEquality().equals(other.type, type) &&
+            const DeepCollectionEquality().equals(other.video, video));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(startDate),
-      const DeepCollectionEquality().hash(endDate),
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(image),
-      const DeepCollectionEquality().hash(ageLimit),
-      const DeepCollectionEquality().hash(minPrice),
-      const DeepCollectionEquality().hash(sold),
-      const DeepCollectionEquality().hash(count),
-      const DeepCollectionEquality().hash(locationName),
-      const DeepCollectionEquality().hash(locationId));
+        runtimeType,
+        const DeepCollectionEquality().hash(id),
+        const DeepCollectionEquality().hash(name),
+        const DeepCollectionEquality().hash(description),
+        const DeepCollectionEquality().hash(startDate),
+        const DeepCollectionEquality().hash(endDate),
+        const DeepCollectionEquality().hash(status),
+        const DeepCollectionEquality().hash(image),
+        const DeepCollectionEquality().hash(ageLimit),
+        const DeepCollectionEquality().hash(minPrice),
+        const DeepCollectionEquality().hash(sold),
+        const DeepCollectionEquality().hash(count),
+        const DeepCollectionEquality().hash(locationName),
+        const DeepCollectionEquality().hash(locationId),
+        const DeepCollectionEquality().hash(poster),
+        const DeepCollectionEquality().hash(type),
+        const DeepCollectionEquality().hash(video),
+      );
 
   @JsonKey(ignore: true)
   @override
@@ -354,20 +412,24 @@ class _$_EventModel implements _EventModel {
 }
 
 abstract class _EventModel implements EventModel {
-  const factory _EventModel(
-      {required final String id,
-      required final String name,
-      required final String description,
-      required final DateTime startDate,
-      required final DateTime endDate,
-      required final int status,
-      required final String image,
-      required final int ageLimit,
-      required final double minPrice,
-      required final int sold,
-      required final int count,
-      required final String locationName,
-      required final String locationId}) = _$_EventModel;
+  const factory _EventModel({
+    required final String id,
+    required final String name,
+    required final String description,
+    required final String startDate,
+    required final String endDate,
+    required final int status,
+    required final String image,
+    required final int ageLimit,
+    required final int minPrice,
+    required final int sold,
+    required final int count,
+    required final String locationName,
+    required final String locationId,
+    required final String poster,
+    required final int type,
+    required final String video,
+  }) = _$_EventModel;
 
   factory _EventModel.fromJson(Map<String, dynamic> json) =
       _$_EventModel.fromJson;
@@ -379,9 +441,9 @@ abstract class _EventModel implements EventModel {
   @override
   String get description;
   @override
-  DateTime get startDate;
+  String get startDate;
   @override
-  DateTime get endDate;
+  String get endDate;
   @override
   int get status;
   @override
@@ -389,7 +451,7 @@ abstract class _EventModel implements EventModel {
   @override
   int get ageLimit;
   @override
-  double get minPrice;
+  int get minPrice;
   @override
   int get sold;
   @override
@@ -398,6 +460,12 @@ abstract class _EventModel implements EventModel {
   String get locationName;
   @override
   String get locationId;
+  @override
+  String get poster;
+  @override
+  int get type;
+  @override
+  String get video;
   @override
   @JsonKey(ignore: true)
   _$$_EventModelCopyWith<_$_EventModel> get copyWith =>

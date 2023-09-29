@@ -62,7 +62,42 @@ class DioService {
         options: options,
         cancelToken: cancelToken ?? _cancelToken,
       );
-      return response.data;
+      final responseData = response.data;
+
+      if (responseData is List<dynamic>) {
+        return responseData;
+      } else if (responseData is Map<String, dynamic>) {
+        return [responseData]; // Преобразуем отдельный объект в список
+      } else {
+        throw Exception('Invalid response data');
+      }
+    } on Exception catch (ex) {
+      throw NetworkException.getDioException(ex);
+    }
+  }
+
+  Future<List<dynamic>> getPagination({
+    required String endpoint,
+    JSON? queryParams,
+    Options? options,
+    CancelToken? cancelToken,
+  }) async {
+    try {
+      final response = await _dio.get(
+        endpoint,
+        queryParameters: queryParams,
+        options: options,
+        cancelToken: cancelToken ?? _cancelToken,
+      );
+      final responseData = response.data['list'];
+
+      if (responseData is List<dynamic>) {
+        return responseData;
+      } else if (responseData is Map<String, dynamic>) {
+        return [responseData]; // Преобразуем отдельный объект в список
+      } else {
+        throw Exception('Invalid response data');
+      }
     } on Exception catch (ex) {
       throw NetworkException.getDioException(ex);
     }

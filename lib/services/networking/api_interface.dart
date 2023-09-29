@@ -2,8 +2,6 @@ import 'package:dio/dio.dart';
 
 import '../../helper/utils/typedefs.dart';
 
-
-
 /// A base class containing methods for basic API functionality.
 ///
 /// Should be implemented by any service class that wishes to interact
@@ -42,7 +40,7 @@ abstract class ApiInterface {
   /// [queryParams] holds any query parameters for the request.
   ///
   /// [cancelToken] is used to cancel the request pre-maturely. If null,
-  /// the **default** [cancelToken] inside [DioService] is used.
+  /// the **default** [cancelToken] inside [] is used.
   ///
   /// [requiresAuthToken] is used to decide if a token will be inserted
   /// in the **headers** of the request using an [ApiInterceptor]

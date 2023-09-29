@@ -19,8 +19,10 @@ class ApiEndpoint {
   /// flutter run --dart-define=BASE_URL=www.some_url.com
   /// ```
   static const baseUrl = bool.fromEnvironment('dart.vm.product')
-      ? 'http://10.111.15.113:50485'
-      : 'http://10.111.15.113:50485';
+      ? 'http://78.141.212.220:8888'
+      : 'http://78.141.212.220:8888';
+  // ? 'http://10.111.15.113:50485'
+  // : 'http://10.111.15.113:50485';
 
   /// Returns the path for an authentication [endpoint].
   static String auth(AuthEndpoint endpoint) {

@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:e_ti_app/providers/all_providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../providers/all_providers.dart';
+// import '../../../providers/all_providers.dart';
 
 /// A class that holds intercepting logic for API related requests. This is
 /// the first interceptor in case of both request and response.
