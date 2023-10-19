@@ -1,0 +1,63 @@
+<resources>
+<!--    Theme Light Colorscheme    -->
+    <color name="primaryLight">#75DEFF</color>
+    <color name="onPrimaryLight">#00455B</color>
+    <color name="primaryContainerLight">#007093</color>
+    <color name="onPrimaryContainerLight">#84E2FF</color>
+    <color name="secondaryLight">#53EA6B</color>
+    <color name="onSecondaryLight">#0C6C1B</color>
+    <color name="secondaryContainerLight">#18BDB3</color>
+    <color name="onSecondaryContainerLight">#0A504C</color>
+    <color name="tertiaryLight">#ABABAB</color>
+    <color name="onTertiaryLight">#303030</color>
+    <color name="tertiaryContainerLight">#6E6E6E</color>
+    <color name="onTertiaryContainerLight">#D1D1D1</color>
+    <color name="errorLight">#D70000</color>
+    <color name="onErrorLight">#FFB7B7</color>
+    <color name="errorContainerLight">#FFD9D9</color>
+    <color name="onErrorContainerLight">#9C0000</color>
+    <color name="backgroundLight">#E7E7E7</color>
+    <color name="onBackgroundLight">#494949</color>
+    <color name="surfaceLight">#FFFFFF</color>
+    <color name="onSurfaceLight">#171717</color>
+    <color name="surfaceVariantLight">#DEDEDE</color>
+    <color name="onSurfaceVariantLight">#CACACA</color>
+    <color name="outlineLight">#ECECEC</color>
+    <color name="shadowLight">#61A1A1A1</color>
+    <color name="inverseSurfaceLight">#000000</color>
+    <color name="onInverseSurfaceLight">#DCDCDC</color>
+    <color name="inversePrimaryLight">#01506A</color>
+    <color name="surfaceTintLight">#E6FDF9</color>
+    <color name="scaffoldBackgroundLight">#FFFFFF</color>
+
+<!--    Theme Dark Colorscheme    -->
+    <color name="primaryDark">#75DEFF</color>
+    <color name="onPrimaryDark">#00455B</color>
+    <color name="primaryContainerDark">#007093</color>
+    <color name="onPrimaryContainerDark">#84E2FF</color>
+    <color name="secondaryDark">#53EA6B</color>
+    <color name="onSecondaryDark">#0C6C1B</color>
+    <color name="secondaryContainerDark">#18BDB3</color>
+    <color name="onSecondaryContainerDark">#0A504C</color>
+    <color name="tertiaryDark">#ABABAB</color>
+    <color name="onTertiaryDark">#303030</color>
+    <color name="tertiaryContainerDark">#6E6E6E</color>
+    <color name="onTertiaryContainerDark">#D1D1D1</color>
+    <color name="errorDark">#D70000</color>
+    <color name="onErrorDark">#FFB7B7</color>
+    <color name="errorContainerDark">#FFD9D9</color>
+    <color name="onErrorContainerDark">#9C0000</color>
+    <color name="backgroundDark">#E7E7E7</color>
+    <color name="onBackgroundDark">#494949</color>
+    <color name="surfaceDark">#3F3F3F</color>
+    <color name="onSurfaceDark">#898989</color>
+    <color name="surfaceVariantDark">#898989</color>
+    <color name="onSurfaceVariantDark">#CACACA</color>
+    <color name="outlineDark">#484848</color>
+    <color name="shadowDark">#94575757</color>
+    <color name="inverseSurfaceDark">#A3A3A3</color>
+    <color name="onInverseSurfaceDark">#434343</color>
+    <color name="inversePrimaryDark">#01506A</color>
+    <color name="surfaceTintDark">#515E5B</color>
+    <color name="scaffoldBackgroundDark">#212121</color>
+</resources>

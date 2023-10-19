@@ -1,0 +1,16 @@
+{
+  "successfully_created": "Создание прошло успешно",
+  "content_not_changed": "Контент не изменен",
+  "server_connection_timeout": "Время соединения с сервером истекло",
+  "internet_connection_missing": "Отсутствует интернет соединение",
+  "access_denied": "Доступ запрещен",
+  "auth_to_use_app": "Пожалуйста авторизуйтесь для использования приложения",
+  "server_error": "Произошла ошибка на сервере",
+  "server_not_available": "Сервер не доступен",
+  "unknown_error": "Упс... Неизвестная ошибка",
+  "request_handle_error": "Ошибка при обработке запроса",
+  "fillEmptyField": "Заполните пустое поле",
+  "phoneNumber": "Номер телефона",
+  "wrongPhoneFormat": "Неверный формат номер телефона",
+  "password": "Пароль"
+}
