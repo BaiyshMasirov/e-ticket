@@ -8,12 +8,12 @@ class AuthRemoteDatasource {
     required Dio dio,
   }) : _dio = dio;
 
-  Future<RemoteResponse<UserCredentials>> refreshToken(
+  Future<RemoteResponse<ApiUserTokenDto>> refreshToken(
     UserCredentials userCredentials,
   ) async {
     final response = await _dio.makeRequest(
-      request: () => _dio.post('api/account/token'),
-      parse: (json) => UserCredentials.fromJson(json),
+      request: () => _dio.post('api/Account/token'),
+      parse: (json) => ApiUserTokenDto.fromJson(json['token']),
     );
 
     return response;

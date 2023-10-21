@@ -52,7 +52,7 @@ class AuthInterceptor extends QueuedInterceptor {
           await _dio.fetch(
             response.requestOptions
               ..headers[HttpConstants.authorization] =
-                  'bearer ${refreshedCredentials.accessToken}',
+                  'Bearer ${refreshedCredentials.accessToken}',
           ),
         );
       }

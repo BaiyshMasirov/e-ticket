@@ -57,7 +57,12 @@ class AuthRepository with NetworkRemoteRepositoryMixin {
 
     return response.fold(
       (l) => left(l),
-      (refreshedUserCredentials) async {
+      (refreshedUserToken) async {
+        final refreshedUserCredentials = UserCredentials(
+          accessToken: refreshedUserToken.jwtToken,
+          refreshToken: refreshedUserToken.rtToken,
+        );
+
         await _authLocalDatasource.save(refreshedUserCredentials);
 
         return right(refreshedUserCredentials);

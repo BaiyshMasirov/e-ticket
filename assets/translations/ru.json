@@ -12,5 +12,7 @@
   "fillEmptyField": "Заполните пустое поле",
   "phoneNumber": "Номер телефона",
   "wrongPhoneFormat": "Неверный формат номер телефона",
-  "password": "Пароль"
+  "password": "Пароль",
+  "email": "Почта",
+  "wrongEmailFormat": "Неверный формат почты"
 }

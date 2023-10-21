@@ -14,7 +14,7 @@ class ErrorResponse with _$ErrorResponse {
   factory ErrorResponse.fromResponse(Response response) {
     String? errorMessage = '';
     try {
-      errorMessage = response.data['errors'].values.toList()[0][0].toString();
+      errorMessage = response.data['messages'][0].toString();
     } catch (e) {
       errorMessage = response.statusMessage;
     }

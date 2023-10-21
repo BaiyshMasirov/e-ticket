@@ -15,5 +15,7 @@ abstract class  LocaleKeys {
   static const phoneNumber = 'phoneNumber';
   static const wrongPhoneFormat = 'wrongPhoneFormat';
   static const password = 'password';
+  static const email = 'email';
+  static const wrongEmailFormat = 'wrongEmailFormat';
 
 }
