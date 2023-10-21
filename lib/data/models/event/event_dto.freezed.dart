@@ -23,7 +23,9 @@ mixin _$EventDto {
   String get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
+  @DateTimeUTCSerializer()
   DateTime get startDate => throw _privateConstructorUsedError;
+  @DateTimeUTCSerializer()
   DateTime get endDate => throw _privateConstructorUsedError;
   @JsonKey(unknownEnumValue: EventStatus.UNKNOWN)
   EventStatus get status => throw _privateConstructorUsedError;
@@ -54,8 +56,8 @@ abstract class $EventDtoCopyWith<$Res> {
       {String id,
       String? name,
       String? description,
-      DateTime startDate,
-      DateTime endDate,
+      @DateTimeUTCSerializer() DateTime startDate,
+      @DateTimeUTCSerializer() DateTime endDate,
       @JsonKey(unknownEnumValue: EventStatus.UNKNOWN) EventStatus status,
       int ageLimit,
       double minPrice,
@@ -180,8 +182,8 @@ abstract class _$$EventDtoImplCopyWith<$Res>
       {String id,
       String? name,
       String? description,
-      DateTime startDate,
-      DateTime endDate,
+      @DateTimeUTCSerializer() DateTime startDate,
+      @DateTimeUTCSerializer() DateTime endDate,
       @JsonKey(unknownEnumValue: EventStatus.UNKNOWN) EventStatus status,
       int ageLimit,
       double minPrice,
@@ -299,8 +301,8 @@ class _$EventDtoImpl extends _EventDto {
       {required this.id,
       required this.name,
       required this.description,
-      required this.startDate,
-      required this.endDate,
+      @DateTimeUTCSerializer() required this.startDate,
+      @DateTimeUTCSerializer() required this.endDate,
       @JsonKey(unknownEnumValue: EventStatus.UNKNOWN) required this.status,
       required this.ageLimit,
       required this.minPrice,
@@ -324,8 +326,10 @@ class _$EventDtoImpl extends _EventDto {
   @override
   final String? description;
   @override
+  @DateTimeUTCSerializer()
   final DateTime startDate;
   @override
+  @DateTimeUTCSerializer()
   final DateTime endDate;
   @override
   @JsonKey(unknownEnumValue: EventStatus.UNKNOWN)
@@ -426,8 +430,8 @@ abstract class _EventDto extends EventDto {
       {required final String id,
       required final String? name,
       required final String? description,
-      required final DateTime startDate,
-      required final DateTime endDate,
+      @DateTimeUTCSerializer() required final DateTime startDate,
+      @DateTimeUTCSerializer() required final DateTime endDate,
       @JsonKey(unknownEnumValue: EventStatus.UNKNOWN)
       required final EventStatus status,
       required final int ageLimit,
@@ -453,8 +457,10 @@ abstract class _EventDto extends EventDto {
   @override
   String? get description;
   @override
+  @DateTimeUTCSerializer()
   DateTime get startDate;
   @override
+  @DateTimeUTCSerializer()
   DateTime get endDate;
   @override
   @JsonKey(unknownEnumValue: EventStatus.UNKNOWN)

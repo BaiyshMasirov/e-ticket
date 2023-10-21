@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:eticket/di/injector.dart';
 import 'package:eticket/presentation/app.dart';
 import 'package:eticket/presentation/app_wrappers/app_wrapper.dart';
 import 'package:flutter/material.dart';
@@ -18,4 +19,6 @@ void main() async {
 }
 
 // initializing app dependencies
-Future<void> _initializeApp() async {}
+Future<void> _initializeApp() async {
+  await injectDependencies();
+}

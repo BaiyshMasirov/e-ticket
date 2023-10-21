@@ -13,8 +13,8 @@ extension DioErrorX on DioException {
 
   bool get isConnectionTimeoutException =>
       type == DioExceptionType.connectionTimeout ||
-          type == DioExceptionType.receiveTimeout ||
-          type == DioExceptionType.sendTimeout;
+      type == DioExceptionType.receiveTimeout ||
+      type == DioExceptionType.sendTimeout;
 }
 
 extension ResponseX on Response {
@@ -24,8 +24,8 @@ extension ResponseX on Response {
 extension DioX on Dio {
   Duration get fileUploadTimeout => const Duration(seconds: 60);
 
-  Dio setupServerApi(String serverUrl, Interceptor authInterceptor) {
-    return this
+  static Dio setupServer(String serverUrl, Interceptor authInterceptor) {
+    return Dio()
       ..options = BaseOptions(
         baseUrl: serverUrl,
         contentType: HttpConstants.jsonContentType,
@@ -40,8 +40,8 @@ extension DioX on Dio {
       ]);
   }
 
-  Dio setupAuthApi(String serverUrl) {
-    return this
+  static Dio setupAuth(String serverUrl) {
+    return Dio()
       ..options = BaseOptions(
         baseUrl: serverUrl,
         contentType: HttpConstants.jsonContentType,

@@ -27,7 +27,7 @@ class AuthInterceptor extends QueuedInterceptor {
       ..headers.addAll(credentials == null
           ? {}
           : {
-              HttpConstants.authorization: 'bearer ${credentials.accessToken}',
+              HttpConstants.authorization: 'Bearer ${credentials.accessToken}',
             });
 
     handler.next(modifiedOptions);

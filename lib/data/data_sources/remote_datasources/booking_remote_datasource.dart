@@ -13,7 +13,7 @@ class BookingRemoteDatasource {
   ) async {
     final response = await _dio.makeRequest(
       request: () => _dio.post(
-        '/api/Booking/create-booking',
+        'api/Booking/create-booking',
         data: createBookingCommandDto.toJson(),
       ),
       parse: (json) => ApiUserTokenDto.fromJson(json['token']),

@@ -1,3 +1,4 @@
+import 'package:eticket/presentation/app_wrappers/bloc_wrapper.dart';
 import 'package:eticket/presentation/app_wrappers/localization_wrapper.dart';
 import 'package:eticket/presentation/app_wrappers/screen_size_wrapper.dart';
 import 'package:flutter/material.dart';
@@ -13,11 +14,11 @@ class AppWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LocalizationWrapper(
-      // child: BlocWrapper(
-      child: ScreenSizeWrapper(
-        child: child,
+      child: BlocWrapper(
+        child: ScreenSizeWrapper(
+          child: child,
+        ),
       ),
-      // ),
     );
   }
 }
