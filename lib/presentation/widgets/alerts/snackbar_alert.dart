@@ -2,12 +2,15 @@ import 'package:eticket/common/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+const _snackbarDuration = Duration(seconds: 10);
+
 class SnackbarAlert {
   static void showError({
     required BuildContext context,
     required String message,
   }) {
     final snackbar = SnackBar(
+      duration: _snackbarDuration,
       backgroundColor: context.colorScheme.error,
       dismissDirection: DismissDirection.down,
       behavior: SnackBarBehavior.floating,
@@ -32,6 +35,7 @@ class SnackbarAlert {
     required String message,
   }) {
     final snackbar = SnackBar(
+      duration: _snackbarDuration,
       backgroundColor: Colors.green,
       dismissDirection: DismissDirection.down,
       behavior: SnackBarBehavior.floating,
