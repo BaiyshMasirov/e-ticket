@@ -1,5 +1,6 @@
 import 'package:common/common.dart';
 import 'package:eticket/data/data.dart';
+import 'package:eticket/domain/models/models.dart';
 
 class EventRepository with NetworkRemoteRepositoryMixin {
   final EventRemoteDatasource _eventRemoteDatasource;
@@ -9,16 +10,12 @@ class EventRepository with NetworkRemoteRepositoryMixin {
   }) : _eventRemoteDatasource = eventRemoteDatasource;
 
   Future<Either<RequestFailure, List<EventDto>>> getEvents({
-    required EventType type,
-    required EventStatus status,
-    required DateTime date,
+    required EventsFilter eventsFilter,
     required int page,
   }) async {
     final response = await handleRemoteRequest(
       request: () => _eventRemoteDatasource.getEvents(
-        type: type,
-        status: status,
-        date: date,
+        eventsFilter: eventsFilter,
         page: page,
       ),
     );

@@ -10,6 +10,10 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const RegisterView();
+    return const Scaffold(
+      body: SafeArea(
+        child: RegisterView(),
+      ),
+    );
   }
 }

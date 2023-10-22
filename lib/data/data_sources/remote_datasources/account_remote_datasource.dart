@@ -14,7 +14,9 @@ class AccountRemoteSource {
     final response = await _dio.makeRequest(
       request: () => _dio.post('/api/Account/register',
           data: registerUserCommandDto.toJson()),
-      parse: (json) => ApiUserTokenDto.fromJson(json['token']),
+      parse: (json) {
+        return ApiUserTokenDto.fromJson(json['token']);
+      },
     );
 
     return response;

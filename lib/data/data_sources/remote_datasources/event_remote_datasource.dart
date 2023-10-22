@@ -1,5 +1,6 @@
 import 'package:common/common.dart';
 import 'package:eticket/data/data.dart';
+import 'package:eticket/domain/domain.dart';
 
 class EventRemoteDatasource {
   final Dio _dio;
@@ -9,18 +10,19 @@ class EventRemoteDatasource {
   }) : _dio = dio;
 
   Future<RemoteResponse<List<EventDto>>> getEvents({
-    required EventType type,
-    required EventStatus status,
-    required DateTime date,
+    required EventsFilter eventsFilter,
     required int page,
   }) async {
+    final queryParams = eventsFilter.toJson();
+    queryParams.addAll({
+      'page': page,
+    });
+
     final response = await _dio.makeRequest(
-      request: () => _dio.get('/api/Event/get-events', queryParameters: {
-        'type': type.toJson(),
-        'status': status.toJson(),
-        'date': const DateTimeUTCSerializer().toJson(date),
-        'page': page,
-      }),
+      request: () => _dio.get(
+        '/api/Event/get-events',
+        queryParameters: queryParams,
+      ),
       parse: (json) {
         final list = json as List;
         final data = list.map((e) => EventDto.fromJson(e)).toList();

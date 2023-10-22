@@ -8,9 +8,11 @@ class PasswordFormFieldZ extends HookWidget {
   final TextEditingController controller;
   final String? Function(String?)? validate;
   final String? label;
+  final bool checkForNullEmpty;
 
   const PasswordFormFieldZ({
     required this.controller,
+    this.checkForNullEmpty = false,
     this.validate,
     this.label,
     Key? key,
@@ -31,6 +33,7 @@ class PasswordFormFieldZ extends HookWidget {
           hidePassword.value ? Icons.visibility_off : Icons.visibility,
         ),
       ),
+      checkForNullEmpty: checkForNullEmpty,
       validate: (value) {
         if (value == null || value.isEmpty) {
           return LocaleKeys.fillEmptyField.tr();

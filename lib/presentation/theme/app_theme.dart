@@ -1,12 +1,15 @@
 import 'package:eticket/generated/colors.gen.dart';
+import 'package:eticket/generated/fonts.gen.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme {
   static ThemeData getLightTheme() {
-    return ThemeData.light(
+    return ThemeData(
+      fontFamily: FontFamily.montserrat,
+      scaffoldBackgroundColor: ColorName.backgroundLight,
+      brightness: Brightness.light,
       useMaterial3: true,
-    ).copyWith(
       extensions: _getAppColorsLight(),
       appBarTheme: AppBarTheme(
         centerTitle: true,
@@ -53,9 +56,10 @@ class AppTheme {
   }
 
   static ThemeData getDarkTheme() {
-    return ThemeData.dark(
-      useMaterial3: true,
-    ).copyWith(
+    return ThemeData(
+      fontFamily: FontFamily.montserrat,
+      brightness: Brightness.dark,
+      scaffoldBackgroundColor: ColorName.backgroundDark,
       extensions: _getAppColorsDark(),
       appBarTheme: AppBarTheme(
         centerTitle: true,
