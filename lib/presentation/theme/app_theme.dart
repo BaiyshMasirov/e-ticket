@@ -4,11 +4,21 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static ThemeData getLightTheme() {
-    return ThemeData.dark(
+    return ThemeData.light(
       useMaterial3: true,
     ).copyWith(
       extensions: _getAppColorsLight(),
-      scaffoldBackgroundColor: ColorName.scaffoldBackgroundLight,
+      appBarTheme: AppBarTheme(
+        centerTitle: true,
+        backgroundColor: ColorName.tertiaryContainerLight.withOpacity(0.2),
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        elevation: 0,
+        backgroundColor: ColorName.tertiaryContainerLight.withOpacity(0.2),
+        enableFeedback: true,
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: ColorName.tertiaryLight,
+      ),
       colorScheme: const ColorScheme.light(
         primary: ColorName.primaryLight,
         onPrimary: ColorName.onPrimaryLight,
@@ -47,7 +57,17 @@ class AppTheme {
       useMaterial3: true,
     ).copyWith(
       extensions: _getAppColorsDark(),
-      scaffoldBackgroundColor: ColorName.scaffoldBackgroundDark,
+      appBarTheme: AppBarTheme(
+        centerTitle: true,
+        backgroundColor: ColorName.tertiaryContainerDark.withOpacity(0.2),
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        elevation: 0,
+        backgroundColor: ColorName.tertiaryContainerDark.withOpacity(0.2),
+        enableFeedback: true,
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: ColorName.tertiaryDark,
+      ),
       colorScheme: const ColorScheme.dark(
         primary: ColorName.primaryDark,
         onPrimary: ColorName.onPrimaryDark,
@@ -86,7 +106,7 @@ class AppTheme {
 List<ThemeExtension<AppColors>> _getAppColorsLight() {
   return [
     const AppColors(
-      scaffoldBackground: ColorName.scaffoldBackgroundLight,
+      scaffoldBackground: ColorName.backgroundLight,
     )
   ];
 }
@@ -95,7 +115,7 @@ List<ThemeExtension<AppColors>> _getAppColorsLight() {
 List<ThemeExtension<AppColors>> _getAppColorsDark() {
   return [
     const AppColors(
-      scaffoldBackground: ColorName.scaffoldBackgroundDark,
+      scaffoldBackground: ColorName.backgroundDark,
     )
   ];
 }

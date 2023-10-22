@@ -21,6 +21,24 @@ class AppRouter extends $AppRouter {
         AutoRoute(
           page: MainRoute.page,
           path: RouteConstants.mainScreen,
+          children: [
+            AutoRoute(
+              page: HomeRoute.page,
+              path: RouteConstants.homeScreen,
+            ),
+            AutoRoute(
+              page: SearchRoute.page,
+              path: RouteConstants.searchScreen,
+            ),
+            AutoRoute(
+              page: HistoryRoute.page,
+              path: RouteConstants.historyScreen,
+            ),
+            AutoRoute(
+              page: SettingsRoute.page,
+              path: RouteConstants.settingsScreen,
+            ),
+          ],
         ),
       ];
 }

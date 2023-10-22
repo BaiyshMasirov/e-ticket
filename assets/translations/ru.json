@@ -14,5 +14,9 @@
   "wrongPhoneFormat": "Неверный формат номер телефона",
   "password": "Пароль",
   "email": "Почта",
-  "wrongEmailFormat": "Неверный формат почты"
+  "wrongEmailFormat": "Неверный формат почты",
+  "search": "Поиск",
+  "home": "Главная",
+  "history": "История",
+  "settings": "Настройки"
 }

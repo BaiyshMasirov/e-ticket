@@ -5,11 +5,11 @@ const _envPrivacyPolicyUrl = 'PRIVACY_POLICY';
 
 class Configuration {
   final String serverUrl;
-  final String privacyPolicyUrl;
+  // final String privacyPolicyUrl;
 
   Configuration._({
     required this.serverUrl,
-    required this.privacyPolicyUrl,
+    // required this.privacyPolicyUrl,
   });
 
   factory Configuration.getFromDotEnv({
@@ -17,7 +17,7 @@ class Configuration {
   }) {
     return Configuration._(
       serverUrl: dotEnv.get(_envServerUrl),
-      privacyPolicyUrl: dotEnv.get(_envPrivacyPolicyUrl),
+      // privacyPolicyUrl: dotEnv.get(_envPrivacyPolicyUrl),
     );
   }
 }
