@@ -62,18 +62,17 @@ class TextFormFieldZ extends StatelessWidget {
       minLines: minLines,
       maxLines: minLines != null ? null : 1,
       decoration: InputDecoration(
-        focusColor: Colors.yellow,
+        filled: true,
+        // focusColor: Colors.yellow,
+        // fillColor: Colors.white,
         labelText: label,
+        // labelStyle: const TextStyle(color: Colors.black),
+        // floatingLabelStyle: TextStyle(color: Colors.white),
         suffixIcon: suffix,
         hintText: placeholder,
-        border: InputBorder.none,
-        errorBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: context.colorScheme.error,
-          ),
-        ),
+
         contentPadding: EdgeInsets.symmetric(
-          horizontal: 10.w,
+          horizontal: 15.w,
           vertical: 10.h,
         ),
       ),

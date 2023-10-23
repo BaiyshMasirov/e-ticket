@@ -10,6 +10,33 @@
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 
+class $AssetsLogosGen {
+  const $AssetsLogosGen();
+
+  /// File path: assets/logos/icon_launcher_android_background.png
+  AssetGenImage get iconLauncherAndroidBackground =>
+      const AssetGenImage('assets/logos/icon_launcher_android_background.png');
+
+  /// File path: assets/logos/icon_launcher_android_foreground.png
+  AssetGenImage get iconLauncherAndroidForeground =>
+      const AssetGenImage('assets/logos/icon_launcher_android_foreground.png');
+
+  /// File path: assets/logos/icon_launcher_ios.png
+  AssetGenImage get iconLauncherIos =>
+      const AssetGenImage('assets/logos/icon_launcher_ios.png');
+
+  /// File path: assets/logos/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/logos/logo.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        iconLauncherAndroidBackground,
+        iconLauncherAndroidForeground,
+        iconLauncherIos,
+        logo
+      ];
+}
+
 class $AssetsLottiesGen {
   const $AssetsLottiesGen();
 
@@ -34,6 +61,7 @@ class $AssetsTranslationsGen {
 class Assets {
   Assets._();
 
+  static const $AssetsLogosGen logos = $AssetsLogosGen();
   static const $AssetsLottiesGen lotties = $AssetsLottiesGen();
   static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }

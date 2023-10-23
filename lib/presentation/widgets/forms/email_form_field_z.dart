@@ -46,9 +46,6 @@ class EmailFormFieldZ extends StatelessWidget {
             }
           : null,
       label: LocaleKeys.email.tr(),
-      suffix: const Icon(
-        Icons.phone,
-      ),
     );
   }
 }
