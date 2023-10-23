@@ -7,20 +7,18 @@ class AppTheme {
   static ThemeData getLightTheme() {
     return ThemeData(
       fontFamily: FontFamily.montserrat,
-      scaffoldBackgroundColor: ColorName.backgroundLight,
+      scaffoldBackgroundColor: ColorName.surfaceLight,
       brightness: Brightness.light,
       useMaterial3: true,
       extensions: _getAppColorsLight(),
       appBarTheme: AppBarTheme(
         centerTitle: true,
-        backgroundColor: ColorName.tertiaryContainerLight.withOpacity(0.2),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 0,
-        backgroundColor: ColorName.tertiaryContainerLight.withOpacity(0.2),
         enableFeedback: true,
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: ColorName.tertiaryLight,
+        selectedItemColor: ColorName.secondaryLight,
       ),
       colorScheme: const ColorScheme.light(
         primary: ColorName.primaryLight,
@@ -59,18 +57,15 @@ class AppTheme {
     return ThemeData(
       fontFamily: FontFamily.montserrat,
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: ColorName.backgroundDark,
       extensions: _getAppColorsDark(),
       appBarTheme: AppBarTheme(
         centerTitle: true,
-        backgroundColor: ColorName.tertiaryContainerDark.withOpacity(0.2),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 0,
-        backgroundColor: ColorName.tertiaryContainerDark.withOpacity(0.2),
         enableFeedback: true,
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: ColorName.tertiaryDark,
+        selectedItemColor: ColorName.secondaryDark,
       ),
       colorScheme: const ColorScheme.dark(
         primary: ColorName.primaryDark,

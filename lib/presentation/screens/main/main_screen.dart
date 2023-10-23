@@ -19,32 +19,22 @@ class MainScreen extends HookWidget {
     final selectedTab = useState(initialTab.index);
 
     return AutoTabsScaffold(
-      extendBody: true,
       routes: mainScreenTabs.map((e) => e.generateRoute()).toList(),
       bottomNavigationBuilder: (_, tabsRouter) {
-        return ClipRRect(
-          child: BackdropFilter(
-            filter: ImageFilter.blur(
-              sigmaX: 2,
-              sigmaY: 2,
-              tileMode: TileMode.mirror,
-            ),
-            child: BottomNavigationBar(
-              currentIndex: selectedTab.value,
-              onTap: (value) {
-                selectedTab.value = value;
-                tabsRouter.setActiveIndex(value);
-              },
-              items: mainScreenTabs
-                  .map(
-                    (e) => BottomNavigationBarItem(
-                      icon: Icon(e.iconData),
-                      label: e.label,
-                    ),
-                  )
-                  .toList(),
-            ),
-          ),
+        return BottomNavigationBar(
+          currentIndex: selectedTab.value,
+          onTap: (value) {
+            selectedTab.value = value;
+            tabsRouter.setActiveIndex(value);
+          },
+          items: mainScreenTabs
+              .map(
+                (e) => BottomNavigationBarItem(
+                  icon: Icon(e.iconData),
+                  label: e.label,
+                ),
+              )
+              .toList(),
         );
       },
     );

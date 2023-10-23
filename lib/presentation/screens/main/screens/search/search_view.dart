@@ -16,43 +16,18 @@ class SearchView extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            centerTitle: false,
             stretch: true,
             pinned: true,
             floating: true,
             snap: false,
             title: const Text('Search'),
-            flexibleSpace: ClipRRect(
-              child: BackdropFilter(
-                filter: ImageFilter.blur(
-                  sigmaX: 10,
-                  sigmaY: 10,
-                  tileMode: TileMode.mirror,
-                ),
-                child: const Center(),
-              ),
-            ),
             bottom: PreferredSize(
               preferredSize: Size.fromHeight(70.h),
               child: Container(
+                color: context.colorScheme.secondaryContainer,
                 margin: EdgeInsets.symmetric(
                   horizontal: 20.w,
                   vertical: 10.h,
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: context.colorScheme.onTertiaryContainer
-                          .withOpacity(0.1),
-                    ),
-                    BoxShadow(
-                      color: context.colorScheme.tertiaryContainer
-                          .withOpacity(0.2),
-                      spreadRadius: -10.0,
-                      blurRadius: 20.0,
-                    ),
-                  ],
                 ),
                 child: TextField(
                   decoration: InputDecoration(
