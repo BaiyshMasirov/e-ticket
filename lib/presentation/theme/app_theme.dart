@@ -15,7 +15,6 @@ class AppTheme {
         centerTitle: true,
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        elevation: 0,
         enableFeedback: true,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: ColorName.secondaryLight,
@@ -62,7 +61,6 @@ class AppTheme {
         centerTitle: true,
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        elevation: 0,
         enableFeedback: true,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: ColorName.secondaryDark,
