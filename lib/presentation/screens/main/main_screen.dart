@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:auto_route/auto_route.dart';
+import 'package:common/common.dart';
+import 'package:eticket/presentation/app_blocs/app_blocs.dart';
 import 'package:eticket/presentation/screens/main/models/main_screen_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';

@@ -6,11 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppScaffold extends StatelessWidget {
+  final String? title;
   final Widget body;
   final bool Function(BuildContext context)? isLoadingFunc;
 
   const AppScaffold({
     required this.body,
+    this.title,
     this.isLoadingFunc,
     Key? key,
   }) : super(key: key);
@@ -18,6 +20,11 @@ class AppScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: title != null
+          ? AppBar(
+              title: Text(title!),
+            )
+          : null,
       body: Stack(
         fit: StackFit.expand,
         children: [

@@ -1,16 +1,11 @@
-import 'dart:ui';
-
 import 'package:common/common.dart';
-import 'package:eticket/common/common.dart';
-import 'package:eticket/generated/colors.gen.dart';
-import 'package:eticket/presentation/screens/main/screens/home/bloc/home_bloc.dart';
+import 'package:eticket/presentation/app_blocs/app_blocs.dart';
 import 'package:eticket/presentation/screens/main/screens/home/widgets/home_sliver_event_list.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 
 class HomeView extends HookWidget {
   const HomeView({
@@ -19,38 +14,94 @@ class HomeView extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final canLoadNextPage = useState(false);
-    final taxState = context.watch<HomeCubit>().state;
+    return BlocBuilder<DictionaryCubit, DictionaryState>(
+      builder: (context, state) => AppSliverScrollView(
+        onRefresh: () => Future.delayed(const Duration(seconds: 2)),
+        headerSliver: const SliverAppBar(
+          stretch: false,
+          pinned: true,
+          floating: true,
+          snap: false,
+          title: Text('Top Charts'),
+        ),
+        slivers: [
+          SliverPadding(
+            padding: EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
+          ),
+          ...state.maybeMap(
+            orElse: () {
+              return [
+                SliverToBoxAdapter(
+                  child: Shimmer.fromColors(
+                    baseColor: Colors.red,
+                    highlightColor: Colors.blue,
+                    child: Container(
+                      color: Colors.white,
+                      width: 100,
+                      height: 100,
+                    ),
+                  ),
+                ),
+                SliverToBoxAdapter(
+                  child: Shimmer.fromColors(
+                    baseColor: Colors.red,
+                    highlightColor: Colors.blue,
+                    child: Container(
+                      color: Colors.white,
+                      width: 100,
+                      height: 100,
+                    ),
+                  ),
+                ),
+                SliverToBoxAdapter(
+                  child: Shimmer.fromColors(
+                    baseColor: Colors.red,
+                    highlightColor: Colors.blue,
+                    child: Container(
+                      color: Colors.white,
+                      width: 100,
+                      height: 100,
+                    ),
+                  ),
+                ),
+              ];
+            },
+            data: (value) {
+              final eventTypes = value.eventTypes
+                  .where((element) => element.key != 0)
+                  .toList();
 
-    final scrollController = useMemoized(
-      () => ScrollController(),
-    );
+              final eventsList = <Widget>[];
 
-    final generatesSlivers = List.generate(
-      10,
-      (index) => HomeSliverEventList(),
-    );
+              eventTypes.forEach((eventType) {
+                eventsList.addAll([
+                  HomeSliverEventList(eventType: eventType),
+                  SliverToBoxAdapter(
+                    child: SizedBox(
+                      height: kDefaultPadding,
+                    ),
+                  ),
+                ]);
+              });
 
-    return AppSliverScrollView(
-      scrollController: scrollController,
-      onRefresh: () => Future.delayed(const Duration(seconds: 2)),
-      headerSliver: const SliverAppBar(
-        stretch: false,
-        pinned: true,
-        floating: true,
-        snap: false,
-        title: Text('Top Charts'),
-      ),
-      slivers: [
-        SliverPadding(padding: EdgeInsets.symmetric(vertical: kDefaultPadding)),
-        for (int i = 0; i < generatesSlivers.length; i++) ...[
-          generatesSlivers[i],
+              return eventsList;
+            },
+            failure: (value) => [
+              SliverToBoxAdapter(
+                child: DataFetchFailure(
+                  onTryLoadAgain: () {
+                    context.read<DictionaryCubit>().getAllDictionaries();
+                  },
+                  error: value.errorMessage,
+                ),
+              )
+            ],
+          ),
           SliverPadding(
             padding: EdgeInsets.symmetric(vertical: kDefaultPadding),
           ),
         ],
-        SliverPadding(padding: EdgeInsets.symmetric(vertical: kDefaultPadding)),
-      ],
+      ),
     );
   }
 }

@@ -35,7 +35,7 @@ class App extends StatelessWidget {
               FlutterNativeSplash.remove();
 
               return _appRouter.pushAndPopUntil(
-                MainRoute(),
+                LoginRoute(),
                 predicate: (route) => false,
               );
             },

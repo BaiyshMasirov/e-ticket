@@ -13,7 +13,7 @@ class EventRemoteDatasource {
     required EventsFilter eventsFilter,
     required int page,
   }) async {
-    final queryParams = eventsFilter.toJson();
+    final queryParams = eventsFilter.toQueryParams();
     queryParams.addAll({
       'page': page,
     });

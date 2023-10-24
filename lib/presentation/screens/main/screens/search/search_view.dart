@@ -14,7 +14,6 @@ class SearchView extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scrollController = useMemoized(() => ScrollController());
     final canLoadNextPage = useState(false);
     final eventsState = context.watch<SearchCubit>().state;
 
@@ -41,7 +40,6 @@ class SearchView extends HookWidget {
           onRefresh: () async {
             context.read<SearchCubit>().refreshPage();
           },
-          scrollController: scrollController,
           headerSliver: SliverAppBar(
             stretch: false,
             pinned: true,
@@ -82,7 +80,7 @@ class SearchView extends HookWidget {
               loadingSuccess: (transactions, _, __) => transactions.isEmpty
                   ? const SliverToBoxAdapter(
                       child: Center(
-                        child: Text('Транзакции нет'),
+                        child: Text('Ивентов нет'),
                       ),
                     )
                   : SearchSearchPaginatedEventsView(searchState: eventsState),

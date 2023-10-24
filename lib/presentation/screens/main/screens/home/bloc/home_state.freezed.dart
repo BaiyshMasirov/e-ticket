@@ -17,46 +17,33 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomeState {
   List<EventDto> get events => throw _privateConstructorUsedError;
-  EventsFilter get eventsFilter => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
-        initial,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
-        loadingInProgress,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)
+    required TResult Function(List<EventDto> events) initial,
+    required TResult Function(List<EventDto> events) loadingInProgress,
+    required TResult Function(List<EventDto> events, bool isNextPageAvailable)
         loadingSuccess,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)
+    required TResult Function(List<EventDto> events, String? errorMessage)
         loadingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
-        initial,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
-        loadingInProgress,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+    TResult? Function(List<EventDto> events)? initial,
+    TResult? Function(List<EventDto> events)? loadingInProgress,
+    TResult? Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+    TResult? Function(List<EventDto> events, String? errorMessage)?
         loadingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)? initial,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)?
-        loadingInProgress,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+    TResult Function(List<EventDto> events)? initial,
+    TResult Function(List<EventDto> events)? loadingInProgress,
+    TResult Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
-        loadingError,
+    TResult Function(List<EventDto> events, String? errorMessage)? loadingError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -96,9 +83,7 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({List<EventDto> events, EventsFilter eventsFilter});
-
-  $EventsFilterCopyWith<$Res> get eventsFilter;
+  $Res call({List<EventDto> events});
 }
 
 /// @nodoc
@@ -115,26 +100,13 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @override
   $Res call({
     Object? events = null,
-    Object? eventsFilter = null,
   }) {
     return _then(_value.copyWith(
       events: null == events
           ? _value.events
           : events // ignore: cast_nullable_to_non_nullable
               as List<EventDto>,
-      eventsFilter: null == eventsFilter
-          ? _value.eventsFilter
-          : eventsFilter // ignore: cast_nullable_to_non_nullable
-              as EventsFilter,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $EventsFilterCopyWith<$Res> get eventsFilter {
-    return $EventsFilterCopyWith<$Res>(_value.eventsFilter, (value) {
-      return _then(_value.copyWith(eventsFilter: value) as $Val);
-    });
   }
 }
 
@@ -146,10 +118,7 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<EventDto> events, EventsFilter eventsFilter});
-
-  @override
-  $EventsFilterCopyWith<$Res> get eventsFilter;
+  $Res call({List<EventDto> events});
 }
 
 /// @nodoc
@@ -164,17 +133,12 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? events = null,
-    Object? eventsFilter = null,
   }) {
     return _then(_$HomeStateImpl(
       events: null == events
           ? _value._events
           : events // ignore: cast_nullable_to_non_nullable
               as List<EventDto>,
-      eventsFilter: null == eventsFilter
-          ? _value.eventsFilter
-          : eventsFilter // ignore: cast_nullable_to_non_nullable
-              as EventsFilter,
     ));
   }
 }
@@ -182,8 +146,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomeStateImpl extends _HomeState {
-  const _$HomeStateImpl(
-      {required final List<EventDto> events, required this.eventsFilter})
+  const _$HomeStateImpl({required final List<EventDto> events})
       : _events = events,
         super._();
 
@@ -196,11 +159,8 @@ class _$HomeStateImpl extends _HomeState {
   }
 
   @override
-  final EventsFilter eventsFilter;
-
-  @override
   String toString() {
-    return 'HomeState.initial(events: $events, eventsFilter: $eventsFilter)';
+    return 'HomeState.initial(events: $events)';
   }
 
   @override
@@ -208,14 +168,12 @@ class _$HomeStateImpl extends _HomeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeStateImpl &&
-            const DeepCollectionEquality().equals(other._events, _events) &&
-            (identical(other.eventsFilter, eventsFilter) ||
-                other.eventsFilter == eventsFilter));
+            const DeepCollectionEquality().equals(other._events, _events));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_events), eventsFilter);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_events));
 
   @JsonKey(ignore: true)
   @override
@@ -226,53 +184,41 @@ class _$HomeStateImpl extends _HomeState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
-        initial,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
-        loadingInProgress,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)
+    required TResult Function(List<EventDto> events) initial,
+    required TResult Function(List<EventDto> events) loadingInProgress,
+    required TResult Function(List<EventDto> events, bool isNextPageAvailable)
         loadingSuccess,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)
+    required TResult Function(List<EventDto> events, String? errorMessage)
         loadingError,
   }) {
-    return initial(events, eventsFilter);
+    return initial(events);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
-        initial,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
-        loadingInProgress,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+    TResult? Function(List<EventDto> events)? initial,
+    TResult? Function(List<EventDto> events)? loadingInProgress,
+    TResult? Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+    TResult? Function(List<EventDto> events, String? errorMessage)?
         loadingError,
   }) {
-    return initial?.call(events, eventsFilter);
+    return initial?.call(events);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)? initial,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)?
-        loadingInProgress,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+    TResult Function(List<EventDto> events)? initial,
+    TResult Function(List<EventDto> events)? loadingInProgress,
+    TResult Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
-        loadingError,
+    TResult Function(List<EventDto> events, String? errorMessage)? loadingError,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(events, eventsFilter);
+      return initial(events);
     }
     return orElse();
   }
@@ -316,15 +262,12 @@ class _$HomeStateImpl extends _HomeState {
 }
 
 abstract class _HomeState extends HomeState {
-  const factory _HomeState(
-      {required final List<EventDto> events,
-      required final EventsFilter eventsFilter}) = _$HomeStateImpl;
+  const factory _HomeState({required final List<EventDto> events}) =
+      _$HomeStateImpl;
   const _HomeState._() : super._();
 
   @override
   List<EventDto> get events;
-  @override
-  EventsFilter get eventsFilter;
   @override
   @JsonKey(ignore: true)
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
@@ -340,10 +283,7 @@ abstract class _$$HomeLoadingInProgressImplCopyWith<$Res>
       __$$HomeLoadingInProgressImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<EventDto> events, EventsFilter eventsFilter});
-
-  @override
-  $EventsFilterCopyWith<$Res> get eventsFilter;
+  $Res call({List<EventDto> events});
 }
 
 /// @nodoc
@@ -358,17 +298,12 @@ class __$$HomeLoadingInProgressImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? events = null,
-    Object? eventsFilter = null,
   }) {
     return _then(_$HomeLoadingInProgressImpl(
       events: null == events
           ? _value._events
           : events // ignore: cast_nullable_to_non_nullable
               as List<EventDto>,
-      eventsFilter: null == eventsFilter
-          ? _value.eventsFilter
-          : eventsFilter // ignore: cast_nullable_to_non_nullable
-              as EventsFilter,
     ));
   }
 }
@@ -376,8 +311,7 @@ class __$$HomeLoadingInProgressImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomeLoadingInProgressImpl extends _HomeLoadingInProgress {
-  const _$HomeLoadingInProgressImpl(
-      {required final List<EventDto> events, required this.eventsFilter})
+  const _$HomeLoadingInProgressImpl({required final List<EventDto> events})
       : _events = events,
         super._();
 
@@ -390,11 +324,8 @@ class _$HomeLoadingInProgressImpl extends _HomeLoadingInProgress {
   }
 
   @override
-  final EventsFilter eventsFilter;
-
-  @override
   String toString() {
-    return 'HomeState.loadingInProgress(events: $events, eventsFilter: $eventsFilter)';
+    return 'HomeState.loadingInProgress(events: $events)';
   }
 
   @override
@@ -402,14 +333,12 @@ class _$HomeLoadingInProgressImpl extends _HomeLoadingInProgress {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeLoadingInProgressImpl &&
-            const DeepCollectionEquality().equals(other._events, _events) &&
-            (identical(other.eventsFilter, eventsFilter) ||
-                other.eventsFilter == eventsFilter));
+            const DeepCollectionEquality().equals(other._events, _events));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_events), eventsFilter);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_events));
 
   @JsonKey(ignore: true)
   @override
@@ -421,53 +350,41 @@ class _$HomeLoadingInProgressImpl extends _HomeLoadingInProgress {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
-        initial,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
-        loadingInProgress,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)
+    required TResult Function(List<EventDto> events) initial,
+    required TResult Function(List<EventDto> events) loadingInProgress,
+    required TResult Function(List<EventDto> events, bool isNextPageAvailable)
         loadingSuccess,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)
+    required TResult Function(List<EventDto> events, String? errorMessage)
         loadingError,
   }) {
-    return loadingInProgress(events, eventsFilter);
+    return loadingInProgress(events);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
-        initial,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
-        loadingInProgress,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+    TResult? Function(List<EventDto> events)? initial,
+    TResult? Function(List<EventDto> events)? loadingInProgress,
+    TResult? Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+    TResult? Function(List<EventDto> events, String? errorMessage)?
         loadingError,
   }) {
-    return loadingInProgress?.call(events, eventsFilter);
+    return loadingInProgress?.call(events);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)? initial,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)?
-        loadingInProgress,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+    TResult Function(List<EventDto> events)? initial,
+    TResult Function(List<EventDto> events)? loadingInProgress,
+    TResult Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
-        loadingError,
+    TResult Function(List<EventDto> events, String? errorMessage)? loadingError,
     required TResult orElse(),
   }) {
     if (loadingInProgress != null) {
-      return loadingInProgress(events, eventsFilter);
+      return loadingInProgress(events);
     }
     return orElse();
   }
@@ -511,15 +428,12 @@ class _$HomeLoadingInProgressImpl extends _HomeLoadingInProgress {
 }
 
 abstract class _HomeLoadingInProgress extends HomeState {
-  const factory _HomeLoadingInProgress(
-      {required final List<EventDto> events,
-      required final EventsFilter eventsFilter}) = _$HomeLoadingInProgressImpl;
+  const factory _HomeLoadingInProgress({required final List<EventDto> events}) =
+      _$HomeLoadingInProgressImpl;
   const _HomeLoadingInProgress._() : super._();
 
   @override
   List<EventDto> get events;
-  @override
-  EventsFilter get eventsFilter;
   @override
   @JsonKey(ignore: true)
   _$$HomeLoadingInProgressImplCopyWith<_$HomeLoadingInProgressImpl>
@@ -534,13 +448,7 @@ abstract class _$$HomeLoadingSuccessImplCopyWith<$Res>
       __$$HomeLoadingSuccessImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {List<EventDto> events,
-      EventsFilter eventsFilter,
-      bool isNextPageAvailable});
-
-  @override
-  $EventsFilterCopyWith<$Res> get eventsFilter;
+  $Res call({List<EventDto> events, bool isNextPageAvailable});
 }
 
 /// @nodoc
@@ -555,7 +463,6 @@ class __$$HomeLoadingSuccessImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? events = null,
-    Object? eventsFilter = null,
     Object? isNextPageAvailable = null,
   }) {
     return _then(_$HomeLoadingSuccessImpl(
@@ -563,10 +470,6 @@ class __$$HomeLoadingSuccessImplCopyWithImpl<$Res>
           ? _value._events
           : events // ignore: cast_nullable_to_non_nullable
               as List<EventDto>,
-      eventsFilter: null == eventsFilter
-          ? _value.eventsFilter
-          : eventsFilter // ignore: cast_nullable_to_non_nullable
-              as EventsFilter,
       isNextPageAvailable: null == isNextPageAvailable
           ? _value.isNextPageAvailable
           : isNextPageAvailable // ignore: cast_nullable_to_non_nullable
@@ -579,9 +482,7 @@ class __$$HomeLoadingSuccessImplCopyWithImpl<$Res>
 
 class _$HomeLoadingSuccessImpl extends _HomeLoadingSuccess {
   const _$HomeLoadingSuccessImpl(
-      {required final List<EventDto> events,
-      required this.eventsFilter,
-      required this.isNextPageAvailable})
+      {required final List<EventDto> events, required this.isNextPageAvailable})
       : _events = events,
         super._();
 
@@ -594,13 +495,11 @@ class _$HomeLoadingSuccessImpl extends _HomeLoadingSuccess {
   }
 
   @override
-  final EventsFilter eventsFilter;
-  @override
   final bool isNextPageAvailable;
 
   @override
   String toString() {
-    return 'HomeState.loadingSuccess(events: $events, eventsFilter: $eventsFilter, isNextPageAvailable: $isNextPageAvailable)';
+    return 'HomeState.loadingSuccess(events: $events, isNextPageAvailable: $isNextPageAvailable)';
   }
 
   @override
@@ -609,18 +508,13 @@ class _$HomeLoadingSuccessImpl extends _HomeLoadingSuccess {
         (other.runtimeType == runtimeType &&
             other is _$HomeLoadingSuccessImpl &&
             const DeepCollectionEquality().equals(other._events, _events) &&
-            (identical(other.eventsFilter, eventsFilter) ||
-                other.eventsFilter == eventsFilter) &&
             (identical(other.isNextPageAvailable, isNextPageAvailable) ||
                 other.isNextPageAvailable == isNextPageAvailable));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_events),
-      eventsFilter,
-      isNextPageAvailable);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_events), isNextPageAvailable);
 
   @JsonKey(ignore: true)
   @override
@@ -632,53 +526,41 @@ class _$HomeLoadingSuccessImpl extends _HomeLoadingSuccess {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
-        initial,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
-        loadingInProgress,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)
+    required TResult Function(List<EventDto> events) initial,
+    required TResult Function(List<EventDto> events) loadingInProgress,
+    required TResult Function(List<EventDto> events, bool isNextPageAvailable)
         loadingSuccess,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)
+    required TResult Function(List<EventDto> events, String? errorMessage)
         loadingError,
   }) {
-    return loadingSuccess(events, eventsFilter, isNextPageAvailable);
+    return loadingSuccess(events, isNextPageAvailable);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
-        initial,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
-        loadingInProgress,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+    TResult? Function(List<EventDto> events)? initial,
+    TResult? Function(List<EventDto> events)? loadingInProgress,
+    TResult? Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+    TResult? Function(List<EventDto> events, String? errorMessage)?
         loadingError,
   }) {
-    return loadingSuccess?.call(events, eventsFilter, isNextPageAvailable);
+    return loadingSuccess?.call(events, isNextPageAvailable);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)? initial,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)?
-        loadingInProgress,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+    TResult Function(List<EventDto> events)? initial,
+    TResult Function(List<EventDto> events)? loadingInProgress,
+    TResult Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
-        loadingError,
+    TResult Function(List<EventDto> events, String? errorMessage)? loadingError,
     required TResult orElse(),
   }) {
     if (loadingSuccess != null) {
-      return loadingSuccess(events, eventsFilter, isNextPageAvailable);
+      return loadingSuccess(events, isNextPageAvailable);
     }
     return orElse();
   }
@@ -724,14 +606,11 @@ class _$HomeLoadingSuccessImpl extends _HomeLoadingSuccess {
 abstract class _HomeLoadingSuccess extends HomeState {
   const factory _HomeLoadingSuccess(
       {required final List<EventDto> events,
-      required final EventsFilter eventsFilter,
       required final bool isNextPageAvailable}) = _$HomeLoadingSuccessImpl;
   const _HomeLoadingSuccess._() : super._();
 
   @override
   List<EventDto> get events;
-  @override
-  EventsFilter get eventsFilter;
   bool get isNextPageAvailable;
   @override
   @JsonKey(ignore: true)
@@ -747,11 +626,7 @@ abstract class _$$HomeLoadingErrorImplCopyWith<$Res>
       __$$HomeLoadingErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {List<EventDto> events, EventsFilter eventsFilter, String? errorMessage});
-
-  @override
-  $EventsFilterCopyWith<$Res> get eventsFilter;
+  $Res call({List<EventDto> events, String? errorMessage});
 }
 
 /// @nodoc
@@ -766,7 +641,6 @@ class __$$HomeLoadingErrorImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? events = null,
-    Object? eventsFilter = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_$HomeLoadingErrorImpl(
@@ -774,10 +648,6 @@ class __$$HomeLoadingErrorImplCopyWithImpl<$Res>
           ? _value._events
           : events // ignore: cast_nullable_to_non_nullable
               as List<EventDto>,
-      eventsFilter: null == eventsFilter
-          ? _value.eventsFilter
-          : eventsFilter // ignore: cast_nullable_to_non_nullable
-              as EventsFilter,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -790,9 +660,7 @@ class __$$HomeLoadingErrorImplCopyWithImpl<$Res>
 
 class _$HomeLoadingErrorImpl extends _HomeLoadingError {
   const _$HomeLoadingErrorImpl(
-      {required final List<EventDto> events,
-      required this.eventsFilter,
-      this.errorMessage})
+      {required final List<EventDto> events, this.errorMessage})
       : _events = events,
         super._();
 
@@ -805,13 +673,11 @@ class _$HomeLoadingErrorImpl extends _HomeLoadingError {
   }
 
   @override
-  final EventsFilter eventsFilter;
-  @override
   final String? errorMessage;
 
   @override
   String toString() {
-    return 'HomeState.loadingError(events: $events, eventsFilter: $eventsFilter, errorMessage: $errorMessage)';
+    return 'HomeState.loadingError(events: $events, errorMessage: $errorMessage)';
   }
 
   @override
@@ -820,15 +686,13 @@ class _$HomeLoadingErrorImpl extends _HomeLoadingError {
         (other.runtimeType == runtimeType &&
             other is _$HomeLoadingErrorImpl &&
             const DeepCollectionEquality().equals(other._events, _events) &&
-            (identical(other.eventsFilter, eventsFilter) ||
-                other.eventsFilter == eventsFilter) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_events), eventsFilter, errorMessage);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_events), errorMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -840,53 +704,41 @@ class _$HomeLoadingErrorImpl extends _HomeLoadingError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
-        initial,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
-        loadingInProgress,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)
+    required TResult Function(List<EventDto> events) initial,
+    required TResult Function(List<EventDto> events) loadingInProgress,
+    required TResult Function(List<EventDto> events, bool isNextPageAvailable)
         loadingSuccess,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)
+    required TResult Function(List<EventDto> events, String? errorMessage)
         loadingError,
   }) {
-    return loadingError(events, eventsFilter, errorMessage);
+    return loadingError(events, errorMessage);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
-        initial,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
-        loadingInProgress,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+    TResult? Function(List<EventDto> events)? initial,
+    TResult? Function(List<EventDto> events)? loadingInProgress,
+    TResult? Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+    TResult? Function(List<EventDto> events, String? errorMessage)?
         loadingError,
   }) {
-    return loadingError?.call(events, eventsFilter, errorMessage);
+    return loadingError?.call(events, errorMessage);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)? initial,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)?
-        loadingInProgress,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+    TResult Function(List<EventDto> events)? initial,
+    TResult Function(List<EventDto> events)? loadingInProgress,
+    TResult Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
-        loadingError,
+    TResult Function(List<EventDto> events, String? errorMessage)? loadingError,
     required TResult orElse(),
   }) {
     if (loadingError != null) {
-      return loadingError(events, eventsFilter, errorMessage);
+      return loadingError(events, errorMessage);
     }
     return orElse();
   }
@@ -932,14 +784,11 @@ class _$HomeLoadingErrorImpl extends _HomeLoadingError {
 abstract class _HomeLoadingError extends HomeState {
   const factory _HomeLoadingError(
       {required final List<EventDto> events,
-      required final EventsFilter eventsFilter,
       final String? errorMessage}) = _$HomeLoadingErrorImpl;
   const _HomeLoadingError._() : super._();
 
   @override
   List<EventDto> get events;
-  @override
-  EventsFilter get eventsFilter;
   String? get errorMessage;
   @override
   @JsonKey(ignore: true)

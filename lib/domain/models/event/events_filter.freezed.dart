@@ -20,8 +20,8 @@ EventsFilter _$EventsFilterFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$EventsFilter {
-  EventType? get type => throw _privateConstructorUsedError;
-  EventStatus? get status => throw _privateConstructorUsedError;
+  KeyValueMapDto? get type => throw _privateConstructorUsedError;
+  KeyValueMapDto? get status => throw _privateConstructorUsedError;
   @DateTimeUTCSerializer()
   DateTime? get date => throw _privateConstructorUsedError;
 
@@ -38,9 +38,12 @@ abstract class $EventsFilterCopyWith<$Res> {
       _$EventsFilterCopyWithImpl<$Res, EventsFilter>;
   @useResult
   $Res call(
-      {EventType? type,
-      EventStatus? status,
+      {KeyValueMapDto? type,
+      KeyValueMapDto? status,
       @DateTimeUTCSerializer() DateTime? date});
+
+  $KeyValueMapDtoCopyWith<$Res>? get type;
+  $KeyValueMapDtoCopyWith<$Res>? get status;
 }
 
 /// @nodoc
@@ -64,16 +67,40 @@ class _$EventsFilterCopyWithImpl<$Res, $Val extends EventsFilter>
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as EventType?,
+              as KeyValueMapDto?,
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as EventStatus?,
+              as KeyValueMapDto?,
       date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $KeyValueMapDtoCopyWith<$Res>? get type {
+    if (_value.type == null) {
+      return null;
+    }
+
+    return $KeyValueMapDtoCopyWith<$Res>(_value.type!, (value) {
+      return _then(_value.copyWith(type: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $KeyValueMapDtoCopyWith<$Res>? get status {
+    if (_value.status == null) {
+      return null;
+    }
+
+    return $KeyValueMapDtoCopyWith<$Res>(_value.status!, (value) {
+      return _then(_value.copyWith(status: value) as $Val);
+    });
   }
 }
 
@@ -86,9 +113,14 @@ abstract class _$$EventsFilterImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {EventType? type,
-      EventStatus? status,
+      {KeyValueMapDto? type,
+      KeyValueMapDto? status,
       @DateTimeUTCSerializer() DateTime? date});
+
+  @override
+  $KeyValueMapDtoCopyWith<$Res>? get type;
+  @override
+  $KeyValueMapDtoCopyWith<$Res>? get status;
 }
 
 /// @nodoc
@@ -110,11 +142,11 @@ class __$$EventsFilterImplCopyWithImpl<$Res>
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as EventType?,
+              as KeyValueMapDto?,
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as EventStatus?,
+              as KeyValueMapDto?,
       date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -134,9 +166,9 @@ class _$EventsFilterImpl extends _EventsFilter {
       _$$EventsFilterImplFromJson(json);
 
   @override
-  final EventType? type;
+  final KeyValueMapDto? type;
   @override
-  final EventStatus? status;
+  final KeyValueMapDto? status;
   @override
   @DateTimeUTCSerializer()
   final DateTime? date;
@@ -176,8 +208,8 @@ class _$EventsFilterImpl extends _EventsFilter {
 
 abstract class _EventsFilter extends EventsFilter {
   const factory _EventsFilter(
-      {final EventType? type,
-      final EventStatus? status,
+      {final KeyValueMapDto? type,
+      final KeyValueMapDto? status,
       @DateTimeUTCSerializer() final DateTime? date}) = _$EventsFilterImpl;
   const _EventsFilter._() : super._();
 
@@ -185,9 +217,9 @@ abstract class _EventsFilter extends EventsFilter {
       _$EventsFilterImpl.fromJson;
 
   @override
-  EventType? get type;
+  KeyValueMapDto? get type;
   @override
-  EventStatus? get status;
+  KeyValueMapDto? get status;
   @override
   @DateTimeUTCSerializer()
   DateTime? get date;

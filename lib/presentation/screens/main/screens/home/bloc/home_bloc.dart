@@ -1,4 +1,5 @@
 import 'package:common/common.dart';
+import 'package:eticket/data/data.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/screens/main/screens/home/bloc/home_state.dart';
 import 'package:get_it/get_it.dart';
@@ -6,20 +7,22 @@ import 'package:get_it/get_it.dart';
 export 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
+  final KeyValueMapDto _eventType;
   final EventRepository _eventRepository;
 
   int _page = 1;
 
   HomeCubit._({
+    required KeyValueMapDto eventType,
     required EventRepository eventRepository,
-  })  : _eventRepository = eventRepository,
+  })  : _eventType = eventType,
+        _eventRepository = eventRepository,
         super(const HomeState.initial(
           events: [],
-          eventsFilter: EventsFilter(),
         ));
 
   Future<void> clearFilter() async {
-    emit(state.copyWith(eventsFilter: const EventsFilter()));
+    emit(state);
     refreshPage();
   }
 
@@ -27,31 +30,22 @@ class HomeCubit extends Cubit<HomeState> {
     EventsFilter? filter,
   }) async {
     _page = 1;
-    emit(
-      HomeState.initial(
-        events: [],
-        eventsFilter: filter ?? this.state.eventsFilter,
-      ),
-    );
+    emit(const HomeState.initial(events: []));
 
     await getNextEventsPage();
   }
 
   Future<void> getNextEventsPage() async {
     emit(HomeState.loadingInProgress(
-      eventsFilter: state.eventsFilter,
       events: state.events,
     ));
 
     final result = await _eventRepository.getEvents(
-      eventsFilter: state.eventsFilter,
-      page: _page,
-    );
+        page: _page, eventsFilter: EventsFilter(type: _eventType));
 
     result.fold(
       (e) => emit(HomeState.loadingError(
         events: state.events,
-        eventsFilter: state.eventsFilter,
         errorMessage: e.errorMessage,
       )),
       (data) {
@@ -61,17 +55,15 @@ class HomeCubit extends Cubit<HomeState> {
             ...state.events,
             ...data.events,
           ],
-          eventsFilter: state.eventsFilter,
-          // TODO: implement next page availability logic
-          // isNextPageAvailable: _page < data.maxPage,
-          isNextPageAvailable: true,
+          isNextPageAvailable: _page < data.maxPage,
         ));
       },
     );
   }
 
-  factory HomeCubit.initialize() {
+  factory HomeCubit.initialize(KeyValueMapDto eventType) {
     return HomeCubit._(
+      eventType: eventType,
       eventRepository: GetIt.I.get(),
     );
   }

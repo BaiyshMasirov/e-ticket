@@ -6,13 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppSliverScrollView extends StatelessWidget {
-  final ScrollController scrollController;
   final Future<void> Function()? onRefresh;
   final Widget? headerSliver;
   final List<Widget> slivers;
 
   const AppSliverScrollView({
-    required this.scrollController,
     required this.slivers,
     this.headerSliver,
     this.onRefresh,
@@ -39,7 +37,6 @@ class AppSliverScrollView extends StatelessWidget {
       physics: const BouncingScrollPhysics(
         parent: AlwaysScrollableScrollPhysics(),
       ),
-      controller: scrollController,
       slivers: [
         if (headerSliver != null) headerSliver,
         if (onRefresh != null)
