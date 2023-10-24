@@ -36,22 +36,37 @@ class AppSliverScrollView extends StatelessWidget {
     Future<void> Function()? onRefresh,
   }) {
     return CustomScrollView(
+      physics: const BouncingScrollPhysics(
+        parent: AlwaysScrollableScrollPhysics(),
+      ),
       controller: scrollController,
       slivers: [
         if (headerSliver != null) headerSliver,
         if (onRefresh != null)
-          CupertinoSliverRefreshControl(
-            onRefresh: onRefresh,
-            refreshTriggerPullDistance: 130.h,
-            builder: Platform.isIOS ? null : buildAndroidRefreshIndicator,
-          ),
+          _buildSliverRefreshControll(onRefresh: onRefresh),
         ...slivers,
       ],
     );
   }
 }
 
-Widget buildAndroidRefreshIndicator(
+Widget _buildSliverRefreshControll({
+  required Future<void> Function() onRefresh,
+}) {
+  final refreshTriggerPullDistance = 130.h;
+  return Platform.isIOS
+      ? CupertinoSliverRefreshControl(
+          onRefresh: onRefresh,
+          refreshTriggerPullDistance: refreshTriggerPullDistance,
+        )
+      : CupertinoSliverRefreshControl(
+          onRefresh: onRefresh,
+          refreshTriggerPullDistance: refreshTriggerPullDistance,
+          builder: _buildAndroidRefreshIndicator,
+        );
+}
+
+Widget _buildAndroidRefreshIndicator(
   BuildContext context,
   RefreshIndicatorMode refreshState,
   double pulledExtent,

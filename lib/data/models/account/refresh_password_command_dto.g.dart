@@ -16,10 +16,18 @@ _$RefreshPasswordCommandDtoImpl _$$RefreshPasswordCommandDtoImplFromJson(
     );
 
 Map<String, dynamic> _$$RefreshPasswordCommandDtoImplToJson(
-        _$RefreshPasswordCommandDtoImpl instance) =>
-    <String, dynamic>{
-      'email': instance.email,
-      'phoneNumber': instance.phoneNumber,
-      'password': instance.password,
-      'confirmPassword': instance.confirmPassword,
-    };
+    _$RefreshPasswordCommandDtoImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('email', instance.email);
+  writeNotNull('phoneNumber', instance.phoneNumber);
+  writeNotNull('password', instance.password);
+  writeNotNull('confirmPassword', instance.confirmPassword);
+  return val;
+}

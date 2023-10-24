@@ -1,0 +1,1 @@
+export 'search_paginated_events_view.dart';

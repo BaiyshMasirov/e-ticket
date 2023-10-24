@@ -9,7 +9,7 @@ class EventRemoteDatasource {
     required Dio dio,
   }) : _dio = dio;
 
-  Future<RemoteResponse<List<EventDto>>> getEvents({
+  Future<RemoteResponse<EventPagingDto>> getEvents({
     required EventsFilter eventsFilter,
     required int page,
   }) async {
@@ -23,12 +23,7 @@ class EventRemoteDatasource {
         '/api/Event/get-events',
         queryParameters: queryParams,
       ),
-      parse: (json) {
-        final list = json as List;
-        final data = list.map((e) => EventDto.fromJson(e)).toList();
-
-        return data;
-      },
+      parse: (json) => EventPagingDto.fromJson(json),
     );
 
     return response;

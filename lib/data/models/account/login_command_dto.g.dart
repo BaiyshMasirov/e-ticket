@@ -15,9 +15,17 @@ _$LoginCommandDtoImpl _$$LoginCommandDtoImplFromJson(
     );
 
 Map<String, dynamic> _$$LoginCommandDtoImplToJson(
-        _$LoginCommandDtoImpl instance) =>
-    <String, dynamic>{
-      'email': instance.email,
-      'password': instance.password,
-      'firebaseToken': instance.firebaseToken,
-    };
+    _$LoginCommandDtoImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('email', instance.email);
+  writeNotNull('password', instance.password);
+  writeNotNull('firebaseToken', instance.firebaseToken);
+  return val;
+}

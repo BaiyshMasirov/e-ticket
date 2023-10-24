@@ -1,19 +1,19 @@
 import 'package:common/common.dart';
 import 'package:eticket/domain/domain.dart';
-import 'package:eticket/presentation/screens/main/screens/home/bloc/home_state.dart';
+import 'package:eticket/presentation/screens/main/screens/search/bloc/search_state.dart';
 import 'package:get_it/get_it.dart';
 
-export 'home_state.dart';
+export 'search_state.dart';
 
-class HomeCubit extends Cubit<HomeState> {
+class SearchCubit extends Cubit<SearchState> {
   final EventRepository _eventRepository;
 
   int _page = 1;
 
-  HomeCubit._({
+  SearchCubit._({
     required EventRepository eventRepository,
   })  : _eventRepository = eventRepository,
-        super(const HomeState.initial(
+        super(const SearchState.initial(
           events: [],
           eventsFilter: EventsFilter(),
         ));
@@ -28,7 +28,7 @@ class HomeCubit extends Cubit<HomeState> {
   }) async {
     _page = 1;
     emit(
-      HomeState.initial(
+      SearchState.initial(
         events: [],
         eventsFilter: filter ?? this.state.eventsFilter,
       ),
@@ -38,7 +38,7 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   Future<void> getNextEventsPage() async {
-    emit(HomeState.loadingInProgress(
+    emit(SearchState.loadingInProgress(
       eventsFilter: state.eventsFilter,
       events: state.events,
     ));
@@ -49,29 +49,27 @@ class HomeCubit extends Cubit<HomeState> {
     );
 
     result.fold(
-      (e) => emit(HomeState.loadingError(
+      (e) => emit(SearchState.loadingError(
         events: state.events,
         eventsFilter: state.eventsFilter,
         errorMessage: e.errorMessage,
       )),
       (data) {
         _page++;
-        emit(HomeState.loadingSuccess(
+        emit(SearchState.loadingSuccess(
           events: [
             ...state.events,
             ...data.events,
           ],
           eventsFilter: state.eventsFilter,
-          // TODO: implement next page availability logic
-          // isNextPageAvailable: _page < data.maxPage,
-          isNextPageAvailable: true,
+          isNextPageAvailable: _page < data.maxPage,
         ));
       },
     );
   }
 
-  factory HomeCubit.initialize() {
-    return HomeCubit._(
+  factory SearchCubit.initialize() {
+    return SearchCubit._(
       eventRepository: GetIt.I.get(),
     );
   }

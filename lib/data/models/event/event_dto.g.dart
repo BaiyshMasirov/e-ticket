@@ -28,25 +28,34 @@ _$EventDtoImpl _$$EventDtoImplFromJson(Map<String, dynamic> json) =>
       image: json['image'] as String?,
     );
 
-Map<String, dynamic> _$$EventDtoImplToJson(_$EventDtoImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'description': instance.description,
-      'startDate': instance.startDate.toIso8601String(),
-      'endDate': instance.endDate.toIso8601String(),
-      'status': _$EventStatusEnumMap[instance.status]!,
-      'ageLimit': instance.ageLimit,
-      'minPrice': instance.minPrice,
-      'sold': instance.sold,
-      'count': instance.count,
-      'locationName': instance.locationName,
-      'locationId': instance.locationId,
-      'poster': instance.poster,
-      'type': _$EventTypeEnumMap[instance.type]!,
-      'video': instance.video,
-      'image': instance.image,
-    };
+Map<String, dynamic> _$$EventDtoImplToJson(_$EventDtoImpl instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('name', instance.name);
+  writeNotNull('description', instance.description);
+  val['startDate'] = instance.startDate.toIso8601String();
+  val['endDate'] = instance.endDate.toIso8601String();
+  val['status'] = _$EventStatusEnumMap[instance.status]!;
+  val['ageLimit'] = instance.ageLimit;
+  val['minPrice'] = instance.minPrice;
+  val['sold'] = instance.sold;
+  val['count'] = instance.count;
+  writeNotNull('locationName', instance.locationName);
+  val['locationId'] = instance.locationId;
+  writeNotNull('poster', instance.poster);
+  val['type'] = _$EventTypeEnumMap[instance.type]!;
+  writeNotNull('video', instance.video);
+  writeNotNull('image', instance.image);
+  return val;
+}
 
 const _$EventStatusEnumMap = {
   EventStatus.WTF0: 0,

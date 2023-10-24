@@ -9,7 +9,7 @@ class EventRepository with NetworkRemoteRepositoryMixin {
     required EventRemoteDatasource eventRemoteDatasource,
   }) : _eventRemoteDatasource = eventRemoteDatasource;
 
-  Future<Either<RequestFailure, List<EventDto>>> getEvents({
+  Future<Either<RequestFailure, EventPagingDto>> getEvents({
     required EventsFilter eventsFilter,
     required int page,
   }) async {
