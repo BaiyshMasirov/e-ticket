@@ -17,7 +17,7 @@ class HomeState with _$HomeState {
   const factory HomeState.loadingSuccess({
     required List<EventDto> events,
     required bool isNextPageAvailable,
-  }) = _HomeLoadingSuccess;
+  }) = HomeLoadingSuccess;
   const factory HomeState.loadingError({
     required List<EventDto> events,
     String? errorMessage,

@@ -20,31 +20,36 @@ mixin _$DictionaryState {
   List<KeyValueMapDto> get eventStatuses => throw _privateConstructorUsedError;
   List<KeyValueMapDto> get ticketTypes => throw _privateConstructorUsedError;
   List<KeyValueMapDto> get ticketStatuses => throw _privateConstructorUsedError;
+  List<KeyValueMapDto> get locationTypes => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         initial,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         data,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         loading,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)
         failure,
   }) =>
@@ -55,25 +60,29 @@ mixin _$DictionaryState {
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         initial,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         data,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         loading,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)?
         failure,
   }) =>
@@ -84,25 +93,29 @@ mixin _$DictionaryState {
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         initial,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         data,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         loading,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)?
         failure,
     required TResult orElse(),
@@ -149,7 +162,8 @@ abstract class $DictionaryStateCopyWith<$Res> {
       {List<KeyValueMapDto> eventTypes,
       List<KeyValueMapDto> eventStatuses,
       List<KeyValueMapDto> ticketTypes,
-      List<KeyValueMapDto> ticketStatuses});
+      List<KeyValueMapDto> ticketStatuses,
+      List<KeyValueMapDto> locationTypes});
 }
 
 /// @nodoc
@@ -169,6 +183,7 @@ class _$DictionaryStateCopyWithImpl<$Res, $Val extends DictionaryState>
     Object? eventStatuses = null,
     Object? ticketTypes = null,
     Object? ticketStatuses = null,
+    Object? locationTypes = null,
   }) {
     return _then(_value.copyWith(
       eventTypes: null == eventTypes
@@ -187,6 +202,10 @@ class _$DictionaryStateCopyWithImpl<$Res, $Val extends DictionaryState>
           ? _value.ticketStatuses
           : ticketStatuses // ignore: cast_nullable_to_non_nullable
               as List<KeyValueMapDto>,
+      locationTypes: null == locationTypes
+          ? _value.locationTypes
+          : locationTypes // ignore: cast_nullable_to_non_nullable
+              as List<KeyValueMapDto>,
     ) as $Val);
   }
 }
@@ -203,7 +222,8 @@ abstract class _$$DictionaryInitialImplCopyWith<$Res>
       {List<KeyValueMapDto> eventTypes,
       List<KeyValueMapDto> eventStatuses,
       List<KeyValueMapDto> ticketTypes,
-      List<KeyValueMapDto> ticketStatuses});
+      List<KeyValueMapDto> ticketStatuses,
+      List<KeyValueMapDto> locationTypes});
 }
 
 /// @nodoc
@@ -221,6 +241,7 @@ class __$$DictionaryInitialImplCopyWithImpl<$Res>
     Object? eventStatuses = null,
     Object? ticketTypes = null,
     Object? ticketStatuses = null,
+    Object? locationTypes = null,
   }) {
     return _then(_$DictionaryInitialImpl(
       eventTypes: null == eventTypes
@@ -239,6 +260,10 @@ class __$$DictionaryInitialImplCopyWithImpl<$Res>
           ? _value._ticketStatuses
           : ticketStatuses // ignore: cast_nullable_to_non_nullable
               as List<KeyValueMapDto>,
+      locationTypes: null == locationTypes
+          ? _value._locationTypes
+          : locationTypes // ignore: cast_nullable_to_non_nullable
+              as List<KeyValueMapDto>,
     ));
   }
 }
@@ -250,11 +275,13 @@ class _$DictionaryInitialImpl extends _DictionaryInitial {
       {required final List<KeyValueMapDto> eventTypes,
       required final List<KeyValueMapDto> eventStatuses,
       required final List<KeyValueMapDto> ticketTypes,
-      required final List<KeyValueMapDto> ticketStatuses})
+      required final List<KeyValueMapDto> ticketStatuses,
+      required final List<KeyValueMapDto> locationTypes})
       : _eventTypes = eventTypes,
         _eventStatuses = eventStatuses,
         _ticketTypes = ticketTypes,
         _ticketStatuses = ticketStatuses,
+        _locationTypes = locationTypes,
         super._();
 
   final List<KeyValueMapDto> _eventTypes;
@@ -289,9 +316,17 @@ class _$DictionaryInitialImpl extends _DictionaryInitial {
     return EqualUnmodifiableListView(_ticketStatuses);
   }
 
+  final List<KeyValueMapDto> _locationTypes;
+  @override
+  List<KeyValueMapDto> get locationTypes {
+    if (_locationTypes is EqualUnmodifiableListView) return _locationTypes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_locationTypes);
+  }
+
   @override
   String toString() {
-    return 'DictionaryState.initial(eventTypes: $eventTypes, eventStatuses: $eventStatuses, ticketTypes: $ticketTypes, ticketStatuses: $ticketStatuses)';
+    return 'DictionaryState.initial(eventTypes: $eventTypes, eventStatuses: $eventStatuses, ticketTypes: $ticketTypes, ticketStatuses: $ticketStatuses, locationTypes: $locationTypes)';
   }
 
   @override
@@ -306,7 +341,9 @@ class _$DictionaryInitialImpl extends _DictionaryInitial {
             const DeepCollectionEquality()
                 .equals(other._ticketTypes, _ticketTypes) &&
             const DeepCollectionEquality()
-                .equals(other._ticketStatuses, _ticketStatuses));
+                .equals(other._ticketStatuses, _ticketStatuses) &&
+            const DeepCollectionEquality()
+                .equals(other._locationTypes, _locationTypes));
   }
 
   @override
@@ -315,7 +352,8 @@ class _$DictionaryInitialImpl extends _DictionaryInitial {
       const DeepCollectionEquality().hash(_eventTypes),
       const DeepCollectionEquality().hash(_eventStatuses),
       const DeepCollectionEquality().hash(_ticketTypes),
-      const DeepCollectionEquality().hash(_ticketStatuses));
+      const DeepCollectionEquality().hash(_ticketStatuses),
+      const DeepCollectionEquality().hash(_locationTypes));
 
   @JsonKey(ignore: true)
   @override
@@ -331,29 +369,34 @@ class _$DictionaryInitialImpl extends _DictionaryInitial {
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         initial,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         data,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         loading,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)
         failure,
   }) {
-    return initial(eventTypes, eventStatuses, ticketTypes, ticketStatuses);
+    return initial(
+        eventTypes, eventStatuses, ticketTypes, ticketStatuses, locationTypes);
   }
 
   @override
@@ -363,30 +406,34 @@ class _$DictionaryInitialImpl extends _DictionaryInitial {
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         initial,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         data,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         loading,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)?
         failure,
   }) {
     return initial?.call(
-        eventTypes, eventStatuses, ticketTypes, ticketStatuses);
+        eventTypes, eventStatuses, ticketTypes, ticketStatuses, locationTypes);
   }
 
   @override
@@ -396,31 +443,36 @@ class _$DictionaryInitialImpl extends _DictionaryInitial {
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         initial,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         data,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         loading,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)?
         failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(eventTypes, eventStatuses, ticketTypes, ticketStatuses);
+      return initial(eventTypes, eventStatuses, ticketTypes, ticketStatuses,
+          locationTypes);
     }
     return orElse();
   }
@@ -468,7 +520,8 @@ abstract class _DictionaryInitial extends DictionaryState {
           {required final List<KeyValueMapDto> eventTypes,
           required final List<KeyValueMapDto> eventStatuses,
           required final List<KeyValueMapDto> ticketTypes,
-          required final List<KeyValueMapDto> ticketStatuses}) =
+          required final List<KeyValueMapDto> ticketStatuses,
+          required final List<KeyValueMapDto> locationTypes}) =
       _$DictionaryInitialImpl;
   const _DictionaryInitial._() : super._();
 
@@ -480,6 +533,8 @@ abstract class _DictionaryInitial extends DictionaryState {
   List<KeyValueMapDto> get ticketTypes;
   @override
   List<KeyValueMapDto> get ticketStatuses;
+  @override
+  List<KeyValueMapDto> get locationTypes;
   @override
   @JsonKey(ignore: true)
   _$$DictionaryInitialImplCopyWith<_$DictionaryInitialImpl> get copyWith =>
@@ -498,7 +553,8 @@ abstract class _$$DictionaryDataImplCopyWith<$Res>
       {List<KeyValueMapDto> eventTypes,
       List<KeyValueMapDto> eventStatuses,
       List<KeyValueMapDto> ticketTypes,
-      List<KeyValueMapDto> ticketStatuses});
+      List<KeyValueMapDto> ticketStatuses,
+      List<KeyValueMapDto> locationTypes});
 }
 
 /// @nodoc
@@ -516,6 +572,7 @@ class __$$DictionaryDataImplCopyWithImpl<$Res>
     Object? eventStatuses = null,
     Object? ticketTypes = null,
     Object? ticketStatuses = null,
+    Object? locationTypes = null,
   }) {
     return _then(_$DictionaryDataImpl(
       eventTypes: null == eventTypes
@@ -534,6 +591,10 @@ class __$$DictionaryDataImplCopyWithImpl<$Res>
           ? _value._ticketStatuses
           : ticketStatuses // ignore: cast_nullable_to_non_nullable
               as List<KeyValueMapDto>,
+      locationTypes: null == locationTypes
+          ? _value._locationTypes
+          : locationTypes // ignore: cast_nullable_to_non_nullable
+              as List<KeyValueMapDto>,
     ));
   }
 }
@@ -545,11 +606,13 @@ class _$DictionaryDataImpl extends _DictionaryData {
       {required final List<KeyValueMapDto> eventTypes,
       required final List<KeyValueMapDto> eventStatuses,
       required final List<KeyValueMapDto> ticketTypes,
-      required final List<KeyValueMapDto> ticketStatuses})
+      required final List<KeyValueMapDto> ticketStatuses,
+      required final List<KeyValueMapDto> locationTypes})
       : _eventTypes = eventTypes,
         _eventStatuses = eventStatuses,
         _ticketTypes = ticketTypes,
         _ticketStatuses = ticketStatuses,
+        _locationTypes = locationTypes,
         super._();
 
   final List<KeyValueMapDto> _eventTypes;
@@ -584,9 +647,17 @@ class _$DictionaryDataImpl extends _DictionaryData {
     return EqualUnmodifiableListView(_ticketStatuses);
   }
 
+  final List<KeyValueMapDto> _locationTypes;
+  @override
+  List<KeyValueMapDto> get locationTypes {
+    if (_locationTypes is EqualUnmodifiableListView) return _locationTypes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_locationTypes);
+  }
+
   @override
   String toString() {
-    return 'DictionaryState.data(eventTypes: $eventTypes, eventStatuses: $eventStatuses, ticketTypes: $ticketTypes, ticketStatuses: $ticketStatuses)';
+    return 'DictionaryState.data(eventTypes: $eventTypes, eventStatuses: $eventStatuses, ticketTypes: $ticketTypes, ticketStatuses: $ticketStatuses, locationTypes: $locationTypes)';
   }
 
   @override
@@ -601,7 +672,9 @@ class _$DictionaryDataImpl extends _DictionaryData {
             const DeepCollectionEquality()
                 .equals(other._ticketTypes, _ticketTypes) &&
             const DeepCollectionEquality()
-                .equals(other._ticketStatuses, _ticketStatuses));
+                .equals(other._ticketStatuses, _ticketStatuses) &&
+            const DeepCollectionEquality()
+                .equals(other._locationTypes, _locationTypes));
   }
 
   @override
@@ -610,7 +683,8 @@ class _$DictionaryDataImpl extends _DictionaryData {
       const DeepCollectionEquality().hash(_eventTypes),
       const DeepCollectionEquality().hash(_eventStatuses),
       const DeepCollectionEquality().hash(_ticketTypes),
-      const DeepCollectionEquality().hash(_ticketStatuses));
+      const DeepCollectionEquality().hash(_ticketStatuses),
+      const DeepCollectionEquality().hash(_locationTypes));
 
   @JsonKey(ignore: true)
   @override
@@ -626,29 +700,34 @@ class _$DictionaryDataImpl extends _DictionaryData {
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         initial,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         data,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         loading,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)
         failure,
   }) {
-    return data(eventTypes, eventStatuses, ticketTypes, ticketStatuses);
+    return data(
+        eventTypes, eventStatuses, ticketTypes, ticketStatuses, locationTypes);
   }
 
   @override
@@ -658,29 +737,34 @@ class _$DictionaryDataImpl extends _DictionaryData {
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         initial,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         data,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         loading,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)?
         failure,
   }) {
-    return data?.call(eventTypes, eventStatuses, ticketTypes, ticketStatuses);
+    return data?.call(
+        eventTypes, eventStatuses, ticketTypes, ticketStatuses, locationTypes);
   }
 
   @override
@@ -690,31 +774,36 @@ class _$DictionaryDataImpl extends _DictionaryData {
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         initial,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         data,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         loading,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)?
         failure,
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data(eventTypes, eventStatuses, ticketTypes, ticketStatuses);
+      return data(eventTypes, eventStatuses, ticketTypes, ticketStatuses,
+          locationTypes);
     }
     return orElse();
   }
@@ -762,7 +851,8 @@ abstract class _DictionaryData extends DictionaryState {
           {required final List<KeyValueMapDto> eventTypes,
           required final List<KeyValueMapDto> eventStatuses,
           required final List<KeyValueMapDto> ticketTypes,
-          required final List<KeyValueMapDto> ticketStatuses}) =
+          required final List<KeyValueMapDto> ticketStatuses,
+          required final List<KeyValueMapDto> locationTypes}) =
       _$DictionaryDataImpl;
   const _DictionaryData._() : super._();
 
@@ -774,6 +864,8 @@ abstract class _DictionaryData extends DictionaryState {
   List<KeyValueMapDto> get ticketTypes;
   @override
   List<KeyValueMapDto> get ticketStatuses;
+  @override
+  List<KeyValueMapDto> get locationTypes;
   @override
   @JsonKey(ignore: true)
   _$$DictionaryDataImplCopyWith<_$DictionaryDataImpl> get copyWith =>
@@ -792,7 +884,8 @@ abstract class _$$DictionaryLoadingImplCopyWith<$Res>
       {List<KeyValueMapDto> eventTypes,
       List<KeyValueMapDto> eventStatuses,
       List<KeyValueMapDto> ticketTypes,
-      List<KeyValueMapDto> ticketStatuses});
+      List<KeyValueMapDto> ticketStatuses,
+      List<KeyValueMapDto> locationTypes});
 }
 
 /// @nodoc
@@ -810,6 +903,7 @@ class __$$DictionaryLoadingImplCopyWithImpl<$Res>
     Object? eventStatuses = null,
     Object? ticketTypes = null,
     Object? ticketStatuses = null,
+    Object? locationTypes = null,
   }) {
     return _then(_$DictionaryLoadingImpl(
       eventTypes: null == eventTypes
@@ -828,6 +922,10 @@ class __$$DictionaryLoadingImplCopyWithImpl<$Res>
           ? _value._ticketStatuses
           : ticketStatuses // ignore: cast_nullable_to_non_nullable
               as List<KeyValueMapDto>,
+      locationTypes: null == locationTypes
+          ? _value._locationTypes
+          : locationTypes // ignore: cast_nullable_to_non_nullable
+              as List<KeyValueMapDto>,
     ));
   }
 }
@@ -839,11 +937,13 @@ class _$DictionaryLoadingImpl extends DictionaryLoading {
       {required final List<KeyValueMapDto> eventTypes,
       required final List<KeyValueMapDto> eventStatuses,
       required final List<KeyValueMapDto> ticketTypes,
-      required final List<KeyValueMapDto> ticketStatuses})
+      required final List<KeyValueMapDto> ticketStatuses,
+      required final List<KeyValueMapDto> locationTypes})
       : _eventTypes = eventTypes,
         _eventStatuses = eventStatuses,
         _ticketTypes = ticketTypes,
         _ticketStatuses = ticketStatuses,
+        _locationTypes = locationTypes,
         super._();
 
   final List<KeyValueMapDto> _eventTypes;
@@ -878,9 +978,17 @@ class _$DictionaryLoadingImpl extends DictionaryLoading {
     return EqualUnmodifiableListView(_ticketStatuses);
   }
 
+  final List<KeyValueMapDto> _locationTypes;
+  @override
+  List<KeyValueMapDto> get locationTypes {
+    if (_locationTypes is EqualUnmodifiableListView) return _locationTypes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_locationTypes);
+  }
+
   @override
   String toString() {
-    return 'DictionaryState.loading(eventTypes: $eventTypes, eventStatuses: $eventStatuses, ticketTypes: $ticketTypes, ticketStatuses: $ticketStatuses)';
+    return 'DictionaryState.loading(eventTypes: $eventTypes, eventStatuses: $eventStatuses, ticketTypes: $ticketTypes, ticketStatuses: $ticketStatuses, locationTypes: $locationTypes)';
   }
 
   @override
@@ -895,7 +1003,9 @@ class _$DictionaryLoadingImpl extends DictionaryLoading {
             const DeepCollectionEquality()
                 .equals(other._ticketTypes, _ticketTypes) &&
             const DeepCollectionEquality()
-                .equals(other._ticketStatuses, _ticketStatuses));
+                .equals(other._ticketStatuses, _ticketStatuses) &&
+            const DeepCollectionEquality()
+                .equals(other._locationTypes, _locationTypes));
   }
 
   @override
@@ -904,7 +1014,8 @@ class _$DictionaryLoadingImpl extends DictionaryLoading {
       const DeepCollectionEquality().hash(_eventTypes),
       const DeepCollectionEquality().hash(_eventStatuses),
       const DeepCollectionEquality().hash(_ticketTypes),
-      const DeepCollectionEquality().hash(_ticketStatuses));
+      const DeepCollectionEquality().hash(_ticketStatuses),
+      const DeepCollectionEquality().hash(_locationTypes));
 
   @JsonKey(ignore: true)
   @override
@@ -920,29 +1031,34 @@ class _$DictionaryLoadingImpl extends DictionaryLoading {
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         initial,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         data,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         loading,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)
         failure,
   }) {
-    return loading(eventTypes, eventStatuses, ticketTypes, ticketStatuses);
+    return loading(
+        eventTypes, eventStatuses, ticketTypes, ticketStatuses, locationTypes);
   }
 
   @override
@@ -952,30 +1068,34 @@ class _$DictionaryLoadingImpl extends DictionaryLoading {
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         initial,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         data,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         loading,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)?
         failure,
   }) {
     return loading?.call(
-        eventTypes, eventStatuses, ticketTypes, ticketStatuses);
+        eventTypes, eventStatuses, ticketTypes, ticketStatuses, locationTypes);
   }
 
   @override
@@ -985,31 +1105,36 @@ class _$DictionaryLoadingImpl extends DictionaryLoading {
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         initial,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         data,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         loading,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)?
         failure,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading(eventTypes, eventStatuses, ticketTypes, ticketStatuses);
+      return loading(eventTypes, eventStatuses, ticketTypes, ticketStatuses,
+          locationTypes);
     }
     return orElse();
   }
@@ -1057,7 +1182,8 @@ abstract class DictionaryLoading extends DictionaryState {
           {required final List<KeyValueMapDto> eventTypes,
           required final List<KeyValueMapDto> eventStatuses,
           required final List<KeyValueMapDto> ticketTypes,
-          required final List<KeyValueMapDto> ticketStatuses}) =
+          required final List<KeyValueMapDto> ticketStatuses,
+          required final List<KeyValueMapDto> locationTypes}) =
       _$DictionaryLoadingImpl;
   const DictionaryLoading._() : super._();
 
@@ -1069,6 +1195,8 @@ abstract class DictionaryLoading extends DictionaryState {
   List<KeyValueMapDto> get ticketTypes;
   @override
   List<KeyValueMapDto> get ticketStatuses;
+  @override
+  List<KeyValueMapDto> get locationTypes;
   @override
   @JsonKey(ignore: true)
   _$$DictionaryLoadingImplCopyWith<_$DictionaryLoadingImpl> get copyWith =>
@@ -1088,6 +1216,7 @@ abstract class _$$DictionaryFailureImplCopyWith<$Res>
       List<KeyValueMapDto> eventStatuses,
       List<KeyValueMapDto> ticketTypes,
       List<KeyValueMapDto> ticketStatuses,
+      List<KeyValueMapDto> locationTypes,
       String? errorMessage});
 }
 
@@ -1106,6 +1235,7 @@ class __$$DictionaryFailureImplCopyWithImpl<$Res>
     Object? eventStatuses = null,
     Object? ticketTypes = null,
     Object? ticketStatuses = null,
+    Object? locationTypes = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_$DictionaryFailureImpl(
@@ -1125,6 +1255,10 @@ class __$$DictionaryFailureImplCopyWithImpl<$Res>
           ? _value._ticketStatuses
           : ticketStatuses // ignore: cast_nullable_to_non_nullable
               as List<KeyValueMapDto>,
+      locationTypes: null == locationTypes
+          ? _value._locationTypes
+          : locationTypes // ignore: cast_nullable_to_non_nullable
+              as List<KeyValueMapDto>,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -1141,11 +1275,13 @@ class _$DictionaryFailureImpl extends _DictionaryFailure {
       required final List<KeyValueMapDto> eventStatuses,
       required final List<KeyValueMapDto> ticketTypes,
       required final List<KeyValueMapDto> ticketStatuses,
+      required final List<KeyValueMapDto> locationTypes,
       this.errorMessage})
       : _eventTypes = eventTypes,
         _eventStatuses = eventStatuses,
         _ticketTypes = ticketTypes,
         _ticketStatuses = ticketStatuses,
+        _locationTypes = locationTypes,
         super._();
 
   final List<KeyValueMapDto> _eventTypes;
@@ -1180,12 +1316,20 @@ class _$DictionaryFailureImpl extends _DictionaryFailure {
     return EqualUnmodifiableListView(_ticketStatuses);
   }
 
+  final List<KeyValueMapDto> _locationTypes;
+  @override
+  List<KeyValueMapDto> get locationTypes {
+    if (_locationTypes is EqualUnmodifiableListView) return _locationTypes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_locationTypes);
+  }
+
   @override
   final String? errorMessage;
 
   @override
   String toString() {
-    return 'DictionaryState.failure(eventTypes: $eventTypes, eventStatuses: $eventStatuses, ticketTypes: $ticketTypes, ticketStatuses: $ticketStatuses, errorMessage: $errorMessage)';
+    return 'DictionaryState.failure(eventTypes: $eventTypes, eventStatuses: $eventStatuses, ticketTypes: $ticketTypes, ticketStatuses: $ticketStatuses, locationTypes: $locationTypes, errorMessage: $errorMessage)';
   }
 
   @override
@@ -1201,6 +1345,8 @@ class _$DictionaryFailureImpl extends _DictionaryFailure {
                 .equals(other._ticketTypes, _ticketTypes) &&
             const DeepCollectionEquality()
                 .equals(other._ticketStatuses, _ticketStatuses) &&
+            const DeepCollectionEquality()
+                .equals(other._locationTypes, _locationTypes) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
@@ -1212,6 +1358,7 @@ class _$DictionaryFailureImpl extends _DictionaryFailure {
       const DeepCollectionEquality().hash(_eventStatuses),
       const DeepCollectionEquality().hash(_ticketTypes),
       const DeepCollectionEquality().hash(_ticketStatuses),
+      const DeepCollectionEquality().hash(_locationTypes),
       errorMessage);
 
   @JsonKey(ignore: true)
@@ -1228,30 +1375,34 @@ class _$DictionaryFailureImpl extends _DictionaryFailure {
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         initial,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         data,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)
         loading,
     required TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)
         failure,
   }) {
-    return failure(
-        eventTypes, eventStatuses, ticketTypes, ticketStatuses, errorMessage);
+    return failure(eventTypes, eventStatuses, ticketTypes, ticketStatuses,
+        locationTypes, errorMessage);
   }
 
   @override
@@ -1261,30 +1412,34 @@ class _$DictionaryFailureImpl extends _DictionaryFailure {
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         initial,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         data,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         loading,
     TResult? Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)?
         failure,
   }) {
-    return failure?.call(
-        eventTypes, eventStatuses, ticketTypes, ticketStatuses, errorMessage);
+    return failure?.call(eventTypes, eventStatuses, ticketTypes, ticketStatuses,
+        locationTypes, errorMessage);
   }
 
   @override
@@ -1294,32 +1449,36 @@ class _$DictionaryFailureImpl extends _DictionaryFailure {
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         initial,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         data,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
-            List<KeyValueMapDto> ticketStatuses)?
+            List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes)?
         loading,
     TResult Function(
             List<KeyValueMapDto> eventTypes,
             List<KeyValueMapDto> eventStatuses,
             List<KeyValueMapDto> ticketTypes,
             List<KeyValueMapDto> ticketStatuses,
+            List<KeyValueMapDto> locationTypes,
             String? errorMessage)?
         failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
-      return failure(
-          eventTypes, eventStatuses, ticketTypes, ticketStatuses, errorMessage);
+      return failure(eventTypes, eventStatuses, ticketTypes, ticketStatuses,
+          locationTypes, errorMessage);
     }
     return orElse();
   }
@@ -1368,6 +1527,7 @@ abstract class _DictionaryFailure extends DictionaryState {
       required final List<KeyValueMapDto> eventStatuses,
       required final List<KeyValueMapDto> ticketTypes,
       required final List<KeyValueMapDto> ticketStatuses,
+      required final List<KeyValueMapDto> locationTypes,
       final String? errorMessage}) = _$DictionaryFailureImpl;
   const _DictionaryFailure._() : super._();
 
@@ -1379,6 +1539,8 @@ abstract class _DictionaryFailure extends DictionaryState {
   List<KeyValueMapDto> get ticketTypes;
   @override
   List<KeyValueMapDto> get ticketStatuses;
+  @override
+  List<KeyValueMapDto> get locationTypes;
   String? get errorMessage;
   @override
   @JsonKey(ignore: true)

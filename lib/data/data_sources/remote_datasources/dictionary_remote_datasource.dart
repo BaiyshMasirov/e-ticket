@@ -71,4 +71,20 @@ class DictionaryRemoteSource {
 
     return response;
   }
+
+  Future<RemoteResponse<List<KeyValueMapDto>>> getLocationTypes() async {
+    final response = await _dio.makeRequest(
+      request: () => _dio.get('/api/Dictionary/get-location-type'),
+      parse: (json) {
+        final map = json as Map;
+        final data = map.entries
+            .map((e) => KeyValueMapDto(key: int.parse(e.key), value: e.value))
+            .toList();
+
+        return data;
+      },
+    );
+
+    return response;
+  }
 }

@@ -6,12 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppScaffold extends StatelessWidget {
+  /// set if appbar is null
   final String? title;
+  final PreferredSizeWidget? appBar;
   final Widget body;
   final bool Function(BuildContext context)? isLoadingFunc;
+  final bool extendBodyBehindAppBar;
 
   const AppScaffold({
     required this.body,
+    this.extendBodyBehindAppBar = false,
+    this.appBar,
     this.title,
     this.isLoadingFunc,
     Key? key,
@@ -20,11 +25,8 @@ class AppScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: title != null
-          ? AppBar(
-              title: Text(title!),
-            )
-          : null,
+      appBar: _buildAppBar(),
+      extendBodyBehindAppBar: extendBodyBehindAppBar,
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -60,5 +62,17 @@ class AppScaffold extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  PreferredSizeWidget? _buildAppBar() {
+    if (appBar != null) {
+      return appBar;
+    }
+    if (title != null) {
+      return AppBar(
+        title: Text(title!),
+      );
+    }
+    return null;
   }
 }

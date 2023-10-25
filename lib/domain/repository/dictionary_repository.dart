@@ -41,4 +41,13 @@ class DictionaryRepository with NetworkRemoteRepositoryMixin {
 
     return response;
   }
+
+  Future<Either<RequestFailure, List<KeyValueMapDto>>>
+      getLocationTypes() async {
+    final response = await handleRemoteRequest(
+      request: () => _dictionaryRemoteSource.getLocationTypes(),
+    );
+
+    return response;
+  }
 }

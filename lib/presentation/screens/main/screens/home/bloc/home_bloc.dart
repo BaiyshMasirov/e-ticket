@@ -22,8 +22,15 @@ class HomeCubit extends Cubit<HomeState> {
         ));
 
   Future<void> clearFilter() async {
-    emit(state);
-    refreshPage();
+    state.maybeMap(
+      orElse: () {
+        emit(state);
+        refreshPage();
+      },
+      loadingInProgress: (value) {
+        return;
+      },
+    );
   }
 
   Future<void> refreshPage({
@@ -49,10 +56,9 @@ class HomeCubit extends Cubit<HomeState> {
         errorMessage: e.errorMessage,
       )),
       (data) {
-        _page++;
         emit(HomeState.loadingSuccess(
           events: [
-            ...state.events,
+            if (_page != 1) ...state.events,
             ...data.events,
           ],
           isNextPageAvailable: _page < data.maxPage,

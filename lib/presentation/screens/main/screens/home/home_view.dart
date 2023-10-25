@@ -1,9 +1,11 @@
 import 'package:eticket/data/models/models.dart';
+import 'package:eticket/presentation/screens/main/screens/home/bloc/home_bloc.dart';
 import 'package:eticket/presentation/screens/main/screens/home/widgets/home_widgets.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:collection/collection.dart';
 
 class HomeView extends HookWidget {
   final List<KeyValueMapDto> eventTypes;
@@ -15,21 +17,23 @@ class HomeView extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final eventsList = <Widget>[];
-
-    eventTypes.forEach((eventType) {
-      eventsList.addAll([
-        HomeSliverEventList(eventType: eventType),
-        SliverToBoxAdapter(
-          child: SizedBox(
-            height: kDefaultPadding,
-          ),
-        ),
-      ]);
-    });
+    final homeBlocs =
+        useMemoized(() => eventTypes.map(HomeCubit.initialize).toList());
+    final eventsList = useMemoized(
+      () => eventTypes
+          .mapIndexed((i, e) => HomeSliverEventList(
+                eventType: e,
+                homeCubit: homeBlocs[i],
+              ))
+          .toList(),
+    );
 
     return AppSliverScrollView(
-      onRefresh: () => Future.delayed(const Duration(seconds: 2)),
+      onRefresh: () async {
+        homeBlocs.forEach((element) {
+          element.clearFilter();
+        });
+      },
       headerSliver: const SliverAppBar(
         stretch: false,
         pinned: true,

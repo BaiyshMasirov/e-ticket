@@ -51,7 +51,7 @@ mixin _$HomeState {
   TResult map<TResult extends Object?>({
     required TResult Function(_HomeState value) initial,
     required TResult Function(_HomeLoadingInProgress value) loadingInProgress,
-    required TResult Function(_HomeLoadingSuccess value) loadingSuccess,
+    required TResult Function(HomeLoadingSuccess value) loadingSuccess,
     required TResult Function(_HomeLoadingError value) loadingError,
   }) =>
       throw _privateConstructorUsedError;
@@ -59,7 +59,7 @@ mixin _$HomeState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_HomeState value)? initial,
     TResult? Function(_HomeLoadingInProgress value)? loadingInProgress,
-    TResult? Function(_HomeLoadingSuccess value)? loadingSuccess,
+    TResult? Function(HomeLoadingSuccess value)? loadingSuccess,
     TResult? Function(_HomeLoadingError value)? loadingError,
   }) =>
       throw _privateConstructorUsedError;
@@ -67,7 +67,7 @@ mixin _$HomeState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HomeState value)? initial,
     TResult Function(_HomeLoadingInProgress value)? loadingInProgress,
-    TResult Function(_HomeLoadingSuccess value)? loadingSuccess,
+    TResult Function(HomeLoadingSuccess value)? loadingSuccess,
     TResult Function(_HomeLoadingError value)? loadingError,
     required TResult orElse(),
   }) =>
@@ -228,7 +228,7 @@ class _$HomeStateImpl extends _HomeState {
   TResult map<TResult extends Object?>({
     required TResult Function(_HomeState value) initial,
     required TResult Function(_HomeLoadingInProgress value) loadingInProgress,
-    required TResult Function(_HomeLoadingSuccess value) loadingSuccess,
+    required TResult Function(HomeLoadingSuccess value) loadingSuccess,
     required TResult Function(_HomeLoadingError value) loadingError,
   }) {
     return initial(this);
@@ -239,7 +239,7 @@ class _$HomeStateImpl extends _HomeState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_HomeState value)? initial,
     TResult? Function(_HomeLoadingInProgress value)? loadingInProgress,
-    TResult? Function(_HomeLoadingSuccess value)? loadingSuccess,
+    TResult? Function(HomeLoadingSuccess value)? loadingSuccess,
     TResult? Function(_HomeLoadingError value)? loadingError,
   }) {
     return initial?.call(this);
@@ -250,7 +250,7 @@ class _$HomeStateImpl extends _HomeState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HomeState value)? initial,
     TResult Function(_HomeLoadingInProgress value)? loadingInProgress,
-    TResult Function(_HomeLoadingSuccess value)? loadingSuccess,
+    TResult Function(HomeLoadingSuccess value)? loadingSuccess,
     TResult Function(_HomeLoadingError value)? loadingError,
     required TResult orElse(),
   }) {
@@ -394,7 +394,7 @@ class _$HomeLoadingInProgressImpl extends _HomeLoadingInProgress {
   TResult map<TResult extends Object?>({
     required TResult Function(_HomeState value) initial,
     required TResult Function(_HomeLoadingInProgress value) loadingInProgress,
-    required TResult Function(_HomeLoadingSuccess value) loadingSuccess,
+    required TResult Function(HomeLoadingSuccess value) loadingSuccess,
     required TResult Function(_HomeLoadingError value) loadingError,
   }) {
     return loadingInProgress(this);
@@ -405,7 +405,7 @@ class _$HomeLoadingInProgressImpl extends _HomeLoadingInProgress {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_HomeState value)? initial,
     TResult? Function(_HomeLoadingInProgress value)? loadingInProgress,
-    TResult? Function(_HomeLoadingSuccess value)? loadingSuccess,
+    TResult? Function(HomeLoadingSuccess value)? loadingSuccess,
     TResult? Function(_HomeLoadingError value)? loadingError,
   }) {
     return loadingInProgress?.call(this);
@@ -416,7 +416,7 @@ class _$HomeLoadingInProgressImpl extends _HomeLoadingInProgress {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HomeState value)? initial,
     TResult Function(_HomeLoadingInProgress value)? loadingInProgress,
-    TResult Function(_HomeLoadingSuccess value)? loadingSuccess,
+    TResult Function(HomeLoadingSuccess value)? loadingSuccess,
     TResult Function(_HomeLoadingError value)? loadingError,
     required TResult orElse(),
   }) {
@@ -480,7 +480,7 @@ class __$$HomeLoadingSuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeLoadingSuccessImpl extends _HomeLoadingSuccess {
+class _$HomeLoadingSuccessImpl extends HomeLoadingSuccess {
   const _$HomeLoadingSuccessImpl(
       {required final List<EventDto> events, required this.isNextPageAvailable})
       : _events = events,
@@ -570,7 +570,7 @@ class _$HomeLoadingSuccessImpl extends _HomeLoadingSuccess {
   TResult map<TResult extends Object?>({
     required TResult Function(_HomeState value) initial,
     required TResult Function(_HomeLoadingInProgress value) loadingInProgress,
-    required TResult Function(_HomeLoadingSuccess value) loadingSuccess,
+    required TResult Function(HomeLoadingSuccess value) loadingSuccess,
     required TResult Function(_HomeLoadingError value) loadingError,
   }) {
     return loadingSuccess(this);
@@ -581,7 +581,7 @@ class _$HomeLoadingSuccessImpl extends _HomeLoadingSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_HomeState value)? initial,
     TResult? Function(_HomeLoadingInProgress value)? loadingInProgress,
-    TResult? Function(_HomeLoadingSuccess value)? loadingSuccess,
+    TResult? Function(HomeLoadingSuccess value)? loadingSuccess,
     TResult? Function(_HomeLoadingError value)? loadingError,
   }) {
     return loadingSuccess?.call(this);
@@ -592,7 +592,7 @@ class _$HomeLoadingSuccessImpl extends _HomeLoadingSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HomeState value)? initial,
     TResult Function(_HomeLoadingInProgress value)? loadingInProgress,
-    TResult Function(_HomeLoadingSuccess value)? loadingSuccess,
+    TResult Function(HomeLoadingSuccess value)? loadingSuccess,
     TResult Function(_HomeLoadingError value)? loadingError,
     required TResult orElse(),
   }) {
@@ -603,11 +603,11 @@ class _$HomeLoadingSuccessImpl extends _HomeLoadingSuccess {
   }
 }
 
-abstract class _HomeLoadingSuccess extends HomeState {
-  const factory _HomeLoadingSuccess(
+abstract class HomeLoadingSuccess extends HomeState {
+  const factory HomeLoadingSuccess(
       {required final List<EventDto> events,
       required final bool isNextPageAvailable}) = _$HomeLoadingSuccessImpl;
-  const _HomeLoadingSuccess._() : super._();
+  const HomeLoadingSuccess._() : super._();
 
   @override
   List<EventDto> get events;
@@ -748,7 +748,7 @@ class _$HomeLoadingErrorImpl extends _HomeLoadingError {
   TResult map<TResult extends Object?>({
     required TResult Function(_HomeState value) initial,
     required TResult Function(_HomeLoadingInProgress value) loadingInProgress,
-    required TResult Function(_HomeLoadingSuccess value) loadingSuccess,
+    required TResult Function(HomeLoadingSuccess value) loadingSuccess,
     required TResult Function(_HomeLoadingError value) loadingError,
   }) {
     return loadingError(this);
@@ -759,7 +759,7 @@ class _$HomeLoadingErrorImpl extends _HomeLoadingError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_HomeState value)? initial,
     TResult? Function(_HomeLoadingInProgress value)? loadingInProgress,
-    TResult? Function(_HomeLoadingSuccess value)? loadingSuccess,
+    TResult? Function(HomeLoadingSuccess value)? loadingSuccess,
     TResult? Function(_HomeLoadingError value)? loadingError,
   }) {
     return loadingError?.call(this);
@@ -770,7 +770,7 @@ class _$HomeLoadingErrorImpl extends _HomeLoadingError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HomeState value)? initial,
     TResult Function(_HomeLoadingInProgress value)? loadingInProgress,
-    TResult Function(_HomeLoadingSuccess value)? loadingSuccess,
+    TResult Function(HomeLoadingSuccess value)? loadingSuccess,
     TResult Function(_HomeLoadingError value)? loadingError,
     required TResult orElse(),
   }) {

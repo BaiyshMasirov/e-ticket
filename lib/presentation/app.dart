@@ -1,10 +1,12 @@
 import 'package:authentication/authentication.dart';
 import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:eticket/data/data.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
 import 'package:eticket/presentation/routes/routes.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
+import 'package:eticket/presentation/screens/main/screens/event/event_screen.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
@@ -58,11 +60,11 @@ class App extends StatelessWidget {
             listener: (context, state) => state.whenOrNull(
               error: (message) => SnackbarAlert.showError(
                 context: context,
-                message: message ?? LocaleKeys.unknown_error.tr(),
+                message: message?.tr() ?? LocaleKeys.unknown_error.tr(),
               ),
               success: (message) => SnackbarAlert.showSuccess(
                 context: context,
-                message: message,
+                message: message.tr(),
               ),
             ),
             child: UnfocusPointer(child: child),

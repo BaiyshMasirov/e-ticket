@@ -7,4 +7,5 @@ class RouteConstants {
   static const String searchScreen = 'search';
   static const String historyScreen = 'history';
   static const String settingsScreen = 'settings';
+  static const String eventScreen = '/event';
 }

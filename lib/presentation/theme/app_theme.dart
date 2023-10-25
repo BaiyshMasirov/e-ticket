@@ -57,6 +57,7 @@ class AppTheme {
       fontFamily: FontFamily.montserrat,
       brightness: Brightness.dark,
       extensions: _getAppColorsDark(),
+      scaffoldBackgroundColor: ColorName.surfaceDark,
       appBarTheme: AppBarTheme(
         centerTitle: true,
       ),
