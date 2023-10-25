@@ -16,7 +16,11 @@ class ErrorResponse with _$ErrorResponse {
     try {
       errorMessage = response.data['messages'][0].toString();
     } catch (e) {
-      errorMessage = response.statusMessage;
+      try {
+        errorMessage = response.data['errors'].toString();
+      } catch (e) {
+        errorMessage = response.statusMessage;
+      }
     }
     return ErrorResponse(
       statusCode: response.statusCode,

@@ -23,13 +23,9 @@ class SplashScreen extends HookWidget {
       },
     );
     return AppScaffold(
-      isLoadingFunc: (context) =>
-          context.select<DictionaryCubit, bool>(
-            (value) => value.state is DictionaryLoading,
-          ) ||
-          context.select<AuthCubit, bool>(
-            (value) => value.state is AuthStateInitial,
-          ),
+      isLoadingFunc: (context) => context.select<DictionaryCubit, bool>(
+        (value) => value.state is DictionaryLoading,
+      ),
       body: Center(
         child: BlocConsumer<DictionaryCubit, DictionaryState>(
           listener: (context, state) {
@@ -44,10 +40,10 @@ class SplashScreen extends HookWidget {
             failure: (value) {
               FlutterNativeSplash.remove();
               return DataFetchFailure(
-              onTryLoadAgain:
-                  context.read<DictionaryCubit>().getAllDictionaries,
-              error: value.errorMessage,
-            );
+                onTryLoadAgain:
+                    context.read<DictionaryCubit>().getAllDictionaries,
+                error: value.errorMessage,
+              );
             },
           ),
         ),
