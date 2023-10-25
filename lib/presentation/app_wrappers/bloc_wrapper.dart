@@ -1,7 +1,6 @@
 import 'package:authentication/authentication.dart';
 import 'package:common/common.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
-import 'package:eticket/presentation/app_blocs/dictionary/dictionary_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -19,7 +18,7 @@ class BlocWrapper extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) =>
-              GetIt.I.get<AuthCubit>()..checkAndUpdateAuthStatus(),
+              GetIt.I.get<AuthCubit>(),
         ),
         BlocProvider(
           create: (context) => GetIt.I.get<SnackbarCubit>(),

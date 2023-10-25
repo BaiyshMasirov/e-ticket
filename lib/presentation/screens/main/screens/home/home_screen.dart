@@ -13,14 +13,13 @@ class HomeScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    useEffect(() {
-      context.read<DictionaryCubit>().state.maybeMap(
-            orElse: () {},
-            initial: (value) =>
-                context.read<DictionaryCubit>().getAllDictionaries(),
-          );
-      return null;
-    });
-    return const HomeView();
+    final eventTypes = context
+        .read<DictionaryCubit>()
+        .state
+        .eventTypes
+        .where((element) => element.key != 0)
+        .toList();
+
+    return HomeView(eventTypes: eventTypes);
   }
 }
