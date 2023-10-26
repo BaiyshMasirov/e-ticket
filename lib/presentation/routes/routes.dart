@@ -41,6 +41,10 @@ class AppRouter extends $AppRouter {
           ],
         ),
         AutoRoute(
+          page: EventsByTypeRoute.page,
+          path: RouteConstants.eventsByTypeScreen,
+        ),
+        AutoRoute(
           page: EventRoute.page,
           path: RouteConstants.eventScreen,
         ),

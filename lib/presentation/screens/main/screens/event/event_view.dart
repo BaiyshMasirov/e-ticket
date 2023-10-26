@@ -48,6 +48,7 @@ class EventView extends StatelessWidget {
                       Text(
                         event.name ?? '-',
                         style: context.theme.textTheme.titleLarge,
+                        textAlign: TextAlign.center,
                       ),
                       SizedBox(height: 10.h),
                       Row(

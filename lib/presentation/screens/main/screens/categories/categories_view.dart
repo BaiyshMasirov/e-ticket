@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:eticket/data/models/models.dart';
+import 'package:eticket/presentation/routes/routes.gr.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +28,11 @@ class CategoriesView extends HookWidget {
             itemCount: eventTypes.length,
             itemBuilder: (ctx, i) => Card(
               child: ListTile(
-                onTap: () {},
+                onTap: () {
+                  context.navigateTo(
+                    EventsByTypeRoute(eventKeyValue: eventTypes[i]),
+                  );
+                },
                 title: Text(eventTypes[i].value),
               ),
             ),

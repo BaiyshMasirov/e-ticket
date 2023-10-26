@@ -30,6 +30,7 @@ class MainScreen extends HookWidget {
               .map(
                 (e) => BottomNavigationBarItem(
                   icon: Icon(e.iconData),
+                  activeIcon: Icon(e.selectedIconData),
                   label: e.label,
                 ),
               )
