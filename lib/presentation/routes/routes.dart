@@ -23,12 +23,12 @@ class AppRouter extends $AppRouter {
           path: RouteConstants.mainScreen,
           children: [
             AutoRoute(
-              page: HomeRoute.page,
+              page: SearchRoute.page,
               path: RouteConstants.homeScreen,
             ),
             AutoRoute(
-              page: SearchRoute.page,
-              path: RouteConstants.searchScreen,
+              page: CategoriesRoute.page,
+              path: RouteConstants.categoriesScreen,
             ),
             AutoRoute(
               page: HistoryRoute.page,

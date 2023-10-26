@@ -17,11 +17,11 @@ import 'package:eticket/presentation/screens/auth/register/register_screen.dart'
 import 'package:eticket/presentation/screens/main/main_screen.dart' as _i5;
 import 'package:eticket/presentation/screens/main/models/main_screen_tab.dart'
     as _i13;
-import 'package:eticket/presentation/screens/main/screens/event/event_screen.dart'
+import 'package:eticket/presentation/screens/main/screens/categories/categories_screen.dart'
     as _i1;
-import 'package:eticket/presentation/screens/main/screens/history/history_screen.dart'
+import 'package:eticket/presentation/screens/main/screens/event/event_screen.dart'
     as _i2;
-import 'package:eticket/presentation/screens/main/screens/home/home_screen.dart'
+import 'package:eticket/presentation/screens/main/screens/history/history_screen.dart'
     as _i3;
 import 'package:eticket/presentation/screens/main/screens/search/search_screen.dart'
     as _i7;
@@ -35,11 +35,17 @@ abstract class $AppRouter extends _i10.RootStackRouter {
 
   @override
   final Map<String, _i10.PageFactory> pagesMap = {
+    CategoriesRoute.name: (routeData) {
+      return _i10.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i1.CategoriesScreen(),
+      );
+    },
     EventRoute.name: (routeData) {
       final args = routeData.argsAs<EventRouteArgs>();
       return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i1.EventScreen(
+        child: _i2.EventScreen(
           event: args.event,
           key: args.key,
         ),
@@ -48,13 +54,7 @@ abstract class $AppRouter extends _i10.RootStackRouter {
     HistoryRoute.name: (routeData) {
       return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i2.HistoryScreen(),
-      );
-    },
-    HomeRoute.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i3.HomeScreen(),
+        child: const _i3.HistoryScreen(),
       );
     },
     LoginRoute.name: (routeData) {
@@ -102,7 +102,21 @@ abstract class $AppRouter extends _i10.RootStackRouter {
 }
 
 /// generated route for
-/// [_i1.EventScreen]
+/// [_i1.CategoriesScreen]
+class CategoriesRoute extends _i10.PageRouteInfo<void> {
+  const CategoriesRoute({List<_i10.PageRouteInfo>? children})
+      : super(
+          CategoriesRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CategoriesRoute';
+
+  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i2.EventScreen]
 class EventRoute extends _i10.PageRouteInfo<EventRouteArgs> {
   EventRoute({
     required _i11.EventDto event,
@@ -140,7 +154,7 @@ class EventRouteArgs {
 }
 
 /// generated route for
-/// [_i2.HistoryScreen]
+/// [_i3.HistoryScreen]
 class HistoryRoute extends _i10.PageRouteInfo<void> {
   const HistoryRoute({List<_i10.PageRouteInfo>? children})
       : super(
@@ -149,20 +163,6 @@ class HistoryRoute extends _i10.PageRouteInfo<void> {
         );
 
   static const String name = 'HistoryRoute';
-
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i3.HomeScreen]
-class HomeRoute extends _i10.PageRouteInfo<void> {
-  const HomeRoute({List<_i10.PageRouteInfo>? children})
-      : super(
-          HomeRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'HomeRoute';
 
   static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
 }

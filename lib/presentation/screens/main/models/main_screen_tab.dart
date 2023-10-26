@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 enum MAIN_SCREEN_TAB {
   HOME,
-  SEARCH,
+  CATEGORIES,
   HISTORY,
   SETTINGS,
 }
@@ -17,7 +17,7 @@ extension MAIN_SCREEN_TABX on MAIN_SCREEN_TAB {
     switch (this) {
       case MAIN_SCREEN_TAB.HOME:
         return 0;
-      case MAIN_SCREEN_TAB.SEARCH:
+      case MAIN_SCREEN_TAB.CATEGORIES:
         return 1;
       case MAIN_SCREEN_TAB.HISTORY:
         return 2;
@@ -29,12 +29,14 @@ extension MAIN_SCREEN_TABX on MAIN_SCREEN_TAB {
 
 class _MainScreenTab {
   final IconData iconData;
+  final IconData selectedIconData;
   final PageRouteInfo Function() generateRoute;
   final MAIN_SCREEN_TAB tab;
   final String label;
 
   _MainScreenTab({
     required this.iconData,
+    required this.selectedIconData,
     required this.generateRoute,
     required this.tab,
     required this.label,
@@ -44,24 +46,28 @@ class _MainScreenTab {
 final mainScreenTabs = [
   _MainScreenTab(
     iconData: CupertinoIcons.home,
+    selectedIconData: CupertinoIcons.house_fill,
     tab: MAIN_SCREEN_TAB.HOME,
-    generateRoute: () => const HomeRoute(),
+    generateRoute: () => const SearchRoute(),
     label: LocaleKeys.home.tr(),
   ),
   _MainScreenTab(
-    iconData: CupertinoIcons.search,
-    tab: MAIN_SCREEN_TAB.SEARCH,
-    generateRoute: () => const SearchRoute(),
-    label: LocaleKeys.search.tr(),
+    iconData: CupertinoIcons.circle_grid_3x3,
+    selectedIconData: CupertinoIcons.circle_grid_3x3_fill,
+    tab: MAIN_SCREEN_TAB.CATEGORIES,
+    generateRoute: () => const CategoriesRoute(),
+    label: LocaleKeys.categories.tr(),
   ),
   _MainScreenTab(
-    iconData: CupertinoIcons.clock,
+    iconData: CupertinoIcons.bookmark,
+    selectedIconData: CupertinoIcons.bookmark_fill,
     tab: MAIN_SCREEN_TAB.HISTORY,
     generateRoute: () => const HistoryRoute(),
     label: LocaleKeys.history.tr(),
   ),
   _MainScreenTab(
     iconData: Icons.settings_outlined,
+    selectedIconData: Icons.settings,
     tab: MAIN_SCREEN_TAB.SETTINGS,
     generateRoute: () => const SettingsRoute(),
     label: LocaleKeys.settings.tr(),
