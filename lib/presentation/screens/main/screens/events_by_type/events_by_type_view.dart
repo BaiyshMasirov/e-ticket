@@ -49,13 +49,8 @@ class EventsByTypeView extends HookWidget {
                 orElse: () => EventsByTypePaginatedView(
                   eventsByTypeState: eventsState,
                 ),
-                loadingInProgress: (events) => events.isEmpty
-                    ? const SliverToBoxAdapter(
-                        child: Center(
-                          child: CircularProgressIndicator(),
-                        ),
-                      )
-                    : EventsByTypePaginatedView(eventsByTypeState: eventsState),
+                loadingInProgress: (events) =>
+                    EventsByTypePaginatedView(eventsByTypeState: eventsState),
                 loadingSuccess: (events, _) => events.isEmpty
                     ? const SliverToBoxAdapter(
                         child: Center(

@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:eticket/common/extensions/extensions.dart';
 import 'package:eticket/data/models/models.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
 import 'package:eticket/presentation/theme/theme.dart';
@@ -17,6 +18,10 @@ class CategoriesView extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final shape = RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(20.r),
+    );
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
       child: AppSliverScrollView(
@@ -27,7 +32,10 @@ class CategoriesView extends HookWidget {
           SliverList.separated(
             itemCount: eventTypes.length,
             itemBuilder: (ctx, i) => Card(
+              shape: shape,
               child: ListTile(
+                shape: shape,
+                tileColor: context.colorScheme.onError,
                 onTap: () {
                   context.navigateTo(
                     EventsByTypeRoute(eventKeyValue: eventTypes[i]),

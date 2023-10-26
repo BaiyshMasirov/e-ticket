@@ -12,10 +12,14 @@ class AppScaffold extends StatelessWidget {
   final Widget body;
   final bool Function(BuildContext context)? isLoadingFunc;
   final bool extendBodyBehindAppBar;
+  final Widget? floatingActionButton;
+  final FloatingActionButtonLocation? floatingActionButtonLocation;
 
   const AppScaffold({
     required this.body,
     this.extendBodyBehindAppBar = false,
+    this.floatingActionButtonLocation,
+    this.floatingActionButton,
     this.appBar,
     this.title,
     this.isLoadingFunc,
@@ -26,6 +30,8 @@ class AppScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
+      floatingActionButton: floatingActionButton,
+      floatingActionButtonLocation: floatingActionButtonLocation,
       extendBodyBehindAppBar: extendBodyBehindAppBar,
       body: Stack(
         fit: StackFit.expand,
