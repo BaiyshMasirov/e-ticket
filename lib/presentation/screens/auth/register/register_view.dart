@@ -1,15 +1,11 @@
-import 'package:authentication/authentication.dart';
 import 'package:common/common.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/data/data.dart';
-import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/screens/auth/register/bloc/register_cubit.dart';
 import 'package:eticket/presentation/widgets/auth_logo.dart';
 import 'package:eticket/presentation/widgets/forms/forms.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get_it/get_it.dart';
 
 //TODO: HERE TEST DATA WITH TEST CODE
 class RegisterView extends HookWidget {

@@ -13,6 +13,7 @@ class EventsFilter with _$EventsFilter {
     KeyValueMapDto? type,
     KeyValueMapDto? status,
     @DateTimeUTCSerializer() DateTime? date,
+    String? text,
   }) = _EventsFilter;
 
   factory EventsFilter.fromJson(Json json) => _$EventsFilterFromJson(json);
@@ -27,6 +28,9 @@ class EventsFilter with _$EventsFilter {
     }
     if (date != null) {
       queryParams.addAll({'date': const DateTimeUTCSerializer().toJson(date)});
+    }
+    if (text != null) {
+      queryParams.addAll({'text': text});
     }
     return queryParams;
   }
