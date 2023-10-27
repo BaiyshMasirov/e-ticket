@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,7 +33,7 @@ class DataFetchFailure extends StatelessWidget {
                   height: double.infinity,
                   child: Icon(Icons.warning),
                 ),
-                subtitle: Text(error ?? ''),
+                subtitle: Text(error?.tr() ?? ''),
                 trailing: IconButton(
                   onPressed: onTryLoadAgain,
                   icon: const Icon(Icons.refresh),

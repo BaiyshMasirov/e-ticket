@@ -1,4 +1,3 @@
-
 import 'package:auto_route/auto_route.dart';
 import 'package:eticket/presentation/screens/main/models/main_screen_tab.dart';
 import 'package:flutter/material.dart';
@@ -20,19 +19,18 @@ class MainScreen extends HookWidget {
     return AutoTabsScaffold(
       routes: mainScreenTabs.map((e) => e.generateRoute()).toList(),
       bottomNavigationBuilder: (_, tabsRouter) {
-        return BottomNavigationBar(
-          currentIndex: selectedTab.value,
-          onTap: (value) {
+        return NavigationBar(
+          onDestinationSelected: (value) {
             selectedTab.value = value;
             tabsRouter.setActiveIndex(value);
           },
-          items: mainScreenTabs
-              .map(
-                (e) => BottomNavigationBarItem(
-                  icon: Icon(e.iconData),
-                  label: e.label,
-                ),
-              )
+          selectedIndex: selectedTab.value,
+          destinations: mainScreenTabs
+              .map((e) => NavigationDestination(
+                    icon: Icon(e.iconData),
+                    selectedIcon: Icon(e.selectedIconData),
+                    label: e.label,
+                  ))
               .toList(),
         );
       },

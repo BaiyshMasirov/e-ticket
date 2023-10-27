@@ -14,6 +14,12 @@ class AppTheme {
       appBarTheme: AppBarTheme(
         centerTitle: true,
       ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(enableFeedback: true),
+      ),
+      navigationBarTheme: NavigationBarThemeData(
+        indicatorColor: ColorName.errorContainerLight,
+      ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         enableFeedback: true,
         type: BottomNavigationBarType.fixed,
@@ -60,6 +66,12 @@ class AppTheme {
       scaffoldBackgroundColor: ColorName.surfaceDark,
       appBarTheme: AppBarTheme(
         centerTitle: true,
+      ),
+      navigationBarTheme: NavigationBarThemeData(
+        indicatorColor: ColorName.errorContainerDark,
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(enableFeedback: true),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         enableFeedback: true,

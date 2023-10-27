@@ -15,79 +15,105 @@ class EventView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formattedDateTime = _buildEventDateTime();
+
     return SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Stack(
-            children: [
-              Image.network(event.image ?? ''),
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Container(
-                  height: 150.h,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Colors.transparent, context.colorScheme.surface],
-                      tileMode: TileMode.mirror,
-                      stops: const [0.1, 0.7],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
+          Center(
+            child: Stack(
+              children: [
+                Image.network(event.image ?? ''),
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  child: Container(
+                    height: 100.h,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          context.colorScheme.surface.withOpacity(0.8),
+                          Colors.transparent
+                        ],
+                        tileMode: TileMode.mirror,
+                        stops: const [0.1, 0.7],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Center(
-                  child: Column(
-                    children: [
-                      Text(
-                        event.name ?? '-',
-                        style: context.theme.textTheme.titleLarge,
-                      ),
-                      SizedBox(height: 10.h),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('${event.ageLimit}+'),
-                          SizedBox(width: 20.w),
-                          Text(
-                            DateFormatters.datetimeToSlashedNullable(
-                                  event.startDate,
-                                ) ??
-                                '-',
-                          ),
-                          SizedBox(width: 10.w),
-                          Text(
-                            DateFormatters.datetimeToSlashedNullable(
-                                  event.endDate,
-                                ) ??
-                                '-',
-                          )
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: Container(
+                    height: 150.h,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.transparent,
+                          context.colorScheme.surface
                         ],
-                      )
-                    ],
+                        tileMode: TileMode.mirror,
+                        stops: const [0.1, 0.7],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                      ),
+                    ),
                   ),
                 ),
-              )
-            ],
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: Center(
+                    child: Column(
+                      children: [
+                        Text(
+                          event.name ?? '-',
+                          style: context.theme.textTheme.titleLarge,
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: 10.h),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('${event.ageLimit}+'),
+                            SizedBox(width: 20.w),
+                            Text(formattedDateTime),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
           SizedBox(height: 20.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(event.description ?? '-', textAlign: TextAlign.center),
+                Text(event.description ?? '-'),
               ],
             ),
           ),
+          SizedBox(height: 100.h),
         ],
       ),
     );
+  }
+
+  String _buildEventDateTime() {
+    if (event.startDate == event.endDate) {
+      return DateFormatters.datetimeToSlashed(event.startDate);
+    }
+
+    return '${DateFormatters.datetimeToSlashed(event.startDate)} - ${DateFormatters.datetimeToSlashed(event.endDate)}';
   }
 }

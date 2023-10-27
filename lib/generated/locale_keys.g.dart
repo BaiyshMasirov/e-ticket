@@ -22,5 +22,6 @@ abstract class  LocaleKeys {
   static const history = 'history';
   static const settings = 'settings';
   static const categories = 'categories';
+  static const buy_ticket = 'buy_ticket';
 
 }
