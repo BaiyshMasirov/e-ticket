@@ -21,7 +21,7 @@ TicketDto _$TicketDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$TicketDto {
   String get id => throw _privateConstructorUsedError;
-  TicketType get type => throw _privateConstructorUsedError;
+  int get type => throw _privateConstructorUsedError;
   int get placeNumber => throw _privateConstructorUsedError;
   int get rowNumber => throw _privateConstructorUsedError;
   int get branchIndex => throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ abstract class $TicketDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      TicketType type,
+      int type,
       int placeNumber,
       int rowNumber,
       int branchIndex,
@@ -81,7 +81,7 @@ class _$TicketDtoCopyWithImpl<$Res, $Val extends TicketDto>
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as TicketType,
+              as int,
       placeNumber: null == placeNumber
           ? _value.placeNumber
           : placeNumber // ignore: cast_nullable_to_non_nullable
@@ -120,7 +120,7 @@ abstract class _$$TicketDtoImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      TicketType type,
+      int type,
       int placeNumber,
       int rowNumber,
       int branchIndex,
@@ -157,7 +157,7 @@ class __$$TicketDtoImplCopyWithImpl<$Res>
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as TicketType,
+              as int,
       placeNumber: null == placeNumber
           ? _value.placeNumber
           : placeNumber // ignore: cast_nullable_to_non_nullable
@@ -206,7 +206,7 @@ class _$TicketDtoImpl extends _TicketDto {
   @override
   final String id;
   @override
-  final TicketType type;
+  final int type;
   @override
   final int placeNumber;
   @override
@@ -266,7 +266,7 @@ class _$TicketDtoImpl extends _TicketDto {
 abstract class _TicketDto extends TicketDto {
   const factory _TicketDto(
       {required final String id,
-      required final TicketType type,
+      required final int type,
       required final int placeNumber,
       required final int rowNumber,
       required final int branchIndex,
@@ -281,7 +281,7 @@ abstract class _TicketDto extends TicketDto {
   @override
   String get id;
   @override
-  TicketType get type;
+  int get type;
   @override
   int get placeNumber;
   @override

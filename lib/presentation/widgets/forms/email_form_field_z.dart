@@ -31,7 +31,7 @@ class EmailFormFieldZ extends StatelessWidget {
       enabled: enabled,
       readonly: readOnly,
       checkForNullEmpty: checkForNullEmpty,
-      textInputType: TextInputType.phone,
+      textInputType: TextInputType.emailAddress,
       validate: validate
           ? (value) {
               if (value == null || value.isEmpty) {

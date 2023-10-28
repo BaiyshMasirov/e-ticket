@@ -1,6 +1,8 @@
+import 'package:eticket/presentation/app_blocs/app_blocs.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get_it/get_it.dart';
 
 extension BuildContextX on BuildContext {
   ColorScheme get colorScheme {
@@ -17,5 +19,9 @@ extension BuildContextX on BuildContext {
 
   ScreenUtil get screenSize {
     return ScreenUtil();
+  }
+
+  DictionaryState get dictionaries {
+    return GetIt.I.get<DictionaryCubit>().state;
   }
 }

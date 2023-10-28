@@ -13,17 +13,16 @@ _$EventDtoImpl _$$EventDtoImplFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String?,
       startDate: DateTime.parse(json['startDate'] as String),
       endDate: DateTime.parse(json['endDate'] as String),
-      status: $enumDecode(_$EventStatusEnumMap, json['status'],
-          unknownValue: EventStatus.UNKNOWN),
+      status: json['status'] as int,
       ageLimit: json['ageLimit'] as int,
       minPrice: (json['minPrice'] as num).toDouble(),
       sold: json['sold'] as int,
       count: json['count'] as int,
       locationName: json['locationName'] as String?,
       locationId: json['locationId'] as String,
+      locationType: json['locationType'] as int,
       poster: json['poster'] as String?,
-      type: $enumDecode(_$EventTypeEnumMap, json['type'],
-          unknownValue: EventType.UNKNOWN),
+      type: json['type'] as int,
       video: json['video'] as String?,
       image: json['image'] as String?,
     );
@@ -43,37 +42,17 @@ Map<String, dynamic> _$$EventDtoImplToJson(_$EventDtoImpl instance) {
   writeNotNull('description', instance.description);
   val['startDate'] = instance.startDate.toIso8601String();
   val['endDate'] = instance.endDate.toIso8601String();
-  val['status'] = _$EventStatusEnumMap[instance.status]!;
+  val['status'] = instance.status;
   val['ageLimit'] = instance.ageLimit;
   val['minPrice'] = instance.minPrice;
   val['sold'] = instance.sold;
   val['count'] = instance.count;
   writeNotNull('locationName', instance.locationName);
   val['locationId'] = instance.locationId;
+  val['locationType'] = instance.locationType;
   writeNotNull('poster', instance.poster);
-  val['type'] = _$EventTypeEnumMap[instance.type]!;
+  val['type'] = instance.type;
   writeNotNull('video', instance.video);
   writeNotNull('image', instance.image);
   return val;
 }
-
-const _$EventStatusEnumMap = {
-  EventStatus.WTF0: 0,
-  EventStatus.WTF1: 1,
-  EventStatus.WTF2: 2,
-  EventStatus.WTF3: 3,
-  EventStatus.WTF4: 4,
-  EventStatus.UNKNOWN: 'UNKNOWN',
-};
-
-const _$EventTypeEnumMap = {
-  EventType.WTF0: 0,
-  EventType.WTF1: 1,
-  EventType.WTF2: 2,
-  EventType.WTF3: 3,
-  EventType.WTF4: 4,
-  EventType.WTF5: 5,
-  EventType.WTF6: 6,
-  EventType.WTF7: 7,
-  EventType.UNKNOWN: 'UNKNOWN',
-};

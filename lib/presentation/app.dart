@@ -1,12 +1,10 @@
 import 'package:authentication/authentication.dart';
 import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:eticket/data/data.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
 import 'package:eticket/presentation/routes/routes.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
-import 'package:eticket/presentation/screens/main/screens/event/event_screen.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
@@ -37,9 +35,16 @@ class App extends StatelessWidget {
               FlutterNativeSplash.remove();
 
               return _appRouter.pushAndPopUntil(
-                const LoginRoute(),
+                TicketStandingPlacesRoute(
+                  eventId: 'eventId',
+                  dateTime: DateTime.now(),
+                ),
                 predicate: (route) => false,
               );
+              // return _appRouter.pushAndPopUntil(
+              //   const LoginRoute(),
+              //   predicate: (route) => false,
+              // );
             },
             orElse: () => null,
           ),

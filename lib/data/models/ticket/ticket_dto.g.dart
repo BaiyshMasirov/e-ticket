@@ -9,7 +9,7 @@ part of 'ticket_dto.dart';
 _$TicketDtoImpl _$$TicketDtoImplFromJson(Map<String, dynamic> json) =>
     _$TicketDtoImpl(
       id: json['id'] as String,
-      type: $enumDecode(_$TicketTypeEnumMap, json['type']),
+      type: json['type'] as int,
       placeNumber: json['placeNumber'] as int,
       rowNumber: json['rowNumber'] as int,
       branchIndex: json['branchIndex'] as int,
@@ -21,7 +21,7 @@ _$TicketDtoImpl _$$TicketDtoImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$TicketDtoImplToJson(_$TicketDtoImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'type': _$TicketTypeEnumMap[instance.type]!,
+      'type': instance.type,
       'placeNumber': instance.placeNumber,
       'rowNumber': instance.rowNumber,
       'branchIndex': instance.branchIndex,
@@ -29,10 +29,3 @@ Map<String, dynamic> _$$TicketDtoImplToJson(_$TicketDtoImpl instance) =>
       'index': instance.index,
       'price': instance.price,
     };
-
-const _$TicketTypeEnumMap = {
-  TicketType.WTF0: 0,
-  TicketType.WTF1: 1,
-  TicketType.WTF2: 2,
-  TicketType.UNKNOWN: 'UNKNOWN',
-};
