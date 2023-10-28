@@ -29,5 +29,6 @@
   "confirm": "Подтвердить",
   "tickets": "Билеты",
   "total": "Всего",
-  "available": "Доступно"
+  "available": "Доступно",
+  "price": "Цена"
 }

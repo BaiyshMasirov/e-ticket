@@ -11,9 +11,8 @@ class AppTheme {
       brightness: Brightness.light,
       useMaterial3: true,
       extensions: _getAppColorsLight(),
-      appBarTheme: AppBarTheme(
-        centerTitle: true,
-      ),
+      appBarTheme:
+          AppBarTheme(centerTitle: true, backgroundColor: Colors.transparent),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(enableFeedback: true),
       ),
@@ -64,9 +63,8 @@ class AppTheme {
       brightness: Brightness.dark,
       extensions: _getAppColorsDark(),
       scaffoldBackgroundColor: ColorName.surfaceDark,
-      appBarTheme: AppBarTheme(
-        centerTitle: true,
-      ),
+      appBarTheme:
+          AppBarTheme(centerTitle: true, backgroundColor: Colors.transparent),
       navigationBarTheme: NavigationBarThemeData(
         indicatorColor: ColorName.errorContainerDark,
       ),

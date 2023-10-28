@@ -86,10 +86,33 @@ class TicketStandingPlaceItem extends StatelessWidget {
             ],
           ),
           Expanded(
-            child: TicketStandingPlaceCounter(
-              amount: ticketAmountChosen.toString(),
-              onDecreasePressed: onDecreasePressed,
-              onIncreasePressed: onIncreasePressed,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(4.w),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30.r),
+                    border: Border.all(
+                      color: context.colorScheme.secondary,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('${LocaleKeys.price.tr()}:'),
+                      SizedBox(width: 5.w),
+                      Text(ticket.price.toString()),
+                    ],
+                  ),
+                ),
+                TicketStandingPlaceCounter(
+                  amount: ticketAmountChosen.toString(),
+                  onDecreasePressed: onDecreasePressed,
+                  onIncreasePressed: onIncreasePressed,
+                ),
+              ],
             ),
           ),
         ],

@@ -32,5 +32,6 @@ abstract class  LocaleKeys {
   static const tickets = 'tickets';
   static const total = 'total';
   static const available = 'available';
+  static const price = 'price';
 
 }

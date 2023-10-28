@@ -35,10 +35,7 @@ class App extends StatelessWidget {
               FlutterNativeSplash.remove();
 
               return _appRouter.pushAndPopUntil(
-                TicketStandingPlacesRoute(
-                  eventId: 'eventId',
-                  dateTime: DateTime.now(),
-                ),
+                const LoginRoute(),
                 predicate: (route) => false,
               );
               // return _appRouter.pushAndPopUntil(
