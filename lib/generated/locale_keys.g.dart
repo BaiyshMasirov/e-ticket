@@ -16,6 +16,9 @@ abstract class  LocaleKeys {
   static const wrongPhoneFormat = 'wrongPhoneFormat';
   static const password = 'password';
   static const email = 'email';
+  static const first_name = 'first_name';
+  static const surname = 'surname';
+  static const middle_name = 'middle_name';
   static const wrongEmailFormat = 'wrongEmailFormat';
   static const search = 'search';
   static const home = 'home';
@@ -23,5 +26,12 @@ abstract class  LocaleKeys {
   static const settings = 'settings';
   static const categories = 'categories';
   static const buy_ticket = 'buy_ticket';
+  static const login = 'login';
+  static const registration = 'registration';
+  static const confirm = 'confirm';
+  static const tickets = 'tickets';
+  static const total = 'total';
+  static const available = 'available';
+  static const price = 'price';
 
 }

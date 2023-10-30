@@ -1,6 +1,6 @@
 import 'package:common/common.dart';
-import 'package:eticket/presentation/screens/main/screens/events_by_type/bloc/events_by_type_cubit.dart';
-import 'package:eticket/presentation/screens/main/screens/events_by_type/widgets/widgets.dart';
+import 'package:eticket/presentation/screens/events_by_type/bloc/events_by_type_cubit.dart';
+import 'package:eticket/presentation/screens/events_by_type/widgets/widgets.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -61,10 +61,12 @@ class EventsByTypeView extends HookWidget {
               ),
             ),
             eventsState.maybeWhen(
-              loadingError: (events, errorMessage) => DataFetchFailure(
-                error: errorMessage,
-                onTryLoadAgain:
-                    context.read<EventsByTypeCubit>().getNextEventsPage,
+              loadingError: (events, errorMessage) => SliverToBoxAdapter(
+                child: DataFetchFailure(
+                  error: errorMessage,
+                  onTryLoadAgain:
+                      context.read<EventsByTypeCubit>().getNextEventsPage,
+                ),
               ),
               orElse: () {
                 return const SliverToBoxAdapter();

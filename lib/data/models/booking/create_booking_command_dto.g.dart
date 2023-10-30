@@ -12,8 +12,7 @@ _$CreateBookingCommandDtoImpl _$$CreateBookingCommandDtoImplFromJson(
       customerName: json['customerName'] as String?,
       customerEmail: json['customerEmail'] as String?,
       customerPhone: json['customerPhone'] as String?,
-      paymentType: $enumDecode(_$PaymentTypeEnumMap, json['paymentType'],
-          unknownValue: PaymentType.UNKNOWN),
+      paymentType: json['paymentType'] as int,
       eventId: json['eventId'] as String,
       ticketCount: json['ticketCount'] as int,
       bookingSum: (json['bookingSum'] as num).toDouble(),
@@ -32,19 +31,9 @@ Map<String, dynamic> _$$CreateBookingCommandDtoImplToJson(
   writeNotNull('customerName', instance.customerName);
   writeNotNull('customerEmail', instance.customerEmail);
   writeNotNull('customerPhone', instance.customerPhone);
-  val['paymentType'] = _$PaymentTypeEnumMap[instance.paymentType]!;
+  val['paymentType'] = instance.paymentType;
   val['eventId'] = instance.eventId;
   val['ticketCount'] = instance.ticketCount;
   val['bookingSum'] = instance.bookingSum;
   return val;
 }
-
-const _$PaymentTypeEnumMap = {
-  PaymentType.WTF1: 1,
-  PaymentType.WTF2: 2,
-  PaymentType.WTF3: 3,
-  PaymentType.WTF4: 4,
-  PaymentType.WTF5: 5,
-  PaymentType.WTF6: 6,
-  PaymentType.UNKNOWN: 'UNKNOWN',
-};

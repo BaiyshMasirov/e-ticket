@@ -4,11 +4,11 @@ import 'package:eticket/presentation/widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
-class BookingTicketScreen extends StatelessWidget {
+class TicketBookingScreen extends StatelessWidget {
   final DateTime dateTime;
   final String eventId;
 
-  const BookingTicketScreen({
+  const TicketBookingScreen({
     required this.dateTime,
     required this.eventId,
     Key? key,

@@ -1,7 +1,7 @@
 import 'package:common/common.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/domain/domain.dart';
-import 'package:eticket/presentation/screens/main/screens/events_by_type/bloc/events_by_type_state.dart';
+import 'package:eticket/presentation/screens/events_by_type/bloc/events_by_type_state.dart';
 import 'package:get_it/get_it.dart';
 
 export 'events_by_type_state.dart';

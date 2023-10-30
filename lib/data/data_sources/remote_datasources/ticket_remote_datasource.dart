@@ -27,6 +27,29 @@ class TicketRemoteDatasource {
     return response;
   }
 
+  Future<RemoteResponse<List<TicketTypeCountDto>>> getTicketsCountByEventId({
+    required String eventId,
+  }) async {
+    final response = await _dio.makeRequest(
+      request: () => _dio.get(
+        'get-tickets-count-eventId',
+        data: {'eventId': eventId},
+      ),
+      parse: (json) {
+        final list = json as List;
+        final data = list
+            .map((e) => TicketTypeCountDto.fromJson(
+                  e,
+                ))
+            .toList();
+
+        return data;
+      },
+    );
+
+    return response;
+  }
+
   Future<RemoteResponse<ApiUserTokenDto>> holdTicket(
     HoldTicketCommandDto holdTicketCommandDto,
   ) async {

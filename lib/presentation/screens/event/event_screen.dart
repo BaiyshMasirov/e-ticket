@@ -4,7 +4,7 @@ import 'package:eticket/common/extensions/extensions.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
-import 'package:eticket/presentation/screens/main/screens/event/event_view.dart';
+import 'package:eticket/presentation/screens/event/event_view.dart';
 import 'package:eticket/presentation/widgets/app_scaffold.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
@@ -38,10 +38,11 @@ class EventScreen extends StatelessWidget {
           );
 
           if (eventDateTimes.length == 1) {
-            context.navigateTo(BookingTicketRoute(
+            navigateToBooking(
+              context: context,
               dateTime: eventDateTimes.first,
-              eventId: event.id,
-            ));
+              event: event,
+            );
             return;
           }
 
@@ -49,10 +50,11 @@ class EventScreen extends StatelessWidget {
             context: context,
             eventDateTimes: eventDateTimes,
             onDatePick: (pickedDatetime) {
-              context.navigateTo(BookingTicketRoute(
+              navigateToBooking(
                 dateTime: pickedDatetime,
-                eventId: event.id,
-              ));
+                event: event,
+                context: context,
+              );
             },
           );
         },
@@ -65,5 +67,27 @@ class EventScreen extends StatelessWidget {
         child: EventView(event: event),
       ),
     );
+  }
+
+  void navigateToBooking({
+    required BuildContext context,
+    required EventDto event,
+    required DateTime dateTime,
+  }) {
+    if (event.locationType == 0) {
+      context.navigateTo(
+        TicketStandingPlacesRoute(
+          eventId: event.id,
+          dateTime: dateTime,
+        ),
+      );
+
+      return;
+    }
+
+    context.navigateTo(TicketBookingRoute(
+      dateTime: dateTime,
+      eventId: event.id,
+    ));
   }
 }

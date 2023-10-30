@@ -9,5 +9,6 @@ class RouteConstants {
   static const String settingsScreen = 'settings';
   static const String eventScreen = '/event';
   static const String eventsByTypeScreen = '/events-by-type';
-  static const String bookingTicket = '/booking-ticket';
+  static const String ticketBookingScreen = '/ticket-booking';
+  static const String ticketStandingPlaces = '/ticket-standing-places';
 }

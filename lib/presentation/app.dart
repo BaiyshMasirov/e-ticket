@@ -38,6 +38,10 @@ class App extends StatelessWidget {
                 const LoginRoute(),
                 predicate: (route) => false,
               );
+              // return _appRouter.pushAndPopUntil(
+              //   const LoginRoute(),
+              //   predicate: (route) => false,
+              // );
             },
             orElse: () => null,
           ),

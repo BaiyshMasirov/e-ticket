@@ -24,8 +24,7 @@ mixin _$CreateBookingCommandDto {
   String? get customerName => throw _privateConstructorUsedError;
   String? get customerEmail => throw _privateConstructorUsedError;
   String? get customerPhone => throw _privateConstructorUsedError;
-  @JsonKey(unknownEnumValue: PaymentType.UNKNOWN)
-  PaymentType get paymentType => throw _privateConstructorUsedError;
+  int get paymentType => throw _privateConstructorUsedError;
   String get eventId => throw _privateConstructorUsedError;
   int get ticketCount => throw _privateConstructorUsedError;
   double get bookingSum => throw _privateConstructorUsedError;
@@ -46,7 +45,7 @@ abstract class $CreateBookingCommandDtoCopyWith<$Res> {
       {String? customerName,
       String? customerEmail,
       String? customerPhone,
-      @JsonKey(unknownEnumValue: PaymentType.UNKNOWN) PaymentType paymentType,
+      int paymentType,
       String eventId,
       int ticketCount,
       double bookingSum});
@@ -90,7 +89,7 @@ class _$CreateBookingCommandDtoCopyWithImpl<$Res,
       paymentType: null == paymentType
           ? _value.paymentType
           : paymentType // ignore: cast_nullable_to_non_nullable
-              as PaymentType,
+              as int,
       eventId: null == eventId
           ? _value.eventId
           : eventId // ignore: cast_nullable_to_non_nullable
@@ -120,7 +119,7 @@ abstract class _$$CreateBookingCommandDtoImplCopyWith<$Res>
       {String? customerName,
       String? customerEmail,
       String? customerPhone,
-      @JsonKey(unknownEnumValue: PaymentType.UNKNOWN) PaymentType paymentType,
+      int paymentType,
       String eventId,
       int ticketCount,
       double bookingSum});
@@ -163,7 +162,7 @@ class __$$CreateBookingCommandDtoImplCopyWithImpl<$Res>
       paymentType: null == paymentType
           ? _value.paymentType
           : paymentType // ignore: cast_nullable_to_non_nullable
-              as PaymentType,
+              as int,
       eventId: null == eventId
           ? _value.eventId
           : eventId // ignore: cast_nullable_to_non_nullable
@@ -187,7 +186,7 @@ class _$CreateBookingCommandDtoImpl extends _CreateBookingCommandDto {
       {required this.customerName,
       required this.customerEmail,
       required this.customerPhone,
-      @JsonKey(unknownEnumValue: PaymentType.UNKNOWN) required this.paymentType,
+      required this.paymentType,
       required this.eventId,
       required this.ticketCount,
       required this.bookingSum})
@@ -203,8 +202,7 @@ class _$CreateBookingCommandDtoImpl extends _CreateBookingCommandDto {
   @override
   final String? customerPhone;
   @override
-  @JsonKey(unknownEnumValue: PaymentType.UNKNOWN)
-  final PaymentType paymentType;
+  final int paymentType;
   @override
   final String eventId;
   @override
@@ -262,8 +260,7 @@ abstract class _CreateBookingCommandDto extends CreateBookingCommandDto {
       {required final String? customerName,
       required final String? customerEmail,
       required final String? customerPhone,
-      @JsonKey(unknownEnumValue: PaymentType.UNKNOWN)
-      required final PaymentType paymentType,
+      required final int paymentType,
       required final String eventId,
       required final int ticketCount,
       required final double bookingSum}) = _$CreateBookingCommandDtoImpl;
@@ -279,8 +276,7 @@ abstract class _CreateBookingCommandDto extends CreateBookingCommandDto {
   @override
   String? get customerPhone;
   @override
-  @JsonKey(unknownEnumValue: PaymentType.UNKNOWN)
-  PaymentType get paymentType;
+  int get paymentType;
   @override
   String get eventId;
   @override

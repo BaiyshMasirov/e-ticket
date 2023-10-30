@@ -1,5 +1,4 @@
 import 'package:common/common.dart';
-import 'package:eticket/data/data.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'create_booking_command_dto.freezed.dart';
@@ -12,8 +11,7 @@ class CreateBookingCommandDto with _$CreateBookingCommandDto {
     required String? customerName,
     required String? customerEmail,
     required String? customerPhone,
-    @JsonKey(unknownEnumValue: PaymentType.UNKNOWN)
-    required PaymentType paymentType,
+    required int paymentType,
     required String eventId,
     required int ticketCount,
     required double bookingSum,

@@ -14,11 +14,21 @@
   "wrongPhoneFormat": "Неверный формат номер телефона",
   "password": "Пароль",
   "email": "Почта",
+  "first_name": "Имя",
+  "surname": "Фамилия",
+  "middle_name": "Отчество",
   "wrongEmailFormat": "Неверный формат почты",
   "search": "Поиск",
   "home": "Главная",
   "history": "История",
   "settings": "Настройки",
   "categories": "Категории",
-  "buy_ticket": "Купить билет"
+  "buy_ticket": "Купить билет",
+  "login": "Вход",
+  "registration": "Регистрация",
+  "confirm": "Подтвердить",
+  "tickets": "Билеты",
+  "total": "Всего",
+  "available": "Доступно",
+  "price": "Цена"
 }
