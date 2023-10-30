@@ -44,32 +44,43 @@ class SearchView extends HookWidget {
           },
           headerSliver: SliverAppBar(
             actions: [
-              IconButton(
-                onPressed: () async {
-                  final filter = context.read<SearchCubit>().state.eventsFilter;
+              Stack(children: [
+                eventsState.eventsFilter.isFilterActive == false
+                    ? Positioned(
+                        top: 22.h,
+                        left: 8.h,
+                        child: Icon(Icons.brightness_1,
+                            size: 10.0, color: context.theme.errorColor),
+                      )
+                    : const SizedBox.shrink(),
+                IconButton(
+                  onPressed: () async {
+                    final filter =
+                        context.read<SearchCubit>().state.eventsFilter;
 
-                  EventsFilterBottomSheet.showBottomSheet(
-                    context: context,
-                    initialEventType: filter.type,
-                    initialEventStatus: filter.status,
-                    initialDate: filter.date,
-                    text: filter.text,
-                    onClearFilter: context.read<SearchCubit>().clearFilter,
-                    onSelect: (date, paymentType, transactionStatus, text) {
-                      final filter = EventsFilter(
-                        type: paymentType,
-                        date: date,
-                        text: text,
-                        status: transactionStatus,
-                      );
+                    EventsFilterBottomSheet.showBottomSheet(
+                      context: context,
+                      initialEventType: filter.type,
+                      initialEventStatus: filter.status,
+                      initialDate: filter.date,
+                      text: filter.text,
+                      onClearFilter: context.read<SearchCubit>().clearFilter,
+                      onSelect: (date, paymentType, transactionStatus, text) {
+                        final filter = EventsFilter(
+                          type: paymentType,
+                          date: date,
+                          text: text,
+                          status: transactionStatus,
+                        );
 
-                      context.read<SearchCubit>().refreshPage(filter: filter);
-                    },
-                  );
-                },
-                icon: Icon(Icons.format_list_bulleted_rounded,
-                    color: context.colorScheme.secondary),
-              ),
+                        context.read<SearchCubit>().refreshPage(filter: filter);
+                      },
+                    );
+                  },
+                  icon: Icon(Icons.format_list_bulleted_rounded,
+                      color: context.colorScheme.secondary),
+                ),
+              ]),
             ],
             stretch: false,
             pinned: true,

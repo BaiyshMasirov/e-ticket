@@ -18,6 +18,13 @@ class EventsFilter with _$EventsFilter {
 
   factory EventsFilter.fromJson(Json json) => _$EventsFilterFromJson(json);
 
+  bool get isFilterActive =>
+      type != null ||
+      status != null ||
+      date != null ||
+      text != null ||
+      (text?.isEmpty ?? false);
+
   Json toQueryParams() {
     final queryParams = <String, dynamic>{};
     if (type != null) {
