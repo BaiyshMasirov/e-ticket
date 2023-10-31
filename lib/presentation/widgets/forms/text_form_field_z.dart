@@ -20,6 +20,8 @@ class TextFormFieldZ extends StatelessWidget {
   final bool enabled;
   final String? errorText;
   final void Function()? onTap;
+  final InputDecoration? inputDecoration;
+  final void Function(String text)? onChanged;
 
   const TextFormFieldZ({
     required this.controller,
@@ -36,6 +38,8 @@ class TextFormFieldZ extends StatelessWidget {
     this.inputFormatters,
     this.suffix,
     this.errorText,
+    this.inputDecoration,
+    this.onChanged,
     Key? key,
   }) : super(key: key);
 
@@ -60,21 +64,23 @@ class TextFormFieldZ extends StatelessWidget {
       keyboardType: textInputType,
       minLines: minLines,
       maxLines: minLines != null ? null : 1,
-      decoration: InputDecoration(
-        filled: true,
-        // focusColor: Colors.yellow,
-        // fillColor: Colors.white,
-        labelText: label,
-        // labelStyle: const TextStyle(color: Colors.black),
-        // floatingLabelStyle: TextStyle(color: Colors.white),
-        suffixIcon: suffix,
-        hintText: placeholder,
+      onChanged: onChanged,
+      decoration: inputDecoration ??
+          InputDecoration(
+            filled: true,
+            // focusColor: Colors.yellow,
+            // fillColor: Colors.white,
+            labelText: label,
+            // labelStyle: const TextStyle(color: Colors.black),
+            // floatingLabelStyle: TextStyle(color: Colors.white),
+            suffixIcon: suffix,
+            hintText: placeholder,
 
-        contentPadding: EdgeInsets.symmetric(
-          horizontal: 15.w,
-          vertical: 10.h,
-        ),
-      ),
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: 15.w,
+              vertical: 10.h,
+            ),
+          ),
       inputFormatters: textInputFormatters,
       validator: (value) {
         if (checkForNullEmpty && (value == null || value.isEmpty)) {
