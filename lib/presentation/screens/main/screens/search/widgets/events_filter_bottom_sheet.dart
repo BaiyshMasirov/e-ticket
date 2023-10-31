@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:common/common.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/data/models/dictionaries/key_value_map_dto.dart';
+import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/utils/date_format.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -53,7 +55,7 @@ class EventsFilterBottomSheet extends HookWidget {
         shrinkWrap: true,
         children: [
           DropDownFormFieldZ<KeyValueMapDto>(
-            label: 'Выберите из списка',
+            label: LocaleKeys.select_from_list.tr(),
             value: eventType.value != null
                 ? DropDownFormFieldZModel<KeyValueMapDto>(
                     eventType.value!.value, eventType.value!)
@@ -65,7 +67,7 @@ class EventsFilterBottomSheet extends HookWidget {
           ),
           SizedBox(height: 10.h),
           DropDownFormFieldZ<KeyValueMapDto>(
-            label: 'Выберите из списка',
+            label: LocaleKeys.select_from_list.tr(),
             value: eventStatus.value != null
                 ? DropDownFormFieldZModel<KeyValueMapDto>(
                     eventStatus.value!.value, eventStatus.value!)
@@ -79,12 +81,12 @@ class EventsFilterBottomSheet extends HookWidget {
           TextFormFieldZ(
             controller: textController,
             checkForNullEmpty: true,
-            label: 'text',
+            label: LocaleKeys.enter_text.tr(),
           ),
           SizedBox(height: 10.h),
           DatePickerFormFieldZ(
             controller: dateToController,
-            label: 'Дата ',
+            label: LocaleKeys.date.tr(),
             onTap: (date) => dateTo.value = date,
           ),
           SizedBox(height: 30.h),
@@ -103,7 +105,7 @@ class EventsFilterBottomSheet extends HookWidget {
                 dateToController.text = '';
                 onClearFilter();
               },
-              child: const Text('Очистить форму'),
+              child: Text(LocaleKeys.clear_form.tr()),
             ),
           ),
           SizedBox(height: 15.h),
@@ -120,7 +122,9 @@ class EventsFilterBottomSheet extends HookWidget {
                 backgroundColor: context.colorScheme.onPrimary,
                 foregroundColor: context.colorScheme.primary,
               ),
-              child: const Text('Поиск'),
+              child: Text(
+                LocaleKeys.search.tr(),
+              ),
             ),
           )
         ],

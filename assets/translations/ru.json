@@ -30,5 +30,9 @@
   "tickets": "Билеты",
   "total": "Всего",
   "available": "Доступно",
-  "price": "Цена"
+  "price": "Цена",
+  "clear_form": "Очистить форму",
+  "date": "Дата",
+  "select_from_list": "Выберите из списка",
+  "enter_text": "Введите текст"
 }
