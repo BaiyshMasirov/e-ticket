@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
-import 'package:eticket/common/extensions/extensions.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
