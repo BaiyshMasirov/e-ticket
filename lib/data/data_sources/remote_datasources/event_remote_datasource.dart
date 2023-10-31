@@ -12,11 +12,17 @@ class EventRemoteDatasource {
   Future<RemoteResponse<EventPagingDto>> getEvents({
     required EventsFilter eventsFilter,
     required int page,
+    String? searchText,
   }) async {
     final queryParams = eventsFilter.toQueryParams();
     queryParams.addAll({
       'page': page,
     });
+    if (searchText != null && searchText.isNotEmpty) {
+      queryParams.addAll({
+        'text': searchText,
+      });
+    }
 
     final response = await _dio.makeRequest(
       request: () => _dio.get(

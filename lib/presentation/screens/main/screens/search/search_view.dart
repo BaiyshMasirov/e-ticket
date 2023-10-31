@@ -44,43 +44,44 @@ class SearchView extends HookWidget {
           },
           headerSliver: SliverAppBar(
             actions: [
-              Stack(children: [
-                eventsState.eventsFilter.isFilterActive == false
-                    ? Positioned(
-                        top: 22.h,
-                        left: 8.h,
-                        child: Icon(Icons.brightness_1,
-                            size: 10.0, color: context.theme.errorColor),
-                      )
-                    : const SizedBox.shrink(),
-                IconButton(
-                  onPressed: () async {
-                    final filter =
-                        context.read<SearchCubit>().state.eventsFilter;
+              IconButton(
+                onPressed: () async {
+                  final filter = context.read<SearchCubit>().state.eventsFilter;
 
-                    EventsFilterBottomSheet.showBottomSheet(
-                      context: context,
-                      initialEventType: filter.type,
-                      initialEventStatus: filter.status,
-                      initialDate: filter.date,
-                      text: filter.text,
-                      onClearFilter: context.read<SearchCubit>().clearFilter,
-                      onSelect: (date, paymentType, transactionStatus, text) {
-                        final filter = EventsFilter(
-                          type: paymentType,
-                          date: date,
-                          text: text,
-                          status: transactionStatus,
-                        );
+                  EventsFilterBottomSheet.showBottomSheet(
+                    context: context,
+                    initialEventType: filter.type,
+                    initialEventStatus: filter.status,
+                    initialDate: filter.date,
+                    onClearFilter: context.read<SearchCubit>().clearFilter,
+                    onSelect: (date, paymentType, transactionStatus) {
+                      final filter = EventsFilter(
+                        type: paymentType,
+                        date: date,
+                        status: transactionStatus,
+                      );
 
-                        context.read<SearchCubit>().refreshPage(filter: filter);
-                      },
-                    );
-                  },
-                  icon: Icon(Icons.format_list_bulleted_rounded,
-                      color: context.colorScheme.secondary),
+                      context.read<SearchCubit>().refreshPage(filter: filter);
+                    },
+                  );
+                },
+                icon: Stack(
+                  children: [
+                    const Icon(
+                      Icons.format_list_bulleted_rounded,
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      left: 0,
+                      child: Icon(
+                        Icons.brightness_1,
+                        size: 10.0,
+                        color: context.colorScheme.onError,
+                      ),
+                    )
+                  ],
                 ),
-              ]),
+              ),
             ],
             stretch: false,
             pinned: true,
@@ -111,14 +112,14 @@ class SearchView extends HookWidget {
             eventsState.maybeWhen(
               orElse: () =>
                   SearchSearchPaginatedEventsView(searchState: eventsState),
-              loadingInProgress: (events, eventsFilter) => events.isEmpty
+              loadingInProgress: (events, eventsFilter, text) => events.isEmpty
                   ? const SliverToBoxAdapter(
                       child: Center(
                         child: CircularProgressIndicator(),
                       ),
                     )
                   : SearchSearchPaginatedEventsView(searchState: eventsState),
-              loadingSuccess: (transactions, _, __) => transactions.isEmpty
+              loadingSuccess: (transactions, _, __, ___) => transactions.isEmpty
                   ? const SliverToBoxAdapter(
                       child: Center(
                         child: Text('Ивентов нет'),

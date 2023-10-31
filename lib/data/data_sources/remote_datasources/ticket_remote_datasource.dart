@@ -16,7 +16,7 @@ class TicketRemoteDatasource {
       request: () => _dio.get(
         '/api/Ticket/get-tickets-by-eventId',
         queryParameters: {
-          'eventId': eventId,
+          'id': '999ff4d5-e295-4569-a346-80c68787c610',
         },
       ),
       parse: (json) {

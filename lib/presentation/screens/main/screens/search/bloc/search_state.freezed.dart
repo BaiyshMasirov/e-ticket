@@ -18,44 +18,52 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SearchState {
   List<EventDto> get events => throw _privateConstructorUsedError;
   EventsFilter get eventsFilter => throw _privateConstructorUsedError;
+  String get searchText => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
         initial,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
         loadingInProgress,
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)
+            String searchText, bool isNextPageAvailable)
         loadingSuccess,
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)
+            String searchText, String? errorMessage)
         loadingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         initial,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         loadingInProgress,
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+            String searchText, bool isNextPageAvailable)?
         loadingSuccess,
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+            String searchText, String? errorMessage)?
         loadingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)? initial,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        initial,
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         loadingInProgress,
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+            String searchText, bool isNextPageAvailable)?
         loadingSuccess,
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+            String searchText, String? errorMessage)?
         loadingError,
     required TResult orElse(),
   }) =>
@@ -97,7 +105,8 @@ abstract class $SearchStateCopyWith<$Res> {
           SearchState value, $Res Function(SearchState) then) =
       _$SearchStateCopyWithImpl<$Res, SearchState>;
   @useResult
-  $Res call({List<EventDto> events, EventsFilter eventsFilter});
+  $Res call(
+      {List<EventDto> events, EventsFilter eventsFilter, String searchText});
 
   $EventsFilterCopyWith<$Res> get eventsFilter;
 }
@@ -117,6 +126,7 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
   $Res call({
     Object? events = null,
     Object? eventsFilter = null,
+    Object? searchText = null,
   }) {
     return _then(_value.copyWith(
       events: null == events
@@ -127,6 +137,10 @@ class _$SearchStateCopyWithImpl<$Res, $Val extends SearchState>
           ? _value.eventsFilter
           : eventsFilter // ignore: cast_nullable_to_non_nullable
               as EventsFilter,
+      searchText: null == searchText
+          ? _value.searchText
+          : searchText // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 
@@ -147,7 +161,8 @@ abstract class _$$SearchStateImplCopyWith<$Res>
       __$$SearchStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<EventDto> events, EventsFilter eventsFilter});
+  $Res call(
+      {List<EventDto> events, EventsFilter eventsFilter, String searchText});
 
   @override
   $EventsFilterCopyWith<$Res> get eventsFilter;
@@ -166,6 +181,7 @@ class __$$SearchStateImplCopyWithImpl<$Res>
   $Res call({
     Object? events = null,
     Object? eventsFilter = null,
+    Object? searchText = null,
   }) {
     return _then(_$SearchStateImpl(
       events: null == events
@@ -176,6 +192,10 @@ class __$$SearchStateImplCopyWithImpl<$Res>
           ? _value.eventsFilter
           : eventsFilter // ignore: cast_nullable_to_non_nullable
               as EventsFilter,
+      searchText: null == searchText
+          ? _value.searchText
+          : searchText // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -184,7 +204,9 @@ class __$$SearchStateImplCopyWithImpl<$Res>
 
 class _$SearchStateImpl extends _SearchState {
   const _$SearchStateImpl(
-      {required final List<EventDto> events, required this.eventsFilter})
+      {required final List<EventDto> events,
+      required this.eventsFilter,
+      required this.searchText})
       : _events = events,
         super._();
 
@@ -198,10 +220,12 @@ class _$SearchStateImpl extends _SearchState {
 
   @override
   final EventsFilter eventsFilter;
+  @override
+  final String searchText;
 
   @override
   String toString() {
-    return 'SearchState.initial(events: $events, eventsFilter: $eventsFilter)';
+    return 'SearchState.initial(events: $events, eventsFilter: $eventsFilter, searchText: $searchText)';
   }
 
   @override
@@ -211,12 +235,14 @@ class _$SearchStateImpl extends _SearchState {
             other is _$SearchStateImpl &&
             const DeepCollectionEquality().equals(other._events, _events) &&
             (identical(other.eventsFilter, eventsFilter) ||
-                other.eventsFilter == eventsFilter));
+                other.eventsFilter == eventsFilter) &&
+            (identical(other.searchText, searchText) ||
+                other.searchText == searchText));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_events), eventsFilter);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_events), eventsFilter, searchText);
 
   @JsonKey(ignore: true)
   @override
@@ -227,53 +253,60 @@ class _$SearchStateImpl extends _SearchState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
         initial,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
         loadingInProgress,
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)
+            String searchText, bool isNextPageAvailable)
         loadingSuccess,
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)
+            String searchText, String? errorMessage)
         loadingError,
   }) {
-    return initial(events, eventsFilter);
+    return initial(events, eventsFilter, searchText);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         initial,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         loadingInProgress,
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+            String searchText, bool isNextPageAvailable)?
         loadingSuccess,
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+            String searchText, String? errorMessage)?
         loadingError,
   }) {
-    return initial?.call(events, eventsFilter);
+    return initial?.call(events, eventsFilter, searchText);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)? initial,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        initial,
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         loadingInProgress,
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+            String searchText, bool isNextPageAvailable)?
         loadingSuccess,
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+            String searchText, String? errorMessage)?
         loadingError,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(events, eventsFilter);
+      return initial(events, eventsFilter, searchText);
     }
     return orElse();
   }
@@ -319,13 +352,16 @@ class _$SearchStateImpl extends _SearchState {
 abstract class _SearchState extends SearchState {
   const factory _SearchState(
       {required final List<EventDto> events,
-      required final EventsFilter eventsFilter}) = _$SearchStateImpl;
+      required final EventsFilter eventsFilter,
+      required final String searchText}) = _$SearchStateImpl;
   const _SearchState._() : super._();
 
   @override
   List<EventDto> get events;
   @override
   EventsFilter get eventsFilter;
+  @override
+  String get searchText;
   @override
   @JsonKey(ignore: true)
   _$$SearchStateImplCopyWith<_$SearchStateImpl> get copyWith =>
@@ -341,7 +377,8 @@ abstract class _$$SearchLoadingInProgressImplCopyWith<$Res>
       __$$SearchLoadingInProgressImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<EventDto> events, EventsFilter eventsFilter});
+  $Res call(
+      {List<EventDto> events, EventsFilter eventsFilter, String searchText});
 
   @override
   $EventsFilterCopyWith<$Res> get eventsFilter;
@@ -361,6 +398,7 @@ class __$$SearchLoadingInProgressImplCopyWithImpl<$Res>
   $Res call({
     Object? events = null,
     Object? eventsFilter = null,
+    Object? searchText = null,
   }) {
     return _then(_$SearchLoadingInProgressImpl(
       events: null == events
@@ -371,6 +409,10 @@ class __$$SearchLoadingInProgressImplCopyWithImpl<$Res>
           ? _value.eventsFilter
           : eventsFilter // ignore: cast_nullable_to_non_nullable
               as EventsFilter,
+      searchText: null == searchText
+          ? _value.searchText
+          : searchText // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -379,7 +421,9 @@ class __$$SearchLoadingInProgressImplCopyWithImpl<$Res>
 
 class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
   const _$SearchLoadingInProgressImpl(
-      {required final List<EventDto> events, required this.eventsFilter})
+      {required final List<EventDto> events,
+      required this.eventsFilter,
+      required this.searchText})
       : _events = events,
         super._();
 
@@ -393,10 +437,12 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
 
   @override
   final EventsFilter eventsFilter;
+  @override
+  final String searchText;
 
   @override
   String toString() {
-    return 'SearchState.loadingInProgress(events: $events, eventsFilter: $eventsFilter)';
+    return 'SearchState.loadingInProgress(events: $events, eventsFilter: $eventsFilter, searchText: $searchText)';
   }
 
   @override
@@ -406,12 +452,14 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
             other is _$SearchLoadingInProgressImpl &&
             const DeepCollectionEquality().equals(other._events, _events) &&
             (identical(other.eventsFilter, eventsFilter) ||
-                other.eventsFilter == eventsFilter));
+                other.eventsFilter == eventsFilter) &&
+            (identical(other.searchText, searchText) ||
+                other.searchText == searchText));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_events), eventsFilter);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_events), eventsFilter, searchText);
 
   @JsonKey(ignore: true)
   @override
@@ -423,53 +471,60 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
         initial,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
         loadingInProgress,
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)
+            String searchText, bool isNextPageAvailable)
         loadingSuccess,
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)
+            String searchText, String? errorMessage)
         loadingError,
   }) {
-    return loadingInProgress(events, eventsFilter);
+    return loadingInProgress(events, eventsFilter, searchText);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         initial,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         loadingInProgress,
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+            String searchText, bool isNextPageAvailable)?
         loadingSuccess,
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+            String searchText, String? errorMessage)?
         loadingError,
   }) {
-    return loadingInProgress?.call(events, eventsFilter);
+    return loadingInProgress?.call(events, eventsFilter, searchText);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)? initial,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        initial,
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         loadingInProgress,
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+            String searchText, bool isNextPageAvailable)?
         loadingSuccess,
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+            String searchText, String? errorMessage)?
         loadingError,
     required TResult orElse(),
   }) {
     if (loadingInProgress != null) {
-      return loadingInProgress(events, eventsFilter);
+      return loadingInProgress(events, eventsFilter, searchText);
     }
     return orElse();
   }
@@ -514,15 +569,17 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
 
 abstract class _SearchLoadingInProgress extends SearchState {
   const factory _SearchLoadingInProgress(
-          {required final List<EventDto> events,
-          required final EventsFilter eventsFilter}) =
-      _$SearchLoadingInProgressImpl;
+      {required final List<EventDto> events,
+      required final EventsFilter eventsFilter,
+      required final String searchText}) = _$SearchLoadingInProgressImpl;
   const _SearchLoadingInProgress._() : super._();
 
   @override
   List<EventDto> get events;
   @override
   EventsFilter get eventsFilter;
+  @override
+  String get searchText;
   @override
   @JsonKey(ignore: true)
   _$$SearchLoadingInProgressImplCopyWith<_$SearchLoadingInProgressImpl>
@@ -540,6 +597,7 @@ abstract class _$$SearchLoadingSuccessImplCopyWith<$Res>
   $Res call(
       {List<EventDto> events,
       EventsFilter eventsFilter,
+      String searchText,
       bool isNextPageAvailable});
 
   @override
@@ -559,6 +617,7 @@ class __$$SearchLoadingSuccessImplCopyWithImpl<$Res>
   $Res call({
     Object? events = null,
     Object? eventsFilter = null,
+    Object? searchText = null,
     Object? isNextPageAvailable = null,
   }) {
     return _then(_$SearchLoadingSuccessImpl(
@@ -570,6 +629,10 @@ class __$$SearchLoadingSuccessImplCopyWithImpl<$Res>
           ? _value.eventsFilter
           : eventsFilter // ignore: cast_nullable_to_non_nullable
               as EventsFilter,
+      searchText: null == searchText
+          ? _value.searchText
+          : searchText // ignore: cast_nullable_to_non_nullable
+              as String,
       isNextPageAvailable: null == isNextPageAvailable
           ? _value.isNextPageAvailable
           : isNextPageAvailable // ignore: cast_nullable_to_non_nullable
@@ -584,6 +647,7 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
   const _$SearchLoadingSuccessImpl(
       {required final List<EventDto> events,
       required this.eventsFilter,
+      required this.searchText,
       required this.isNextPageAvailable})
       : _events = events,
         super._();
@@ -599,11 +663,13 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
   @override
   final EventsFilter eventsFilter;
   @override
+  final String searchText;
+  @override
   final bool isNextPageAvailable;
 
   @override
   String toString() {
-    return 'SearchState.loadingSuccess(events: $events, eventsFilter: $eventsFilter, isNextPageAvailable: $isNextPageAvailable)';
+    return 'SearchState.loadingSuccess(events: $events, eventsFilter: $eventsFilter, searchText: $searchText, isNextPageAvailable: $isNextPageAvailable)';
   }
 
   @override
@@ -614,6 +680,8 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
             const DeepCollectionEquality().equals(other._events, _events) &&
             (identical(other.eventsFilter, eventsFilter) ||
                 other.eventsFilter == eventsFilter) &&
+            (identical(other.searchText, searchText) ||
+                other.searchText == searchText) &&
             (identical(other.isNextPageAvailable, isNextPageAvailable) ||
                 other.isNextPageAvailable == isNextPageAvailable));
   }
@@ -623,6 +691,7 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
       runtimeType,
       const DeepCollectionEquality().hash(_events),
       eventsFilter,
+      searchText,
       isNextPageAvailable);
 
   @JsonKey(ignore: true)
@@ -636,53 +705,63 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
         initial,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
         loadingInProgress,
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)
+            String searchText, bool isNextPageAvailable)
         loadingSuccess,
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)
+            String searchText, String? errorMessage)
         loadingError,
   }) {
-    return loadingSuccess(events, eventsFilter, isNextPageAvailable);
+    return loadingSuccess(
+        events, eventsFilter, searchText, isNextPageAvailable);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         initial,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         loadingInProgress,
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+            String searchText, bool isNextPageAvailable)?
         loadingSuccess,
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+            String searchText, String? errorMessage)?
         loadingError,
   }) {
-    return loadingSuccess?.call(events, eventsFilter, isNextPageAvailable);
+    return loadingSuccess?.call(
+        events, eventsFilter, searchText, isNextPageAvailable);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)? initial,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        initial,
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         loadingInProgress,
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+            String searchText, bool isNextPageAvailable)?
         loadingSuccess,
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+            String searchText, String? errorMessage)?
         loadingError,
     required TResult orElse(),
   }) {
     if (loadingSuccess != null) {
-      return loadingSuccess(events, eventsFilter, isNextPageAvailable);
+      return loadingSuccess(
+          events, eventsFilter, searchText, isNextPageAvailable);
     }
     return orElse();
   }
@@ -729,6 +808,7 @@ abstract class _SearchLoadingSuccess extends SearchState {
   const factory _SearchLoadingSuccess(
       {required final List<EventDto> events,
       required final EventsFilter eventsFilter,
+      required final String searchText,
       required final bool isNextPageAvailable}) = _$SearchLoadingSuccessImpl;
   const _SearchLoadingSuccess._() : super._();
 
@@ -736,6 +816,8 @@ abstract class _SearchLoadingSuccess extends SearchState {
   List<EventDto> get events;
   @override
   EventsFilter get eventsFilter;
+  @override
+  String get searchText;
   bool get isNextPageAvailable;
   @override
   @JsonKey(ignore: true)
@@ -752,7 +834,10 @@ abstract class _$$SearchLoadingErrorImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<EventDto> events, EventsFilter eventsFilter, String? errorMessage});
+      {List<EventDto> events,
+      EventsFilter eventsFilter,
+      String searchText,
+      String? errorMessage});
 
   @override
   $EventsFilterCopyWith<$Res> get eventsFilter;
@@ -771,6 +856,7 @@ class __$$SearchLoadingErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? events = null,
     Object? eventsFilter = null,
+    Object? searchText = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_$SearchLoadingErrorImpl(
@@ -782,6 +868,10 @@ class __$$SearchLoadingErrorImplCopyWithImpl<$Res>
           ? _value.eventsFilter
           : eventsFilter // ignore: cast_nullable_to_non_nullable
               as EventsFilter,
+      searchText: null == searchText
+          ? _value.searchText
+          : searchText // ignore: cast_nullable_to_non_nullable
+              as String,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -796,6 +886,7 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
   const _$SearchLoadingErrorImpl(
       {required final List<EventDto> events,
       required this.eventsFilter,
+      required this.searchText,
       this.errorMessage})
       : _events = events,
         super._();
@@ -811,11 +902,13 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
   @override
   final EventsFilter eventsFilter;
   @override
+  final String searchText;
+  @override
   final String? errorMessage;
 
   @override
   String toString() {
-    return 'SearchState.loadingError(events: $events, eventsFilter: $eventsFilter, errorMessage: $errorMessage)';
+    return 'SearchState.loadingError(events: $events, eventsFilter: $eventsFilter, searchText: $searchText, errorMessage: $errorMessage)';
   }
 
   @override
@@ -826,13 +919,19 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
             const DeepCollectionEquality().equals(other._events, _events) &&
             (identical(other.eventsFilter, eventsFilter) ||
                 other.eventsFilter == eventsFilter) &&
+            (identical(other.searchText, searchText) ||
+                other.searchText == searchText) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_events), eventsFilter, errorMessage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_events),
+      eventsFilter,
+      searchText,
+      errorMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -844,53 +943,60 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
         initial,
-    required TResult Function(List<EventDto> events, EventsFilter eventsFilter)
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
         loadingInProgress,
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)
+            String searchText, bool isNextPageAvailable)
         loadingSuccess,
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)
+            String searchText, String? errorMessage)
         loadingError,
   }) {
-    return loadingError(events, eventsFilter, errorMessage);
+    return loadingError(events, eventsFilter, searchText, errorMessage);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         initial,
-    TResult? Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         loadingInProgress,
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+            String searchText, bool isNextPageAvailable)?
         loadingSuccess,
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+            String searchText, String? errorMessage)?
         loadingError,
   }) {
-    return loadingError?.call(events, eventsFilter, errorMessage);
+    return loadingError?.call(events, eventsFilter, searchText, errorMessage);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)? initial,
-    TResult Function(List<EventDto> events, EventsFilter eventsFilter)?
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        initial,
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
         loadingInProgress,
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            bool isNextPageAvailable)?
+            String searchText, bool isNextPageAvailable)?
         loadingSuccess,
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
-            String? errorMessage)?
+            String searchText, String? errorMessage)?
         loadingError,
     required TResult orElse(),
   }) {
     if (loadingError != null) {
-      return loadingError(events, eventsFilter, errorMessage);
+      return loadingError(events, eventsFilter, searchText, errorMessage);
     }
     return orElse();
   }
@@ -937,6 +1043,7 @@ abstract class _SearchLoadingError extends SearchState {
   const factory _SearchLoadingError(
       {required final List<EventDto> events,
       required final EventsFilter eventsFilter,
+      required final String searchText,
       final String? errorMessage}) = _$SearchLoadingErrorImpl;
   const _SearchLoadingError._() : super._();
 
@@ -944,6 +1051,8 @@ abstract class _SearchLoadingError extends SearchState {
   List<EventDto> get events;
   @override
   EventsFilter get eventsFilter;
+  @override
+  String get searchText;
   String? get errorMessage;
   @override
   @JsonKey(ignore: true)

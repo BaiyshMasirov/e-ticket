@@ -12,11 +12,13 @@ class EventRepository with NetworkRemoteRepositoryMixin {
   Future<Either<RequestFailure, EventPagingDto>> getEvents({
     required EventsFilter eventsFilter,
     required int page,
+    String? searchText,
   }) async {
     final response = await handleRemoteRequest(
       request: () => _eventRemoteDatasource.getEvents(
         eventsFilter: eventsFilter,
         page: page,
+        searchText: searchText,
       ),
     );
 

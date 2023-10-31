@@ -27,11 +27,17 @@ class EventsByTypeItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(20.r),
               child: Image.network(
                 eventDto.image ?? '',
+                loadingBuilder: (context, child, loadingProgress) {
+                  if (loadingProgress == null) {
+                    return child;
+                  }
+
+                  return Container(
+                    color: context.colorScheme.onError,
+                  );
+                },
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) => Container(
-                  color: context.colorScheme.onError,
-                ),
-                loadingBuilder: (context, child, loadingProgress) => Container(
                   color: context.colorScheme.onError,
                 ),
               ),

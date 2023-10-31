@@ -15,20 +15,17 @@ class EventsFilterBottomSheet extends HookWidget {
   final KeyValueMapDto? initialEventType;
   final KeyValueMapDto? initialEventStatus;
   final DateTime? initialDate;
-  final String? text;
   final Function() onClearFilter;
   final Function(
     DateTime? data,
     KeyValueMapDto? paymentType,
     KeyValueMapDto? eventsStatus,
-    String? text,
   ) onSelect;
 
   const EventsFilterBottomSheet._({
     required this.initialEventType,
     required this.initialEventStatus,
     required this.initialDate,
-    required this.text,
     required this.onClearFilter,
     required this.onSelect,
     Key? key,
@@ -39,8 +36,6 @@ class EventsFilterBottomSheet extends HookWidget {
     final eventStatus = useState(initialEventStatus);
     final eventType = useState(initialEventType);
     final dateTo = useState(initialDate);
-
-    final textController = useTextEditingController();
 
     final dateToController = useTextEditingController(
       text: DateFormatters.datetimeToSlashedNullable(initialDate),
@@ -81,12 +76,6 @@ class EventsFilterBottomSheet extends HookWidget {
             onChanged: (value) => eventStatus.value = value,
           ),
           SizedBox(height: 10.h),
-          TextFormFieldZ(
-            controller: textController,
-            checkForNullEmpty: true,
-            label: LocaleKeys.enter_text.tr(),
-          ),
-          SizedBox(height: 10.h),
           DatePickerFormFieldZ(
             controller: dateToController,
             label: LocaleKeys.date.tr(),
@@ -104,7 +93,6 @@ class EventsFilterBottomSheet extends HookWidget {
                 eventType.value = null;
                 eventStatus.value = null;
                 dateTo.value = null;
-                textController.text = '';
                 dateToController.text = '';
                 onClearFilter();
               },
@@ -116,8 +104,11 @@ class EventsFilterBottomSheet extends HookWidget {
             height: 44.h,
             child: ElevatedButton(
               onPressed: () {
-                onSelect(dateTo.value, eventType.value, eventStatus.value,
-                    textController.text);
+                onSelect(
+                  dateTo.value,
+                  eventType.value,
+                  eventStatus.value,
+                );
 
                 context.popRoute();
               },
@@ -141,11 +132,12 @@ class EventsFilterBottomSheet extends HookWidget {
     required KeyValueMapDto? initialEventType,
     required KeyValueMapDto? initialEventStatus,
     required DateTime? initialDate,
-    required String? text,
     required Function() onClearFilter,
-    required Function(DateTime? data, KeyValueMapDto? paymentType,
-            KeyValueMapDto? eventsStatus, String? text)
-        onSelect,
+    required Function(
+      DateTime? data,
+      KeyValueMapDto? paymentType,
+      KeyValueMapDto? eventsStatus,
+    ) onSelect,
   }) {
     showModalBottomSheet(
       isScrollControlled: true,
@@ -159,7 +151,6 @@ class EventsFilterBottomSheet extends HookWidget {
         initialEventType: initialEventType,
         initialEventStatus: initialEventStatus,
         initialDate: initialDate,
-        text: text,
         onClearFilter: onClearFilter,
         onSelect: onSelect,
       ),

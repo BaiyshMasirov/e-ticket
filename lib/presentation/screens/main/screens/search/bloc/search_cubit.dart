@@ -16,6 +16,7 @@ class SearchCubit extends Cubit<SearchState> {
         super(const SearchState.initial(
           events: [],
           eventsFilter: EventsFilter(),
+          searchText: '',
         ));
 
   Future<void> clearFilter() async {
@@ -25,12 +26,14 @@ class SearchCubit extends Cubit<SearchState> {
 
   Future<void> refreshPage({
     EventsFilter? filter,
+    String? searchText,
   }) async {
     _page = 1;
     emit(
       SearchState.initial(
         events: [],
         eventsFilter: filter ?? this.state.eventsFilter,
+        searchText: searchText ?? this.state.searchText,
       ),
     );
 
@@ -41,10 +44,12 @@ class SearchCubit extends Cubit<SearchState> {
     emit(SearchState.loadingInProgress(
       eventsFilter: state.eventsFilter,
       events: state.events,
+      searchText: state.searchText,
     ));
 
     final result = await _eventRepository.getEvents(
       eventsFilter: state.eventsFilter,
+      searchText: state.searchText,
       page: _page,
     );
 
@@ -52,6 +57,7 @@ class SearchCubit extends Cubit<SearchState> {
       (e) => emit(SearchState.loadingError(
         events: state.events,
         eventsFilter: state.eventsFilter,
+        searchText: state.searchText,
         errorMessage: e.errorMessage,
       )),
       (data) {
@@ -62,6 +68,7 @@ class SearchCubit extends Cubit<SearchState> {
             ...data.events,
           ],
           eventsFilter: state.eventsFilter,
+          searchText: state.searchText,
           isNextPageAvailable: _page < data.maxPage,
         ));
       },
