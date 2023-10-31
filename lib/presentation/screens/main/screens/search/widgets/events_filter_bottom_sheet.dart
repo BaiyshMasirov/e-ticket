@@ -4,7 +4,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/data/models/dictionaries/key_value_map_dto.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
-import 'package:eticket/utils/date_format.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:eticket/presentation/widgets/forms/forms.dart';
@@ -18,8 +17,12 @@ class EventsFilterBottomSheet extends HookWidget {
   final DateTime? initialDate;
   final String? text;
   final Function() onClearFilter;
-  final Function(DateTime? data, KeyValueMapDto? paymentType,
-      KeyValueMapDto? eventsStatus, String? text) onSelect;
+  final Function(
+    DateTime? data,
+    KeyValueMapDto? paymentType,
+    KeyValueMapDto? eventsStatus,
+    String? text,
+  ) onSelect;
 
   const EventsFilterBottomSheet._({
     required this.initialEventType,
@@ -40,7 +43,7 @@ class EventsFilterBottomSheet extends HookWidget {
     final textController = useTextEditingController();
 
     final dateToController = useTextEditingController(
-      text: initialDate == null ? '' : initialDate!.formatDateTime,
+      text: DateFormatters.datetimeToSlashedNullable(initialDate),
     );
 
     final eventTypesList =
