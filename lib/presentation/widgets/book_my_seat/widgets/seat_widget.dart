@@ -4,13 +4,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class SeatWidget extends StatefulWidget {
   final SeatModel model;
-  final void Function(int rowI, int colI, SeatState currentState)
-  onSeatStateChanged;
+
+  final void Function(
+    int rowI,
+    int colI,
+    SeatState currentState,
+  ) onSeatStateChanged;
 
   const SeatWidget({
-    Key? key,
     required this.model,
     required this.onSeatStateChanged,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -63,15 +67,15 @@ class _SeatWidgetState extends State<SeatWidget> {
         },
         child: seatState != SeatState.empty
             ? SvgPicture.asset(
-          _getSvgPath(safeCheckedSeatState),
-          height: widget.model.seatSvgSize.toDouble(),
-          width: widget.model.seatSvgSize.toDouble(),
-          fit: BoxFit.cover,
-        )
+                _getSvgPath(safeCheckedSeatState),
+                height: widget.model.seatSvgSize.toDouble(),
+                width: widget.model.seatSvgSize.toDouble(),
+                fit: BoxFit.cover,
+              )
             : SizedBox(
-          height: widget.model.seatSvgSize.toDouble(),
-          width: widget.model.seatSvgSize.toDouble(),
-        ),
+                height: widget.model.seatSvgSize.toDouble(),
+                width: widget.model.seatSvgSize.toDouble(),
+              ),
       );
     }
     return const SizedBox();

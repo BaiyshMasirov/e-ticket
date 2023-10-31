@@ -14,8 +14,8 @@ class TicketRemoteDatasource {
   }) async {
     final response = await _dio.makeRequest(
       request: () => _dio.get(
-        '/api/Event/get-tickets-by-eventId',
-        data: {
+        '/api/Ticket/get-tickets-by-eventId',
+        queryParameters: {
           'eventId': eventId,
         },
       ),
@@ -36,7 +36,7 @@ class TicketRemoteDatasource {
   }) async {
     final response = await _dio.makeRequest(
       request: () => _dio.get(
-        'get-tickets-count-eventId',
+        '/api/Ticket/get-tickets-count-eventId',
         data: {'eventId': eventId},
       ),
       parse: (json) {
@@ -59,7 +59,7 @@ class TicketRemoteDatasource {
   ) async {
     final response = await _dio.makeRequest(
       request: () => _dio.post(
-        '/api/Event/hold-ticket',
+        '/api/Ticket/hold-ticket',
         data: holdTicketCommandDto.toJson(),
       ),
       parse: (json) => ApiUserTokenDto.fromJson(json['token']),
