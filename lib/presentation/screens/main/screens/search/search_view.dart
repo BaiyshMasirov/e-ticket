@@ -1,6 +1,8 @@
 import 'package:common/common.dart';
 import 'package:eticket/common/extensions/extensions.dart';
+import 'package:eticket/domain/models/event/events_filter.dart';
 import 'package:eticket/presentation/screens/main/screens/search/bloc/search_cubit.dart';
+import 'package:eticket/presentation/screens/main/screens/search/widgets/events_filter_bottom_sheet.dart';
 import 'package:eticket/presentation/screens/main/screens/search/widgets/search_widgets.dart';
 import 'package:eticket/presentation/widgets/app_sliver_scroll_view.dart';
 import 'package:flutter/material.dart';
@@ -41,6 +43,45 @@ class SearchView extends HookWidget {
             context.read<SearchCubit>().refreshPage();
           },
           headerSliver: SliverAppBar(
+            actions: [
+              Stack(children: [
+                eventsState.eventsFilter.isFilterActive == false
+                    ? Positioned(
+                        top: 22.h,
+                        left: 8.h,
+                        child: Icon(Icons.brightness_1,
+                            size: 10.0, color: context.theme.errorColor),
+                      )
+                    : const SizedBox.shrink(),
+                IconButton(
+                  onPressed: () async {
+                    final filter =
+                        context.read<SearchCubit>().state.eventsFilter;
+
+                    EventsFilterBottomSheet.showBottomSheet(
+                      context: context,
+                      initialEventType: filter.type,
+                      initialEventStatus: filter.status,
+                      initialDate: filter.date,
+                      text: filter.text,
+                      onClearFilter: context.read<SearchCubit>().clearFilter,
+                      onSelect: (date, paymentType, transactionStatus, text) {
+                        final filter = EventsFilter(
+                          type: paymentType,
+                          date: date,
+                          text: text,
+                          status: transactionStatus,
+                        );
+
+                        context.read<SearchCubit>().refreshPage(filter: filter);
+                      },
+                    );
+                  },
+                  icon: Icon(Icons.format_list_bulleted_rounded,
+                      color: context.colorScheme.secondary),
+                ),
+              ]),
+            ],
             stretch: false,
             pinned: true,
             floating: true,

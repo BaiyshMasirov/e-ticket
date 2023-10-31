@@ -24,6 +24,7 @@ mixin _$EventsFilter {
   KeyValueMapDto? get status => throw _privateConstructorUsedError;
   @DateTimeUTCSerializer()
   DateTime? get date => throw _privateConstructorUsedError;
+  String? get text => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,7 +41,8 @@ abstract class $EventsFilterCopyWith<$Res> {
   $Res call(
       {KeyValueMapDto? type,
       KeyValueMapDto? status,
-      @DateTimeUTCSerializer() DateTime? date});
+      @DateTimeUTCSerializer() DateTime? date,
+      String? text});
 
   $KeyValueMapDtoCopyWith<$Res>? get type;
   $KeyValueMapDtoCopyWith<$Res>? get status;
@@ -62,6 +64,7 @@ class _$EventsFilterCopyWithImpl<$Res, $Val extends EventsFilter>
     Object? type = freezed,
     Object? status = freezed,
     Object? date = freezed,
+    Object? text = freezed,
   }) {
     return _then(_value.copyWith(
       type: freezed == type
@@ -76,6 +79,10 @@ class _$EventsFilterCopyWithImpl<$Res, $Val extends EventsFilter>
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      text: freezed == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -115,7 +122,8 @@ abstract class _$$EventsFilterImplCopyWith<$Res>
   $Res call(
       {KeyValueMapDto? type,
       KeyValueMapDto? status,
-      @DateTimeUTCSerializer() DateTime? date});
+      @DateTimeUTCSerializer() DateTime? date,
+      String? text});
 
   @override
   $KeyValueMapDtoCopyWith<$Res>? get type;
@@ -137,6 +145,7 @@ class __$$EventsFilterImplCopyWithImpl<$Res>
     Object? type = freezed,
     Object? status = freezed,
     Object? date = freezed,
+    Object? text = freezed,
   }) {
     return _then(_$EventsFilterImpl(
       type: freezed == type
@@ -151,6 +160,10 @@ class __$$EventsFilterImplCopyWithImpl<$Res>
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      text: freezed == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -159,7 +172,7 @@ class __$$EventsFilterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$EventsFilterImpl extends _EventsFilter {
   const _$EventsFilterImpl(
-      {this.type, this.status, @DateTimeUTCSerializer() this.date})
+      {this.type, this.status, @DateTimeUTCSerializer() this.date, this.text})
       : super._();
 
   factory _$EventsFilterImpl.fromJson(Map<String, dynamic> json) =>
@@ -172,10 +185,12 @@ class _$EventsFilterImpl extends _EventsFilter {
   @override
   @DateTimeUTCSerializer()
   final DateTime? date;
+  @override
+  final String? text;
 
   @override
   String toString() {
-    return 'EventsFilter(type: $type, status: $status, date: $date)';
+    return 'EventsFilter(type: $type, status: $status, date: $date, text: $text)';
   }
 
   @override
@@ -185,12 +200,13 @@ class _$EventsFilterImpl extends _EventsFilter {
             other is _$EventsFilterImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.date, date) || other.date == date));
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.text, text) || other.text == text));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, type, status, date);
+  int get hashCode => Object.hash(runtimeType, type, status, date, text);
 
   @JsonKey(ignore: true)
   @override
@@ -210,7 +226,8 @@ abstract class _EventsFilter extends EventsFilter {
   const factory _EventsFilter(
       {final KeyValueMapDto? type,
       final KeyValueMapDto? status,
-      @DateTimeUTCSerializer() final DateTime? date}) = _$EventsFilterImpl;
+      @DateTimeUTCSerializer() final DateTime? date,
+      final String? text}) = _$EventsFilterImpl;
   const _EventsFilter._() : super._();
 
   factory _EventsFilter.fromJson(Map<String, dynamic> json) =
@@ -223,6 +240,8 @@ abstract class _EventsFilter extends EventsFilter {
   @override
   @DateTimeUTCSerializer()
   DateTime? get date;
+  @override
+  String? get text;
   @override
   @JsonKey(ignore: true)
   _$$EventsFilterImplCopyWith<_$EventsFilterImpl> get copyWith =>
