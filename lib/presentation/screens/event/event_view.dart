@@ -24,7 +24,18 @@ class EventView extends StatelessWidget {
           Center(
             child: Stack(
               children: [
-                Image.network(event.image ?? ''),
+                Image.network(
+                  event.image ?? '',
+                  loadingBuilder: (context, child, loadingProgress) =>
+                      Container(
+                    color: context.colorScheme.onError,
+                    height: 300.h,
+                  ),
+                  errorBuilder: (context, error, stackTrace) => Container(
+                    color: context.colorScheme.onError,
+                    height: 300.h,
+                  ),
+                ),
                 Positioned(
                   top: 0,
                   left: 0,

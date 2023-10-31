@@ -8,13 +8,16 @@ class TicketRemoteDatasource {
     required Dio dio,
   }) : _dio = dio;
 
-  Future<RemoteResponse<List<TicketDto>>> getTicketsByEventId(
-    GetTicketsByBookingIdQueryDto getTicketsByBookingIdQueryDto,
-  ) async {
+  /// tickets for seat places event
+  Future<RemoteResponse<List<TicketDto>>> getTicketsByEventId({
+    required String eventId,
+  }) async {
     final response = await _dio.makeRequest(
       request: () => _dio.get(
         '/api/Event/get-tickets-by-eventId',
-        data: getTicketsByBookingIdQueryDto.toJson(),
+        data: {
+          'eventId': eventId,
+        },
       ),
       parse: (json) {
         final list = json as List;
@@ -27,6 +30,7 @@ class TicketRemoteDatasource {
     return response;
   }
 
+  /// tickets for standing places event
   Future<RemoteResponse<List<TicketTypeCountDto>>> getTicketsCountByEventId({
     required String eventId,
   }) async {

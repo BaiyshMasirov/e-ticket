@@ -34,7 +34,6 @@ class AppScaffold extends StatelessWidget {
       floatingActionButtonLocation: floatingActionButtonLocation,
       extendBodyBehindAppBar: extendBodyBehindAppBar,
       body: Stack(
-        fit: StackFit.expand,
         children: [
           body,
           Visibility(
