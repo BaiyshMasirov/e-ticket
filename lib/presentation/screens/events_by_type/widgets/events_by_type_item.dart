@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:eticket/common/extensions/extensions.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
@@ -27,6 +28,12 @@ class EventsByTypeItem extends StatelessWidget {
               child: Image.network(
                 eventDto.image ?? '',
                 fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => Container(
+                  color: context.colorScheme.onError,
+                ),
+                loadingBuilder: (context, child, loadingProgress) => Container(
+                  color: context.colorScheme.onError,
+                ),
               ),
             ),
           ),

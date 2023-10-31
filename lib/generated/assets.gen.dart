@@ -8,6 +8,8 @@
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsImagesGen {
@@ -59,6 +61,12 @@ class $AssetsLottiesGen {
   List<LottieGenImage> get values => [loading];
 }
 
+class $AssetsSvgsGen {
+  const $AssetsSvgsGen();
+
+  $AssetsSvgsBookingGen get booking => const $AssetsSvgsBookingGen();
+}
+
 class $AssetsTranslationsGen {
   const $AssetsTranslationsGen();
 
@@ -69,12 +77,41 @@ class $AssetsTranslationsGen {
   List<String> get values => [ru];
 }
 
+class $AssetsSvgsBookingGen {
+  const $AssetsSvgsBookingGen();
+
+  /// File path: assets/svgs/booking/svg_disabled_bus_seat.svg
+  SvgGenImage get svgDisabledBusSeat =>
+      const SvgGenImage('assets/svgs/booking/svg_disabled_bus_seat.svg');
+
+  /// File path: assets/svgs/booking/svg_selected_bus_seats.svg
+  SvgGenImage get svgSelectedBusSeats =>
+      const SvgGenImage('assets/svgs/booking/svg_selected_bus_seats.svg');
+
+  /// File path: assets/svgs/booking/svg_sold_bus_seat.svg
+  SvgGenImage get svgSoldBusSeat =>
+      const SvgGenImage('assets/svgs/booking/svg_sold_bus_seat.svg');
+
+  /// File path: assets/svgs/booking/svg_unselected_bus_seat.svg
+  SvgGenImage get svgUnselectedBusSeat =>
+      const SvgGenImage('assets/svgs/booking/svg_unselected_bus_seat.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        svgDisabledBusSeat,
+        svgSelectedBusSeats,
+        svgSoldBusSeat,
+        svgUnselectedBusSeat
+      ];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLogosGen logos = $AssetsLogosGen();
   static const $AssetsLottiesGen lotties = $AssetsLottiesGen();
+  static const $AssetsSvgsGen svgs = $AssetsSvgsGen();
   static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }
 
@@ -144,6 +181,59 @@ class AssetGenImage {
       _assetName,
       bundle: bundle,
       package: package,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class SvgGenImage {
+  const SvgGenImage(this._assetName);
+
+  final String _assetName;
+
+  SvgPicture svg({
+    Key? key,
+    bool matchTextDirection = false,
+    AssetBundle? bundle,
+    String? package,
+    double? width,
+    double? height,
+    BoxFit fit = BoxFit.contain,
+    AlignmentGeometry alignment = Alignment.center,
+    bool allowDrawingOutsideViewBox = false,
+    WidgetBuilder? placeholderBuilder,
+    String? semanticsLabel,
+    bool excludeFromSemantics = false,
+    SvgTheme theme = const SvgTheme(),
+    ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
+    @deprecated Color? color,
+    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
+    @deprecated bool cacheColorFilter = false,
+  }) {
+    return SvgPicture.asset(
+      _assetName,
+      key: key,
+      matchTextDirection: matchTextDirection,
+      bundle: bundle,
+      package: package,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
+      placeholderBuilder: placeholderBuilder,
+      semanticsLabel: semanticsLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      theme: theme,
+      colorFilter: colorFilter,
+      color: color,
+      colorBlendMode: colorBlendMode,
+      clipBehavior: clipBehavior,
+      cacheColorFilter: cacheColorFilter,
     );
   }
 

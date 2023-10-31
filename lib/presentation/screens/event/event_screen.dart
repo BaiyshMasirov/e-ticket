@@ -85,8 +85,8 @@ class EventScreen extends StatelessWidget {
       return;
     }
 
-    context.navigateTo(TicketBookingRoute(
-      dateTime: dateTime,
+    context.navigateTo(TicketSeatPlacesRoute(
+      // dateTime: dateTime,
       eventId: event.id,
     ));
   }

@@ -37,4 +37,5 @@ abstract class LocaleKeys {
   static const date = 'date';
   static const select_from_list = 'select_from_list';
   static const enter_text = 'enter_text';
+  static const places = 'places';
 }

@@ -8,12 +8,13 @@ class TicketRepository with NetworkRemoteRepositoryMixin {
     required TicketRemoteDatasource ticketRemoteDatasource,
   }) : _ticketRemoteDatasource = ticketRemoteDatasource;
 
-  Future<Either<RequestFailure, List<TicketDto>>> getTicketsByEventId(
-    GetTicketsByBookingIdQueryDto getTicketsByBookingIdQueryDto,
-  ) async {
+  Future<Either<RequestFailure, List<TicketDto>>> getSeatTicketsByEventId({
+    required String eventId,
+  }) async {
     final response = await handleRemoteRequest(
-      request: () => _ticketRemoteDatasource
-          .getTicketsByEventId(getTicketsByBookingIdQueryDto),
+      request: () => _ticketRemoteDatasource.getTicketsByEventId(
+        eventId: eventId,
+      ),
     );
 
     return response;
@@ -33,7 +34,7 @@ class TicketRepository with NetworkRemoteRepositoryMixin {
   }
 
   Future<Either<RequestFailure, List<TicketTypeCountDto>>>
-      getTicketsCountByEventId({
+      getStandingTicketsCountByEventId({
     required String eventId,
   }) async {
     final response = await handleRemoteRequest(

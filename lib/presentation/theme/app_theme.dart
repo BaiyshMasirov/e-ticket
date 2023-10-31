@@ -63,8 +63,11 @@ class AppTheme {
       brightness: Brightness.dark,
       extensions: _getAppColorsDark(),
       scaffoldBackgroundColor: ColorName.surfaceDark,
-      appBarTheme:
-          AppBarTheme(centerTitle: true, backgroundColor: Colors.transparent),
+      appBarTheme: AppBarTheme(
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+
+      ),
       navigationBarTheme: NavigationBarThemeData(
         indicatorColor: ColorName.errorContainerDark,
       ),
