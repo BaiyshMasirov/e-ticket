@@ -4,6 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/data/models/dictionaries/key_value_map_dto.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
+import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:eticket/presentation/widgets/forms/forms.dart';
@@ -15,20 +16,17 @@ class EventsFilterBottomSheet extends HookWidget {
   final KeyValueMapDto? initialEventType;
   final KeyValueMapDto? initialEventStatus;
   final DateTime? initialDate;
-  final String? text;
   final Function() onClearFilter;
   final Function(
     DateTime? data,
     KeyValueMapDto? paymentType,
     KeyValueMapDto? eventsStatus,
-    String? text,
   ) onSelect;
 
   const EventsFilterBottomSheet._({
     required this.initialEventType,
     required this.initialEventStatus,
     required this.initialDate,
-    required this.text,
     required this.onClearFilter,
     required this.onSelect,
     Key? key,
@@ -39,8 +37,6 @@ class EventsFilterBottomSheet extends HookWidget {
     final eventStatus = useState(initialEventStatus);
     final eventType = useState(initialEventType);
     final dateTo = useState(initialDate);
-
-    final textController = useTextEditingController();
 
     final dateToController = useTextEditingController(
       text: DateFormatters.datetimeToSlashedNullable(initialDate),
@@ -81,55 +77,33 @@ class EventsFilterBottomSheet extends HookWidget {
             onChanged: (value) => eventStatus.value = value,
           ),
           SizedBox(height: 10.h),
-          TextFormFieldZ(
-            controller: textController,
-            checkForNullEmpty: true,
-            label: LocaleKeys.enter_text.tr(),
-          ),
-          SizedBox(height: 10.h),
           DatePickerFormFieldZ(
             controller: dateToController,
             label: LocaleKeys.date.tr(),
+            value: initialDate,
+            maximumDate: DateTime(DateTime.now().year + 2),
             onTap: (date) => dateTo.value = date,
           ),
           SizedBox(height: 30.h),
-          SizedBox(
-            height: 44.h,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: context.colorScheme.onError,
-                foregroundColor: context.colorScheme.secondary,
-              ),
-              onPressed: () {
-                eventType.value = null;
-                eventStatus.value = null;
-                dateTo.value = null;
-                textController.text = '';
-                dateToController.text = '';
-                onClearFilter();
-              },
-              child: Text(LocaleKeys.clear_form.tr()),
+          PrimaryButton(
+            title: LocaleKeys.search.tr(),
+            onPressed: () => onSelect(
+              dateTo.value,
+              eventType.value,
+              eventStatus.value,
             ),
           ),
           SizedBox(height: 15.h),
-          SizedBox(
-            height: 44.h,
-            child: ElevatedButton(
-              onPressed: () {
-                onSelect(dateTo.value, eventType.value, eventStatus.value,
-                    textController.text);
-
-                context.popRoute();
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: context.colorScheme.onPrimary,
-                foregroundColor: context.colorScheme.primary,
-              ),
-              child: Text(
-                LocaleKeys.search.tr(),
-              ),
-            ),
-          )
+          TertiaryButton(
+            title: LocaleKeys.clear_form.tr(),
+            onPressed: () {
+              eventType.value = null;
+              eventStatus.value = null;
+              dateTo.value = null;
+              dateToController.text = '';
+              onClearFilter();
+            },
+          ),
         ],
       ),
     );
@@ -141,13 +115,15 @@ class EventsFilterBottomSheet extends HookWidget {
     required KeyValueMapDto? initialEventType,
     required KeyValueMapDto? initialEventStatus,
     required DateTime? initialDate,
-    required String? text,
     required Function() onClearFilter,
-    required Function(DateTime? data, KeyValueMapDto? paymentType,
-            KeyValueMapDto? eventsStatus, String? text)
-        onSelect,
+    required Function(
+      DateTime? data,
+      KeyValueMapDto? paymentType,
+      KeyValueMapDto? eventsStatus,
+    ) onSelect,
   }) {
     showModalBottomSheet(
+      showDragHandle: true,
       isScrollControlled: true,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
@@ -159,7 +135,6 @@ class EventsFilterBottomSheet extends HookWidget {
         initialEventType: initialEventType,
         initialEventStatus: initialEventStatus,
         initialDate: initialDate,
-        text: text,
         onClearFilter: onClearFilter,
         onSelect: onSelect,
       ),

@@ -25,44 +25,18 @@ class TicketStandingPlacesCubit extends Cubit<TicketStandingPlacesState> {
   Future<void> getTickets() async {
     emit(const TicketStandingPlacesState.loading());
 
-    // TODO: uncomment
-    // final response = await _ticketRepository.getTicketsCountByEventId(
-    //   eventId: _eventId,
-    // );
-    //
-    // response.fold(
-    //   (e) => emit(TicketStandingPlacesState.error(
-    //     errorMessage: e.errorMessage,
-    //   )),
-    //   (r) => emit(TicketStandingPlacesState.success(
-    //     ticketTypeCount: r,
-    //   )),
-    // );
+    final response = await _ticketRepository.getStandingTicketsCountByEventId(
+      eventId: _eventId,
+    );
 
-    //TODO: remove below
-    await Future.delayed(const Duration(seconds: 1));
-    emit(const TicketStandingPlacesState.success(
-      tickets: [
-        TicketTypeCountDto(
-          count: 100000,
-          availableCount: 1000000,
-          price: 100,
-          type: 0,
-        ),
-        TicketTypeCountDto(
-          count: 40,
-          availableCount: 30,
-          price: 200,
-          type: 1,
-        ),
-        TicketTypeCountDto(
-          count: 43,
-          availableCount: 20,
-          price: 300,
-          type: 2,
-        ),
-      ],
-    ));
+    response.fold(
+      (e) => emit(TicketStandingPlacesState.error(
+        errorMessage: e.errorMessage,
+      )),
+      (r) => emit(TicketStandingPlacesState.success(
+        tickets: r,
+      )),
+    );
   }
 
   factory TicketStandingPlacesCubit.initialize({

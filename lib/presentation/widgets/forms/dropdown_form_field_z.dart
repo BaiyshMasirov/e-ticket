@@ -24,49 +24,45 @@ class DropDownFormFieldZ<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ButtonTheme(
-      padding: EdgeInsets.zero,
-      alignedDropdown: true,
-      child: DropdownButtonFormField2<T>(
-        isExpanded: true,
-        isDense: true,
-        customButton: Align(
-          alignment: Alignment.centerLeft,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Text(
-                  value?.label ?? '',
-                  overflow: TextOverflow.ellipsis,
-                ),
+    return DropdownButtonFormField2<T>(
+      isExpanded: true,
+      isDense: true,
+      customButton: Align(
+        alignment: Alignment.centerLeft,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Text(
+                value?.label ?? '',
+                overflow: TextOverflow.ellipsis,
               ),
-              Container(
-                padding: EdgeInsets.only(right: 10.w),
-                child: const Icon(
-                  Icons.arrow_drop_down_circle_outlined,
-                ),
+            ),
+            Transform.translate(
+              offset: const Offset(0, -7),
+              child: const Icon(
+                Icons.arrow_drop_down_circle_outlined,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-        items: items?.map(_buildDropdownItem).toList(),
-        onChanged: onChanged,
-        value: value?.value,
-        validator: (value) {
-          if (checkForNullEmpty && (value == null)) {
-            return LocaleKeys.fillEmptyField.tr();
-          }
+      ),
+      items: items?.map(_buildDropdownItem).toList(),
+      onChanged: onChanged,
+      value: value?.value,
+      validator: (value) {
+        if (checkForNullEmpty && (value == null)) {
+          return LocaleKeys.fillEmptyField.tr();
+        }
 
-          return validate?.call(value);
-        },
-        decoration: InputDecoration(
-          labelText: label,
-          border: InputBorder.none,
-          contentPadding: EdgeInsets.symmetric(
-            horizontal: 10.w,
-            vertical: 10.h,
-          ),
+        return validate?.call(value);
+      },
+      decoration: InputDecoration(
+        labelText: label,
+        border: InputBorder.none,
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: 10.w,
+          vertical: 10.h,
         ),
       ),
     );

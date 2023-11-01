@@ -1,9 +1,12 @@
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
+import 'package:eticket/common/common.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart' as material;
+
+final _defaultMinimumDate = DateTime(2023);
 
 abstract class DatePicker {
   DatePicker();
@@ -11,6 +14,8 @@ abstract class DatePicker {
   Future<DateTime?> showDatePicker({
     required BuildContext context,
     DateTime? initialValue,
+    DateTime? maximumDate,
+    DateTime? minimumDate,
   });
 
   factory DatePicker.buildPicker() {
@@ -30,6 +35,8 @@ class IOSDatePicker extends DatePicker {
   Future<DateTime?> showDatePicker({
     required BuildContext context,
     DateTime? initialValue,
+    DateTime? maximumDate,
+    DateTime? minimumDate,
   }) async {
     DateTime? pickedTime = DateTime.now();
 
@@ -37,16 +44,17 @@ class IOSDatePicker extends DatePicker {
       context: context,
       builder: (_) => Container(
         height: 500,
-        color: const Color.fromARGB(255, 255, 255, 255),
+        color: context.colorScheme.surface,
         child: Column(
           children: [
             SizedBox(
               height: 400,
               child: CupertinoDatePicker(
+                backgroundColor: context.colorScheme.surface,
                 mode: CupertinoDatePickerMode.date,
-                minimumDate: DateTime(1900),
+                minimumDate: minimumDate ?? _defaultMinimumDate,
                 initialDateTime: initialValue ?? pickedTime,
-                maximumDate: pickedTime,
+                maximumDate: maximumDate ?? initialValue ?? DateTime.now(),
                 onDateTimeChanged: (val) {
                   pickedTime = val;
                 },
@@ -70,13 +78,15 @@ class AndroidDatePicker extends DatePicker {
   Future<DateTime?> showDatePicker({
     required BuildContext context,
     DateTime? initialValue,
+    DateTime? maximumDate,
+    DateTime? minimumDate,
   }) async {
     return await material.showDatePicker(
       context: context,
       initialDate: initialValue ?? DateTime.now(),
       initialEntryMode: material.DatePickerEntryMode.calendarOnly,
-      firstDate: DateTime(1900),
-      lastDate: DateTime.now(),
+      firstDate: minimumDate ?? _defaultMinimumDate,
+      lastDate: maximumDate ?? initialValue ?? DateTime.now(),
     );
   }
 }

@@ -11,12 +11,16 @@ class DatePickerFormFieldZ extends HookWidget {
   final DateTime? value;
   final bool checkForNullEmpty;
   final void Function(DateTime) onTap;
+  final DateTime? minimumDate;
+  final DateTime? maximumDate;
 
   DatePickerFormFieldZ({
     required this.controller,
     required this.label,
     required this.onTap,
     this.checkForNullEmpty = false,
+    this.minimumDate,
+    this.maximumDate,
     this.value,
     Key? key,
   })  : datePicker = DatePicker.buildPicker(),
@@ -30,7 +34,12 @@ class DatePickerFormFieldZ extends HookWidget {
       checkForNullEmpty: checkForNullEmpty,
       readonly: true,
       onTap: () async {
-        final result = await datePicker.showDatePicker(context: context);
+        final result = await datePicker.showDatePicker(
+          context: context,
+          initialValue: value,
+          maximumDate: maximumDate,
+          minimumDate: minimumDate,
+        );
         if (result == null) return;
 
         controller.text = DateFormatters.datetimeToSlashed(result);

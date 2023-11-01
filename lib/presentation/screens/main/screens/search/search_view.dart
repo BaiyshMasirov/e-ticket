@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:common/common.dart';
 import 'package:eticket/common/extensions/extensions.dart';
 import 'package:eticket/domain/models/event/events_filter.dart';
@@ -5,7 +6,7 @@ import 'package:eticket/presentation/screens/main/screens/search/bloc/search_cub
 import 'package:eticket/presentation/screens/main/screens/search/widgets/events_filter_bottom_sheet.dart';
 import 'package:eticket/presentation/screens/main/screens/search/widgets/search_widgets.dart';
 import 'package:eticket/presentation/theme/styling.dart';
-import 'package:eticket/presentation/widgets/app_sliver_scroll_view.dart';
+import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,6 +20,7 @@ class SearchView extends HookWidget {
   Widget build(BuildContext context) {
     final canLoadNextPage = useState(false);
     final eventsState = context.watch<SearchCubit>().state;
+    final searchTextController = useTextEditingController();
 
     return BlocListener<SearchCubit, SearchState>(
       listener: (context, state) => state.map(
@@ -45,43 +47,47 @@ class SearchView extends HookWidget {
           },
           headerSliver: SliverAppBar(
             actions: [
-              Stack(children: [
-                eventsState.eventsFilter.isFilterActive == false
-                    ? Positioned(
-                        top: 22.h,
-                        left: 8.h,
-                        child: Icon(Icons.brightness_1,
-                            size: 10.0, color: context.theme.errorColor),
-                      )
-                    : const SizedBox.shrink(),
-                IconButton(
-                  onPressed: () async {
-                    final filter =
-                        context.read<SearchCubit>().state.eventsFilter;
+              IconButton(
+                onPressed: () async {
+                  final filter = context.read<SearchCubit>().state.eventsFilter;
 
-                    EventsFilterBottomSheet.showBottomSheet(
-                      context: context,
-                      initialEventType: filter.type,
-                      initialEventStatus: filter.status,
-                      initialDate: filter.date,
-                      text: filter.text,
-                      onClearFilter: context.read<SearchCubit>().clearFilter,
-                      onSelect: (date, paymentType, transactionStatus, text) {
-                        final filter = EventsFilter(
-                          type: paymentType,
-                          date: date,
-                          text: text,
-                          status: transactionStatus,
-                        );
+                  EventsFilterBottomSheet.showBottomSheet(
+                    context: context,
+                    initialEventType: filter.type,
+                    initialEventStatus: filter.status,
+                    initialDate: filter.date,
+                    onClearFilter: context.read<SearchCubit>().clearFilter,
+                    onSelect: (date, paymentType, transactionStatus) {
+                      final filter = EventsFilter(
+                        type: paymentType,
+                        date: date,
+                        status: transactionStatus,
+                      );
+                      context.popRoute();
 
-                        context.read<SearchCubit>().refreshPage(filter: filter);
-                      },
-                    );
-                  },
-                  icon: Icon(Icons.format_list_bulleted_rounded,
-                      color: context.colorScheme.secondary),
+                      context.read<SearchCubit>().refreshPage(filter: filter);
+                    },
+                  );
+                },
+                icon: Stack(
+                  children: [
+                    const Icon(
+                      Icons.format_list_bulleted_rounded,
+                    ),
+                    eventsState.eventsFilter.isFilterActive
+                        ? Positioned(
+                            bottom: 0,
+                            left: 0,
+                            child: Icon(
+                              Icons.brightness_1,
+                              size: 10.0,
+                              color: context.colorScheme.onError,
+                            ),
+                          )
+                        : const SizedBox.shrink(),
+                  ],
                 ),
-              ]),
+              ),
             ],
             stretch: false,
             pinned: true,
@@ -90,21 +96,12 @@ class SearchView extends HookWidget {
             title: const Text('Search'),
             bottom: PreferredSize(
               preferredSize: Size.fromHeight(70.h),
-              child: Container(
-                color: context.colorScheme.secondaryContainer,
-                margin: EdgeInsets.symmetric(
-                  horizontal: 20.w,
-                  vertical: 10.h,
-                ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: 10.w,
-                      vertical: 10.h,
-                    ),
-                  ),
-                ),
+              child: SearchBarZ(
+                controller: searchTextController,
+                // TODO: BEK -> clear text in cubit and refresh page without clearing filter
+                onClear: () {},
+                // TODO: BEK -> update text in cubit and refresh page without clearing filter
+                onTyped: (text) {},
               ),
             ),
           ),
@@ -117,14 +114,16 @@ class SearchView extends HookWidget {
               sliver: eventsState.maybeWhen(
                 orElse: () =>
                     SearchSearchPaginatedEventsView(searchState: eventsState),
-                loadingInProgress: (events, eventsFilter) => events.isEmpty
+                loadingInProgress: (events, eventsFilter, text) => events
+                        .isEmpty
                     ? const SliverToBoxAdapter(
                         child: Center(
                           child: CircularProgressIndicator(),
                         ),
                       )
                     : SearchSearchPaginatedEventsView(searchState: eventsState),
-                loadingSuccess: (transactions, _, __) => transactions.isEmpty
+                loadingSuccess: (transactions, _, __, ___) => transactions
+                        .isEmpty
                     ? const SliverToBoxAdapter(
                         child: Center(
                           child: Text('Ивентов нет'),

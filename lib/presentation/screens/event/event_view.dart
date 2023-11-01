@@ -26,15 +26,19 @@ class EventView extends StatelessWidget {
               children: [
                 Image.network(
                   event.image ?? '',
-                  loadingBuilder: (context, child, loadingProgress) =>
-                      Container(
-                    color: context.colorScheme.onError,
-                    height: 300.h,
-                  ),
                   errorBuilder: (context, error, stackTrace) => Container(
                     color: context.colorScheme.onError,
                     height: 300.h,
                   ),
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) {
+                      return child;
+                    }
+
+                    return Container(
+                      color: context.colorScheme.onError,
+                    );
+                  },
                 ),
                 Positioned(
                   top: 0,
