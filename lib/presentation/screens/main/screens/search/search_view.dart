@@ -4,6 +4,7 @@ import 'package:eticket/domain/models/event/events_filter.dart';
 import 'package:eticket/presentation/screens/main/screens/search/bloc/search_cubit.dart';
 import 'package:eticket/presentation/screens/main/screens/search/widgets/events_filter_bottom_sheet.dart';
 import 'package:eticket/presentation/screens/main/screens/search/widgets/search_widgets.dart';
+import 'package:eticket/presentation/theme/styling.dart';
 import 'package:eticket/presentation/widgets/app_sliver_scroll_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -108,23 +109,29 @@ class SearchView extends HookWidget {
             ),
           ),
           slivers: [
-            eventsState.maybeWhen(
-              orElse: () =>
-                  SearchSearchPaginatedEventsView(searchState: eventsState),
-              loadingInProgress: (events, eventsFilter) => events.isEmpty
-                  ? const SliverToBoxAdapter(
-                      child: Center(
-                        child: CircularProgressIndicator(),
-                      ),
-                    )
-                  : SearchSearchPaginatedEventsView(searchState: eventsState),
-              loadingSuccess: (transactions, _, __) => transactions.isEmpty
-                  ? const SliverToBoxAdapter(
-                      child: Center(
-                        child: Text('Ивентов нет'),
-                      ),
-                    )
-                  : SearchSearchPaginatedEventsView(searchState: eventsState),
+            SliverPadding(
+              padding: EdgeInsets.symmetric(
+                horizontal: kDefaultPadding,
+                vertical: kDefaultPadding / 2,
+              ),
+              sliver: eventsState.maybeWhen(
+                orElse: () =>
+                    SearchSearchPaginatedEventsView(searchState: eventsState),
+                loadingInProgress: (events, eventsFilter) => events.isEmpty
+                    ? const SliverToBoxAdapter(
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      )
+                    : SearchSearchPaginatedEventsView(searchState: eventsState),
+                loadingSuccess: (transactions, _, __) => transactions.isEmpty
+                    ? const SliverToBoxAdapter(
+                        child: Center(
+                          child: Text('Ивентов нет'),
+                        ),
+                      )
+                    : SearchSearchPaginatedEventsView(searchState: eventsState),
+              ),
             ),
           ],
         ),
