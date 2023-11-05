@@ -1,11 +1,12 @@
 import 'package:eticket/presentation/widgets/book_my_seat/book_my_seat.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SeatWidget extends StatefulWidget {
   final SeatModel model;
 
-  final void Function(
+  final SeatState Function(
     int rowI,
     int colI,
     SeatState currentState,
@@ -43,18 +44,24 @@ class _SeatWidgetState extends State<SeatWidget> {
           switch (seatState) {
             case SeatState.selected:
               {
-                setState(() {
-                  seatState = SeatState.unselected;
-                  widget.onSeatStateChanged(rowI, colI, SeatState.unselected);
-                });
+                final newSeatState = widget.onSeatStateChanged(
+                  rowI,
+                  colI,
+                  SeatState.selected,
+                );
+                seatState = newSeatState;
+                setState(() {});
               }
               break;
             case SeatState.unselected:
               {
-                setState(() {
-                  seatState = SeatState.selected;
-                  widget.onSeatStateChanged(rowI, colI, SeatState.selected);
-                });
+                final newSeatState = widget.onSeatStateChanged(
+                  rowI,
+                  colI,
+                  SeatState.unselected,
+                );
+                seatState = newSeatState;
+                setState(() {});
               }
               break;
             case SeatState.disabled:
@@ -66,15 +73,31 @@ class _SeatWidgetState extends State<SeatWidget> {
           }
         },
         child: seatState != SeatState.empty
-            ? SvgPicture.asset(
-                _getSvgPath(safeCheckedSeatState),
-                height: widget.model.seatSvgSize.toDouble(),
-                width: widget.model.seatSvgSize.toDouble(),
-                fit: BoxFit.cover,
+            ? Stack(
+                children: [
+                  SvgPicture.asset(
+                    _getSvgPath(safeCheckedSeatState),
+                    height: widget.model.seatSvgSize,
+                    width: widget.model.seatSvgSize,
+                    fit: BoxFit.cover,
+                  ),
+                  SizedBox(
+                    height: widget.model.seatSvgSize,
+                    width: widget.model.seatSvgSize,
+                    child: Padding(
+                      padding: widget.model.seatPlaceTextPadding,
+                      child: FittedBox(
+                        child: Text(
+                          widget.model.seatPlace.toString(),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               )
             : SizedBox(
-                height: widget.model.seatSvgSize.toDouble(),
-                width: widget.model.seatSvgSize.toDouble(),
+                height: widget.model.seatSvgSize,
+                width: widget.model.seatSvgSize,
               ),
       );
     }

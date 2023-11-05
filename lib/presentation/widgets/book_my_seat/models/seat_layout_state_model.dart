@@ -1,4 +1,6 @@
 import 'package:eticket/presentation/widgets/book_my_seat/book_my_seat.dart';
+import 'package:eticket/presentation/widgets/book_my_seat/models/seat_place.dart';
+import 'package:flutter/material.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -10,12 +12,12 @@ class SeatLayoutStateModel with _$SeatLayoutStateModel {
   const factory SeatLayoutStateModel({
     required int rows,
     required int cols,
-    required List<List<SeatState>> currentSeatsState,
+    required List<SeatRowPlace> currentSeatsState,
     required String pathSelectedSeat,
     required String pathUnSelectedSeat,
     required String pathSoldSeat,
     required String pathDisabledSeat,
-    @Default(50) int seatSvgSize,
+    required EdgeInsets seatPlaceTextPadding,
+    @Default(50) double seatSvgSize,
   }) = _SeatLayoutStateModel;
 }
-

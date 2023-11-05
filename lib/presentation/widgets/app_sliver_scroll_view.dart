@@ -40,14 +40,14 @@ class AppSliverScrollView extends StatelessWidget {
       slivers: [
         if (headerSliver != null) headerSliver,
         if (onRefresh != null)
-          _buildSliverRefreshControll(onRefresh: onRefresh),
+          _buildSliverRefreshControl(onRefresh: onRefresh),
         ...slivers,
       ],
     );
   }
 }
 
-Widget _buildSliverRefreshControll({
+Widget _buildSliverRefreshControl({
   required Future<void> Function() onRefresh,
 }) {
   final refreshTriggerPullDistance = 130.h;

@@ -18,13 +18,14 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SeatLayoutStateModel {
   int get rows => throw _privateConstructorUsedError;
   int get cols => throw _privateConstructorUsedError;
-  List<List<SeatState>> get currentSeatsState =>
+  List<SeatRowPlace> get currentSeatsState =>
       throw _privateConstructorUsedError;
   String get pathSelectedSeat => throw _privateConstructorUsedError;
   String get pathUnSelectedSeat => throw _privateConstructorUsedError;
   String get pathSoldSeat => throw _privateConstructorUsedError;
   String get pathDisabledSeat => throw _privateConstructorUsedError;
-  int get seatSvgSize => throw _privateConstructorUsedError;
+  EdgeInsets get seatPlaceTextPadding => throw _privateConstructorUsedError;
+  double get seatSvgSize => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SeatLayoutStateModelCopyWith<SeatLayoutStateModel> get copyWith =>
@@ -40,12 +41,13 @@ abstract class $SeatLayoutStateModelCopyWith<$Res> {
   $Res call(
       {int rows,
       int cols,
-      List<List<SeatState>> currentSeatsState,
+      List<SeatRowPlace> currentSeatsState,
       String pathSelectedSeat,
       String pathUnSelectedSeat,
       String pathSoldSeat,
       String pathDisabledSeat,
-      int seatSvgSize});
+      EdgeInsets seatPlaceTextPadding,
+      double seatSvgSize});
 }
 
 /// @nodoc
@@ -69,6 +71,7 @@ class _$SeatLayoutStateModelCopyWithImpl<$Res,
     Object? pathUnSelectedSeat = null,
     Object? pathSoldSeat = null,
     Object? pathDisabledSeat = null,
+    Object? seatPlaceTextPadding = null,
     Object? seatSvgSize = null,
   }) {
     return _then(_value.copyWith(
@@ -83,7 +86,7 @@ class _$SeatLayoutStateModelCopyWithImpl<$Res,
       currentSeatsState: null == currentSeatsState
           ? _value.currentSeatsState
           : currentSeatsState // ignore: cast_nullable_to_non_nullable
-              as List<List<SeatState>>,
+              as List<SeatRowPlace>,
       pathSelectedSeat: null == pathSelectedSeat
           ? _value.pathSelectedSeat
           : pathSelectedSeat // ignore: cast_nullable_to_non_nullable
@@ -100,10 +103,14 @@ class _$SeatLayoutStateModelCopyWithImpl<$Res,
           ? _value.pathDisabledSeat
           : pathDisabledSeat // ignore: cast_nullable_to_non_nullable
               as String,
+      seatPlaceTextPadding: null == seatPlaceTextPadding
+          ? _value.seatPlaceTextPadding
+          : seatPlaceTextPadding // ignore: cast_nullable_to_non_nullable
+              as EdgeInsets,
       seatSvgSize: null == seatSvgSize
           ? _value.seatSvgSize
           : seatSvgSize // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ) as $Val);
   }
 }
@@ -119,12 +126,13 @@ abstract class _$$SeatLayoutStateModelImplCopyWith<$Res>
   $Res call(
       {int rows,
       int cols,
-      List<List<SeatState>> currentSeatsState,
+      List<SeatRowPlace> currentSeatsState,
       String pathSelectedSeat,
       String pathUnSelectedSeat,
       String pathSoldSeat,
       String pathDisabledSeat,
-      int seatSvgSize});
+      EdgeInsets seatPlaceTextPadding,
+      double seatSvgSize});
 }
 
 /// @nodoc
@@ -145,6 +153,7 @@ class __$$SeatLayoutStateModelImplCopyWithImpl<$Res>
     Object? pathUnSelectedSeat = null,
     Object? pathSoldSeat = null,
     Object? pathDisabledSeat = null,
+    Object? seatPlaceTextPadding = null,
     Object? seatSvgSize = null,
   }) {
     return _then(_$SeatLayoutStateModelImpl(
@@ -159,7 +168,7 @@ class __$$SeatLayoutStateModelImplCopyWithImpl<$Res>
       currentSeatsState: null == currentSeatsState
           ? _value._currentSeatsState
           : currentSeatsState // ignore: cast_nullable_to_non_nullable
-              as List<List<SeatState>>,
+              as List<SeatRowPlace>,
       pathSelectedSeat: null == pathSelectedSeat
           ? _value.pathSelectedSeat
           : pathSelectedSeat // ignore: cast_nullable_to_non_nullable
@@ -176,10 +185,14 @@ class __$$SeatLayoutStateModelImplCopyWithImpl<$Res>
           ? _value.pathDisabledSeat
           : pathDisabledSeat // ignore: cast_nullable_to_non_nullable
               as String,
+      seatPlaceTextPadding: null == seatPlaceTextPadding
+          ? _value.seatPlaceTextPadding
+          : seatPlaceTextPadding // ignore: cast_nullable_to_non_nullable
+              as EdgeInsets,
       seatSvgSize: null == seatSvgSize
           ? _value.seatSvgSize
           : seatSvgSize // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ));
   }
 }
@@ -190,11 +203,12 @@ class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
   const _$SeatLayoutStateModelImpl(
       {required this.rows,
       required this.cols,
-      required final List<List<SeatState>> currentSeatsState,
+      required final List<SeatRowPlace> currentSeatsState,
       required this.pathSelectedSeat,
       required this.pathUnSelectedSeat,
       required this.pathSoldSeat,
       required this.pathDisabledSeat,
+      required this.seatPlaceTextPadding,
       this.seatSvgSize = 50})
       : _currentSeatsState = currentSeatsState,
         super._();
@@ -203,9 +217,9 @@ class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
   final int rows;
   @override
   final int cols;
-  final List<List<SeatState>> _currentSeatsState;
+  final List<SeatRowPlace> _currentSeatsState;
   @override
-  List<List<SeatState>> get currentSeatsState {
+  List<SeatRowPlace> get currentSeatsState {
     if (_currentSeatsState is EqualUnmodifiableListView)
       return _currentSeatsState;
     // ignore: implicit_dynamic_type
@@ -221,12 +235,14 @@ class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
   @override
   final String pathDisabledSeat;
   @override
+  final EdgeInsets seatPlaceTextPadding;
+  @override
   @JsonKey()
-  final int seatSvgSize;
+  final double seatSvgSize;
 
   @override
   String toString() {
-    return 'SeatLayoutStateModel(rows: $rows, cols: $cols, currentSeatsState: $currentSeatsState, pathSelectedSeat: $pathSelectedSeat, pathUnSelectedSeat: $pathUnSelectedSeat, pathSoldSeat: $pathSoldSeat, pathDisabledSeat: $pathDisabledSeat, seatSvgSize: $seatSvgSize)';
+    return 'SeatLayoutStateModel(rows: $rows, cols: $cols, currentSeatsState: $currentSeatsState, pathSelectedSeat: $pathSelectedSeat, pathUnSelectedSeat: $pathUnSelectedSeat, pathSoldSeat: $pathSoldSeat, pathDisabledSeat: $pathDisabledSeat, seatPlaceTextPadding: $seatPlaceTextPadding, seatSvgSize: $seatSvgSize)';
   }
 
   @override
@@ -246,6 +262,8 @@ class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
                 other.pathSoldSeat == pathSoldSeat) &&
             (identical(other.pathDisabledSeat, pathDisabledSeat) ||
                 other.pathDisabledSeat == pathDisabledSeat) &&
+            (identical(other.seatPlaceTextPadding, seatPlaceTextPadding) ||
+                other.seatPlaceTextPadding == seatPlaceTextPadding) &&
             (identical(other.seatSvgSize, seatSvgSize) ||
                 other.seatSvgSize == seatSvgSize));
   }
@@ -260,6 +278,7 @@ class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
       pathUnSelectedSeat,
       pathSoldSeat,
       pathDisabledSeat,
+      seatPlaceTextPadding,
       seatSvgSize);
 
   @JsonKey(ignore: true)
@@ -275,12 +294,13 @@ abstract class _SeatLayoutStateModel extends SeatLayoutStateModel {
   const factory _SeatLayoutStateModel(
       {required final int rows,
       required final int cols,
-      required final List<List<SeatState>> currentSeatsState,
+      required final List<SeatRowPlace> currentSeatsState,
       required final String pathSelectedSeat,
       required final String pathUnSelectedSeat,
       required final String pathSoldSeat,
       required final String pathDisabledSeat,
-      final int seatSvgSize}) = _$SeatLayoutStateModelImpl;
+      required final EdgeInsets seatPlaceTextPadding,
+      final double seatSvgSize}) = _$SeatLayoutStateModelImpl;
   const _SeatLayoutStateModel._() : super._();
 
   @override
@@ -288,7 +308,7 @@ abstract class _SeatLayoutStateModel extends SeatLayoutStateModel {
   @override
   int get cols;
   @override
-  List<List<SeatState>> get currentSeatsState;
+  List<SeatRowPlace> get currentSeatsState;
   @override
   String get pathSelectedSeat;
   @override
@@ -298,7 +318,9 @@ abstract class _SeatLayoutStateModel extends SeatLayoutStateModel {
   @override
   String get pathDisabledSeat;
   @override
-  int get seatSvgSize;
+  EdgeInsets get seatPlaceTextPadding;
+  @override
+  double get seatSvgSize;
   @override
   @JsonKey(ignore: true)
   _$$SeatLayoutStateModelImplCopyWith<_$SeatLayoutStateModelImpl>
