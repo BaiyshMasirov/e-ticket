@@ -28,7 +28,7 @@ class App extends StatelessWidget {
               FlutterNativeSplash.remove();
               return _appRouter.pushAndPopUntil(
                 // MainRoute(),
-                const KyrgyzDramTheaterSeatPlacesRoute(),
+                const FilarmoniaSeatPlacesRoute(),
                 predicate: (route) => false,
               );
             },
@@ -37,7 +37,7 @@ class App extends StatelessWidget {
 
               return _appRouter.pushAndPopUntil(
                 // const LoginRoute(),
-                const KyrgyzDramTheaterSeatPlacesRoute(),
+                const FilarmoniaSeatPlacesRoute(),
                 predicate: (route) => false,
               );
             },

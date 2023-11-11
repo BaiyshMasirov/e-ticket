@@ -58,7 +58,7 @@ class AppRouter extends $AppRouter {
         ),
         AutoRoute(
           page: SportsSeatPlacesRoute.page,
-          path: RouteConstants.filarmoniaSeatPlaces,
+          path: RouteConstants.sportsSeatPlaces,
         ),
         AutoRoute(
           page: BishkekArenaBlocksRoute.page,
@@ -67,6 +67,10 @@ class AppRouter extends $AppRouter {
         AutoRoute(
           page: KyrgyzDramTheaterSeatPlacesRoute.page,
           path: RouteConstants.kyrgyzDramTheaterSeatPlaces,
+        ),
+        AutoRoute(
+          page: FilarmoniaSeatPlacesRoute.page,
+          path: RouteConstants.filarmoniaSeatPlaces,
         ),
       ];
 }

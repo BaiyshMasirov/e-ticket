@@ -12,6 +12,7 @@ class RouteConstants {
   static const String ticketBookingScreen = '/ticket-booking';
   static const String ticketStandingPlaces = '/ticket-standing-places';
   static const String filarmoniaSeatPlaces = '/filarmonia-places';
+  static const String sportsSeatPlaces = '/sports-places';
   static const String bishkekArenaSeatBlocks = '/bishkek-arena-blocks';
   static const String kyrgyzDramTheaterSeatPlaces =
       '/kyrgyz-dram-theater-places';
