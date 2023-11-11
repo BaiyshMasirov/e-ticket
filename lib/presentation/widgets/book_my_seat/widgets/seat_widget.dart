@@ -37,71 +37,84 @@ class _SeatWidgetState extends State<SeatWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final Widget child;
     final safeCheckedSeatState = seatState;
-    if (safeCheckedSeatState != null) {
-      return GestureDetector(
-        onTapUp: (_) {
-          switch (seatState) {
-            case SeatState.selected:
-              {
-                final newSeatState = widget.onSeatStateChanged(
-                  rowI,
-                  colI,
-                  SeatState.selected,
-                );
-                seatState = newSeatState;
-                setState(() {});
-              }
-              break;
-            case SeatState.unselected:
-              {
-                final newSeatState = widget.onSeatStateChanged(
-                  rowI,
-                  colI,
-                  SeatState.unselected,
-                );
-                seatState = newSeatState;
-                setState(() {});
-              }
-              break;
-            case SeatState.disabled:
-            case SeatState.sold:
-            case SeatState.empty:
-            default:
-              {}
-              break;
-          }
-        },
-        child: seatState != SeatState.empty
-            ? Stack(
-                children: [
-                  SvgPicture.asset(
-                    _getSvgPath(safeCheckedSeatState),
-                    height: widget.model.seatSvgSize,
-                    width: widget.model.seatSvgSize,
-                    fit: BoxFit.cover,
-                  ),
-                  SizedBox(
-                    height: widget.model.seatSvgSize,
-                    width: widget.model.seatSvgSize,
-                    child: Padding(
-                      padding: widget.model.seatPlaceTextPadding,
-                      child: FittedBox(
-                        child: Text(
-                          widget.model.seatPlace.toString(),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            : SizedBox(
-                height: widget.model.seatSvgSize,
-                width: widget.model.seatSvgSize,
-              ),
-      );
+
+    if (safeCheckedSeatState == null) {
+      return const SizedBox.shrink();
     }
-    return const SizedBox();
+
+    switch (seatState) {
+      case SeatState.empty:
+        child = SizedBox(
+          height: widget.model.seatSvgSize,
+          width: widget.model.seatSvgSize,
+        );
+      case SeatState.space:
+        child = SizedBox(
+          height: widget.model.seatSvgSize,
+          width: widget.model.seatSvgSize / 2,
+        );
+      default:
+        child = Stack(
+          children: [
+            SvgPicture.asset(
+              _getSvgPath(safeCheckedSeatState),
+              height: widget.model.seatSvgSize,
+              width: widget.model.seatSvgSize,
+              fit: BoxFit.cover,
+            ),
+            SizedBox(
+              height: widget.model.seatSvgSize,
+              width: widget.model.seatSvgSize,
+              child: Padding(
+                padding: widget.model.seatPlaceTextPadding,
+                child: FittedBox(
+                  child: Text(
+                    widget.model.seatPlace.toString(),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        );
+    }
+
+    return GestureDetector(
+      onTapUp: (_) {
+        switch (seatState) {
+          case SeatState.selected:
+            {
+              final newSeatState = widget.onSeatStateChanged(
+                rowI,
+                colI,
+                SeatState.selected,
+              );
+              seatState = newSeatState;
+              setState(() {});
+            }
+            break;
+          case SeatState.unselected:
+            {
+              final newSeatState = widget.onSeatStateChanged(
+                rowI,
+                colI,
+                SeatState.unselected,
+              );
+              seatState = newSeatState;
+              setState(() {});
+            }
+            break;
+          case SeatState.disabled:
+          case SeatState.sold:
+          case SeatState.empty:
+          default:
+            {}
+            break;
+        }
+      },
+      child: child,
+    );
   }
 
   String _getSvgPath(SeatState state) {

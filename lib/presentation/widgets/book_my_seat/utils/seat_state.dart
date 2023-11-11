@@ -15,4 +15,7 @@ enum SeatState {
 
   /// empty area e.g. aisle, staircase etc
   empty,
+
+  /// spacing
+  space,
 }

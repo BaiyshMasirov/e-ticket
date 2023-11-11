@@ -17,7 +17,6 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SeatLayoutStateModel {
   int get rows => throw _privateConstructorUsedError;
-  int get cols => throw _privateConstructorUsedError;
   List<SeatRowPlace> get currentSeatsState =>
       throw _privateConstructorUsedError;
   String get pathSelectedSeat => throw _privateConstructorUsedError;
@@ -40,7 +39,6 @@ abstract class $SeatLayoutStateModelCopyWith<$Res> {
   @useResult
   $Res call(
       {int rows,
-      int cols,
       List<SeatRowPlace> currentSeatsState,
       String pathSelectedSeat,
       String pathUnSelectedSeat,
@@ -65,7 +63,6 @@ class _$SeatLayoutStateModelCopyWithImpl<$Res,
   @override
   $Res call({
     Object? rows = null,
-    Object? cols = null,
     Object? currentSeatsState = null,
     Object? pathSelectedSeat = null,
     Object? pathUnSelectedSeat = null,
@@ -78,10 +75,6 @@ class _$SeatLayoutStateModelCopyWithImpl<$Res,
       rows: null == rows
           ? _value.rows
           : rows // ignore: cast_nullable_to_non_nullable
-              as int,
-      cols: null == cols
-          ? _value.cols
-          : cols // ignore: cast_nullable_to_non_nullable
               as int,
       currentSeatsState: null == currentSeatsState
           ? _value.currentSeatsState
@@ -125,7 +118,6 @@ abstract class _$$SeatLayoutStateModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {int rows,
-      int cols,
       List<SeatRowPlace> currentSeatsState,
       String pathSelectedSeat,
       String pathUnSelectedSeat,
@@ -147,7 +139,6 @@ class __$$SeatLayoutStateModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? rows = null,
-    Object? cols = null,
     Object? currentSeatsState = null,
     Object? pathSelectedSeat = null,
     Object? pathUnSelectedSeat = null,
@@ -160,10 +151,6 @@ class __$$SeatLayoutStateModelImplCopyWithImpl<$Res>
       rows: null == rows
           ? _value.rows
           : rows // ignore: cast_nullable_to_non_nullable
-              as int,
-      cols: null == cols
-          ? _value.cols
-          : cols // ignore: cast_nullable_to_non_nullable
               as int,
       currentSeatsState: null == currentSeatsState
           ? _value._currentSeatsState
@@ -202,7 +189,6 @@ class __$$SeatLayoutStateModelImplCopyWithImpl<$Res>
 class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
   const _$SeatLayoutStateModelImpl(
       {required this.rows,
-      required this.cols,
       required final List<SeatRowPlace> currentSeatsState,
       required this.pathSelectedSeat,
       required this.pathUnSelectedSeat,
@@ -215,8 +201,6 @@ class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
 
   @override
   final int rows;
-  @override
-  final int cols;
   final List<SeatRowPlace> _currentSeatsState;
   @override
   List<SeatRowPlace> get currentSeatsState {
@@ -242,7 +226,7 @@ class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
 
   @override
   String toString() {
-    return 'SeatLayoutStateModel(rows: $rows, cols: $cols, currentSeatsState: $currentSeatsState, pathSelectedSeat: $pathSelectedSeat, pathUnSelectedSeat: $pathUnSelectedSeat, pathSoldSeat: $pathSoldSeat, pathDisabledSeat: $pathDisabledSeat, seatPlaceTextPadding: $seatPlaceTextPadding, seatSvgSize: $seatSvgSize)';
+    return 'SeatLayoutStateModel(rows: $rows, currentSeatsState: $currentSeatsState, pathSelectedSeat: $pathSelectedSeat, pathUnSelectedSeat: $pathUnSelectedSeat, pathSoldSeat: $pathSoldSeat, pathDisabledSeat: $pathDisabledSeat, seatPlaceTextPadding: $seatPlaceTextPadding, seatSvgSize: $seatSvgSize)';
   }
 
   @override
@@ -251,7 +235,6 @@ class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
         (other.runtimeType == runtimeType &&
             other is _$SeatLayoutStateModelImpl &&
             (identical(other.rows, rows) || other.rows == rows) &&
-            (identical(other.cols, cols) || other.cols == cols) &&
             const DeepCollectionEquality()
                 .equals(other._currentSeatsState, _currentSeatsState) &&
             (identical(other.pathSelectedSeat, pathSelectedSeat) ||
@@ -272,7 +255,6 @@ class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
   int get hashCode => Object.hash(
       runtimeType,
       rows,
-      cols,
       const DeepCollectionEquality().hash(_currentSeatsState),
       pathSelectedSeat,
       pathUnSelectedSeat,
@@ -293,7 +275,6 @@ class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
 abstract class _SeatLayoutStateModel extends SeatLayoutStateModel {
   const factory _SeatLayoutStateModel(
       {required final int rows,
-      required final int cols,
       required final List<SeatRowPlace> currentSeatsState,
       required final String pathSelectedSeat,
       required final String pathUnSelectedSeat,
@@ -305,8 +286,6 @@ abstract class _SeatLayoutStateModel extends SeatLayoutStateModel {
 
   @override
   int get rows;
-  @override
-  int get cols;
   @override
   List<SeatRowPlace> get currentSeatsState;
   @override

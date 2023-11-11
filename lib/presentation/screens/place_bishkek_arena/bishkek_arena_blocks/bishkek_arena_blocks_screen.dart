@@ -12,6 +12,7 @@ class BishkekArenaBlocksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
+      title: '',
       body: BishkekArenaBlocksView(),
     );
   }

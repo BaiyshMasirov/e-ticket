@@ -1,4 +1,3 @@
-import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/assets.gen.dart';
 import 'package:eticket/presentation/widgets/book_my_seat/book_my_seat.dart';
 import 'package:flutter/material.dart';
@@ -344,7 +343,6 @@ class SeatPlacesBooking extends HookWidget {
         return currentState;
       },
       stateModel: SeatLayoutStateModel(
-        cols: _maxPlaces,
         rows: places.length,
         seatSvgSize: 4.8.w,
         seatPlaceTextPadding: EdgeInsets.all(0.8.w),

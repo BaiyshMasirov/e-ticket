@@ -11,7 +11,6 @@ class SeatLayoutStateModel with _$SeatLayoutStateModel {
   const SeatLayoutStateModel._();
   const factory SeatLayoutStateModel({
     required int rows,
-    required int cols,
     required List<SeatRowPlace> currentSeatsState,
     required String pathSelectedSeat,
     required String pathUnSelectedSeat,
