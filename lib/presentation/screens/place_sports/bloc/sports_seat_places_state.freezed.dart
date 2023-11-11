@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'filarmonia_seat_places_state.dart';
+part of 'sports_seat_places_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$FilarmoniaSeatPlacesState {
+mixin _$SportsSeatPlacesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -43,43 +43,43 @@ mixin _$FilarmoniaSeatPlacesState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FilarmoniaSeatPlacesStateInitial value) initial,
-    required TResult Function(FilarmoniaSeatPlacesStateLoading value) loading,
-    required TResult Function(_FilarmoniaSeatPlacesStateData value) data,
-    required TResult Function(_FilarmoniaSeatPlacesStateError value) error,
+    required TResult Function(_SportsSeatPlacesStateInitial value) initial,
+    required TResult Function(SportsSeatPlacesStateLoading value) loading,
+    required TResult Function(_SportsSeatPlacesStateData value) data,
+    required TResult Function(_SportsSeatPlacesStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FilarmoniaSeatPlacesStateInitial value)? initial,
-    TResult? Function(FilarmoniaSeatPlacesStateLoading value)? loading,
-    TResult? Function(_FilarmoniaSeatPlacesStateData value)? data,
-    TResult? Function(_FilarmoniaSeatPlacesStateError value)? error,
+    TResult? Function(_SportsSeatPlacesStateInitial value)? initial,
+    TResult? Function(SportsSeatPlacesStateLoading value)? loading,
+    TResult? Function(_SportsSeatPlacesStateData value)? data,
+    TResult? Function(_SportsSeatPlacesStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FilarmoniaSeatPlacesStateInitial value)? initial,
-    TResult Function(FilarmoniaSeatPlacesStateLoading value)? loading,
-    TResult Function(_FilarmoniaSeatPlacesStateData value)? data,
-    TResult Function(_FilarmoniaSeatPlacesStateError value)? error,
+    TResult Function(_SportsSeatPlacesStateInitial value)? initial,
+    TResult Function(SportsSeatPlacesStateLoading value)? loading,
+    TResult Function(_SportsSeatPlacesStateData value)? data,
+    TResult Function(_SportsSeatPlacesStateError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FilarmoniaSeatPlacesStateCopyWith<$Res> {
-  factory $FilarmoniaSeatPlacesStateCopyWith(FilarmoniaSeatPlacesState value,
-          $Res Function(FilarmoniaSeatPlacesState) then) =
-      _$FilarmoniaSeatPlacesStateCopyWithImpl<$Res, FilarmoniaSeatPlacesState>;
+abstract class $SportsSeatPlacesStateCopyWith<$Res> {
+  factory $SportsSeatPlacesStateCopyWith(SportsSeatPlacesState value,
+          $Res Function(SportsSeatPlacesState) then) =
+      _$SportsSeatPlacesStateCopyWithImpl<$Res, SportsSeatPlacesState>;
 }
 
 /// @nodoc
-class _$FilarmoniaSeatPlacesStateCopyWithImpl<$Res,
-        $Val extends FilarmoniaSeatPlacesState>
-    implements $FilarmoniaSeatPlacesStateCopyWith<$Res> {
-  _$FilarmoniaSeatPlacesStateCopyWithImpl(this._value, this._then);
+class _$SportsSeatPlacesStateCopyWithImpl<$Res,
+        $Val extends SportsSeatPlacesState>
+    implements $SportsSeatPlacesStateCopyWith<$Res> {
+  _$SportsSeatPlacesStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -88,40 +88,39 @@ class _$FilarmoniaSeatPlacesStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$FilarmoniaSeatPlacesStateInitialImplCopyWith<$Res> {
-  factory _$$FilarmoniaSeatPlacesStateInitialImplCopyWith(
-          _$FilarmoniaSeatPlacesStateInitialImpl value,
-          $Res Function(_$FilarmoniaSeatPlacesStateInitialImpl) then) =
-      __$$FilarmoniaSeatPlacesStateInitialImplCopyWithImpl<$Res>;
+abstract class _$$SportsSeatPlacesStateInitialImplCopyWith<$Res> {
+  factory _$$SportsSeatPlacesStateInitialImplCopyWith(
+          _$SportsSeatPlacesStateInitialImpl value,
+          $Res Function(_$SportsSeatPlacesStateInitialImpl) then) =
+      __$$SportsSeatPlacesStateInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FilarmoniaSeatPlacesStateInitialImplCopyWithImpl<$Res>
-    extends _$FilarmoniaSeatPlacesStateCopyWithImpl<$Res,
-        _$FilarmoniaSeatPlacesStateInitialImpl>
-    implements _$$FilarmoniaSeatPlacesStateInitialImplCopyWith<$Res> {
-  __$$FilarmoniaSeatPlacesStateInitialImplCopyWithImpl(
-      _$FilarmoniaSeatPlacesStateInitialImpl _value,
-      $Res Function(_$FilarmoniaSeatPlacesStateInitialImpl) _then)
+class __$$SportsSeatPlacesStateInitialImplCopyWithImpl<$Res>
+    extends _$SportsSeatPlacesStateCopyWithImpl<$Res,
+        _$SportsSeatPlacesStateInitialImpl>
+    implements _$$SportsSeatPlacesStateInitialImplCopyWith<$Res> {
+  __$$SportsSeatPlacesStateInitialImplCopyWithImpl(
+      _$SportsSeatPlacesStateInitialImpl _value,
+      $Res Function(_$SportsSeatPlacesStateInitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$FilarmoniaSeatPlacesStateInitialImpl
-    extends _FilarmoniaSeatPlacesStateInitial {
-  const _$FilarmoniaSeatPlacesStateInitialImpl() : super._();
+class _$SportsSeatPlacesStateInitialImpl extends _SportsSeatPlacesStateInitial {
+  const _$SportsSeatPlacesStateInitialImpl() : super._();
 
   @override
   String toString() {
-    return 'FilarmoniaSeatPlacesState.initial()';
+    return 'SportsSeatPlacesState.initial()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FilarmoniaSeatPlacesStateInitialImpl);
+            other is _$SportsSeatPlacesStateInitialImpl);
   }
 
   @override
@@ -167,10 +166,10 @@ class _$FilarmoniaSeatPlacesStateInitialImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FilarmoniaSeatPlacesStateInitial value) initial,
-    required TResult Function(FilarmoniaSeatPlacesStateLoading value) loading,
-    required TResult Function(_FilarmoniaSeatPlacesStateData value) data,
-    required TResult Function(_FilarmoniaSeatPlacesStateError value) error,
+    required TResult Function(_SportsSeatPlacesStateInitial value) initial,
+    required TResult Function(SportsSeatPlacesStateLoading value) loading,
+    required TResult Function(_SportsSeatPlacesStateData value) data,
+    required TResult Function(_SportsSeatPlacesStateError value) error,
   }) {
     return initial(this);
   }
@@ -178,10 +177,10 @@ class _$FilarmoniaSeatPlacesStateInitialImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FilarmoniaSeatPlacesStateInitial value)? initial,
-    TResult? Function(FilarmoniaSeatPlacesStateLoading value)? loading,
-    TResult? Function(_FilarmoniaSeatPlacesStateData value)? data,
-    TResult? Function(_FilarmoniaSeatPlacesStateError value)? error,
+    TResult? Function(_SportsSeatPlacesStateInitial value)? initial,
+    TResult? Function(SportsSeatPlacesStateLoading value)? loading,
+    TResult? Function(_SportsSeatPlacesStateData value)? data,
+    TResult? Function(_SportsSeatPlacesStateError value)? error,
   }) {
     return initial?.call(this);
   }
@@ -189,10 +188,10 @@ class _$FilarmoniaSeatPlacesStateInitialImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FilarmoniaSeatPlacesStateInitial value)? initial,
-    TResult Function(FilarmoniaSeatPlacesStateLoading value)? loading,
-    TResult Function(_FilarmoniaSeatPlacesStateData value)? data,
-    TResult Function(_FilarmoniaSeatPlacesStateError value)? error,
+    TResult Function(_SportsSeatPlacesStateInitial value)? initial,
+    TResult Function(SportsSeatPlacesStateLoading value)? loading,
+    TResult Function(_SportsSeatPlacesStateData value)? data,
+    TResult Function(_SportsSeatPlacesStateError value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -202,48 +201,46 @@ class _$FilarmoniaSeatPlacesStateInitialImpl
   }
 }
 
-abstract class _FilarmoniaSeatPlacesStateInitial
-    extends FilarmoniaSeatPlacesState {
-  const factory _FilarmoniaSeatPlacesStateInitial() =
-      _$FilarmoniaSeatPlacesStateInitialImpl;
-  const _FilarmoniaSeatPlacesStateInitial._() : super._();
+abstract class _SportsSeatPlacesStateInitial extends SportsSeatPlacesState {
+  const factory _SportsSeatPlacesStateInitial() =
+      _$SportsSeatPlacesStateInitialImpl;
+  const _SportsSeatPlacesStateInitial._() : super._();
 }
 
 /// @nodoc
-abstract class _$$FilarmoniaSeatPlacesStateLoadingImplCopyWith<$Res> {
-  factory _$$FilarmoniaSeatPlacesStateLoadingImplCopyWith(
-          _$FilarmoniaSeatPlacesStateLoadingImpl value,
-          $Res Function(_$FilarmoniaSeatPlacesStateLoadingImpl) then) =
-      __$$FilarmoniaSeatPlacesStateLoadingImplCopyWithImpl<$Res>;
+abstract class _$$SportsSeatPlacesStateLoadingImplCopyWith<$Res> {
+  factory _$$SportsSeatPlacesStateLoadingImplCopyWith(
+          _$SportsSeatPlacesStateLoadingImpl value,
+          $Res Function(_$SportsSeatPlacesStateLoadingImpl) then) =
+      __$$SportsSeatPlacesStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FilarmoniaSeatPlacesStateLoadingImplCopyWithImpl<$Res>
-    extends _$FilarmoniaSeatPlacesStateCopyWithImpl<$Res,
-        _$FilarmoniaSeatPlacesStateLoadingImpl>
-    implements _$$FilarmoniaSeatPlacesStateLoadingImplCopyWith<$Res> {
-  __$$FilarmoniaSeatPlacesStateLoadingImplCopyWithImpl(
-      _$FilarmoniaSeatPlacesStateLoadingImpl _value,
-      $Res Function(_$FilarmoniaSeatPlacesStateLoadingImpl) _then)
+class __$$SportsSeatPlacesStateLoadingImplCopyWithImpl<$Res>
+    extends _$SportsSeatPlacesStateCopyWithImpl<$Res,
+        _$SportsSeatPlacesStateLoadingImpl>
+    implements _$$SportsSeatPlacesStateLoadingImplCopyWith<$Res> {
+  __$$SportsSeatPlacesStateLoadingImplCopyWithImpl(
+      _$SportsSeatPlacesStateLoadingImpl _value,
+      $Res Function(_$SportsSeatPlacesStateLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$FilarmoniaSeatPlacesStateLoadingImpl
-    extends FilarmoniaSeatPlacesStateLoading {
-  const _$FilarmoniaSeatPlacesStateLoadingImpl() : super._();
+class _$SportsSeatPlacesStateLoadingImpl extends SportsSeatPlacesStateLoading {
+  const _$SportsSeatPlacesStateLoadingImpl() : super._();
 
   @override
   String toString() {
-    return 'FilarmoniaSeatPlacesState.loading()';
+    return 'SportsSeatPlacesState.loading()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FilarmoniaSeatPlacesStateLoadingImpl);
+            other is _$SportsSeatPlacesStateLoadingImpl);
   }
 
   @override
@@ -289,10 +286,10 @@ class _$FilarmoniaSeatPlacesStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FilarmoniaSeatPlacesStateInitial value) initial,
-    required TResult Function(FilarmoniaSeatPlacesStateLoading value) loading,
-    required TResult Function(_FilarmoniaSeatPlacesStateData value) data,
-    required TResult Function(_FilarmoniaSeatPlacesStateError value) error,
+    required TResult Function(_SportsSeatPlacesStateInitial value) initial,
+    required TResult Function(SportsSeatPlacesStateLoading value) loading,
+    required TResult Function(_SportsSeatPlacesStateData value) data,
+    required TResult Function(_SportsSeatPlacesStateError value) error,
   }) {
     return loading(this);
   }
@@ -300,10 +297,10 @@ class _$FilarmoniaSeatPlacesStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FilarmoniaSeatPlacesStateInitial value)? initial,
-    TResult? Function(FilarmoniaSeatPlacesStateLoading value)? loading,
-    TResult? Function(_FilarmoniaSeatPlacesStateData value)? data,
-    TResult? Function(_FilarmoniaSeatPlacesStateError value)? error,
+    TResult? Function(_SportsSeatPlacesStateInitial value)? initial,
+    TResult? Function(SportsSeatPlacesStateLoading value)? loading,
+    TResult? Function(_SportsSeatPlacesStateData value)? data,
+    TResult? Function(_SportsSeatPlacesStateError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -311,10 +308,10 @@ class _$FilarmoniaSeatPlacesStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FilarmoniaSeatPlacesStateInitial value)? initial,
-    TResult Function(FilarmoniaSeatPlacesStateLoading value)? loading,
-    TResult Function(_FilarmoniaSeatPlacesStateData value)? data,
-    TResult Function(_FilarmoniaSeatPlacesStateError value)? error,
+    TResult Function(_SportsSeatPlacesStateInitial value)? initial,
+    TResult Function(SportsSeatPlacesStateLoading value)? loading,
+    TResult Function(_SportsSeatPlacesStateData value)? data,
+    TResult Function(_SportsSeatPlacesStateError value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -324,31 +321,30 @@ class _$FilarmoniaSeatPlacesStateLoadingImpl
   }
 }
 
-abstract class FilarmoniaSeatPlacesStateLoading
-    extends FilarmoniaSeatPlacesState {
-  const factory FilarmoniaSeatPlacesStateLoading() =
-      _$FilarmoniaSeatPlacesStateLoadingImpl;
-  const FilarmoniaSeatPlacesStateLoading._() : super._();
+abstract class SportsSeatPlacesStateLoading extends SportsSeatPlacesState {
+  const factory SportsSeatPlacesStateLoading() =
+      _$SportsSeatPlacesStateLoadingImpl;
+  const SportsSeatPlacesStateLoading._() : super._();
 }
 
 /// @nodoc
-abstract class _$$FilarmoniaSeatPlacesStateDataImplCopyWith<$Res> {
-  factory _$$FilarmoniaSeatPlacesStateDataImplCopyWith(
-          _$FilarmoniaSeatPlacesStateDataImpl value,
-          $Res Function(_$FilarmoniaSeatPlacesStateDataImpl) then) =
-      __$$FilarmoniaSeatPlacesStateDataImplCopyWithImpl<$Res>;
+abstract class _$$SportsSeatPlacesStateDataImplCopyWith<$Res> {
+  factory _$$SportsSeatPlacesStateDataImplCopyWith(
+          _$SportsSeatPlacesStateDataImpl value,
+          $Res Function(_$SportsSeatPlacesStateDataImpl) then) =
+      __$$SportsSeatPlacesStateDataImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<TicketDto> tickets});
 }
 
 /// @nodoc
-class __$$FilarmoniaSeatPlacesStateDataImplCopyWithImpl<$Res>
-    extends _$FilarmoniaSeatPlacesStateCopyWithImpl<$Res,
-        _$FilarmoniaSeatPlacesStateDataImpl>
-    implements _$$FilarmoniaSeatPlacesStateDataImplCopyWith<$Res> {
-  __$$FilarmoniaSeatPlacesStateDataImplCopyWithImpl(
-      _$FilarmoniaSeatPlacesStateDataImpl _value,
-      $Res Function(_$FilarmoniaSeatPlacesStateDataImpl) _then)
+class __$$SportsSeatPlacesStateDataImplCopyWithImpl<$Res>
+    extends _$SportsSeatPlacesStateCopyWithImpl<$Res,
+        _$SportsSeatPlacesStateDataImpl>
+    implements _$$SportsSeatPlacesStateDataImplCopyWith<$Res> {
+  __$$SportsSeatPlacesStateDataImplCopyWithImpl(
+      _$SportsSeatPlacesStateDataImpl _value,
+      $Res Function(_$SportsSeatPlacesStateDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -356,7 +352,7 @@ class __$$FilarmoniaSeatPlacesStateDataImplCopyWithImpl<$Res>
   $Res call({
     Object? tickets = null,
   }) {
-    return _then(_$FilarmoniaSeatPlacesStateDataImpl(
+    return _then(_$SportsSeatPlacesStateDataImpl(
       tickets: null == tickets
           ? _value._tickets
           : tickets // ignore: cast_nullable_to_non_nullable
@@ -367,9 +363,8 @@ class __$$FilarmoniaSeatPlacesStateDataImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FilarmoniaSeatPlacesStateDataImpl
-    extends _FilarmoniaSeatPlacesStateData {
-  const _$FilarmoniaSeatPlacesStateDataImpl(
+class _$SportsSeatPlacesStateDataImpl extends _SportsSeatPlacesStateData {
+  const _$SportsSeatPlacesStateDataImpl(
       {required final List<TicketDto> tickets})
       : _tickets = tickets,
         super._();
@@ -384,14 +379,14 @@ class _$FilarmoniaSeatPlacesStateDataImpl
 
   @override
   String toString() {
-    return 'FilarmoniaSeatPlacesState.data(tickets: $tickets)';
+    return 'SportsSeatPlacesState.data(tickets: $tickets)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FilarmoniaSeatPlacesStateDataImpl &&
+            other is _$SportsSeatPlacesStateDataImpl &&
             const DeepCollectionEquality().equals(other._tickets, _tickets));
   }
 
@@ -402,10 +397,9 @@ class _$FilarmoniaSeatPlacesStateDataImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FilarmoniaSeatPlacesStateDataImplCopyWith<
-          _$FilarmoniaSeatPlacesStateDataImpl>
-      get copyWith => __$$FilarmoniaSeatPlacesStateDataImplCopyWithImpl<
-          _$FilarmoniaSeatPlacesStateDataImpl>(this, _$identity);
+  _$$SportsSeatPlacesStateDataImplCopyWith<_$SportsSeatPlacesStateDataImpl>
+      get copyWith => __$$SportsSeatPlacesStateDataImplCopyWithImpl<
+          _$SportsSeatPlacesStateDataImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -447,10 +441,10 @@ class _$FilarmoniaSeatPlacesStateDataImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FilarmoniaSeatPlacesStateInitial value) initial,
-    required TResult Function(FilarmoniaSeatPlacesStateLoading value) loading,
-    required TResult Function(_FilarmoniaSeatPlacesStateData value) data,
-    required TResult Function(_FilarmoniaSeatPlacesStateError value) error,
+    required TResult Function(_SportsSeatPlacesStateInitial value) initial,
+    required TResult Function(SportsSeatPlacesStateLoading value) loading,
+    required TResult Function(_SportsSeatPlacesStateData value) data,
+    required TResult Function(_SportsSeatPlacesStateError value) error,
   }) {
     return data(this);
   }
@@ -458,10 +452,10 @@ class _$FilarmoniaSeatPlacesStateDataImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FilarmoniaSeatPlacesStateInitial value)? initial,
-    TResult? Function(FilarmoniaSeatPlacesStateLoading value)? loading,
-    TResult? Function(_FilarmoniaSeatPlacesStateData value)? data,
-    TResult? Function(_FilarmoniaSeatPlacesStateError value)? error,
+    TResult? Function(_SportsSeatPlacesStateInitial value)? initial,
+    TResult? Function(SportsSeatPlacesStateLoading value)? loading,
+    TResult? Function(_SportsSeatPlacesStateData value)? data,
+    TResult? Function(_SportsSeatPlacesStateError value)? error,
   }) {
     return data?.call(this);
   }
@@ -469,10 +463,10 @@ class _$FilarmoniaSeatPlacesStateDataImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FilarmoniaSeatPlacesStateInitial value)? initial,
-    TResult Function(FilarmoniaSeatPlacesStateLoading value)? loading,
-    TResult Function(_FilarmoniaSeatPlacesStateData value)? data,
-    TResult Function(_FilarmoniaSeatPlacesStateError value)? error,
+    TResult Function(_SportsSeatPlacesStateInitial value)? initial,
+    TResult Function(SportsSeatPlacesStateLoading value)? loading,
+    TResult Function(_SportsSeatPlacesStateData value)? data,
+    TResult Function(_SportsSeatPlacesStateError value)? error,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -482,38 +476,36 @@ class _$FilarmoniaSeatPlacesStateDataImpl
   }
 }
 
-abstract class _FilarmoniaSeatPlacesStateData
-    extends FilarmoniaSeatPlacesState {
-  const factory _FilarmoniaSeatPlacesStateData(
+abstract class _SportsSeatPlacesStateData extends SportsSeatPlacesState {
+  const factory _SportsSeatPlacesStateData(
           {required final List<TicketDto> tickets}) =
-      _$FilarmoniaSeatPlacesStateDataImpl;
-  const _FilarmoniaSeatPlacesStateData._() : super._();
+      _$SportsSeatPlacesStateDataImpl;
+  const _SportsSeatPlacesStateData._() : super._();
 
   List<TicketDto> get tickets;
   @JsonKey(ignore: true)
-  _$$FilarmoniaSeatPlacesStateDataImplCopyWith<
-          _$FilarmoniaSeatPlacesStateDataImpl>
+  _$$SportsSeatPlacesStateDataImplCopyWith<_$SportsSeatPlacesStateDataImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FilarmoniaSeatPlacesStateErrorImplCopyWith<$Res> {
-  factory _$$FilarmoniaSeatPlacesStateErrorImplCopyWith(
-          _$FilarmoniaSeatPlacesStateErrorImpl value,
-          $Res Function(_$FilarmoniaSeatPlacesStateErrorImpl) then) =
-      __$$FilarmoniaSeatPlacesStateErrorImplCopyWithImpl<$Res>;
+abstract class _$$SportsSeatPlacesStateErrorImplCopyWith<$Res> {
+  factory _$$SportsSeatPlacesStateErrorImplCopyWith(
+          _$SportsSeatPlacesStateErrorImpl value,
+          $Res Function(_$SportsSeatPlacesStateErrorImpl) then) =
+      __$$SportsSeatPlacesStateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? errorMessage});
 }
 
 /// @nodoc
-class __$$FilarmoniaSeatPlacesStateErrorImplCopyWithImpl<$Res>
-    extends _$FilarmoniaSeatPlacesStateCopyWithImpl<$Res,
-        _$FilarmoniaSeatPlacesStateErrorImpl>
-    implements _$$FilarmoniaSeatPlacesStateErrorImplCopyWith<$Res> {
-  __$$FilarmoniaSeatPlacesStateErrorImplCopyWithImpl(
-      _$FilarmoniaSeatPlacesStateErrorImpl _value,
-      $Res Function(_$FilarmoniaSeatPlacesStateErrorImpl) _then)
+class __$$SportsSeatPlacesStateErrorImplCopyWithImpl<$Res>
+    extends _$SportsSeatPlacesStateCopyWithImpl<$Res,
+        _$SportsSeatPlacesStateErrorImpl>
+    implements _$$SportsSeatPlacesStateErrorImplCopyWith<$Res> {
+  __$$SportsSeatPlacesStateErrorImplCopyWithImpl(
+      _$SportsSeatPlacesStateErrorImpl _value,
+      $Res Function(_$SportsSeatPlacesStateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -521,7 +513,7 @@ class __$$FilarmoniaSeatPlacesStateErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? errorMessage = freezed,
   }) {
-    return _then(_$FilarmoniaSeatPlacesStateErrorImpl(
+    return _then(_$SportsSeatPlacesStateErrorImpl(
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -532,9 +524,8 @@ class __$$FilarmoniaSeatPlacesStateErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FilarmoniaSeatPlacesStateErrorImpl
-    extends _FilarmoniaSeatPlacesStateError {
-  const _$FilarmoniaSeatPlacesStateErrorImpl({required this.errorMessage})
+class _$SportsSeatPlacesStateErrorImpl extends _SportsSeatPlacesStateError {
+  const _$SportsSeatPlacesStateErrorImpl({required this.errorMessage})
       : super._();
 
   @override
@@ -542,14 +533,14 @@ class _$FilarmoniaSeatPlacesStateErrorImpl
 
   @override
   String toString() {
-    return 'FilarmoniaSeatPlacesState.error(errorMessage: $errorMessage)';
+    return 'SportsSeatPlacesState.error(errorMessage: $errorMessage)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FilarmoniaSeatPlacesStateErrorImpl &&
+            other is _$SportsSeatPlacesStateErrorImpl &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
@@ -560,10 +551,9 @@ class _$FilarmoniaSeatPlacesStateErrorImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FilarmoniaSeatPlacesStateErrorImplCopyWith<
-          _$FilarmoniaSeatPlacesStateErrorImpl>
-      get copyWith => __$$FilarmoniaSeatPlacesStateErrorImplCopyWithImpl<
-          _$FilarmoniaSeatPlacesStateErrorImpl>(this, _$identity);
+  _$$SportsSeatPlacesStateErrorImplCopyWith<_$SportsSeatPlacesStateErrorImpl>
+      get copyWith => __$$SportsSeatPlacesStateErrorImplCopyWithImpl<
+          _$SportsSeatPlacesStateErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -605,10 +595,10 @@ class _$FilarmoniaSeatPlacesStateErrorImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FilarmoniaSeatPlacesStateInitial value) initial,
-    required TResult Function(FilarmoniaSeatPlacesStateLoading value) loading,
-    required TResult Function(_FilarmoniaSeatPlacesStateData value) data,
-    required TResult Function(_FilarmoniaSeatPlacesStateError value) error,
+    required TResult Function(_SportsSeatPlacesStateInitial value) initial,
+    required TResult Function(SportsSeatPlacesStateLoading value) loading,
+    required TResult Function(_SportsSeatPlacesStateData value) data,
+    required TResult Function(_SportsSeatPlacesStateError value) error,
   }) {
     return error(this);
   }
@@ -616,10 +606,10 @@ class _$FilarmoniaSeatPlacesStateErrorImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FilarmoniaSeatPlacesStateInitial value)? initial,
-    TResult? Function(FilarmoniaSeatPlacesStateLoading value)? loading,
-    TResult? Function(_FilarmoniaSeatPlacesStateData value)? data,
-    TResult? Function(_FilarmoniaSeatPlacesStateError value)? error,
+    TResult? Function(_SportsSeatPlacesStateInitial value)? initial,
+    TResult? Function(SportsSeatPlacesStateLoading value)? loading,
+    TResult? Function(_SportsSeatPlacesStateData value)? data,
+    TResult? Function(_SportsSeatPlacesStateError value)? error,
   }) {
     return error?.call(this);
   }
@@ -627,10 +617,10 @@ class _$FilarmoniaSeatPlacesStateErrorImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FilarmoniaSeatPlacesStateInitial value)? initial,
-    TResult Function(FilarmoniaSeatPlacesStateLoading value)? loading,
-    TResult Function(_FilarmoniaSeatPlacesStateData value)? data,
-    TResult Function(_FilarmoniaSeatPlacesStateError value)? error,
+    TResult Function(_SportsSeatPlacesStateInitial value)? initial,
+    TResult Function(SportsSeatPlacesStateLoading value)? loading,
+    TResult Function(_SportsSeatPlacesStateData value)? data,
+    TResult Function(_SportsSeatPlacesStateError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -640,16 +630,13 @@ class _$FilarmoniaSeatPlacesStateErrorImpl
   }
 }
 
-abstract class _FilarmoniaSeatPlacesStateError
-    extends FilarmoniaSeatPlacesState {
-  const factory _FilarmoniaSeatPlacesStateError(
-          {required final String? errorMessage}) =
-      _$FilarmoniaSeatPlacesStateErrorImpl;
-  const _FilarmoniaSeatPlacesStateError._() : super._();
+abstract class _SportsSeatPlacesStateError extends SportsSeatPlacesState {
+  const factory _SportsSeatPlacesStateError(
+      {required final String? errorMessage}) = _$SportsSeatPlacesStateErrorImpl;
+  const _SportsSeatPlacesStateError._() : super._();
 
   String? get errorMessage;
   @JsonKey(ignore: true)
-  _$$FilarmoniaSeatPlacesStateErrorImplCopyWith<
-          _$FilarmoniaSeatPlacesStateErrorImpl>
+  _$$SportsSeatPlacesStateErrorImplCopyWith<_$SportsSeatPlacesStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

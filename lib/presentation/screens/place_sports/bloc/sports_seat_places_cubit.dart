@@ -1,29 +1,29 @@
 import 'package:common/common.dart';
 import 'package:eticket/domain/domain.dart';
-import 'package:eticket/presentation/screens/place_filarmonia/bloc/filarmonia_seat_places_cubit.dart';
+import 'package:eticket/presentation/screens/place_sports/bloc/sports_seat_places_state.dart';
 import 'package:get_it/get_it.dart';
 
-export 'filarmonia_seat_places_state.dart';
+export 'sports_seat_places_state.dart';
 
-class FilarmoniaSeatPlacesCubit extends Cubit<FilarmoniaSeatPlacesState> {
+class SportsSeatPlacesCubit extends Cubit<SportsSeatPlacesState> {
   final String _eventId;
   final TicketRepository _ticketRepository;
 
-  FilarmoniaSeatPlacesCubit._({
+  SportsSeatPlacesCubit._({
     required String eventId,
     required TicketRepository ticketRepository,
   })  : _ticketRepository = ticketRepository,
         _eventId = eventId,
-        super(const FilarmoniaSeatPlacesState.initial());
+        super(const SportsSeatPlacesState.initial());
 
   Future<void> getTickets() async {
-    emit(const FilarmoniaSeatPlacesState.loading());
+    emit(const SportsSeatPlacesState.loading());
 
     final result = await _ticketRepository.getSeatTicketsByEventId(
       eventId: _eventId,
     );
 
-    emit(const FilarmoniaSeatPlacesState.data(
+    emit(const SportsSeatPlacesState.data(
       tickets: [],
     ));
 
@@ -37,10 +37,10 @@ class FilarmoniaSeatPlacesCubit extends Cubit<FilarmoniaSeatPlacesState> {
     // );
   }
 
-  factory FilarmoniaSeatPlacesCubit.initialize({
+  factory SportsSeatPlacesCubit.initialize({
     required String eventId,
   }) {
-    return FilarmoniaSeatPlacesCubit._(
+    return SportsSeatPlacesCubit._(
       eventId: eventId,
       ticketRepository: GetIt.I.get(),
     );
