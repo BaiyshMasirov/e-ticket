@@ -28,7 +28,7 @@ class App extends StatelessWidget {
               FlutterNativeSplash.remove();
               return _appRouter.pushAndPopUntil(
                 // MainRoute(),
-                TicketSeatPlacesRoute(eventId: '1'),
+                BishkekArenaBlocksRoute(),
                 predicate: (route) => false,
               );
             },
@@ -37,7 +37,7 @@ class App extends StatelessWidget {
 
               return _appRouter.pushAndPopUntil(
                 // const LoginRoute(),
-                TicketSeatPlacesRoute(eventId: '1'),
+                BishkekArenaBlocksRoute(),
                 predicate: (route) => false,
               );
             },

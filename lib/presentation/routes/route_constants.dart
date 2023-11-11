@@ -11,5 +11,6 @@ class RouteConstants {
   static const String eventsByTypeScreen = '/events-by-type';
   static const String ticketBookingScreen = '/ticket-booking';
   static const String ticketStandingPlaces = '/ticket-standing-places';
-  static const String ticketSeatPlaces = '/ticket-seat-places';
+  static const String filarmoniaSeatPlaces = '/filarmonia-places';
+  static const String bishkekArenaSeatBlocks = '/bishkek-arena-blocks';
 }

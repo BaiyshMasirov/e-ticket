@@ -15,12 +15,16 @@ import 'package:lottie/lottie.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/bishkek_arena.png
+  AssetGenImage get bishkekArena =>
+      const AssetGenImage('assets/images/bishkek_arena.png');
+
   /// File path: assets/images/blank_ticket.png
   AssetGenImage get blankTicket =>
       const AssetGenImage('assets/images/blank_ticket.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [blankTicket];
+  List<AssetGenImage> get values => [bishkekArena, blankTicket];
 }
 
 class $AssetsLogosGen {

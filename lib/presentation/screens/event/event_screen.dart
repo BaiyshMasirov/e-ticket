@@ -84,10 +84,10 @@ class EventScreen extends StatelessWidget {
 
       return;
     }
-
-    context.navigateTo(TicketSeatPlacesRoute(
-      // dateTime: dateTime,
-      eventId: event.id,
-    ));
+    //TODO: uncomment
+    // context.navigateTo(TicketSeatPlacesRoute(
+    //   // dateTime: dateTime,
+    //   eventId: event.id,
+    // ));
   }
 }

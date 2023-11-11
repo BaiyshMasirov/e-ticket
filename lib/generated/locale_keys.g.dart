@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class LocaleKeys {
+abstract class  LocaleKeys {
   static const successfully_created = 'successfully_created';
   static const content_not_changed = 'content_not_changed';
   static const server_connection_timeout = 'server_connection_timeout';
@@ -38,4 +38,5 @@ abstract class LocaleKeys {
   static const select_from_list = 'select_from_list';
   static const enter_text = 'enter_text';
   static const places = 'places';
+
 }
