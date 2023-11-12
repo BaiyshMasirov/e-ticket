@@ -71,7 +71,7 @@ class BishkekArenaPlacesView extends HookWidget {
 class BishkekArenaSeatPlacesManager {
   List<SeatRowPlace> generateBBlock() {
     return [
-      generateSeatPlaces(
+      _generateSeatPlaces(
         seatRowPlaceText: 'Ряд 7',
         addEmptyLeft: 0,
         addEmptyRight: 2,
@@ -79,7 +79,7 @@ class BishkekArenaSeatPlacesManager {
         spacePlace: [4, 13, 22, 30, 39, 48],
         length: _BBlockMaxPlaces + 1,
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         seatRowPlaceText: 'Ряд 6',
         addEmptyLeft: 0,
         addEmptyRight: 0,
@@ -87,7 +87,7 @@ class BishkekArenaSeatPlacesManager {
         spacePlace: [4, 13, 30, 39],
         length: _BBlockMaxPlaces + 2,
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         seatRowPlaceText: 'Ряд 5',
         addEmptyLeft: 0,
         addEmptyRight: 0,
@@ -95,28 +95,28 @@ class BishkekArenaSeatPlacesManager {
         spacePlace: [4, 13, 30, 39],
         length: _BBlockMaxPlaces + 2,
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         seatRowPlaceText: 'Ряд 4',
         addEmptyLeft: 0,
         addEmptyRight: 0,
         emptyPlaces: [],
         length: _BBlockMaxPlaces,
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         seatRowPlaceText: 'Ряд 3',
         addEmptyLeft: 0,
         addEmptyRight: 0,
         emptyPlaces: [],
         length: _BBlockMaxPlaces,
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         seatRowPlaceText: 'Ряд 2',
         addEmptyLeft: 0,
         addEmptyRight: 0,
         emptyPlaces: [],
         length: _BBlockMaxPlaces,
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         seatRowPlaceText: 'Ряд 1',
         addEmptyLeft: 0,
         addEmptyRight: 0,
@@ -129,7 +129,7 @@ class BishkekArenaSeatPlacesManager {
 
   List<SeatRowPlace> generateCBlock() {
     return [
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: _CBlockMaxPlaces - 1,
         emptyPlaces: [14, 15, 22],
         addEmptyLeft: 0,
@@ -137,7 +137,7 @@ class BishkekArenaSeatPlacesManager {
         spacePlace: [5],
         seatRowPlaceText: 'Ряд 7',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: _CBlockMaxPlaces - 3,
         emptyPlaces: [4, 9],
         addEmptyLeft: 1,
@@ -145,7 +145,7 @@ class BishkekArenaSeatPlacesManager {
         spacePlace: [],
         seatRowPlaceText: 'Ряд 6',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: _CBlockMaxPlaces - 4,
         emptyPlaces: [4, 9],
         addEmptyLeft: 1,
@@ -153,7 +153,7 @@ class BishkekArenaSeatPlacesManager {
         spacePlace: [],
         seatRowPlaceText: 'Ряд 5',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: _CBlockMaxPlaces - 4,
         emptyPlaces: [9],
         addEmptyLeft: 1,
@@ -161,7 +161,7 @@ class BishkekArenaSeatPlacesManager {
         spacePlace: [],
         seatRowPlaceText: 'Ряд 4',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: _CBlockMaxPlaces - 6,
         emptyPlaces: [9],
         addEmptyLeft: 1,
@@ -169,7 +169,7 @@ class BishkekArenaSeatPlacesManager {
         spacePlace: [],
         seatRowPlaceText: 'Ряд 3',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: _CBlockMaxPlaces - 7,
         emptyPlaces: [9],
         addEmptyLeft: 1,
@@ -177,7 +177,7 @@ class BishkekArenaSeatPlacesManager {
         spacePlace: [],
         seatRowPlaceText: 'Ряд 2',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: _CBlockMaxPlaces - 7,
         emptyPlaces: [9],
         addEmptyLeft: 1,
@@ -185,7 +185,7 @@ class BishkekArenaSeatPlacesManager {
         spacePlace: [],
         seatRowPlaceText: 'Ряд 1',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 13,
         emptyPlaces: [],
         addEmptyLeft: 13,
@@ -198,14 +198,14 @@ class BishkekArenaSeatPlacesManager {
 
   List<SeatRowPlace> generateDBlock() {
     return [
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: _DBlockMaxPlaces,
         emptyPlaces: [],
         addEmptyLeft: 0,
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 7',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: _DBlockMaxPlaces,
         emptyPlaces: [1, 2, 3, 35],
         spacePlace: [36],
@@ -213,7 +213,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 6',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: _DBlockMaxPlaces - 1,
         emptyPlaces: [1, 2, 3, 4, 35],
         spacePlace: [34],
@@ -221,7 +221,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 5',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: _DBlockMaxPlaces - 2,
         emptyPlaces: [1, 2, 3, 4, 5, 33],
         spacePlace: [34],
@@ -229,7 +229,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 4',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: _DBlockMaxPlaces - 3,
         emptyPlaces: [1, 2, 3, 4, 5, 6, 33],
         spacePlace: [32],
@@ -237,7 +237,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 3',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 25,
         emptyPlaces: [],
         spacePlace: [1],
@@ -245,7 +245,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 2',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 23,
         emptyPlaces: [],
         spacePlace: [1],
@@ -253,7 +253,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 1',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 21,
         emptyPlaces: [],
         spacePlace: [1],
@@ -266,56 +266,56 @@ class BishkekArenaSeatPlacesManager {
 
   List<SeatRowPlace> generateEBlock() {
     return [
-      generateSeatPlaces(
+      _generateSeatPlaces(
           length: _EBlockMaxPlaces,
           emptyPlaces: [],
           addEmptyLeft: 0,
           addEmptyRight: 0,
           spacePlace: [],
           seatRowPlaceText: 'Ряд 7'),
-      generateSeatPlaces(
+      _generateSeatPlaces(
           length: _EBlockMaxPlaces - 6,
           emptyPlaces: [],
           addEmptyLeft: 3,
           addEmptyRight: 0,
           spacePlace: [],
           seatRowPlaceText: 'Ряд 6'),
-      generateSeatPlaces(
+      _generateSeatPlaces(
           length: _EBlockMaxPlaces - 8,
           emptyPlaces: [],
           addEmptyLeft: 4,
           addEmptyRight: 0,
           spacePlace: [1],
           seatRowPlaceText: 'Ряд 5'),
-      generateSeatPlaces(
+      _generateSeatPlaces(
           length: _EBlockMaxPlaces - 10,
           emptyPlaces: [],
           addEmptyLeft: 5,
           addEmptyRight: 0,
           spacePlace: [],
           seatRowPlaceText: 'Ряд 4'),
-      generateSeatPlaces(
+      _generateSeatPlaces(
           length: _EBlockMaxPlaces - 12,
           emptyPlaces: [],
           addEmptyLeft: 6,
           addEmptyRight: 0,
           spacePlace: [],
           seatRowPlaceText: 'Ряд 3'),
-      generateSeatPlaces(
+      _generateSeatPlaces(
           length: _EBlockMaxPlaces - 12,
           emptyPlaces: [],
           addEmptyLeft: 6,
           addEmptyRight: 0,
           spacePlace: [1],
           seatRowPlaceText: 'Ряд 2'),
-      generateSeatPlaces(
+      _generateSeatPlaces(
           length: _EBlockMaxPlaces - 14,
           emptyPlaces: [],
           addEmptyLeft: 7,
           addEmptyRight: 0,
           spacePlace: [1],
           seatRowPlaceText: 'Ряд 1'),
-      generateSeatPlaces(
+      _generateSeatPlaces(
           length: _EBlockMaxPlaces - 16,
           emptyPlaces: [],
           addEmptyLeft: 8,
@@ -327,7 +327,7 @@ class BishkekArenaSeatPlacesManager {
 
   List<SeatRowPlace> generateFBlock() {
     return [
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 28,
         emptyPlaces: [],
         spacePlace: [9, 16],
@@ -335,7 +335,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 7',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 27,
         emptyPlaces: [20],
         spacePlace: [1],
@@ -343,7 +343,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 6',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 27,
         emptyPlaces: [19],
         spacePlace: [],
@@ -351,7 +351,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 5',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 27,
         emptyPlaces: [19],
         spacePlace: [1],
@@ -359,7 +359,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 4',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 25,
         emptyPlaces: [17],
         spacePlace: [],
@@ -367,7 +367,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 3',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 25,
         emptyPlaces: [17],
         spacePlace: [1],
@@ -375,7 +375,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 2',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 24,
         emptyPlaces: [15],
         spacePlace: [],
@@ -383,7 +383,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 1',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 14,
         emptyPlaces: [],
         spacePlace: [],
@@ -396,7 +396,7 @@ class BishkekArenaSeatPlacesManager {
 
   List<SeatRowPlace> generateGBlock() {
     return [
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 57,
         emptyPlaces: [27, 35, 45],
         spacePlace: [9, 18, 36, 54],
@@ -404,7 +404,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 7',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 56,
         emptyPlaces: [2, 10, 18, 27, 28, 36, 37, 44, 45, 54, 55],
         spacePlace: [19, 46],
@@ -412,7 +412,7 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 6',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 56,
         emptyPlaces: [10, 18, 27, 36, 44, 54],
         spacePlace: [19, 45],
@@ -420,28 +420,28 @@ class BishkekArenaSeatPlacesManager {
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 5',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 55,
         emptyPlaces: [],
         addEmptyLeft: 0,
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 4',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 55,
         emptyPlaces: [],
         addEmptyLeft: 0,
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 3',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 55,
         emptyPlaces: [],
         addEmptyLeft: 0,
         addEmptyRight: 0,
         seatRowPlaceText: 'Ряд 2',
       ),
-      generateSeatPlaces(
+      _generateSeatPlaces(
         length: 55,
         emptyPlaces: [],
         addEmptyLeft: 0,
@@ -457,7 +457,7 @@ const _CBlockMaxPlaces = 32;
 const _DBlockMaxPlaces = 47;
 const _EBlockMaxPlaces = 42;
 
-SeatRowPlace generateSeatPlaces({
+SeatRowPlace _generateSeatPlaces({
   required int length,
   required List<int> emptyPlaces,
   required int addEmptyLeft,

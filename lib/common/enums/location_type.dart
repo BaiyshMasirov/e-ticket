@@ -1,27 +1,27 @@
 enum LocationType {
   // [Display(Name = "Без рассадки")]
-  NoSeating,
+  NoSeating, //DONE
 
   // [Display(Name = "Дворец спорта")]
-  SportPalace,
+  SportPalace, //DONE (need to rewrite)
 
   // [Display(Name = "Бишкек Арена")]
-  BishkekArena,
+  BishkekArena, //DONE
 
   // [Display(Name = "Стадион Спартак")]
   SpartakStadium,
 
   // [Display(Name = "Театр оперы и балета")]
-  BalletTheater,
+  BalletTheater, //DONE
 
   // [Display(Name = "Филармония")]
-  Philarmonic,
+  Philarmonic, //BEKA: in progress
 
   // [Display(Name = "Русский драматический театр")]
   RuDramTheater,
 
   // [Display(Name = "Кыргызский драматический театр")]
-  KgDramTheater,
+  KgDramTheater, // DONE
 
   // [Display(Name = "Национальный театр")]
   NationalTheater,
