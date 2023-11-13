@@ -21,6 +21,7 @@ class TextFormFieldZ extends StatelessWidget {
   final String? errorText;
   final void Function()? onTap;
   final InputDecoration? inputDecoration;
+  final TextCapitalization textCapitalization;
   final void Function(String text)? onChanged;
 
   const TextFormFieldZ({
@@ -28,6 +29,7 @@ class TextFormFieldZ extends StatelessWidget {
     required this.label,
     this.obscureText = false,
     this.textInputType = TextInputType.text,
+    this.textCapitalization = TextCapitalization.none,
     this.checkForNullEmpty = false,
     this.readonly = false,
     this.enabled = true,
@@ -58,6 +60,7 @@ class TextFormFieldZ extends StatelessWidget {
     return TextFormField(
       enabled: enabled,
       onTap: onTap,
+      textCapitalization: textCapitalization,
       controller: controller,
       readOnly: readonly,
       obscureText: obscureText,

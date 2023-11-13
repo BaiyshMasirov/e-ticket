@@ -53,18 +53,21 @@ class RegisterView extends HookWidget {
                   controller: firstNameController,
                   checkForNullEmpty: true,
                   label: LocaleKeys.first_name.tr(),
+                  textCapitalization: TextCapitalization.words,
                 ),
                 SizedBox(height: 10.h),
                 TextFormFieldZ(
                   controller: lastNameController,
                   checkForNullEmpty: true,
                   label: LocaleKeys.surname.tr(),
+                  textCapitalization: TextCapitalization.words,
                 ),
                 SizedBox(height: 10.h),
                 TextFormFieldZ(
                   controller: middleNameController,
                   checkForNullEmpty: true,
                   label: LocaleKeys.middle_name.tr(),
+                  textCapitalization: TextCapitalization.words,
                 ),
                 SizedBox(height: 10.h),
                 PasswordFormFieldZ(
