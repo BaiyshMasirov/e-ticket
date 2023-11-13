@@ -209,7 +209,6 @@ class NationalSeatPlacesBooking extends HookWidget {
         return currentState;
       },
       stateModel: SeatLayoutStateModel(
-        cols: _maxPlaces,
         rows: places.length,
         seatSvgSize: 4.8.w,
         seatPlaceTextPadding: EdgeInsets.all(0.8.w),

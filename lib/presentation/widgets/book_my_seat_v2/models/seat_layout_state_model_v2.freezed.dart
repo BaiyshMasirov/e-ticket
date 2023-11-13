@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'seat_layout_state_model.dart';
+part of 'seat_layout_state_model_v2.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,9 +15,9 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$SeatLayoutStateModel {
+mixin _$SeatLayoutStateModelV2 {
   int get rows => throw _privateConstructorUsedError;
-  List<SeatRowPlace> get currentSeatsState =>
+  List<SeatRowPlaceV2> get currentSeatsState =>
       throw _privateConstructorUsedError;
   String get pathSelectedSeat => throw _privateConstructorUsedError;
   String get pathUnSelectedSeat => throw _privateConstructorUsedError;
@@ -27,19 +27,19 @@ mixin _$SeatLayoutStateModel {
   double get seatSvgSize => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SeatLayoutStateModelCopyWith<SeatLayoutStateModel> get copyWith =>
+  $SeatLayoutStateModelV2CopyWith<SeatLayoutStateModelV2> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SeatLayoutStateModelCopyWith<$Res> {
-  factory $SeatLayoutStateModelCopyWith(SeatLayoutStateModel value,
-          $Res Function(SeatLayoutStateModel) then) =
-      _$SeatLayoutStateModelCopyWithImpl<$Res, SeatLayoutStateModel>;
+abstract class $SeatLayoutStateModelV2CopyWith<$Res> {
+  factory $SeatLayoutStateModelV2CopyWith(SeatLayoutStateModelV2 value,
+          $Res Function(SeatLayoutStateModelV2) then) =
+      _$SeatLayoutStateModelV2CopyWithImpl<$Res, SeatLayoutStateModelV2>;
   @useResult
   $Res call(
       {int rows,
-      List<SeatRowPlace> currentSeatsState,
+      List<SeatRowPlaceV2> currentSeatsState,
       String pathSelectedSeat,
       String pathUnSelectedSeat,
       String pathSoldSeat,
@@ -49,10 +49,10 @@ abstract class $SeatLayoutStateModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SeatLayoutStateModelCopyWithImpl<$Res,
-        $Val extends SeatLayoutStateModel>
-    implements $SeatLayoutStateModelCopyWith<$Res> {
-  _$SeatLayoutStateModelCopyWithImpl(this._value, this._then);
+class _$SeatLayoutStateModelV2CopyWithImpl<$Res,
+        $Val extends SeatLayoutStateModelV2>
+    implements $SeatLayoutStateModelV2CopyWith<$Res> {
+  _$SeatLayoutStateModelV2CopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -79,7 +79,7 @@ class _$SeatLayoutStateModelCopyWithImpl<$Res,
       currentSeatsState: null == currentSeatsState
           ? _value.currentSeatsState
           : currentSeatsState // ignore: cast_nullable_to_non_nullable
-              as List<SeatRowPlace>,
+              as List<SeatRowPlaceV2>,
       pathSelectedSeat: null == pathSelectedSeat
           ? _value.pathSelectedSeat
           : pathSelectedSeat // ignore: cast_nullable_to_non_nullable
@@ -109,16 +109,17 @@ class _$SeatLayoutStateModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$SeatLayoutStateModelImplCopyWith<$Res>
-    implements $SeatLayoutStateModelCopyWith<$Res> {
-  factory _$$SeatLayoutStateModelImplCopyWith(_$SeatLayoutStateModelImpl value,
-          $Res Function(_$SeatLayoutStateModelImpl) then) =
-      __$$SeatLayoutStateModelImplCopyWithImpl<$Res>;
+abstract class _$$SeatLayoutStateModelV2ImplCopyWith<$Res>
+    implements $SeatLayoutStateModelV2CopyWith<$Res> {
+  factory _$$SeatLayoutStateModelV2ImplCopyWith(
+          _$SeatLayoutStateModelV2Impl value,
+          $Res Function(_$SeatLayoutStateModelV2Impl) then) =
+      __$$SeatLayoutStateModelV2ImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {int rows,
-      List<SeatRowPlace> currentSeatsState,
+      List<SeatRowPlaceV2> currentSeatsState,
       String pathSelectedSeat,
       String pathUnSelectedSeat,
       String pathSoldSeat,
@@ -128,11 +129,13 @@ abstract class _$$SeatLayoutStateModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SeatLayoutStateModelImplCopyWithImpl<$Res>
-    extends _$SeatLayoutStateModelCopyWithImpl<$Res, _$SeatLayoutStateModelImpl>
-    implements _$$SeatLayoutStateModelImplCopyWith<$Res> {
-  __$$SeatLayoutStateModelImplCopyWithImpl(_$SeatLayoutStateModelImpl _value,
-      $Res Function(_$SeatLayoutStateModelImpl) _then)
+class __$$SeatLayoutStateModelV2ImplCopyWithImpl<$Res>
+    extends _$SeatLayoutStateModelV2CopyWithImpl<$Res,
+        _$SeatLayoutStateModelV2Impl>
+    implements _$$SeatLayoutStateModelV2ImplCopyWith<$Res> {
+  __$$SeatLayoutStateModelV2ImplCopyWithImpl(
+      _$SeatLayoutStateModelV2Impl _value,
+      $Res Function(_$SeatLayoutStateModelV2Impl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -147,7 +150,7 @@ class __$$SeatLayoutStateModelImplCopyWithImpl<$Res>
     Object? seatPlaceTextPadding = null,
     Object? seatSvgSize = null,
   }) {
-    return _then(_$SeatLayoutStateModelImpl(
+    return _then(_$SeatLayoutStateModelV2Impl(
       rows: null == rows
           ? _value.rows
           : rows // ignore: cast_nullable_to_non_nullable
@@ -155,7 +158,7 @@ class __$$SeatLayoutStateModelImplCopyWithImpl<$Res>
       currentSeatsState: null == currentSeatsState
           ? _value._currentSeatsState
           : currentSeatsState // ignore: cast_nullable_to_non_nullable
-              as List<SeatRowPlace>,
+              as List<SeatRowPlaceV2>,
       pathSelectedSeat: null == pathSelectedSeat
           ? _value.pathSelectedSeat
           : pathSelectedSeat // ignore: cast_nullable_to_non_nullable
@@ -186,10 +189,10 @@ class __$$SeatLayoutStateModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
-  const _$SeatLayoutStateModelImpl(
+class _$SeatLayoutStateModelV2Impl extends _SeatLayoutStateModelV2 {
+  const _$SeatLayoutStateModelV2Impl(
       {required this.rows,
-      required final List<SeatRowPlace> currentSeatsState,
+      required final List<SeatRowPlaceV2> currentSeatsState,
       required this.pathSelectedSeat,
       required this.pathUnSelectedSeat,
       required this.pathSoldSeat,
@@ -201,9 +204,9 @@ class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
 
   @override
   final int rows;
-  final List<SeatRowPlace> _currentSeatsState;
+  final List<SeatRowPlaceV2> _currentSeatsState;
   @override
-  List<SeatRowPlace> get currentSeatsState {
+  List<SeatRowPlaceV2> get currentSeatsState {
     if (_currentSeatsState is EqualUnmodifiableListView)
       return _currentSeatsState;
     // ignore: implicit_dynamic_type
@@ -226,14 +229,14 @@ class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
 
   @override
   String toString() {
-    return 'SeatLayoutStateModel(rows: $rows, currentSeatsState: $currentSeatsState, pathSelectedSeat: $pathSelectedSeat, pathUnSelectedSeat: $pathUnSelectedSeat, pathSoldSeat: $pathSoldSeat, pathDisabledSeat: $pathDisabledSeat, seatPlaceTextPadding: $seatPlaceTextPadding, seatSvgSize: $seatSvgSize)';
+    return 'SeatLayoutStateModelV2(rows: $rows, currentSeatsState: $currentSeatsState, pathSelectedSeat: $pathSelectedSeat, pathUnSelectedSeat: $pathUnSelectedSeat, pathSoldSeat: $pathSoldSeat, pathDisabledSeat: $pathDisabledSeat, seatPlaceTextPadding: $seatPlaceTextPadding, seatSvgSize: $seatSvgSize)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SeatLayoutStateModelImpl &&
+            other is _$SeatLayoutStateModelV2Impl &&
             (identical(other.rows, rows) || other.rows == rows) &&
             const DeepCollectionEquality()
                 .equals(other._currentSeatsState, _currentSeatsState) &&
@@ -266,28 +269,27 @@ class _$SeatLayoutStateModelImpl extends _SeatLayoutStateModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SeatLayoutStateModelImplCopyWith<_$SeatLayoutStateModelImpl>
-      get copyWith =>
-          __$$SeatLayoutStateModelImplCopyWithImpl<_$SeatLayoutStateModelImpl>(
-              this, _$identity);
+  _$$SeatLayoutStateModelV2ImplCopyWith<_$SeatLayoutStateModelV2Impl>
+      get copyWith => __$$SeatLayoutStateModelV2ImplCopyWithImpl<
+          _$SeatLayoutStateModelV2Impl>(this, _$identity);
 }
 
-abstract class _SeatLayoutStateModel extends SeatLayoutStateModel {
-  const factory _SeatLayoutStateModel(
+abstract class _SeatLayoutStateModelV2 extends SeatLayoutStateModelV2 {
+  const factory _SeatLayoutStateModelV2(
       {required final int rows,
-      required final List<SeatRowPlace> currentSeatsState,
+      required final List<SeatRowPlaceV2> currentSeatsState,
       required final String pathSelectedSeat,
       required final String pathUnSelectedSeat,
       required final String pathSoldSeat,
       required final String pathDisabledSeat,
       required final EdgeInsets seatPlaceTextPadding,
-      final double seatSvgSize}) = _$SeatLayoutStateModelImpl;
-  const _SeatLayoutStateModel._() : super._();
+      final double seatSvgSize}) = _$SeatLayoutStateModelV2Impl;
+  const _SeatLayoutStateModelV2._() : super._();
 
   @override
   int get rows;
   @override
-  List<SeatRowPlace> get currentSeatsState;
+  List<SeatRowPlaceV2> get currentSeatsState;
   @override
   String get pathSelectedSeat;
   @override
@@ -302,6 +304,6 @@ abstract class _SeatLayoutStateModel extends SeatLayoutStateModel {
   double get seatSvgSize;
   @override
   @JsonKey(ignore: true)
-  _$$SeatLayoutStateModelImplCopyWith<_$SeatLayoutStateModelImpl>
+  _$$SeatLayoutStateModelV2ImplCopyWith<_$SeatLayoutStateModelV2Impl>
       get copyWith => throw _privateConstructorUsedError;
 }

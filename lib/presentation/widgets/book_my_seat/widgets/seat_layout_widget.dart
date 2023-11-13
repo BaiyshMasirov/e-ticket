@@ -1,6 +1,5 @@
 import 'package:eticket/presentation/widgets/book_my_seat/book_my_seat.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SeatLayoutWidget extends StatelessWidget {
   final TransformationController transformationController;
@@ -21,17 +20,21 @@ class SeatLayoutWidget extends StatelessWidget {
       transformationController: transformationController,
       maxScale: 10,
       minScale: 3,
+      constrained: false,
       boundaryMargin: const EdgeInsets.all(8),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ...List<int>.generate(stateModel.rows, (rowI) => rowI)
               .map(
                 (rowI) => Row(
                   children: [
                     ...List<int>.generate(
-                        stateModel.cols + 2, (colI) => colI).map(
+                        stateModel.currentSeatsState[rowI].seatPlaces.length +
+                            2,
+                        (colI) => colI).map(
                       (index) {
-                        if (index == 0 || index > stateModel.cols) {
+                        if (index == 0 || index > stateModel.currentSeatsState[rowI].seatPlaces.length) {
                           return SeatRowLabel(
                             rowLabel: stateModel
                                 .currentSeatsState[rowI].rowPlaceLabel,
@@ -55,8 +58,7 @@ class SeatLayoutWidget extends StatelessWidget {
                             pathSelectedSeat: stateModel.pathSelectedSeat,
                             pathDisabledSeat: stateModel.pathDisabledSeat,
                             pathSoldSeat: stateModel.pathSoldSeat,
-                            pathUnSelectedSeat:
-                                stateModel.pathUnSelectedSeat,
+                            pathUnSelectedSeat: stateModel.pathUnSelectedSeat,
                           ),
                           onSeatStateChanged: onSeatStateChanged,
                         );

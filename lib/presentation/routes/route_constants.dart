@@ -9,11 +9,13 @@ class RouteConstants {
   static const String settingsScreen = 'settings';
   static const String eventScreen = '/event';
   static const String eventsByTypeScreen = '/events-by-type';
-  static const String ticketBookingScreen = '/ticket-booking';
   static const String ticketStandingPlaces = '/ticket-standing-places';
   static const String filarmoniaSeatPlaces = '/filarmonia-places';
   static const String sportsSeatPlaces = '/sports-places';
   static const String bishkekArenaSeatBlocks = '/bishkek-arena-blocks';
   static const String kyrgyzDramTheaterSeatPlaces =
       '/kyrgyz-dram-theater-places';
+  static const String bishkekArenaSeatPlaces = '/bishkek-arena-places';
+  static const String balletTheaterSeatPlaces = '/ballet-theater-places';
+  static const String ruDramTheaterSeatPlaces = '/ru-dram-theater';
 }

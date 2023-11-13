@@ -1,38 +1,33 @@
-import 'package:eticket/presentation/widgets/book_my_seat/book_my_seat.dart';
+import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SeatWidget extends StatefulWidget {
-  final SeatModel model;
+class SeatWidgetV2 extends StatefulWidget {
+  final SeatModelV2 model;
 
-  final SeatState Function(
-    int rowI,
-    int colI,
-    SeatState currentState,
+  final PlaceStateV2 Function(
+    int currentIndex,
+    int placeNumber,
+    PlaceStateV2 currentState,
   ) onSeatStateChanged;
 
-  const SeatWidget({
+  const SeatWidgetV2({
     required this.model,
     required this.onSeatStateChanged,
     Key? key,
   }) : super(key: key);
 
   @override
-  State<SeatWidget> createState() => _SeatWidgetState();
+  State<SeatWidgetV2> createState() => _SeatWidgetV2State();
 }
 
-class _SeatWidgetState extends State<SeatWidget> {
-  SeatState? seatState;
-  int rowI = 0;
-  int colI = 0;
+class _SeatWidgetV2State extends State<SeatWidgetV2> {
+  PlaceStateV2? seatState;
 
   @override
   void initState() {
     super.initState();
     seatState = widget.model.seatState;
-    rowI = widget.model.rowI;
-    colI = widget.model.colI;
   }
 
   @override
@@ -45,15 +40,27 @@ class _SeatWidgetState extends State<SeatWidget> {
     }
 
     switch (seatState) {
-      case SeatState.empty:
-        child = SizedBox(
+      case PlaceStateV2.empty:
+        child = Container(
+          color: Colors.red,
           height: widget.model.seatSvgSize,
           width: widget.model.seatSvgSize,
         );
-      case SeatState.space:
-        child = SizedBox(
+      case PlaceStateV2.emptyHalf:
+        child = Container(
+          color: Colors.blue,
           height: widget.model.seatSvgSize,
           width: widget.model.seatSvgSize / 2,
+        );
+      case PlaceStateV2.text:
+        child = SizedBox(
+          height: widget.model.seatSvgSize,
+          width: widget.model.seatSvgSize * 2,
+          child: FittedBox(
+            child: Text(
+              widget.model.rowLabel,
+            ),
+          ),
         );
       default:
         child = Stack(
@@ -80,62 +87,72 @@ class _SeatWidgetState extends State<SeatWidget> {
         );
     }
 
+    if (seatState != PlaceStateV2.selected &&
+        seatState != PlaceStateV2.unselected) {
+      return child;
+    }
+
     return GestureDetector(
       onTapUp: (_) {
         switch (seatState) {
-          case SeatState.selected:
+          case PlaceStateV2.selected:
             {
               final newSeatState = widget.onSeatStateChanged(
-                rowI,
-                colI,
-                SeatState.selected,
+                widget.model.currentRowIndex,
+                widget.model.seatPlace,
+                PlaceStateV2.selected,
               );
               seatState = newSeatState;
               setState(() {});
             }
             break;
-          case SeatState.unselected:
+          case PlaceStateV2.unselected:
             {
               final newSeatState = widget.onSeatStateChanged(
-                rowI,
-                colI,
-                SeatState.unselected,
+                widget.model.currentRowIndex,
+                widget.model.seatPlace,
+                PlaceStateV2.unselected,
               );
               seatState = newSeatState;
               setState(() {});
             }
             break;
-          case SeatState.disabled:
-          case SeatState.sold:
-          case SeatState.empty:
+          case PlaceStateV2.disabled:
+          case PlaceStateV2.sold:
+          case PlaceStateV2.empty:
           default:
             {}
             break;
         }
       },
-      child: child,
+      child: Tooltip(
+        enableFeedback: true,
+        message: '${widget.model.rowLabel} / Место ${widget.model.seatPlace}',
+        triggerMode: TooltipTriggerMode.longPress,
+        child: child,
+      ),
     );
   }
 
-  String _getSvgPath(SeatState state) {
+  String _getSvgPath(PlaceStateV2 state) {
     switch (state) {
-      case SeatState.unselected:
+      case PlaceStateV2.unselected:
         {
           return widget.model.pathUnSelectedSeat;
         }
-      case SeatState.selected:
+      case PlaceStateV2.selected:
         {
           return widget.model.pathSelectedSeat;
         }
-      case SeatState.disabled:
+      case PlaceStateV2.disabled:
         {
           return widget.model.pathDisabledSeat;
         }
-      case SeatState.sold:
+      case PlaceStateV2.sold:
         {
           return widget.model.pathSoldSeat;
         }
-      case SeatState.empty:
+      case PlaceStateV2.empty:
       default:
         {
           return widget.model.pathDisabledSeat;

@@ -1,5 +1,5 @@
 /// current state of a seat
-enum SeatState {
+enum PlaceStateV2 {
   /// current user selected this seat
   selected,
 
@@ -17,5 +17,8 @@ enum SeatState {
   empty,
 
   /// spacing
-  space,
+  emptyHalf,
+
+  /// text label instead of seat
+  text,
 }

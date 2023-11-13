@@ -1,11 +1,14 @@
 import 'package:auto_route/annotations.dart';
-import 'package:eticket/presentation/screens/place_bishkek_arena/bishkek_arena_blocks/bishkek_arena_blocks_view.dart';
+import 'package:eticket/common/common.dart';
+import 'package:eticket/presentation/screens/place_ru_dram_theater/ru_dram_theater_view.dart';
 import 'package:eticket/presentation/widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
-class BishkekArenaBlocksScreen extends StatelessWidget {
-  const BishkekArenaBlocksScreen({
+class RuDramTheaterScreen extends StatelessWidget {
+  final locationType = LocationType.RuDramTheater;
+
+  const RuDramTheaterScreen({
     Key? key,
   }) : super(key: key);
 
@@ -13,7 +16,7 @@ class BishkekArenaBlocksScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScaffold(
       title: '',
-      body: BishkekArenaBlocksView(),
+      body: RuDramTheaterView(),
     );
   }
 }

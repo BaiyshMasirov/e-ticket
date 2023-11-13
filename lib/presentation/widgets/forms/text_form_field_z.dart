@@ -75,11 +75,11 @@ class TextFormFieldZ extends StatelessWidget {
             // floatingLabelStyle: TextStyle(color: Colors.white),
             suffixIcon: suffix,
             hintText: placeholder,
-
             contentPadding: EdgeInsets.symmetric(
               horizontal: 15.w,
               vertical: 10.h,
             ),
+            border: OutlineInputBorder(),
           ),
       inputFormatters: textInputFormatters,
       validator: (value) {
