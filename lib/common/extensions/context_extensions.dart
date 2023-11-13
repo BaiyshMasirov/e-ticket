@@ -1,3 +1,4 @@
+import 'package:common/common.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -23,5 +24,11 @@ extension BuildContextX on BuildContext {
 
   DictionaryState get dictionaries {
     return GetIt.I.get<DictionaryCubit>().state;
+  }
+
+  // TODO: change to server url in future
+  String get categoryImageUrlPath {
+    // return GetIt.I.get<Configuration>().serverUrl;
+    return 'https://e-tick.app/home/GetEventCategoryByType?type=';
   }
 }

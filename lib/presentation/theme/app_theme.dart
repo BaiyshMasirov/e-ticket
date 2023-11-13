@@ -11,6 +11,7 @@ class AppTheme {
       brightness: Brightness.light,
       useMaterial3: true,
       extensions: _getAppColorsLight(),
+      listTileTheme: ListTileThemeData(enableFeedback: true),
       appBarTheme:
           AppBarTheme(centerTitle: true, backgroundColor: Colors.transparent),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -66,7 +67,6 @@ class AppTheme {
       appBarTheme: AppBarTheme(
         centerTitle: true,
         backgroundColor: Colors.transparent,
-
       ),
       navigationBarTheme: NavigationBarThemeData(
         indicatorColor: ColorName.errorContainerDark,
