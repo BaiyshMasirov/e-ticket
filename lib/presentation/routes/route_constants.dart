@@ -14,4 +14,5 @@ class RouteConstants {
   static const String bishkekArenaSeatBlocks = '/bishkek-arena-blocks';
   static const String bishkekArenaSeatPlaces = '/bishkek-arena-places';
   static const String balletTheaterSeatPlaces = '/ballet-theater-places';
+  static const String ruDramTheaterSeatPlaces = '/ru-dram-theater';
 }

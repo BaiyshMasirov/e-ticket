@@ -43,7 +43,7 @@ class AppScaffold extends StatelessWidget {
                 children: [
                   Center(
                     child: Assets.lotties.loading.lottie(
-                      width: 120.w,
+                      width: 300.w,
                       fit: BoxFit.fitWidth,
                     ),
                   ),

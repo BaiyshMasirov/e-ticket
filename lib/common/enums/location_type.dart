@@ -18,11 +18,11 @@ enum LocationType {
   Philarmonic, //BEKA: in progress
 
   // [Display(Name = "Русский драматический театр")]
-  RuDramTheater,
+  RuDramTheater, // DONE
 
   // [Display(Name = "Кыргызский драматический театр")]
   KgDramTheater, // DONE
 
   // [Display(Name = "Национальный театр")]
-  NationalTheater,
+  NationalTheater, // ?
 }

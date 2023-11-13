@@ -27,8 +27,7 @@ class App extends StatelessWidget {
             authenticated: () {
               FlutterNativeSplash.remove();
               return _appRouter.pushAndPopUntil(
-                // MainRoute(),
-                FilarmoniaSeatPlacesRoute(eventId: ''),
+                MainRoute(),
                 predicate: (route) => false,
               );
             },
@@ -36,8 +35,7 @@ class App extends StatelessWidget {
               FlutterNativeSplash.remove();
 
               return _appRouter.pushAndPopUntil(
-                // const LoginRoute(),
-                FilarmoniaSeatPlacesRoute(eventId: ''),
+                const LoginRoute(),
                 predicate: (route) => false,
               );
             },
