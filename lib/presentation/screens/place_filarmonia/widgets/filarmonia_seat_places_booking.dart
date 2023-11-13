@@ -24,46 +24,51 @@ class FilarmoniaSeatPlacesBooking extends HookWidget {
         ),
         generateSeatPlaces(
           length: _rowTop7To4PlaceCount,
-          emptyPlaces: _rowTop22PlacesNotExist,
+          emptyPlaces: _rowTop6PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 6',
         ),
         generateSeatPlaces(
           length: _rowTop7To4PlaceCount,
-          emptyPlaces: _rowTop5PlacesNotExist,
+          emptyPlaces: _rowTop6PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 5',
-          blockedPlace: [1],
         ),
         generateSeatPlaces(
           length: _rowTop7To4PlaceCount,
-          emptyPlaces: _rowTop4PlacesNotExist,
+          emptyPlaces: _rowTop6PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 4',
+        ),
+
+        generateSeatPlaces(
+          length: _maxPlaces,
+          emptyPlaces: _emptyRowPlaces,
+          addEmptyLeft: 0,
+          addEmptyRight: 0,
         ),
         // endregion
         //region 3 to 1
         generateSeatPlaces(
           length: _rowTop7To4PlaceCount,
-          emptyPlaces: _rowTop22PlacesNotExist,
+          emptyPlaces: _rowTop6PlacesNotExist,
           addEmptyLeft: _rowTop3To1EmptyLeftPlaces,
           addEmptyRight: _rowTop3To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 3',
         ),
         generateSeatPlaces(
           length: _rowTop7To4PlaceCount,
-          emptyPlaces: _rowTop22PlacesNotExist,
+          emptyPlaces: _rowTop2PlacesNotExist,
           addEmptyLeft: _rowTop3To1EmptyLeftPlaces,
           addEmptyRight: _rowTop3To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 2',
-          blockedPlace: List.generate(8, (index) => index + 30),
         ),
         generateSeatPlaces(
           length: _rowTop7To4PlaceCount,
-          emptyPlaces: _rowTop22PlacesNotExist,
+          emptyPlaces: _rowTop1PlacesNotExist,
           addEmptyLeft: _rowTop3To1EmptyLeftPlaces,
           addEmptyRight: _rowTop3To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 1',
@@ -74,51 +79,10 @@ class FilarmoniaSeatPlacesBooking extends HookWidget {
           addEmptyLeft: 0,
           addEmptyRight: 0,
         ),
-        // generateSeatPlaces(
-        //   length: _maxPlaces,
-        //   emptyPlaces: _rowTop22PlacesNotExist,
-        //   addEmptyLeft: _rowTop22To4EmptyLeftPlaces,
-        //   addEmptyRight: _rowTop22To16EmptyRightPlaces,
-        //   seatRowPlaceText: 'Ряд 22',
-        // ),
-        // generateSeatPlaces(
-        //   length: _maxPlaces,
-        //   emptyPlaces: _rowTop21PlacesNotExist,
-        //   addEmptyLeft: _rowTop21To16EmptyLeftPlaces,
-        //   addEmptyRight: _rowTop21To16EmptyRightPlaces,
-        //   seatRowPlaceText: 'Ряд 21',
-        // ),
-        // generateSeatPlaces(
-        //   length: _maxPlaces,
-        //   emptyPlaces: _rowTop21PlacesNotExist,
-        //   addEmptyLeft: _rowTop21To16EmptyLeftPlaces,
-        //   addEmptyRight: _rowTop21To16EmptyLeftPlaces,
-        //   seatRowPlaceText: 'Ряд 20',
-        // ),
-        // generateSeatPlaces(
-        //   length: _maxPlaces,
-        //   emptyPlaces: _rowTop21PlacesNotExist,
-        //   addEmptyLeft: _rowTop21To16EmptyLeftPlaces,
-        //   addEmptyRight: _rowTop21To16EmptyLeftPlaces,
-        //   seatRowPlaceText: 'Ряд 19',
-        // ),
-        // generateSeatPlaces(
-        //   length: _maxPlaces,
-        //   emptyPlaces: _rowTop21PlacesNotExist,
-        //   addEmptyLeft: _rowTop21To16EmptyLeftPlaces,
-        //   addEmptyRight: _rowTop21To16EmptyLeftPlaces,
-        //   seatRowPlaceText: 'Ряд 18',
-        // ),
-        // generateSeatPlaces(
-        //   length: _maxPlaces,
-        //   emptyPlaces: _rowTop17PlacesNotExist,
-        //   addEmptyLeft: _rowTop21To16EmptyLeftPlaces,
-        //   addEmptyRight: _rowTop21To16EmptyLeftPlaces,
-        //   seatRowPlaceText: 'Ряд 17',
-        // ),
+
         generateSeatPlaces(
           length: _rowTop7To4PlaceCount,
-          emptyPlaces: _rowTop17PlacesNotExist,
+          emptyPlaces: _rowTop16PlacesNotExist,
           addEmptyLeft: _rowTop21To16EmptyLeftPlaces,
           addEmptyRight: _rowTop21To16EmptyLeftPlaces,
           seatRowPlaceText: 'Ряд 16',
@@ -127,28 +91,28 @@ class FilarmoniaSeatPlacesBooking extends HookWidget {
         //region 15 to 4
         generateSeatPlaces(
           length: _rowTop16To4PlaceCount,
-          emptyPlaces: _rowTop17PlacesNotExist,
+          emptyPlaces: _rowTop15PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 15',
         ), //2
         generateSeatPlaces(
           length: _rowTop16To4PlaceCount,
-          emptyPlaces: _rowTop14PlacesNotExist,
+          emptyPlaces: _rowTop15PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 14',
         ), //2
         generateSeatPlaces(
           length: _rowTop16To4PlaceCount,
-          emptyPlaces: _rowTop13PlacesNotExist,
+          emptyPlaces: _rowTop15PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 13',
         ), //2
         generateSeatPlaces(
           length: _rowTop16To4PlaceCount,
-          emptyPlaces: _rowTop12PlacesNotExist,
+          emptyPlaces: _rowTop15PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 12',
@@ -156,21 +120,21 @@ class FilarmoniaSeatPlacesBooking extends HookWidget {
 
         generateSeatPlaces(
           length: _rowTop16To4PlaceCount,
-          emptyPlaces: _rowTop11PlacesNotExist,
+          emptyPlaces: _rowTop15PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 11',
         ),
         generateSeatPlaces(
           length: _rowTop16To4PlaceCount,
-          emptyPlaces: _rowTop10PlacesNotExist,
+          emptyPlaces: _rowTop15PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 10',
         ),
         generateSeatPlaces(
           length: _rowTop16To4PlaceCount,
-          emptyPlaces: _rowTop9PlacesNotExist,
+          emptyPlaces: _rowTop15PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 9',
@@ -184,28 +148,28 @@ class FilarmoniaSeatPlacesBooking extends HookWidget {
         ),
         generateSeatPlaces(
           length: _rowTop16To4PlaceCount,
-          emptyPlaces: _rowTop9PlacesNotExist,
+          emptyPlaces: _rowTop15PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 8',
         ),
         generateSeatPlaces(
           length: _rowTop16To4PlaceCount,
-          emptyPlaces: _rowTop9PlacesNotExist,
+          emptyPlaces: _rowTop15PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 7',
         ),
         generateSeatPlaces(
           length: _rowTop16To4PlaceCount,
-          emptyPlaces: _rowTop9PlacesNotExist,
+          emptyPlaces: _rowTop15PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 6',
         ),
         generateSeatPlaces(
           length: _rowTop16To4PlaceCount,
-          emptyPlaces: _rowTop5PlacesNotExist,
+          emptyPlaces: _rowTop15PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 5',
@@ -221,21 +185,21 @@ class FilarmoniaSeatPlacesBooking extends HookWidget {
         //region 3 to 1
         generateSeatPlaces(
           length: _rowTop16To4PlaceCount,
-          emptyPlaces: _rowTop5PlacesNotExist,
+          emptyPlaces: _rowTop3PlacesNotExist,
           addEmptyLeft: _rowTop3To1EmptyLeftPlaces,
           addEmptyRight: _rowTop3To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 3',
         ),
         generateSeatPlaces(
           length: _rowTop16To4PlaceCount,
-          emptyPlaces: _rowTop5PlacesNotExist,
+          emptyPlaces: _rowTopPart2PlacesNotExist,
           addEmptyLeft: _rowTop3To1EmptyLeftPlaces,
           addEmptyRight: _rowTop3To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 2',
         ),
         generateSeatPlaces(
           length: _rowTop16To4PlaceCount,
-          emptyPlaces: _rowTop5PlacesNotExist,
+          emptyPlaces: _rowTopPart1PlacesNotExist,
           addEmptyLeft: _rowTop3To1EmptyLeftPlaces,
           addEmptyRight: _rowTop1To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 1',
@@ -286,21 +250,14 @@ class FilarmoniaSeatPlacesBooking extends HookWidget {
 
 const _maxPlaces = 55;
 
-const _rowTop7To4PlaceCount = 60;
+const _rowTop7To4PlaceCount = 55;
 const _rowTop16To4PlaceCount = 55;
 
-const _rowTop22To4EmptyLeftPlaces = 0;
-const _rowTop22To16EmptyRightPlaces = 1;
-
 const _rowTop21To16EmptyLeftPlaces = 0;
-const _rowTop21To16EmptyRightPlaces = 0;
-
-const _rowTop15To4PlaceCount = 40;
 
 const _rowTop15To4EmptyLeftPlaces = 0;
 const _rowTop15To4EmptyRightPlaces = 1;
 
-const _rowTop3To1PlaceCount = 40;
 const _rowTop3To1EmptyLeftPlaces = 0;
 const _rowTop3To1EmptyRightPlaces = 1;
 const _rowTop1To1EmptyRightPlaces = 0;
@@ -309,46 +266,54 @@ final _emptyRowPlaces = List.generate(_maxPlaces, (index) => index + 1);
 
 /// [_rowTop25To16PlaceCount]
 
-final _rowTop22PlacesNotExist = [
-  ...List.generate(4, (index) => index + 60),
-];
-
 final _rowTop7PlacesNotExist = [
-  ...List.generate(1, (index) => index + 1),
+  ...List.generate(2, (index) => index + 1),
+  ...List.generate(7, (index) => index + 51),
+];
+final _rowTop6PlacesNotExist = [
+  ...List.generate(3, (index) => index + 1),
+  ...List.generate(7, (index) => index + 51),
 ];
 
-final _rowTop21PlacesNotExist = [0, 1, 2, 39, 40, 20, 21];
+final _rowTop2PlacesNotExist = [
+  ...List.generate(4, (index) => index + 1),
+  ...List.generate(7, (index) => index + 51),
+];
+final _rowTop1PlacesNotExist = [
+  ...List.generate(5, (index) => index + 1),
+  ...List.generate(6, (index) => index + 50),
+];
 
-final _rowTop17PlacesNotExist = [0, 1, 40, 20, 21];
+final _rowTop16PlacesNotExist = [0];
+
+final _rowTop15PlacesNotExist = [0, 17, 18, 37, 38, 55];
 
 /// [_rowTop15To4PlaceCount]
-final _rowTop14PlacesNotExist = [20, 21];
-final _rowTop13PlacesNotExist = [20, 21];
-final _rowTop12PlacesNotExist = [20, 21];
 
-final _rowTop11PlacesNotExist = [0, 1, 2, 10, 11, 30, 31, 40, 39];
-
-final _rowTop10PlacesNotExist = [
-  ...List.generate(4, (index) => index + 0),
-  ...List.generate(2, (index) => index + 10),
-  ...List.generate(2, (index) => index + 30),
-  ...List.generate(4, (index) => index + 39),
+final _rowTop4PlacesNotExist = [
+  ...List.generate(3, (index) => index + 53),
+  ...List.generate(2, (index) => index + 37),
+  ...List.generate(3, (index) => index + 0),
+  ...List.generate(2, (index) => index + 17),
 ];
-final _rowTop9PlacesNotExist = [
-  ...List.generate(4, (index) => index + 0),
-  ...List.generate(3, (index) => index + 10),
-  ...List.generate(3, (index) => index + 29),
-  ...List.generate(5, (index) => index + 38),
+final _rowTop3PlacesNotExist = [
+  ...List.generate(4, (index) => index + 52),
+  ...List.generate(2, (index) => index + 37),
+  ...List.generate(3, (index) => index + 0),
+  ...List.generate(2, (index) => index + 17),
 ];
-
-final _rowTop5PlacesNotExist = [
+final _rowTopPart2PlacesNotExist = [
+  ...List.generate(4, (index) => index + 52),
+  ...List.generate(2, (index) => index + 37),
+  ...List.generate(4, (index) => index + 0),
+  ...List.generate(2, (index) => index + 17),
+];
+final _rowTopPart1PlacesNotExist = [
+  ...List.generate(5, (index) => index + 51),
+  ...List.generate(2, (index) => index + 37),
   ...List.generate(5, (index) => index + 0),
-  ...List.generate(4, (index) => index + 10),
-  ...List.generate(4, (index) => index + 28),
-  ...List.generate(5, (index) => index + 37),
+  ...List.generate(2, (index) => index + 17),
 ];
-
-final _rowTop4PlacesNotExist = _rowTop5PlacesNotExist;
 
 /// [_rowLow14To1PlaceCount]
 
