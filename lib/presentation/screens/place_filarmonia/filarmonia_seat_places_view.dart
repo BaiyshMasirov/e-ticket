@@ -1,7 +1,7 @@
-import 'package:common/common.dart';
-import 'package:eticket/presentation/screens/place_filarmonia/bloc/filarmonia_seat_places_cubit.dart';
-import 'package:eticket/presentation/screens/place_filarmonia/widgets/widgets.dart';
-import 'package:eticket/presentation/widgets/widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:eticket/generated/locale_keys.g.dart';
+import 'package:eticket/presentation/screens/place_filarmonia/widgets/filarmonia_seat_places_booking.dart';
+import 'package:eticket/presentation/widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
 
 class FilarmoniaSeatPlacesView extends StatelessWidget {
@@ -11,17 +11,9 @@ class FilarmoniaSeatPlacesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FilarmoniaSeatPlacesCubit, FilarmoniaSeatPlacesState>(
-      builder: (context, state) => state.maybeWhen(
-        orElse: () => const SizedBox.shrink(),
-        data: (tickets) => const Center(
-          child: SeatPlacesBooking(),
-        ),
-        error: (errorMessage) => DataFetchFailure(
-          error: errorMessage,
-          onTryLoadAgain: context.read<FilarmoniaSeatPlacesCubit>().getTickets,
-        ),
-      ),
-    );
+    return const AppScaffold(
+        // title: LocaleKeys.places.tr(),
+        title: 'Филармония ',
+        body: FilarmoniaSeatPlacesBooking());
   }
 }

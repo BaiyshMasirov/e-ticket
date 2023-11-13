@@ -8,26 +8,26 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i17;
-import 'package:eticket/data/data.dart' as _i20;
+import 'package:auto_route/auto_route.dart' as _i19;
+import 'package:eticket/data/data.dart' as _i22;
 import 'package:eticket/presentation/screens/auth/login/login_screen.dart'
-    as _i9;
+    as _i10;
 import 'package:eticket/presentation/screens/auth/register/register_screen.dart'
-    as _i11;
+    as _i12;
 import 'package:eticket/presentation/screens/event/event_screen.dart' as _i5;
 import 'package:eticket/presentation/screens/events_by_type/events_by_type_screen.dart'
     as _i6;
-import 'package:eticket/presentation/screens/main/main_screen.dart' as _i10;
+import 'package:eticket/presentation/screens/main/main_screen.dart' as _i11;
 import 'package:eticket/presentation/screens/main/models/main_screen_tab.dart'
-    as _i22;
+    as _i24;
 import 'package:eticket/presentation/screens/main/screens/categories/categories_screen.dart'
     as _i4;
 import 'package:eticket/presentation/screens/main/screens/history/history_screen.dart'
     as _i8;
 import 'package:eticket/presentation/screens/main/screens/search/search_screen.dart'
-    as _i13;
-import 'package:eticket/presentation/screens/main/screens/settings/settings_screen.dart'
     as _i14;
+import 'package:eticket/presentation/screens/main/screens/settings/settings_screen.dart'
+    as _i15;
 import 'package:eticket/presentation/screens/place_ballet_theater/ballet_theater_screen.dart'
     as _i1;
 import 'package:eticket/presentation/screens/place_bishkek_arena/bishkek_arena_blocks/bishkek_arena_blocks_screen.dart'
@@ -35,37 +35,41 @@ import 'package:eticket/presentation/screens/place_bishkek_arena/bishkek_arena_b
 import 'package:eticket/presentation/screens/place_bishkek_arena/bishkek_arena_places/bishkek_arena_places_screen.dart'
     as _i3;
 import 'package:eticket/presentation/screens/place_bishkek_arena/models/models.dart'
-    as _i18;
+    as _i20;
 import 'package:eticket/presentation/screens/place_filarmonia/filarmonia_seat_places_screen.dart'
     as _i7;
+import 'package:eticket/presentation/screens/place_kyrgyz_dram_theater/kyrgyz_dram_theater_seat_places_screen.dart'
+    as _i9;
 import 'package:eticket/presentation/screens/place_ru_dram_theater/ru_dram_theater_screen.dart'
-    as _i12;
-import 'package:eticket/presentation/screens/splash/splash_screen.dart' as _i15;
+    as _i13;
+import 'package:eticket/presentation/screens/place_sports/sports_seat_places_screen.dart'
+    as _i17;
+import 'package:eticket/presentation/screens/splash/splash_screen.dart' as _i16;
 import 'package:eticket/presentation/screens/ticket_standing_places/ticket_standing_places_screen.dart'
-    as _i16;
-import 'package:flutter/cupertino.dart' as _i21;
-import 'package:flutter/material.dart' as _i19;
+    as _i18;
+import 'package:flutter/cupertino.dart' as _i23;
+import 'package:flutter/material.dart' as _i21;
 
-abstract class $AppRouter extends _i17.RootStackRouter {
+abstract class $AppRouter extends _i19.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i17.PageFactory> pagesMap = {
+  final Map<String, _i19.PageFactory> pagesMap = {
     BalletTheaterRoute.name: (routeData) {
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i1.BalletTheaterScreen(),
       );
     },
     BishkekArenaBlocksRoute.name: (routeData) {
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i2.BishkekArenaBlocksScreen(),
       );
     },
     BishkekArenaPlacesRoute.name: (routeData) {
       final args = routeData.argsAs<BishkekArenaPlacesRouteArgs>();
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i3.BishkekArenaPlacesScreen(
           blockType: args.blockType,
@@ -74,14 +78,14 @@ abstract class $AppRouter extends _i17.RootStackRouter {
       );
     },
     CategoriesRoute.name: (routeData) {
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i4.CategoriesScreen(),
       );
     },
     EventRoute.name: (routeData) {
       final args = routeData.argsAs<EventRouteArgs>();
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i5.EventScreen(
           event: args.event,
@@ -91,7 +95,7 @@ abstract class $AppRouter extends _i17.RootStackRouter {
     },
     EventsByTypeRoute.name: (routeData) {
       final args = routeData.argsAs<EventsByTypeRouteArgs>();
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i6.EventsByTypeScreen(
           eventKeyValue: args.eventKeyValue,
@@ -100,73 +104,85 @@ abstract class $AppRouter extends _i17.RootStackRouter {
       );
     },
     FilarmoniaSeatPlacesRoute.name: (routeData) {
-      final args = routeData.argsAs<FilarmoniaSeatPlacesRouteArgs>();
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i7.FilarmoniaSeatPlacesScreen(
-          eventId: args.eventId,
-          key: args.key,
-        ),
+        child: const _i7.FilarmoniaSeatPlacesScreen(),
       );
     },
     HistoryRoute.name: (routeData) {
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i8.HistoryScreen(),
       );
     },
-    LoginRoute.name: (routeData) {
-      return _i17.AutoRoutePage<dynamic>(
+    KyrgyzDramTheaterSeatPlacesRoute.name: (routeData) {
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i9.LoginScreen(),
+        child: const _i9.KyrgyzDramTheaterSeatPlacesScreen(),
+      );
+    },
+    LoginRoute.name: (routeData) {
+      return _i19.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i10.LoginScreen(),
       );
     },
     MainRoute.name: (routeData) {
       final args =
           routeData.argsAs<MainRouteArgs>(orElse: () => const MainRouteArgs());
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i10.MainScreen(
+        child: _i11.MainScreen(
           initialTab: args.initialTab,
           key: args.key,
         ),
       );
     },
     RegisterRoute.name: (routeData) {
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i11.RegisterScreen(),
+        child: const _i12.RegisterScreen(),
       );
     },
     RuDramTheaterRoute.name: (routeData) {
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i12.RuDramTheaterScreen(),
+        child: const _i13.RuDramTheaterScreen(),
       );
     },
     SearchRoute.name: (routeData) {
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i13.SearchScreen(),
+        child: const _i14.SearchScreen(),
       );
     },
     SettingsRoute.name: (routeData) {
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i14.SettingsScreen(),
+        child: const _i15.SettingsScreen(),
       );
     },
     SplashRoute.name: (routeData) {
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i15.SplashScreen(),
+        child: const _i16.SplashScreen(),
+      );
+    },
+    SportsSeatPlacesRoute.name: (routeData) {
+      final args = routeData.argsAs<SportsSeatPlacesRouteArgs>();
+      return _i19.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i17.SportsSeatPlacesScreen(
+          eventId: args.eventId,
+          key: args.key,
+        ),
       );
     },
     TicketStandingPlacesRoute.name: (routeData) {
       final args = routeData.argsAs<TicketStandingPlacesRouteArgs>();
-      return _i17.AutoRoutePage<dynamic>(
+      return _i19.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i16.TicketStandingPlacesScreen(
+        child: _i18.TicketStandingPlacesScreen(
           eventId: args.eventId,
           dateTime: args.dateTime,
           key: args.key,
@@ -178,8 +194,8 @@ abstract class $AppRouter extends _i17.RootStackRouter {
 
 /// generated route for
 /// [_i1.BalletTheaterScreen]
-class BalletTheaterRoute extends _i17.PageRouteInfo<void> {
-  const BalletTheaterRoute({List<_i17.PageRouteInfo>? children})
+class BalletTheaterRoute extends _i19.PageRouteInfo<void> {
+  const BalletTheaterRoute({List<_i19.PageRouteInfo>? children})
       : super(
           BalletTheaterRoute.name,
           initialChildren: children,
@@ -187,13 +203,13 @@ class BalletTheaterRoute extends _i17.PageRouteInfo<void> {
 
   static const String name = 'BalletTheaterRoute';
 
-  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+  static const _i19.PageInfo<void> page = _i19.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i2.BishkekArenaBlocksScreen]
-class BishkekArenaBlocksRoute extends _i17.PageRouteInfo<void> {
-  const BishkekArenaBlocksRoute({List<_i17.PageRouteInfo>? children})
+class BishkekArenaBlocksRoute extends _i19.PageRouteInfo<void> {
+  const BishkekArenaBlocksRoute({List<_i19.PageRouteInfo>? children})
       : super(
           BishkekArenaBlocksRoute.name,
           initialChildren: children,
@@ -201,17 +217,17 @@ class BishkekArenaBlocksRoute extends _i17.PageRouteInfo<void> {
 
   static const String name = 'BishkekArenaBlocksRoute';
 
-  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+  static const _i19.PageInfo<void> page = _i19.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i3.BishkekArenaPlacesScreen]
 class BishkekArenaPlacesRoute
-    extends _i17.PageRouteInfo<BishkekArenaPlacesRouteArgs> {
+    extends _i19.PageRouteInfo<BishkekArenaPlacesRouteArgs> {
   BishkekArenaPlacesRoute({
-    required _i18.BishkekArenaBlockType blockType,
-    _i19.Key? key,
-    List<_i17.PageRouteInfo>? children,
+    required _i20.BishkekArenaBlockType blockType,
+    _i21.Key? key,
+    List<_i19.PageRouteInfo>? children,
   }) : super(
           BishkekArenaPlacesRoute.name,
           args: BishkekArenaPlacesRouteArgs(
@@ -223,8 +239,8 @@ class BishkekArenaPlacesRoute
 
   static const String name = 'BishkekArenaPlacesRoute';
 
-  static const _i17.PageInfo<BishkekArenaPlacesRouteArgs> page =
-      _i17.PageInfo<BishkekArenaPlacesRouteArgs>(name);
+  static const _i19.PageInfo<BishkekArenaPlacesRouteArgs> page =
+      _i19.PageInfo<BishkekArenaPlacesRouteArgs>(name);
 }
 
 class BishkekArenaPlacesRouteArgs {
@@ -233,9 +249,9 @@ class BishkekArenaPlacesRouteArgs {
     this.key,
   });
 
-  final _i18.BishkekArenaBlockType blockType;
+  final _i20.BishkekArenaBlockType blockType;
 
-  final _i19.Key? key;
+  final _i21.Key? key;
 
   @override
   String toString() {
@@ -245,8 +261,8 @@ class BishkekArenaPlacesRouteArgs {
 
 /// generated route for
 /// [_i4.CategoriesScreen]
-class CategoriesRoute extends _i17.PageRouteInfo<void> {
-  const CategoriesRoute({List<_i17.PageRouteInfo>? children})
+class CategoriesRoute extends _i19.PageRouteInfo<void> {
+  const CategoriesRoute({List<_i19.PageRouteInfo>? children})
       : super(
           CategoriesRoute.name,
           initialChildren: children,
@@ -254,16 +270,16 @@ class CategoriesRoute extends _i17.PageRouteInfo<void> {
 
   static const String name = 'CategoriesRoute';
 
-  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+  static const _i19.PageInfo<void> page = _i19.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i5.EventScreen]
-class EventRoute extends _i17.PageRouteInfo<EventRouteArgs> {
+class EventRoute extends _i19.PageRouteInfo<EventRouteArgs> {
   EventRoute({
-    required _i20.EventDto event,
-    _i21.Key? key,
-    List<_i17.PageRouteInfo>? children,
+    required _i22.EventDto event,
+    _i23.Key? key,
+    List<_i19.PageRouteInfo>? children,
   }) : super(
           EventRoute.name,
           args: EventRouteArgs(
@@ -275,8 +291,8 @@ class EventRoute extends _i17.PageRouteInfo<EventRouteArgs> {
 
   static const String name = 'EventRoute';
 
-  static const _i17.PageInfo<EventRouteArgs> page =
-      _i17.PageInfo<EventRouteArgs>(name);
+  static const _i19.PageInfo<EventRouteArgs> page =
+      _i19.PageInfo<EventRouteArgs>(name);
 }
 
 class EventRouteArgs {
@@ -285,9 +301,9 @@ class EventRouteArgs {
     this.key,
   });
 
-  final _i20.EventDto event;
+  final _i22.EventDto event;
 
-  final _i21.Key? key;
+  final _i23.Key? key;
 
   @override
   String toString() {
@@ -297,11 +313,11 @@ class EventRouteArgs {
 
 /// generated route for
 /// [_i6.EventsByTypeScreen]
-class EventsByTypeRoute extends _i17.PageRouteInfo<EventsByTypeRouteArgs> {
+class EventsByTypeRoute extends _i19.PageRouteInfo<EventsByTypeRouteArgs> {
   EventsByTypeRoute({
-    required _i20.KeyValueMapDto eventKeyValue,
-    _i19.Key? key,
-    List<_i17.PageRouteInfo>? children,
+    required _i22.KeyValueMapDto eventKeyValue,
+    _i21.Key? key,
+    List<_i19.PageRouteInfo>? children,
   }) : super(
           EventsByTypeRoute.name,
           args: EventsByTypeRouteArgs(
@@ -313,8 +329,8 @@ class EventsByTypeRoute extends _i17.PageRouteInfo<EventsByTypeRouteArgs> {
 
   static const String name = 'EventsByTypeRoute';
 
-  static const _i17.PageInfo<EventsByTypeRouteArgs> page =
-      _i17.PageInfo<EventsByTypeRouteArgs>(name);
+  static const _i19.PageInfo<EventsByTypeRouteArgs> page =
+      _i19.PageInfo<EventsByTypeRouteArgs>(name);
 }
 
 class EventsByTypeRouteArgs {
@@ -323,9 +339,9 @@ class EventsByTypeRouteArgs {
     this.key,
   });
 
-  final _i20.KeyValueMapDto eventKeyValue;
+  final _i22.KeyValueMapDto eventKeyValue;
 
-  final _i19.Key? key;
+  final _i21.Key? key;
 
   @override
   String toString() {
@@ -335,47 +351,22 @@ class EventsByTypeRouteArgs {
 
 /// generated route for
 /// [_i7.FilarmoniaSeatPlacesScreen]
-class FilarmoniaSeatPlacesRoute
-    extends _i17.PageRouteInfo<FilarmoniaSeatPlacesRouteArgs> {
-  FilarmoniaSeatPlacesRoute({
-    required String eventId,
-    _i19.Key? key,
-    List<_i17.PageRouteInfo>? children,
-  }) : super(
+class FilarmoniaSeatPlacesRoute extends _i19.PageRouteInfo<void> {
+  const FilarmoniaSeatPlacesRoute({List<_i19.PageRouteInfo>? children})
+      : super(
           FilarmoniaSeatPlacesRoute.name,
-          args: FilarmoniaSeatPlacesRouteArgs(
-            eventId: eventId,
-            key: key,
-          ),
           initialChildren: children,
         );
 
   static const String name = 'FilarmoniaSeatPlacesRoute';
 
-  static const _i17.PageInfo<FilarmoniaSeatPlacesRouteArgs> page =
-      _i17.PageInfo<FilarmoniaSeatPlacesRouteArgs>(name);
-}
-
-class FilarmoniaSeatPlacesRouteArgs {
-  const FilarmoniaSeatPlacesRouteArgs({
-    required this.eventId,
-    this.key,
-  });
-
-  final String eventId;
-
-  final _i19.Key? key;
-
-  @override
-  String toString() {
-    return 'FilarmoniaSeatPlacesRouteArgs{eventId: $eventId, key: $key}';
-  }
+  static const _i19.PageInfo<void> page = _i19.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i8.HistoryScreen]
-class HistoryRoute extends _i17.PageRouteInfo<void> {
-  const HistoryRoute({List<_i17.PageRouteInfo>? children})
+class HistoryRoute extends _i19.PageRouteInfo<void> {
+  const HistoryRoute({List<_i19.PageRouteInfo>? children})
       : super(
           HistoryRoute.name,
           initialChildren: children,
@@ -383,13 +374,27 @@ class HistoryRoute extends _i17.PageRouteInfo<void> {
 
   static const String name = 'HistoryRoute';
 
-  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+  static const _i19.PageInfo<void> page = _i19.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i9.LoginScreen]
-class LoginRoute extends _i17.PageRouteInfo<void> {
-  const LoginRoute({List<_i17.PageRouteInfo>? children})
+/// [_i9.KyrgyzDramTheaterSeatPlacesScreen]
+class KyrgyzDramTheaterSeatPlacesRoute extends _i19.PageRouteInfo<void> {
+  const KyrgyzDramTheaterSeatPlacesRoute({List<_i19.PageRouteInfo>? children})
+      : super(
+          KyrgyzDramTheaterSeatPlacesRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'KyrgyzDramTheaterSeatPlacesRoute';
+
+  static const _i19.PageInfo<void> page = _i19.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i10.LoginScreen]
+class LoginRoute extends _i19.PageRouteInfo<void> {
+  const LoginRoute({List<_i19.PageRouteInfo>? children})
       : super(
           LoginRoute.name,
           initialChildren: children,
@@ -397,16 +402,16 @@ class LoginRoute extends _i17.PageRouteInfo<void> {
 
   static const String name = 'LoginRoute';
 
-  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+  static const _i19.PageInfo<void> page = _i19.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i10.MainScreen]
-class MainRoute extends _i17.PageRouteInfo<MainRouteArgs> {
+/// [_i11.MainScreen]
+class MainRoute extends _i19.PageRouteInfo<MainRouteArgs> {
   MainRoute({
-    _i22.MAIN_SCREEN_TAB initialTab = _i22.MAIN_SCREEN_TAB.HOME,
-    _i19.Key? key,
-    List<_i17.PageRouteInfo>? children,
+    _i24.MAIN_SCREEN_TAB initialTab = _i24.MAIN_SCREEN_TAB.HOME,
+    _i21.Key? key,
+    List<_i19.PageRouteInfo>? children,
   }) : super(
           MainRoute.name,
           args: MainRouteArgs(
@@ -418,19 +423,19 @@ class MainRoute extends _i17.PageRouteInfo<MainRouteArgs> {
 
   static const String name = 'MainRoute';
 
-  static const _i17.PageInfo<MainRouteArgs> page =
-      _i17.PageInfo<MainRouteArgs>(name);
+  static const _i19.PageInfo<MainRouteArgs> page =
+      _i19.PageInfo<MainRouteArgs>(name);
 }
 
 class MainRouteArgs {
   const MainRouteArgs({
-    this.initialTab = _i22.MAIN_SCREEN_TAB.HOME,
+    this.initialTab = _i24.MAIN_SCREEN_TAB.HOME,
     this.key,
   });
 
-  final _i22.MAIN_SCREEN_TAB initialTab;
+  final _i24.MAIN_SCREEN_TAB initialTab;
 
-  final _i19.Key? key;
+  final _i21.Key? key;
 
   @override
   String toString() {
@@ -439,9 +444,9 @@ class MainRouteArgs {
 }
 
 /// generated route for
-/// [_i11.RegisterScreen]
-class RegisterRoute extends _i17.PageRouteInfo<void> {
-  const RegisterRoute({List<_i17.PageRouteInfo>? children})
+/// [_i12.RegisterScreen]
+class RegisterRoute extends _i19.PageRouteInfo<void> {
+  const RegisterRoute({List<_i19.PageRouteInfo>? children})
       : super(
           RegisterRoute.name,
           initialChildren: children,
@@ -449,13 +454,13 @@ class RegisterRoute extends _i17.PageRouteInfo<void> {
 
   static const String name = 'RegisterRoute';
 
-  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+  static const _i19.PageInfo<void> page = _i19.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i12.RuDramTheaterScreen]
-class RuDramTheaterRoute extends _i17.PageRouteInfo<void> {
-  const RuDramTheaterRoute({List<_i17.PageRouteInfo>? children})
+/// [_i13.RuDramTheaterScreen]
+class RuDramTheaterRoute extends _i19.PageRouteInfo<void> {
+  const RuDramTheaterRoute({List<_i19.PageRouteInfo>? children})
       : super(
           RuDramTheaterRoute.name,
           initialChildren: children,
@@ -463,13 +468,13 @@ class RuDramTheaterRoute extends _i17.PageRouteInfo<void> {
 
   static const String name = 'RuDramTheaterRoute';
 
-  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+  static const _i19.PageInfo<void> page = _i19.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i13.SearchScreen]
-class SearchRoute extends _i17.PageRouteInfo<void> {
-  const SearchRoute({List<_i17.PageRouteInfo>? children})
+/// [_i14.SearchScreen]
+class SearchRoute extends _i19.PageRouteInfo<void> {
+  const SearchRoute({List<_i19.PageRouteInfo>? children})
       : super(
           SearchRoute.name,
           initialChildren: children,
@@ -477,13 +482,13 @@ class SearchRoute extends _i17.PageRouteInfo<void> {
 
   static const String name = 'SearchRoute';
 
-  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+  static const _i19.PageInfo<void> page = _i19.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i14.SettingsScreen]
-class SettingsRoute extends _i17.PageRouteInfo<void> {
-  const SettingsRoute({List<_i17.PageRouteInfo>? children})
+/// [_i15.SettingsScreen]
+class SettingsRoute extends _i19.PageRouteInfo<void> {
+  const SettingsRoute({List<_i19.PageRouteInfo>? children})
       : super(
           SettingsRoute.name,
           initialChildren: children,
@@ -491,13 +496,13 @@ class SettingsRoute extends _i17.PageRouteInfo<void> {
 
   static const String name = 'SettingsRoute';
 
-  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+  static const _i19.PageInfo<void> page = _i19.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i15.SplashScreen]
-class SplashRoute extends _i17.PageRouteInfo<void> {
-  const SplashRoute({List<_i17.PageRouteInfo>? children})
+/// [_i16.SplashScreen]
+class SplashRoute extends _i19.PageRouteInfo<void> {
+  const SplashRoute({List<_i19.PageRouteInfo>? children})
       : super(
           SplashRoute.name,
           initialChildren: children,
@@ -505,18 +510,57 @@ class SplashRoute extends _i17.PageRouteInfo<void> {
 
   static const String name = 'SplashRoute';
 
-  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+  static const _i19.PageInfo<void> page = _i19.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i16.TicketStandingPlacesScreen]
+/// [_i17.SportsSeatPlacesScreen]
+class SportsSeatPlacesRoute
+    extends _i19.PageRouteInfo<SportsSeatPlacesRouteArgs> {
+  SportsSeatPlacesRoute({
+    required String eventId,
+    _i21.Key? key,
+    List<_i19.PageRouteInfo>? children,
+  }) : super(
+          SportsSeatPlacesRoute.name,
+          args: SportsSeatPlacesRouteArgs(
+            eventId: eventId,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'SportsSeatPlacesRoute';
+
+  static const _i19.PageInfo<SportsSeatPlacesRouteArgs> page =
+      _i19.PageInfo<SportsSeatPlacesRouteArgs>(name);
+}
+
+class SportsSeatPlacesRouteArgs {
+  const SportsSeatPlacesRouteArgs({
+    required this.eventId,
+    this.key,
+  });
+
+  final String eventId;
+
+  final _i21.Key? key;
+
+  @override
+  String toString() {
+    return 'SportsSeatPlacesRouteArgs{eventId: $eventId, key: $key}';
+  }
+}
+
+/// generated route for
+/// [_i18.TicketStandingPlacesScreen]
 class TicketStandingPlacesRoute
-    extends _i17.PageRouteInfo<TicketStandingPlacesRouteArgs> {
+    extends _i19.PageRouteInfo<TicketStandingPlacesRouteArgs> {
   TicketStandingPlacesRoute({
     required String eventId,
     required DateTime dateTime,
-    _i19.Key? key,
-    List<_i17.PageRouteInfo>? children,
+    _i21.Key? key,
+    List<_i19.PageRouteInfo>? children,
   }) : super(
           TicketStandingPlacesRoute.name,
           args: TicketStandingPlacesRouteArgs(
@@ -529,8 +573,8 @@ class TicketStandingPlacesRoute
 
   static const String name = 'TicketStandingPlacesRoute';
 
-  static const _i17.PageInfo<TicketStandingPlacesRouteArgs> page =
-      _i17.PageInfo<TicketStandingPlacesRouteArgs>(name);
+  static const _i19.PageInfo<TicketStandingPlacesRouteArgs> page =
+      _i19.PageInfo<TicketStandingPlacesRouteArgs>(name);
 }
 
 class TicketStandingPlacesRouteArgs {
@@ -544,7 +588,7 @@ class TicketStandingPlacesRouteArgs {
 
   final DateTime dateTime;
 
-  final _i19.Key? key;
+  final _i21.Key? key;
 
   @override
   String toString() {
