@@ -1,4 +1,5 @@
 import 'package:common/common.dart';
+import 'package:eticket/common/common.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:eticket/data/models/enums/enums.dart';
@@ -22,7 +23,8 @@ class EventDto with _$EventDto {
     required int count,
     required String? locationName,
     required String locationId,
-    required int locationType,
+    @JsonKey(unknownEnumValue: LocationType.unknown)
+    required LocationType locationType,
     required String? poster,
     required int type,
     required String? video,

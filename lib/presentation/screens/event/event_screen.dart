@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:eticket/common/common.dart';
 import 'package:eticket/common/extensions/extensions.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
@@ -74,7 +75,7 @@ class EventScreen extends StatelessWidget {
     required EventDto event,
     required DateTime dateTime,
   }) {
-    if (event.locationType == 0) {
+    if (event.locationType == LocationType.noSeating) {
       context.navigateTo(
         TicketStandingPlacesRoute(
           eventId: event.id,
@@ -84,10 +85,10 @@ class EventScreen extends StatelessWidget {
 
       return;
     }
-    //TODO: uncomment
-    // context.navigateTo(TicketSeatPlacesRoute(
-    //   // dateTime: dateTime,
-    //   eventId: event.id,
-    // ));
+    context.navigateTo(TicketSeatPlacesRoute(
+      locationType: event.locationType,
+      // dateTime: dateTime,
+      eventId: event.id,
+    ));
   }
 }

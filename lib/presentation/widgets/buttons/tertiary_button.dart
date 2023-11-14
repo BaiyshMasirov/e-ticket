@@ -24,6 +24,7 @@ class TertiaryButton extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding ?? 0),
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
+            foregroundColor: context.colorScheme.secondary,
             minimumSize: Size.fromHeight(40.h),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.r),
@@ -33,7 +34,10 @@ class TertiaryButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (suffixIcon != null) suffixIcon,
-            Text(title),
+            Text(
+              title,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
           ],
         ),
       ),

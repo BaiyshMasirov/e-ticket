@@ -11,18 +11,18 @@ class AppTheme {
       brightness: Brightness.light,
       useMaterial3: true,
       extensions: _getAppColorsLight(),
-      appBarTheme:
-          AppBarTheme(centerTitle: true, backgroundColor: Colors.transparent),
+      listTileTheme: ListTileThemeData(enableFeedback: true),
+      appBarTheme: AppBarTheme(
+        centerTitle: true,
+        backgroundColor: ColorName.surfaceTintLight,
+        elevation: 3,
+      ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(enableFeedback: true),
       ),
       navigationBarTheme: NavigationBarThemeData(
-        indicatorColor: ColorName.errorContainerLight,
-      ),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        enableFeedback: true,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: ColorName.secondaryLight,
+        indicatorColor: ColorName.onPrimaryLight,
+        backgroundColor: ColorName.surfaceTintLight,
       ),
       colorScheme: const ColorScheme.light(
         primary: ColorName.primaryLight,
@@ -65,19 +65,14 @@ class AppTheme {
       scaffoldBackgroundColor: ColorName.surfaceDark,
       appBarTheme: AppBarTheme(
         centerTitle: true,
-        backgroundColor: Colors.transparent,
-
+        backgroundColor: ColorName.surfaceTintDark,
       ),
       navigationBarTheme: NavigationBarThemeData(
-        indicatorColor: ColorName.errorContainerDark,
+        indicatorColor: ColorName.primaryDark,
+        backgroundColor: ColorName.surfaceTintDark,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(enableFeedback: true),
-      ),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        enableFeedback: true,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: ColorName.secondaryDark,
       ),
       colorScheme: const ColorScheme.dark(
         primary: ColorName.primaryDark,

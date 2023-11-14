@@ -15,23 +15,26 @@ class TicketStandingPlacesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-      child: BlocConsumer<TicketStandingPlacesCubit, TicketStandingPlacesState>(
-        listener: (context, state) => state.maybeWhen(
-          orElse: () => context
-              .read<TicketStandingPlacePurchaseCubit>()
-              .clearChosenTickets(),
-          success: (tickets) => context
-              .read<TicketStandingPlacePurchaseCubit>()
-              .initializeTickets(tickets: tickets),
-        ),
-        builder: (context, state) => state.maybeWhen(
-          orElse: () => const SizedBox.shrink(),
-          success: (tickets) => AppSliverScrollView(
+    return BlocConsumer<TicketStandingPlacesCubit, TicketStandingPlacesState>(
+      listener: (context, state) => state.maybeWhen(
+        orElse: () => context
+            .read<TicketStandingPlacePurchaseCubit>()
+            .clearChosenTickets(),
+        success: (tickets) => context
+            .read<TicketStandingPlacePurchaseCubit>()
+            .initializeTickets(tickets: tickets),
+      ),
+      builder: (context, state) => state.maybeWhen(
+        orElse: () => const SizedBox.shrink(),
+        success: (tickets) => Padding(
+          padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+          child: AppSliverScrollView(
             onRefresh: () =>
                 context.read<TicketStandingPlacesCubit>().getTickets(),
             slivers: [
+              SliverToBoxAdapter(
+                child: SizedBox(height: kDefaultPadding),
+              ),
               SliverList.separated(
                 itemCount: tickets.length,
                 itemBuilder: (context, i) {
@@ -48,16 +51,16 @@ class TicketStandingPlacesView extends StatelessWidget {
               )
             ],
           ),
-          error: (error) => Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              DataFetchFailure(
-                onTryLoadAgain: () =>
-                    context.read<TicketStandingPlacesCubit>().getTickets(),
-                error: error?.tr(),
-              ),
-            ],
-          ),
+        ),
+        error: (error) => Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            DataFetchFailure(
+              onTryLoadAgain: () =>
+                  context.read<TicketStandingPlacesCubit>().getTickets(),
+              error: error?.tr(),
+            ),
+          ],
         ),
       ),
     );

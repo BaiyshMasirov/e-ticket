@@ -1,5 +1,6 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:eticket/common/extensions/extensions.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,8 +26,17 @@ class DropDownFormFieldZ<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField2<T>(
+      enableFeedback: true,
       isExpanded: true,
       isDense: true,
+      dropdownStyleData: DropdownStyleData(
+        decoration: BoxDecoration(
+          color: context.theme.cardColor,
+          border: Border.all(
+            color: context.colorScheme.outline,
+          ),
+        ),
+      ),
       customButton: Align(
         alignment: Alignment.centerLeft,
         child: Row(
@@ -38,11 +48,8 @@ class DropDownFormFieldZ<T> extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            Transform.translate(
-              offset: const Offset(0, -7),
-              child: const Icon(
-                Icons.arrow_drop_down_circle_outlined,
-              ),
+            const Icon(
+              Icons.arrow_drop_down_circle_outlined,
             ),
           ],
         ),
@@ -58,12 +65,13 @@ class DropDownFormFieldZ<T> extends StatelessWidget {
         return validate?.call(value);
       },
       decoration: InputDecoration(
+        filled: true,
         labelText: label,
-        border: InputBorder.none,
         contentPadding: EdgeInsets.symmetric(
-          horizontal: 10.w,
+          horizontal: 15.w,
           vertical: 10.h,
         ),
+        border: OutlineInputBorder(),
       ),
     );
   }

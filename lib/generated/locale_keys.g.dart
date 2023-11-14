@@ -38,5 +38,15 @@ abstract class  LocaleKeys {
   static const select_from_list = 'select_from_list';
   static const enter_text = 'enter_text';
   static const places = 'places';
+  static const noSeating = 'noSeating';
+  static const sportPalace = 'sportPalace';
+  static const bishkekArena = 'bishkekArena';
+  static const spartakStadium = 'spartakStadium';
+  static const balletTheater = 'balletTheater';
+  static const philarmonic = 'philarmonic';
+  static const ruDramTheater = 'ruDramTheater';
+  static const kgDramTheater = 'kgDramTheater';
+  static const nationalTheater = 'nationalTheater';
+  static const nothing_here = 'nothing_here';
 
 }

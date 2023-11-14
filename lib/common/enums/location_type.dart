@@ -1,28 +1,41 @@
+import 'package:common/common.dart';
+
 enum LocationType {
   // [Display(Name = "Без рассадки")]
-  NoSeating, //DONE
+  @JsonValue(0)
+  noSeating, //DONE
 
   // [Display(Name = "Дворец спорта")]
-  SportPalace, //DONE (need to rewrite)
+  @JsonValue(1)
+  sportPalace, //DONE (need to rewrite)
 
   // [Display(Name = "Бишкек Арена")]
-  BishkekArena, //DONE
+  @JsonValue(2)
+  bishkekArena, //DONE
 
   // [Display(Name = "Стадион Спартак")]
-  SpartakStadium,
+  @JsonValue(3)
+  spartakStadium,
 
   // [Display(Name = "Театр оперы и балета")]
-  BalletTheater, //DONE
+  @JsonValue(4)
+  balletTheater, //DONE
 
   // [Display(Name = "Филармония")]
-  Philarmonic, //BEKA: in progress
+  @JsonValue(5)
+  philarmonic, //BEKA: in progress
 
   // [Display(Name = "Русский драматический театр")]
-  RuDramTheater, // DONE
+  @JsonValue(6)
+  ruDramTheater, // DONE
 
   // [Display(Name = "Кыргызский драматический театр")]
-  KgDramTheater, // DONE
+  @JsonValue(7)
+  kgDramTheater, // DONE
 
   // [Display(Name = "Национальный театр")]
-  NationalTheater, // ?
+  @JsonValue(8)
+  nationalTheater, // ?
+
+  unknown,
 }

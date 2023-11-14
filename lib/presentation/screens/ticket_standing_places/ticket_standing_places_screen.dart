@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 
 @RoutePage()
 class TicketStandingPlacesScreen extends StatelessWidget {
-  final LocationType locationType = LocationType.NoSeating;
+  final LocationType locationType = LocationType.noSeating;
   final String eventId;
   final DateTime dateTime;
 

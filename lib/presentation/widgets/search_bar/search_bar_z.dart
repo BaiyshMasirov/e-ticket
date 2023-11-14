@@ -25,19 +25,13 @@ class SearchBarZ extends HookWidget {
     final showClearButton = useState(false);
     final debouncer = useMemoized(() => Debouncer(milliseconds: 600));
 
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: _bR,
-        color: context.colorScheme.secondaryContainer,
-      ),
-      margin: EdgeInsets.symmetric(
-        horizontal: 20.w,
-        vertical: 10.h,
-      ),
+    return SizedBox(
+      height: 28.h,
       child: TextFormFieldZ(
         controller: controller,
         label: '',
         inputDecoration: InputDecoration(
+          filled: true,
           suffixIcon: showClearButton.value
               ? InkWell(
                   onTap: () {
@@ -53,10 +47,11 @@ class SearchBarZ extends HookWidget {
                 )
               : null,
           border: OutlineInputBorder(
-            borderRadius: _bR,
+            borderRadius: BorderRadius.circular(10.r),
           ),
           contentPadding: EdgeInsets.symmetric(
             horizontal: 15.w,
+            vertical: 0,
           ),
         ),
         onChanged: (text) {

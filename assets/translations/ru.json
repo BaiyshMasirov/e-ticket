@@ -35,5 +35,15 @@
   "date": "Дата",
   "select_from_list": "Выберите из списка",
   "enter_text": "Введите текст",
-  "places": "Места"
+  "places": "Места",
+  "noSeating": "Без рассадки",
+  "sportPalace": "Дворец спорта",
+  "bishkekArena": "Бишкек Арена",
+  "spartakStadium": "Стадион Спартак",
+  "balletTheater": "Театр оперы и балета",
+  "philarmonic": "Филармония",
+  "ruDramTheater": "Русский драматический театр",
+  "kgDramTheater": "Кыргызский драматический театр",
+  "nationalTheater": "Национальный театр",
+  "nothing_here": "Здесь ничего нет..."
 }
