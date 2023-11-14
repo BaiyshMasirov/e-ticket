@@ -49,13 +49,22 @@ class EventsByTypeCubit extends Cubit<EventsByTypeState> {
       )),
       (data) {
         _page++;
-        emit(EventsByTypeState.loadingSuccess(
-          events: [
-            ...state.events,
-            ...data.events,
-          ],
-          isNextPageAvailable: _page < data.maxPage,
-        ));
+
+        final events = [
+          ...state.events,
+          ...data.events,
+        ];
+
+        if (events.isEmpty) {
+          emit(EventsByTypeState.loadingSuccessEmpty(
+            events: events,
+          ));
+        } else {
+          emit(EventsByTypeState.loadingSuccess(
+            events: events,
+            isNextPageAvailable: _page < data.maxPage,
+          ));
+        }
       },
     );
   }

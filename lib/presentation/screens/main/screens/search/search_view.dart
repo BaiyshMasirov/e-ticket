@@ -5,6 +5,7 @@ import 'package:eticket/domain/models/event/events_filter.dart';
 import 'package:eticket/generated/assets.gen.dart';
 import 'package:eticket/presentation/screens/main/screens/search/bloc/search_cubit.dart';
 import 'package:eticket/presentation/screens/main/screens/search/widgets/search_widgets.dart';
+import 'package:eticket/presentation/theme/styling.dart';
 import 'package:eticket/presentation/widgets/app_scaffold.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,7 @@ class SearchView extends HookWidget {
         loadingInProgress: (_) => canLoadNextPage.value = false,
         loadingSuccess: (_) => canLoadNextPage.value = _.isNextPageAvailable,
         loadingError: (_) => canLoadNextPage.value = false,
+        loadingSuccessEmpty: (_) => canLoadNextPage.value = false,
       ),
       child: NotificationListener<ScrollNotification>(
         onNotification: (notification) {
@@ -59,32 +61,23 @@ class SearchView extends HookWidget {
             ),
             actions: const [SearchFilterButton()],
           ),
-          body: AppSliverScrollView(
-            onRefresh: () async {
-              context.read<SearchCubit>().refreshPage();
-            },
-            slivers: [
-              eventsState.maybeWhen(
-                orElse: () =>
-                    SearchSearchPaginatedEventsView(searchState: eventsState),
-                loadingInProgress: (events, eventsFilter, text) => events
-                        .isEmpty
-                    ? const SliverToBoxAdapter(
-                        child: Center(
-                          child: CircularProgressIndicator(),
-                        ),
-                      )
-                    : SearchSearchPaginatedEventsView(searchState: eventsState),
-                loadingSuccess: (transactions, _, __, ___) => transactions
-                        .isEmpty
-                    ? const SliverToBoxAdapter(
-                        child: Center(
-                          child: Text('Ивентов нет'),
-                        ),
-                      )
-                    : SearchSearchPaginatedEventsView(searchState: eventsState),
-              ),
-            ],
+          body: eventsState.maybeMap(
+            loadingSuccessEmpty: (_) => EmptyContent(
+              onTryAgain: () => context.read<SearchCubit>().refreshPage(),
+            ),
+            orElse: () => AppSliverScrollView(
+              onRefresh: () async {
+                context.read<SearchCubit>().refreshPage();
+              },
+              slivers: [
+                SliverPadding(
+                  padding: EdgeInsets.all(kDefaultPadding),
+                  sliver: SearchSearchPaginatedEventsView(
+                    searchState: eventsState,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -33,6 +33,9 @@ mixin _$SearchState {
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)
         loadingError,
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
+        loadingSuccessEmpty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -49,6 +52,9 @@ mixin _$SearchState {
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)?
         loadingError,
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        loadingSuccessEmpty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +71,9 @@ mixin _$SearchState {
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)?
         loadingError,
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        loadingSuccessEmpty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -74,6 +83,8 @@ mixin _$SearchState {
     required TResult Function(_SearchLoadingInProgress value) loadingInProgress,
     required TResult Function(_SearchLoadingSuccess value) loadingSuccess,
     required TResult Function(_SearchLoadingError value) loadingError,
+    required TResult Function(_SearchLoadingSuccessEmpty value)
+        loadingSuccessEmpty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,6 +93,7 @@ mixin _$SearchState {
     TResult? Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult? Function(_SearchLoadingSuccess value)? loadingSuccess,
     TResult? Function(_SearchLoadingError value)? loadingError,
+    TResult? Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,6 +102,7 @@ mixin _$SearchState {
     TResult Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult Function(_SearchLoadingSuccess value)? loadingSuccess,
     TResult Function(_SearchLoadingError value)? loadingError,
+    TResult Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -265,6 +278,9 @@ class _$SearchStateImpl extends _SearchState {
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)
         loadingError,
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
+        loadingSuccessEmpty,
   }) {
     return initial(events, eventsFilter, searchText);
   }
@@ -284,6 +300,9 @@ class _$SearchStateImpl extends _SearchState {
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)?
         loadingError,
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        loadingSuccessEmpty,
   }) {
     return initial?.call(events, eventsFilter, searchText);
   }
@@ -303,6 +322,9 @@ class _$SearchStateImpl extends _SearchState {
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)?
         loadingError,
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        loadingSuccessEmpty,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -318,6 +340,8 @@ class _$SearchStateImpl extends _SearchState {
     required TResult Function(_SearchLoadingInProgress value) loadingInProgress,
     required TResult Function(_SearchLoadingSuccess value) loadingSuccess,
     required TResult Function(_SearchLoadingError value) loadingError,
+    required TResult Function(_SearchLoadingSuccessEmpty value)
+        loadingSuccessEmpty,
   }) {
     return initial(this);
   }
@@ -329,6 +353,7 @@ class _$SearchStateImpl extends _SearchState {
     TResult? Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult? Function(_SearchLoadingSuccess value)? loadingSuccess,
     TResult? Function(_SearchLoadingError value)? loadingError,
+    TResult? Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
   }) {
     return initial?.call(this);
   }
@@ -340,6 +365,7 @@ class _$SearchStateImpl extends _SearchState {
     TResult Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult Function(_SearchLoadingSuccess value)? loadingSuccess,
     TResult Function(_SearchLoadingError value)? loadingError,
+    TResult Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -483,6 +509,9 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)
         loadingError,
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
+        loadingSuccessEmpty,
   }) {
     return loadingInProgress(events, eventsFilter, searchText);
   }
@@ -502,6 +531,9 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)?
         loadingError,
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        loadingSuccessEmpty,
   }) {
     return loadingInProgress?.call(events, eventsFilter, searchText);
   }
@@ -521,6 +553,9 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)?
         loadingError,
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        loadingSuccessEmpty,
     required TResult orElse(),
   }) {
     if (loadingInProgress != null) {
@@ -536,6 +571,8 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
     required TResult Function(_SearchLoadingInProgress value) loadingInProgress,
     required TResult Function(_SearchLoadingSuccess value) loadingSuccess,
     required TResult Function(_SearchLoadingError value) loadingError,
+    required TResult Function(_SearchLoadingSuccessEmpty value)
+        loadingSuccessEmpty,
   }) {
     return loadingInProgress(this);
   }
@@ -547,6 +584,7 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
     TResult? Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult? Function(_SearchLoadingSuccess value)? loadingSuccess,
     TResult? Function(_SearchLoadingError value)? loadingError,
+    TResult? Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
   }) {
     return loadingInProgress?.call(this);
   }
@@ -558,6 +596,7 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
     TResult Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult Function(_SearchLoadingSuccess value)? loadingSuccess,
     TResult Function(_SearchLoadingError value)? loadingError,
+    TResult Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     required TResult orElse(),
   }) {
     if (loadingInProgress != null) {
@@ -717,6 +756,9 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)
         loadingError,
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
+        loadingSuccessEmpty,
   }) {
     return loadingSuccess(
         events, eventsFilter, searchText, isNextPageAvailable);
@@ -737,6 +779,9 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)?
         loadingError,
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        loadingSuccessEmpty,
   }) {
     return loadingSuccess?.call(
         events, eventsFilter, searchText, isNextPageAvailable);
@@ -757,6 +802,9 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)?
         loadingError,
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        loadingSuccessEmpty,
     required TResult orElse(),
   }) {
     if (loadingSuccess != null) {
@@ -773,6 +821,8 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
     required TResult Function(_SearchLoadingInProgress value) loadingInProgress,
     required TResult Function(_SearchLoadingSuccess value) loadingSuccess,
     required TResult Function(_SearchLoadingError value) loadingError,
+    required TResult Function(_SearchLoadingSuccessEmpty value)
+        loadingSuccessEmpty,
   }) {
     return loadingSuccess(this);
   }
@@ -784,6 +834,7 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
     TResult? Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult? Function(_SearchLoadingSuccess value)? loadingSuccess,
     TResult? Function(_SearchLoadingError value)? loadingError,
+    TResult? Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
   }) {
     return loadingSuccess?.call(this);
   }
@@ -795,6 +846,7 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
     TResult Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult Function(_SearchLoadingSuccess value)? loadingSuccess,
     TResult Function(_SearchLoadingError value)? loadingError,
+    TResult Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     required TResult orElse(),
   }) {
     if (loadingSuccess != null) {
@@ -955,6 +1007,9 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
     required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)
         loadingError,
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
+        loadingSuccessEmpty,
   }) {
     return loadingError(events, eventsFilter, searchText, errorMessage);
   }
@@ -974,6 +1029,9 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
     TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)?
         loadingError,
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        loadingSuccessEmpty,
   }) {
     return loadingError?.call(events, eventsFilter, searchText, errorMessage);
   }
@@ -993,6 +1051,9 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
     TResult Function(List<EventDto> events, EventsFilter eventsFilter,
             String searchText, String? errorMessage)?
         loadingError,
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        loadingSuccessEmpty,
     required TResult orElse(),
   }) {
     if (loadingError != null) {
@@ -1008,6 +1069,8 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
     required TResult Function(_SearchLoadingInProgress value) loadingInProgress,
     required TResult Function(_SearchLoadingSuccess value) loadingSuccess,
     required TResult Function(_SearchLoadingError value) loadingError,
+    required TResult Function(_SearchLoadingSuccessEmpty value)
+        loadingSuccessEmpty,
   }) {
     return loadingError(this);
   }
@@ -1019,6 +1082,7 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
     TResult? Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult? Function(_SearchLoadingSuccess value)? loadingSuccess,
     TResult? Function(_SearchLoadingError value)? loadingError,
+    TResult? Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
   }) {
     return loadingError?.call(this);
   }
@@ -1030,6 +1094,7 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
     TResult Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult Function(_SearchLoadingSuccess value)? loadingSuccess,
     TResult Function(_SearchLoadingError value)? loadingError,
+    TResult Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     required TResult orElse(),
   }) {
     if (loadingError != null) {
@@ -1058,4 +1123,235 @@ abstract class _SearchLoadingError extends SearchState {
   @JsonKey(ignore: true)
   _$$SearchLoadingErrorImplCopyWith<_$SearchLoadingErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SearchLoadingSuccessEmptyImplCopyWith<$Res>
+    implements $SearchStateCopyWith<$Res> {
+  factory _$$SearchLoadingSuccessEmptyImplCopyWith(
+          _$SearchLoadingSuccessEmptyImpl value,
+          $Res Function(_$SearchLoadingSuccessEmptyImpl) then) =
+      __$$SearchLoadingSuccessEmptyImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {List<EventDto> events, EventsFilter eventsFilter, String searchText});
+
+  @override
+  $EventsFilterCopyWith<$Res> get eventsFilter;
+}
+
+/// @nodoc
+class __$$SearchLoadingSuccessEmptyImplCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$SearchLoadingSuccessEmptyImpl>
+    implements _$$SearchLoadingSuccessEmptyImplCopyWith<$Res> {
+  __$$SearchLoadingSuccessEmptyImplCopyWithImpl(
+      _$SearchLoadingSuccessEmptyImpl _value,
+      $Res Function(_$SearchLoadingSuccessEmptyImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? events = null,
+    Object? eventsFilter = null,
+    Object? searchText = null,
+  }) {
+    return _then(_$SearchLoadingSuccessEmptyImpl(
+      events: null == events
+          ? _value._events
+          : events // ignore: cast_nullable_to_non_nullable
+              as List<EventDto>,
+      eventsFilter: null == eventsFilter
+          ? _value.eventsFilter
+          : eventsFilter // ignore: cast_nullable_to_non_nullable
+              as EventsFilter,
+      searchText: null == searchText
+          ? _value.searchText
+          : searchText // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchLoadingSuccessEmptyImpl extends _SearchLoadingSuccessEmpty {
+  const _$SearchLoadingSuccessEmptyImpl(
+      {required final List<EventDto> events,
+      required this.eventsFilter,
+      required this.searchText})
+      : _events = events,
+        super._();
+
+  final List<EventDto> _events;
+  @override
+  List<EventDto> get events {
+    if (_events is EqualUnmodifiableListView) return _events;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_events);
+  }
+
+  @override
+  final EventsFilter eventsFilter;
+  @override
+  final String searchText;
+
+  @override
+  String toString() {
+    return 'SearchState.loadingSuccessEmpty(events: $events, eventsFilter: $eventsFilter, searchText: $searchText)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchLoadingSuccessEmptyImpl &&
+            const DeepCollectionEquality().equals(other._events, _events) &&
+            (identical(other.eventsFilter, eventsFilter) ||
+                other.eventsFilter == eventsFilter) &&
+            (identical(other.searchText, searchText) ||
+                other.searchText == searchText));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_events), eventsFilter, searchText);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchLoadingSuccessEmptyImplCopyWith<_$SearchLoadingSuccessEmptyImpl>
+      get copyWith => __$$SearchLoadingSuccessEmptyImplCopyWithImpl<
+          _$SearchLoadingSuccessEmptyImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
+        initial,
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
+        loadingInProgress,
+    required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText, bool isNextPageAvailable)
+        loadingSuccess,
+    required TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText, String? errorMessage)
+        loadingError,
+    required TResult Function(
+            List<EventDto> events, EventsFilter eventsFilter, String searchText)
+        loadingSuccessEmpty,
+  }) {
+    return loadingSuccessEmpty(events, eventsFilter, searchText);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        initial,
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        loadingInProgress,
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText, bool isNextPageAvailable)?
+        loadingSuccess,
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText, String? errorMessage)?
+        loadingError,
+    TResult? Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        loadingSuccessEmpty,
+  }) {
+    return loadingSuccessEmpty?.call(events, eventsFilter, searchText);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        initial,
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        loadingInProgress,
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText, bool isNextPageAvailable)?
+        loadingSuccess,
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText, String? errorMessage)?
+        loadingError,
+    TResult Function(List<EventDto> events, EventsFilter eventsFilter,
+            String searchText)?
+        loadingSuccessEmpty,
+    required TResult orElse(),
+  }) {
+    if (loadingSuccessEmpty != null) {
+      return loadingSuccessEmpty(events, eventsFilter, searchText);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SearchState value) initial,
+    required TResult Function(_SearchLoadingInProgress value) loadingInProgress,
+    required TResult Function(_SearchLoadingSuccess value) loadingSuccess,
+    required TResult Function(_SearchLoadingError value) loadingError,
+    required TResult Function(_SearchLoadingSuccessEmpty value)
+        loadingSuccessEmpty,
+  }) {
+    return loadingSuccessEmpty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SearchState value)? initial,
+    TResult? Function(_SearchLoadingInProgress value)? loadingInProgress,
+    TResult? Function(_SearchLoadingSuccess value)? loadingSuccess,
+    TResult? Function(_SearchLoadingError value)? loadingError,
+    TResult? Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
+  }) {
+    return loadingSuccessEmpty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SearchState value)? initial,
+    TResult Function(_SearchLoadingInProgress value)? loadingInProgress,
+    TResult Function(_SearchLoadingSuccess value)? loadingSuccess,
+    TResult Function(_SearchLoadingError value)? loadingError,
+    TResult Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
+    required TResult orElse(),
+  }) {
+    if (loadingSuccessEmpty != null) {
+      return loadingSuccessEmpty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SearchLoadingSuccessEmpty extends SearchState {
+  const factory _SearchLoadingSuccessEmpty(
+      {required final List<EventDto> events,
+      required final EventsFilter eventsFilter,
+      required final String searchText}) = _$SearchLoadingSuccessEmptyImpl;
+  const _SearchLoadingSuccessEmpty._() : super._();
+
+  @override
+  List<EventDto> get events;
+  @override
+  EventsFilter get eventsFilter;
+  @override
+  String get searchText;
+  @override
+  @JsonKey(ignore: true)
+  _$$SearchLoadingSuccessEmptyImplCopyWith<_$SearchLoadingSuccessEmptyImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

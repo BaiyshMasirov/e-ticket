@@ -13,4 +13,15 @@ class DateFormatters {
   static String datetimeToSlashed(DateTime dateTime) {
     return DateFormat(dMyDashedTemplate).format(dateTime);
   }
+
+  static String buildEventDateTime({
+    required DateTime startDate,
+    required DateTime endDate,
+  }) {
+    if (startDate == endDate) {
+      return DateFormatters.datetimeToSlashed(startDate);
+    }
+
+    return '${DateFormatters.datetimeToSlashed(startDate)} - ${DateFormatters.datetimeToSlashed(endDate)}';
+  }
 }

@@ -57,12 +57,16 @@ class $AssetsLogosGen {
 class $AssetsLottiesGen {
   const $AssetsLottiesGen();
 
+  /// File path: assets/lotties/empty_glass.json
+  LottieGenImage get emptyGlass =>
+      const LottieGenImage('assets/lotties/empty_glass.json');
+
   /// File path: assets/lotties/loading.json
   LottieGenImage get loading =>
       const LottieGenImage('assets/lotties/loading.json');
 
   /// List of all assets
-  List<LottieGenImage> get values => [loading];
+  List<LottieGenImage> get values => [emptyGlass, loading];
 }
 
 class $AssetsSvgsGen {

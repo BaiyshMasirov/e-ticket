@@ -15,7 +15,10 @@ class EventView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final formattedDateTime = _buildEventDateTime();
+    final formattedDateTime = DateFormatters.buildEventDateTime(
+      startDate: event.startDate,
+      endDate: event.endDate,
+    );
 
     return SingleChildScrollView(
       child: Column(
@@ -24,21 +27,25 @@ class EventView extends StatelessWidget {
           Center(
             child: Stack(
               children: [
-                Image.network(
-                  event.image ?? '',
-                  errorBuilder: (context, error, stackTrace) => Container(
-                    color: context.colorScheme.onError,
-                    height: 300.h,
-                  ),
-                  loadingBuilder: (context, child, loadingProgress) {
-                    if (loadingProgress == null) {
-                      return child;
-                    }
-
-                    return Container(
+                SizedBox(
+                  height: 300.h,
+                  child: Image.network(
+                    event.image ?? '',
+                    fit: BoxFit.fitHeight,
+                    errorBuilder: (context, error, stackTrace) => Container(
                       color: context.colorScheme.onError,
-                    );
-                  },
+                      height: 300.h,
+                    ),
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) {
+                        return child;
+                      }
+
+                      return Container(
+                        color: context.colorScheme.onError,
+                      );
+                    },
+                  ),
                 ),
                 Positioned(
                   top: 0,
@@ -122,13 +129,5 @@ class EventView extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  String _buildEventDateTime() {
-    if (event.startDate == event.endDate) {
-      return DateFormatters.datetimeToSlashed(event.startDate);
-    }
-
-    return '${DateFormatters.datetimeToSlashed(event.startDate)} - ${DateFormatters.datetimeToSlashed(event.endDate)}';
   }
 }

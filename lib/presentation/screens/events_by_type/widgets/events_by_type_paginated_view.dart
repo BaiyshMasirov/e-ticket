@@ -25,9 +25,11 @@ class EventsByTypePaginatedView extends StatelessWidget {
         loadingInProgress: (_) => _.events.length + 4,
         loadingSuccess: (_) => _.events.length,
         loadingError: (_) => _.events.length,
+        loadingSuccessEmpty: (_) => 0,
       ),
       itemBuilder: (context, i) {
         return eventsByTypeState.map(
+          loadingSuccessEmpty: (_) => const SizedBox.shrink(),
           initial: (_) => EventsByTypeItem(eventDto: _.events[i]),
           loadingInProgress: (_) {
             if (i < _.events.length) {

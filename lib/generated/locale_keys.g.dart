@@ -48,5 +48,7 @@ abstract class  LocaleKeys {
   static const kgDramTheater = 'kgDramTheater';
   static const nationalTheater = 'nationalTheater';
   static const nothing_here = 'nothing_here';
+  static const ops = 'ops';
+  static const try_again = 'try_again';
 
 }
