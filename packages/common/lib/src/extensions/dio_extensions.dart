@@ -110,8 +110,15 @@ extension DioX on Dio {
       final response = await request();
 
       if (response.isSuccess && response.statusCode == HttpStatus.ok) {
-        final data = parse(response.data);
-        return RemoteResponse.data(data);
+        try {
+          final data = parse(response.data);
+
+          return RemoteResponse.data(data);
+        } catch (e) {
+          return RemoteResponse.statusNotHandled(
+            ErrorResponse.fromResponse(response),
+          );
+        }
       } else if (response.statusCode == HttpStatus.created) {
         return const RemoteResponse.created();
       } else if (response.statusCode == HttpStatus.notModified) {
