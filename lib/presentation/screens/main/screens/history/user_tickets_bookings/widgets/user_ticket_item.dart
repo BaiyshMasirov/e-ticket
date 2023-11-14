@@ -1,23 +1,21 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
-import 'package:eticket/data/models/history/history_dto.dart';
 import 'package:eticket/generated/assets.gen.dart';
-import 'package:eticket/generated/locale_keys.g.dart';
-import 'package:eticket/presentation/screens/ticket_standing_places/widgets/widgets.dart';
+import 'package:eticket/presentation/screens/main/screens/history/user_tickets_bookings/widgets/user_tckets_qr/qr.dart';
+import 'package:eticket/presentation/screens/main/screens/history/user_tickets_bookings/widgets/user_tckets_qr/user_tickets_qr_view.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 import 'package:eticket/data/models/models.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HistoryItem extends StatelessWidget {
-  final UserBookingsListDto booking;
+class UserTicketItem extends StatelessWidget {
+  final UserTicketsBookingsDto ticket;
   final Function() onDecreasePressed;
   final Function() onIncreasePressed;
   final int ticketAmountChosen;
 
-  const HistoryItem({
-    required this.booking,
+  const UserTicketItem({
+    required this.ticket,
     required this.onDecreasePressed,
     required this.onIncreasePressed,
     required this.ticketAmountChosen,
@@ -74,7 +72,20 @@ class HistoryItem extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(booking.eventName.toString()),
+                Row(children: [
+                  Text('Ряд:'),
+                  SizedBox(
+                    width: 5.w,
+                  ),
+                  Text(ticket.rowNumber.toString())
+                ]),
+                Row(children: [
+                  Text('Место:'),
+                  SizedBox(
+                    width: 5.w,
+                  ),
+                  Text(ticket.placeNumber.toString())
+                ]),
 
                 // TicketStandingPlaceCounter(
                 //   amount: ticketAmountChosen.toString(),
@@ -88,4 +99,10 @@ class HistoryItem extends StatelessWidget {
       ),
     );
   }
+
+  void showErrorAlert(BuildContext context, String qr) => showDialog(
+      context: context,
+      builder: (context) => Qr(
+            qrCode: qr,
+          ));
 }

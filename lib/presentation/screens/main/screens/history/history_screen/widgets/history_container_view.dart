@@ -1,10 +1,5 @@
-import 'package:common/common.dart';
-import 'package:eticket/data/models/history/history_dto.dart';
-import 'package:eticket/presentation/screens/main/screens/history/widgets/history_item.dart';
-import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_place_purchase_cubit.dart';
-import 'package:eticket/presentation/screens/ticket_standing_places/widgets/widgets.dart';
+import 'package:eticket/presentation/screens/main/screens/history/history_screen/widgets/history_item.dart';
 import 'package:flutter/material.dart';
-import 'package:collection/collection.dart';
 
 import 'package:eticket/data/models/models.dart';
 

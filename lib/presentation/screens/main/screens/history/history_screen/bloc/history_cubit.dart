@@ -1,7 +1,7 @@
 import 'package:eticket/data/data.dart';
 import 'package:eticket/domain/repository/booking_repository.dart';
 import 'package:eticket/presentation/app_blocs/snackbar/snackbar_cubit.dart';
-import 'package:eticket/presentation/screens/main/screens/history/bloc/history_state.dart';
+import 'package:eticket/presentation/screens/main/screens/history/history_screen/bloc/history_state.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';

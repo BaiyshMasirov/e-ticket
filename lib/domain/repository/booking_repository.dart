@@ -33,4 +33,13 @@ class BookingRepository with NetworkRemoteRepositoryMixin {
 
     return response;
   }
+
+  Future<Either<RequestFailure, List<UserTicketsBookingsDto>>> getUserTicketsId(
+      String id) async {
+    final response = await handleRemoteRequest(
+      request: () => _bookingRemoteDatasource.getUserTicketsBookings(id),
+    );
+
+    return response;
+  }
 }

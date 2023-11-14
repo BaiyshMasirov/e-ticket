@@ -84,5 +84,9 @@ class AppRouter extends $AppRouter {
           page: RuDramTheaterRoute.page,
           path: RouteConstants.ruDramTheaterSeatPlaces,
         ),
+        AutoRoute(
+          page: UserTicketsBookingsRoute.page,
+          path: RouteConstants.userTicketsBookings,
+        ),
       ];
 }

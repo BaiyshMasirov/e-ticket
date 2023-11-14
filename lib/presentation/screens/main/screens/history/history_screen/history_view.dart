@@ -1,10 +1,6 @@
 import 'package:common/common.dart';
-import 'package:eticket/data/models/history/history_dto.dart';
-import 'package:eticket/data/models/ticket/ticket_type_count_dto.dart';
-import 'package:eticket/presentation/screens/main/screens/history/bloc/history_cubit.dart';
-import 'package:eticket/presentation/screens/main/screens/history/bloc/history_state.dart';
-import 'package:eticket/presentation/screens/main/screens/history/widgets/history_container_view.dart';
-import 'package:eticket/presentation/screens/ticket_standing_places/widgets/ticket_standing_places_container_view.dart';
+import 'package:eticket/presentation/screens/main/screens/history/history_screen/bloc/history_cubit.dart';
+import 'package:eticket/presentation/screens/main/screens/history/history_screen/widgets/history_container_view.dart';
 import 'package:eticket/presentation/theme/styling.dart';
 import 'package:eticket/presentation/widgets/app_sliver_scroll_view.dart';
 import 'package:flutter/material.dart';
