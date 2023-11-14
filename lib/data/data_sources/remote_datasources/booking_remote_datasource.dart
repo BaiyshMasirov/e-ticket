@@ -21,4 +21,23 @@ class BookingRemoteDatasource {
 
     return response;
   }
+
+  Future<RemoteResponse<UserBookingsDto>> getUserBookings({
+    required UserBookingsFilter filter,
+    required int page,
+  }) async {
+    final queryP = filter.toJson();
+    queryP.addAll({
+      'page': page,
+    });
+    final response = await _dio.makeRequest(
+      request: () => _dio.get(
+        '/api/Booking/get-user-bookings',
+        queryParameters: queryP,
+      ),
+      parse: (json) => UserBookingsDto.fromJson(json),
+    );
+
+    return response;
+  }
 }
