@@ -11,8 +11,8 @@ class AppTheme {
       brightness: Brightness.light,
       useMaterial3: true,
       extensions: _getAppColorsLight(),
-      listTileTheme: ListTileThemeData(enableFeedback: true),
-      appBarTheme: AppBarTheme(
+      listTileTheme: const ListTileThemeData(enableFeedback: true),
+      appBarTheme: const AppBarTheme(
         centerTitle: true,
         backgroundColor: ColorName.surfaceTintLight,
         elevation: 3,
@@ -20,8 +20,8 @@ class AppTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(enableFeedback: true),
       ),
-      navigationBarTheme: NavigationBarThemeData(
-        indicatorColor: ColorName.onPrimaryLight,
+      navigationBarTheme: const NavigationBarThemeData(
+        indicatorColor: ColorName.onPrimaryButtonLight,
         backgroundColor: ColorName.surfaceTintLight,
       ),
       colorScheme: const ColorScheme.light(
@@ -63,12 +63,12 @@ class AppTheme {
       brightness: Brightness.dark,
       extensions: _getAppColorsDark(),
       scaffoldBackgroundColor: ColorName.surfaceDark,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         centerTitle: true,
         backgroundColor: ColorName.surfaceTintDark,
       ),
-      navigationBarTheme: NavigationBarThemeData(
-        indicatorColor: ColorName.primaryDark,
+      navigationBarTheme: const NavigationBarThemeData(
+        indicatorColor: ColorName.primaryButtonDark,
         backgroundColor: ColorName.surfaceTintDark,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -113,6 +113,8 @@ List<ThemeExtension<AppColors>> _getAppColorsLight() {
   return [
     const AppColors(
       scaffoldBackground: ColorName.backgroundLight,
+      onPrimaryButton: ColorName.onPrimaryButtonLight,
+      primaryButton: ColorName.primaryButtonLight,
     )
   ];
 }
@@ -122,6 +124,8 @@ List<ThemeExtension<AppColors>> _getAppColorsDark() {
   return [
     const AppColors(
       scaffoldBackground: ColorName.backgroundDark,
+      onPrimaryButton: ColorName.onPrimaryButtonDark,
+      primaryButton: ColorName.primaryButtonDark,
     )
   ];
 }

@@ -19,6 +19,16 @@ class SearchCubit extends Cubit<SearchState> {
           searchText: '',
         ));
 
+  Future<void> textTyped(String searchText) async {
+    emit(state.copyWith(searchText: searchText));
+    refreshPage();
+  }
+
+  Future<void> clearText() async {
+    emit(state.copyWith(searchText: ''));
+    refreshPage();
+  }
+
   Future<void> clearFilter() async {
     emit(state.copyWith(eventsFilter: const EventsFilter()));
     refreshPage();

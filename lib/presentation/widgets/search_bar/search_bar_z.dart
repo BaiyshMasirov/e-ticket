@@ -1,12 +1,11 @@
-import 'package:eticket/common/common.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:eticket/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-final _bR = BorderRadius.circular(20.r);
 
 class SearchBarZ extends HookWidget {
   final TextEditingController controller;
@@ -31,6 +30,7 @@ class SearchBarZ extends HookWidget {
         controller: controller,
         label: '',
         inputDecoration: InputDecoration(
+          hintText: LocaleKeys.search.tr(),
           filled: true,
           suffixIcon: showClearButton.value
               ? InkWell(
@@ -54,6 +54,7 @@ class SearchBarZ extends HookWidget {
             vertical: 0,
           ),
         ),
+
         onChanged: (text) {
           showClearButton.value = text.isNotEmpty;
 

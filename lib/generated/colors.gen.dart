@@ -67,14 +67,20 @@ class ColorName {
   /// Color: #F5EFF7
   static const Color onInverseSurfaceLight = Color(0xFFF5EFF7);
 
+  /// Color: #F9DEDC
+  static const Color onPrimaryButtonDark = Color(0xFFF9DEDC);
+
+  /// Color: #E6E0E9
+  static const Color onPrimaryButtonLight = Color(0xFFE6E0E9);
+
   /// Color: #EADDFF
   static const Color onPrimaryContainerDark = Color(0xFFEADDFF);
 
   /// Color: #21005D
   static const Color onPrimaryContainerLight = Color(0xFF21005D);
 
-  /// Color: #F9DEDC
-  static const Color onPrimaryDark = Color(0xFFF9DEDC);
+  /// Color: #381E72
+  static const Color onPrimaryDark = Color(0xFF381E72);
 
   /// Color: #E6E0E9
   static const Color onPrimaryLight = Color(0xFFE6E0E9);
@@ -121,14 +127,20 @@ class ColorName {
   /// Color: #79747E
   static const Color outlineLight = Color(0xFF79747E);
 
+  /// Color: #601410
+  static const Color primaryButtonDark = Color(0xFF601410);
+
+  /// Color: #3D73E0
+  static const Color primaryButtonLight = Color(0xFF3D73E0);
+
   /// Color: #4F378B
   static const Color primaryContainerDark = Color(0xFF4F378B);
 
   /// Color: #EADDFF
   static const Color primaryContainerLight = Color(0xFFEADDFF);
 
-  /// Color: #601410
-  static const Color primaryDark = Color(0xFF601410);
+  /// Color: #D0BCFF
+  static const Color primaryDark = Color(0xFFD0BCFF);
 
   /// Color: #3D73E0
   static const Color primaryLight = Color(0xFF3D73E0);

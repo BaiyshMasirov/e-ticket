@@ -50,10 +50,12 @@ class SearchView extends HookWidget {
             titleSpacing: 10.w,
             title: SearchBarZ(
               controller: searchTextController,
-              // TODO: BEK -> clear text in cubit and refresh page without clearing filter
-              onClear: () {},
-              // TODO: BEK -> update text in cubit and refresh page without clearing filter
-              onTyped: (text) {},
+              onClear: () {
+                context.read<SearchCubit>().clearText();
+              },
+              onTyped: (text) {
+                context.read<SearchCubit>().textTyped(text);
+              },
             ),
             actions: const [SearchFilterButton()],
           ),
