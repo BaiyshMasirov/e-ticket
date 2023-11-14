@@ -4,8 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class FilarmoniaSeatPlacesBooking extends HookWidget {
-  const FilarmoniaSeatPlacesBooking({
+import 'package:eticket/data/models/models.dart';
+
+class FilarmoniaView extends HookWidget {
+  final List<TicketDto> tickets;
+
+  const FilarmoniaView({
+    required this.tickets,
     Key? key,
   }) : super(key: key);
 

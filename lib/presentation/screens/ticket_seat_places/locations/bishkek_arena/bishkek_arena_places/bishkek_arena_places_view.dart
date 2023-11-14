@@ -1,5 +1,5 @@
 import 'package:eticket/generated/assets.gen.dart';
-import 'package:eticket/presentation/screens/place_bishkek_arena/models/models.dart';
+import 'package:eticket/presentation/screens/ticket_seat_places/locations/bishkek_arena/models/models.dart';
 import 'package:eticket/presentation/widgets/book_my_seat/book_my_seat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';

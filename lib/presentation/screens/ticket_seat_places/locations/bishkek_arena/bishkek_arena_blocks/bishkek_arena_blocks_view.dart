@@ -2,14 +2,17 @@ import 'package:auto_route/auto_route.dart';
 import 'package:eticket/common/extensions/extensions.dart';
 import 'package:eticket/generated/assets.gen.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
-import 'package:eticket/presentation/screens/place_bishkek_arena/models/models.dart';
-import 'package:eticket/presentation/theme/theme.dart';
+import 'package:eticket/presentation/screens/ticket_seat_places/locations/bishkek_arena/models/models.dart';
 import 'package:eticket/presentation/widgets/buttons/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:eticket/data/models/models.dart';
 
 class BishkekArenaBlocksView extends StatelessWidget {
+  final List<TicketDto> tickets;
+
   const BishkekArenaBlocksView({
+    required this.tickets,
     Key? key,
   }) : super(key: key);
 

@@ -3,9 +3,13 @@ import 'package:eticket/presentation/widgets/book_my_seat/book_my_seat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:eticket/data/models/models.dart';
 
-class SeatPlacesBooking extends HookWidget {
-  const SeatPlacesBooking({
+class SportPalaceView extends HookWidget {
+  final List<TicketDto> tickets;
+
+  const SportPalaceView({
+    required this.tickets,
     Key? key,
   }) : super(key: key);
 
@@ -17,70 +21,70 @@ class SeatPlacesBooking extends HookWidget {
       () => [
         //Top rows
         //region 25 to 16
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop25To16PlaceCount,
           emptyPlaces: _rowTop25PlacesNotExist,
           addEmptyLeft: _rowTop25To16EmptyPlaces,
           addEmptyRight: _rowTop25To16EmptyPlaces,
           seatRowPlaceText: 'Ряд 25',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop25To16PlaceCount,
           emptyPlaces: _rowTop24PlacesNotExist,
           addEmptyLeft: _rowTop25To16EmptyPlaces,
           addEmptyRight: _rowTop25To16EmptyPlaces,
           seatRowPlaceText: 'Ряд 24',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop25To16PlaceCount,
           emptyPlaces: _rowTop23PlacesNotExist,
           addEmptyLeft: _rowTop25To16EmptyPlaces,
           addEmptyRight: _rowTop25To16EmptyPlaces,
           seatRowPlaceText: 'Ряд 23',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop25To16PlaceCount,
           emptyPlaces: _rowTop22PlacesNotExist,
           addEmptyLeft: _rowTop25To16EmptyPlaces,
           addEmptyRight: _rowTop25To16EmptyPlaces,
           seatRowPlaceText: 'Ряд 22',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop25To16PlaceCount,
           emptyPlaces: _rowTop21PlacesNotExist,
           addEmptyLeft: _rowTop25To16EmptyPlaces,
           addEmptyRight: _rowTop25To16EmptyPlaces,
           seatRowPlaceText: 'Ряд 21',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop25To16PlaceCount,
           emptyPlaces: _rowTop20PlacesNotExist,
           addEmptyLeft: _rowTop25To16EmptyPlaces,
           addEmptyRight: _rowTop25To16EmptyPlaces,
           seatRowPlaceText: 'Ряд 20',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop25To16PlaceCount,
           emptyPlaces: _rowTop19PlacesNotExist,
           addEmptyLeft: _rowTop25To16EmptyPlaces,
           addEmptyRight: _rowTop25To16EmptyPlaces,
           seatRowPlaceText: 'Ряд 19',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop25To16PlaceCount,
           emptyPlaces: _rowTop18PlacesNotExist,
           addEmptyLeft: _rowTop25To16EmptyPlaces,
           addEmptyRight: _rowTop25To16EmptyPlaces,
           seatRowPlaceText: 'Ряд 18',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop25To16PlaceCount,
           emptyPlaces: _rowTop17PlacesNotExist,
           addEmptyLeft: _rowTop25To16EmptyPlaces,
           addEmptyRight: _rowTop25To16EmptyPlaces,
           seatRowPlaceText: 'Ряд 17',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop25To16PlaceCount,
           emptyPlaces: _rowTop16PlacesNotExist,
           addEmptyLeft: _rowTop25To16EmptyPlaces,
@@ -89,83 +93,83 @@ class SeatPlacesBooking extends HookWidget {
         ),
         //endregion
         //region 15 to 4
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop15To4PlaceCount,
           emptyPlaces: _rowTop15PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 15',
         ), //2
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop15To4PlaceCount,
           emptyPlaces: _rowTop14PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 14',
         ), //2
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop15To4PlaceCount,
           emptyPlaces: _rowTop13PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 13',
         ), //2
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop15To4PlaceCount,
           emptyPlaces: _rowTop12PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 12',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _maxPlaces,
           emptyPlaces: _emptyRowPlaces,
           addEmptyLeft: 0,
           addEmptyRight: 0,
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop15To4PlaceCount,
           emptyPlaces: _rowTop11PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 11',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop15To4PlaceCount,
           emptyPlaces: _rowTop10PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 10',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop15To4PlaceCount,
           emptyPlaces: _rowTop9PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 9',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop15To4PlaceCount,
           emptyPlaces: _rowTop8PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 8',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop15To4PlaceCount,
           emptyPlaces: _rowTop7PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 7',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop15To4PlaceCount,
           emptyPlaces: _rowTop6PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
           addEmptyRight: _rowTop15To4EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 6',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop15To4PlaceCount,
           emptyPlaces: _rowTop5PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
@@ -173,7 +177,7 @@ class SeatPlacesBooking extends HookWidget {
           seatRowPlaceText: 'Ряд 5',
           blockedPlace: [1],
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop15To4PlaceCount,
           emptyPlaces: _rowTop4PlacesNotExist,
           addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
@@ -182,14 +186,14 @@ class SeatPlacesBooking extends HookWidget {
         ),
         // endregion
         //region 3 to 1
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop3To1PlaceCount,
           emptyPlaces: _rowTop3PlacesNotExist,
           addEmptyLeft: _rowTop3To1EmptyLeftPlaces,
           addEmptyRight: _rowTop3To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 3',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop3To1PlaceCount,
           emptyPlaces: _rowTop2PlacesNotExist,
           addEmptyLeft: _rowTop3To1EmptyLeftPlaces,
@@ -197,14 +201,14 @@ class SeatPlacesBooking extends HookWidget {
           seatRowPlaceText: 'Ряд 2',
           blockedPlace: List.generate(8, (index) => index + 30),
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowTop3To1PlaceCount,
           emptyPlaces: _rowTop1PlacesNotExist,
           addEmptyLeft: _rowTop3To1EmptyLeftPlaces,
           addEmptyRight: _rowTop3To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 1',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _maxPlaces,
           emptyPlaces: _emptyRowPlaces,
           addEmptyLeft: 0,
@@ -213,7 +217,7 @@ class SeatPlacesBooking extends HookWidget {
         // endregion
         // Low rows
         //region 14 to 1
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowLow14To1PlaceCount,
           emptyPlaces: _rowLow14PlacesNotExist,
           addEmptyLeft: _rowLow14To1EmptyLeftPlaces,
@@ -221,7 +225,7 @@ class SeatPlacesBooking extends HookWidget {
           seatRowPlaceText: 'Ряд 14',
           blockedPlace: List.generate(15, (index) => index + 29),
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowLow14To1PlaceCount,
           emptyPlaces: _rowLow13PlacesNotExist,
           addEmptyLeft: _rowLow14To1EmptyLeftPlaces,
@@ -229,7 +233,7 @@ class SeatPlacesBooking extends HookWidget {
           seatRowPlaceText: 'Ряд 13',
           blockedPlace: List.generate(15, (index) => index + 29),
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowLow14To1PlaceCount,
           emptyPlaces: _rowLow12PlacesNotExist,
           addEmptyLeft: _rowLow14To1EmptyLeftPlaces,
@@ -237,7 +241,7 @@ class SeatPlacesBooking extends HookWidget {
           seatRowPlaceText: 'Ряд 12',
           blockedPlace: List.generate(15, (index) => index + 29),
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowLow14To1PlaceCount,
           emptyPlaces: _rowLow11PlacesNotExist,
           addEmptyLeft: _rowLow14To1EmptyLeftPlaces,
@@ -245,70 +249,70 @@ class SeatPlacesBooking extends HookWidget {
           seatRowPlaceText: 'Ряд 11',
           blockedPlace: [29, 43],
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowLow14To1PlaceCount,
           emptyPlaces: _rowLow10to4PlacesNotExist,
           addEmptyLeft: _rowLow14To1EmptyLeftPlaces,
           addEmptyRight: _rowLow14To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 10',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowLow14To1PlaceCount,
           emptyPlaces: _rowLow10to4PlacesNotExist,
           addEmptyLeft: _rowLow14To1EmptyLeftPlaces,
           addEmptyRight: _rowLow14To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 9',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowLow14To1PlaceCount,
           emptyPlaces: _rowLow10to4PlacesNotExist,
           addEmptyLeft: _rowLow14To1EmptyLeftPlaces,
           addEmptyRight: _rowLow14To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 8',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowLow14To1PlaceCount,
           emptyPlaces: _rowLow10to4PlacesNotExist,
           addEmptyLeft: _rowLow14To1EmptyLeftPlaces,
           addEmptyRight: _rowLow14To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 7',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowLow14To1PlaceCount,
           emptyPlaces: _rowLow10to4PlacesNotExist,
           addEmptyLeft: _rowLow14To1EmptyLeftPlaces,
           addEmptyRight: _rowLow14To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 6',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowLow14To1PlaceCount,
           emptyPlaces: _rowLow10to4PlacesNotExist,
           addEmptyLeft: _rowLow14To1EmptyLeftPlaces,
           addEmptyRight: _rowLow14To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 5',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowLow14To1PlaceCount,
           emptyPlaces: _rowLow10to4PlacesNotExist,
           addEmptyLeft: _rowLow14To1EmptyLeftPlaces,
           addEmptyRight: _rowLow14To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 4',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowLow14To1PlaceCount,
           emptyPlaces: _rowLow4to1PlacesNotExist,
           addEmptyLeft: _rowLow14To1EmptyLeftPlaces,
           addEmptyRight: _rowLow14To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 3',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowLow14To1PlaceCount,
           emptyPlaces: _rowLow4to1PlacesNotExist,
           addEmptyLeft: _rowLow14To1EmptyLeftPlaces,
           addEmptyRight: _rowLow14To1EmptyRightPlaces,
           seatRowPlaceText: 'Ряд 2',
         ),
-        generateSeatPlaces(
+        _generateSeatPlaces(
           length: _rowLow14To1PlaceCount,
           emptyPlaces: _rowLow4to1PlacesNotExist,
           addEmptyLeft: _rowLow14To1EmptyLeftPlaces,
@@ -459,7 +463,7 @@ final _rowLow11PlacesNotExist = [15, 16, 57, 58, 72];
 final _rowLow10to4PlacesNotExist = [15, 29, 43, 58, 59];
 final _rowLow4to1PlacesNotExist = [15, 29, 43, 58, 59, 70, 71, 72];
 
-SeatRowPlace generateSeatPlaces({
+SeatRowPlace _generateSeatPlaces({
   required int length,
   required List<int> emptyPlaces,
   required int addEmptyLeft,

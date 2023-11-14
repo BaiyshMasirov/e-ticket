@@ -34,7 +34,8 @@ mixin _$EventDto {
   int get count => throw _privateConstructorUsedError;
   String? get locationName => throw _privateConstructorUsedError;
   String get locationId => throw _privateConstructorUsedError;
-  int get locationType => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: LocationType.unknown)
+  LocationType get locationType => throw _privateConstructorUsedError;
   String? get poster => throw _privateConstructorUsedError;
   int get type => throw _privateConstructorUsedError;
   String? get video => throw _privateConstructorUsedError;
@@ -64,7 +65,8 @@ abstract class $EventDtoCopyWith<$Res> {
       int count,
       String? locationName,
       String locationId,
-      int locationType,
+      @JsonKey(unknownEnumValue: LocationType.unknown)
+      LocationType locationType,
       String? poster,
       int type,
       String? video,
@@ -154,7 +156,7 @@ class _$EventDtoCopyWithImpl<$Res, $Val extends EventDto>
       locationType: null == locationType
           ? _value.locationType
           : locationType // ignore: cast_nullable_to_non_nullable
-              as int,
+              as LocationType,
       poster: freezed == poster
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
@@ -196,7 +198,8 @@ abstract class _$$EventDtoImplCopyWith<$Res>
       int count,
       String? locationName,
       String locationId,
-      int locationType,
+      @JsonKey(unknownEnumValue: LocationType.unknown)
+      LocationType locationType,
       String? poster,
       int type,
       String? video,
@@ -284,7 +287,7 @@ class __$$EventDtoImplCopyWithImpl<$Res>
       locationType: null == locationType
           ? _value.locationType
           : locationType // ignore: cast_nullable_to_non_nullable
-              as int,
+              as LocationType,
       poster: freezed == poster
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
@@ -321,6 +324,7 @@ class _$EventDtoImpl extends _EventDto {
       required this.count,
       required this.locationName,
       required this.locationId,
+      @JsonKey(unknownEnumValue: LocationType.unknown)
       required this.locationType,
       required this.poster,
       required this.type,
@@ -358,7 +362,8 @@ class _$EventDtoImpl extends _EventDto {
   @override
   final String locationId;
   @override
-  final int locationType;
+  @JsonKey(unknownEnumValue: LocationType.unknown)
+  final LocationType locationType;
   @override
   final String? poster;
   @override
@@ -454,7 +459,8 @@ abstract class _EventDto extends EventDto {
       required final int count,
       required final String? locationName,
       required final String locationId,
-      required final int locationType,
+      @JsonKey(unknownEnumValue: LocationType.unknown)
+      required final LocationType locationType,
       required final String? poster,
       required final int type,
       required final String? video,
@@ -491,7 +497,8 @@ abstract class _EventDto extends EventDto {
   @override
   String get locationId;
   @override
-  int get locationType;
+  @JsonKey(unknownEnumValue: LocationType.unknown)
+  LocationType get locationType;
   @override
   String? get poster;
   @override

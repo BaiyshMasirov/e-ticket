@@ -4,9 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:collection/collection.dart';
+import 'package:eticket/data/models/models.dart';
 
 class RuDramTheaterView extends HookWidget {
+  final List<TicketDto> tickets;
+
   const RuDramTheaterView({
+    required this.tickets,
     Key? key,
   }) : super(key: key);
 
@@ -121,11 +125,10 @@ class RuDramTheaterView extends HookWidget {
         textLabelSpacingIndex: [1, 42],
       ),
       _generateSeatPlaces(
-        rowLength: 1,
-        mainCurrentRowIndex: _5RowNumber,
-        mainCurrentRowLabel: '',
-        emptySpacingIndex: [1]
-      ),
+          rowLength: 1,
+          mainCurrentRowIndex: _5RowNumber,
+          mainCurrentRowLabel: '',
+          emptySpacingIndex: [1]),
       _generateSeatPlaces(
         rowLength: 42,
         mainCurrentRowIndex: _5RowNumber,

@@ -20,7 +20,8 @@ _$EventDtoImpl _$$EventDtoImplFromJson(Map<String, dynamic> json) =>
       count: json['count'] as int,
       locationName: json['locationName'] as String?,
       locationId: json['locationId'] as String,
-      locationType: json['locationType'] as int,
+      locationType: $enumDecode(_$LocationTypeEnumMap, json['locationType'],
+          unknownValue: LocationType.unknown),
       poster: json['poster'] as String?,
       type: json['type'] as int,
       video: json['video'] as String?,
@@ -49,10 +50,23 @@ Map<String, dynamic> _$$EventDtoImplToJson(_$EventDtoImpl instance) {
   val['count'] = instance.count;
   writeNotNull('locationName', instance.locationName);
   val['locationId'] = instance.locationId;
-  val['locationType'] = instance.locationType;
+  val['locationType'] = _$LocationTypeEnumMap[instance.locationType]!;
   writeNotNull('poster', instance.poster);
   val['type'] = instance.type;
   writeNotNull('video', instance.video);
   writeNotNull('image', instance.image);
   return val;
 }
+
+const _$LocationTypeEnumMap = {
+  LocationType.noSeating: 0,
+  LocationType.sportPalace: 1,
+  LocationType.bishkekArena: 2,
+  LocationType.spartakStadium: 3,
+  LocationType.balletTheater: 4,
+  LocationType.philarmonic: 5,
+  LocationType.ruDramTheater: 6,
+  LocationType.kgDramTheater: 7,
+  LocationType.nationalTheater: 8,
+  LocationType.unknown: 'unknown',
+};
