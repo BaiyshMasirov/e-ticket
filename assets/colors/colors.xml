@@ -1,10 +1,10 @@
 <resources>
 <!--    Theme Light Colorscheme    -->
-    <color name="primaryLight">#6750A4</color>
-    <color name="onPrimaryLight">#FFFFFF</color>
+    <color name="primaryLight">#3D73E0</color>
+    <color name="onPrimaryLight">#E6E0E9</color>
     <color name="primaryContainerLight">#EADDFF</color>
     <color name="onPrimaryContainerLight">#21005D</color>
-    <color name="secondaryLight">#625B71</color>
+    <color name="secondaryLight">#5B5F71</color>
     <color name="onSecondaryLight">#FFFFFF</color>
     <color name="secondaryContainerLight">#E8DEF8</color>
     <color name="onSecondaryContainerLight">#1D192B</color>
@@ -27,14 +27,14 @@
     <color name="inverseSurfaceLight">#322F35</color>
     <color name="onInverseSurfaceLight">#F5EFF7</color>
     <color name="inversePrimaryLight">#D0BCFF</color>
-    <color name="surfaceTintLight">#6750A4</color>
+    <color name="surfaceTintLight">#F4ECF9</color>
 
 <!--    Theme Dark Colorscheme    -->
-    <color name="primaryDark">#D0BCFF</color>
-    <color name="onPrimaryDark">#381E72</color>
+    <color name="primaryDark">#601410</color>
+    <color name="onPrimaryDark">#F9DEDC</color>
     <color name="primaryContainerDark">#4F378B</color>
     <color name="onPrimaryContainerDark">#EADDFF</color>
-    <color name="secondaryDark">#CCC2DC</color>
+    <color name="secondaryDark">#DEC9CE</color>
     <color name="onSecondaryDark">#332D41</color>
     <color name="secondaryContainerDark">#4A4458</color>
     <color name="onSecondaryContainerDark">#332D41</color>
@@ -57,5 +57,5 @@
     <color name="inverseSurfaceDark">#E6E0E9</color>
     <color name="onInverseSurfaceDark">#322F35</color>
     <color name="inversePrimaryDark">#6750A4</color>
-    <color name="surfaceTintDark">#D0BCFF</color>
+    <color name="surfaceTintDark">#29262F</color>
 </resources>

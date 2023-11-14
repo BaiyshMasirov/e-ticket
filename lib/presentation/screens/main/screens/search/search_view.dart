@@ -80,7 +80,7 @@ class SearchView extends HookWidget {
                             child: Icon(
                               Icons.brightness_1,
                               size: 10.0,
-                              color: context.colorScheme.onError,
+                              color: context.colorScheme.primary,
                             ),
                           )
                         : const SizedBox.shrink(),

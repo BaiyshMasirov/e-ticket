@@ -73,11 +73,11 @@ class ColorName {
   /// Color: #21005D
   static const Color onPrimaryContainerLight = Color(0xFF21005D);
 
-  /// Color: #381E72
-  static const Color onPrimaryDark = Color(0xFF381E72);
+  /// Color: #F9DEDC
+  static const Color onPrimaryDark = Color(0xFFF9DEDC);
 
-  /// Color: #FFFFFF
-  static const Color onPrimaryLight = Color(0xFFFFFFFF);
+  /// Color: #E6E0E9
+  static const Color onPrimaryLight = Color(0xFFE6E0E9);
 
   /// Color: #332D41
   static const Color onSecondaryContainerDark = Color(0xFF332D41);
@@ -127,11 +127,11 @@ class ColorName {
   /// Color: #EADDFF
   static const Color primaryContainerLight = Color(0xFFEADDFF);
 
-  /// Color: #D0BCFF
-  static const Color primaryDark = Color(0xFFD0BCFF);
+  /// Color: #601410
+  static const Color primaryDark = Color(0xFF601410);
 
-  /// Color: #6750A4
-  static const Color primaryLight = Color(0xFF6750A4);
+  /// Color: #3D73E0
+  static const Color primaryLight = Color(0xFF3D73E0);
 
   /// Color: #4A4458
   static const Color secondaryContainerDark = Color(0xFF4A4458);
@@ -139,11 +139,11 @@ class ColorName {
   /// Color: #E8DEF8
   static const Color secondaryContainerLight = Color(0xFFE8DEF8);
 
-  /// Color: #CCC2DC
-  static const Color secondaryDark = Color(0xFFCCC2DC);
+  /// Color: #DEC9CE
+  static const Color secondaryDark = Color(0xFFDEC9CE);
 
-  /// Color: #625B71
-  static const Color secondaryLight = Color(0xFF625B71);
+  /// Color: #5B5F71
+  static const Color secondaryLight = Color(0xFF5B5F71);
 
   /// Color: #000000
   static const Color shadowDark = Color(0xFF000000);
@@ -157,11 +157,11 @@ class ColorName {
   /// Color: #FEF7FF
   static const Color surfaceLight = Color(0xFFFEF7FF);
 
-  /// Color: #D0BCFF
-  static const Color surfaceTintDark = Color(0xFFD0BCFF);
+  /// Color: #29262F
+  static const Color surfaceTintDark = Color(0xFF29262F);
 
-  /// Color: #6750A4
-  static const Color surfaceTintLight = Color(0xFF6750A4);
+  /// Color: #F4ECF9
+  static const Color surfaceTintLight = Color(0xFFF4ECF9);
 
   /// Color: #49454F
   static const Color surfaceVariantDark = Color(0xFF49454F);
