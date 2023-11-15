@@ -25,21 +25,28 @@ class _QrState extends State<Qr> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      clipBehavior: Clip.none,
       actionsAlignment: MainAxisAlignment.center,
       title: Column(
-        children: [],
-      ),
-      actions: <Widget>[
-        QrImageView(
-          data: widget.qrCode,
-          size: 150,
-          embeddedImageStyle: const QrEmbeddedImageStyle(
-            size: Size(
-              50,
-              50,
+        children: [
+          Container(
+            width: 150,
+            height: 150,
+            child: QrImageView(
+              backgroundColor: Colors.transparent,
+              data: widget.qrCode,
+              gapless: true,
+              embeddedImageStyle: const QrEmbeddedImageStyle(
+                size: Size(
+                  50,
+                  50,
+                ),
+              ),
             ),
           ),
-        ),
+        ],
+      ),
+      actions: <Widget>[
         TextButton(
           child: Text('back'),
           onPressed: () {

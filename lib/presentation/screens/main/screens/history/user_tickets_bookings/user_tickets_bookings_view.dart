@@ -20,7 +20,8 @@ class UserTicketsBookingsView extends HookWidget {
   Widget build(BuildContext context) {
     final bookingsState = context.watch<UserTicketsBookingsCubit>().state;
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+        padding:
+            EdgeInsets.symmetric(horizontal: kDefaultPadding, vertical: 15.h),
         child: bookingsState.maybeWhen(
           orElse: () => const SizedBox.shrink(),
           data: (
