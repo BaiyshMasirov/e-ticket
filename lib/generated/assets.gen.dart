@@ -23,8 +23,11 @@ class $AssetsImagesGen {
   AssetGenImage get blankTicket =>
       const AssetGenImage('assets/images/blank_ticket.png');
 
+  /// File path: assets/images/ticket.png
+  AssetGenImage get ticket => const AssetGenImage('assets/images/ticket.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [bishkekArena, blankTicket];
+  List<AssetGenImage> get values => [bishkekArena, blankTicket, ticket];
 }
 
 class $AssetsLogosGen {

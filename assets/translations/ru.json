@@ -47,5 +47,8 @@
   "nationalTheater": "Национальный театр",
   "nothing_here": "Здесь ничего нет",
   "ops": "Упс...",
-  "try_again": "Попробуйте снова"
+  "try_again": "Попробуйте снова",
+  "close": "Закрыть",
+  "rowNumber": "Ряд",
+  "placeNumber": "Место"
 }

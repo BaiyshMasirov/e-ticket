@@ -25,7 +25,7 @@ class UserTicketsBookingsScreen extends StatelessWidget {
         ),
       ],
       child: AppScaffold(
-          title: 'Ваши бронь билеты',
+          title: LocaleKeys.tickets.tr(),
           body: UserTicketsBookingsView(
             tiketId: tiketId,
           )),

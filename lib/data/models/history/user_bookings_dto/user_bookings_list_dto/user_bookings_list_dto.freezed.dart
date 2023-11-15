@@ -28,6 +28,7 @@ mixin _$UserBookingsListDto {
   String? get eventId => throw _privateConstructorUsedError;
   String? get eventDate => throw _privateConstructorUsedError;
   double get bookingSum => throw _privateConstructorUsedError;
+  int get type => throw _privateConstructorUsedError;
   String? get eventImage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -51,6 +52,7 @@ abstract class $UserBookingsListDtoCopyWith<$Res> {
       String? eventId,
       String? eventDate,
       double bookingSum,
+      int type,
       String? eventImage});
 }
 
@@ -75,6 +77,7 @@ class _$UserBookingsListDtoCopyWithImpl<$Res, $Val extends UserBookingsListDto>
     Object? eventId = freezed,
     Object? eventDate = freezed,
     Object? bookingSum = null,
+    Object? type = null,
     Object? eventImage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -110,6 +113,10 @@ class _$UserBookingsListDtoCopyWithImpl<$Res, $Val extends UserBookingsListDto>
           ? _value.bookingSum
           : bookingSum // ignore: cast_nullable_to_non_nullable
               as double,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as int,
       eventImage: freezed == eventImage
           ? _value.eventImage
           : eventImage // ignore: cast_nullable_to_non_nullable
@@ -135,6 +142,7 @@ abstract class _$$UserBookingsListDtoImplCopyWith<$Res>
       String? eventId,
       String? eventDate,
       double bookingSum,
+      int type,
       String? eventImage});
 }
 
@@ -157,6 +165,7 @@ class __$$UserBookingsListDtoImplCopyWithImpl<$Res>
     Object? eventId = freezed,
     Object? eventDate = freezed,
     Object? bookingSum = null,
+    Object? type = null,
     Object? eventImage = freezed,
   }) {
     return _then(_$UserBookingsListDtoImpl(
@@ -192,6 +201,10 @@ class __$$UserBookingsListDtoImplCopyWithImpl<$Res>
           ? _value.bookingSum
           : bookingSum // ignore: cast_nullable_to_non_nullable
               as double,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as int,
       eventImage: freezed == eventImage
           ? _value.eventImage
           : eventImage // ignore: cast_nullable_to_non_nullable
@@ -212,6 +225,7 @@ class _$UserBookingsListDtoImpl extends _UserBookingsListDto {
       required this.eventId,
       required this.eventDate,
       required this.bookingSum,
+      required this.type,
       required this.eventImage})
       : super._();
 
@@ -235,11 +249,13 @@ class _$UserBookingsListDtoImpl extends _UserBookingsListDto {
   @override
   final double bookingSum;
   @override
+  final int type;
+  @override
   final String? eventImage;
 
   @override
   String toString() {
-    return 'UserBookingsListDto(id: $id, status: $status, created: $created, eventStatus: $eventStatus, eventName: $eventName, eventId: $eventId, eventDate: $eventDate, bookingSum: $bookingSum, eventImage: $eventImage)';
+    return 'UserBookingsListDto(id: $id, status: $status, created: $created, eventStatus: $eventStatus, eventName: $eventName, eventId: $eventId, eventDate: $eventDate, bookingSum: $bookingSum, type: $type, eventImage: $eventImage)';
   }
 
   @override
@@ -259,6 +275,7 @@ class _$UserBookingsListDtoImpl extends _UserBookingsListDto {
                 other.eventDate == eventDate) &&
             (identical(other.bookingSum, bookingSum) ||
                 other.bookingSum == bookingSum) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.eventImage, eventImage) ||
                 other.eventImage == eventImage));
   }
@@ -266,7 +283,7 @@ class _$UserBookingsListDtoImpl extends _UserBookingsListDto {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, status, created, eventStatus,
-      eventName, eventId, eventDate, bookingSum, eventImage);
+      eventName, eventId, eventDate, bookingSum, type, eventImage);
 
   @JsonKey(ignore: true)
   @override
@@ -293,6 +310,7 @@ abstract class _UserBookingsListDto extends UserBookingsListDto {
       required final String? eventId,
       required final String? eventDate,
       required final double bookingSum,
+      required final int type,
       required final String? eventImage}) = _$UserBookingsListDtoImpl;
   const _UserBookingsListDto._() : super._();
 
@@ -315,6 +333,8 @@ abstract class _UserBookingsListDto extends UserBookingsListDto {
   String? get eventDate;
   @override
   double get bookingSum;
+  @override
+  int get type;
   @override
   String? get eventImage;
   @override

@@ -15,6 +15,7 @@ class UserBookingsListDto with _$UserBookingsListDto {
     required String? eventId,
     required String? eventDate,
     required double bookingSum,
+    required int type,
     required String? eventImage,
   }) = _UserBookingsListDto;
 

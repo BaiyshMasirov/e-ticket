@@ -17,6 +17,7 @@ _$UserBookingsListDtoImpl _$$UserBookingsListDtoImplFromJson(
       eventId: json['eventId'] as String?,
       eventDate: json['eventDate'] as String?,
       bookingSum: (json['bookingSum'] as num).toDouble(),
+      type: json['type'] as int,
       eventImage: json['eventImage'] as String?,
     );
 
@@ -38,6 +39,7 @@ Map<String, dynamic> _$$UserBookingsListDtoImplToJson(
   writeNotNull('eventId', instance.eventId);
   writeNotNull('eventDate', instance.eventDate);
   val['bookingSum'] = instance.bookingSum;
+  val['type'] = instance.type;
   writeNotNull('eventImage', instance.eventImage);
   return val;
 }

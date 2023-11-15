@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
-import 'package:eticket/generated/assets.gen.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -8,27 +8,25 @@ import 'package:flutter/material.dart';
 import 'package:eticket/data/models/models.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+final _bR = BorderRadius.circular(10.r);
+
 class HistoryItem extends StatelessWidget {
   final UserBookingsListDto booking;
-  final Function() onDecreasePressed;
-  final Function() onIncreasePressed;
-  final int ticketAmountChosen;
 
   const HistoryItem({
     required this.booking,
-    required this.onDecreasePressed,
-    required this.onIncreasePressed,
-    required this.ticketAmountChosen,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final imageWidth = context.screenSize.screenWidth / 2.1;
-
+    String formattedDate = DateFormat('dd/MM/yyyy')
+        .format(DateTime.parse(booking.eventDate ?? ''));
     return InkWell(
       onTap: () {
-        context.navigateTo(UserTicketsBookingsRoute(tiketId: booking.id ?? ''));
+        context.navigateTo(UserTicketsBookingsRoute(
+          tiketId: booking.id ?? '',
+        ));
       },
       child: Container(
         padding: EdgeInsets.all(kDefaultPadding.w / 2),
@@ -37,52 +35,53 @@ class HistoryItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(20.r),
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Stack(
               children: [
-                Assets.images.blankTicket.image(
-                  width: imageWidth,
+                SizedBox(
+                  width: context.screenSize.screenWidth / 3,
+                  child: ClipRRect(
+                    borderRadius: _bR,
+                    child: Image.network(
+                      booking.eventImage ?? '',
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ),
                 ),
-                // Positioned(
-                //   right: 0,
-                //   left: 0,
-                //   bottom: 0,
-                //   top: 0,
-                //   child: Padding(
-                //     padding: EdgeInsets.all(5.w),
-                //     child: Center(
-                //       child: Column(
-                //         mainAxisSize: MainAxisSize.min,
-                //         children: [
-                //           Text(
-                //             ticket.name,
-                //             textAlign: TextAlign.center,
-                //             maxLines: 2,
-                //             overflow: TextOverflow.ellipsis,
-                //             style: context.theme.textTheme.labelLarge?.copyWith(
-                //               color: context.colorScheme.onErrorContainer,
-                //             ),
-                //           ),
-                //           SizedBox(height: 10.h),
-                //         ],
-                //       ),
-                //     ),
-                //   ),
-                // ),
               ],
             ),
+            SizedBox(width: 10.w),
             Expanded(
               child: Column(
-                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Row(children: [Text(booking.eventName.toString())]),
-
-                  // TicketStandingPlaceCounter(
-                  //   amount: ticketAmountChosen.toString(),
-                  //   onDecreasePressed: onDecreasePressed,
-                  //   onIncreasePressed: onIncreasePressed,
-                  // ),
+                  Text(
+                    booking.eventName.toString(),
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                    ),
+                    maxLines: 2,
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 10.h),
+                  Text(formattedDate),
+                  SizedBox(height: 5.h),
+                  Text(
+                    context.dictionaries
+                            .getEventStatusByKey(booking.status)
+                            ?.value ??
+                        '',
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 5.h),
+                  Text(
+                    context.dictionaries
+                            .getLocationTypeByKey(booking.type)
+                            ?.value
+                            .tr() ??
+                        '',
+                    textAlign: TextAlign.center,
+                  ),
                 ],
               ),
             ),
