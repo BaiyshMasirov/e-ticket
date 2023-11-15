@@ -23,6 +23,7 @@ mixin _$EventsByTypeState {
     required TResult Function(List<EventDto> events) loadingInProgress,
     required TResult Function(List<EventDto> events, bool isNextPageAvailable)
         loadingSuccess,
+    required TResult Function(List<EventDto> events) loadingSuccessEmpty,
     required TResult Function(List<EventDto> events, String? errorMessage)
         loadingError,
   }) =>
@@ -33,6 +34,7 @@ mixin _$EventsByTypeState {
     TResult? Function(List<EventDto> events)? loadingInProgress,
     TResult? Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
+    TResult? Function(List<EventDto> events)? loadingSuccessEmpty,
     TResult? Function(List<EventDto> events, String? errorMessage)?
         loadingError,
   }) =>
@@ -43,6 +45,7 @@ mixin _$EventsByTypeState {
     TResult Function(List<EventDto> events)? loadingInProgress,
     TResult Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
+    TResult Function(List<EventDto> events)? loadingSuccessEmpty,
     TResult Function(List<EventDto> events, String? errorMessage)? loadingError,
     required TResult orElse(),
   }) =>
@@ -52,6 +55,8 @@ mixin _$EventsByTypeState {
     required TResult Function(_EventsByTypeState value) initial,
     required TResult Function(_SearchLoadingInProgress value) loadingInProgress,
     required TResult Function(_SearchLoadingSuccess value) loadingSuccess,
+    required TResult Function(_SearchLoadingSuccessEmpty value)
+        loadingSuccessEmpty,
     required TResult Function(_SearchLoadingError value) loadingError,
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +65,7 @@ mixin _$EventsByTypeState {
     TResult? Function(_EventsByTypeState value)? initial,
     TResult? Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult? Function(_SearchLoadingSuccess value)? loadingSuccess,
+    TResult? Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     TResult? Function(_SearchLoadingError value)? loadingError,
   }) =>
       throw _privateConstructorUsedError;
@@ -68,6 +74,7 @@ mixin _$EventsByTypeState {
     TResult Function(_EventsByTypeState value)? initial,
     TResult Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult Function(_SearchLoadingSuccess value)? loadingSuccess,
+    TResult Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     TResult Function(_SearchLoadingError value)? loadingError,
     required TResult orElse(),
   }) =>
@@ -190,6 +197,7 @@ class _$EventsByTypeStateImpl extends _EventsByTypeState {
     required TResult Function(List<EventDto> events) loadingInProgress,
     required TResult Function(List<EventDto> events, bool isNextPageAvailable)
         loadingSuccess,
+    required TResult Function(List<EventDto> events) loadingSuccessEmpty,
     required TResult Function(List<EventDto> events, String? errorMessage)
         loadingError,
   }) {
@@ -203,6 +211,7 @@ class _$EventsByTypeStateImpl extends _EventsByTypeState {
     TResult? Function(List<EventDto> events)? loadingInProgress,
     TResult? Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
+    TResult? Function(List<EventDto> events)? loadingSuccessEmpty,
     TResult? Function(List<EventDto> events, String? errorMessage)?
         loadingError,
   }) {
@@ -216,6 +225,7 @@ class _$EventsByTypeStateImpl extends _EventsByTypeState {
     TResult Function(List<EventDto> events)? loadingInProgress,
     TResult Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
+    TResult Function(List<EventDto> events)? loadingSuccessEmpty,
     TResult Function(List<EventDto> events, String? errorMessage)? loadingError,
     required TResult orElse(),
   }) {
@@ -231,6 +241,8 @@ class _$EventsByTypeStateImpl extends _EventsByTypeState {
     required TResult Function(_EventsByTypeState value) initial,
     required TResult Function(_SearchLoadingInProgress value) loadingInProgress,
     required TResult Function(_SearchLoadingSuccess value) loadingSuccess,
+    required TResult Function(_SearchLoadingSuccessEmpty value)
+        loadingSuccessEmpty,
     required TResult Function(_SearchLoadingError value) loadingError,
   }) {
     return initial(this);
@@ -242,6 +254,7 @@ class _$EventsByTypeStateImpl extends _EventsByTypeState {
     TResult? Function(_EventsByTypeState value)? initial,
     TResult? Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult? Function(_SearchLoadingSuccess value)? loadingSuccess,
+    TResult? Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     TResult? Function(_SearchLoadingError value)? loadingError,
   }) {
     return initial?.call(this);
@@ -253,6 +266,7 @@ class _$EventsByTypeStateImpl extends _EventsByTypeState {
     TResult Function(_EventsByTypeState value)? initial,
     TResult Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult Function(_SearchLoadingSuccess value)? loadingSuccess,
+    TResult Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     TResult Function(_SearchLoadingError value)? loadingError,
     required TResult orElse(),
   }) {
@@ -357,6 +371,7 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
     required TResult Function(List<EventDto> events) loadingInProgress,
     required TResult Function(List<EventDto> events, bool isNextPageAvailable)
         loadingSuccess,
+    required TResult Function(List<EventDto> events) loadingSuccessEmpty,
     required TResult Function(List<EventDto> events, String? errorMessage)
         loadingError,
   }) {
@@ -370,6 +385,7 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
     TResult? Function(List<EventDto> events)? loadingInProgress,
     TResult? Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
+    TResult? Function(List<EventDto> events)? loadingSuccessEmpty,
     TResult? Function(List<EventDto> events, String? errorMessage)?
         loadingError,
   }) {
@@ -383,6 +399,7 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
     TResult Function(List<EventDto> events)? loadingInProgress,
     TResult Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
+    TResult Function(List<EventDto> events)? loadingSuccessEmpty,
     TResult Function(List<EventDto> events, String? errorMessage)? loadingError,
     required TResult orElse(),
   }) {
@@ -398,6 +415,8 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
     required TResult Function(_EventsByTypeState value) initial,
     required TResult Function(_SearchLoadingInProgress value) loadingInProgress,
     required TResult Function(_SearchLoadingSuccess value) loadingSuccess,
+    required TResult Function(_SearchLoadingSuccessEmpty value)
+        loadingSuccessEmpty,
     required TResult Function(_SearchLoadingError value) loadingError,
   }) {
     return loadingInProgress(this);
@@ -409,6 +428,7 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
     TResult? Function(_EventsByTypeState value)? initial,
     TResult? Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult? Function(_SearchLoadingSuccess value)? loadingSuccess,
+    TResult? Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     TResult? Function(_SearchLoadingError value)? loadingError,
   }) {
     return loadingInProgress?.call(this);
@@ -420,6 +440,7 @@ class _$SearchLoadingInProgressImpl extends _SearchLoadingInProgress {
     TResult Function(_EventsByTypeState value)? initial,
     TResult Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult Function(_SearchLoadingSuccess value)? loadingSuccess,
+    TResult Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     TResult Function(_SearchLoadingError value)? loadingError,
     required TResult orElse(),
   }) {
@@ -534,6 +555,7 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
     required TResult Function(List<EventDto> events) loadingInProgress,
     required TResult Function(List<EventDto> events, bool isNextPageAvailable)
         loadingSuccess,
+    required TResult Function(List<EventDto> events) loadingSuccessEmpty,
     required TResult Function(List<EventDto> events, String? errorMessage)
         loadingError,
   }) {
@@ -547,6 +569,7 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
     TResult? Function(List<EventDto> events)? loadingInProgress,
     TResult? Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
+    TResult? Function(List<EventDto> events)? loadingSuccessEmpty,
     TResult? Function(List<EventDto> events, String? errorMessage)?
         loadingError,
   }) {
@@ -560,6 +583,7 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
     TResult Function(List<EventDto> events)? loadingInProgress,
     TResult Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
+    TResult Function(List<EventDto> events)? loadingSuccessEmpty,
     TResult Function(List<EventDto> events, String? errorMessage)? loadingError,
     required TResult orElse(),
   }) {
@@ -575,6 +599,8 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
     required TResult Function(_EventsByTypeState value) initial,
     required TResult Function(_SearchLoadingInProgress value) loadingInProgress,
     required TResult Function(_SearchLoadingSuccess value) loadingSuccess,
+    required TResult Function(_SearchLoadingSuccessEmpty value)
+        loadingSuccessEmpty,
     required TResult Function(_SearchLoadingError value) loadingError,
   }) {
     return loadingSuccess(this);
@@ -586,6 +612,7 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
     TResult? Function(_EventsByTypeState value)? initial,
     TResult? Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult? Function(_SearchLoadingSuccess value)? loadingSuccess,
+    TResult? Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     TResult? Function(_SearchLoadingError value)? loadingError,
   }) {
     return loadingSuccess?.call(this);
@@ -597,6 +624,7 @@ class _$SearchLoadingSuccessImpl extends _SearchLoadingSuccess {
     TResult Function(_EventsByTypeState value)? initial,
     TResult Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult Function(_SearchLoadingSuccess value)? loadingSuccess,
+    TResult Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     TResult Function(_SearchLoadingError value)? loadingError,
     required TResult orElse(),
   }) {
@@ -619,6 +647,181 @@ abstract class _SearchLoadingSuccess extends EventsByTypeState {
   @override
   @JsonKey(ignore: true)
   _$$SearchLoadingSuccessImplCopyWith<_$SearchLoadingSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SearchLoadingSuccessEmptyImplCopyWith<$Res>
+    implements $EventsByTypeStateCopyWith<$Res> {
+  factory _$$SearchLoadingSuccessEmptyImplCopyWith(
+          _$SearchLoadingSuccessEmptyImpl value,
+          $Res Function(_$SearchLoadingSuccessEmptyImpl) then) =
+      __$$SearchLoadingSuccessEmptyImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<EventDto> events});
+}
+
+/// @nodoc
+class __$$SearchLoadingSuccessEmptyImplCopyWithImpl<$Res>
+    extends _$EventsByTypeStateCopyWithImpl<$Res,
+        _$SearchLoadingSuccessEmptyImpl>
+    implements _$$SearchLoadingSuccessEmptyImplCopyWith<$Res> {
+  __$$SearchLoadingSuccessEmptyImplCopyWithImpl(
+      _$SearchLoadingSuccessEmptyImpl _value,
+      $Res Function(_$SearchLoadingSuccessEmptyImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? events = null,
+  }) {
+    return _then(_$SearchLoadingSuccessEmptyImpl(
+      events: null == events
+          ? _value._events
+          : events // ignore: cast_nullable_to_non_nullable
+              as List<EventDto>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchLoadingSuccessEmptyImpl extends _SearchLoadingSuccessEmpty {
+  const _$SearchLoadingSuccessEmptyImpl({required final List<EventDto> events})
+      : _events = events,
+        super._();
+
+  final List<EventDto> _events;
+  @override
+  List<EventDto> get events {
+    if (_events is EqualUnmodifiableListView) return _events;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_events);
+  }
+
+  @override
+  String toString() {
+    return 'EventsByTypeState.loadingSuccessEmpty(events: $events)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchLoadingSuccessEmptyImpl &&
+            const DeepCollectionEquality().equals(other._events, _events));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_events));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchLoadingSuccessEmptyImplCopyWith<_$SearchLoadingSuccessEmptyImpl>
+      get copyWith => __$$SearchLoadingSuccessEmptyImplCopyWithImpl<
+          _$SearchLoadingSuccessEmptyImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<EventDto> events) initial,
+    required TResult Function(List<EventDto> events) loadingInProgress,
+    required TResult Function(List<EventDto> events, bool isNextPageAvailable)
+        loadingSuccess,
+    required TResult Function(List<EventDto> events) loadingSuccessEmpty,
+    required TResult Function(List<EventDto> events, String? errorMessage)
+        loadingError,
+  }) {
+    return loadingSuccessEmpty(events);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<EventDto> events)? initial,
+    TResult? Function(List<EventDto> events)? loadingInProgress,
+    TResult? Function(List<EventDto> events, bool isNextPageAvailable)?
+        loadingSuccess,
+    TResult? Function(List<EventDto> events)? loadingSuccessEmpty,
+    TResult? Function(List<EventDto> events, String? errorMessage)?
+        loadingError,
+  }) {
+    return loadingSuccessEmpty?.call(events);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<EventDto> events)? initial,
+    TResult Function(List<EventDto> events)? loadingInProgress,
+    TResult Function(List<EventDto> events, bool isNextPageAvailable)?
+        loadingSuccess,
+    TResult Function(List<EventDto> events)? loadingSuccessEmpty,
+    TResult Function(List<EventDto> events, String? errorMessage)? loadingError,
+    required TResult orElse(),
+  }) {
+    if (loadingSuccessEmpty != null) {
+      return loadingSuccessEmpty(events);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EventsByTypeState value) initial,
+    required TResult Function(_SearchLoadingInProgress value) loadingInProgress,
+    required TResult Function(_SearchLoadingSuccess value) loadingSuccess,
+    required TResult Function(_SearchLoadingSuccessEmpty value)
+        loadingSuccessEmpty,
+    required TResult Function(_SearchLoadingError value) loadingError,
+  }) {
+    return loadingSuccessEmpty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_EventsByTypeState value)? initial,
+    TResult? Function(_SearchLoadingInProgress value)? loadingInProgress,
+    TResult? Function(_SearchLoadingSuccess value)? loadingSuccess,
+    TResult? Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
+    TResult? Function(_SearchLoadingError value)? loadingError,
+  }) {
+    return loadingSuccessEmpty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EventsByTypeState value)? initial,
+    TResult Function(_SearchLoadingInProgress value)? loadingInProgress,
+    TResult Function(_SearchLoadingSuccess value)? loadingSuccess,
+    TResult Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
+    TResult Function(_SearchLoadingError value)? loadingError,
+    required TResult orElse(),
+  }) {
+    if (loadingSuccessEmpty != null) {
+      return loadingSuccessEmpty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SearchLoadingSuccessEmpty extends EventsByTypeState {
+  const factory _SearchLoadingSuccessEmpty(
+      {required final List<EventDto> events}) = _$SearchLoadingSuccessEmptyImpl;
+  const _SearchLoadingSuccessEmpty._() : super._();
+
+  @override
+  List<EventDto> get events;
+  @override
+  @JsonKey(ignore: true)
+  _$$SearchLoadingSuccessEmptyImplCopyWith<_$SearchLoadingSuccessEmptyImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -712,6 +915,7 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
     required TResult Function(List<EventDto> events) loadingInProgress,
     required TResult Function(List<EventDto> events, bool isNextPageAvailable)
         loadingSuccess,
+    required TResult Function(List<EventDto> events) loadingSuccessEmpty,
     required TResult Function(List<EventDto> events, String? errorMessage)
         loadingError,
   }) {
@@ -725,6 +929,7 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
     TResult? Function(List<EventDto> events)? loadingInProgress,
     TResult? Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
+    TResult? Function(List<EventDto> events)? loadingSuccessEmpty,
     TResult? Function(List<EventDto> events, String? errorMessage)?
         loadingError,
   }) {
@@ -738,6 +943,7 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
     TResult Function(List<EventDto> events)? loadingInProgress,
     TResult Function(List<EventDto> events, bool isNextPageAvailable)?
         loadingSuccess,
+    TResult Function(List<EventDto> events)? loadingSuccessEmpty,
     TResult Function(List<EventDto> events, String? errorMessage)? loadingError,
     required TResult orElse(),
   }) {
@@ -753,6 +959,8 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
     required TResult Function(_EventsByTypeState value) initial,
     required TResult Function(_SearchLoadingInProgress value) loadingInProgress,
     required TResult Function(_SearchLoadingSuccess value) loadingSuccess,
+    required TResult Function(_SearchLoadingSuccessEmpty value)
+        loadingSuccessEmpty,
     required TResult Function(_SearchLoadingError value) loadingError,
   }) {
     return loadingError(this);
@@ -764,6 +972,7 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
     TResult? Function(_EventsByTypeState value)? initial,
     TResult? Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult? Function(_SearchLoadingSuccess value)? loadingSuccess,
+    TResult? Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     TResult? Function(_SearchLoadingError value)? loadingError,
   }) {
     return loadingError?.call(this);
@@ -775,6 +984,7 @@ class _$SearchLoadingErrorImpl extends _SearchLoadingError {
     TResult Function(_EventsByTypeState value)? initial,
     TResult Function(_SearchLoadingInProgress value)? loadingInProgress,
     TResult Function(_SearchLoadingSuccess value)? loadingSuccess,
+    TResult Function(_SearchLoadingSuccessEmpty value)? loadingSuccessEmpty,
     TResult Function(_SearchLoadingError value)? loadingError,
     required TResult orElse(),
   }) {

@@ -23,6 +23,8 @@ class TextFormFieldZ extends StatelessWidget {
   final InputDecoration? inputDecoration;
   final TextCapitalization textCapitalization;
   final void Function(String text)? onChanged;
+  final TextInputAction? textInputAction;
+  final void Function(String)? onFieldSubmitted;
 
   const TextFormFieldZ({
     required this.controller,
@@ -33,6 +35,8 @@ class TextFormFieldZ extends StatelessWidget {
     this.checkForNullEmpty = false,
     this.readonly = false,
     this.enabled = true,
+    this.textInputAction,
+    this.onFieldSubmitted,
     this.minLines,
     this.onTap,
     this.placeholder,
@@ -68,6 +72,8 @@ class TextFormFieldZ extends StatelessWidget {
       minLines: minLines,
       maxLines: minLines != null ? null : 1,
       onChanged: onChanged,
+      textInputAction: textInputAction,
+      onFieldSubmitted: onFieldSubmitted,
       decoration: inputDecoration ??
           InputDecoration(
             filled: true,

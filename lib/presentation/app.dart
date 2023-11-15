@@ -53,20 +53,24 @@ class App extends StatelessWidget {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         routerConfig: _appRouter.config(),
-        builder: (context, child) => Scaffold(
-          body: BlocListener<SnackbarCubit, SnackbarState>(
-            listener: (context, state) => state.whenOrNull(
-              error: (message) => SnackbarAlert.showError(
-                context: context,
-                message: message?.tr() ?? LocaleKeys.unknown_error.tr(),
+        builder: (context, child) => Overlay(
+          initialEntries: [
+            OverlayEntry(
+              builder: (context) => BlocListener<SnackbarCubit, SnackbarState>(
+                listener: (context, state) => state.whenOrNull(
+                  error: (message) => SnackbarAlert.showError(
+                    context: context,
+                    message: message?.tr() ?? LocaleKeys.unknown_error.tr(),
+                  ),
+                  success: (message) => SnackbarAlert.showSuccess(
+                    context: context,
+                    message: message.tr(),
+                  ),
+                ),
+                child: UnfocusPointer(child: child),
               ),
-              success: (message) => SnackbarAlert.showSuccess(
-                context: context,
-                message: message.tr(),
-              ),
-            ),
-            child: UnfocusPointer(child: child),
-          ),
+            )
+          ],
         ),
       ),
     );

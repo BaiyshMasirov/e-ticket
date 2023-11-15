@@ -22,6 +22,7 @@ class EventsByTypeView extends HookWidget {
         loadingInProgress: (_) => canLoadNextPage.value = false,
         loadingSuccess: (_) => canLoadNextPage.value = _.isNextPageAvailable,
         loadingError: (_) => canLoadNextPage.value = false,
+        loadingSuccessEmpty: (_) => canLoadNextPage.value = false,
       ),
       child: NotificationListener<ScrollNotification>(
         onNotification: (notification) {
@@ -35,44 +36,50 @@ class EventsByTypeView extends HookWidget {
 
           return false;
         },
-        child: AppSliverScrollView(
-          onRefresh: () async {
-            context.read<EventsByTypeCubit>().refreshPage();
-          },
-          slivers: [
-            SliverPadding(
-              padding: EdgeInsets.symmetric(
-                horizontal: kDefaultPadding,
-                vertical: kDefaultPadding / 2,
-              ),
-              sliver: eventsState.maybeWhen(
-                orElse: () => EventsByTypePaginatedView(
-                  eventsByTypeState: eventsState,
+        child: eventsState.maybeMap(
+          loadingSuccessEmpty: (_) => EmptyContent(
+            onTryAgain: () => context.read<EventsByTypeCubit>().refreshPage(),
+          ),
+          orElse: () => AppSliverScrollView(
+            onRefresh: () async {
+              context.read<EventsByTypeCubit>().refreshPage();
+            },
+            slivers: [
+              SliverPadding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: kDefaultPadding,
+                  vertical: kDefaultPadding / 2,
                 ),
-                loadingInProgress: (events) =>
-                    EventsByTypePaginatedView(eventsByTypeState: eventsState),
-                loadingSuccess: (events, _) => events.isEmpty
-                    ? const SliverToBoxAdapter(
-                        child: Center(
-                          child: Text('Ивентов нет'),
-                        ),
-                      )
-                    : EventsByTypePaginatedView(eventsByTypeState: eventsState),
-              ),
-            ),
-            eventsState.maybeWhen(
-              loadingError: (events, errorMessage) => SliverToBoxAdapter(
-                child: DataFetchFailure(
-                  error: errorMessage,
-                  onTryLoadAgain:
-                      context.read<EventsByTypeCubit>().getNextEventsPage,
+                sliver: eventsState.maybeWhen(
+                  orElse: () => EventsByTypePaginatedView(
+                    eventsByTypeState: eventsState,
+                  ),
+                  loadingInProgress: (events) =>
+                      EventsByTypePaginatedView(eventsByTypeState: eventsState),
+                  loadingSuccess: (events, _) => events.isEmpty
+                      ? const SliverToBoxAdapter(
+                          child: Center(
+                            child: Text('Ивентов нет'),
+                          ),
+                        )
+                      : EventsByTypePaginatedView(
+                          eventsByTypeState: eventsState),
                 ),
               ),
-              orElse: () {
-                return const SliverToBoxAdapter();
-              },
-            ),
-          ],
+              eventsState.maybeWhen(
+                loadingError: (events, errorMessage) => SliverToBoxAdapter(
+                  child: DataFetchFailure(
+                    error: errorMessage,
+                    onTryLoadAgain:
+                        context.read<EventsByTypeCubit>().getNextEventsPage,
+                  ),
+                ),
+                orElse: () {
+                  return const SliverToBoxAdapter();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -19,6 +19,16 @@ class SearchCubit extends Cubit<SearchState> {
           searchText: '',
         ));
 
+  Future<void> textTyped(String searchText) async {
+    emit(state.copyWith(searchText: searchText));
+    refreshPage();
+  }
+
+  Future<void> clearText() async {
+    emit(state.copyWith(searchText: ''));
+    refreshPage();
+  }
+
   Future<void> clearFilter() async {
     emit(state.copyWith(eventsFilter: const EventsFilter()));
     refreshPage();
@@ -62,15 +72,32 @@ class SearchCubit extends Cubit<SearchState> {
       )),
       (data) {
         _page++;
-        emit(SearchState.loadingSuccess(
-          events: [
-            ...state.events,
-            ...data.events,
-          ],
-          eventsFilter: state.eventsFilter,
-          searchText: state.searchText,
-          isNextPageAvailable: _page < data.maxPage,
-        ));
+
+        final events = [
+          ...state.events,
+          ...data.events,
+        ];
+
+        if (events.isEmpty) {
+          emit(SearchState.loadingSuccessEmpty(
+            events: [
+              ...state.events,
+              ...data.events,
+            ],
+            eventsFilter: state.eventsFilter,
+            searchText: state.searchText,
+          ));
+        } else {
+          emit(SearchState.loadingSuccess(
+            events: [
+              ...state.events,
+              ...data.events,
+            ],
+            eventsFilter: state.eventsFilter,
+            searchText: state.searchText,
+            isNextPageAvailable: _page < data.maxPage,
+          ));
+        }
       },
     );
   }
