@@ -1,24 +1,22 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/assets.gen.dart';
+import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/screens/main/screens/history/user_tickets_bookings/widgets/user_tckets_qr/qr.dart';
-import 'package:eticket/presentation/screens/main/screens/history/user_tickets_bookings/widgets/user_tckets_qr/user_tickets_qr_view.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 import 'package:eticket/data/models/models.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 class UserTicketItem extends StatelessWidget {
-  final UserTicketsBookingsDto ticket;
-  final Function() onDecreasePressed;
-  final Function() onIncreasePressed;
-  final int ticketAmountChosen;
+  final UserTicketsBookingsDto bookingTicket;
+  final List<UserTicketsBookingsDto> arrayBookingTicket;
 
   const UserTicketItem({
-    required this.ticket,
-    required this.onDecreasePressed,
-    required this.onIncreasePressed,
-    required this.ticketAmountChosen,
+    required this.bookingTicket,
+    required this.arrayBookingTicket,
     Key? key,
   }) : super(key: key);
 
@@ -26,83 +24,77 @@ class UserTicketItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final imageWidth = context.screenSize.screenWidth / 2.1;
 
-    return Container(
-      padding: EdgeInsets.all(kDefaultPadding.w / 2),
-      decoration: BoxDecoration(
-        color: context.colorScheme.onError,
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Stack(
-            children: [
-              Assets.images.blankTicket.image(
-                width: imageWidth,
-              ),
-              // Positioned(
-              //   right: 0,
-              //   left: 0,
-              //   bottom: 0,
-              //   top: 0,
-              //   child: Padding(
-              //     padding: EdgeInsets.all(5.w),
-              //     child: Center(
-              //       child: Column(
-              //         mainAxisSize: MainAxisSize.min,
-              //         children: [
-              //           Text(
-              //             ticket.name,
-              //             textAlign: TextAlign.center,
-              //             maxLines: 2,
-              //             overflow: TextOverflow.ellipsis,
-              //             style: context.theme.textTheme.labelLarge?.copyWith(
-              //               color: context.colorScheme.onErrorContainer,
-              //             ),
-              //           ),
-              //           SizedBox(height: 10.h),
-              //         ],
-              //       ),
-              //     ),
-              //   ),
-              // ),
-            ],
-          ),
-          Expanded(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+    return InkWell(
+      onTap: () {
+        showDialog(
+            barrierDismissible: false,
+            context: context,
+            builder: (context) => Qr(
+                  ticket: arrayBookingTicket,
+                  selectedIndex: arrayBookingTicket.indexOf(bookingTicket),
+                ));
+      },
+      child: Container(
+        padding: EdgeInsets.all(kDefaultPadding.w / 2),
+        decoration: BoxDecoration(
+          color: context.colorScheme.onError,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Stack(
+              alignment: Alignment.center,
               children: [
-                Row(children: [
-                  Text('Ряд:'),
-                  SizedBox(
-                    width: 5.w,
+                Assets.images.ticket.image(
+                  width: imageWidth,
+                ),
+                SizedBox(
+                  width: 90.w,
+                  child: QrImageView(
+                    backgroundColor: Colors.transparent,
+                    data: bookingTicket.qrCode ?? '',
+                    gapless: true,
+                    embeddedImageStyle: const QrEmbeddedImageStyle(
+                      size: Size(
+                        100,
+                        100,
+                      ),
+                    ),
                   ),
-                  Text(ticket.rowNumber.toString())
-                ]),
-                Row(children: [
-                  Text('Место:'),
-                  SizedBox(
-                    width: 5.w,
-                  ),
-                  Text(ticket.placeNumber.toString())
-                ]),
-
-                // TicketStandingPlaceCounter(
-                //   amount: ticketAmountChosen.toString(),
-                //   onDecreasePressed: onDecreasePressed,
-                //   onIncreasePressed: onIncreasePressed,
-                // ),
+                ),
               ],
             ),
-          ),
-        ],
+            SizedBox(width: 10.w),
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(children: [
+                    Text(
+                      '${LocaleKeys.rowNumber.tr()}:',
+                    ),
+                    SizedBox(
+                      width: 5.w,
+                    ),
+                    Text(bookingTicket.rowNumber.toString())
+                  ]),
+                  SizedBox(height: 10.h),
+                  Row(children: [
+                    Text(
+                      '${LocaleKeys.placeNumber.tr()}:',
+                    ),
+                    SizedBox(
+                      width: 5.w,
+                    ),
+                    Text(bookingTicket.placeNumber.toString())
+                  ]),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
-
-  void showErrorAlert(BuildContext context, String qr) => showDialog(
-      context: context,
-      builder: (context) => Qr(
-            qrCode: qr,
-          ));
 }

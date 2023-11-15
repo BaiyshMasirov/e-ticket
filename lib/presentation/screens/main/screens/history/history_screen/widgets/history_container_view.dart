@@ -15,9 +15,6 @@ class HistoryContainerView extends StatelessWidget {
   Widget build(BuildContext context) {
     return HistoryItem(
       booking: booking,
-      onDecreasePressed: () {},
-      onIncreasePressed: () {},
-      ticketAmountChosen: 1,
       key: ValueKey(booking.eventName),
     );
   }
