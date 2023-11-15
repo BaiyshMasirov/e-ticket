@@ -2,8 +2,6 @@ import 'package:common/common.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_places_state.dart';
 import 'package:get_it/get_it.dart';
-
-import 'package:eticket/data/models/models.dart';
 export 'ticket_standing_places_state.dart';
 
 class TicketStandingPlacesCubit extends Cubit<TicketStandingPlacesState> {

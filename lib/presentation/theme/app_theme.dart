@@ -115,6 +115,8 @@ List<ThemeExtension<AppColors>> _getAppColorsLight() {
       scaffoldBackground: ColorName.backgroundLight,
       onPrimaryButton: ColorName.onPrimaryButtonLight,
       primaryButton: ColorName.primaryButtonLight,
+      container: ColorName.container,
+      onContainer: ColorName.onContainer,
     )
   ];
 }
@@ -126,6 +128,8 @@ List<ThemeExtension<AppColors>> _getAppColorsDark() {
       scaffoldBackground: ColorName.backgroundDark,
       onPrimaryButton: ColorName.onPrimaryButtonDark,
       primaryButton: ColorName.primaryButtonDark,
+      container: ColorName.container,
+      onContainer: ColorName.onContainer,
     )
   ];
 }

@@ -19,6 +19,9 @@ class ColorName {
   /// Color: #FEF7FF
   static const Color backgroundLight = Color(0xFFFEF7FF);
 
+  /// Color: #29262F
+  static const Color container = Color(0xFF29262F);
+
   /// Color: #8C1D18
   static const Color errorContainerDark = Color(0xFF8C1D18);
 
@@ -48,6 +51,9 @@ class ColorName {
 
   /// Color: #1D1B20
   static const Color onBackgroundLight = Color(0xFF1D1B20);
+
+  /// Color: #FFFFFF
+  static const Color onContainer = Color(0xFFFFFFFF);
 
   /// Color: #F9DEDC
   static const Color onErrorContainerDark = Color(0xFFF9DEDC);

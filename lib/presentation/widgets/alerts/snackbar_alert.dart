@@ -3,6 +3,7 @@ import 'package:eticket/presentation/widgets/alerts/snackbar_alert/snackbar_hand
 import 'package:eticket/presentation/widgets/alerts/snackbar_alert/snackbar_position.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:eticket/presentation/theme/theme.dart';
 
 const _snackbarDuration = Duration(seconds: 5);
 
@@ -19,7 +20,7 @@ class SnackbarAlert {
         border: Border.all(
           color: context.colorScheme.outlineVariant,
         ),
-        borderRadius: BorderRadius.circular(10.r),
+        borderRadius: defaultBr,
         color: context.colorScheme.error,
       ),
       content: Padding(
@@ -50,7 +51,7 @@ class SnackbarAlert {
         border: Border.all(
           color: context.colorScheme.outlineVariant,
         ),
-        borderRadius: BorderRadius.circular(10.r),
+        borderRadius: defaultBr,
         color: Colors.green,
       ),
       content: Padding(

@@ -23,6 +23,8 @@ class $AssetsImagesGen {
   AssetGenImage get blankTicket =>
       const AssetGenImage('assets/images/blank_ticket.png');
 
+  $AssetsImagesPaymentsGen get payments => const $AssetsImagesPaymentsGen();
+
   /// List of all assets
   List<AssetGenImage> get values => [bishkekArena, blankTicket];
 }
@@ -83,6 +85,38 @@ class $AssetsTranslationsGen {
 
   /// List of all assets
   List<String> get values => [ru];
+}
+
+class $AssetsImagesPaymentsGen {
+  const $AssetsImagesPaymentsGen();
+
+  /// File path: assets/images/payments/balance.png
+  AssetGenImage get balance =>
+      const AssetGenImage('assets/images/payments/balance.png');
+
+  /// File path: assets/images/payments/elsom.png
+  AssetGenImage get elsom =>
+      const AssetGenImage('assets/images/payments/elsom.png');
+
+  /// File path: assets/images/payments/mbank.png
+  AssetGenImage get mbank =>
+      const AssetGenImage('assets/images/payments/mbank.png');
+
+  /// File path: assets/images/payments/megapay.png
+  AssetGenImage get megapay =>
+      const AssetGenImage('assets/images/payments/megapay.png');
+
+  /// File path: assets/images/payments/odengi.png
+  AssetGenImage get odengi =>
+      const AssetGenImage('assets/images/payments/odengi.png');
+
+  /// File path: assets/images/payments/visa_only.png
+  AssetGenImage get visaOnly =>
+      const AssetGenImage('assets/images/payments/visa_only.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [balance, elsom, mbank, megapay, odengi, visaOnly];
 }
 
 class $AssetsSvgsBookingGen {

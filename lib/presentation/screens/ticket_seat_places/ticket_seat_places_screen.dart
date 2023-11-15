@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:common/common.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/bloc/bloc.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/ticket_seat_places_view.dart';
@@ -24,6 +25,7 @@ class TicketSeatPlacesScreen extends StatelessWidget {
         eventId: eventId,
       )..getTickets(),
       child: AppScaffold(
+        title: locationType.name.tr(),
         body: TicketSeatPlacesView(locationType: locationType),
       ),
     );

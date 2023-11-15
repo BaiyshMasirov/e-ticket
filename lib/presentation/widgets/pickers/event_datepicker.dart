@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
+import 'package:eticket/presentation/theme/theme.dart';
 
 class EventDatepickerDialog extends StatelessWidget {
   final List<DateTime> eventDateTimes;
@@ -56,7 +57,7 @@ class EventDatepickerDialog extends StatelessWidget {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     color: context.colorScheme.onError,
-                                    borderRadius: BorderRadius.circular(10.r),
+                                    borderRadius: defaultBr,
                                   ),
                                   width: 70.w,
                                   height: 80.h,

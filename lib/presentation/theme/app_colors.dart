@@ -6,11 +6,15 @@ class AppColors extends ThemeExtension<AppColors> {
   final Color scaffoldBackground;
   final Color primaryButton;
   final Color onPrimaryButton;
+  final Color container;
+  final Color onContainer;
 
   const AppColors({
     required this.scaffoldBackground,
     required this.primaryButton,
     required this.onPrimaryButton,
+    required this.container,
+    required this.onContainer,
   });
 
   @override
@@ -18,11 +22,15 @@ class AppColors extends ThemeExtension<AppColors> {
     Color? scaffoldBackground,
     Color? primaryButton,
     Color? onPrimaryButton,
+    Color? container,
+    Color? onContainer,
   }) {
     return AppColors(
       scaffoldBackground: scaffoldBackground ?? this.scaffoldBackground,
       primaryButton: primaryButton ?? this.primaryButton,
       onPrimaryButton: onPrimaryButton ?? this.onPrimaryButton,
+      container: container ?? this.container,
+      onContainer: onContainer ?? this.onContainer,
     );
   }
 
@@ -42,6 +50,10 @@ class AppColors extends ThemeExtension<AppColors> {
           Color.lerp(primaryButton, other.primaryButton, t)!,
       onPrimaryButton:
           Color.lerp(onPrimaryButton, other.onPrimaryButton, t)!,
+      container:
+          Color.lerp(container, other.container, t)!,
+      onContainer:
+          Color.lerp(onContainer, other.onContainer, t)!,
     );
   }
 }

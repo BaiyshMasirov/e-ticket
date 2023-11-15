@@ -29,6 +29,7 @@ abstract class  LocaleKeys {
   static const login = 'login';
   static const registration = 'registration';
   static const confirm = 'confirm';
+  static const cancel = 'cancel';
   static const tickets = 'tickets';
   static const total = 'total';
   static const available = 'available';
@@ -50,5 +51,14 @@ abstract class  LocaleKeys {
   static const nothing_here = 'nothing_here';
   static const ops = 'ops';
   static const try_again = 'try_again';
+  static const hold_ticket_description = 'hold_ticket_description';
+  static const payment_methods = 'payment_methods';
+  static const cost = 'cost';
+  static const card = 'card';
+  static const mbank = 'mbank';
+  static const elsom = 'elsom';
+  static const megapay = 'megapay';
+  static const odengi = 'odengi';
+  static const balance = 'balance';
 
 }

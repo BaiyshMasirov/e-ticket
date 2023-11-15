@@ -1,6 +1,6 @@
 import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_place_purchase_cubit.dart';
+import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_place_hold_cubit.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_places_cubit.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/widgets/widgets.dart';
 import 'package:eticket/presentation/theme/theme.dart';
@@ -18,10 +18,10 @@ class TicketStandingPlacesView extends StatelessWidget {
     return BlocConsumer<TicketStandingPlacesCubit, TicketStandingPlacesState>(
       listener: (context, state) => state.maybeWhen(
         orElse: () => context
-            .read<TicketStandingPlacePurchaseCubit>()
+            .read<TicketStandingPlaceHoldCubit>()
             .clearChosenTickets(),
         success: (tickets) => context
-            .read<TicketStandingPlacePurchaseCubit>()
+            .read<TicketStandingPlaceHoldCubit>()
             .initializeTickets(tickets: tickets),
       ),
       builder: (context, state) => state.maybeWhen(

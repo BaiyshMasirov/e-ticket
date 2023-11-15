@@ -3,7 +3,7 @@ import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
-import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_place_purchase_cubit.dart';
+import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_place_hold_cubit.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_places_cubit.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/ticket_standing_places_view.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/widgets/widgets.dart';
@@ -33,15 +33,18 @@ class TicketStandingPlacesScreen extends StatelessWidget {
           )..getTickets(),
         ),
         BlocProvider(
-          create: (context) => TicketStandingPlacePurchaseCubit.initialize(),
+          create: (context) => TicketStandingPlaceHoldCubit.initialize(),
         ),
       ],
       child: AppScaffold(
         title: LocaleKeys.tickets.tr(),
         isLoadingFunc: (context) =>
             context.select<TicketStandingPlacesCubit, bool>(
-          (value) => value.state is TicketStandingPlacesStateLoading,
-        ),
+              (value) => value.state is TicketStandingPlacesStateLoading,
+            ) ||
+            context.select<TicketStandingPlaceHoldCubit, bool>(
+              (value) => value.state is TicketStandingPlaceHoldStateHolding,
+            ),
         body: const TicketStandingPlacesView(),
         floatingActionButton: const TicketStandingPlacePurchaseFab(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
