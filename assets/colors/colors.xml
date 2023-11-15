@@ -62,4 +62,7 @@
     <color name="onInverseSurfaceDark">#322F35</color>
     <color name="inversePrimaryDark">#6750A4</color>
     <color name="surfaceTintDark">#29262F</color>
+
+    <color name="container">#29262F</color>
+    <color name="onContainer">#FFFFFF</color>
 </resources>

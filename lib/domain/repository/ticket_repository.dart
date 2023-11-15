@@ -20,11 +20,13 @@ class TicketRepository with NetworkRemoteRepositoryMixin {
     return response;
   }
 
-  Future<Either<RequestFailure, Unit>> holdTicket(
-    HoldTicketCommandDto holdTicketCommandDto,
-  ) async {
+  Future<Either<RequestFailure, Unit>> holdTicket({
+    required List<String> ticketIds,
+  }) async {
     final response = await handleRemoteRequest(
-      request: () => _ticketRemoteDatasource.holdTicket(holdTicketCommandDto),
+      request: () => _ticketRemoteDatasource.holdTicket(
+        ticketIds: ticketIds,
+      ),
     );
 
     return response.fold(

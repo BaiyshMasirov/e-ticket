@@ -56,15 +56,19 @@ class TicketRemoteDatasource {
     return response;
   }
 
-  Future<RemoteResponse<ApiUserTokenDto>> holdTicket(
-    HoldTicketCommandDto holdTicketCommandDto,
-  ) async {
+  Future<RemoteResponse<ApiUserTokenDto>> holdTicket({
+    required List<String> ticketIds,
+  }) async {
     final response = await _dio.makeRequest(
       request: () => _dio.post(
         '/api/Ticket/hold-ticket',
-        data: holdTicketCommandDto.toJson(),
+        data: {
+          'ids': ticketIds,
+        },
       ),
-      parse: (json) => ApiUserTokenDto.fromJson(json['token']),
+      parse: (json) {
+        return ApiUserTokenDto.fromJson(json['token']);
+      },
     );
 
     return response;

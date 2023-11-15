@@ -74,6 +74,7 @@ flutter:
   assets:
     - .env
     - assets/images/
+    - assets/images/payments/
     - assets/svgs/
     - assets/svgs/booking/
     - assets/logos/

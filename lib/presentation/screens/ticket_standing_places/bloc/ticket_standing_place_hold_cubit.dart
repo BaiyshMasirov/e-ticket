@@ -1,17 +1,26 @@
 import 'package:common/common.dart';
-import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_place_purchase_state.dart';
+import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_place_hold_state.dart';
 import 'package:eticket/data/models/models.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/models/models.dart';
 import 'package:collection/collection.dart';
+import 'package:eticket/domain/repository/repository.dart';
+import 'package:get_it/get_it.dart';
+export 'ticket_standing_place_hold_state.dart';
 
-export 'ticket_standing_place_purchase_state.dart';
+class TicketStandingPlaceHoldCubit extends Cubit<TicketStandingPlaceHoldState> {
+  final TicketRepository _ticketRepository;
 
-class TicketStandingPlacePurchaseCubit
-    extends Cubit<TicketStandingPlacePurchaseState> {
-  TicketStandingPlacePurchaseCubit._()
-      : super(const TicketStandingPlacePurchaseState.data(
+  TicketStandingPlaceHoldCubit._({
+    required TicketRepository ticketRepository,
+  })  : _ticketRepository = ticketRepository,
+        super(const TicketStandingPlaceHoldState.data(
           chosenTickets: [],
         ));
+
+  Future<void> holdTickets() async {
+    //TODO: add here ticket ids
+    emit(TicketStandingPlaceHoldState.holding(chosenTickets: []));
+  }
 
   void initializeTickets({
     required List<TicketTypeCountDto> tickets,
@@ -23,13 +32,13 @@ class TicketStandingPlacePurchaseCubit
             ))
         .toList();
 
-    emit(TicketStandingPlacePurchaseState.data(
+    emit(TicketStandingPlaceHoldState.data(
       chosenTickets: chosenTickets,
     ));
   }
 
   void clearChosenTickets() {
-    emit(const TicketStandingPlacePurchaseState.data(
+    emit(const TicketStandingPlaceHoldState.data(
       chosenTickets: [],
     ));
   }
@@ -49,7 +58,7 @@ class TicketStandingPlacePurchaseCubit
     );
     chosenTickets.add(updatedTicket);
 
-    emit(TicketStandingPlacePurchaseState.data(
+    emit(TicketStandingPlaceHoldState.data(
       chosenTickets: [...chosenTickets],
     ));
   }
@@ -70,12 +79,14 @@ class TicketStandingPlacePurchaseCubit
     );
     chosenTickets.add(updatedTicket);
 
-    emit(TicketStandingPlacePurchaseState.data(
+    emit(TicketStandingPlaceHoldState.data(
       chosenTickets: [...chosenTickets],
     ));
   }
 
-  factory TicketStandingPlacePurchaseCubit.initialize() {
-    return TicketStandingPlacePurchaseCubit._();
+  factory TicketStandingPlaceHoldCubit.initialize() {
+    return TicketStandingPlaceHoldCubit._(
+      ticketRepository: GetIt.I.get(),
+    );
   }
 }

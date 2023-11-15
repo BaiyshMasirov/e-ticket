@@ -4,8 +4,7 @@ import 'dart:io';
 import 'package:common/src/models/models.dart';
 import 'package:common/src/utils/utils.dart';
 import 'package:dio/dio.dart';
-
-import '../constants/constants.dart';
+import 'package:common/src/constants/constants.dart';
 
 extension DioErrorX on DioException {
   bool get isNoConnectionException =>

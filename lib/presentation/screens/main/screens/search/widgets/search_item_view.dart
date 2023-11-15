@@ -3,8 +3,7 @@ import 'package:eticket/common/common.dart';
 import 'package:eticket/data/data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-final _bR = BorderRadius.circular(10.r);
+import 'package:eticket/presentation/theme/theme.dart';
 
 class SearchItemView extends StatelessWidget {
   final EventDto event;
@@ -25,9 +24,9 @@ class SearchItemView extends StatelessWidget {
 
     return Material(
       color: context.colorScheme.surfaceTint,
-      borderRadius: _bR,
+      borderRadius: defaultBr,
       child: InkWell(
-        borderRadius: _bR,
+        borderRadius: defaultBr,
         onTap: onTap,
         child: Container(
           height: 150.h,
@@ -37,7 +36,7 @@ class SearchItemView extends StatelessWidget {
               SizedBox(
                 width: context.screenSize.screenWidth / 3,
                 child: ClipRRect(
-                  borderRadius: _bR,
+                  borderRadius: defaultBr,
                   child: Image.network(
                     event.image ?? '',
                     fit: BoxFit.fitHeight,

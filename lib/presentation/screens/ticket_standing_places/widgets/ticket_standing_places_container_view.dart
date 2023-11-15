@@ -1,5 +1,5 @@
 import 'package:common/common.dart';
-import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_place_purchase_cubit.dart';
+import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_place_hold_cubit.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
@@ -20,15 +20,15 @@ class TicketStandingPlacesContainerView extends StatelessWidget {
       ticket: ticket,
       onDecreasePressed: () {
         context
-            .read<TicketStandingPlacePurchaseCubit>()
+            .read<TicketStandingPlaceHoldCubit>()
             .decreaseTicketAmount(ticket.type);
       },
       onIncreasePressed: () {
         context
-            .read<TicketStandingPlacePurchaseCubit>()
+            .read<TicketStandingPlaceHoldCubit>()
             .increaseTicketAmount(ticket.type);
       },
-      ticketAmountChosen: context.select<TicketStandingPlacePurchaseCubit, int>(
+      ticketAmountChosen: context.select<TicketStandingPlaceHoldCubit, int>(
         (value) =>
             value.state.chosenTickets
                 .firstWhereOrNull((item) => item.type == ticket.type)

@@ -27,6 +27,7 @@
   "login": "Вход",
   "registration": "Регистрация",
   "confirm": "Подтвердить",
+  "cancel": "Отмена",
   "tickets": "Билеты",
   "total": "Всего",
   "available": "Доступно",
@@ -50,5 +51,14 @@
   "try_again": "Попробуйте снова",
   "close": "Закрыть",
   "rowNumber": "Ряд",
-  "placeNumber": "Место"
+  "placeNumber": "Место",
+  "hold_ticket_description": "До покупки билетов мы забронируем ваши места на 15 минут. Если вы не совершите платеж, он сохранится в разделе 'История', где вы сможете продолжить покупку",
+  "payment_methods": "Способы оплаты",
+  "cost": "Стоимость",
+  "card": "Visa",
+  "mbank": "mbank",
+  "elsom": "ЭЛСОМ",
+  "megapay": "MegaPay",
+  "odengi": "О!Деньги",
+  "balance": "Balance.kg"
 }
