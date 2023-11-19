@@ -1,5 +1,5 @@
 import 'package:eticket/generated/assets.gen.dart';
-import 'package:eticket/presentation/widgets/book_my_seat/book_my_seat.dart';
+import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,176 +19,202 @@ class KgDramTheaterView extends HookWidget {
 
     final places = useMemoized(
       () => [
-        _generateSeatPlaces(
-          length: _maxPlaces,
-          emptyPlaces: _rowTop22PlacesNotExist,
-          addEmptyLeft: _rowTop22To4EmptyLeftPlaces,
-          addEmptyRight: _rowTop22To16EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 22',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 22,
+          rowLength: _maxPlaces,
+          emptySpacingIndex: _rowTop22PlacesNotExist,
+          leftOffsetCount: _rowTop22To4EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 22',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _maxPlaces,
-          emptyPlaces: _rowTop21PlacesNotExist,
-          addEmptyLeft: _rowTop21To16EmptyLeftPlaces,
-          addEmptyRight: _rowTop21To16EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 21',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 21,
+          rowLength: _maxPlaces,
+          emptySpacingIndex: _rowTop21PlacesNotExist,
+          leftOffsetCount: _rowTop21To16EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 21',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _maxPlaces,
-          emptyPlaces: _rowTop21PlacesNotExist,
-          addEmptyLeft: _rowTop21To16EmptyLeftPlaces,
-          addEmptyRight: _rowTop21To16EmptyLeftPlaces,
-          seatRowPlaceText: 'Ряд 20',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 20,
+          rowLength: _maxPlaces,
+          emptySpacingIndex: _rowTop21PlacesNotExist,
+          leftOffsetCount: _rowTop21To16EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 20',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _maxPlaces,
-          emptyPlaces: _rowTop21PlacesNotExist,
-          addEmptyLeft: _rowTop21To16EmptyLeftPlaces,
-          addEmptyRight: _rowTop21To16EmptyLeftPlaces,
-          seatRowPlaceText: 'Ряд 19',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 19,
+          rowLength: _maxPlaces,
+          emptySpacingIndex: _rowTop21PlacesNotExist,
+          leftOffsetCount: _rowTop21To16EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 19',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _maxPlaces,
-          emptyPlaces: _rowTop21PlacesNotExist,
-          addEmptyLeft: _rowTop21To16EmptyLeftPlaces,
-          addEmptyRight: _rowTop21To16EmptyLeftPlaces,
-          seatRowPlaceText: 'Ряд 18',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 18,
+          rowLength: _maxPlaces,
+          emptySpacingIndex: _rowTop21PlacesNotExist,
+          leftOffsetCount: _rowTop21To16EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 18',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _maxPlaces,
-          emptyPlaces: _rowTop17PlacesNotExist,
-          addEmptyLeft: _rowTop21To16EmptyLeftPlaces,
-          addEmptyRight: _rowTop21To16EmptyLeftPlaces,
-          seatRowPlaceText: 'Ряд 17',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 17,
+          rowLength: _maxPlaces,
+          emptySpacingIndex: _rowTop17PlacesNotExist,
+          leftOffsetCount: _rowTop21To16EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 17',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _maxPlaces,
-          emptyPlaces: _rowTop17PlacesNotExist,
-          addEmptyLeft: _rowTop21To16EmptyLeftPlaces,
-          addEmptyRight: _rowTop21To16EmptyLeftPlaces,
-          seatRowPlaceText: 'Ряд 16',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 16,
+          rowLength: _maxPlaces,
+          emptySpacingIndex: _rowTop17PlacesNotExist,
+          leftOffsetCount: _rowTop21To16EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 16',
+          mainBranchIndex: branchIndex,
         ),
         //endregion
         //region 15 to 4
-        _generateSeatPlaces(
-          length: _rowTop15To4PlaceCount,
-          emptyPlaces: _rowTop17PlacesNotExist,
-          addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
-          addEmptyRight: _rowTop15To4EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 15',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 15,
+          rowLength: _rowTop15To4PlaceCount,
+          emptySpacingIndex: _rowTop17PlacesNotExist,
+          leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 15',
+          mainBranchIndex: branchIndex,
         ), //2
-        _generateSeatPlaces(
-          length: _rowTop15To4PlaceCount,
-          emptyPlaces: _rowTop14PlacesNotExist,
-          addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
-          addEmptyRight: _rowTop15To4EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 14',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 14,
+          rowLength: _rowTop15To4PlaceCount,
+          emptySpacingIndex: _rowTop14PlacesNotExist,
+          leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 14',
+          mainBranchIndex: branchIndex,
         ), //2
-        _generateSeatPlaces(
-          length: _rowTop15To4PlaceCount,
-          emptyPlaces: _rowTop13PlacesNotExist,
-          addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
-          addEmptyRight: _rowTop15To4EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 13',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 13,
+          rowLength: _rowTop15To4PlaceCount,
+          emptySpacingIndex: _rowTop13PlacesNotExist,
+          leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 13',
+          mainBranchIndex: branchIndex,
         ), //2
-        _generateSeatPlaces(
-          length: _rowTop15To4PlaceCount,
-          emptyPlaces: _rowTop12PlacesNotExist,
-          addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
-          addEmptyRight: _rowTop15To4EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 12',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 12,
+          rowLength: _rowTop15To4PlaceCount,
+          emptySpacingIndex: _rowTop12PlacesNotExist,
+          leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 12',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _maxPlaces,
-          emptyPlaces: _emptyRowPlaces,
-          addEmptyLeft: 0,
-          addEmptyRight: 0,
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowLabel: '',
+          mainCurrentRowIndex: -1,
+          rowLength: _maxPlaces,
+          emptySpacingIndex: _emptyRowPlaces,
+          leftOffsetCount: 0,
+          mainBranchIndex: -1,
         ),
-        _generateSeatPlaces(
-          length: _rowTop15To4PlaceCount,
-          emptyPlaces: _rowTop11PlacesNotExist,
-          addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
-          addEmptyRight: _rowTop15To4EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 11',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 11,
+          rowLength: _rowTop15To4PlaceCount,
+          emptySpacingIndex: _rowTop11PlacesNotExist,
+          leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 11',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _rowTop15To4PlaceCount,
-          emptyPlaces: _rowTop10PlacesNotExist,
-          addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
-          addEmptyRight: _rowTop15To4EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 10',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 10,
+          rowLength: _rowTop15To4PlaceCount,
+          emptySpacingIndex: _rowTop10PlacesNotExist,
+          leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 10',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _rowTop15To4PlaceCount,
-          emptyPlaces: _rowTop9PlacesNotExist,
-          addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
-          addEmptyRight: _rowTop15To4EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 9',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 9,
+          rowLength: _rowTop15To4PlaceCount,
+          emptySpacingIndex: _rowTop9PlacesNotExist,
+          leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 9',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _rowTop15To4PlaceCount,
-          emptyPlaces: _rowTop9PlacesNotExist,
-          addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
-          addEmptyRight: _rowTop15To4EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 8',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 8,
+          rowLength: _rowTop15To4PlaceCount,
+          emptySpacingIndex: _rowTop9PlacesNotExist,
+          leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 8',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _rowTop15To4PlaceCount,
-          emptyPlaces: _rowTop9PlacesNotExist,
-          addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
-          addEmptyRight: _rowTop15To4EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 7',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 7,
+          rowLength: _rowTop15To4PlaceCount,
+          emptySpacingIndex: _rowTop9PlacesNotExist,
+          leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 7',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _rowTop15To4PlaceCount,
-          emptyPlaces: _rowTop9PlacesNotExist,
-          addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
-          addEmptyRight: _rowTop15To4EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 6',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 6,
+          rowLength: _rowTop15To4PlaceCount,
+          emptySpacingIndex: _rowTop9PlacesNotExist,
+          leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 6',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _rowTop15To4PlaceCount,
-          emptyPlaces: _rowTop5PlacesNotExist,
-          addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
-          addEmptyRight: _rowTop15To4EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 5',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 5,
+          rowLength: _rowTop15To4PlaceCount,
+          emptySpacingIndex: _rowTop5PlacesNotExist,
+          leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 5',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _rowTop15To4PlaceCount,
-          emptyPlaces: _rowTop4PlacesNotExist,
-          addEmptyLeft: _rowTop15To4EmptyLeftPlaces,
-          addEmptyRight: _rowTop15To4EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 4',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 4,
+          rowLength: _rowTop15To4PlaceCount,
+          emptySpacingIndex: _rowTop4PlacesNotExist,
+          leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 4',
+          mainBranchIndex: branchIndex,
         ),
         // endregion
         //region 3 to 1
-        _generateSeatPlaces(
-          length: _rowTop3To1PlaceCount,
-          emptyPlaces: _rowTop5PlacesNotExist,
-          addEmptyLeft: _rowTop3To1EmptyLeftPlaces,
-          addEmptyRight: _rowTop3To1EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 3',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 3,
+          rowLength: _rowTop3To1PlaceCount,
+          emptySpacingIndex: _rowTop5PlacesNotExist,
+          leftOffsetCount: _rowTop3To1EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 3',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _rowTop3To1PlaceCount,
-          emptyPlaces: _rowTop5PlacesNotExist,
-          addEmptyLeft: _rowTop3To1EmptyLeftPlaces,
-          addEmptyRight: _rowTop3To1EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 2',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 2,
+          rowLength: _rowTop3To1PlaceCount,
+          emptySpacingIndex: _rowTop5PlacesNotExist,
+          leftOffsetCount: _rowTop3To1EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 2',
+          mainBranchIndex: branchIndex,
         ),
-        _generateSeatPlaces(
-          length: _rowTop3To1PlaceCount,
-          emptyPlaces: _rowTop5PlacesNotExist,
-          addEmptyLeft: _rowTop3To1EmptyLeftPlaces,
-          addEmptyRight: _rowTop3To1EmptyRightPlaces,
-          seatRowPlaceText: 'Ряд 1',
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowIndex: 1,
+          rowLength: _rowTop3To1PlaceCount,
+          emptySpacingIndex: _rowTop5PlacesNotExist,
+          leftOffsetCount: _rowTop3To1EmptyLeftPlaces,
+          mainCurrentRowLabel: 'Ряд 1',
+          mainBranchIndex: branchIndex,
         ),
 
-        _generateSeatPlaces(
-          length: _maxPlaces,
-          emptyPlaces: _emptyRowPlaces,
-          addEmptyLeft: 0,
-          addEmptyRight: 0,
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowLabel: '',
+          mainCurrentRowIndex: -1,
+          rowLength: _maxPlaces,
+          emptySpacingIndex: _emptyRowPlaces,
+          leftOffsetCount: 0,
+          mainBranchIndex: -1,
         ),
       ],
     );
@@ -201,18 +227,18 @@ class KgDramTheaterView extends HookWidget {
       return null;
     }, const []);
 
-    return SeatLayoutWidget(
+    return SeatLayoutWidgetV2(
       transformationController: transformationController,
       onSeatStateChanged: (rowI, colI, currentState) {
-        if (currentState == SeatState.unselected) {
-          return SeatState.selected;
-        } else if (currentState == SeatState.selected) {
-          return SeatState.unselected;
+        if (currentState == PlaceStateV2.unselected) {
+          return PlaceStateV2.selected;
+        } else if (currentState == PlaceStateV2.selected) {
+          return PlaceStateV2.unselected;
         }
 
         return currentState;
       },
-      stateModel: SeatLayoutStateModel(
+      stateModel: SeatLayoutStateModelV2(
         rows: places.length,
         seatSvgSize: 4.8.w,
         seatPlaceTextPadding: EdgeInsets.all(0.8.w),
@@ -225,6 +251,9 @@ class KgDramTheaterView extends HookWidget {
     );
   }
 }
+
+
+const branchIndex = 1;
 
 const _maxPlaces = 40;
 
@@ -279,65 +308,3 @@ final _rowTop5PlacesNotExist = [
 ];
 
 final _rowTop4PlacesNotExist = _rowTop5PlacesNotExist;
-
-/// [_rowLow14To1PlaceCount]
-
-SeatRowPlace _generateSeatPlaces({
-  required int length,
-  required List<int> emptyPlaces,
-  required int addEmptyLeft,
-  required int addEmptyRight,
-  String? seatRowPlaceText,
-  List<int> blockedPlace = const [],
-}) {
-  int placeNumber = 1;
-
-  final places = List<SeatPlace>.generate(
-    length,
-    (index) {
-      final innerPlace = index + 1;
-
-      if (blockedPlace.contains(innerPlace)) {
-        return SeatPlace(
-          seatState: SeatState.empty,
-          seatPlace: placeNumber++,
-        );
-      }
-
-      if (emptyPlaces.contains(innerPlace)) {
-        return const SeatPlace(
-          seatState: SeatState.empty,
-          seatPlace: -1,
-        );
-      }
-
-      return SeatPlace(
-        seatState: SeatState.unselected,
-        seatPlace: placeNumber++,
-      );
-    },
-  );
-
-  final seatPlaces = [
-    ...List.generate(
-      addEmptyLeft,
-      (index) => const SeatPlace(
-        seatState: SeatState.empty,
-        seatPlace: -1,
-      ),
-    ),
-    ...places.reversed.toList(),
-    ...List.generate(
-      addEmptyRight,
-      (index) => const SeatPlace(
-        seatState: SeatState.empty,
-        seatPlace: -1,
-      ),
-    ),
-  ];
-
-  return SeatRowPlace(
-    rowPlaceLabel: seatRowPlaceText ?? '-',
-    seatPlaces: seatPlaces,
-  );
-}

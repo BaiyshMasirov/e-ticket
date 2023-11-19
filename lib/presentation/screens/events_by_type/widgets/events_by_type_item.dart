@@ -33,12 +33,12 @@ class EventsByTypeItem extends StatelessWidget {
                   }
 
                   return Container(
-                    color: context.colorScheme.onError,
+                    color: context.colorScheme.surfaceTint,
                   );
                 },
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) => Container(
-                  color: context.colorScheme.onError,
+                  color: context.colorScheme.surfaceTint,
                 ),
               ),
             ),

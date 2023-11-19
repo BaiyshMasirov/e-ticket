@@ -56,7 +56,8 @@ class App extends StatelessWidget {
         builder: (context, child) => Overlay(
           initialEntries: [
             OverlayEntry(
-              builder: (context) => BlocListener<SnackbarCubit, SnackbarState>(
+              builder: (context) =>
+                  BlocListener<SnackbarCubit, SnackbarState>(
                 listener: (context, state) => state.whenOrNull(
                   error: (message) => SnackbarAlert.showError(
                     context: context,

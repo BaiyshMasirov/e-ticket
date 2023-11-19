@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SeatPlaceSecondaryV2 {
+  int get branchIndex => throw _privateConstructorUsedError;
   String get rowLabel => throw _privateConstructorUsedError;
   int get currentRowIndex => throw _privateConstructorUsedError;
   int get placeIndex => throw _privateConstructorUsedError;
@@ -33,7 +34,11 @@ abstract class $SeatPlaceSecondaryV2CopyWith<$Res> {
       _$SeatPlaceSecondaryV2CopyWithImpl<$Res, SeatPlaceSecondaryV2>;
   @useResult
   $Res call(
-      {String rowLabel, int currentRowIndex, int placeIndex, int placeNumber});
+      {int branchIndex,
+      String rowLabel,
+      int currentRowIndex,
+      int placeIndex,
+      int placeNumber});
 }
 
 /// @nodoc
@@ -50,12 +55,17 @@ class _$SeatPlaceSecondaryV2CopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? branchIndex = null,
     Object? rowLabel = null,
     Object? currentRowIndex = null,
     Object? placeIndex = null,
     Object? placeNumber = null,
   }) {
     return _then(_value.copyWith(
+      branchIndex: null == branchIndex
+          ? _value.branchIndex
+          : branchIndex // ignore: cast_nullable_to_non_nullable
+              as int,
       rowLabel: null == rowLabel
           ? _value.rowLabel
           : rowLabel // ignore: cast_nullable_to_non_nullable
@@ -85,7 +95,11 @@ abstract class _$$SeatPlaceSecondaryV2ImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String rowLabel, int currentRowIndex, int placeIndex, int placeNumber});
+      {int branchIndex,
+      String rowLabel,
+      int currentRowIndex,
+      int placeIndex,
+      int placeNumber});
 }
 
 /// @nodoc
@@ -99,12 +113,17 @@ class __$$SeatPlaceSecondaryV2ImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? branchIndex = null,
     Object? rowLabel = null,
     Object? currentRowIndex = null,
     Object? placeIndex = null,
     Object? placeNumber = null,
   }) {
     return _then(_$SeatPlaceSecondaryV2Impl(
+      branchIndex: null == branchIndex
+          ? _value.branchIndex
+          : branchIndex // ignore: cast_nullable_to_non_nullable
+              as int,
       rowLabel: null == rowLabel
           ? _value.rowLabel
           : rowLabel // ignore: cast_nullable_to_non_nullable
@@ -129,12 +148,15 @@ class __$$SeatPlaceSecondaryV2ImplCopyWithImpl<$Res>
 
 class _$SeatPlaceSecondaryV2Impl extends _SeatPlaceSecondaryV2 {
   const _$SeatPlaceSecondaryV2Impl(
-      {required this.rowLabel,
+      {required this.branchIndex,
+      required this.rowLabel,
       required this.currentRowIndex,
       required this.placeIndex,
       required this.placeNumber})
       : super._();
 
+  @override
+  final int branchIndex;
   @override
   final String rowLabel;
   @override
@@ -146,7 +168,7 @@ class _$SeatPlaceSecondaryV2Impl extends _SeatPlaceSecondaryV2 {
 
   @override
   String toString() {
-    return 'SeatPlaceSecondaryV2(rowLabel: $rowLabel, currentRowIndex: $currentRowIndex, placeIndex: $placeIndex, placeNumber: $placeNumber)';
+    return 'SeatPlaceSecondaryV2(branchIndex: $branchIndex, rowLabel: $rowLabel, currentRowIndex: $currentRowIndex, placeIndex: $placeIndex, placeNumber: $placeNumber)';
   }
 
   @override
@@ -154,6 +176,8 @@ class _$SeatPlaceSecondaryV2Impl extends _SeatPlaceSecondaryV2 {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SeatPlaceSecondaryV2Impl &&
+            (identical(other.branchIndex, branchIndex) ||
+                other.branchIndex == branchIndex) &&
             (identical(other.rowLabel, rowLabel) ||
                 other.rowLabel == rowLabel) &&
             (identical(other.currentRowIndex, currentRowIndex) ||
@@ -165,8 +189,8 @@ class _$SeatPlaceSecondaryV2Impl extends _SeatPlaceSecondaryV2 {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, rowLabel, currentRowIndex, placeIndex, placeNumber);
+  int get hashCode => Object.hash(runtimeType, branchIndex, rowLabel,
+      currentRowIndex, placeIndex, placeNumber);
 
   @JsonKey(ignore: true)
   @override
@@ -179,12 +203,15 @@ class _$SeatPlaceSecondaryV2Impl extends _SeatPlaceSecondaryV2 {
 
 abstract class _SeatPlaceSecondaryV2 extends SeatPlaceSecondaryV2 {
   const factory _SeatPlaceSecondaryV2(
-      {required final String rowLabel,
+      {required final int branchIndex,
+      required final String rowLabel,
       required final int currentRowIndex,
       required final int placeIndex,
       required final int placeNumber}) = _$SeatPlaceSecondaryV2Impl;
   const _SeatPlaceSecondaryV2._() : super._();
 
+  @override
+  int get branchIndex;
   @override
   String get rowLabel;
   @override

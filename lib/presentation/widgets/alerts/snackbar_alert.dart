@@ -21,7 +21,7 @@ class SnackbarAlert {
           color: context.colorScheme.outlineVariant,
         ),
         borderRadius: defaultBr,
-        color: context.colorScheme.error,
+        color: context.colorScheme.errorContainer,
       ),
       content: Padding(
         padding: EdgeInsets.all(10.w),

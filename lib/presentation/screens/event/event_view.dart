@@ -33,7 +33,7 @@ class EventView extends StatelessWidget {
                     event.image ?? '',
                     fit: BoxFit.fitHeight,
                     errorBuilder: (context, error, stackTrace) => Container(
-                      color: context.colorScheme.onError,
+                      color: context.colorScheme.surfaceTint,
                       height: 300.h,
                     ),
                     loadingBuilder: (context, child, loadingProgress) {
@@ -42,7 +42,7 @@ class EventView extends StatelessWidget {
                       }
 
                       return Container(
-                        color: context.colorScheme.onError,
+                        color: context.colorScheme.surfaceTint,
                       );
                     },
                   ),

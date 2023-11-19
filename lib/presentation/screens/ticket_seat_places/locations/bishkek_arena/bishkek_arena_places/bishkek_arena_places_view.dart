@@ -1,6 +1,7 @@
 import 'package:eticket/generated/assets.gen.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/locations/bishkek_arena/models/models.dart';
 import 'package:eticket/presentation/widgets/book_my_seat/book_my_seat.dart';
+import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,7 +26,7 @@ class BishkekArenaPlacesView extends HookWidget {
       return null;
     }, const []);
 
-    final List<SeatRowPlace> places;
+    final List<SeatRowPlaceV2> places;
     final seatGenerator = BishkekArenaSeatPlacesManager();
 
     switch (blockType) {
@@ -43,9 +44,9 @@ class BishkekArenaPlacesView extends HookWidget {
         places = seatGenerator.generateGBlock();
     }
 
-    return SeatLayoutWidget(
+    return SeatLayoutWidgetV2(
       transformationController: transformationController,
-      stateModel: SeatLayoutStateModel(
+      stateModel: SeatLayoutStateModelV2(
         rows: places.length,
         seatSvgSize: 6.w,
         seatPlaceTextPadding: EdgeInsets.all(0.8.w),
@@ -56,10 +57,10 @@ class BishkekArenaPlacesView extends HookWidget {
         currentSeatsState: places,
       ),
       onSeatStateChanged: (rowI, colI, currentState) {
-        if (currentState == SeatState.unselected) {
-          return SeatState.selected;
-        } else if (currentState == SeatState.selected) {
-          return SeatState.unselected;
+        if (currentState == PlaceStateV2.unselected) {
+          return PlaceStateV2.selected;
+        } else if (currentState == PlaceStateV2.selected) {
+          return PlaceStateV2.unselected;
         }
 
         return currentState;
@@ -69,458 +70,451 @@ class BishkekArenaPlacesView extends HookWidget {
 }
 
 class BishkekArenaSeatPlacesManager {
-  List<SeatRowPlace> generateBBlock() {
+  List<SeatRowPlaceV2> generateBBlock() {
     return [
-      _generateSeatPlaces(
-        seatRowPlaceText: 'Ряд 7',
-        addEmptyLeft: 0,
-        addEmptyRight: 2,
-        emptyPlaces: [2, 3, 12, 21, 29, 31, 38, 40, 47],
-        spacePlace: [4, 13, 22, 30, 39, 48],
-        length: _BBlockMaxPlaces + 1,
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 7,
+        mainCurrentRowLabel: 'Ряд 7',
+        mainBranchIndex: _bBranchIndex,
+        leftOffsetCount: 0,
+        emptySpacingIndex: [2, 3, 12, 21, 29, 31, 38, 40, 47],
+        halfSpacingIndex: [4, 13, 22, 30, 39, 48],
+        rowLength: _BBlockMaxPlaces + 1,
       ),
-      _generateSeatPlaces(
-        seatRowPlaceText: 'Ряд 6',
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        emptyPlaces: [2, 3, 12, 21, 29, 38, 47, 55],
-        spacePlace: [4, 13, 30, 39],
-        length: _BBlockMaxPlaces + 2,
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 6,
+        mainCurrentRowLabel: 'Ряд 6',
+        mainBranchIndex: _bBranchIndex,
+        leftOffsetCount: 0,
+        emptySpacingIndex: [2, 3, 12, 21, 29, 38, 47, 55],
+        halfSpacingIndex: [4, 13, 30, 39],
+        rowLength: _BBlockMaxPlaces + 2,
       ),
-      _generateSeatPlaces(
-        seatRowPlaceText: 'Ряд 5',
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        emptyPlaces: [3, 12, 21, 29, 38, 47],
-        spacePlace: [4, 13, 30, 39],
-        length: _BBlockMaxPlaces + 2,
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 5,
+        mainCurrentRowLabel: 'Ряд 5',
+        mainBranchIndex: _bBranchIndex,
+        leftOffsetCount: 0,
+        emptySpacingIndex: [3, 12, 21, 29, 38, 47],
+        halfSpacingIndex: [4, 13, 30, 39],
+        rowLength: _BBlockMaxPlaces + 2,
       ),
-      _generateSeatPlaces(
-        seatRowPlaceText: 'Ряд 4',
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        emptyPlaces: [],
-        length: _BBlockMaxPlaces,
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 4,
+        mainCurrentRowLabel: 'Ряд 4',
+        mainBranchIndex: _bBranchIndex,
+        leftOffsetCount: 0,
+        emptySpacingIndex: [],
+        rowLength: _BBlockMaxPlaces,
       ),
-      _generateSeatPlaces(
-        seatRowPlaceText: 'Ряд 3',
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        emptyPlaces: [],
-        length: _BBlockMaxPlaces,
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 3,
+        mainCurrentRowLabel: 'Ряд 3',
+        mainBranchIndex: _bBranchIndex,
+        leftOffsetCount: 0,
+        emptySpacingIndex: [],
+        rowLength: _BBlockMaxPlaces,
       ),
-      _generateSeatPlaces(
-        seatRowPlaceText: 'Ряд 2',
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        emptyPlaces: [],
-        length: _BBlockMaxPlaces,
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 2,
+        mainCurrentRowLabel: 'Ряд 2',
+        mainBranchIndex: _bBranchIndex,
+        leftOffsetCount: 0,
+        emptySpacingIndex: [],
+        rowLength: _BBlockMaxPlaces,
       ),
-      _generateSeatPlaces(
-        seatRowPlaceText: 'Ряд 1',
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        emptyPlaces: [],
-        spacePlace: [1, 6, 18, 29, 43, 57],
-        length: _BBlockMaxPlaces + 3,
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 1,
+        mainCurrentRowLabel: 'Ряд 1',
+        mainBranchIndex: _bBranchIndex,
+        leftOffsetCount: 0,
+        emptySpacingIndex: [],
+        halfSpacingIndex: [1, 6, 18, 29, 43, 57],
+        rowLength: _BBlockMaxPlaces + 3,
       ),
     ];
   }
 
-  List<SeatRowPlace> generateCBlock() {
+  List<SeatRowPlaceV2> generateCBlock() {
     return [
-      _generateSeatPlaces(
-        length: _CBlockMaxPlaces - 1,
-        emptyPlaces: [14, 15, 22],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        spacePlace: [5],
-        seatRowPlaceText: 'Ряд 7',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 7,
+        rowLength: _CBlockMaxPlaces - 1,
+        mainBranchIndex: _cBranchIndex,
+        emptySpacingIndex: [14, 15, 22],
+        leftOffsetCount: 0,
+        halfSpacingIndex: [5],
+        mainCurrentRowLabel: 'Ряд 7',
       ),
-      _generateSeatPlaces(
-        length: _CBlockMaxPlaces - 3,
-        emptyPlaces: [4, 9],
-        addEmptyLeft: 1,
-        addEmptyRight: 0,
-        spacePlace: [],
-        seatRowPlaceText: 'Ряд 6',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 6,
+        rowLength: _CBlockMaxPlaces - 3,
+        mainBranchIndex: _cBranchIndex,
+        emptySpacingIndex: [4, 9],
+        leftOffsetCount: 1,
+        halfSpacingIndex: [],
+        mainCurrentRowLabel: 'Ряд 6',
       ),
-      _generateSeatPlaces(
-        length: _CBlockMaxPlaces - 4,
-        emptyPlaces: [4, 9],
-        addEmptyLeft: 1,
-        addEmptyRight: 0,
-        spacePlace: [],
-        seatRowPlaceText: 'Ряд 5',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 5,
+        rowLength: _CBlockMaxPlaces - 4,
+        mainBranchIndex: _cBranchIndex,
+        emptySpacingIndex: [4, 9],
+        leftOffsetCount: 1,
+        halfSpacingIndex: [],
+        mainCurrentRowLabel: 'Ряд 5',
       ),
-      _generateSeatPlaces(
-        length: _CBlockMaxPlaces - 4,
-        emptyPlaces: [9],
-        addEmptyLeft: 1,
-        addEmptyRight: 0,
-        spacePlace: [],
-        seatRowPlaceText: 'Ряд 4',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 4,
+        rowLength: _CBlockMaxPlaces - 4,
+        mainBranchIndex: _cBranchIndex,
+        emptySpacingIndex: [9],
+        leftOffsetCount: 1,
+        halfSpacingIndex: [],
+        mainCurrentRowLabel: 'Ряд 4',
       ),
-      _generateSeatPlaces(
-        length: _CBlockMaxPlaces - 6,
-        emptyPlaces: [9],
-        addEmptyLeft: 1,
-        addEmptyRight: 0,
-        spacePlace: [],
-        seatRowPlaceText: 'Ряд 3',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 3,
+        rowLength: _CBlockMaxPlaces - 6,
+        mainBranchIndex: _cBranchIndex,
+        emptySpacingIndex: [9],
+        leftOffsetCount: 1,
+        halfSpacingIndex: [],
+        mainCurrentRowLabel: 'Ряд 3',
       ),
-      _generateSeatPlaces(
-        length: _CBlockMaxPlaces - 7,
-        emptyPlaces: [9],
-        addEmptyLeft: 1,
-        addEmptyRight: 0,
-        spacePlace: [],
-        seatRowPlaceText: 'Ряд 2',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 2,
+        rowLength: _CBlockMaxPlaces - 7,
+        mainBranchIndex: _cBranchIndex,
+        emptySpacingIndex: [9],
+        leftOffsetCount: 1,
+        halfSpacingIndex: [],
+        mainCurrentRowLabel: 'Ряд 2',
       ),
-      _generateSeatPlaces(
-        length: _CBlockMaxPlaces - 7,
-        emptyPlaces: [9],
-        addEmptyLeft: 1,
-        addEmptyRight: 0,
-        spacePlace: [],
-        seatRowPlaceText: 'Ряд 1',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 1,
+        rowLength: _CBlockMaxPlaces - 7,
+        mainBranchIndex: _cBranchIndex,
+        emptySpacingIndex: [9],
+        leftOffsetCount: 1,
+        halfSpacingIndex: [],
+        mainCurrentRowLabel: 'Ряд 1',
       ),
-      _generateSeatPlaces(
-        length: 13,
-        emptyPlaces: [],
-        addEmptyLeft: 13,
-        addEmptyRight: 0,
-        spacePlace: [1],
-        seatRowPlaceText: 'Ряд 0',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 0,
+        rowLength: 13,
+        mainBranchIndex: _cBranchIndex,
+        emptySpacingIndex: [],
+        leftOffsetCount: 13,
+        halfSpacingIndex: [1],
+        mainCurrentRowLabel: 'Ряд 0',
       ),
     ];
   }
 
-  List<SeatRowPlace> generateDBlock() {
+  List<SeatRowPlaceV2> generateDBlock() {
     return [
-      _generateSeatPlaces(
-        length: _DBlockMaxPlaces,
-        emptyPlaces: [],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 7',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 7,
+        rowLength: _DBlockMaxPlaces,
+        mainBranchIndex: _dBranchIndex,
+        emptySpacingIndex: [],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 7',
       ),
-      _generateSeatPlaces(
-        length: _DBlockMaxPlaces,
-        emptyPlaces: [1, 2, 3, 35],
-        spacePlace: [36],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 6',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 6,
+        rowLength: _DBlockMaxPlaces,
+        mainBranchIndex: _dBranchIndex,
+        emptySpacingIndex: [1, 2, 3, 35],
+        halfSpacingIndex: [36],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 6',
       ),
-      _generateSeatPlaces(
-        length: _DBlockMaxPlaces - 1,
-        emptyPlaces: [1, 2, 3, 4, 35],
-        spacePlace: [34],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 5',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 5,
+        rowLength: _DBlockMaxPlaces - 1,
+        mainBranchIndex: _dBranchIndex,
+        emptySpacingIndex: [1, 2, 3, 4, 35],
+        halfSpacingIndex: [34],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 5',
       ),
-      _generateSeatPlaces(
-        length: _DBlockMaxPlaces - 2,
-        emptyPlaces: [1, 2, 3, 4, 5, 33],
-        spacePlace: [34],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 4',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 4,
+        rowLength: _DBlockMaxPlaces - 2,
+        mainBranchIndex: _dBranchIndex,
+        emptySpacingIndex: [1, 2, 3, 4, 5, 33],
+        halfSpacingIndex: [34],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 4',
       ),
-      _generateSeatPlaces(
-        length: _DBlockMaxPlaces - 3,
-        emptyPlaces: [1, 2, 3, 4, 5, 6, 33],
-        spacePlace: [32],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 3',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 3,
+        rowLength: _DBlockMaxPlaces - 3,
+        mainBranchIndex: _dBranchIndex,
+        emptySpacingIndex: [1, 2, 3, 4, 5, 6, 33],
+        halfSpacingIndex: [32],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 3',
       ),
-      _generateSeatPlaces(
-        length: 25,
-        emptyPlaces: [],
-        spacePlace: [1],
-        addEmptyLeft: 6,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 2',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 2,
+        rowLength: 25,
+        mainBranchIndex: _dBranchIndex,
+        emptySpacingIndex: [],
+        halfSpacingIndex: [1],
+        leftOffsetCount: 6,
+        mainCurrentRowLabel: 'Ряд 2',
       ),
-      _generateSeatPlaces(
-        length: 23,
-        emptyPlaces: [],
-        spacePlace: [1],
-        addEmptyLeft: 7,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 1',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 1,
+        rowLength: 23,
+        emptySpacingIndex: [],
+        halfSpacingIndex: [1],
+        leftOffsetCount: 7,
+        mainBranchIndex: _dBranchIndex,
+        mainCurrentRowLabel: 'Ряд 1',
       ),
-      _generateSeatPlaces(
-        length: 21,
-        emptyPlaces: [],
-        spacePlace: [1],
-        addEmptyLeft: 8,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 0',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 0,
+        rowLength: 21,
+        mainBranchIndex: _dBranchIndex,
+        emptySpacingIndex: [],
+        halfSpacingIndex: [1],
+        leftOffsetCount: 8,
+        mainCurrentRowLabel: 'Ряд 0',
       ),
     ];
   }
 
-  List<SeatRowPlace> generateEBlock() {
+  List<SeatRowPlaceV2> generateEBlock() {
     return [
-      _generateSeatPlaces(
-          length: _EBlockMaxPlaces,
-          emptyPlaces: [],
-          addEmptyLeft: 0,
-          addEmptyRight: 0,
-          spacePlace: [],
-          seatRowPlaceText: 'Ряд 7'),
-      _generateSeatPlaces(
-          length: _EBlockMaxPlaces - 6,
-          emptyPlaces: [],
-          addEmptyLeft: 3,
-          addEmptyRight: 0,
-          spacePlace: [],
-          seatRowPlaceText: 'Ряд 6'),
-      _generateSeatPlaces(
-          length: _EBlockMaxPlaces - 8,
-          emptyPlaces: [],
-          addEmptyLeft: 4,
-          addEmptyRight: 0,
-          spacePlace: [1],
-          seatRowPlaceText: 'Ряд 5'),
-      _generateSeatPlaces(
-          length: _EBlockMaxPlaces - 10,
-          emptyPlaces: [],
-          addEmptyLeft: 5,
-          addEmptyRight: 0,
-          spacePlace: [],
-          seatRowPlaceText: 'Ряд 4'),
-      _generateSeatPlaces(
-          length: _EBlockMaxPlaces - 12,
-          emptyPlaces: [],
-          addEmptyLeft: 6,
-          addEmptyRight: 0,
-          spacePlace: [],
-          seatRowPlaceText: 'Ряд 3'),
-      _generateSeatPlaces(
-          length: _EBlockMaxPlaces - 12,
-          emptyPlaces: [],
-          addEmptyLeft: 6,
-          addEmptyRight: 0,
-          spacePlace: [1],
-          seatRowPlaceText: 'Ряд 2'),
-      _generateSeatPlaces(
-          length: _EBlockMaxPlaces - 14,
-          emptyPlaces: [],
-          addEmptyLeft: 7,
-          addEmptyRight: 0,
-          spacePlace: [1],
-          seatRowPlaceText: 'Ряд 1'),
-      _generateSeatPlaces(
-          length: _EBlockMaxPlaces - 16,
-          emptyPlaces: [],
-          addEmptyLeft: 8,
-          addEmptyRight: 0,
-          spacePlace: [1],
-          seatRowPlaceText: 'Ряд 1'),
-    ];
-  }
-
-  List<SeatRowPlace> generateFBlock() {
-    return [
-      _generateSeatPlaces(
-        length: 28,
-        emptyPlaces: [],
-        spacePlace: [9, 16],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 7',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 7,
+        rowLength: _EBlockMaxPlaces,
+        mainBranchIndex: _eBranchIndex,
+        emptySpacingIndex: [],
+        leftOffsetCount: 0,
+        halfSpacingIndex: [],
+        mainCurrentRowLabel: 'Ряд 7',
       ),
-      _generateSeatPlaces(
-        length: 27,
-        emptyPlaces: [20],
-        spacePlace: [1],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 6',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 6,
+        rowLength: _EBlockMaxPlaces - 6,
+        mainBranchIndex: _eBranchIndex,
+        emptySpacingIndex: [],
+        leftOffsetCount: 3,
+        halfSpacingIndex: [],
+        mainCurrentRowLabel: 'Ряд 6',
       ),
-      _generateSeatPlaces(
-        length: 27,
-        emptyPlaces: [19],
-        spacePlace: [],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 5',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 5,
+        rowLength: _EBlockMaxPlaces - 8,
+        mainBranchIndex: _eBranchIndex,
+        emptySpacingIndex: [],
+        leftOffsetCount: 4,
+        halfSpacingIndex: [1],
+        mainCurrentRowLabel: 'Ряд 5',
       ),
-      _generateSeatPlaces(
-        length: 27,
-        emptyPlaces: [19],
-        spacePlace: [1],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 4',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 4,
+        rowLength: _EBlockMaxPlaces - 10,
+        mainBranchIndex: _eBranchIndex,
+        emptySpacingIndex: [],
+        leftOffsetCount: 5,
+        halfSpacingIndex: [],
+        mainCurrentRowLabel: 'Ряд 4',
       ),
-      _generateSeatPlaces(
-        length: 25,
-        emptyPlaces: [17],
-        spacePlace: [],
-        addEmptyLeft: 1,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 3',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 3,
+        rowLength: _EBlockMaxPlaces - 12,
+        mainBranchIndex: _eBranchIndex,
+        emptySpacingIndex: [],
+        leftOffsetCount: 6,
+        halfSpacingIndex: [],
+        mainCurrentRowLabel: 'Ряд 3',
       ),
-      _generateSeatPlaces(
-        length: 25,
-        emptyPlaces: [17],
-        spacePlace: [1],
-        addEmptyLeft: 1,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 2',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 2,
+        rowLength: _EBlockMaxPlaces - 12,
+        mainBranchIndex: _eBranchIndex,
+        emptySpacingIndex: [],
+        leftOffsetCount: 6,
+        halfSpacingIndex: [1],
+        mainCurrentRowLabel: 'Ряд 2',
       ),
-      _generateSeatPlaces(
-        length: 24,
-        emptyPlaces: [15],
-        spacePlace: [],
-        addEmptyLeft: 2,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 1',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 1,
+        rowLength: _EBlockMaxPlaces - 14,
+        mainBranchIndex: _eBranchIndex,
+        emptySpacingIndex: [],
+        leftOffsetCount: 7,
+        halfSpacingIndex: [1],
+        mainCurrentRowLabel: 'Ряд 1',
       ),
-      _generateSeatPlaces(
-        length: 14,
-        emptyPlaces: [],
-        spacePlace: [],
-        addEmptyLeft: 2,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 0',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 0,
+        rowLength: _EBlockMaxPlaces - 16,
+        mainBranchIndex: _eBranchIndex,
+        emptySpacingIndex: [],
+        leftOffsetCount: 8,
+        halfSpacingIndex: [1],
+        mainCurrentRowLabel: 'Ряд 0',
       ),
     ];
   }
 
-  List<SeatRowPlace> generateGBlock() {
+  List<SeatRowPlaceV2> generateFBlock() {
     return [
-      _generateSeatPlaces(
-        length: 57,
-        emptyPlaces: [27, 35, 45],
-        spacePlace: [9, 18, 36, 54],
-        addEmptyLeft: 1,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 7',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 7,
+        rowLength: 28,
+        emptySpacingIndex: [],
+        halfSpacingIndex: [9, 16],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 7',
+        mainBranchIndex: _fBranchIndex,
       ),
-      _generateSeatPlaces(
-        length: 56,
-        emptyPlaces: [2, 10, 18, 27, 28, 36, 37, 44, 45, 54, 55],
-        spacePlace: [19, 46],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 6',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 6,
+        rowLength: 27,
+        emptySpacingIndex: [20],
+        halfSpacingIndex: [1],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 6',
+        mainBranchIndex: _fBranchIndex,
       ),
-      _generateSeatPlaces(
-        length: 56,
-        emptyPlaces: [10, 18, 27, 36, 44, 54],
-        spacePlace: [19, 45],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 5',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 5,
+        rowLength: 27,
+        emptySpacingIndex: [19],
+        halfSpacingIndex: [],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 5',
+        mainBranchIndex: _fBranchIndex,
       ),
-      _generateSeatPlaces(
-        length: 55,
-        emptyPlaces: [],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 4',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 4,
+        rowLength: 27,
+        emptySpacingIndex: [19],
+        halfSpacingIndex: [1],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 4',
+        mainBranchIndex: _fBranchIndex,
       ),
-      _generateSeatPlaces(
-        length: 55,
-        emptyPlaces: [],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 3',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 3,
+        rowLength: 25,
+        emptySpacingIndex: [17],
+        halfSpacingIndex: [],
+        leftOffsetCount: 1,
+        mainCurrentRowLabel: 'Ряд 3',
+        mainBranchIndex: _fBranchIndex,
       ),
-      _generateSeatPlaces(
-        length: 55,
-        emptyPlaces: [],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 2',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 2,
+        rowLength: 25,
+        emptySpacingIndex: [17],
+        halfSpacingIndex: [1],
+        leftOffsetCount: 1,
+        mainCurrentRowLabel: 'Ряд 2',
+        mainBranchIndex: _fBranchIndex,
       ),
-      _generateSeatPlaces(
-        length: 55,
-        emptyPlaces: [],
-        addEmptyLeft: 0,
-        addEmptyRight: 0,
-        seatRowPlaceText: 'Ряд 1',
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 1,
+        rowLength: 24,
+        emptySpacingIndex: [15],
+        halfSpacingIndex: [],
+        leftOffsetCount: 2,
+        mainCurrentRowLabel: 'Ряд 1',
+        mainBranchIndex: _fBranchIndex,
+      ),
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 0,
+        rowLength: 14,
+        emptySpacingIndex: [],
+        halfSpacingIndex: [],
+        leftOffsetCount: 2,
+        mainCurrentRowLabel: 'Ряд 0',
+        mainBranchIndex: _fBranchIndex,
+      ),
+    ];
+  }
+
+  List<SeatRowPlaceV2> generateGBlock() {
+    return [
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 7,
+        rowLength: 57,
+        emptySpacingIndex: [27, 35, 45],
+        halfSpacingIndex: [9, 18, 36, 54],
+        leftOffsetCount: 1,
+        mainCurrentRowLabel: 'Ряд 7',
+        mainBranchIndex: _gBranchIndex,
+      ),
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 6,
+        rowLength: 56,
+        emptySpacingIndex: [2, 10, 18, 27, 28, 36, 37, 44, 45, 54, 55],
+        halfSpacingIndex: [19, 46],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 6',
+        mainBranchIndex: _gBranchIndex,
+      ),
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 5,
+        rowLength: 56,
+        emptySpacingIndex: [10, 18, 27, 36, 44, 54],
+        halfSpacingIndex: [19, 45],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 5',
+        mainBranchIndex: _gBranchIndex,
+      ),
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 4,
+        rowLength: 55,
+        emptySpacingIndex: [],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 4',
+        mainBranchIndex: _gBranchIndex,
+      ),
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 3,
+        rowLength: 55,
+        emptySpacingIndex: [],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 3',
+        mainBranchIndex: _gBranchIndex,
+      ),
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 2,
+        rowLength: 55,
+        emptySpacingIndex: [],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 2',
+        mainBranchIndex: _gBranchIndex,
+      ),
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowIndex: 1,
+        rowLength: 55,
+        emptySpacingIndex: [],
+        leftOffsetCount: 0,
+        mainCurrentRowLabel: 'Ряд 1',
+        mainBranchIndex: _gBranchIndex,
       ),
     ];
   }
 }
+
+const _bBranchIndex = 1;
+const _cBranchIndex = 2;
+const _dBranchIndex = 3;
+const _eBranchIndex = 4;
+const _fBranchIndex = 5;
+const _gBranchIndex = 6;
 
 const _BBlockMaxPlaces = 54;
 const _CBlockMaxPlaces = 32;
 const _DBlockMaxPlaces = 47;
 const _EBlockMaxPlaces = 42;
-
-SeatRowPlace _generateSeatPlaces({
-  required int length,
-  required List<int> emptyPlaces,
-  required int addEmptyLeft,
-  required int addEmptyRight,
-  String? seatRowPlaceText,
-  List<int> blockedPlace = const [],
-  List<int> spacePlace = const [],
-}) {
-  int placeNumber = 1;
-
-  final places = List<SeatPlace>.generate(
-    length,
-    (index) {
-      final innerPlace = index + 1;
-
-      if (spacePlace.contains(innerPlace)) {
-        return const SeatPlace(
-          seatState: SeatState.space,
-          seatPlace: -1,
-        );
-      }
-
-      if (blockedPlace.contains(innerPlace)) {
-        return SeatPlace(
-          seatState: SeatState.empty,
-          seatPlace: placeNumber++,
-        );
-      }
-
-      if (emptyPlaces.contains(innerPlace)) {
-        return const SeatPlace(
-          seatState: SeatState.empty,
-          seatPlace: -1,
-        );
-      }
-
-      return SeatPlace(
-        seatState: SeatState.unselected,
-        seatPlace: placeNumber++,
-      );
-    },
-  );
-
-  final seatPlaces = [
-    ...List.generate(
-      addEmptyLeft,
-      (index) => const SeatPlace(
-        seatState: SeatState.empty,
-        seatPlace: -1,
-      ),
-    ),
-    ...places,
-    ...List.generate(
-      addEmptyRight,
-      (index) => const SeatPlace(
-        seatState: SeatState.empty,
-        seatPlace: -1,
-      ),
-    ),
-  ];
-
-  return SeatRowPlace(
-    rowPlaceLabel: seatRowPlaceText ?? '-',
-    seatPlaces: seatPlaces,
-  );
-}
