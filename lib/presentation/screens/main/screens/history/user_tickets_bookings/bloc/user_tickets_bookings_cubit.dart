@@ -1,3 +1,6 @@
+import 'package:eticket/data/models/history/user_bookings_dto/user_bookings_dto.dart';
+import 'package:eticket/data/models/history/user_tickets_bookings_dto/user_tickets_bookings_dto.dart';
+import 'package:eticket/data/sembast_database/sembast_database.dart';
 import 'package:eticket/domain/repository/booking_repository.dart';
 import 'package:eticket/presentation/screens/main/screens/history/user_tickets_bookings/bloc/user_tickets_bookings_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,6 +34,15 @@ class UserTicketsBookingsCubit extends Cubit<UserTicketsBookingsState> {
     emit(
       const UserTicketsBookingsState.initial(),
     );
+  }
+
+  Future<void> saveUserBookingsToDatabase(
+      List<UserTicketsBookingsDto> userBookings) async {
+    try {
+      await SembastDatabase.instance.saveUserBookings(userBookings);
+    } catch (e) {
+      print("Error saving data to Sembast: $e");
+    }
   }
 
   factory UserTicketsBookingsCubit.initialize() {

@@ -26,7 +26,7 @@ class HistoryView extends HookWidget {
             _,
             errorMessage,
           ) =>
-              SliverToBoxAdapter(
+              Center(
             child: DataFetchFailure(
               error: errorMessage,
               onTryLoadAgain: () =>

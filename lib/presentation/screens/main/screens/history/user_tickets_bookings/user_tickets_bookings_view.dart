@@ -18,6 +18,7 @@ class UserTicketsBookingsView extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final bookingsState = context.watch<UserTicketsBookingsCubit>().state;
+
     return Padding(
         padding:
             EdgeInsets.symmetric(horizontal: kDefaultPadding, vertical: 15.h),
@@ -27,7 +28,7 @@ class UserTicketsBookingsView extends HookWidget {
           error: (
             errorMessage,
           ) =>
-              SliverToBoxAdapter(
+              Center(
             child: DataFetchFailure(
               error: errorMessage,
               onTryLoadAgain: () => context
@@ -48,6 +49,9 @@ class UserTicketsBookingsView extends HookWidget {
                 itemBuilder: (context, i) {
                   final booking = bookingsList[i];
 
+                  context
+                      .read<UserTicketsBookingsCubit>()
+                      .saveUserBookingsToDatabase(bookingsList);
                   return UserTicketContainerView(
                     bookingTicket: booking,
                     arrayBookingTicket: bookingsList,
