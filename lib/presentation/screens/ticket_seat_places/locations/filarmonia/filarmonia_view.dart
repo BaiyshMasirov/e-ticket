@@ -27,6 +27,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop7PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 7',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _topBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
@@ -35,6 +36,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop6PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 6',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _topBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
@@ -43,6 +45,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop6PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 5',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _topBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
@@ -51,6 +54,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop6PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 4',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _topBranchIndex,
         ),
 
@@ -70,6 +74,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop6PlacesNotExist,
           leftOffsetCount: _rowTop3To1EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 3',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _topBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
@@ -78,6 +83,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop2PlacesNotExist,
           leftOffsetCount: _rowTop3To1EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 2',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _topBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
@@ -86,6 +92,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop1PlacesNotExist,
           leftOffsetCount: _rowTop3To1EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 1',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _topBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
@@ -103,6 +110,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop16PlacesNotExist,
           leftOffsetCount: _rowTop21To16EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 16',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ),
         //endregion
@@ -113,6 +121,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop15PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 15',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ), //2
         SeatGenerator.generateSeatPlaces(
@@ -121,6 +130,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop15PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 14',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ), //2
         SeatGenerator.generateSeatPlaces(
@@ -129,6 +139,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop15PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 13',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ), //2
         SeatGenerator.generateSeatPlaces(
@@ -137,6 +148,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop15PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 12',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ),
 
@@ -146,6 +158,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop15PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 11',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
@@ -154,6 +167,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop15PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 10',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
@@ -162,6 +176,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop15PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 9',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ),
 
@@ -179,6 +194,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop15PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 8',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
@@ -187,6 +203,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop15PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 7',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
@@ -195,6 +212,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop15PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 6',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
@@ -203,6 +221,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop15PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 5',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
@@ -211,6 +230,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop4PlacesNotExist,
           leftOffsetCount: _rowTop15To4EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 4',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ),
         // endregion
@@ -221,6 +241,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTop3PlacesNotExist,
           leftOffsetCount: _rowTop3To1EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 3',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
@@ -229,6 +250,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTopPart2PlacesNotExist,
           leftOffsetCount: _rowTop3To1EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 2',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
@@ -237,6 +259,7 @@ class FilarmoniaView extends HookWidget {
           emptySpacingIndex: _rowTopPart1PlacesNotExist,
           leftOffsetCount: _rowTop3To1EmptyLeftPlaces,
           mainCurrentRowLabel: 'Ряд 1',
+          textLabelSpacingIndex: [1, 57],
           mainBranchIndex: _lowerBranchIndex,
         ),
 
@@ -289,8 +312,8 @@ const _lowerBranchIndex = 2;
 
 const _maxPlaces = 55;
 
-const _rowTop7To4PlaceCount = 55;
-const _rowTop16To4PlaceCount = 55;
+const _rowTop7To4PlaceCount = 57;
+const _rowTop16To4PlaceCount = 57;
 
 const _rowTop21To16EmptyLeftPlaces = 0;
 
@@ -306,50 +329,50 @@ final _emptyRowPlaces = List.generate(_maxPlaces, (index) => index + 1);
 /// [_rowTop25To16PlaceCount]
 
 final _rowTop7PlacesNotExist = [
-  ...List.generate(2, (index) => index + 1),
-  ...List.generate(7, (index) => index + 51),
+  ...List.generate(3, (index) => index + 1),
+  ...List.generate(6, (index) => index + 52),
 ];
 final _rowTop6PlacesNotExist = [
-  ...List.generate(3, (index) => index + 1),
-  ...List.generate(7, (index) => index + 51),
+  ...List.generate(4, (index) => index + 1),
+  ...List.generate(6, (index) => index + 52),
 ];
 
 final _rowTop2PlacesNotExist = [
-  ...List.generate(4, (index) => index + 1),
-  ...List.generate(7, (index) => index + 51),
+  ...List.generate(5, (index) => index + 1),
+  ...List.generate(6, (index) => index + 52),
 ];
 final _rowTop1PlacesNotExist = [
-  ...List.generate(5, (index) => index + 1),
-  ...List.generate(6, (index) => index + 50),
+  ...List.generate(6, (index) => index + 1),
+  ...List.generate(6, (index) => index + 51),
 ];
 
 final _rowTop16PlacesNotExist = [0];
 
-final _rowTop15PlacesNotExist = [0, 17, 18, 37, 38, 55];
+final _rowTop15PlacesNotExist = [1, 17, 18, 37, 38, 56];
 
 /// [_rowTop15To4PlaceCount]
 
 final _rowTop4PlacesNotExist = [
-  ...List.generate(3, (index) => index + 53),
+  ...List.generate(3, (index) => index + 54),
   ...List.generate(2, (index) => index + 37),
-  ...List.generate(3, (index) => index + 0),
+  ...List.generate(3, (index) => index + 1),
   ...List.generate(2, (index) => index + 17),
 ];
 final _rowTop3PlacesNotExist = [
-  ...List.generate(4, (index) => index + 52),
+  ...List.generate(4, (index) => index + 53),
   ...List.generate(2, (index) => index + 37),
-  ...List.generate(3, (index) => index + 0),
+  ...List.generate(3, (index) => index + 1),
   ...List.generate(2, (index) => index + 17),
 ];
 final _rowTopPart2PlacesNotExist = [
-  ...List.generate(4, (index) => index + 52),
+  ...List.generate(4, (index) => index + 53),
   ...List.generate(2, (index) => index + 37),
-  ...List.generate(4, (index) => index + 0),
+  ...List.generate(4, (index) => index + 1),
   ...List.generate(2, (index) => index + 17),
 ];
 final _rowTopPart1PlacesNotExist = [
-  ...List.generate(5, (index) => index + 51),
+  ...List.generate(5, (index) => index + 52),
   ...List.generate(2, (index) => index + 37),
-  ...List.generate(5, (index) => index + 0),
+  ...List.generate(5, (index) => index + 1),
   ...List.generate(2, (index) => index + 17),
 ];
