@@ -28,48 +28,47 @@ class AppScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async => context.router.canPop(),
-      child: Scaffold(
-        appBar: _buildAppBar(),
-        floatingActionButton: floatingActionButton,
-        floatingActionButtonLocation: floatingActionButtonLocation,
-        extendBodyBehindAppBar: extendBodyBehindAppBar,
-        body: Stack(
-          fit: StackFit.expand,
-          children: [
-            body,
-            Visibility(
-              visible: isLoadingFunc?.call(context) ?? false,
-              child: AbsorbPointer(
-                absorbing: true,
-                child: Stack(
-                  children: [
-                    Center(
-                      child: Assets.lotties.loading.lottie(
-                        width: 300.w,
-                        fit: BoxFit.fitWidth,
-                      ),
-                    ),
-                    BackdropFilter(
-                      filter: ImageFilter.blur(
-                        sigmaY: 15,
-                        sigmaX: 15,
-                        tileMode: TileMode.mirror,
-                      ),
-                      child: Center(
-                        child: Assets.lotties.loading.lottie(
-                          width: 80.w,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
-          ],
+    return Stack(
+      children: [
+        WillPopScope(
+          onWillPop: () async => context.router.canPop(),
+          child: Scaffold(
+            appBar: _buildAppBar(),
+            floatingActionButton: floatingActionButton,
+            floatingActionButtonLocation: floatingActionButtonLocation,
+            extendBodyBehindAppBar: extendBodyBehindAppBar,
+            body: body,
+          ),
         ),
-      ),
+        Visibility(
+          visible: isLoadingFunc?.call(context) ?? false,
+          child: AbsorbPointer(
+            absorbing: true,
+            child: Stack(
+              children: [
+                Center(
+                  child: Assets.lotties.loading.lottie(
+                    width: 300.w,
+                    fit: BoxFit.fitWidth,
+                  ),
+                ),
+                BackdropFilter(
+                  filter: ImageFilter.blur(
+                    sigmaY: 15,
+                    sigmaX: 15,
+                    tileMode: TileMode.mirror,
+                  ),
+                  child: Center(
+                    child: Assets.lotties.loading.lottie(
+                      width: 80.w,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 
