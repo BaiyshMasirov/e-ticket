@@ -49,9 +49,6 @@ class UserTicketsBookingsView extends HookWidget {
                 itemBuilder: (context, i) {
                   final booking = bookingsList[i];
 
-                  context
-                      .read<UserTicketsBookingsCubit>()
-                      .saveUserBookingsToDatabase(bookingsList);
                   return UserTicketContainerView(
                     bookingTicket: booking,
                     arrayBookingTicket: bookingsList,

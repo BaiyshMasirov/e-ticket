@@ -23,9 +23,10 @@ class $AssetsImagesGen {
   AssetGenImage get blankTicket =>
       const AssetGenImage('assets/images/blank_ticket.png');
 
+  $AssetsImagesPaymentsGen get payments => const $AssetsImagesPaymentsGen();
+
   /// File path: assets/images/ticket.png
   AssetGenImage get ticket => const AssetGenImage('assets/images/ticket.png');
-  $AssetsImagesPaymentsGen get payments => const $AssetsImagesPaymentsGen();
 
   /// List of all assets
   List<AssetGenImage> get values => [bishkekArena, blankTicket, ticket];
