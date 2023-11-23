@@ -35,7 +35,10 @@ extension DioX on Dio {
       )
       ..interceptors.addAll([
         authInterceptor,
-        LogInterceptor(requestBody: true),
+        LogInterceptor(
+          requestBody: true,
+          responseBody: true,
+        ),
       ]);
   }
 
@@ -45,7 +48,10 @@ extension DioX on Dio {
         baseUrl: serverUrl,
         contentType: HttpConstants.jsonContentType,
       )
-      ..interceptors.add(LogInterceptor(requestBody: true));
+      ..interceptors.add(LogInterceptor(
+        requestBody: true,
+        responseBody: true,
+      ));
   }
 
   static Future<FormData> buildMultiPartWithMultipleFile({

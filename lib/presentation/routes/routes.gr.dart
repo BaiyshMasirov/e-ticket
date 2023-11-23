@@ -9,8 +9,9 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i16;
-import 'package:eticket/common/common.dart' as _i22;
-import 'package:eticket/data/data.dart' as _i19;
+import 'package:eticket/common/common.dart' as _i23;
+import 'package:eticket/data/data.dart' as _i20;
+import 'package:eticket/data/models/models.dart' as _i17;
 import 'package:eticket/presentation/screens/auth/login/login_screen.dart'
     as _i6;
 import 'package:eticket/presentation/screens/auth/register/register_screen.dart'
@@ -20,7 +21,7 @@ import 'package:eticket/presentation/screens/events_by_type/events_by_type_scree
     as _i4;
 import 'package:eticket/presentation/screens/main/main_screen.dart' as _i7;
 import 'package:eticket/presentation/screens/main/models/main_screen_tab.dart'
-    as _i21;
+    as _i22;
 import 'package:eticket/presentation/screens/main/screens/categories/categories_screen.dart'
     as _i2;
 import 'package:eticket/presentation/screens/main/screens/history/history_screen/history_screen.dart'
@@ -37,13 +38,13 @@ import 'package:eticket/presentation/screens/splash/splash_screen.dart' as _i12;
 import 'package:eticket/presentation/screens/ticket_seat_places/locations/bishkek_arena/bishkek_arena_places/bishkek_arena_places_screen.dart'
     as _i1;
 import 'package:eticket/presentation/screens/ticket_seat_places/locations/bishkek_arena/models/models.dart'
-    as _i17;
+    as _i18;
 import 'package:eticket/presentation/screens/ticket_seat_places/ticket_seat_places_screen.dart'
     as _i13;
 import 'package:eticket/presentation/screens/ticket_standing_places/ticket_standing_places_screen.dart'
     as _i14;
-import 'package:flutter/cupertino.dart' as _i20;
-import 'package:flutter/material.dart' as _i18;
+import 'package:flutter/cupertino.dart' as _i21;
+import 'package:flutter/material.dart' as _i19;
 
 abstract class $AppRouter extends _i16.RootStackRouter {
   $AppRouter({super.navigatorKey});
@@ -55,6 +56,7 @@ abstract class $AppRouter extends _i16.RootStackRouter {
       return _i16.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i1.BishkekArenaPlacesScreen(
+          tickets: args.tickets,
           blockType: args.blockType,
           key: args.key,
         ),
@@ -179,12 +181,14 @@ abstract class $AppRouter extends _i16.RootStackRouter {
 class BishkekArenaPlacesRoute
     extends _i16.PageRouteInfo<BishkekArenaPlacesRouteArgs> {
   BishkekArenaPlacesRoute({
-    required _i17.BishkekArenaBlockType blockType,
-    _i18.Key? key,
+    required List<_i17.TicketDto> tickets,
+    required _i18.BishkekArenaBlockType blockType,
+    _i19.Key? key,
     List<_i16.PageRouteInfo>? children,
   }) : super(
           BishkekArenaPlacesRoute.name,
           args: BishkekArenaPlacesRouteArgs(
+            tickets: tickets,
             blockType: blockType,
             key: key,
           ),
@@ -199,17 +203,20 @@ class BishkekArenaPlacesRoute
 
 class BishkekArenaPlacesRouteArgs {
   const BishkekArenaPlacesRouteArgs({
+    required this.tickets,
     required this.blockType,
     this.key,
   });
 
-  final _i17.BishkekArenaBlockType blockType;
+  final List<_i17.TicketDto> tickets;
 
-  final _i18.Key? key;
+  final _i18.BishkekArenaBlockType blockType;
+
+  final _i19.Key? key;
 
   @override
   String toString() {
-    return 'BishkekArenaPlacesRouteArgs{blockType: $blockType, key: $key}';
+    return 'BishkekArenaPlacesRouteArgs{tickets: $tickets, blockType: $blockType, key: $key}';
   }
 }
 
@@ -231,8 +238,8 @@ class CategoriesRoute extends _i16.PageRouteInfo<void> {
 /// [_i3.EventScreen]
 class EventRoute extends _i16.PageRouteInfo<EventRouteArgs> {
   EventRoute({
-    required _i19.EventDto event,
-    _i20.Key? key,
+    required _i20.EventDto event,
+    _i21.Key? key,
     List<_i16.PageRouteInfo>? children,
   }) : super(
           EventRoute.name,
@@ -255,9 +262,9 @@ class EventRouteArgs {
     this.key,
   });
 
-  final _i19.EventDto event;
+  final _i20.EventDto event;
 
-  final _i20.Key? key;
+  final _i21.Key? key;
 
   @override
   String toString() {
@@ -269,8 +276,8 @@ class EventRouteArgs {
 /// [_i4.EventsByTypeScreen]
 class EventsByTypeRoute extends _i16.PageRouteInfo<EventsByTypeRouteArgs> {
   EventsByTypeRoute({
-    required _i19.KeyValueMapDto eventKeyValue,
-    _i18.Key? key,
+    required _i20.KeyValueMapDto eventKeyValue,
+    _i19.Key? key,
     List<_i16.PageRouteInfo>? children,
   }) : super(
           EventsByTypeRoute.name,
@@ -293,9 +300,9 @@ class EventsByTypeRouteArgs {
     this.key,
   });
 
-  final _i19.KeyValueMapDto eventKeyValue;
+  final _i20.KeyValueMapDto eventKeyValue;
 
-  final _i18.Key? key;
+  final _i19.Key? key;
 
   @override
   String toString() {
@@ -335,8 +342,8 @@ class LoginRoute extends _i16.PageRouteInfo<void> {
 /// [_i7.MainScreen]
 class MainRoute extends _i16.PageRouteInfo<MainRouteArgs> {
   MainRoute({
-    _i21.MAIN_SCREEN_TAB initialTab = _i21.MAIN_SCREEN_TAB.HOME,
-    _i18.Key? key,
+    _i22.MAIN_SCREEN_TAB initialTab = _i22.MAIN_SCREEN_TAB.HOME,
+    _i19.Key? key,
     List<_i16.PageRouteInfo>? children,
   }) : super(
           MainRoute.name,
@@ -355,13 +362,13 @@ class MainRoute extends _i16.PageRouteInfo<MainRouteArgs> {
 
 class MainRouteArgs {
   const MainRouteArgs({
-    this.initialTab = _i21.MAIN_SCREEN_TAB.HOME,
+    this.initialTab = _i22.MAIN_SCREEN_TAB.HOME,
     this.key,
   });
 
-  final _i21.MAIN_SCREEN_TAB initialTab;
+  final _i22.MAIN_SCREEN_TAB initialTab;
 
-  final _i18.Key? key;
+  final _i19.Key? key;
 
   @override
   String toString() {
@@ -444,9 +451,9 @@ class SplashRoute extends _i16.PageRouteInfo<void> {
 class TicketSeatPlacesRoute
     extends _i16.PageRouteInfo<TicketSeatPlacesRouteArgs> {
   TicketSeatPlacesRoute({
-    required _i22.LocationType locationType,
+    required _i23.LocationType locationType,
     required String eventId,
-    _i18.Key? key,
+    _i19.Key? key,
     List<_i16.PageRouteInfo>? children,
   }) : super(
           TicketSeatPlacesRoute.name,
@@ -471,11 +478,11 @@ class TicketSeatPlacesRouteArgs {
     this.key,
   });
 
-  final _i22.LocationType locationType;
+  final _i23.LocationType locationType;
 
   final String eventId;
 
-  final _i18.Key? key;
+  final _i19.Key? key;
 
   @override
   String toString() {
@@ -490,7 +497,7 @@ class TicketStandingPlacesRoute
   TicketStandingPlacesRoute({
     required String eventId,
     required DateTime dateTime,
-    _i18.Key? key,
+    _i19.Key? key,
     List<_i16.PageRouteInfo>? children,
   }) : super(
           TicketStandingPlacesRoute.name,
@@ -519,7 +526,7 @@ class TicketStandingPlacesRouteArgs {
 
   final DateTime dateTime;
 
-  final _i18.Key? key;
+  final _i19.Key? key;
 
   @override
   String toString() {
@@ -533,7 +540,7 @@ class UserTicketsBookingsRoute
     extends _i16.PageRouteInfo<UserTicketsBookingsRouteArgs> {
   UserTicketsBookingsRoute({
     required String tiketId,
-    _i18.Key? key,
+    _i19.Key? key,
     List<_i16.PageRouteInfo>? children,
   }) : super(
           UserTicketsBookingsRoute.name,
@@ -558,7 +565,7 @@ class UserTicketsBookingsRouteArgs {
 
   final String tiketId;
 
-  final _i18.Key? key;
+  final _i19.Key? key;
 
   @override
   String toString() {

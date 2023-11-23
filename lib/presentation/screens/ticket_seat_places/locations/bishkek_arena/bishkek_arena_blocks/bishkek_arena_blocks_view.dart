@@ -47,7 +47,10 @@ class BishkekArenaBlocksView extends StatelessWidget {
                     title: e.name.toUpperCase(),
                     onPressed: () {
                       context.navigateTo(
-                        BishkekArenaPlacesRoute(blockType: e),
+                        BishkekArenaPlacesRoute(
+                          blockType: e,
+                          tickets: tickets,
+                        ),
                       );
                     },
                   ))

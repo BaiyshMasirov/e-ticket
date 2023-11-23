@@ -28,6 +28,7 @@ class BalletTheaterView extends HookWidget {
     final places = [
       /// region top places
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 33,
         mainBranchIndex: _topBranchIndex,
         mainCurrentRowIndex: _top5RowNumber,
@@ -39,6 +40,7 @@ class BalletTheaterView extends HookWidget {
         secondarySeatPlaces: [],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         mainBranchIndex: _topBranchIndex,
         rowLength: 35,
         mainCurrentRowIndex: _top4RowNumber,
@@ -50,6 +52,7 @@ class BalletTheaterView extends HookWidget {
         secondarySeatPlaces: [],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         mainBranchIndex: _topBranchIndex,
         rowLength: 40,
         beginPlaceNumber: 10,
@@ -77,6 +80,7 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         mainBranchIndex: _topBranchIndex,
         rowLength: 42,
         beginPlaceNumber: 14,
@@ -118,6 +122,7 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         mainBranchIndex: _topBranchIndex,
         rowLength: 43,
         mainCurrentRowIndex: _top1RowNumber,
@@ -185,6 +190,7 @@ class BalletTheaterView extends HookWidget {
       /// endregion top places
       // region empty places
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         mainBranchIndex: -1,
         rowLength: 44,
         mainCurrentRowIndex: -1,
@@ -231,6 +237,7 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         mainBranchIndex: -1,
         rowLength: 44,
         mainCurrentRowIndex: -1,
@@ -279,6 +286,7 @@ class BalletTheaterView extends HookWidget {
       // endregion empty places
       //region middle places
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 44,
         mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle11RowNumber,
@@ -326,6 +334,7 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 44,
         mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle10RowNumber,
@@ -373,6 +382,7 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 47,
         mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle9RowNumber,
@@ -421,6 +431,7 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 46,
         mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle8RowNumber,
@@ -469,6 +480,7 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 46,
         mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle7RowNumber,
@@ -510,6 +522,7 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 48,
         mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle6RowNumber,
@@ -550,6 +563,7 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 47,
         mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle5RowNumber,
@@ -590,6 +604,7 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 50,
         mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle4RowNumber,
@@ -630,6 +645,7 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 49,
         mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle3RowNumber,
@@ -670,6 +686,7 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 49,
         mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle2RowNumber,
@@ -696,6 +713,7 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle1RowNumber,
@@ -709,6 +727,7 @@ class BalletTheaterView extends HookWidget {
       //endregion middle places
       //region empty places
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 1,
         mainBranchIndex: -1,
         mainCurrentRowIndex: -1,
@@ -718,6 +737,7 @@ class BalletTheaterView extends HookWidget {
       //endregion empty places
       //region lower places
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 39,
         mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower11RowNumber,
@@ -727,6 +747,7 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 7,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 39,
         mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower10RowNumber,
@@ -736,6 +757,7 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 7,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 39,
         mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower9RowNumber,
@@ -745,6 +767,7 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 7,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 39,
         mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower8RowNumber,
@@ -754,6 +777,7 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 7,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 37,
         mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower7RowNumber,
@@ -763,6 +787,7 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 8,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 37,
         mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower6RowNumber,
@@ -772,6 +797,7 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 8,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 35,
         mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower5RowNumber,
@@ -781,6 +807,7 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 9,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 33,
         mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower4RowNumber,
@@ -790,6 +817,7 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 10,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 31,
         mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower3RowNumber,
@@ -799,6 +827,7 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 11,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 29,
         mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower2RowNumber,
@@ -808,6 +837,7 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 12,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 27,
         mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower1RowNumber,

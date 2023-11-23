@@ -28,6 +28,7 @@ class RuDramTheaterView extends HookWidget {
 
     final places = [
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _18RowNumber,
         mainCurrentRowLabel: 'Ряд 18',
@@ -36,6 +37,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _17RowNumber,
         mainCurrentRowLabel: 'Ряд 17',
@@ -44,6 +46,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _16RowNumber,
         mainCurrentRowLabel: 'Ряд 16',
@@ -52,6 +55,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _15RowNumber,
         mainCurrentRowLabel: 'Ряд 15',
@@ -60,6 +64,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _14RowNumber,
         mainCurrentRowLabel: 'Ряд 14',
@@ -68,6 +73,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _13RowNumber,
         mainCurrentRowLabel: 'Ряд 13',
@@ -76,6 +82,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 1,
         mainCurrentRowIndex: _13RowNumber,
         mainCurrentRowLabel: '',
@@ -83,6 +90,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _12RowNumber,
         mainCurrentRowLabel: 'Ряд 12',
@@ -91,6 +99,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _11RowNumber,
         mainCurrentRowLabel: 'Ряд 11',
@@ -99,6 +108,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _10RowNumber,
         mainCurrentRowLabel: 'Ряд 10',
@@ -107,6 +117,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _9RowNumber,
         mainCurrentRowLabel: 'Ряд 9',
@@ -115,6 +126,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _8RowNumber,
         mainCurrentRowLabel: 'Ряд 8',
@@ -123,6 +135,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _7RowNumber,
         mainCurrentRowLabel: 'Ряд 7',
@@ -131,6 +144,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _6RowNumber,
         mainCurrentRowLabel: 'Ряд 6',
@@ -139,6 +153,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 1,
         mainCurrentRowIndex: -1,
         mainCurrentRowLabel: '',
@@ -146,6 +161,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: -1,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _5RowNumber,
         mainCurrentRowLabel: 'Ряд 5',
@@ -154,6 +170,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _4RowNumber,
         mainCurrentRowLabel: 'Ряд 4',
@@ -162,6 +179,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _3RowNumber,
         mainCurrentRowLabel: 'Ряд 3',
@@ -170,6 +188,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _2RowNumber,
         mainCurrentRowLabel: 'Ряд 2',
@@ -178,6 +197,7 @@ class RuDramTheaterView extends HookWidget {
         mainBranchIndex: _branchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 42,
         mainCurrentRowIndex: _1RowNumber,
         mainCurrentRowLabel: 'Ряд 1',

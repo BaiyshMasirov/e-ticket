@@ -26,6 +26,7 @@ class App extends StatelessWidget {
           listener: (context, state) => state.maybeWhen(
             authenticated: () {
               FlutterNativeSplash.remove();
+
               return _appRouter.pushAndPopUntil(
                 MainRoute(),
                 predicate: (route) => false,

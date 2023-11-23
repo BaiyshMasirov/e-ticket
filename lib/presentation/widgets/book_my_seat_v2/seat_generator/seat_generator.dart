@@ -1,12 +1,18 @@
 import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:collection/collection.dart';
+import 'package:eticket/data/models/models.dart';
 
 class SeatGenerator {
   static SeatRowPlaceV2 generateSeatPlaces({
     required int rowLength,
+
+    /// seat place rows number
     required int mainCurrentRowIndex,
     required String mainCurrentRowLabel,
+
+    /// branch of row
     required int mainBranchIndex,
+    required List<TicketDto> tickets,
     int leftOffsetCount = 0,
     int beginPlaceNumber = 1,
     List<int> blockedPlacesNumber = const [],
@@ -19,7 +25,7 @@ class SeatGenerator {
 
     final places = List<SeatPlaceV2?>.generate(
       rowLength,
-          (index) {
+      (index) {
         final innerPlace = index + 1;
 
         if (blockedPlacesNumber.contains(placeNumber)) {
@@ -54,14 +60,25 @@ class SeatGenerator {
         }
 
         final secondaryPlace = secondarySeatPlaces.firstWhereOrNull(
-              (place) => place.placeIndex == innerPlace,
+          (place) => place.placeIndex == innerPlace,
         );
 
+        final rowIndex = secondaryPlace?.currentRowIndex ?? mainCurrentRowIndex;
+        final rowLabel = secondaryPlace?.rowLabel ?? mainCurrentRowLabel;
+        final seatPlace = secondaryPlace?.placeNumber ?? placeNumber++;
+
+        final isPlaceAvailable = tickets.any((t) =>
+            t.branchType == mainBranchIndex &&
+            t.rowNumber == rowIndex &&
+            t.placeNumber == seatPlace);
+
         return SeatPlaceV2(
-          currentRowIndex: secondaryPlace?.currentRowIndex ?? mainCurrentRowIndex,
-          rowLabel: secondaryPlace?.rowLabel ?? mainCurrentRowLabel,
-          seatState: PlaceStateV2.unselected,
-          seatPlace: secondaryPlace?.placeNumber ?? placeNumber++,
+          currentRowIndex: rowIndex,
+          rowLabel: rowLabel,
+          seatState: isPlaceAvailable
+              ? PlaceStateV2.unselected
+              : PlaceStateV2.disabled,
+          seatPlace: seatPlace,
         );
       },
     );
@@ -69,7 +86,7 @@ class SeatGenerator {
     final seatPlaces = [
       ...List.generate(
         leftOffsetCount,
-            (index) => SeatPlaceV2(
+        (index) => SeatPlaceV2(
           rowLabel: mainCurrentRowLabel,
           currentRowIndex: mainCurrentRowIndex,
           seatState: PlaceStateV2.empty,

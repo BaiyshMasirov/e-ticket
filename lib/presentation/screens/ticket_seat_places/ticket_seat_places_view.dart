@@ -22,7 +22,6 @@ class TicketSeatPlacesView extends StatelessWidget {
         data: (tickets) {
           final Widget child;
 
-          // switch (locationType) {
           switch (locationType) {
             case LocationType.unknown:
             case LocationType.spartakStadium:

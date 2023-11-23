@@ -23,6 +23,7 @@ class SportPalaceView extends HookWidget {
         //Top rows
         //region 25 to 16
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -32,6 +33,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [10, 22, 23, 38, 39, 54, 55, 66, 67],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -41,6 +43,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [9, 10, 22, 23, 37, 38, 39, 54, 55, 66, 67, 74],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -50,6 +53,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [9, 10, 22, 23, 38, 39, 54, 55, 66, 67],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -59,6 +63,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [10, 22, 23, 38, 39, 54, 55, 66, 67],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -68,6 +73,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [9, 10, 22, 23, 38, 39, 54, 55, 66, 67, 74],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -77,6 +83,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [9, 10, 22, 23, 38, 39, 54, 55, 66, 67, 74],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -86,6 +93,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [8, 9, 10, 22, 23, 38, 39, 54, 55, 66, 67, 73, 74],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -95,6 +103,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [10, 22, 23, 24, 37, 38, 39, 53, 54, 55, 66, 67],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -104,6 +113,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [10, 22, 23, 37, 38, 39, 54, 55, 67],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -115,6 +125,7 @@ class SportPalaceView extends HookWidget {
         //endregion
         //region 15 to 4
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -124,6 +135,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [10, 22, 23, 38, 39, 54, 55, 67],
         ), //2
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -133,6 +145,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [10, 22, 23, 38, 39, 54, 55, 67],
         ), //2
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -142,6 +155,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [10, 22, 23, 38, 39, 54, 55, 67],
         ), //2
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -151,6 +165,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [10, 22, 23, 38, 39, 54, 55, 67],
         ),
         SeatGenerator.generateSeatPlaces(
+            tickets: tickets,
             mainBranchIndex: -1,
             rowLength: _maxPlaces,
             emptySpacingIndex: _emptyRowPlaces,
@@ -158,6 +173,7 @@ class SportPalaceView extends HookWidget {
             mainCurrentRowIndex: -1,
             mainCurrentRowLabel: ''),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -167,6 +183,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [9, 10, 11, 37, 38, 53, 54, 55, 67],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -185,6 +202,7 @@ class SportPalaceView extends HookWidget {
           ],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -203,6 +221,7 @@ class SportPalaceView extends HookWidget {
           ],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -216,6 +235,7 @@ class SportPalaceView extends HookWidget {
           ],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -229,6 +249,7 @@ class SportPalaceView extends HookWidget {
           ],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 75,
           leftOffsetCount: 3,
@@ -239,6 +260,7 @@ class SportPalaceView extends HookWidget {
         ),
         //
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 76,
           leftOffsetCount: 2,
@@ -253,6 +275,7 @@ class SportPalaceView extends HookWidget {
           ],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 76,
           leftOffsetCount: 2,
@@ -269,6 +292,7 @@ class SportPalaceView extends HookWidget {
         // endregion
         //region 3 to 1
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 78,
           leftOffsetCount: 0,
@@ -283,6 +307,7 @@ class SportPalaceView extends HookWidget {
           ],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 86,
           leftOffsetCount: 0,
@@ -296,6 +321,7 @@ class SportPalaceView extends HookWidget {
           // blockedPlace: List.generate(8, (index) => index + 30),
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _topBranchIndex,
           rowLength: 78,
           leftOffsetCount: 0,
@@ -310,6 +336,7 @@ class SportPalaceView extends HookWidget {
           ],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowLabel: '',
           mainBranchIndex: -1,
           rowLength: _maxPlaces,
@@ -321,6 +348,7 @@ class SportPalaceView extends HookWidget {
         // Low rows
         //region 14 to 1
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _lowerBranchIndex,
           rowLength: 93,
           leftOffsetCount: 0,
@@ -335,6 +363,7 @@ class SportPalaceView extends HookWidget {
           blockedPlacesNumber: 28.to(43),
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _lowerBranchIndex,
           rowLength: 90,
           leftOffsetCount: 1,
@@ -349,6 +378,7 @@ class SportPalaceView extends HookWidget {
           blockedPlacesNumber: 28.to(41),
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _lowerBranchIndex,
           rowLength: 90,
           leftOffsetCount: 1,
@@ -363,6 +393,7 @@ class SportPalaceView extends HookWidget {
           blockedPlacesNumber: 28.to(41),
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _lowerBranchIndex,
           rowLength: 78,
           leftOffsetCount: 0,
@@ -372,6 +403,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [16, 30, 31, 32, 46, 47, 48, 63, 77],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _lowerBranchIndex,
           rowLength: 78,
           leftOffsetCount: 0,
@@ -381,6 +413,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [16, 30, 31, 32, 46, 47, 48, 63, 77],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _lowerBranchIndex,
           rowLength: 78,
           leftOffsetCount: 0,
@@ -390,6 +423,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [16, 30, 31, 32, 46, 47, 48, 63, 77],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _lowerBranchIndex,
           rowLength: 78,
           leftOffsetCount: 0,
@@ -399,6 +433,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [16, 30, 31, 32, 46, 47, 48, 63, 77],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _lowerBranchIndex,
           rowLength: 78,
           leftOffsetCount: 0,
@@ -408,6 +443,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [16, 30, 31, 32, 46, 47, 48, 63, 77],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _lowerBranchIndex,
           rowLength: 78,
           leftOffsetCount: 0,
@@ -417,6 +453,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [16, 30, 31, 32, 46, 47, 48, 63, 77],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _lowerBranchIndex,
           rowLength: 78,
           leftOffsetCount: 0,
@@ -426,6 +463,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [16, 30, 31, 32, 46, 47, 48, 63, 77],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _lowerBranchIndex,
           rowLength: 78,
           leftOffsetCount: 0,
@@ -436,6 +474,7 @@ class SportPalaceView extends HookWidget {
         ),
         //
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _lowerBranchIndex,
           rowLength: 78,
           leftOffsetCount: 0,
@@ -445,6 +484,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [16, 30, 31, 32, 46, 47, 48, 63, 74, 75, 76, 77],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _lowerBranchIndex,
           rowLength: 78,
           leftOffsetCount: 0,
@@ -454,6 +494,7 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [16, 30, 31, 32, 46, 47, 48, 63, 74, 75, 76, 77],
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainBranchIndex: _lowerBranchIndex,
           rowLength: 78,
           leftOffsetCount: 0,

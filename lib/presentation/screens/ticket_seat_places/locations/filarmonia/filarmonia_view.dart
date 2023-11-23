@@ -22,6 +22,7 @@ class FilarmoniaView extends HookWidget {
     final places = useMemoized(
       () => [
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 7,
           rowLength: _rowTop7To4PlaceCount,
           emptySpacingIndex: _rowTop7PlacesNotExist,
@@ -30,6 +31,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _topBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 6,
           rowLength: _rowTop7To4PlaceCount,
           emptySpacingIndex: _rowTop6PlacesNotExist,
@@ -38,6 +40,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _topBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 5,
           rowLength: _rowTop7To4PlaceCount,
           emptySpacingIndex: _rowTop6PlacesNotExist,
@@ -46,6 +49,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _topBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 4,
           rowLength: _rowTop7To4PlaceCount,
           emptySpacingIndex: _rowTop6PlacesNotExist,
@@ -56,6 +60,7 @@ class FilarmoniaView extends HookWidget {
 
         SeatGenerator.generateSeatPlaces(
           mainCurrentRowLabel: '',
+          tickets: tickets,
           mainCurrentRowIndex: -1,
           rowLength: _maxPlaces,
           emptySpacingIndex: _emptyRowPlaces,
@@ -65,6 +70,7 @@ class FilarmoniaView extends HookWidget {
         // endregion
         //region 3 to 1
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 3,
           rowLength: _rowTop7To4PlaceCount,
           emptySpacingIndex: _rowTop6PlacesNotExist,
@@ -73,6 +79,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _topBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 2,
           rowLength: _rowTop7To4PlaceCount,
           emptySpacingIndex: _rowTop2PlacesNotExist,
@@ -81,6 +88,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _topBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 1,
           rowLength: _rowTop7To4PlaceCount,
           emptySpacingIndex: _rowTop1PlacesNotExist,
@@ -90,6 +98,7 @@ class FilarmoniaView extends HookWidget {
         ),
         SeatGenerator.generateSeatPlaces(
           mainCurrentRowLabel: '',
+          tickets: tickets,
           mainCurrentRowIndex: -1,
           rowLength: _maxPlaces,
           emptySpacingIndex: _emptyRowPlaces,
@@ -98,6 +107,7 @@ class FilarmoniaView extends HookWidget {
         ),
 
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 16,
           rowLength: _rowTop7To4PlaceCount,
           emptySpacingIndex: _rowTop16PlacesNotExist,
@@ -108,6 +118,7 @@ class FilarmoniaView extends HookWidget {
         //endregion
         //region 15 to 4
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 15,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTop15PlacesNotExist,
@@ -116,6 +127,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _lowerBranchIndex,
         ), //2
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 14,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTop15PlacesNotExist,
@@ -124,6 +136,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _lowerBranchIndex,
         ), //2
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 13,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTop15PlacesNotExist,
@@ -132,6 +145,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _lowerBranchIndex,
         ), //2
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 12,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTop15PlacesNotExist,
@@ -141,6 +155,7 @@ class FilarmoniaView extends HookWidget {
         ),
 
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 11,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTop15PlacesNotExist,
@@ -149,6 +164,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 10,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTop15PlacesNotExist,
@@ -157,6 +173,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 9,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTop15PlacesNotExist,
@@ -167,6 +184,7 @@ class FilarmoniaView extends HookWidget {
 
         SeatGenerator.generateSeatPlaces(
           mainCurrentRowLabel: '',
+          tickets: tickets,
           mainCurrentRowIndex: -1,
           rowLength: _maxPlaces,
           emptySpacingIndex: _emptyRowPlaces,
@@ -174,6 +192,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: -1,
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 8,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTop15PlacesNotExist,
@@ -182,6 +201,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 7,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTop15PlacesNotExist,
@@ -190,6 +210,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 6,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTop15PlacesNotExist,
@@ -198,6 +219,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 5,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTop15PlacesNotExist,
@@ -206,6 +228,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 4,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTop4PlacesNotExist,
@@ -216,6 +239,7 @@ class FilarmoniaView extends HookWidget {
         // endregion
         //region 3 to 1
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 3,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTop3PlacesNotExist,
@@ -224,6 +248,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 2,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTopPart2PlacesNotExist,
@@ -232,6 +257,7 @@ class FilarmoniaView extends HookWidget {
           mainBranchIndex: _lowerBranchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          tickets: tickets,
           mainCurrentRowIndex: 1,
           rowLength: _rowTop16To4PlaceCount,
           emptySpacingIndex: _rowTopPart1PlacesNotExist,
@@ -242,6 +268,7 @@ class FilarmoniaView extends HookWidget {
 
         SeatGenerator.generateSeatPlaces(
           mainCurrentRowLabel: '',
+          tickets: tickets,
           mainCurrentRowIndex: -1,
           rowLength: _maxPlaces,
           emptySpacingIndex: _emptyRowPlaces,
