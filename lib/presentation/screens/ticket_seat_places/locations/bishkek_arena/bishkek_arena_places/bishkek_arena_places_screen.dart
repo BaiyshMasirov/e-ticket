@@ -3,12 +3,16 @@ import 'package:eticket/presentation/screens/ticket_seat_places/locations/bishke
 import 'package:eticket/presentation/screens/ticket_seat_places/locations/bishkek_arena/models/models.dart';
 import 'package:eticket/presentation/widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:eticket/data/models/models.dart';
 
 @RoutePage()
 class BishkekArenaPlacesScreen extends StatelessWidget {
   final BishkekArenaBlockType blockType;
+  // TODO: need to think how to update it
+  final List<TicketDto> tickets;
 
   const BishkekArenaPlacesScreen({
+    required this.tickets,
     required this.blockType,
     Key? key,
   }) : super(key: key);
@@ -18,6 +22,7 @@ class BishkekArenaPlacesScreen extends StatelessWidget {
     return AppScaffold(
       title: blockType.name.toUpperCase(),
       body: BishkekArenaPlacesView(
+        tickets: tickets,
         blockType: blockType,
       ),
     );

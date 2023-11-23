@@ -29,13 +29,13 @@
     <color name="inverseSurfaceLight">#322F35</color>
     <color name="onInverseSurfaceLight">#F5EFF7</color>
     <color name="inversePrimaryLight">#D0BCFF</color>
-    <color name="surfaceTintLight">#F4ECF9</color>
+    <color name="surfaceTintLight">#ECF1F9</color>
 
 <!--    Theme Dark Colorscheme    -->
     <color name="primaryButtonDark">#601410</color>
     <color name="onPrimaryButtonDark">#F9DEDC</color>
-    <color name="primaryDark">#D0BCFF</color>
-    <color name="onPrimaryDark">#381E72</color>
+    <color name="primaryDark">#B2A4A7</color>
+    <color name="onPrimaryDark">#721E2D</color>
     <color name="primaryContainerDark">#4F378B</color>
     <color name="onPrimaryContainerDark">#EADDFF</color>
     <color name="secondaryDark">#DEC9CE</color>

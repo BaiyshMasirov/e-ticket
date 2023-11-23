@@ -9,7 +9,7 @@ class TicketSeatPlacesState with _$TicketSeatPlacesState {
 
   const factory TicketSeatPlacesState.initial() = _TicketSeatPlacesInitialState;
 
-  const factory TicketSeatPlacesState.loading() = _TicketSeatPlacesLoadingState;
+  const factory TicketSeatPlacesState.loading() = TicketSeatPlacesLoadingState;
 
   const factory TicketSeatPlacesState.error(
     String? errorMessage,

@@ -44,7 +44,7 @@ mixin _$TicketSeatPlacesState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_TicketSeatPlacesInitialState value) initial,
-    required TResult Function(_TicketSeatPlacesLoadingState value) loading,
+    required TResult Function(TicketSeatPlacesLoadingState value) loading,
     required TResult Function(_TicketSeatPlacesErrorState value) error,
     required TResult Function(_TicketSeatPlacesDataState value) data,
   }) =>
@@ -52,7 +52,7 @@ mixin _$TicketSeatPlacesState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TicketSeatPlacesInitialState value)? initial,
-    TResult? Function(_TicketSeatPlacesLoadingState value)? loading,
+    TResult? Function(TicketSeatPlacesLoadingState value)? loading,
     TResult? Function(_TicketSeatPlacesErrorState value)? error,
     TResult? Function(_TicketSeatPlacesDataState value)? data,
   }) =>
@@ -60,7 +60,7 @@ mixin _$TicketSeatPlacesState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TicketSeatPlacesInitialState value)? initial,
-    TResult Function(_TicketSeatPlacesLoadingState value)? loading,
+    TResult Function(TicketSeatPlacesLoadingState value)? loading,
     TResult Function(_TicketSeatPlacesErrorState value)? error,
     TResult Function(_TicketSeatPlacesDataState value)? data,
     required TResult orElse(),
@@ -167,7 +167,7 @@ class _$TicketSeatPlacesInitialStateImpl extends _TicketSeatPlacesInitialState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_TicketSeatPlacesInitialState value) initial,
-    required TResult Function(_TicketSeatPlacesLoadingState value) loading,
+    required TResult Function(TicketSeatPlacesLoadingState value) loading,
     required TResult Function(_TicketSeatPlacesErrorState value) error,
     required TResult Function(_TicketSeatPlacesDataState value) data,
   }) {
@@ -178,7 +178,7 @@ class _$TicketSeatPlacesInitialStateImpl extends _TicketSeatPlacesInitialState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TicketSeatPlacesInitialState value)? initial,
-    TResult? Function(_TicketSeatPlacesLoadingState value)? loading,
+    TResult? Function(TicketSeatPlacesLoadingState value)? loading,
     TResult? Function(_TicketSeatPlacesErrorState value)? error,
     TResult? Function(_TicketSeatPlacesDataState value)? data,
   }) {
@@ -189,7 +189,7 @@ class _$TicketSeatPlacesInitialStateImpl extends _TicketSeatPlacesInitialState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TicketSeatPlacesInitialState value)? initial,
-    TResult Function(_TicketSeatPlacesLoadingState value)? loading,
+    TResult Function(TicketSeatPlacesLoadingState value)? loading,
     TResult Function(_TicketSeatPlacesErrorState value)? error,
     TResult Function(_TicketSeatPlacesDataState value)? data,
     required TResult orElse(),
@@ -228,7 +228,7 @@ class __$$TicketSeatPlacesLoadingStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TicketSeatPlacesLoadingStateImpl extends _TicketSeatPlacesLoadingState {
+class _$TicketSeatPlacesLoadingStateImpl extends TicketSeatPlacesLoadingState {
   const _$TicketSeatPlacesLoadingStateImpl() : super._();
 
   @override
@@ -287,7 +287,7 @@ class _$TicketSeatPlacesLoadingStateImpl extends _TicketSeatPlacesLoadingState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_TicketSeatPlacesInitialState value) initial,
-    required TResult Function(_TicketSeatPlacesLoadingState value) loading,
+    required TResult Function(TicketSeatPlacesLoadingState value) loading,
     required TResult Function(_TicketSeatPlacesErrorState value) error,
     required TResult Function(_TicketSeatPlacesDataState value) data,
   }) {
@@ -298,7 +298,7 @@ class _$TicketSeatPlacesLoadingStateImpl extends _TicketSeatPlacesLoadingState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TicketSeatPlacesInitialState value)? initial,
-    TResult? Function(_TicketSeatPlacesLoadingState value)? loading,
+    TResult? Function(TicketSeatPlacesLoadingState value)? loading,
     TResult? Function(_TicketSeatPlacesErrorState value)? error,
     TResult? Function(_TicketSeatPlacesDataState value)? data,
   }) {
@@ -309,7 +309,7 @@ class _$TicketSeatPlacesLoadingStateImpl extends _TicketSeatPlacesLoadingState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TicketSeatPlacesInitialState value)? initial,
-    TResult Function(_TicketSeatPlacesLoadingState value)? loading,
+    TResult Function(TicketSeatPlacesLoadingState value)? loading,
     TResult Function(_TicketSeatPlacesErrorState value)? error,
     TResult Function(_TicketSeatPlacesDataState value)? data,
     required TResult orElse(),
@@ -321,10 +321,10 @@ class _$TicketSeatPlacesLoadingStateImpl extends _TicketSeatPlacesLoadingState {
   }
 }
 
-abstract class _TicketSeatPlacesLoadingState extends TicketSeatPlacesState {
-  const factory _TicketSeatPlacesLoadingState() =
+abstract class TicketSeatPlacesLoadingState extends TicketSeatPlacesState {
+  const factory TicketSeatPlacesLoadingState() =
       _$TicketSeatPlacesLoadingStateImpl;
-  const _TicketSeatPlacesLoadingState._() : super._();
+  const TicketSeatPlacesLoadingState._() : super._();
 }
 
 /// @nodoc
@@ -434,7 +434,7 @@ class _$TicketSeatPlacesErrorStateImpl extends _TicketSeatPlacesErrorState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_TicketSeatPlacesInitialState value) initial,
-    required TResult Function(_TicketSeatPlacesLoadingState value) loading,
+    required TResult Function(TicketSeatPlacesLoadingState value) loading,
     required TResult Function(_TicketSeatPlacesErrorState value) error,
     required TResult Function(_TicketSeatPlacesDataState value) data,
   }) {
@@ -445,7 +445,7 @@ class _$TicketSeatPlacesErrorStateImpl extends _TicketSeatPlacesErrorState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TicketSeatPlacesInitialState value)? initial,
-    TResult? Function(_TicketSeatPlacesLoadingState value)? loading,
+    TResult? Function(TicketSeatPlacesLoadingState value)? loading,
     TResult? Function(_TicketSeatPlacesErrorState value)? error,
     TResult? Function(_TicketSeatPlacesDataState value)? data,
   }) {
@@ -456,7 +456,7 @@ class _$TicketSeatPlacesErrorStateImpl extends _TicketSeatPlacesErrorState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TicketSeatPlacesInitialState value)? initial,
-    TResult Function(_TicketSeatPlacesLoadingState value)? loading,
+    TResult Function(TicketSeatPlacesLoadingState value)? loading,
     TResult Function(_TicketSeatPlacesErrorState value)? error,
     TResult Function(_TicketSeatPlacesDataState value)? data,
     required TResult orElse(),
@@ -594,7 +594,7 @@ class _$TicketSeatPlacesDataStateImpl extends _TicketSeatPlacesDataState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_TicketSeatPlacesInitialState value) initial,
-    required TResult Function(_TicketSeatPlacesLoadingState value) loading,
+    required TResult Function(TicketSeatPlacesLoadingState value) loading,
     required TResult Function(_TicketSeatPlacesErrorState value) error,
     required TResult Function(_TicketSeatPlacesDataState value) data,
   }) {
@@ -605,7 +605,7 @@ class _$TicketSeatPlacesDataStateImpl extends _TicketSeatPlacesDataState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TicketSeatPlacesInitialState value)? initial,
-    TResult? Function(_TicketSeatPlacesLoadingState value)? loading,
+    TResult? Function(TicketSeatPlacesLoadingState value)? loading,
     TResult? Function(_TicketSeatPlacesErrorState value)? error,
     TResult? Function(_TicketSeatPlacesDataState value)? data,
   }) {
@@ -616,7 +616,7 @@ class _$TicketSeatPlacesDataStateImpl extends _TicketSeatPlacesDataState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TicketSeatPlacesInitialState value)? initial,
-    TResult Function(_TicketSeatPlacesLoadingState value)? loading,
+    TResult Function(TicketSeatPlacesLoadingState value)? loading,
     TResult Function(_TicketSeatPlacesErrorState value)? error,
     TResult Function(_TicketSeatPlacesDataState value)? data,
     required TResult orElse(),

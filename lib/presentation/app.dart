@@ -26,6 +26,7 @@ class App extends StatelessWidget {
           listener: (context, state) => state.maybeWhen(
             authenticated: () {
               FlutterNativeSplash.remove();
+
               return _appRouter.pushAndPopUntil(
                 MainRoute(),
                 predicate: (route) => false,
@@ -56,7 +57,8 @@ class App extends StatelessWidget {
         builder: (context, child) => Overlay(
           initialEntries: [
             OverlayEntry(
-              builder: (context) => BlocListener<SnackbarCubit, SnackbarState>(
+              builder: (context) =>
+                  BlocListener<SnackbarCubit, SnackbarState>(
                 listener: (context, state) => state.whenOrNull(
                   error: (message) => SnackbarAlert.showError(
                     context: context,

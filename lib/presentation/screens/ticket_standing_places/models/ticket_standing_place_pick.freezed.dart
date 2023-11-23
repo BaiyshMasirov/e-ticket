@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$TicketStandingPlacePick {
   int get type => throw _privateConstructorUsedError;
   int get count => throw _privateConstructorUsedError;
+  double get price => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TicketStandingPlacePickCopyWith<TicketStandingPlacePick> get copyWith =>
@@ -30,7 +31,7 @@ abstract class $TicketStandingPlacePickCopyWith<$Res> {
           $Res Function(TicketStandingPlacePick) then) =
       _$TicketStandingPlacePickCopyWithImpl<$Res, TicketStandingPlacePick>;
   @useResult
-  $Res call({int type, int count});
+  $Res call({int type, int count, double price});
 }
 
 /// @nodoc
@@ -49,6 +50,7 @@ class _$TicketStandingPlacePickCopyWithImpl<$Res,
   $Res call({
     Object? type = null,
     Object? count = null,
+    Object? price = null,
   }) {
     return _then(_value.copyWith(
       type: null == type
@@ -59,6 +61,10 @@ class _$TicketStandingPlacePickCopyWithImpl<$Res,
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -72,7 +78,7 @@ abstract class _$$TicketStandingPlacePickImplCopyWith<$Res>
       __$$TicketStandingPlacePickImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int type, int count});
+  $Res call({int type, int count, double price});
 }
 
 /// @nodoc
@@ -90,6 +96,7 @@ class __$$TicketStandingPlacePickImplCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
     Object? count = null,
+    Object? price = null,
   }) {
     return _then(_$TicketStandingPlacePickImpl(
       type: null == type
@@ -100,6 +107,10 @@ class __$$TicketStandingPlacePickImplCopyWithImpl<$Res>
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -107,17 +118,20 @@ class __$$TicketStandingPlacePickImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$TicketStandingPlacePickImpl extends _TicketStandingPlacePick {
-  const _$TicketStandingPlacePickImpl({required this.type, required this.count})
+  const _$TicketStandingPlacePickImpl(
+      {required this.type, required this.count, required this.price})
       : super._();
 
   @override
   final int type;
   @override
   final int count;
+  @override
+  final double price;
 
   @override
   String toString() {
-    return 'TicketStandingPlacePick(type: $type, count: $count)';
+    return 'TicketStandingPlacePick(type: $type, count: $count, price: $price)';
   }
 
   @override
@@ -126,11 +140,12 @@ class _$TicketStandingPlacePickImpl extends _TicketStandingPlacePick {
         (other.runtimeType == runtimeType &&
             other is _$TicketStandingPlacePickImpl &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.count, count) || other.count == count));
+            (identical(other.count, count) || other.count == count) &&
+            (identical(other.price, price) || other.price == price));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, count);
+  int get hashCode => Object.hash(runtimeType, type, count, price);
 
   @JsonKey(ignore: true)
   @override
@@ -143,13 +158,16 @@ class _$TicketStandingPlacePickImpl extends _TicketStandingPlacePick {
 abstract class _TicketStandingPlacePick extends TicketStandingPlacePick {
   const factory _TicketStandingPlacePick(
       {required final int type,
-      required final int count}) = _$TicketStandingPlacePickImpl;
+      required final int count,
+      required final double price}) = _$TicketStandingPlacePickImpl;
   const _TicketStandingPlacePick._() : super._();
 
   @override
   int get type;
   @override
   int get count;
+  @override
+  double get price;
   @override
   @JsonKey(ignore: true)
   _$$TicketStandingPlacePickImplCopyWith<_$TicketStandingPlacePickImpl>

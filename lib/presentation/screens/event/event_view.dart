@@ -29,12 +29,14 @@ class EventView extends StatelessWidget {
               children: [
                 SizedBox(
                   height: 300.h,
+                  width: context.screenSize.screenWidth,
                   child: Image.network(
                     event.image ?? '',
                     fit: BoxFit.fitHeight,
                     errorBuilder: (context, error, stackTrace) => Container(
-                      color: context.colorScheme.onError,
+                      color: context.colorScheme.surfaceTint,
                       height: 300.h,
+                      width: 300.h,
                     ),
                     loadingBuilder: (context, child, loadingProgress) {
                       if (loadingProgress == null) {
@@ -42,7 +44,9 @@ class EventView extends StatelessWidget {
                       }
 
                       return Container(
-                        color: context.colorScheme.onError,
+                        color: context.colorScheme.surfaceTint,
+                        height: 300.h,
+                        width: 300.h,
                       );
                     },
                   ),
@@ -91,25 +95,23 @@ class EventView extends StatelessWidget {
                   bottom: 0,
                   left: 0,
                   right: 0,
-                  child: Center(
-                    child: Column(
-                      children: [
-                        Text(
-                          event.name ?? '-',
-                          style: context.theme.textTheme.titleLarge,
-                          textAlign: TextAlign.center,
-                        ),
-                        SizedBox(height: 10.h),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('${event.ageLimit}+'),
-                            SizedBox(width: 20.w),
-                            Text(formattedDateTime),
-                          ],
-                        )
-                      ],
-                    ),
+                  child: Column(
+                    children: [
+                      Text(
+                        event.name ?? '-',
+                        style: context.theme.textTheme.titleLarge,
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(height: 10.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('${event.ageLimit}+'),
+                          SizedBox(width: 20.w),
+                          Text(formattedDateTime),
+                        ],
+                      )
+                    ],
                   ),
                 )
               ],

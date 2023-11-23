@@ -12,8 +12,8 @@ class SearchItemShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: context.colorScheme.errorContainer,
-      highlightColor: context.colorScheme.onError,
+      baseColor: context.colorScheme.surfaceTint,
+      highlightColor: context.colorScheme.surfaceTint.withOpacity(0.8),
       child: Container(
         height: 150.h,
         decoration: BoxDecoration(

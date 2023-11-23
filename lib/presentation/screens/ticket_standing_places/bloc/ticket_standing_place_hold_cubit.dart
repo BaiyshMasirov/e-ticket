@@ -27,6 +27,7 @@ class TicketStandingPlaceHoldCubit extends Cubit<TicketStandingPlaceHoldState> {
   }) {
     final chosenTickets = tickets
         .map((e) => TicketStandingPlacePick(
+              price: e.price,
               type: e.type,
               count: 0,
             ))

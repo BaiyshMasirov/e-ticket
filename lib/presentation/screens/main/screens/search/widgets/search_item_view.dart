@@ -41,6 +41,18 @@ class SearchItemView extends StatelessWidget {
                     event.image ?? '',
                     fit: BoxFit.fitHeight,
                     height: 150.h,
+                    loadingBuilder: (ctx, child, progress) {
+                      if (progress == null) {
+                        return child;
+                      }
+
+                      return Container(
+                        color: context.colorScheme.outline.withOpacity(0.1),
+                      );
+                    },
+                    errorBuilder: (ctx, e, st) => Container(
+                      color: context.colorScheme.outline.withOpacity(0.1),
+                    ),
                   ),
                 ),
               ),

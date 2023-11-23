@@ -56,7 +56,7 @@ class CategoriesView extends HookWidget {
                               height: _defaultItemWidth,
                               width: _defaultItemWidth,
                               decoration: BoxDecoration(
-                                color: context.colorScheme.onError,
+                                color: context.colorScheme.surfaceTint,
                               ),
                             );
                           },
@@ -68,7 +68,7 @@ class CategoriesView extends HookWidget {
                             return Container(
                               width: _defaultItemWidth,
                               height: _defaultItemWidth,
-                              color: context.colorScheme.onError,
+                              color: context.colorScheme.surfaceTint,
                             );
                           },
                         ),

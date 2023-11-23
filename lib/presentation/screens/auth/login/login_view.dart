@@ -50,6 +50,8 @@ class LoginView extends HookWidget {
                 PrimaryButton(
                   title: LocaleKeys.login.tr(),
                   onPressed: () {
+                    primaryFocus?.unfocus();
+
                     if (_formKey.currentState?.validate() ?? false) {
                       context.read<LoginCubit>().login(
                             loginCommandDto: LoginCommandDto(

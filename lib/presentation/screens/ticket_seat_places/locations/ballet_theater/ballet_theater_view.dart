@@ -3,14 +3,14 @@ import 'package:eticket/generated/assets.gen.dart';
 import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BalletTheaterView extends HookWidget {
   final List<TicketDto> tickets;
 
   const BalletTheaterView({
-    required this.tickets, Key? key,
+    required this.tickets,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -27,8 +27,10 @@ class BalletTheaterView extends HookWidget {
 
     final places = [
       /// region top places
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 33,
+        mainBranchIndex: _topBranchIndex,
         mainCurrentRowIndex: _top5RowNumber,
         mainCurrentRowLabel: 'Ряд 5',
         emptySpacingIndex: [11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23],
@@ -37,7 +39,9 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 10,
         secondarySeatPlaces: [],
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
+        mainBranchIndex: _topBranchIndex,
         rowLength: 35,
         mainCurrentRowIndex: _top4RowNumber,
         mainCurrentRowLabel: 'Ряд 4',
@@ -47,7 +51,9 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 9,
         secondarySeatPlaces: [],
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
+        mainBranchIndex: _topBranchIndex,
         rowLength: 40,
         beginPlaceNumber: 10,
         mainCurrentRowIndex: _top3RowNumber,
@@ -58,12 +64,14 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 7,
         secondarySeatPlaces: const [
           SeatPlaceSecondaryV2(
+            branchIndex: _top3RowNumber,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 1,
             placeNumber: 9,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _top3RowNumber,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 39,
@@ -71,7 +79,9 @@ class BalletTheaterView extends HookWidget {
           ),
         ],
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
+        mainBranchIndex: _topBranchIndex,
         rowLength: 42,
         beginPlaceNumber: 14,
         mainCurrentRowIndex: _top2RowNumber,
@@ -82,24 +92,28 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 6,
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 1,
             placeNumber: 8,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 2,
             placeNumber: 13,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 40,
             placeNumber: 37,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 41,
@@ -107,7 +121,9 @@ class BalletTheaterView extends HookWidget {
           ),
         ],
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
+        mainBranchIndex: _topBranchIndex,
         rowLength: 43,
         mainCurrentRowIndex: _top1RowNumber,
         leftOffsetCount: 6,
@@ -134,30 +150,35 @@ class BalletTheaterView extends HookWidget {
         textLabelSpacingIndex: [23],
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 1,
             placeNumber: 7,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 2,
             placeNumber: 12,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 1',
             currentRowIndex: _top1RowNumber,
             placeIndex: 3,
             placeNumber: 13,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 42,
             placeNumber: 38,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 43,
@@ -168,7 +189,9 @@ class BalletTheaterView extends HookWidget {
 
       /// endregion top places
       // region empty places
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
+        mainBranchIndex: -1,
         rowLength: 44,
         mainCurrentRowIndex: -1,
         mainCurrentRowLabel: '',
@@ -177,30 +200,35 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 5,
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 1,
             placeNumber: 6,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 2,
             placeNumber: 11,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 1',
             currentRowIndex: _top1RowNumber,
             placeIndex: 3,
             placeNumber: 12,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 42,
             placeNumber: 39,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 43,
@@ -208,7 +236,9 @@ class BalletTheaterView extends HookWidget {
           ),
         ],
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
+        mainBranchIndex: -1,
         rowLength: 44,
         mainCurrentRowIndex: -1,
         mainCurrentRowLabel: '',
@@ -217,30 +247,35 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 5,
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 1,
             placeNumber: 5,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 2,
             placeNumber: 10,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 1',
             currentRowIndex: _top1RowNumber,
             placeIndex: 3,
             placeNumber: 11,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 42,
             placeNumber: 40,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 43,
@@ -250,8 +285,10 @@ class BalletTheaterView extends HookWidget {
       ),
       // endregion empty places
       //region middle places
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 44,
+        mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle11RowNumber,
         mainCurrentRowLabel: 'Ряд 11',
         leftOffsetCount: 5,
@@ -260,30 +297,35 @@ class BalletTheaterView extends HookWidget {
         textLabelSpacingIndex: [10, 36],
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 1,
             placeNumber: 4,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 2,
             placeNumber: 9,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 1',
             currentRowIndex: _top1RowNumber,
             placeIndex: 3,
             placeNumber: 10,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 43,
             placeNumber: 41,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 44,
@@ -291,8 +333,10 @@ class BalletTheaterView extends HookWidget {
           ),
         ],
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 44,
+        mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle10RowNumber,
         mainCurrentRowLabel: 'Ряд 10',
         leftOffsetCount: 5,
@@ -301,30 +345,35 @@ class BalletTheaterView extends HookWidget {
         textLabelSpacingIndex: [10, 36],
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 1,
             placeNumber: 3,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 2,
             placeNumber: 8,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 1',
             currentRowIndex: _top1RowNumber,
             placeIndex: 3,
             placeNumber: 9,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 43,
             placeNumber: 42,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 44,
@@ -332,8 +381,10 @@ class BalletTheaterView extends HookWidget {
           ),
         ],
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 47,
+        mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle9RowNumber,
         mainCurrentRowLabel: 'Ряд 9',
         leftOffsetCount: 4,
@@ -342,18 +393,21 @@ class BalletTheaterView extends HookWidget {
         textLabelSpacingIndex: [11, 37],
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 1,
             placeNumber: 2,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 2,
             placeNumber: 7,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 1',
             currentRowIndex: _top1RowNumber,
             placeIndex: 3,
@@ -361,12 +415,14 @@ class BalletTheaterView extends HookWidget {
           ),
           //
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 45,
             placeNumber: 43,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 46,
@@ -374,8 +430,10 @@ class BalletTheaterView extends HookWidget {
           ),
         ],
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 46,
+        mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle8RowNumber,
         mainCurrentRowLabel: 'Ряд 8',
         leftOffsetCount: 4,
@@ -384,18 +442,21 @@ class BalletTheaterView extends HookWidget {
         textLabelSpacingIndex: [11, 37],
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 1,
             placeNumber: 1,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 2,
             placeNumber: 6,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 1',
             currentRowIndex: _top1RowNumber,
             placeIndex: 3,
@@ -403,12 +464,14 @@ class BalletTheaterView extends HookWidget {
           ),
           //
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 45,
             placeNumber: 44,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 46,
@@ -416,8 +479,10 @@ class BalletTheaterView extends HookWidget {
           ),
         ],
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 46,
+        mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle7RowNumber,
         mainCurrentRowLabel: 'Ряд 7',
         leftOffsetCount: 4,
@@ -426,12 +491,14 @@ class BalletTheaterView extends HookWidget {
         textLabelSpacingIndex: [11, 37],
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 2,
             placeNumber: 5,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 1',
             currentRowIndex: _top1RowNumber,
             placeIndex: 3,
@@ -439,12 +506,14 @@ class BalletTheaterView extends HookWidget {
           ),
           //
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 45,
             placeNumber: 45,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 46,
@@ -452,8 +521,10 @@ class BalletTheaterView extends HookWidget {
           ),
         ],
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 48,
+        mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle6RowNumber,
         mainCurrentRowLabel: 'Ряд 6',
         leftOffsetCount: 3,
@@ -462,24 +533,28 @@ class BalletTheaterView extends HookWidget {
         textLabelSpacingIndex: [11, 37],
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 1,
             placeNumber: 4,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 1',
             currentRowIndex: _top1RowNumber,
             placeIndex: 2,
             placeNumber: 5,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 46,
             placeNumber: 46,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 47,
@@ -487,8 +562,10 @@ class BalletTheaterView extends HookWidget {
           ),
         ],
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 47,
+        mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle5RowNumber,
         mainCurrentRowLabel: 'Ряд 5',
         leftOffsetCount: 3,
@@ -497,24 +574,28 @@ class BalletTheaterView extends HookWidget {
         textLabelSpacingIndex: [11, 37],
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 1,
             placeNumber: 3,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 1',
             currentRowIndex: _top1RowNumber,
             placeIndex: 2,
             placeNumber: 4,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 46,
             placeNumber: 47,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 47,
@@ -522,8 +603,10 @@ class BalletTheaterView extends HookWidget {
           ),
         ],
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 50,
+        mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle4RowNumber,
         mainCurrentRowLabel: 'Ряд 4',
         leftOffsetCount: 2,
@@ -532,24 +615,28 @@ class BalletTheaterView extends HookWidget {
         textLabelSpacingIndex: [12, 38],
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 1,
             placeNumber: 2,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 1',
             currentRowIndex: _top1RowNumber,
             placeIndex: 2,
             placeNumber: 3,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 48,
             placeNumber: 48,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 49,
@@ -557,8 +644,10 @@ class BalletTheaterView extends HookWidget {
           ),
         ],
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 49,
+        mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle3RowNumber,
         mainCurrentRowLabel: 'Ряд 3',
         leftOffsetCount: 2,
@@ -567,24 +656,28 @@ class BalletTheaterView extends HookWidget {
         textLabelSpacingIndex: [12, 38],
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 1,
             placeNumber: 1,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 1',
             currentRowIndex: _top1RowNumber,
             placeIndex: 2,
             placeNumber: 2,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 48,
             placeNumber: 49,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
             placeIndex: 49,
@@ -592,8 +685,10 @@ class BalletTheaterView extends HookWidget {
           ),
         ],
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 49,
+        mainBranchIndex: _middleBranchIndex,
         mainCurrentRowIndex: _middle2RowNumber,
         mainCurrentRowLabel: 'Ряд 2',
         leftOffsetCount: 2,
@@ -602,12 +697,14 @@ class BalletTheaterView extends HookWidget {
         textLabelSpacingIndex: [12, 38],
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 1',
             currentRowIndex: _top1RowNumber,
             placeIndex: 1,
             placeNumber: 1,
           ),
           SeatPlaceSecondaryV2(
+            branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
             placeIndex: 49,
@@ -615,107 +712,134 @@ class BalletTheaterView extends HookWidget {
           ),
         ],
       ),
-      _generateSeatPlaces(
-          rowLength: 42,
-          mainCurrentRowIndex: _middle1RowNumber,
-          mainCurrentRowLabel: 'Ряд 1',
-          leftOffsetCount: 6,
-          emptySpacingIndex: [20, 21, 22, 37],
-          halfSpacingIndex: [7, 9, 34, 36],
-          textLabelSpacingIndex: [8, 35],
-          blockedPlacesNumber: [27]),
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
+        rowLength: 42,
+        mainBranchIndex: _middleBranchIndex,
+        mainCurrentRowIndex: _middle1RowNumber,
+        mainCurrentRowLabel: 'Ряд 1',
+        leftOffsetCount: 6,
+        emptySpacingIndex: [20, 21, 22, 37],
+        halfSpacingIndex: [7, 9, 34, 36],
+        textLabelSpacingIndex: [8, 35],
+        blockedPlacesNumber: [27],
+      ),
       //endregion middle places
       //region empty places
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 1,
+        mainBranchIndex: -1,
         mainCurrentRowIndex: -1,
         mainCurrentRowLabel: '',
         emptySpacingIndex: [1],
       ),
       //endregion empty places
       //region lower places
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 39,
+        mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower11RowNumber,
         mainCurrentRowLabel: 'Ряд 11',
         halfSpacingIndex: [19, 21],
         textLabelSpacingIndex: [20],
         leftOffsetCount: 7,
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 39,
+        mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower10RowNumber,
         mainCurrentRowLabel: 'Ряд 10',
         halfSpacingIndex: [19, 21],
         textLabelSpacingIndex: [20],
         leftOffsetCount: 7,
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 39,
+        mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower9RowNumber,
         mainCurrentRowLabel: 'Ряд 9',
         halfSpacingIndex: [19, 21],
         textLabelSpacingIndex: [20],
         leftOffsetCount: 7,
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 39,
+        mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower8RowNumber,
         mainCurrentRowLabel: 'Ряд 8',
         halfSpacingIndex: [19, 21],
         textLabelSpacingIndex: [20],
         leftOffsetCount: 7,
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 37,
+        mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower7RowNumber,
         mainCurrentRowLabel: 'Ряд 7',
         halfSpacingIndex: [18, 20],
         textLabelSpacingIndex: [19],
         leftOffsetCount: 8,
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 37,
+        mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower6RowNumber,
         mainCurrentRowLabel: 'Ряд 6',
         halfSpacingIndex: [18, 20],
         textLabelSpacingIndex: [19],
         leftOffsetCount: 8,
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 35,
+        mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower5RowNumber,
         mainCurrentRowLabel: 'Ряд 5',
         halfSpacingIndex: [17, 19],
         textLabelSpacingIndex: [18],
         leftOffsetCount: 9,
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 33,
+        mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower4RowNumber,
         mainCurrentRowLabel: 'Ряд 4',
         halfSpacingIndex: [16, 18],
         textLabelSpacingIndex: [17],
         leftOffsetCount: 10,
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 31,
+        mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower3RowNumber,
         mainCurrentRowLabel: 'Ряд 3',
         halfSpacingIndex: [15, 17],
         textLabelSpacingIndex: [16],
         leftOffsetCount: 11,
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 29,
+        mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower2RowNumber,
         mainCurrentRowLabel: 'Ряд 2',
         halfSpacingIndex: [14, 16],
         textLabelSpacingIndex: [15],
         leftOffsetCount: 12,
       ),
-      _generateSeatPlaces(
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
         rowLength: 27,
+        mainBranchIndex: _lowerBranchIndex,
         mainCurrentRowIndex: _lower1RowNumber,
         mainCurrentRowLabel: 'Ряд 1',
         halfSpacingIndex: [13, 15],
@@ -750,6 +874,10 @@ class BalletTheaterView extends HookWidget {
   }
 }
 
+const _topBranchIndex = 1;
+const _middleBranchIndex = 2;
+const _lowerBranchIndex = 3;
+
 const _top5RowNumber = 5;
 const _top4RowNumber = 4;
 const _top3RowNumber = 3;
@@ -779,85 +907,3 @@ const _lower4RowNumber = 4;
 const _lower3RowNumber = 3;
 const _lower2RowNumber = 2;
 const _lower1RowNumber = 1;
-
-SeatRowPlaceV2 _generateSeatPlaces({
-  required int rowLength,
-  required int mainCurrentRowIndex,
-  required String mainCurrentRowLabel,
-  int leftOffsetCount = 0,
-  int beginPlaceNumber = 1,
-  List<int> blockedPlacesNumber = const [],
-  List<int> halfSpacingIndex = const [],
-  List<int> emptySpacingIndex = const [],
-  List<int> textLabelSpacingIndex = const [],
-  List<SeatPlaceSecondaryV2> secondarySeatPlaces = const [],
-}) {
-  int placeNumber = beginPlaceNumber;
-
-  final places = List<SeatPlaceV2?>.generate(
-    rowLength,
-    (index) {
-      final innerPlace = index + 1;
-
-      if (blockedPlacesNumber.contains(placeNumber)) {
-        placeNumber++;
-        return null;
-      }
-
-      if (textLabelSpacingIndex.contains(innerPlace)) {
-        return SeatPlaceV2(
-          rowLabel: mainCurrentRowLabel,
-          currentRowIndex: mainCurrentRowIndex,
-          seatState: PlaceStateV2.text,
-          seatPlace: -1,
-        );
-      }
-      if (halfSpacingIndex.contains(innerPlace)) {
-        return SeatPlaceV2(
-          rowLabel: mainCurrentRowLabel,
-          currentRowIndex: mainCurrentRowIndex,
-          seatState: PlaceStateV2.emptyHalf,
-          seatPlace: -1,
-        );
-      }
-
-      if (emptySpacingIndex.contains(innerPlace)) {
-        return SeatPlaceV2(
-          rowLabel: mainCurrentRowLabel,
-          currentRowIndex: mainCurrentRowIndex,
-          seatState: PlaceStateV2.empty,
-          seatPlace: -1,
-        );
-      }
-
-      final secondaryPlace = secondarySeatPlaces.firstWhereOrNull(
-        (place) => place.placeIndex == innerPlace,
-      );
-
-      return SeatPlaceV2(
-        currentRowIndex: secondaryPlace?.currentRowIndex ?? mainCurrentRowIndex,
-        rowLabel: secondaryPlace?.rowLabel ?? mainCurrentRowLabel,
-        seatState: PlaceStateV2.unselected,
-        seatPlace: secondaryPlace?.placeNumber ?? placeNumber++,
-      );
-    },
-  );
-
-  final seatPlaces = [
-    ...List.generate(
-      leftOffsetCount,
-      (index) => SeatPlaceV2(
-        rowLabel: mainCurrentRowLabel,
-        currentRowIndex: mainCurrentRowIndex,
-        seatState: PlaceStateV2.empty,
-        seatPlace: -1,
-      ),
-    ),
-    ...places.nonNulls.toList().reversed.toList(),
-  ];
-
-  return SeatRowPlaceV2(
-    rowPlaceLabel: mainCurrentRowLabel,
-    seatPlaces: seatPlaces,
-  );
-}

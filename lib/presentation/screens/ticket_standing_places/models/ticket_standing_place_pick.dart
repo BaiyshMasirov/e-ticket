@@ -8,5 +8,6 @@ class TicketStandingPlacePick with _$TicketStandingPlacePick {
   const factory TicketStandingPlacePick({
     required int type,
     required int count,
+    required double price,
   }) = _TicketStandingPlacePick;
 }

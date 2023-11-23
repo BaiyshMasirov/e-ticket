@@ -85,8 +85,8 @@ class ColorName {
   /// Color: #21005D
   static const Color onPrimaryContainerLight = Color(0xFF21005D);
 
-  /// Color: #381E72
-  static const Color onPrimaryDark = Color(0xFF381E72);
+  /// Color: #721E2D
+  static const Color onPrimaryDark = Color(0xFF721E2D);
 
   /// Color: #E6E0E9
   static const Color onPrimaryLight = Color(0xFFE6E0E9);
@@ -145,8 +145,8 @@ class ColorName {
   /// Color: #EADDFF
   static const Color primaryContainerLight = Color(0xFFEADDFF);
 
-  /// Color: #D0BCFF
-  static const Color primaryDark = Color(0xFFD0BCFF);
+  /// Color: #B2A4A7
+  static const Color primaryDark = Color(0xFFB2A4A7);
 
   /// Color: #3D73E0
   static const Color primaryLight = Color(0xFF3D73E0);
@@ -178,8 +178,8 @@ class ColorName {
   /// Color: #29262F
   static const Color surfaceTintDark = Color(0xFF29262F);
 
-  /// Color: #F4ECF9
-  static const Color surfaceTintLight = Color(0xFFF4ECF9);
+  /// Color: #ECF1F9
+  static const Color surfaceTintLight = Color(0xFFECF1F9);
 
   /// Color: #49454F
   static const Color surfaceVariantDark = Color(0xFF49454F);

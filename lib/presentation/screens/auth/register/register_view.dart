@@ -83,6 +83,8 @@ class RegisterView extends HookWidget {
                 PrimaryButton(
                   title: LocaleKeys.confirm.tr(),
                   onPressed: () {
+                    primaryFocus?.unfocus();
+
                     if (formKey.currentState?.validate() ?? false) {
                       context.read<RegisterCubit>().register(
                             registerCommandDto: RegisterUserCommandDto(

@@ -7,3 +7,4 @@ export './models/seat_place_v2.dart';
 export './models/seat_row_place_v2.dart';
 export './widgets/seat_row_label_widget_v2.dart';
 export './models/seat_place_secondary_v2.dart';
+export './seat_generator/seat_generator.dart';

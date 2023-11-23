@@ -26,6 +26,9 @@ class TicketSeatPlacesScreen extends StatelessWidget {
       )..getTickets(),
       child: AppScaffold(
         title: locationType.name.tr(),
+        isLoadingFunc: (context) => context.select<TicketSeatPlacesCubit, bool>(
+          (value) => value.state is TicketSeatPlacesLoadingState,
+        ),
         body: TicketSeatPlacesView(locationType: locationType),
       ),
     );
