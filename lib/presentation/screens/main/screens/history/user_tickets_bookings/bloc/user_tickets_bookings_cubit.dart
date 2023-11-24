@@ -4,11 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 class UserTicketsBookingsCubit extends Cubit<UserTicketsBookingsState> {
-  final BookingRepository bookingRepository;
+  final BookingRepository _bookingRepository;
 
   UserTicketsBookingsCubit._({
     required BookingRepository repo,
-  })  : bookingRepository = repo,
+  })  : _bookingRepository = repo,
         super(const UserTicketsBookingsState.initial());
 
   Future<void> refreshPage({required String id}) async {
@@ -19,7 +19,9 @@ class UserTicketsBookingsCubit extends Cubit<UserTicketsBookingsState> {
   }
 
   Future<void> getUserTicketsId({required String id}) async {
-    final result = await bookingRepository.getUserTicketsId(id);
+    emit(const UserTicketsBookingsState.loading());
+
+    final result = await _bookingRepository.getUserTicketsId(id);
 
     result.fold(
       (e) => emit(UserTicketsBookingsState.error(errorMessage: e.errorMessage)),

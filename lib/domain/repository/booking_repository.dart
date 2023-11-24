@@ -5,10 +5,16 @@ import 'package:eticket/data/sembast_database/history_booking_data_sources.dart'
 
 class BookingRepository with NetworkRemoteRepositoryMixin {
   final BookingRemoteDatasource _bookingRemoteDatasource;
+  final HistoryBookingDataSources _historyBookingDatasource;
+  final BookingSembastDataSources _bookingDatasource;
 
   BookingRepository({
     required BookingRemoteDatasource bookingRemoteDatasource,
-  }) : _bookingRemoteDatasource = bookingRemoteDatasource;
+    required HistoryBookingDataSources historyBookingDatasource,
+    required BookingSembastDataSources bookingDatasource,
+  })  : _bookingRemoteDatasource = bookingRemoteDatasource,
+        _bookingDatasource = bookingDatasource,
+        _historyBookingDatasource = historyBookingDatasource;
 
   Future<Either<RequestFailure, Unit>> createBooking(
     CreateBookingCommandDto createBookingCommandDto,
@@ -28,7 +34,6 @@ class BookingRepository with NetworkRemoteRepositoryMixin {
     required int page,
     required UserBookingsFilter filter,
   }) async {
-    final historyDataSource = HistoryBookingDataSources();
     final response = await handleRemoteRequest(
       request: () =>
           _bookingRemoteDatasource.getUserBookings(filter: filter, page: page),
@@ -39,15 +44,15 @@ class BookingRepository with NetworkRemoteRepositoryMixin {
         orElse: () => left(l),
         noConnection: (_, __) async {
           final currentHistory =
-              await historyDataSource.getAllHistoryBookings();
+              await _historyBookingDatasource.getAllHistoryBookings();
 
           return right(currentHistory!);
         },
       );
     }, (r) async {
-      await historyDataSource.clearAllHistoryBookings();
+      await _historyBookingDatasource.clearAllHistoryBookings();
 
-      await historyDataSource.saveHistoryBooking(r);
+      await _historyBookingDatasource.saveHistoryBooking(r);
 
       return right(r);
     });
@@ -55,7 +60,6 @@ class BookingRepository with NetworkRemoteRepositoryMixin {
 
   Future<Either<RequestFailure, List<UserTicketsBookingsDto>>> getUserTicketsId(
       String id) async {
-    final dataSource = BookingSembastDataSources();
     final response = await handleRemoteRequest(
       request: () => _bookingRemoteDatasource.getUserTicketsBookings(id),
     );
@@ -64,15 +68,16 @@ class BookingRepository with NetworkRemoteRepositoryMixin {
       return l.maybeWhen(
         orElse: () => left(l),
         noConnection: (_, __) async {
-          final currentBookingList = await dataSource.getAllBookingsTiccket();
+          final currentBookingList =
+              await _bookingDatasource.getAllBookingsTiccket();
 
           return right(currentBookingList);
         },
       );
     }, (r) async {
-      await dataSource.clearAllBookingsTiccket();
+      await _bookingDatasource.clearAllBookingsTiccket();
 
-      await dataSource.saveBookingsTicket(r);
+      await _bookingDatasource.saveBookingsTicket(r);
 
       return right(r);
     });

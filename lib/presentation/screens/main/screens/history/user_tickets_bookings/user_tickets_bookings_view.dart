@@ -24,7 +24,6 @@ class UserTicketsBookingsView extends HookWidget {
             EdgeInsets.symmetric(horizontal: kDefaultPadding, vertical: 15.h),
         child: bookingsState.maybeWhen(
           orElse: () => const SizedBox.shrink(),
-          loading: () => const Center(child: CircularProgressIndicator()),
           error: (
             errorMessage,
           ) =>

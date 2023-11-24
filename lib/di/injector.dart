@@ -2,6 +2,7 @@ import 'package:authentication/authentication.dart';
 import 'package:common/common.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/data/sembast_database/booking_sembast_data_sources.dart';
+import 'package:eticket/data/sembast_database/history_booking_data_sources.dart';
 import 'package:eticket/data/sembast_database/sembast_database.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
@@ -48,6 +49,8 @@ Future<void> injectDependencies() async {
     getIt.get<AuthInterceptor>(),
   );
 
+  final databaseClient = SembastDatabase.openDatabase();
+
   // remote sources
   getIt.registerSingleton<AccountRemoteSource>(
     AccountRemoteSource(dio: projectDio),
@@ -64,6 +67,12 @@ Future<void> injectDependencies() async {
   getIt.registerSingleton<DictionaryRemoteSource>(
     DictionaryRemoteSource(dio: projectDio),
   );
+  getIt.registerSingleton<BookingSembastDataSources>(
+    BookingSembastDataSources(db: databaseClient),
+  );
+  getIt.registerSingleton<HistoryBookingDataSources>(
+    HistoryBookingDataSources(db: databaseClient),
+  );
   // end of remote sources
 
   // repositories
@@ -71,8 +80,9 @@ Future<void> injectDependencies() async {
     accountRemoteSource: getIt.get<AccountRemoteSource>(),
   ));
   getIt.registerSingleton<BookingRepository>(BookingRepository(
-    bookingRemoteDatasource: getIt.get<BookingRemoteDatasource>(),
-  ));
+      bookingRemoteDatasource: getIt.get<BookingRemoteDatasource>(),
+      bookingDatasource: getIt.get<BookingSembastDataSources>(),
+      historyBookingDatasource: getIt.get<HistoryBookingDataSources>()));
   getIt.registerSingleton<EventRepository>(EventRepository(
     eventRemoteDatasource: getIt.get<EventRemoteDatasource>(),
   ));
@@ -85,10 +95,9 @@ Future<void> injectDependencies() async {
   // end of repositories
   // endregion END OF PROJECT MODULE
 
-  getIt.registerSingleton<AppDatabase>(AppDatabase.instance);
+  getIt.registerSingleton<SembastDatabase>(SembastDatabase());
 
-  getIt.registerSingleton<BookingSembastDataSources>(
-      BookingSembastDataSources());
+  // getIt.registerSingleton<Database>(Database());
 
   getIt.registerSingleton<SnackbarCubit>(SnackbarCubit());
   getIt.registerSingleton<DictionaryCubit>(DictionaryCubit.initialize());

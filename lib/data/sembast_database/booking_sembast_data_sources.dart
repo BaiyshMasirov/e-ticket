@@ -1,12 +1,15 @@
 import 'package:eticket/data/models/history/user_tickets_bookings_dto/user_tickets_bookings_dto.dart';
-import 'package:eticket/data/sembast_database/sembast_database.dart';
 import 'package:sembast/sembast.dart';
 
 class BookingSembastDataSources {
+  final Future<Database> _db;
+
+  BookingSembastDataSources({
+    required Future<Database> db,
+  }) : _db = db;
+
   static const String folderName = 'Bookings';
   final store = stringMapStoreFactory.store(folderName);
-
-  Future<Database> get _db async => await AppDatabase.instance.database;
 
   Future saveBookingsTicket(List<UserTicketsBookingsDto> todo) async {
     final recordKeys = todo.map((item) => item.id).toList();
