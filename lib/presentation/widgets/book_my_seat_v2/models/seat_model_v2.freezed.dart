@@ -23,9 +23,10 @@ mixin _$SeatModelV2 {
   String get pathUnSelectedSeat => throw _privateConstructorUsedError;
   String get pathSoldSeat => throw _privateConstructorUsedError;
   String get pathDisabledSeat => throw _privateConstructorUsedError;
-  double get seatSvgSize => throw _privateConstructorUsedError;
   int get currentRowIndex => throw _privateConstructorUsedError;
   String get rowLabel => throw _privateConstructorUsedError;
+  String? get ticketId => throw _privateConstructorUsedError;
+  double get seatSvgSize => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SeatModelV2CopyWith<SeatModelV2> get copyWith =>
@@ -46,9 +47,10 @@ abstract class $SeatModelV2CopyWith<$Res> {
       String pathUnSelectedSeat,
       String pathSoldSeat,
       String pathDisabledSeat,
-      double seatSvgSize,
       int currentRowIndex,
-      String rowLabel});
+      String rowLabel,
+      String? ticketId,
+      double seatSvgSize});
 }
 
 /// @nodoc
@@ -66,14 +68,15 @@ class _$SeatModelV2CopyWithImpl<$Res, $Val extends SeatModelV2>
   $Res call({
     Object? seatState = null,
     Object? seatPlace = null,
-    Object? seatPlaceTextPadding = freezed,
+    Object? seatPlaceTextPadding = null,
     Object? pathSelectedSeat = null,
     Object? pathUnSelectedSeat = null,
     Object? pathSoldSeat = null,
     Object? pathDisabledSeat = null,
-    Object? seatSvgSize = null,
     Object? currentRowIndex = null,
     Object? rowLabel = null,
+    Object? ticketId = freezed,
+    Object? seatSvgSize = null,
   }) {
     return _then(_value.copyWith(
       seatState: null == seatState
@@ -84,7 +87,7 @@ class _$SeatModelV2CopyWithImpl<$Res, $Val extends SeatModelV2>
           ? _value.seatPlace
           : seatPlace // ignore: cast_nullable_to_non_nullable
               as int,
-      seatPlaceTextPadding: freezed == seatPlaceTextPadding
+      seatPlaceTextPadding: null == seatPlaceTextPadding
           ? _value.seatPlaceTextPadding
           : seatPlaceTextPadding // ignore: cast_nullable_to_non_nullable
               as EdgeInsets,
@@ -104,10 +107,6 @@ class _$SeatModelV2CopyWithImpl<$Res, $Val extends SeatModelV2>
           ? _value.pathDisabledSeat
           : pathDisabledSeat // ignore: cast_nullable_to_non_nullable
               as String,
-      seatSvgSize: null == seatSvgSize
-          ? _value.seatSvgSize
-          : seatSvgSize // ignore: cast_nullable_to_non_nullable
-              as double,
       currentRowIndex: null == currentRowIndex
           ? _value.currentRowIndex
           : currentRowIndex // ignore: cast_nullable_to_non_nullable
@@ -116,6 +115,14 @@ class _$SeatModelV2CopyWithImpl<$Res, $Val extends SeatModelV2>
           ? _value.rowLabel
           : rowLabel // ignore: cast_nullable_to_non_nullable
               as String,
+      ticketId: freezed == ticketId
+          ? _value.ticketId
+          : ticketId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      seatSvgSize: null == seatSvgSize
+          ? _value.seatSvgSize
+          : seatSvgSize // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -136,9 +143,10 @@ abstract class _$$SeatModelV2ImplCopyWith<$Res>
       String pathUnSelectedSeat,
       String pathSoldSeat,
       String pathDisabledSeat,
-      double seatSvgSize,
       int currentRowIndex,
-      String rowLabel});
+      String rowLabel,
+      String? ticketId,
+      double seatSvgSize});
 }
 
 /// @nodoc
@@ -154,14 +162,15 @@ class __$$SeatModelV2ImplCopyWithImpl<$Res>
   $Res call({
     Object? seatState = null,
     Object? seatPlace = null,
-    Object? seatPlaceTextPadding = freezed,
+    Object? seatPlaceTextPadding = null,
     Object? pathSelectedSeat = null,
     Object? pathUnSelectedSeat = null,
     Object? pathSoldSeat = null,
     Object? pathDisabledSeat = null,
-    Object? seatSvgSize = null,
     Object? currentRowIndex = null,
     Object? rowLabel = null,
+    Object? ticketId = freezed,
+    Object? seatSvgSize = null,
   }) {
     return _then(_$SeatModelV2Impl(
       seatState: null == seatState
@@ -172,7 +181,7 @@ class __$$SeatModelV2ImplCopyWithImpl<$Res>
           ? _value.seatPlace
           : seatPlace // ignore: cast_nullable_to_non_nullable
               as int,
-      seatPlaceTextPadding: freezed == seatPlaceTextPadding
+      seatPlaceTextPadding: null == seatPlaceTextPadding
           ? _value.seatPlaceTextPadding
           : seatPlaceTextPadding // ignore: cast_nullable_to_non_nullable
               as EdgeInsets,
@@ -192,10 +201,6 @@ class __$$SeatModelV2ImplCopyWithImpl<$Res>
           ? _value.pathDisabledSeat
           : pathDisabledSeat // ignore: cast_nullable_to_non_nullable
               as String,
-      seatSvgSize: null == seatSvgSize
-          ? _value.seatSvgSize
-          : seatSvgSize // ignore: cast_nullable_to_non_nullable
-              as double,
       currentRowIndex: null == currentRowIndex
           ? _value.currentRowIndex
           : currentRowIndex // ignore: cast_nullable_to_non_nullable
@@ -204,6 +209,14 @@ class __$$SeatModelV2ImplCopyWithImpl<$Res>
           ? _value.rowLabel
           : rowLabel // ignore: cast_nullable_to_non_nullable
               as String,
+      ticketId: freezed == ticketId
+          ? _value.ticketId
+          : ticketId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      seatSvgSize: null == seatSvgSize
+          ? _value.seatSvgSize
+          : seatSvgSize // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -219,9 +232,10 @@ class _$SeatModelV2Impl extends _SeatModelV2 {
       required this.pathUnSelectedSeat,
       required this.pathSoldSeat,
       required this.pathDisabledSeat,
-      this.seatSvgSize = 50,
       required this.currentRowIndex,
-      required this.rowLabel})
+      required this.rowLabel,
+      this.ticketId,
+      this.seatSvgSize = 50})
       : super._();
 
   @override
@@ -239,16 +253,18 @@ class _$SeatModelV2Impl extends _SeatModelV2 {
   @override
   final String pathDisabledSeat;
   @override
-  @JsonKey()
-  final double seatSvgSize;
-  @override
   final int currentRowIndex;
   @override
   final String rowLabel;
+  @override
+  final String? ticketId;
+  @override
+  @JsonKey()
+  final double seatSvgSize;
 
   @override
   String toString() {
-    return 'SeatModelV2(seatState: $seatState, seatPlace: $seatPlace, seatPlaceTextPadding: $seatPlaceTextPadding, pathSelectedSeat: $pathSelectedSeat, pathUnSelectedSeat: $pathUnSelectedSeat, pathSoldSeat: $pathSoldSeat, pathDisabledSeat: $pathDisabledSeat, seatSvgSize: $seatSvgSize, currentRowIndex: $currentRowIndex, rowLabel: $rowLabel)';
+    return 'SeatModelV2(seatState: $seatState, seatPlace: $seatPlace, seatPlaceTextPadding: $seatPlaceTextPadding, pathSelectedSeat: $pathSelectedSeat, pathUnSelectedSeat: $pathUnSelectedSeat, pathSoldSeat: $pathSoldSeat, pathDisabledSeat: $pathDisabledSeat, currentRowIndex: $currentRowIndex, rowLabel: $rowLabel, ticketId: $ticketId, seatSvgSize: $seatSvgSize)';
   }
 
   @override
@@ -260,8 +276,8 @@ class _$SeatModelV2Impl extends _SeatModelV2 {
                 other.seatState == seatState) &&
             (identical(other.seatPlace, seatPlace) ||
                 other.seatPlace == seatPlace) &&
-            const DeepCollectionEquality()
-                .equals(other.seatPlaceTextPadding, seatPlaceTextPadding) &&
+            (identical(other.seatPlaceTextPadding, seatPlaceTextPadding) ||
+                other.seatPlaceTextPadding == seatPlaceTextPadding) &&
             (identical(other.pathSelectedSeat, pathSelectedSeat) ||
                 other.pathSelectedSeat == pathSelectedSeat) &&
             (identical(other.pathUnSelectedSeat, pathUnSelectedSeat) ||
@@ -270,12 +286,14 @@ class _$SeatModelV2Impl extends _SeatModelV2 {
                 other.pathSoldSeat == pathSoldSeat) &&
             (identical(other.pathDisabledSeat, pathDisabledSeat) ||
                 other.pathDisabledSeat == pathDisabledSeat) &&
-            (identical(other.seatSvgSize, seatSvgSize) ||
-                other.seatSvgSize == seatSvgSize) &&
             (identical(other.currentRowIndex, currentRowIndex) ||
                 other.currentRowIndex == currentRowIndex) &&
             (identical(other.rowLabel, rowLabel) ||
-                other.rowLabel == rowLabel));
+                other.rowLabel == rowLabel) &&
+            (identical(other.ticketId, ticketId) ||
+                other.ticketId == ticketId) &&
+            (identical(other.seatSvgSize, seatSvgSize) ||
+                other.seatSvgSize == seatSvgSize));
   }
 
   @override
@@ -283,14 +301,15 @@ class _$SeatModelV2Impl extends _SeatModelV2 {
       runtimeType,
       seatState,
       seatPlace,
-      const DeepCollectionEquality().hash(seatPlaceTextPadding),
+      seatPlaceTextPadding,
       pathSelectedSeat,
       pathUnSelectedSeat,
       pathSoldSeat,
       pathDisabledSeat,
-      seatSvgSize,
       currentRowIndex,
-      rowLabel);
+      rowLabel,
+      ticketId,
+      seatSvgSize);
 
   @JsonKey(ignore: true)
   @override
@@ -308,9 +327,10 @@ abstract class _SeatModelV2 extends SeatModelV2 {
       required final String pathUnSelectedSeat,
       required final String pathSoldSeat,
       required final String pathDisabledSeat,
-      final double seatSvgSize,
       required final int currentRowIndex,
-      required final String rowLabel}) = _$SeatModelV2Impl;
+      required final String rowLabel,
+      final String? ticketId,
+      final double seatSvgSize}) = _$SeatModelV2Impl;
   const _SeatModelV2._() : super._();
 
   @override
@@ -328,11 +348,13 @@ abstract class _SeatModelV2 extends SeatModelV2 {
   @override
   String get pathDisabledSeat;
   @override
-  double get seatSvgSize;
-  @override
   int get currentRowIndex;
   @override
   String get rowLabel;
+  @override
+  String? get ticketId;
+  @override
+  double get seatSvgSize;
   @override
   @JsonKey(ignore: true)
   _$$SeatModelV2ImplCopyWith<_$SeatModelV2Impl> get copyWith =>

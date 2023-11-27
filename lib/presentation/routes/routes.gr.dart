@@ -137,6 +137,7 @@ abstract class $AppRouter extends _i15.RootStackRouter {
         child: _i12.TicketSeatPlacesScreen(
           locationType: args.locationType,
           eventId: args.eventId,
+          eventDate: args.eventDate,
           key: args.key,
         ),
       );
@@ -427,6 +428,7 @@ class TicketSeatPlacesRoute
   TicketSeatPlacesRoute({
     required _i20.LocationType locationType,
     required String eventId,
+    required DateTime eventDate,
     _i18.Key? key,
     List<_i15.PageRouteInfo>? children,
   }) : super(
@@ -434,6 +436,7 @@ class TicketSeatPlacesRoute
           args: TicketSeatPlacesRouteArgs(
             locationType: locationType,
             eventId: eventId,
+            eventDate: eventDate,
             key: key,
           ),
           initialChildren: children,
@@ -449,6 +452,7 @@ class TicketSeatPlacesRouteArgs {
   const TicketSeatPlacesRouteArgs({
     required this.locationType,
     required this.eventId,
+    required this.eventDate,
     this.key,
   });
 
@@ -456,11 +460,13 @@ class TicketSeatPlacesRouteArgs {
 
   final String eventId;
 
+  final DateTime eventDate;
+
   final _i18.Key? key;
 
   @override
   String toString() {
-    return 'TicketSeatPlacesRouteArgs{locationType: $locationType, eventId: $eventId, key: $key}';
+    return 'TicketSeatPlacesRouteArgs{locationType: $locationType, eventId: $eventId, eventDate: $eventDate, key: $key}';
   }
 }
 

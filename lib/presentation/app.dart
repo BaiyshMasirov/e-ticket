@@ -29,7 +29,6 @@ class App extends StatelessWidget {
 
               _appRouter.pushAndPopUntil(
                 MainRoute(),
-                // PaymentMethodsRoute(preciseCost: 123, bookingId: 'sdf'),
                 predicate: (route) => false,
               );
             },

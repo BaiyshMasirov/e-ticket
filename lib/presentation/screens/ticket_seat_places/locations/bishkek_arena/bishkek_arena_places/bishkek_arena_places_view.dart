@@ -1,11 +1,14 @@
+import 'package:common/common.dart';
 import 'package:eticket/common/extensions/extensions.dart';
 import 'package:eticket/generated/assets.gen.dart';
+import 'package:eticket/presentation/screens/ticket_seat_places/bloc/bloc.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/locations/bishkek_arena/models/models.dart';
 import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:eticket/data/models/models.dart';
+import 'package:collection/collection.dart';
 
 class BishkekArenaPlacesView extends HookWidget {
   final BishkekArenaBlockType blockType;
@@ -72,11 +75,34 @@ class BishkekArenaPlacesView extends HookWidget {
                     Assets.svgs.booking.svgUnselectedBusSeat.path,
                 currentSeatsState: places,
               ),
-              onSeatStateChanged: (rowI, colI, currentState) {
+              onSeatStateChanged:
+                  (currentIndex, placeNumber, currentState, ticketId) {
+                if (ticketId == null) currentState;
+
                 if (currentState == PlaceStateV2.unselected) {
-                  return PlaceStateV2.selected;
+                  final ticket = tickets.firstWhereOrNull(
+                    (item) => item.id == ticketId,
+                  );
+
+                  if (ticket != null) {
+                    context
+                        .read<TicketSeatHoldCubit>()
+                        .addTicket(ticket: ticket);
+
+                    return PlaceStateV2.selected;
+                  }
                 } else if (currentState == PlaceStateV2.selected) {
-                  return PlaceStateV2.unselected;
+                  final ticket = tickets.firstWhereOrNull(
+                    (item) => item.id == ticketId,
+                  );
+
+                  if (ticket != null) {
+                    context
+                        .read<TicketSeatHoldCubit>()
+                        .removeTicket(ticket: ticket);
+
+                    return PlaceStateV2.unselected;
+                  }
                 }
 
                 return currentState;

@@ -16,6 +16,8 @@ _$TicketDtoImpl _$$TicketDtoImplFromJson(Map<String, dynamic> json) =>
       branchType: json['branchType'] as int,
       index: json['index'] as int,
       price: (json['price'] as num).toDouble(),
+      status: $enumDecode(_$TicketStatusEnumMap, json['status'],
+          unknownValue: TicketStatus.unknown),
     );
 
 Map<String, dynamic> _$$TicketDtoImplToJson(_$TicketDtoImpl instance) =>
@@ -28,4 +30,14 @@ Map<String, dynamic> _$$TicketDtoImplToJson(_$TicketDtoImpl instance) =>
       'branchType': instance.branchType,
       'index': instance.index,
       'price': instance.price,
+      'status': _$TicketStatusEnumMap[instance.status]!,
     };
+
+const _$TicketStatusEnumMap = {
+  TicketStatus.FREE: 0,
+  TicketStatus.WAITING_PAYMENT: 1,
+  TicketStatus.PAID: 2,
+  TicketStatus.RETURNED: 3,
+  TicketStatus.USED: 4,
+  TicketStatus.unknown: 'unknown',
+};

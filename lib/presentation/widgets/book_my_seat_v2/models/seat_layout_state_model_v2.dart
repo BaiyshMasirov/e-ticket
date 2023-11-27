@@ -1,7 +1,5 @@
-import 'package:eticket/presentation/widgets/book_my_seat/book_my_seat.dart';
 import 'package:eticket/presentation/widgets/book_my_seat_v2/models/seat_row_place_v2.dart';
 import 'package:flutter/material.dart';
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'seat_layout_state_model_v2.freezed.dart';

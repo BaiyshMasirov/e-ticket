@@ -1,5 +1,6 @@
 import 'package:common/common.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:eticket/common/enums/enums.dart';
 
 part 'ticket_dto.freezed.dart';
 part 'ticket_dto.g.dart';
@@ -16,6 +17,8 @@ class TicketDto with _$TicketDto {
     required int branchType,
     required int index,
     required double price,
+    @JsonKey(unknownEnumValue: TicketStatus.unknown)
+    required TicketStatus status,
   }) = _TicketDto;
 
   factory TicketDto.fromJson(Json json) => _$TicketDtoFromJson(json);

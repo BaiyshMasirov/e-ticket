@@ -65,5 +65,11 @@ abstract class  LocaleKeys {
   static const balance = 'balance';
   static const get_confirmation_code = 'get_confirmation_code';
   static const confirmation_code = 'confirmation_code';
+  static const payment_success_description = 'payment_success_description';
+  static const free = 'free';
+  static const waiting_payment = 'waiting_payment';
+  static const paid = 'paid';
+  static const returned = 'returned';
+  static const used = 'used';
 
 }

@@ -2,6 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
+import 'package:eticket/presentation/routes/routes.gr.dart';
+import 'package:eticket/presentation/screens/main/models/main_screen_tab.dart';
 import 'package:eticket/presentation/screens/payment/widgets/widgets.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
@@ -66,7 +68,9 @@ class PaymentMethodsView extends HookWidget {
                   context: context,
                   bookingId: bookingId,
                   paymentType: type,
-                  onSuccess: () => '',
+                  onSuccess: () => context.navigateTo(MainRoute(
+                    initialTab: MAIN_SCREEN_TAB.HISTORY,
+                  )),
                   closePressed: () => context.popRoute(),
                 ),
               );

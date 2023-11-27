@@ -21,6 +21,7 @@ mixin _$SeatPlaceV2 {
   String get rowLabel => throw _privateConstructorUsedError;
   PlaceStateV2 get seatState => throw _privateConstructorUsedError;
   int get seatPlace => throw _privateConstructorUsedError;
+  String? get ticketId => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SeatPlaceV2CopyWith<SeatPlaceV2> get copyWith =>
@@ -37,7 +38,8 @@ abstract class $SeatPlaceV2CopyWith<$Res> {
       {int currentRowIndex,
       String rowLabel,
       PlaceStateV2 seatState,
-      int seatPlace});
+      int seatPlace,
+      String? ticketId});
 }
 
 /// @nodoc
@@ -57,6 +59,7 @@ class _$SeatPlaceV2CopyWithImpl<$Res, $Val extends SeatPlaceV2>
     Object? rowLabel = null,
     Object? seatState = null,
     Object? seatPlace = null,
+    Object? ticketId = freezed,
   }) {
     return _then(_value.copyWith(
       currentRowIndex: null == currentRowIndex
@@ -75,6 +78,10 @@ class _$SeatPlaceV2CopyWithImpl<$Res, $Val extends SeatPlaceV2>
           ? _value.seatPlace
           : seatPlace // ignore: cast_nullable_to_non_nullable
               as int,
+      ticketId: freezed == ticketId
+          ? _value.ticketId
+          : ticketId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -91,7 +98,8 @@ abstract class _$$SeatPlaceV2ImplCopyWith<$Res>
       {int currentRowIndex,
       String rowLabel,
       PlaceStateV2 seatState,
-      int seatPlace});
+      int seatPlace,
+      String? ticketId});
 }
 
 /// @nodoc
@@ -109,6 +117,7 @@ class __$$SeatPlaceV2ImplCopyWithImpl<$Res>
     Object? rowLabel = null,
     Object? seatState = null,
     Object? seatPlace = null,
+    Object? ticketId = freezed,
   }) {
     return _then(_$SeatPlaceV2Impl(
       currentRowIndex: null == currentRowIndex
@@ -127,6 +136,10 @@ class __$$SeatPlaceV2ImplCopyWithImpl<$Res>
           ? _value.seatPlace
           : seatPlace // ignore: cast_nullable_to_non_nullable
               as int,
+      ticketId: freezed == ticketId
+          ? _value.ticketId
+          : ticketId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -138,7 +151,8 @@ class _$SeatPlaceV2Impl extends _SeatPlaceV2 {
       {required this.currentRowIndex,
       required this.rowLabel,
       required this.seatState,
-      required this.seatPlace})
+      required this.seatPlace,
+      this.ticketId})
       : super._();
 
   /// currentIndex row index *can be different fot the same row*
@@ -150,10 +164,12 @@ class _$SeatPlaceV2Impl extends _SeatPlaceV2 {
   final PlaceStateV2 seatState;
   @override
   final int seatPlace;
+  @override
+  final String? ticketId;
 
   @override
   String toString() {
-    return 'SeatPlaceV2(currentRowIndex: $currentRowIndex, rowLabel: $rowLabel, seatState: $seatState, seatPlace: $seatPlace)';
+    return 'SeatPlaceV2(currentRowIndex: $currentRowIndex, rowLabel: $rowLabel, seatState: $seatState, seatPlace: $seatPlace, ticketId: $ticketId)';
   }
 
   @override
@@ -168,12 +184,14 @@ class _$SeatPlaceV2Impl extends _SeatPlaceV2 {
             (identical(other.seatState, seatState) ||
                 other.seatState == seatState) &&
             (identical(other.seatPlace, seatPlace) ||
-                other.seatPlace == seatPlace));
+                other.seatPlace == seatPlace) &&
+            (identical(other.ticketId, ticketId) ||
+                other.ticketId == ticketId));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, currentRowIndex, rowLabel, seatState, seatPlace);
+  int get hashCode => Object.hash(
+      runtimeType, currentRowIndex, rowLabel, seatState, seatPlace, ticketId);
 
   @JsonKey(ignore: true)
   @override
@@ -187,7 +205,8 @@ abstract class _SeatPlaceV2 extends SeatPlaceV2 {
       {required final int currentRowIndex,
       required final String rowLabel,
       required final PlaceStateV2 seatState,
-      required final int seatPlace}) = _$SeatPlaceV2Impl;
+      required final int seatPlace,
+      final String? ticketId}) = _$SeatPlaceV2Impl;
   const _SeatPlaceV2._() : super._();
 
   @override
@@ -200,6 +219,8 @@ abstract class _SeatPlaceV2 extends SeatPlaceV2 {
   PlaceStateV2 get seatState;
   @override
   int get seatPlace;
+  @override
+  String? get ticketId;
   @override
   @JsonKey(ignore: true)
   _$$SeatPlaceV2ImplCopyWith<_$SeatPlaceV2Impl> get copyWith =>

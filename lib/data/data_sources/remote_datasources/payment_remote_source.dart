@@ -19,6 +19,7 @@ class PaymentRemoteSource {
         data: {
           'paymentType': paymentType.index,
           'phoneNumber': phoneNumber,
+          'bookingId': bookingId,
         },
       ),
       parse: (json) => unit,

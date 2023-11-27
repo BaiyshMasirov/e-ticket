@@ -15,7 +15,7 @@ class PayConfirmBottom extends HookWidget {
   final Function() _onSuccess;
   final Function() _closePressed;
 
-  PayConfirmBottom._({
+  const PayConfirmBottom._({
     required GlobalKey<FormState> formKey,
     required Function() onSuccess,
     required Function() closePressed,
@@ -30,113 +30,144 @@ class PayConfirmBottom extends HookWidget {
     final phoneController = useTextEditingController();
     final codeController = useTextEditingController();
 
-    return SizedBox(
-      height: 280.h,
-      child: Loader(
-        isLoadingFunc: (context) => context.select<PayConfirmCubit, bool>(
-          (cubit) => cubit is PayCreatingState || cubit is PayConfirmingState,
-        ),
-        child: Padding(
-          padding: EdgeInsets.all(kDefaultPadding),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      context
-                          .read<PayConfirmCubit>()
-                          .paymentType
-                          .name
-                          .toLowerCase()
-                          .tr(),
-                      style: TextStyle(
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w600,
+    return BlocListener<PaymentCubit, PaymentState>(
+      listener: (ctx, s) => s.maybeMap(
+        paymentConfirmSuccess: (_) => _onSuccess(),
+        orElse: () {},
+      ),
+      child: SizedBox(
+        height: 300.h,
+        child: Loader(
+          isLoadingFunc: (context) => context.select<PaymentCubit, bool>(
+            (cubit) =>
+                cubit is PaymentCreatingState ||
+                cubit is PaymentConfirmingState,
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(kDefaultPadding),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        context
+                            .read<PaymentCubit>()
+                            .paymentType
+                            .name
+                            .toLowerCase()
+                            .tr(),
+                        style: TextStyle(
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                    IconButton(
-                      onPressed: _closePressed,
-                      icon: Icon(
-                        CupertinoIcons.clear_circled,
-                        color: context.colorScheme.errorContainer,
-                        size: 24.w,
+                      IconButton(
+                        onPressed: _closePressed,
+                        icon: Icon(
+                          CupertinoIcons.clear_circled,
+                          color: context.colorScheme.errorContainer,
+                          size: 24.w,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 15.h),
-                BlocBuilder<PayConfirmCubit, PayConfirmState>(
-                  builder: (context, state) => PhoneFormFieldZ(
-                    controller: phoneController,
-                    enabled: state.maybeMap(
-                      orElse: () => true,
-                      confirmingPaymentSuccess: (_) => false,
-                      confirmingPayment: (_) => false,
-                      confirmingPaymentError: (_) => false,
-                    ),
+                    ],
                   ),
-                ),
-                SizedBox(height: 8.h),
-                BlocBuilder<PayConfirmCubit, PayConfirmState>(
-                  builder: (context, state) => Visibility(
-                    visible: state.maybeMap(
-                      orElse: () => true,
-                      initial: (_) => false,
-                      creatingPayment: (_) => false,
-                      creatingPaymentError: (_) => false,
-                    ),
-                    child: TextFormFieldZ(
-                      controller: codeController,
-                      label: LocaleKeys.confirmation_code.tr(),
-                      checkForNullEmpty: true,
-                      textInputType: TextInputType.number,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                BlocBuilder<PayConfirmCubit, PayConfirmState>(
-                  builder: (context, state) => PrimaryButton(
-                    title: state.map(
-                      initial: (_) => LocaleKeys.get_confirmation_code.tr(),
-                      creatingPayment: (_) =>
-                          LocaleKeys.get_confirmation_code.tr(),
-                      creatingPaymentError: (_) =>
-                          LocaleKeys.get_confirmation_code.tr(),
-                      creatingPaymentSuccess: (_) => LocaleKeys.confirm.tr(),
-                      confirmingPayment: (_) => LocaleKeys.confirm.tr(),
-                      confirmingPaymentSuccess: (_) => LocaleKeys.confirm.tr(),
-                      confirmingPaymentError: (_) => LocaleKeys.confirm.tr(),
-                    ),
-                    onPressed: state.map(
-                      initial: (_) => createPayment(context, phoneController),
-                      creatingPayment: (_) =>
-                          createPayment(context, phoneController),
-                      creatingPaymentError: (_) =>
-                          createPayment(context, phoneController),
-                      creatingPaymentSuccess: (_) => confirmMethod(
-                        context,
-                        phoneController,
-                        codeController,
-                      ),
-                      confirmingPayment: (_) => confirmMethod(
-                        context,
-                        phoneController,
-                        codeController,
-                      ),
-                      confirmingPaymentSuccess: (_) => null,
-                      confirmingPaymentError: (_) => confirmMethod(
-                        context,
-                        phoneController,
-                        codeController,
+                  SizedBox(height: 15.h),
+                  BlocBuilder<PaymentCubit, PaymentState>(
+                    builder: (context, state) => PhoneFormFieldZ(
+                      controller: phoneController,
+                      readOnly: state.maybeMap(
+                        orElse: () => false,
+                        paymentCreateSuccess: (_) => true,
+                        paymentConfirmSuccess: (_) => true,
+                        paymentConfirming: (_) => true,
+                        paymentConfirmError: (_) => true,
                       ),
                     ),
                   ),
-                ),
-              ],
+                  SizedBox(height: 8.h),
+                  BlocBuilder<PaymentCubit, PaymentState>(
+                    builder: (context, state) => Visibility(
+                      visible: state.maybeMap(
+                        orElse: () => true,
+                        initial: (_) => false,
+                        paymentCreating: (_) => false,
+                        paymentCreateError: (_) => false,
+                      ),
+                      child: TextFormFieldZ(
+                        controller: codeController,
+                        label: LocaleKeys.confirmation_code.tr(),
+                        checkForNullEmpty: true,
+                        textInputType: TextInputType.number,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10.h),
+                  BlocBuilder<PaymentCubit, PaymentState>(
+                    builder: (c, s) => Visibility(
+                      visible: s.maybeMap(
+                        orElse: () => false,
+                        paymentConfirmError: (_) => true,
+                        paymentCreateError: (_) => true,
+                      ),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          s.maybeMap(
+                            orElse: () => '',
+                            paymentConfirmError: (_) => _.errorMessage ?? '',
+                            paymentCreateError: (_) => _.errorMessage ?? '',
+                          ),
+                          maxLines: 3,
+                          style: TextStyle(color: context.colorScheme.error),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                  BlocBuilder<PaymentCubit, PaymentState>(
+                    builder: (context, state) => PrimaryButton(
+                      title: state.map(
+                        initial: (_) => LocaleKeys.get_confirmation_code.tr(),
+                        paymentCreating: (_) =>
+                            LocaleKeys.get_confirmation_code.tr(),
+                        paymentCreateError: (_) =>
+                            LocaleKeys.get_confirmation_code.tr(),
+                        paymentCreateSuccess: (_) => LocaleKeys.confirm.tr(),
+                        paymentConfirming: (_) => LocaleKeys.confirm.tr(),
+                        paymentConfirmSuccess: (_) => LocaleKeys.confirm.tr(),
+                        paymentConfirmError: (_) => LocaleKeys.confirm.tr(),
+                      ),
+                      onPressed: state.map(
+                        initial: (_) => createPayment(context, phoneController),
+                        paymentCreating: (_) =>
+                            createPayment(context, phoneController),
+                        paymentCreateError: (_) =>
+                            createPayment(context, phoneController),
+                        paymentCreateSuccess: (_) => confirmMethod(
+                          context,
+                          phoneController,
+                          codeController,
+                        ),
+                        paymentConfirming: (_) => confirmMethod(
+                          context,
+                          phoneController,
+                          codeController,
+                        ),
+                        paymentConfirmSuccess: (_) => null,
+                        paymentConfirmError: (_) => confirmMethod(
+                          context,
+                          phoneController,
+                          codeController,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -151,8 +182,10 @@ class PayConfirmBottom extends HookWidget {
   ) {
     return () {
       if (_formKey.currentState?.validate() ?? false) {
-        context.read<PayConfirmCubit>().confirmPayment(
-              phoneNumber: phoneController.text,
+        context.read<PaymentCubit>().confirmPayment(
+              phoneNumber: PhoneFormatters.unMaskPhoneNumber(
+                phoneController.text,
+              ),
               code: codeController.text,
             );
       }
@@ -165,8 +198,10 @@ class PayConfirmBottom extends HookWidget {
   ) {
     return () {
       if (_formKey.currentState?.validate() ?? false) {
-        context.read<PayConfirmCubit>().createPayment(
-              phoneNumber: phoneController.text,
+        context.read<PaymentCubit>().createPayment(
+              phoneNumber: PhoneFormatters.unMaskPhoneNumber(
+                phoneController.text,
+              ),
             );
       }
     };
@@ -192,7 +227,7 @@ class PayConfirmBottom extends HookWidget {
       ),
       context: context,
       builder: (ctx) => BlocProvider(
-        create: (ctx2) => PayConfirmCubit.initialize(
+        create: (ctx2) => PaymentCubit.initialize(
           bookingId: bookingId,
           paymentType: paymentType,
         ),

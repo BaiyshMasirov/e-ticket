@@ -9,6 +9,7 @@ class SeatWidgetV2 extends StatefulWidget {
     int currentIndex,
     int placeNumber,
     PlaceStateV2 currentState,
+    String? ticketId,
   ) onSeatStateChanged;
 
   const SeatWidgetV2({
@@ -101,6 +102,7 @@ class _SeatWidgetV2State extends State<SeatWidgetV2> {
                 widget.model.currentRowIndex,
                 widget.model.seatPlace,
                 PlaceStateV2.selected,
+                widget.model.ticketId,
               );
               seatState = newSeatState;
               setState(() {});
@@ -112,6 +114,7 @@ class _SeatWidgetV2State extends State<SeatWidgetV2> {
                 widget.model.currentRowIndex,
                 widget.model.seatPlace,
                 PlaceStateV2.unselected,
+                widget.model.ticketId,
               );
               seatState = newSeatState;
               setState(() {});

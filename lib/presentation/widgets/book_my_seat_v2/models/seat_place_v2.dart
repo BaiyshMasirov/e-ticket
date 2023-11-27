@@ -12,5 +12,6 @@ class SeatPlaceV2 with _$SeatPlaceV2 {
     required String rowLabel,
     required PlaceStateV2 seatState,
     required int seatPlace,
+    String? ticketId,
   }) = _SeatPlaceV2;
 }

@@ -1,4 +1,3 @@
-import 'package:eticket/presentation/widgets/book_my_seat/book_my_seat.dart';
 import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:flutter/material.dart';
 
@@ -17,8 +16,9 @@ class SeatModelV2 with _$SeatModelV2 {
     required String pathUnSelectedSeat,
     required String pathSoldSeat,
     required String pathDisabledSeat,
-    @Default(50) double seatSvgSize,
     required int currentRowIndex,
     required String rowLabel,
+    String? ticketId,
+    @Default(50) double seatSvgSize,
   }) = _SeatModelV2;
 }
