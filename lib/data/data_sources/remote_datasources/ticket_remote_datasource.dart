@@ -14,7 +14,7 @@ class TicketRemoteDatasource {
   }) async {
     final response = await _dio.makeRequest(
       request: () => _dio.get(
-        '/api/Ticket/get-tickets-by-eventId',
+        'api/Ticket/get-tickets-by-eventId',
         queryParameters: {
           'eventId': eventId,
         },
@@ -36,7 +36,7 @@ class TicketRemoteDatasource {
   }) async {
     final response = await _dio.makeRequest(
       request: () => _dio.get(
-        '/api/Ticket/get-tickets-count-eventId',
+        'api/Ticket/get-tickets-count-eventId',
         queryParameters: {
           'eventId': eventId,
         },
@@ -56,19 +56,41 @@ class TicketRemoteDatasource {
     return response;
   }
 
-  Future<RemoteResponse<ApiUserTokenDto>> holdTicket({
+  Future<RemoteResponse<String>> holdTicket({
     required List<String> ticketIds,
+    required DateTime eventDate,
+    required eventId,
   }) async {
     final response = await _dio.makeRequest(
       request: () => _dio.post(
-        '/api/Ticket/hold-ticket',
+        'api/Ticket/hold-ticket',
         data: {
           'ids': ticketIds,
+          'eventId': eventId,
+          'date': const DateTimeUTCSerializer().toJson(eventDate),
         },
       ),
-      parse: (json) {
-        return ApiUserTokenDto.fromJson(json['token']);
-      },
+      parse: (json) => json as String,
+    );
+
+    return response;
+  }
+
+  Future<RemoteResponse<String>> holdTicketWithoutSeating({
+    required List<TicketTypeCountDto> tickets,
+    required DateTime eventDate,
+    required String eventId,
+  }) async {
+    final response = await _dio.makeRequest(
+      request: () => _dio.post(
+        'api/Ticket/hold-ticket-without-seating',
+        data: {
+          'tickets': tickets.map((t) => t.toJson()).toList(),
+          'eventId': eventId,
+          'date': const DateTimeUTCSerializer().toJson(eventDate),
+        },
+      ),
+      parse: (json) => json as String,
     );
 
     return response;

@@ -20,21 +20,6 @@ class TicketRepository with NetworkRemoteRepositoryMixin {
     return response;
   }
 
-  Future<Either<RequestFailure, Unit>> holdTicket({
-    required List<String> ticketIds,
-  }) async {
-    final response = await handleRemoteRequest(
-      request: () => _ticketRemoteDatasource.holdTicket(
-        ticketIds: ticketIds,
-      ),
-    );
-
-    return response.fold(
-      (l) => left(l),
-      (r) => right(unit),
-    );
-  }
-
   Future<Either<RequestFailure, List<TicketTypeCountDto>>>
       getStandingTicketsCountByEventId({
     required String eventId,
@@ -49,5 +34,37 @@ class TicketRepository with NetworkRemoteRepositoryMixin {
       (l) => left(l),
       (r) => right(r),
     );
+  }
+
+  Future<Either<RequestFailure, String>> holdTicket({
+    required List<String> ticketIds,
+    required String eventId,
+    required DateTime eventDate,
+  }) async {
+    final response = await handleRemoteRequest(
+      request: () => _ticketRemoteDatasource.holdTicket(
+        ticketIds: ticketIds,
+        eventId: eventId,
+        eventDate: eventDate,
+      ),
+    );
+
+    return response;
+  }
+
+  Future<Either<RequestFailure, String>> holdTicketWithoutSeating({
+    required List<TicketTypeCountDto> tickets,
+    required String eventId,
+    required DateTime eventDate,
+  }) async {
+    final response = await handleRemoteRequest(
+      request: () => _ticketRemoteDatasource.holdTicketWithoutSeating(
+        tickets: tickets,
+        eventId: eventId,
+        eventDate: eventDate,
+      ),
+    );
+
+    return response;
   }
 }

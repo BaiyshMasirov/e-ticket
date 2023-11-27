@@ -32,7 +32,7 @@ class BookingRemoteDatasource {
     });
     final response = await _dio.makeRequest(
       request: () => _dio.get(
-        '/api/Booking/get-user-bookings',
+        'api/Booking/get-user-bookings',
         queryParameters: queryP,
       ),
       parse: (json) => UserBookingsDto.fromJson(json),
@@ -46,7 +46,7 @@ class BookingRemoteDatasource {
   ) async {
     return await _dio.makeRequest(
       request: () => _dio.get(
-        '/api/Ticket/get-user-tickets-bookingId',
+        'api/Ticket/get-user-tickets-bookingId',
         queryParameters: {
           'id': id,
         },

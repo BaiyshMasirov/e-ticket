@@ -60,5 +60,7 @@
   "elsom": "ЭЛСОМ",
   "megapay": "MegaPay",
   "odengi": "О!Деньги",
-  "balance": "Balance.kg"
+  "balance": "Balance.kg",
+  "get_confirmation_code": "Получить код подтверждения",
+  "confirmation_code": "Код подтверждения"
 }

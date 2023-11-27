@@ -7,7 +7,12 @@ import 'package:flutter/material.dart';
 
 @RoutePage()
 class PaymentMethodsScreen extends StatelessWidget {
+  final double preciseCost;
+  final String bookingId;
+
   const PaymentMethodsScreen({
+    required this.preciseCost,
+    required this.bookingId,
     Key? key,
   }) : super(key: key);
 
@@ -15,7 +20,10 @@ class PaymentMethodsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScaffold(
       title: LocaleKeys.payment_methods.tr(),
-      body: const PaymentMethodsView(),
+      body: PaymentMethodsView(
+        preciseCost: preciseCost,
+        bookingId: bookingId,
+      ),
     );
   }
 }

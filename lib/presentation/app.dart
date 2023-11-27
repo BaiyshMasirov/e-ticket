@@ -27,15 +27,16 @@ class App extends StatelessWidget {
             authenticated: () {
               FlutterNativeSplash.remove();
 
-              return _appRouter.pushAndPopUntil(
-                MainRoute(),
+              _appRouter.pushAndPopUntil(
+                // MainRoute(),
+                PaymentMethodsRoute(preciseCost: 123, bookingId: 'sdf'),
                 predicate: (route) => false,
               );
             },
             unauthenticated: () {
               FlutterNativeSplash.remove();
 
-              return _appRouter.pushAndPopUntil(
+              _appRouter.pushAndPopUntil(
                 const LoginRoute(),
                 predicate: (route) => false,
               );
@@ -57,8 +58,7 @@ class App extends StatelessWidget {
         builder: (context, child) => Overlay(
           initialEntries: [
             OverlayEntry(
-              builder: (context) =>
-                  BlocListener<SnackbarCubit, SnackbarState>(
+              builder: (context) => BlocListener<SnackbarCubit, SnackbarState>(
                 listener: (context, state) => state.whenOrNull(
                   error: (message) => SnackbarAlert.showError(
                     context: context,

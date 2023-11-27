@@ -26,7 +26,7 @@ class EventRemoteDatasource {
 
     final response = await _dio.makeRequest(
       request: () => _dio.get(
-        '/api/Event/get-events',
+        'api/Event/get-events',
         queryParameters: queryParams,
       ),
       parse: (json) => EventPagingDto.fromJson(json),
@@ -38,7 +38,7 @@ class EventRemoteDatasource {
   Future<RemoteResponse<EventDto>> getEventById(String id) async {
     final response = await _dio.makeRequest(
       request: () => _dio.get(
-        '/api/Event/get-event-by-id',
+        'api/Event/get-event-by-id',
         queryParameters: {
           'id': id,
         },
@@ -54,7 +54,7 @@ class EventRemoteDatasource {
   }) async {
     final response = await _dio.makeRequest(
       request: () => _dio.get(
-        '/api/Event/get-user-events',
+        'api/Event/get-user-events',
         queryParameters: {'page': page},
       ),
       parse: (json) {

@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class LocaleKeys {
+abstract class  LocaleKeys {
   static const successfully_created = 'successfully_created';
   static const content_not_changed = 'content_not_changed';
   static const server_connection_timeout = 'server_connection_timeout';
@@ -63,4 +63,7 @@ abstract class LocaleKeys {
   static const megapay = 'megapay';
   static const odengi = 'odengi';
   static const balance = 'balance';
+  static const get_confirmation_code = 'get_confirmation_code';
+  static const confirmation_code = 'confirmation_code';
+
 }

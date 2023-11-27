@@ -12,6 +12,7 @@ class ScreenSizeWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+      useInheritedMediaQuery: true,
       designSize: const Size(360, 640),
       builder: (context, child) => this.child,
     );

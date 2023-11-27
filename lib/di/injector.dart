@@ -61,6 +61,9 @@ Future<void> injectDependencies() async {
   getIt.registerSingleton<DictionaryRemoteSource>(
     DictionaryRemoteSource(dio: projectDio),
   );
+  getIt.registerSingleton<PaymentRemoteSource>(
+    PaymentRemoteSource(dio: projectDio),
+  );
   // end of remote sources
 
   // repositories
@@ -78,6 +81,9 @@ Future<void> injectDependencies() async {
   ));
   getIt.registerSingleton<DictionaryRepository>(DictionaryRepository(
     dictionaryRemoteSource: getIt.get<DictionaryRemoteSource>(),
+  ));
+  getIt.registerSingleton<PaymentRepository>(PaymentRepository(
+    paymentRemoteSource: getIt.get<PaymentRemoteSource>(),
   ));
   // end of repositories
   // endregion END OF PROJECT MODULE

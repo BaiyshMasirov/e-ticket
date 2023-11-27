@@ -1,13 +1,21 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
+import 'package:eticket/presentation/screens/payment/widgets/widgets.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PaymentMethodsView extends StatelessWidget {
+class PaymentMethodsView extends HookWidget {
+  final double preciseCost;
+  final String bookingId;
+
   const PaymentMethodsView({
+    required this.preciseCost,
+    required this.bookingId,
     Key? key,
   }) : super(key: key);
 
@@ -35,9 +43,8 @@ class PaymentMethodsView extends StatelessWidget {
                       color: context.appColors.onContainer,
                     ),
                   ),
-                  //TODO: remove hardcode tickets cost
                   Text(
-                    1343.toString(),
+                    preciseCost.toStringAsFixed(2),
                     style: TextStyle(
                       fontSize: 16.sp,
                       color: context.appColors.onContainer,
@@ -53,43 +60,14 @@ class PaymentMethodsView extends StatelessWidget {
             itemBuilder: (_, i) {
               final type = PaymentType.values[i];
 
-              return Container(
-                decoration: BoxDecoration(
-                  borderRadius: defaultBr,
-                  border: Border.all(color: context.colorScheme.outline),
-                  color: context.appColors.container,
-                ),
-                child: Material(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    borderRadius: defaultBr,
-                    onTap: () {},
-                    child: Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                      decoration: BoxDecoration(
-                        borderRadius: defaultBr,
-                        border: Border.all(color: context.colorScheme.outline),
-                      ),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            type.getImagePath,
-                            width: context.screenSize.screenWidth / 4,
-                          ),
-                          SizedBox(width: 10.w),
-                          Text(
-                            type.name.toLowerCase().tr(),
-                            style: TextStyle(
-                              color: context.appColors.onContainer,
-                            ),
-                          ),
-                          const Spacer(),
-                          const Icon(Icons.chevron_right),
-                        ],
-                      ),
-                    ),
-                  ),
+              return PaymentOption(
+                type: type,
+                onSelected: (type) => PayConfirmBottom.showPayConfirmBottom(
+                  context: context,
+                  bookingId: bookingId,
+                  paymentType: type,
+                  onSuccess: () => '',
+                  closePressed: () => context.popRoute(),
                 ),
               );
             },
