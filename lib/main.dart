@@ -1,5 +1,4 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:eticket/data/sembast_database/sembast_database.dart';
 import 'package:eticket/di/injector.dart';
 import 'package:eticket/presentation/app.dart';
 import 'package:eticket/presentation/app_wrappers/app_wrapper.dart';

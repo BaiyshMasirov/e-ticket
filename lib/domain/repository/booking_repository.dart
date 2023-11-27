@@ -1,7 +1,5 @@
 import 'package:common/common.dart';
 import 'package:eticket/data/data.dart';
-import 'package:eticket/data/sembast_database/booking_sembast_data_sources.dart';
-import 'package:eticket/data/sembast_database/history_booking_data_sources.dart';
 
 class BookingRepository with NetworkRemoteRepositoryMixin {
   final BookingRemoteDatasource _bookingRemoteDatasource;
@@ -51,8 +49,7 @@ class BookingRepository with NetworkRemoteRepositoryMixin {
       );
     }, (r) async {
       await _historyBookingDatasource.clearAllHistoryBookings();
-
-      await _historyBookingDatasource.saveHistoryBooking(r);
+      await _historyBookingDatasource.saveHistoryBooking(userBooking: r);
 
       return right(r);
     });
@@ -69,15 +66,14 @@ class BookingRepository with NetworkRemoteRepositoryMixin {
         orElse: () => left(l),
         noConnection: (_, __) async {
           final currentBookingList =
-              await _bookingDatasource.getAllBookingsTiccket();
+              await _bookingDatasource.getAllBookingsTicket();
 
           return right(currentBookingList);
         },
       );
     }, (r) async {
       await _bookingDatasource.clearAllBookingsTiccket();
-
-      await _bookingDatasource.saveBookingsTicket(r);
+      await _bookingDatasource.saveBookingsTicket(todo: r);
 
       return right(r);
     });
