@@ -95,4 +95,26 @@ class TicketRemoteDatasource {
 
     return response;
   }
+
+  Future<RemoteResponse<String>> activateTicket({
+    required String ticketId,
+  }) async {
+    final response = await _dio.makeRequest(
+      request: () => _dio.post(
+        'api/Ticket/activate-ticket',
+        data: {
+          'id': ticketId,
+        },
+      ),
+      parse: (json) {
+        try {
+          return json['messages'][0] as String;
+        } catch (e) {
+          return '';
+        }
+      },
+    );
+
+    return response;
+  }
 }

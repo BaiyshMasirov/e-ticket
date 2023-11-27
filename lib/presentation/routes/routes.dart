@@ -64,5 +64,9 @@ class AppRouter extends $AppRouter {
           page: PaymentMethodsRoute.page,
           path: RouteConstants.paymentMethods,
         ),
+        AutoRoute(
+          page: ScanTicketRoute.page,
+          path: RouteConstants.scanTickets,
+        ),
       ];
 }

@@ -13,4 +13,5 @@ class RouteConstants {
   static const String ticketSeatPlaces = '/ticket-seat-places';
   static const String userTicketsBookings = '/user-tickets-bookings';
   static const String paymentMethods = '/payment-methods';
+  static const String scanTickets = '/scan-tickets';
 }

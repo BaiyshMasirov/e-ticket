@@ -13,6 +13,14 @@ class AuthRepository with NetworkRemoteRepositoryMixin {
   })  : _authRemoteDatasource = authRemoteDatasource,
         _authLocalDatasource = authLocalDatasource;
 
+  Future<bool> isUserAdmin() async {
+    final credential = await getSignedInCredentials();
+
+    if (credential == null) return false;
+
+    return credential.isAdmin;
+  }
+
   Future<UserCredentials?> getSignedInCredentials() async {
     final storedCredentials = await _authLocalDatasource.read();
 
@@ -61,6 +69,9 @@ class AuthRepository with NetworkRemoteRepositoryMixin {
         final refreshedUserCredentials = UserCredentials(
           accessToken: refreshedUserToken.jwtToken,
           refreshToken: refreshedUserToken.rtToken,
+          accessTokenExpiresAt:
+              JwtDecoder.getExpirationDate(refreshedUserToken.jwtToken),
+          isAdmin: JwtDecoder.isAdmin(refreshedUserToken.jwtToken),
         );
 
         await _authLocalDatasource.save(refreshedUserCredentials);

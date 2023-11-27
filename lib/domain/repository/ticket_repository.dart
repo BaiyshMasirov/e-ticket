@@ -67,4 +67,16 @@ class TicketRepository with NetworkRemoteRepositoryMixin {
 
     return response;
   }
+
+  Future<Either<RequestFailure, String>> activateTicket({
+    required String ticketId,
+  }) async {
+    final response = await handleRemoteRequest(
+      request: () => _ticketRemoteDatasource.activateTicket(
+        ticketId: ticketId,
+      ),
+    );
+
+    return response;
+  }
 }

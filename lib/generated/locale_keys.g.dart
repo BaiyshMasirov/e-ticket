@@ -27,6 +27,7 @@ abstract class  LocaleKeys {
   static const categories = 'categories';
   static const buy_ticket = 'buy_ticket';
   static const login = 'login';
+  static const logout = 'logout';
   static const registration = 'registration';
   static const confirm = 'confirm';
   static const cancel = 'cancel';
@@ -71,5 +72,9 @@ abstract class  LocaleKeys {
   static const paid = 'paid';
   static const returned = 'returned';
   static const used = 'used';
+  static const to_scan_tickets = 'to_scan_tickets';
+  static const request_access_to_camera_permission_description = 'request_access_to_camera_permission_description';
+  static const request_access_to_camera_permission_title = 'request_access_to_camera_permission_title';
+  static const scan_qr_code = 'scan_qr_code';
 
 }

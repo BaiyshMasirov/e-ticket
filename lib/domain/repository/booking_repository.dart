@@ -80,4 +80,9 @@ class BookingRepository with NetworkRemoteRepositoryMixin {
       return right(r);
     });
   }
+
+  Future<void> clearBookingSavedData() async {
+    await _bookingDatasource.clearAllBookingsTiccket();
+    await _historyBookingDatasource.clearAllHistoryBookings();
+  }
 }

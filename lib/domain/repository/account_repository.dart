@@ -22,6 +22,8 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
         final userCredentials = UserCredentials(
           accessToken: token.jwtToken,
           refreshToken: token.rtToken,
+          accessTokenExpiresAt: JwtDecoder.getExpirationDate(token.jwtToken),
+          isAdmin: JwtDecoder.isAdmin(token.jwtToken),
         );
 
         return right(userCredentials);
@@ -42,6 +44,8 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
         final userCredentials = UserCredentials(
           accessToken: token.jwtToken,
           refreshToken: token.rtToken,
+          accessTokenExpiresAt: JwtDecoder.getExpirationDate(token.jwtToken),
+          isAdmin: JwtDecoder.isAdmin(token.jwtToken),
         );
 
         return right(userCredentials);
@@ -63,6 +67,8 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
         final userCredentials = UserCredentials(
           accessToken: token.jwtToken,
           refreshToken: token.rtToken,
+          accessTokenExpiresAt: JwtDecoder.getExpirationDate(token.jwtToken),
+          isAdmin: JwtDecoder.isAdmin(token.jwtToken),
         );
 
         return right(userCredentials);

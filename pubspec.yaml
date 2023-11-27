@@ -53,6 +53,8 @@ dependencies:
 
   sembast: ^3.5.0+1
 
+  mobile_scanner: ^3.5.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

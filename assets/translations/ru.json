@@ -25,6 +25,7 @@
   "categories": "Категории",
   "buy_ticket": "Купить билет",
   "login": "Вход",
+  "logout": "Выход",
   "registration": "Регистрация",
   "confirm": "Подтвердить",
   "cancel": "Отмена",
@@ -68,5 +69,10 @@
   "waiting_payment": "Ожидает оплату",
   "paid": "Оплачен",
   "returned": "Возвращен",
-  "used": "Использован"
+  "used": "Использован",
+  "to_scan_tickets": "Просканировать билеты",
+  "request_access_to_camera_permission_description": "Для сканирования QR кода требуется доступ к камере мобильного устройства",
+  "request_access_to_camera_permission_title": "Нужен доступ к вашей камере",
+  "scan_qr_code": "Просканируйте QR-code"
+
 }

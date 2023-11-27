@@ -11,6 +11,9 @@ _$UserCredentialsImpl _$$UserCredentialsImplFromJson(
     _$UserCredentialsImpl(
       accessToken: json['accessToken'] as String,
       refreshToken: json['refreshToken'] as String,
+      accessTokenExpiresAt: const DateTimeUTCSerializer()
+          .fromJson(json['accessTokenExpiresAt'] as String?),
+      isAdmin: json['isAdmin'] as bool,
     );
 
 Map<String, dynamic> _$$UserCredentialsImplToJson(
@@ -18,4 +21,7 @@ Map<String, dynamic> _$$UserCredentialsImplToJson(
     <String, dynamic>{
       'accessToken': instance.accessToken,
       'refreshToken': instance.refreshToken,
+      'accessTokenExpiresAt':
+          const DateTimeUTCSerializer().toJson(instance.accessTokenExpiresAt),
+      'isAdmin': instance.isAdmin,
     };

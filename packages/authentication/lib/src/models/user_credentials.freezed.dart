@@ -22,6 +22,9 @@ UserCredentials _$UserCredentialsFromJson(Map<String, dynamic> json) {
 mixin _$UserCredentials {
   String get accessToken => throw _privateConstructorUsedError;
   String get refreshToken => throw _privateConstructorUsedError;
+  @DateTimeUTCSerializer()
+  DateTime? get accessTokenExpiresAt => throw _privateConstructorUsedError;
+  bool get isAdmin => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +38,11 @@ abstract class $UserCredentialsCopyWith<$Res> {
           UserCredentials value, $Res Function(UserCredentials) then) =
       _$UserCredentialsCopyWithImpl<$Res, UserCredentials>;
   @useResult
-  $Res call({String accessToken, String refreshToken});
+  $Res call(
+      {String accessToken,
+      String refreshToken,
+      @DateTimeUTCSerializer() DateTime? accessTokenExpiresAt,
+      bool isAdmin});
 }
 
 /// @nodoc
@@ -53,6 +60,8 @@ class _$UserCredentialsCopyWithImpl<$Res, $Val extends UserCredentials>
   $Res call({
     Object? accessToken = null,
     Object? refreshToken = null,
+    Object? accessTokenExpiresAt = freezed,
+    Object? isAdmin = null,
   }) {
     return _then(_value.copyWith(
       accessToken: null == accessToken
@@ -63,6 +72,14 @@ class _$UserCredentialsCopyWithImpl<$Res, $Val extends UserCredentials>
           ? _value.refreshToken
           : refreshToken // ignore: cast_nullable_to_non_nullable
               as String,
+      accessTokenExpiresAt: freezed == accessTokenExpiresAt
+          ? _value.accessTokenExpiresAt
+          : accessTokenExpiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      isAdmin: null == isAdmin
+          ? _value.isAdmin
+          : isAdmin // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -75,7 +92,11 @@ abstract class _$$UserCredentialsImplCopyWith<$Res>
       __$$UserCredentialsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String accessToken, String refreshToken});
+  $Res call(
+      {String accessToken,
+      String refreshToken,
+      @DateTimeUTCSerializer() DateTime? accessTokenExpiresAt,
+      bool isAdmin});
 }
 
 /// @nodoc
@@ -91,6 +112,8 @@ class __$$UserCredentialsImplCopyWithImpl<$Res>
   $Res call({
     Object? accessToken = null,
     Object? refreshToken = null,
+    Object? accessTokenExpiresAt = freezed,
+    Object? isAdmin = null,
   }) {
     return _then(_$UserCredentialsImpl(
       accessToken: null == accessToken
@@ -101,6 +124,14 @@ class __$$UserCredentialsImplCopyWithImpl<$Res>
           ? _value.refreshToken
           : refreshToken // ignore: cast_nullable_to_non_nullable
               as String,
+      accessTokenExpiresAt: freezed == accessTokenExpiresAt
+          ? _value.accessTokenExpiresAt
+          : accessTokenExpiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      isAdmin: null == isAdmin
+          ? _value.isAdmin
+          : isAdmin // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -109,7 +140,10 @@ class __$$UserCredentialsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserCredentialsImpl extends _UserCredentials {
   const _$UserCredentialsImpl(
-      {required this.accessToken, required this.refreshToken})
+      {required this.accessToken,
+      required this.refreshToken,
+      @DateTimeUTCSerializer() required this.accessTokenExpiresAt,
+      required this.isAdmin})
       : super._();
 
   factory _$UserCredentialsImpl.fromJson(Map<String, dynamic> json) =>
@@ -119,10 +153,15 @@ class _$UserCredentialsImpl extends _UserCredentials {
   final String accessToken;
   @override
   final String refreshToken;
+  @override
+  @DateTimeUTCSerializer()
+  final DateTime? accessTokenExpiresAt;
+  @override
+  final bool isAdmin;
 
   @override
   String toString() {
-    return 'UserCredentials(accessToken: $accessToken, refreshToken: $refreshToken)';
+    return 'UserCredentials(accessToken: $accessToken, refreshToken: $refreshToken, accessTokenExpiresAt: $accessTokenExpiresAt, isAdmin: $isAdmin)';
   }
 
   @override
@@ -133,12 +172,16 @@ class _$UserCredentialsImpl extends _UserCredentials {
             (identical(other.accessToken, accessToken) ||
                 other.accessToken == accessToken) &&
             (identical(other.refreshToken, refreshToken) ||
-                other.refreshToken == refreshToken));
+                other.refreshToken == refreshToken) &&
+            (identical(other.accessTokenExpiresAt, accessTokenExpiresAt) ||
+                other.accessTokenExpiresAt == accessTokenExpiresAt) &&
+            (identical(other.isAdmin, isAdmin) || other.isAdmin == isAdmin));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, accessToken, refreshToken);
+  int get hashCode => Object.hash(
+      runtimeType, accessToken, refreshToken, accessTokenExpiresAt, isAdmin);
 
   @JsonKey(ignore: true)
   @override
@@ -158,7 +201,9 @@ class _$UserCredentialsImpl extends _UserCredentials {
 abstract class _UserCredentials extends UserCredentials {
   const factory _UserCredentials(
       {required final String accessToken,
-      required final String refreshToken}) = _$UserCredentialsImpl;
+      required final String refreshToken,
+      @DateTimeUTCSerializer() required final DateTime? accessTokenExpiresAt,
+      required final bool isAdmin}) = _$UserCredentialsImpl;
   const _UserCredentials._() : super._();
 
   factory _UserCredentials.fromJson(Map<String, dynamic> json) =
@@ -168,6 +213,11 @@ abstract class _UserCredentials extends UserCredentials {
   String get accessToken;
   @override
   String get refreshToken;
+  @override
+  @DateTimeUTCSerializer()
+  DateTime? get accessTokenExpiresAt;
+  @override
+  bool get isAdmin;
   @override
   @JsonKey(ignore: true)
   _$$UserCredentialsImplCopyWith<_$UserCredentialsImpl> get copyWith =>
