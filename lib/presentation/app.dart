@@ -28,8 +28,8 @@ class App extends StatelessWidget {
               FlutterNativeSplash.remove();
 
               _appRouter.pushAndPopUntil(
-                // MainRoute(),
-                PaymentMethodsRoute(preciseCost: 123, bookingId: 'sdf'),
+                MainRoute(),
+                // PaymentMethodsRoute(preciseCost: 123, bookingId: 'sdf'),
                 predicate: (route) => false,
               );
             },

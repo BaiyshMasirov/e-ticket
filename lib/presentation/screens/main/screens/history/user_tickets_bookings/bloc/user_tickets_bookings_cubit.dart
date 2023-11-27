@@ -4,10 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 class UserTicketsBookingsCubit extends Cubit<UserTicketsBookingsState> {
-  final BookingRepository bookingRepository;
+  final BookingRepository _bookingRepository;
 
-  UserTicketsBookingsCubit._(BookingRepository repo)
-      : bookingRepository = repo,
+  UserTicketsBookingsCubit._({
+    required BookingRepository repo,
+  })  : _bookingRepository = repo,
         super(const UserTicketsBookingsState.initial());
 
   Future<void> refreshPage({required String id}) async {
@@ -20,10 +21,13 @@ class UserTicketsBookingsCubit extends Cubit<UserTicketsBookingsState> {
   Future<void> getUserTicketsId({required String id}) async {
     emit(const UserTicketsBookingsState.loading());
 
-    final result = await bookingRepository.getUserTicketsId(id);
+    final result = await _bookingRepository.getUserTicketsId(id: id);
+
     result.fold(
       (e) => emit(UserTicketsBookingsState.error(errorMessage: e.errorMessage)),
-      (data) => emit(UserTicketsBookingsState.data(data: data)),
+      (data) {
+        emit(UserTicketsBookingsState.data(data: data));
+      },
     );
   }
 
@@ -34,6 +38,8 @@ class UserTicketsBookingsCubit extends Cubit<UserTicketsBookingsState> {
   }
 
   factory UserTicketsBookingsCubit.initialize() {
-    return UserTicketsBookingsCubit._(GetIt.I.get());
+    return UserTicketsBookingsCubit._(
+      repo: GetIt.I.get(),
+    );
   }
 }

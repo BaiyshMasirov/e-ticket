@@ -71,7 +71,7 @@ mixin _$HistoryState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_HistoryStateInitial value) initial,
-    required TResult Function(_HistoryStateProgress value) loadInProgress,
+    required TResult Function(HistoryProgress value) loadInProgress,
     required TResult Function(_HistoryStateSuccess value) loadSuccess,
     required TResult Function(_HistoryStateError value) loadError,
   }) =>
@@ -79,7 +79,7 @@ mixin _$HistoryState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_HistoryStateInitial value)? initial,
-    TResult? Function(_HistoryStateProgress value)? loadInProgress,
+    TResult? Function(HistoryProgress value)? loadInProgress,
     TResult? Function(_HistoryStateSuccess value)? loadSuccess,
     TResult? Function(_HistoryStateError value)? loadError,
   }) =>
@@ -87,7 +87,7 @@ mixin _$HistoryState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HistoryStateInitial value)? initial,
-    TResult Function(_HistoryStateProgress value)? loadInProgress,
+    TResult Function(HistoryProgress value)? loadInProgress,
     TResult Function(_HistoryStateSuccess value)? loadSuccess,
     TResult Function(_HistoryStateError value)? loadError,
     required TResult orElse(),
@@ -301,7 +301,7 @@ class _$HistoryStateInitialImpl extends _HistoryStateInitial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_HistoryStateInitial value) initial,
-    required TResult Function(_HistoryStateProgress value) loadInProgress,
+    required TResult Function(HistoryProgress value) loadInProgress,
     required TResult Function(_HistoryStateSuccess value) loadSuccess,
     required TResult Function(_HistoryStateError value) loadError,
   }) {
@@ -312,7 +312,7 @@ class _$HistoryStateInitialImpl extends _HistoryStateInitial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_HistoryStateInitial value)? initial,
-    TResult? Function(_HistoryStateProgress value)? loadInProgress,
+    TResult? Function(HistoryProgress value)? loadInProgress,
     TResult? Function(_HistoryStateSuccess value)? loadSuccess,
     TResult? Function(_HistoryStateError value)? loadError,
   }) {
@@ -323,7 +323,7 @@ class _$HistoryStateInitialImpl extends _HistoryStateInitial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HistoryStateInitial value)? initial,
-    TResult Function(_HistoryStateProgress value)? loadInProgress,
+    TResult Function(HistoryProgress value)? loadInProgress,
     TResult Function(_HistoryStateSuccess value)? loadSuccess,
     TResult Function(_HistoryStateError value)? loadError,
     required TResult orElse(),
@@ -352,11 +352,11 @@ abstract class _HistoryStateInitial extends HistoryState {
 }
 
 /// @nodoc
-abstract class _$$HistoryStateProgressImplCopyWith<$Res>
+abstract class _$$HistoryProgressImplCopyWith<$Res>
     implements $HistoryStateCopyWith<$Res> {
-  factory _$$HistoryStateProgressImplCopyWith(_$HistoryStateProgressImpl value,
-          $Res Function(_$HistoryStateProgressImpl) then) =
-      __$$HistoryStateProgressImplCopyWithImpl<$Res>;
+  factory _$$HistoryProgressImplCopyWith(_$HistoryProgressImpl value,
+          $Res Function(_$HistoryProgressImpl) then) =
+      __$$HistoryProgressImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -367,11 +367,11 @@ abstract class _$$HistoryStateProgressImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$HistoryStateProgressImplCopyWithImpl<$Res>
-    extends _$HistoryStateCopyWithImpl<$Res, _$HistoryStateProgressImpl>
-    implements _$$HistoryStateProgressImplCopyWith<$Res> {
-  __$$HistoryStateProgressImplCopyWithImpl(_$HistoryStateProgressImpl _value,
-      $Res Function(_$HistoryStateProgressImpl) _then)
+class __$$HistoryProgressImplCopyWithImpl<$Res>
+    extends _$HistoryStateCopyWithImpl<$Res, _$HistoryProgressImpl>
+    implements _$$HistoryProgressImplCopyWith<$Res> {
+  __$$HistoryProgressImplCopyWithImpl(
+      _$HistoryProgressImpl _value, $Res Function(_$HistoryProgressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -380,7 +380,7 @@ class __$$HistoryStateProgressImplCopyWithImpl<$Res>
     Object? bookingsList = null,
     Object? filter = null,
   }) {
-    return _then(_$HistoryStateProgressImpl(
+    return _then(_$HistoryProgressImpl(
       bookingsList: null == bookingsList
           ? _value._bookingsList
           : bookingsList // ignore: cast_nullable_to_non_nullable
@@ -395,8 +395,8 @@ class __$$HistoryStateProgressImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HistoryStateProgressImpl extends _HistoryStateProgress {
-  const _$HistoryStateProgressImpl(
+class _$HistoryProgressImpl extends HistoryProgress {
+  const _$HistoryProgressImpl(
       {required final List<UserBookingsListDto> bookingsList,
       required this.filter})
       : _bookingsList = bookingsList,
@@ -422,7 +422,7 @@ class _$HistoryStateProgressImpl extends _HistoryStateProgress {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HistoryStateProgressImpl &&
+            other is _$HistoryProgressImpl &&
             const DeepCollectionEquality()
                 .equals(other._bookingsList, _bookingsList) &&
             (identical(other.filter, filter) || other.filter == filter));
@@ -435,10 +435,9 @@ class _$HistoryStateProgressImpl extends _HistoryStateProgress {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HistoryStateProgressImplCopyWith<_$HistoryStateProgressImpl>
-      get copyWith =>
-          __$$HistoryStateProgressImplCopyWithImpl<_$HistoryStateProgressImpl>(
-              this, _$identity);
+  _$$HistoryProgressImplCopyWith<_$HistoryProgressImpl> get copyWith =>
+      __$$HistoryProgressImplCopyWithImpl<_$HistoryProgressImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -505,7 +504,7 @@ class _$HistoryStateProgressImpl extends _HistoryStateProgress {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_HistoryStateInitial value) initial,
-    required TResult Function(_HistoryStateProgress value) loadInProgress,
+    required TResult Function(HistoryProgress value) loadInProgress,
     required TResult Function(_HistoryStateSuccess value) loadSuccess,
     required TResult Function(_HistoryStateError value) loadError,
   }) {
@@ -516,7 +515,7 @@ class _$HistoryStateProgressImpl extends _HistoryStateProgress {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_HistoryStateInitial value)? initial,
-    TResult? Function(_HistoryStateProgress value)? loadInProgress,
+    TResult? Function(HistoryProgress value)? loadInProgress,
     TResult? Function(_HistoryStateSuccess value)? loadSuccess,
     TResult? Function(_HistoryStateError value)? loadError,
   }) {
@@ -527,7 +526,7 @@ class _$HistoryStateProgressImpl extends _HistoryStateProgress {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HistoryStateInitial value)? initial,
-    TResult Function(_HistoryStateProgress value)? loadInProgress,
+    TResult Function(HistoryProgress value)? loadInProgress,
     TResult Function(_HistoryStateSuccess value)? loadSuccess,
     TResult Function(_HistoryStateError value)? loadError,
     required TResult orElse(),
@@ -539,11 +538,11 @@ class _$HistoryStateProgressImpl extends _HistoryStateProgress {
   }
 }
 
-abstract class _HistoryStateProgress extends HistoryState {
-  const factory _HistoryStateProgress(
+abstract class HistoryProgress extends HistoryState {
+  const factory HistoryProgress(
       {required final List<UserBookingsListDto> bookingsList,
-      required final UserBookingsFilter filter}) = _$HistoryStateProgressImpl;
-  const _HistoryStateProgress._() : super._();
+      required final UserBookingsFilter filter}) = _$HistoryProgressImpl;
+  const HistoryProgress._() : super._();
 
   @override
   List<UserBookingsListDto> get bookingsList;
@@ -551,8 +550,8 @@ abstract class _HistoryStateProgress extends HistoryState {
   UserBookingsFilter get filter;
   @override
   @JsonKey(ignore: true)
-  _$$HistoryStateProgressImplCopyWith<_$HistoryStateProgressImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$HistoryProgressImplCopyWith<_$HistoryProgressImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -723,7 +722,7 @@ class _$HistoryStateSuccessImpl extends _HistoryStateSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_HistoryStateInitial value) initial,
-    required TResult Function(_HistoryStateProgress value) loadInProgress,
+    required TResult Function(HistoryProgress value) loadInProgress,
     required TResult Function(_HistoryStateSuccess value) loadSuccess,
     required TResult Function(_HistoryStateError value) loadError,
   }) {
@@ -734,7 +733,7 @@ class _$HistoryStateSuccessImpl extends _HistoryStateSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_HistoryStateInitial value)? initial,
-    TResult? Function(_HistoryStateProgress value)? loadInProgress,
+    TResult? Function(HistoryProgress value)? loadInProgress,
     TResult? Function(_HistoryStateSuccess value)? loadSuccess,
     TResult? Function(_HistoryStateError value)? loadError,
   }) {
@@ -745,7 +744,7 @@ class _$HistoryStateSuccessImpl extends _HistoryStateSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HistoryStateInitial value)? initial,
-    TResult Function(_HistoryStateProgress value)? loadInProgress,
+    TResult Function(HistoryProgress value)? loadInProgress,
     TResult Function(_HistoryStateSuccess value)? loadSuccess,
     TResult Function(_HistoryStateError value)? loadError,
     required TResult orElse(),
@@ -940,7 +939,7 @@ class _$HistoryStateErrorImpl extends _HistoryStateError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_HistoryStateInitial value) initial,
-    required TResult Function(_HistoryStateProgress value) loadInProgress,
+    required TResult Function(HistoryProgress value) loadInProgress,
     required TResult Function(_HistoryStateSuccess value) loadSuccess,
     required TResult Function(_HistoryStateError value) loadError,
   }) {
@@ -951,7 +950,7 @@ class _$HistoryStateErrorImpl extends _HistoryStateError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_HistoryStateInitial value)? initial,
-    TResult? Function(_HistoryStateProgress value)? loadInProgress,
+    TResult? Function(HistoryProgress value)? loadInProgress,
     TResult? Function(_HistoryStateSuccess value)? loadSuccess,
     TResult? Function(_HistoryStateError value)? loadError,
   }) {
@@ -962,7 +961,7 @@ class _$HistoryStateErrorImpl extends _HistoryStateError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_HistoryStateInitial value)? initial,
-    TResult Function(_HistoryStateProgress value)? loadInProgress,
+    TResult Function(HistoryProgress value)? loadInProgress,
     TResult Function(_HistoryStateSuccess value)? loadSuccess,
     TResult Function(_HistoryStateError value)? loadError,
     required TResult orElse(),

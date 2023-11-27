@@ -7,9 +7,9 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() async {
   final ensureInitialized = WidgetsFlutterBinding.ensureInitialized();
+
   FlutterNativeSplash.preserve(widgetsBinding: ensureInitialized);
   await EasyLocalization.ensureInitialized();
-
   await _initializeApp();
   runApp(
     AppWrapper(

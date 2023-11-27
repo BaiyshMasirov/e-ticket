@@ -45,6 +45,8 @@ Future<void> injectDependencies() async {
     getIt.get<AuthInterceptor>(),
   );
 
+  final databaseClient = await DatabaseX.openDatabase();
+
   // remote sources
   getIt.registerSingleton<AccountRemoteSource>(
     AccountRemoteSource(dio: projectDio),
@@ -64,6 +66,12 @@ Future<void> injectDependencies() async {
   getIt.registerSingleton<PaymentRemoteSource>(
     PaymentRemoteSource(dio: projectDio),
   );
+  getIt.registerSingleton<BookingLocalDataSources>(
+    BookingLocalDataSources(db: databaseClient),
+  );
+  getIt.registerSingleton<HistoryLocalDatasources>(
+    HistoryLocalDatasources(db: databaseClient),
+  );
   // end of remote sources
 
   // repositories
@@ -72,6 +80,8 @@ Future<void> injectDependencies() async {
   ));
   getIt.registerSingleton<BookingRepository>(BookingRepository(
     bookingRemoteDatasource: getIt.get<BookingRemoteDatasource>(),
+    bookingDatasource: getIt.get<BookingLocalDataSources>(),
+    historyBookingDatasource: getIt.get<HistoryLocalDatasources>(),
   ));
   getIt.registerSingleton<EventRepository>(EventRepository(
     eventRemoteDatasource: getIt.get<EventRemoteDatasource>(),

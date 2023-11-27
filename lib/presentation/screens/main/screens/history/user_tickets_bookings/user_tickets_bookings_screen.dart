@@ -7,6 +7,8 @@ import 'package:eticket/presentation/screens/main/screens/history/user_tickets_b
 import 'package:eticket/presentation/widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
 
+import 'bloc/user_tickets_bookings_state.dart';
+
 @RoutePage()
 class UserTicketsBookingsScreen extends StatelessWidget {
   final String tiketId;
@@ -26,6 +28,10 @@ class UserTicketsBookingsScreen extends StatelessWidget {
       ],
       child: AppScaffold(
           title: LocaleKeys.tickets.tr(),
+          isLoadingFunc: (context) =>
+              context.select<UserTicketsBookingsCubit, bool>(
+                (value) => value.state is UserTicketsBookingsLoading,
+              ),
           body: UserTicketsBookingsView(
             tiketId: tiketId,
           )),

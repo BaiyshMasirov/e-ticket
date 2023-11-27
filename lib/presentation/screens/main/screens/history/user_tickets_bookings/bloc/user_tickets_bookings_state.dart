@@ -8,8 +8,7 @@ class UserTicketsBookingsState with _$UserTicketsBookingsState {
   const UserTicketsBookingsState._();
   const factory UserTicketsBookingsState.initial() =
       _UserTicketsBookingsStateInitial;
-  const factory UserTicketsBookingsState.loading() =
-      _UserTicketsBookingsStateLoading;
+  const factory UserTicketsBookingsState.loading() = UserTicketsBookingsLoading;
   const factory UserTicketsBookingsState.data({
     required List<UserTicketsBookingsDto> data,
   }) = _UserTicketsBookingsStateData;

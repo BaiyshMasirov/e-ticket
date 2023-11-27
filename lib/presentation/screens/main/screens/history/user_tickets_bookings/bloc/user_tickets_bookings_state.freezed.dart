@@ -44,7 +44,7 @@ mixin _$UserTicketsBookingsState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UserTicketsBookingsStateInitial value) initial,
-    required TResult Function(_UserTicketsBookingsStateLoading value) loading,
+    required TResult Function(UserTicketsBookingsLoading value) loading,
     required TResult Function(_UserTicketsBookingsStateData value) data,
     required TResult Function(_UserTicketsBookingsStateError value) error,
   }) =>
@@ -52,7 +52,7 @@ mixin _$UserTicketsBookingsState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UserTicketsBookingsStateInitial value)? initial,
-    TResult? Function(_UserTicketsBookingsStateLoading value)? loading,
+    TResult? Function(UserTicketsBookingsLoading value)? loading,
     TResult? Function(_UserTicketsBookingsStateData value)? data,
     TResult? Function(_UserTicketsBookingsStateError value)? error,
   }) =>
@@ -60,7 +60,7 @@ mixin _$UserTicketsBookingsState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UserTicketsBookingsStateInitial value)? initial,
-    TResult Function(_UserTicketsBookingsStateLoading value)? loading,
+    TResult Function(UserTicketsBookingsLoading value)? loading,
     TResult Function(_UserTicketsBookingsStateData value)? data,
     TResult Function(_UserTicketsBookingsStateError value)? error,
     required TResult orElse(),
@@ -168,7 +168,7 @@ class _$UserTicketsBookingsStateInitialImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UserTicketsBookingsStateInitial value) initial,
-    required TResult Function(_UserTicketsBookingsStateLoading value) loading,
+    required TResult Function(UserTicketsBookingsLoading value) loading,
     required TResult Function(_UserTicketsBookingsStateData value) data,
     required TResult Function(_UserTicketsBookingsStateError value) error,
   }) {
@@ -179,7 +179,7 @@ class _$UserTicketsBookingsStateInitialImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UserTicketsBookingsStateInitial value)? initial,
-    TResult? Function(_UserTicketsBookingsStateLoading value)? loading,
+    TResult? Function(UserTicketsBookingsLoading value)? loading,
     TResult? Function(_UserTicketsBookingsStateData value)? data,
     TResult? Function(_UserTicketsBookingsStateError value)? error,
   }) {
@@ -190,7 +190,7 @@ class _$UserTicketsBookingsStateInitialImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UserTicketsBookingsStateInitial value)? initial,
-    TResult Function(_UserTicketsBookingsStateLoading value)? loading,
+    TResult Function(UserTicketsBookingsLoading value)? loading,
     TResult Function(_UserTicketsBookingsStateData value)? data,
     TResult Function(_UserTicketsBookingsStateError value)? error,
     required TResult orElse(),
@@ -210,29 +210,28 @@ abstract class _UserTicketsBookingsStateInitial
 }
 
 /// @nodoc
-abstract class _$$UserTicketsBookingsStateLoadingImplCopyWith<$Res> {
-  factory _$$UserTicketsBookingsStateLoadingImplCopyWith(
-          _$UserTicketsBookingsStateLoadingImpl value,
-          $Res Function(_$UserTicketsBookingsStateLoadingImpl) then) =
-      __$$UserTicketsBookingsStateLoadingImplCopyWithImpl<$Res>;
+abstract class _$$UserTicketsBookingsLoadingImplCopyWith<$Res> {
+  factory _$$UserTicketsBookingsLoadingImplCopyWith(
+          _$UserTicketsBookingsLoadingImpl value,
+          $Res Function(_$UserTicketsBookingsLoadingImpl) then) =
+      __$$UserTicketsBookingsLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserTicketsBookingsStateLoadingImplCopyWithImpl<$Res>
+class __$$UserTicketsBookingsLoadingImplCopyWithImpl<$Res>
     extends _$UserTicketsBookingsStateCopyWithImpl<$Res,
-        _$UserTicketsBookingsStateLoadingImpl>
-    implements _$$UserTicketsBookingsStateLoadingImplCopyWith<$Res> {
-  __$$UserTicketsBookingsStateLoadingImplCopyWithImpl(
-      _$UserTicketsBookingsStateLoadingImpl _value,
-      $Res Function(_$UserTicketsBookingsStateLoadingImpl) _then)
+        _$UserTicketsBookingsLoadingImpl>
+    implements _$$UserTicketsBookingsLoadingImplCopyWith<$Res> {
+  __$$UserTicketsBookingsLoadingImplCopyWithImpl(
+      _$UserTicketsBookingsLoadingImpl _value,
+      $Res Function(_$UserTicketsBookingsLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$UserTicketsBookingsStateLoadingImpl
-    extends _UserTicketsBookingsStateLoading {
-  const _$UserTicketsBookingsStateLoadingImpl() : super._();
+class _$UserTicketsBookingsLoadingImpl extends UserTicketsBookingsLoading {
+  const _$UserTicketsBookingsLoadingImpl() : super._();
 
   @override
   String toString() {
@@ -243,7 +242,7 @@ class _$UserTicketsBookingsStateLoadingImpl
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserTicketsBookingsStateLoadingImpl);
+            other is _$UserTicketsBookingsLoadingImpl);
   }
 
   @override
@@ -290,7 +289,7 @@ class _$UserTicketsBookingsStateLoadingImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UserTicketsBookingsStateInitial value) initial,
-    required TResult Function(_UserTicketsBookingsStateLoading value) loading,
+    required TResult Function(UserTicketsBookingsLoading value) loading,
     required TResult Function(_UserTicketsBookingsStateData value) data,
     required TResult Function(_UserTicketsBookingsStateError value) error,
   }) {
@@ -301,7 +300,7 @@ class _$UserTicketsBookingsStateLoadingImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UserTicketsBookingsStateInitial value)? initial,
-    TResult? Function(_UserTicketsBookingsStateLoading value)? loading,
+    TResult? Function(UserTicketsBookingsLoading value)? loading,
     TResult? Function(_UserTicketsBookingsStateData value)? data,
     TResult? Function(_UserTicketsBookingsStateError value)? error,
   }) {
@@ -312,7 +311,7 @@ class _$UserTicketsBookingsStateLoadingImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UserTicketsBookingsStateInitial value)? initial,
-    TResult Function(_UserTicketsBookingsStateLoading value)? loading,
+    TResult Function(UserTicketsBookingsLoading value)? loading,
     TResult Function(_UserTicketsBookingsStateData value)? data,
     TResult Function(_UserTicketsBookingsStateError value)? error,
     required TResult orElse(),
@@ -324,11 +323,9 @@ class _$UserTicketsBookingsStateLoadingImpl
   }
 }
 
-abstract class _UserTicketsBookingsStateLoading
-    extends UserTicketsBookingsState {
-  const factory _UserTicketsBookingsStateLoading() =
-      _$UserTicketsBookingsStateLoadingImpl;
-  const _UserTicketsBookingsStateLoading._() : super._();
+abstract class UserTicketsBookingsLoading extends UserTicketsBookingsState {
+  const factory UserTicketsBookingsLoading() = _$UserTicketsBookingsLoadingImpl;
+  const UserTicketsBookingsLoading._() : super._();
 }
 
 /// @nodoc
@@ -447,7 +444,7 @@ class _$UserTicketsBookingsStateDataImpl extends _UserTicketsBookingsStateData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UserTicketsBookingsStateInitial value) initial,
-    required TResult Function(_UserTicketsBookingsStateLoading value) loading,
+    required TResult Function(UserTicketsBookingsLoading value) loading,
     required TResult Function(_UserTicketsBookingsStateData value) data,
     required TResult Function(_UserTicketsBookingsStateError value) error,
   }) {
@@ -458,7 +455,7 @@ class _$UserTicketsBookingsStateDataImpl extends _UserTicketsBookingsStateData {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UserTicketsBookingsStateInitial value)? initial,
-    TResult? Function(_UserTicketsBookingsStateLoading value)? loading,
+    TResult? Function(UserTicketsBookingsLoading value)? loading,
     TResult? Function(_UserTicketsBookingsStateData value)? data,
     TResult? Function(_UserTicketsBookingsStateError value)? error,
   }) {
@@ -469,7 +466,7 @@ class _$UserTicketsBookingsStateDataImpl extends _UserTicketsBookingsStateData {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UserTicketsBookingsStateInitial value)? initial,
-    TResult Function(_UserTicketsBookingsStateLoading value)? loading,
+    TResult Function(UserTicketsBookingsLoading value)? loading,
     TResult Function(_UserTicketsBookingsStateData value)? data,
     TResult Function(_UserTicketsBookingsStateError value)? error,
     required TResult orElse(),
@@ -603,7 +600,7 @@ class _$UserTicketsBookingsStateErrorImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UserTicketsBookingsStateInitial value) initial,
-    required TResult Function(_UserTicketsBookingsStateLoading value) loading,
+    required TResult Function(UserTicketsBookingsLoading value) loading,
     required TResult Function(_UserTicketsBookingsStateData value) data,
     required TResult Function(_UserTicketsBookingsStateError value) error,
   }) {
@@ -614,7 +611,7 @@ class _$UserTicketsBookingsStateErrorImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UserTicketsBookingsStateInitial value)? initial,
-    TResult? Function(_UserTicketsBookingsStateLoading value)? loading,
+    TResult? Function(UserTicketsBookingsLoading value)? loading,
     TResult? Function(_UserTicketsBookingsStateData value)? data,
     TResult? Function(_UserTicketsBookingsStateError value)? error,
   }) {
@@ -625,7 +622,7 @@ class _$UserTicketsBookingsStateErrorImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UserTicketsBookingsStateInitial value)? initial,
-    TResult Function(_UserTicketsBookingsStateLoading value)? loading,
+    TResult Function(UserTicketsBookingsLoading value)? loading,
     TResult Function(_UserTicketsBookingsStateData value)? data,
     TResult Function(_UserTicketsBookingsStateError value)? error,
     required TResult orElse(),

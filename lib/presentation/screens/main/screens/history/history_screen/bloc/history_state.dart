@@ -15,7 +15,7 @@ class HistoryState with _$HistoryState {
   const factory HistoryState.loadInProgress({
     required List<UserBookingsListDto> bookingsList,
     required UserBookingsFilter filter,
-  }) = _HistoryStateProgress;
+  }) = HistoryProgress;
 
   const factory HistoryState.loadSuccess({
     required List<UserBookingsListDto> bookingsList,
