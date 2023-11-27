@@ -3,7 +3,6 @@ import 'package:common/common.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
-import 'package:eticket/presentation/screens/auth/login/bloc/login_state.dart';
 import 'package:eticket/presentation/screens/auth/register/bloc/register_cubit.dart';
 import 'package:get_it/get_it.dart';
 
