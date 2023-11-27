@@ -76,9 +76,10 @@ Future<void> injectDependencies() async {
     accountRemoteSource: getIt.get<AccountRemoteSource>(),
   ));
   getIt.registerSingleton<BookingRepository>(BookingRepository(
-      bookingRemoteDatasource: getIt.get<BookingRemoteDatasource>(),
-      bookingDatasource: getIt.get<BookingSembastDataSources>(),
-      historyBookingDatasource: getIt.get<HistoryBookingDataSources>()));
+    bookingRemoteDatasource: getIt.get<BookingRemoteDatasource>(),
+    bookingDatasource: getIt.get<BookingSembastDataSources>(),
+    historyBookingDatasource: getIt.get<HistoryBookingDataSources>(),
+  ));
   getIt.registerSingleton<EventRepository>(EventRepository(
     eventRemoteDatasource: getIt.get<EventRemoteDatasource>(),
   ));

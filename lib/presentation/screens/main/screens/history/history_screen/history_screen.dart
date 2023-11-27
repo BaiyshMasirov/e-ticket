@@ -7,6 +7,8 @@ import 'package:eticket/presentation/screens/main/screens/history/history_screen
 import 'package:eticket/presentation/widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
 
+import 'bloc/history_state.dart';
+
 @RoutePage()
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({
@@ -22,7 +24,11 @@ class HistoryScreen extends StatelessWidget {
         ),
       ],
       child: AppScaffold(
-          title: LocaleKeys.history.tr(), body: const HistoryView()),
+          isLoadingFunc: (context) => context.select<HistoryCubit, bool>(
+                (value) => value.state is HistoryProgress,
+              ),
+          title: LocaleKeys.history.tr(),
+          body: const HistoryView()),
     );
   }
 }

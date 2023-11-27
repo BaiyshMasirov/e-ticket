@@ -21,7 +21,7 @@ class UserTicketsBookingsCubit extends Cubit<UserTicketsBookingsState> {
   Future<void> getUserTicketsId({required String id}) async {
     emit(const UserTicketsBookingsState.loading());
 
-    final result = await _bookingRepository.getUserTicketsId(id);
+    final result = await _bookingRepository.getUserTicketsId(id: id);
 
     result.fold(
       (e) => emit(UserTicketsBookingsState.error(errorMessage: e.errorMessage)),

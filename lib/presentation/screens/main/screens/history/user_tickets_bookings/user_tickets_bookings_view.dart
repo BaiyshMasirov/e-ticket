@@ -20,8 +20,10 @@ class UserTicketsBookingsView extends HookWidget {
     final bookingsState = context.watch<UserTicketsBookingsCubit>().state;
 
     return Padding(
-        padding:
-            EdgeInsets.symmetric(horizontal: kDefaultPadding, vertical: 15.h),
+        padding: EdgeInsets.symmetric(
+          horizontal: kDefaultPadding,
+          vertical: 15.h,
+        ),
         child: bookingsState.maybeWhen(
           orElse: () => const SizedBox.shrink(),
           error: (
@@ -53,7 +55,9 @@ class UserTicketsBookingsView extends HookWidget {
                     arrayBookingTicket: bookingsList,
                   );
                 },
-                separatorBuilder: (context, index) => SizedBox(height: 10.h),
+                separatorBuilder: (context, index) => SizedBox(
+                  height: 10.h,
+                ),
               ),
               SliverToBoxAdapter(
                 child: SizedBox(height: 50.h),

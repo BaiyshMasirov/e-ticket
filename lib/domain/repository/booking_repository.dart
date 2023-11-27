@@ -14,9 +14,9 @@ class BookingRepository with NetworkRemoteRepositoryMixin {
         _bookingDatasource = bookingDatasource,
         _historyBookingDatasource = historyBookingDatasource;
 
-  Future<Either<RequestFailure, Unit>> createBooking(
-    CreateBookingCommandDto createBookingCommandDto,
-  ) async {
+  Future<Either<RequestFailure, Unit>> createBooking({
+    required CreateBookingCommandDto createBookingCommandDto,
+  }) async {
     final response = await handleRemoteRequest(
       request: () =>
           _bookingRemoteDatasource.createBooking(createBookingCommandDto),
@@ -55,8 +55,10 @@ class BookingRepository with NetworkRemoteRepositoryMixin {
     });
   }
 
-  Future<Either<RequestFailure, List<UserTicketsBookingsDto>>> getUserTicketsId(
-      String id) async {
+  Future<Either<RequestFailure, List<UserTicketsBookingsDto>>>
+      getUserTicketsId({
+    required String id,
+  }) async {
     final response = await handleRemoteRequest(
       request: () => _bookingRemoteDatasource.getUserTicketsBookings(id),
     );
