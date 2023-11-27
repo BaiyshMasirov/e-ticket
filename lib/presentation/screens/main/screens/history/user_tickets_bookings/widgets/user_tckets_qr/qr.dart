@@ -74,7 +74,7 @@ class Qr extends HookWidget {
             dotsCount: ticket.length,
             position: position.value,
             decorator: DotsDecorator(
-              color: context.colorScheme.error,
+              color: context.colorScheme.primary,
               activeColor: context.colorScheme.errorContainer,
             ),
           ),
