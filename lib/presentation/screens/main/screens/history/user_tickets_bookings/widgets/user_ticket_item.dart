@@ -66,32 +66,43 @@ class UserTicketItem extends StatelessWidget {
               ],
             ),
             SizedBox(width: 10.w),
-            Expanded(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(children: [
-                    Text(
-                      '${LocaleKeys.rowNumber.tr()}:',
+            bookingTicket.rowNumber == 0
+                ? Expanded(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          bookingTicket.type.name.tr(),
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      width: 5.w,
+                  )
+                : Expanded(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Row(children: [
+                          Text(
+                            '${LocaleKeys.rowNumber.tr()}:',
+                          ),
+                          SizedBox(
+                            width: 5.w,
+                          ),
+                          Text(bookingTicket.rowNumber.toString())
+                        ]),
+                        SizedBox(height: 10.h),
+                        Row(children: [
+                          Text(
+                            '${LocaleKeys.placeNumber.tr()}:',
+                          ),
+                          SizedBox(
+                            width: 5.w,
+                          ),
+                          Text(bookingTicket.placeNumber.toString())
+                        ]),
+                      ],
                     ),
-                    Text(bookingTicket.rowNumber.toString())
-                  ]),
-                  SizedBox(height: 10.h),
-                  Row(children: [
-                    Text(
-                      '${LocaleKeys.placeNumber.tr()}:',
-                    ),
-                    SizedBox(
-                      width: 5.w,
-                    ),
-                    Text(bookingTicket.placeNumber.toString())
-                  ]),
-                ],
-              ),
-            ),
+                  ),
           ],
         ),
       ),

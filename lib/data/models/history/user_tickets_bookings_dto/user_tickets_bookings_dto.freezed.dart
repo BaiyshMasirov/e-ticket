@@ -24,7 +24,7 @@ mixin _$UserTicketsBookingsDto {
   String get id => throw _privateConstructorUsedError;
   int get rowNumber => throw _privateConstructorUsedError;
   int get placeNumber => throw _privateConstructorUsedError;
-  int get type => throw _privateConstructorUsedError;
+  LocationType get type => throw _privateConstructorUsedError;
   int get status => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
   String? get qrCode => throw _privateConstructorUsedError;
@@ -45,7 +45,7 @@ abstract class $UserTicketsBookingsDtoCopyWith<$Res> {
       {String id,
       int rowNumber,
       int placeNumber,
-      int type,
+      LocationType type,
       int status,
       double price,
       String? qrCode});
@@ -89,7 +89,7 @@ class _$UserTicketsBookingsDtoCopyWithImpl<$Res,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as int,
+              as LocationType,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -119,7 +119,7 @@ abstract class _$$UserTicketsBookingsDtoImplCopyWith<$Res>
       {String id,
       int rowNumber,
       int placeNumber,
-      int type,
+      LocationType type,
       int status,
       double price,
       String? qrCode});
@@ -162,7 +162,7 @@ class __$$UserTicketsBookingsDtoImplCopyWithImpl<$Res>
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as int,
+              as LocationType,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -202,7 +202,7 @@ class _$UserTicketsBookingsDtoImpl extends _UserTicketsBookingsDto {
   @override
   final int placeNumber;
   @override
-  final int type;
+  final LocationType type;
   @override
   final int status;
   @override
@@ -256,7 +256,7 @@ abstract class _UserTicketsBookingsDto extends UserTicketsBookingsDto {
       {required final String id,
       required final int rowNumber,
       required final int placeNumber,
-      required final int type,
+      required final LocationType type,
       required final int status,
       required final double price,
       required final String? qrCode}) = _$UserTicketsBookingsDtoImpl;
@@ -272,7 +272,7 @@ abstract class _UserTicketsBookingsDto extends UserTicketsBookingsDto {
   @override
   int get placeNumber;
   @override
-  int get type;
+  LocationType get type;
   @override
   int get status;
   @override

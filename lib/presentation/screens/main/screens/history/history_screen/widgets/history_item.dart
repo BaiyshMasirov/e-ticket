@@ -22,6 +22,7 @@ class HistoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     String formattedDate = DateFormat('dd/MM/yyyy')
         .format(DateTime.parse(booking.eventDate ?? ''));
+
     return InkWell(
       onTap: () {
         context.navigateTo(UserTicketsBookingsRoute(
@@ -75,11 +76,7 @@ class HistoryItem extends StatelessWidget {
                   ),
                   SizedBox(height: 5.h),
                   Text(
-                    context.dictionaries
-                            .getLocationTypeByKey(booking.type)
-                            ?.value
-                            .tr() ??
-                        '',
+                    booking.type.name.tr(),
                     textAlign: TextAlign.center,
                   ),
                 ],

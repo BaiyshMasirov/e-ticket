@@ -17,7 +17,7 @@ _$UserBookingsListDtoImpl _$$UserBookingsListDtoImplFromJson(
       eventId: json['eventId'] as String?,
       eventDate: json['eventDate'] as String?,
       bookingSum: (json['bookingSum'] as num).toDouble(),
-      type: json['type'] as int,
+      type: $enumDecode(_$LocationTypeEnumMap, json['type']),
       eventImage: json['eventImage'] as String?,
     );
 
@@ -39,7 +39,20 @@ Map<String, dynamic> _$$UserBookingsListDtoImplToJson(
   writeNotNull('eventId', instance.eventId);
   writeNotNull('eventDate', instance.eventDate);
   val['bookingSum'] = instance.bookingSum;
-  val['type'] = instance.type;
+  val['type'] = _$LocationTypeEnumMap[instance.type]!;
   writeNotNull('eventImage', instance.eventImage);
   return val;
 }
+
+const _$LocationTypeEnumMap = {
+  LocationType.noSeating: 0,
+  LocationType.sportPalace: 1,
+  LocationType.bishkekArena: 2,
+  LocationType.spartakStadium: 3,
+  LocationType.balletTheater: 4,
+  LocationType.philarmonic: 5,
+  LocationType.ruDramTheater: 6,
+  LocationType.kgDramTheater: 7,
+  LocationType.nationalTheater: 8,
+  LocationType.unknown: 'unknown',
+};

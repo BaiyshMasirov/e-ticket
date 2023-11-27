@@ -1,4 +1,5 @@
 import 'package:common/common.dart';
+import 'package:eticket/common/enums/location_type.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user_tickets_bookings_dto.freezed.dart';
@@ -11,7 +12,7 @@ class UserTicketsBookingsDto with _$UserTicketsBookingsDto {
     required String id,
     required int rowNumber,
     required int placeNumber,
-    required int type,
+    required LocationType type,
     required int status,
     required double price,
     required String? qrCode,

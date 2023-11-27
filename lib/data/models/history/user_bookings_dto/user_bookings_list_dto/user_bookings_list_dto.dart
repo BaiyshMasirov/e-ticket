@@ -1,3 +1,4 @@
+import 'package:eticket/common/common.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user_bookings_list_dto.freezed.dart';
@@ -15,7 +16,7 @@ class UserBookingsListDto with _$UserBookingsListDto {
     required String? eventId,
     required String? eventDate,
     required double bookingSum,
-    required int type,
+    required LocationType type,
     required String? eventImage,
   }) = _UserBookingsListDto;
 
