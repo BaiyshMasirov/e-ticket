@@ -42,10 +42,24 @@ class HistoryItem extends StatelessWidget {
                 SizedBox(
                   width: context.screenSize.screenWidth / 3,
                   child: ClipRRect(
-                    borderRadius: _bR,
+                    borderRadius: defaultBr,
                     child: Image.network(
                       booking.eventImage ?? '',
                       fit: BoxFit.fitHeight,
+                      height: 90.h,
+                      loadingBuilder: (ctx, child, progress) {
+                        if (progress == null) {
+                          return child;
+                        }
+
+                        return Container(
+                          color: context.colorScheme.outline.withOpacity(0.1),
+                        );
+                      },
+                      errorBuilder: (ctx, e, st) => Container(
+                        color: context.colorScheme.outline.withOpacity(0.2),
+                        height: 90.h,
+                      ),
                     ),
                   ),
                 ),
