@@ -1,4 +1,5 @@
 import 'package:common/common.dart';
+import 'package:eticket/presentation/app_blocs/app_blocs.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_place_hold_state.dart';
 import 'package:eticket/data/models/models.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/models/models.dart';
@@ -8,18 +9,64 @@ import 'package:get_it/get_it.dart';
 export 'ticket_standing_place_hold_state.dart';
 
 class TicketStandingPlaceHoldCubit extends Cubit<TicketStandingPlaceHoldState> {
+  final SnackbarCubit _snackbarCubit;
   final TicketRepository _ticketRepository;
+  final String _eventId;
+  final DateTime _eventDate;
 
   TicketStandingPlaceHoldCubit._({
+    required SnackbarCubit snackbarCubit,
     required TicketRepository ticketRepository,
+    required String eventId,
+    required DateTime eventDate,
   })  : _ticketRepository = ticketRepository,
+        _snackbarCubit = snackbarCubit,
+        _eventId = eventId,
+        _eventDate = eventDate,
         super(const TicketStandingPlaceHoldState.data(
           chosenTickets: [],
         ));
 
   Future<void> holdTickets() async {
-    //TODO: add here ticket ids
-    emit(TicketStandingPlaceHoldState.holding(chosenTickets: []));
+    emit(TicketStandingPlaceHoldState.holding(
+      chosenTickets: state.chosenTickets,
+    ));
+
+    final result = await _ticketRepository.holdTicketWithoutSeating(
+      tickets: state.chosenTickets
+          .where((t) => t.count != 0)
+          .map((t) => TicketTypeCountDto(
+                count: t.count,
+                availableCount: 0,
+                price: 0,
+                type: t.type,
+              ))
+          .toList(),
+      eventId: _eventId,
+      eventDate: _eventDate,
+    );
+
+    result.fold(
+      (l) {
+        _snackbarCubit.showErrorSnackbar(message: l.errorMessage);
+        emit(TicketStandingPlaceHoldState.holdingError(
+          chosenTickets: state.chosenTickets,
+          errorMessage: l.errorMessage,
+        ));
+      },
+      (bookingId) {
+        final totalSum = state.chosenTickets.fold(
+          0.0,
+          (previousValue, t) => previousValue + t.count * t.price,
+        );
+
+        emit(TicketStandingPlaceHoldState.holdingSuccess(
+          chosenTickets: state.chosenTickets,
+          bookingId: bookingId,
+          ticketsCost: totalSum,
+        ));
+      },
+    );
   }
 
   void initializeTickets({
@@ -85,9 +132,15 @@ class TicketStandingPlaceHoldCubit extends Cubit<TicketStandingPlaceHoldState> {
     ));
   }
 
-  factory TicketStandingPlaceHoldCubit.initialize() {
+  factory TicketStandingPlaceHoldCubit.initialize({
+    required String eventId,
+    required DateTime eventDate,
+  }) {
     return TicketStandingPlaceHoldCubit._(
       ticketRepository: GetIt.I.get(),
+      snackbarCubit: GetIt.I.get(),
+      eventDate: eventDate,
+      eventId: eventId,
     );
   }
 }

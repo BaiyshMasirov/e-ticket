@@ -1,10 +1,10 @@
 import 'package:eticket/data/data.dart';
 import 'package:sembast/sembast.dart';
 
-class BookingSembastDataSources {
+class BookingLocalDataSources {
   final Database _db;
 
-  BookingSembastDataSources({
+  BookingLocalDataSources({
     required Database db,
   }) : _db = db;
 

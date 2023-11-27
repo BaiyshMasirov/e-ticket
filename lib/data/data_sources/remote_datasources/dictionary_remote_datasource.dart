@@ -10,7 +10,7 @@ class DictionaryRemoteSource {
 
   Future<RemoteResponse<List<KeyValueMapDto>>> getEventTypes() async {
     final response = await _dio.makeRequest(
-      request: () => _dio.get('/api/Dictionary/get-eventtype-values'),
+      request: () => _dio.get('api/Dictionary/get-eventtype-values'),
       parse: (json) {
         final map = json as Map;
         final data = map.entries
@@ -26,7 +26,7 @@ class DictionaryRemoteSource {
 
   Future<RemoteResponse<List<KeyValueMapDto>>> getEventStatuses() async {
     final response = await _dio.makeRequest(
-      request: () => _dio.get('/api/Dictionary/get-event-status'),
+      request: () => _dio.get('api/Dictionary/get-event-status'),
       parse: (json) {
         final map = json as Map;
         final data = map.entries
@@ -42,7 +42,7 @@ class DictionaryRemoteSource {
 
   Future<RemoteResponse<List<KeyValueMapDto>>> getTicketTypes() async {
     final response = await _dio.makeRequest(
-      request: () => _dio.get('/api/Dictionary/get-ticket-type'),
+      request: () => _dio.get('api/Dictionary/get-ticket-type'),
       parse: (json) {
         final map = json as Map;
         final data = map.entries
@@ -58,7 +58,7 @@ class DictionaryRemoteSource {
 
   Future<RemoteResponse<List<KeyValueMapDto>>> getTicketStatuses() async {
     final response = await _dio.makeRequest(
-      request: () => _dio.get('/api/Dictionary/get-ticket-status'),
+      request: () => _dio.get('api/Dictionary/get-ticket-status'),
       parse: (json) {
         final map = json as Map;
         final data = map.entries
@@ -74,7 +74,7 @@ class DictionaryRemoteSource {
 
   Future<RemoteResponse<List<KeyValueMapDto>>> getLocationTypes() async {
     final response = await _dio.makeRequest(
-      request: () => _dio.get('/api/Dictionary/get-location-type'),
+      request: () => _dio.get('api/Dictionary/get-location-type'),
       parse: (json) {
         final map = json as Map;
         final data = map.entries

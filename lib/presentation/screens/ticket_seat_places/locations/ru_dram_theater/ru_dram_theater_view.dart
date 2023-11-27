@@ -1,4 +1,6 @@
+import 'package:common/common.dart';
 import 'package:eticket/generated/assets.gen.dart';
+import 'package:eticket/presentation/screens/ticket_seat_places/bloc/bloc.dart';
 import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -219,11 +221,27 @@ class RuDramTheaterView extends HookWidget {
         seatSvgSize: 6.w,
         seatPlaceTextPadding: EdgeInsets.all(0.8.w),
       ),
-      onSeatStateChanged: (currentIndex, placeNumber, currentState) {
+      onSeatStateChanged: (currentIndex, placeNumber, currentState, ticketId) {
+        if (ticketId == null) currentState;
+
         if (currentState == PlaceStateV2.unselected) {
-          return PlaceStateV2.selected;
+          final ticket = tickets.firstWhereOrNull(
+            (item) => item.id == ticketId,
+          );
+
+          if (ticket != null) {
+            context.read<TicketSeatHoldCubit>().addTicket(ticket: ticket);
+            return PlaceStateV2.selected;
+          }
         } else if (currentState == PlaceStateV2.selected) {
-          return PlaceStateV2.unselected;
+          final ticket = tickets.firstWhereOrNull(
+            (item) => item.id == ticketId,
+          );
+
+          if (ticket != null) {
+            context.read<TicketSeatHoldCubit>().removeTicket(ticket: ticket);
+            return PlaceStateV2.unselected;
+          }
         }
 
         return currentState;

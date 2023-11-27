@@ -7,15 +7,15 @@ export 'ticket_standing_places_state.dart';
 class TicketStandingPlacesCubit extends Cubit<TicketStandingPlacesState> {
   final TicketRepository _ticketRepository;
   final String _eventId;
-  final DateTime _dateTime;
+  final DateTime _eventDate;
 
   TicketStandingPlacesCubit._({
     required TicketRepository ticketRepository,
     required String eventId,
-    required DateTime dateTime,
+    required DateTime eventDate,
   })  : _ticketRepository = ticketRepository,
         _eventId = eventId,
-        _dateTime = dateTime,
+        _eventDate = eventDate,
         super(
           const TicketStandingPlacesState.initial(),
         );
@@ -39,12 +39,12 @@ class TicketStandingPlacesCubit extends Cubit<TicketStandingPlacesState> {
 
   factory TicketStandingPlacesCubit.initialize({
     required String eventId,
-    required DateTime dateTime,
+    required DateTime eventDate,
   }) {
     return TicketStandingPlacesCubit._(
       ticketRepository: GetIt.I.get(),
       eventId: eventId,
-      dateTime: dateTime,
+      eventDate: eventDate,
     );
   }
 }

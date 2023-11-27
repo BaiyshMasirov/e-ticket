@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:eticket/presentation/routes/routes.gr.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_place_hold_cubit.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_places_cubit.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/widgets/widgets.dart';
@@ -15,52 +17,67 @@ class TicketStandingPlacesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<TicketStandingPlacesCubit, TicketStandingPlacesState>(
-      listener: (context, state) => state.maybeWhen(
-        orElse: () => context
-            .read<TicketStandingPlaceHoldCubit>()
-            .clearChosenTickets(),
-        success: (tickets) => context
-            .read<TicketStandingPlaceHoldCubit>()
-            .initializeTickets(tickets: tickets),
-      ),
-      builder: (context, state) => state.maybeWhen(
-        orElse: () => const SizedBox.shrink(),
-        success: (tickets) => Padding(
-          padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-          child: AppSliverScrollView(
-            onRefresh: () =>
-                context.read<TicketStandingPlacesCubit>().getTickets(),
-            slivers: [
-              SliverToBoxAdapter(
-                child: SizedBox(height: kDefaultPadding),
-              ),
-              SliverList.separated(
-                itemCount: tickets.length,
-                itemBuilder: (context, i) {
-                  final ticket = tickets[i];
-
-                  return TicketStandingPlacesContainerView(
-                    ticket: ticket,
-                  );
-                },
-                separatorBuilder: (context, index) => SizedBox(height: 10.h),
-              ),
-              SliverToBoxAdapter(
-                child: SizedBox(height: 50.h),
-              )
-            ],
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<TicketStandingPlacesCubit, TicketStandingPlacesState>(
+          listener: (ctx, state) => state.maybeWhen(
+            orElse: () => context
+                .read<TicketStandingPlaceHoldCubit>()
+                .clearChosenTickets(),
+            success: (tickets) => context
+                .read<TicketStandingPlaceHoldCubit>()
+                .initializeTickets(tickets: tickets),
           ),
         ),
-        error: (error) => Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            DataFetchFailure(
-              onTryLoadAgain: () =>
-                  context.read<TicketStandingPlacesCubit>().getTickets(),
-              error: error?.tr(),
+        BlocListener<TicketStandingPlaceHoldCubit,
+            TicketStandingPlaceHoldState>(
+          listener: (ctx, state) => state.maybeWhen(
+            orElse: () {},
+            holdingSuccess: (_, bookingId, totalSum) => context.replaceRoute(
+              PaymentMethodsRoute(bookingId: bookingId, preciseCost: totalSum),
             ),
-          ],
+          ),
+        ),
+      ],
+      child: BlocBuilder<TicketStandingPlacesCubit, TicketStandingPlacesState>(
+        builder: (context, state) => state.maybeWhen(
+          orElse: () => const SizedBox.shrink(),
+          success: (tickets) => Padding(
+            padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+            child: AppSliverScrollView(
+              onRefresh: () =>
+                  context.read<TicketStandingPlacesCubit>().getTickets(),
+              slivers: [
+                SliverToBoxAdapter(
+                  child: SizedBox(height: kDefaultPadding),
+                ),
+                SliverList.separated(
+                  itemCount: tickets.length,
+                  itemBuilder: (context, i) {
+                    final ticket = tickets[i];
+
+                    return TicketStandingPlacesContainerView(
+                      ticket: ticket,
+                    );
+                  },
+                  separatorBuilder: (context, index) => SizedBox(height: 10.h),
+                ),
+                SliverToBoxAdapter(
+                  child: SizedBox(height: 50.h),
+                )
+              ],
+            ),
+          ),
+          error: (error) => Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              DataFetchFailure(
+                onTryLoadAgain: () =>
+                    context.read<TicketStandingPlacesCubit>().getTickets(),
+                error: error?.tr(),
+              ),
+            ],
+          ),
         ),
       ),
     );

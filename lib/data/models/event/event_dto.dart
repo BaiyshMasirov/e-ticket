@@ -2,8 +2,6 @@ import 'package:common/common.dart';
 import 'package:eticket/common/common.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:eticket/data/models/enums/enums.dart';
-
 part 'event_dto.freezed.dart';
 part 'event_dto.g.dart';
 

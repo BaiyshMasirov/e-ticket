@@ -60,5 +60,13 @@
   "elsom": "ЭЛСОМ",
   "megapay": "MegaPay",
   "odengi": "О!Деньги",
-  "balance": "Balance.kg"
+  "balance": "Balance.kg",
+  "get_confirmation_code": "Получить код подтверждения",
+  "confirmation_code": "Код подтверждения",
+  "payment_success_description": "Оплата совершена, перейдите во вкладку Истории для показа билетов",
+  "free": "Свободен",
+  "waiting_payment": "Ожидает оплату",
+  "paid": "Оплачен",
+  "returned": "Возвращен",
+  "used": "Использован"
 }

@@ -9,6 +9,7 @@ class TextFormFieldZ extends StatelessWidget {
   final String label;
   final String? placeholder;
   final TextEditingController controller;
+  final FocusNode? focusNode;
   final String? Function(String?)? validate;
   final bool obscureText;
   final List<TextInputFormatter>? inputFormatters;
@@ -29,6 +30,7 @@ class TextFormFieldZ extends StatelessWidget {
   const TextFormFieldZ({
     required this.controller,
     required this.label,
+    this.focusNode,
     this.obscureText = false,
     this.textInputType = TextInputType.text,
     this.textCapitalization = TextCapitalization.none,
@@ -62,6 +64,7 @@ class TextFormFieldZ extends StatelessWidget {
         : textFieldInputFormatters;
 
     return TextFormField(
+      focusNode: focusNode,
       enabled: enabled,
       onTap: onTap,
       textCapitalization: textCapitalization,

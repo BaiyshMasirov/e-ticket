@@ -21,8 +21,9 @@ mixin _$TicketStandingPlaceHoldState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<TicketStandingPlacePick> chosenTickets) data,
-    required TResult Function(List<TicketStandingPlacePick> chosenTickets)
-        success,
+    required TResult Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)
+        holdingSuccess,
     required TResult Function(List<TicketStandingPlacePick> chosenTickets)
         holding,
     required TResult Function(
@@ -33,7 +34,9 @@ mixin _$TicketStandingPlaceHoldState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<TicketStandingPlacePick> chosenTickets)? data,
-    TResult? Function(List<TicketStandingPlacePick> chosenTickets)? success,
+    TResult? Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)?
+        holdingSuccess,
     TResult? Function(List<TicketStandingPlacePick> chosenTickets)? holding,
     TResult? Function(
             List<TicketStandingPlacePick> chosenTickets, String? errorMessage)?
@@ -43,7 +46,9 @@ mixin _$TicketStandingPlaceHoldState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<TicketStandingPlacePick> chosenTickets)? data,
-    TResult Function(List<TicketStandingPlacePick> chosenTickets)? success,
+    TResult Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)?
+        holdingSuccess,
     TResult Function(List<TicketStandingPlacePick> chosenTickets)? holding,
     TResult Function(
             List<TicketStandingPlacePick> chosenTickets, String? errorMessage)?
@@ -55,7 +60,7 @@ mixin _$TicketStandingPlaceHoldState {
   TResult map<TResult extends Object?>({
     required TResult Function(_TicketStandingPlaceHoldDataState value) data,
     required TResult Function(_TicketStandingPlaceHoldSuccessState value)
-        success,
+        holdingSuccess,
     required TResult Function(TicketStandingPlaceHoldStateHolding value)
         holding,
     required TResult Function(_TicketStandingPlaceHoldErrorState value)
@@ -65,7 +70,8 @@ mixin _$TicketStandingPlaceHoldState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TicketStandingPlaceHoldDataState value)? data,
-    TResult? Function(_TicketStandingPlaceHoldSuccessState value)? success,
+    TResult? Function(_TicketStandingPlaceHoldSuccessState value)?
+        holdingSuccess,
     TResult? Function(TicketStandingPlaceHoldStateHolding value)? holding,
     TResult? Function(_TicketStandingPlaceHoldErrorState value)? holdingError,
   }) =>
@@ -73,7 +79,8 @@ mixin _$TicketStandingPlaceHoldState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TicketStandingPlaceHoldDataState value)? data,
-    TResult Function(_TicketStandingPlaceHoldSuccessState value)? success,
+    TResult Function(_TicketStandingPlaceHoldSuccessState value)?
+        holdingSuccess,
     TResult Function(TicketStandingPlaceHoldStateHolding value)? holding,
     TResult Function(_TicketStandingPlaceHoldErrorState value)? holdingError,
     required TResult orElse(),
@@ -204,8 +211,9 @@ class _$TicketStandingPlaceHoldDataStateImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<TicketStandingPlacePick> chosenTickets) data,
-    required TResult Function(List<TicketStandingPlacePick> chosenTickets)
-        success,
+    required TResult Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)
+        holdingSuccess,
     required TResult Function(List<TicketStandingPlacePick> chosenTickets)
         holding,
     required TResult Function(
@@ -219,7 +227,9 @@ class _$TicketStandingPlaceHoldDataStateImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<TicketStandingPlacePick> chosenTickets)? data,
-    TResult? Function(List<TicketStandingPlacePick> chosenTickets)? success,
+    TResult? Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)?
+        holdingSuccess,
     TResult? Function(List<TicketStandingPlacePick> chosenTickets)? holding,
     TResult? Function(
             List<TicketStandingPlacePick> chosenTickets, String? errorMessage)?
@@ -232,7 +242,9 @@ class _$TicketStandingPlaceHoldDataStateImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<TicketStandingPlacePick> chosenTickets)? data,
-    TResult Function(List<TicketStandingPlacePick> chosenTickets)? success,
+    TResult Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)?
+        holdingSuccess,
     TResult Function(List<TicketStandingPlacePick> chosenTickets)? holding,
     TResult Function(
             List<TicketStandingPlacePick> chosenTickets, String? errorMessage)?
@@ -250,7 +262,7 @@ class _$TicketStandingPlaceHoldDataStateImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_TicketStandingPlaceHoldDataState value) data,
     required TResult Function(_TicketStandingPlaceHoldSuccessState value)
-        success,
+        holdingSuccess,
     required TResult Function(TicketStandingPlaceHoldStateHolding value)
         holding,
     required TResult Function(_TicketStandingPlaceHoldErrorState value)
@@ -263,7 +275,8 @@ class _$TicketStandingPlaceHoldDataStateImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TicketStandingPlaceHoldDataState value)? data,
-    TResult? Function(_TicketStandingPlaceHoldSuccessState value)? success,
+    TResult? Function(_TicketStandingPlaceHoldSuccessState value)?
+        holdingSuccess,
     TResult? Function(TicketStandingPlaceHoldStateHolding value)? holding,
     TResult? Function(_TicketStandingPlaceHoldErrorState value)? holdingError,
   }) {
@@ -274,7 +287,8 @@ class _$TicketStandingPlaceHoldDataStateImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TicketStandingPlaceHoldDataState value)? data,
-    TResult Function(_TicketStandingPlaceHoldSuccessState value)? success,
+    TResult Function(_TicketStandingPlaceHoldSuccessState value)?
+        holdingSuccess,
     TResult Function(TicketStandingPlaceHoldStateHolding value)? holding,
     TResult Function(_TicketStandingPlaceHoldErrorState value)? holdingError,
     required TResult orElse(),
@@ -311,7 +325,10 @@ abstract class _$$TicketStandingPlaceHoldSuccessStateImplCopyWith<$Res>
       __$$TicketStandingPlaceHoldSuccessStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<TicketStandingPlacePick> chosenTickets});
+  $Res call(
+      {List<TicketStandingPlacePick> chosenTickets,
+      String bookingId,
+      double ticketsCost});
 }
 
 /// @nodoc
@@ -328,12 +345,22 @@ class __$$TicketStandingPlaceHoldSuccessStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? chosenTickets = null,
+    Object? bookingId = null,
+    Object? ticketsCost = null,
   }) {
     return _then(_$TicketStandingPlaceHoldSuccessStateImpl(
       chosenTickets: null == chosenTickets
           ? _value._chosenTickets
           : chosenTickets // ignore: cast_nullable_to_non_nullable
               as List<TicketStandingPlacePick>,
+      bookingId: null == bookingId
+          ? _value.bookingId
+          : bookingId // ignore: cast_nullable_to_non_nullable
+              as String,
+      ticketsCost: null == ticketsCost
+          ? _value.ticketsCost
+          : ticketsCost // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -343,7 +370,9 @@ class __$$TicketStandingPlaceHoldSuccessStateImplCopyWithImpl<$Res>
 class _$TicketStandingPlaceHoldSuccessStateImpl
     extends _TicketStandingPlaceHoldSuccessState {
   const _$TicketStandingPlaceHoldSuccessStateImpl(
-      {required final List<TicketStandingPlacePick> chosenTickets})
+      {required final List<TicketStandingPlacePick> chosenTickets,
+      required this.bookingId,
+      required this.ticketsCost})
       : _chosenTickets = chosenTickets,
         super._();
 
@@ -356,8 +385,13 @@ class _$TicketStandingPlaceHoldSuccessStateImpl
   }
 
   @override
+  final String bookingId;
+  @override
+  final double ticketsCost;
+
+  @override
   String toString() {
-    return 'TicketStandingPlaceHoldState.success(chosenTickets: $chosenTickets)';
+    return 'TicketStandingPlaceHoldState.holdingSuccess(chosenTickets: $chosenTickets, bookingId: $bookingId, ticketsCost: $ticketsCost)';
   }
 
   @override
@@ -366,12 +400,19 @@ class _$TicketStandingPlaceHoldSuccessStateImpl
         (other.runtimeType == runtimeType &&
             other is _$TicketStandingPlaceHoldSuccessStateImpl &&
             const DeepCollectionEquality()
-                .equals(other._chosenTickets, _chosenTickets));
+                .equals(other._chosenTickets, _chosenTickets) &&
+            (identical(other.bookingId, bookingId) ||
+                other.bookingId == bookingId) &&
+            (identical(other.ticketsCost, ticketsCost) ||
+                other.ticketsCost == ticketsCost));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_chosenTickets));
+      runtimeType,
+      const DeepCollectionEquality().hash(_chosenTickets),
+      bookingId,
+      ticketsCost);
 
   @JsonKey(ignore: true)
   @override
@@ -385,43 +426,48 @@ class _$TicketStandingPlaceHoldSuccessStateImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<TicketStandingPlacePick> chosenTickets) data,
-    required TResult Function(List<TicketStandingPlacePick> chosenTickets)
-        success,
+    required TResult Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)
+        holdingSuccess,
     required TResult Function(List<TicketStandingPlacePick> chosenTickets)
         holding,
     required TResult Function(
             List<TicketStandingPlacePick> chosenTickets, String? errorMessage)
         holdingError,
   }) {
-    return success(chosenTickets);
+    return holdingSuccess(chosenTickets, bookingId, ticketsCost);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<TicketStandingPlacePick> chosenTickets)? data,
-    TResult? Function(List<TicketStandingPlacePick> chosenTickets)? success,
+    TResult? Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)?
+        holdingSuccess,
     TResult? Function(List<TicketStandingPlacePick> chosenTickets)? holding,
     TResult? Function(
             List<TicketStandingPlacePick> chosenTickets, String? errorMessage)?
         holdingError,
   }) {
-    return success?.call(chosenTickets);
+    return holdingSuccess?.call(chosenTickets, bookingId, ticketsCost);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<TicketStandingPlacePick> chosenTickets)? data,
-    TResult Function(List<TicketStandingPlacePick> chosenTickets)? success,
+    TResult Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)?
+        holdingSuccess,
     TResult Function(List<TicketStandingPlacePick> chosenTickets)? holding,
     TResult Function(
             List<TicketStandingPlacePick> chosenTickets, String? errorMessage)?
         holdingError,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(chosenTickets);
+    if (holdingSuccess != null) {
+      return holdingSuccess(chosenTickets, bookingId, ticketsCost);
     }
     return orElse();
   }
@@ -431,37 +477,39 @@ class _$TicketStandingPlaceHoldSuccessStateImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_TicketStandingPlaceHoldDataState value) data,
     required TResult Function(_TicketStandingPlaceHoldSuccessState value)
-        success,
+        holdingSuccess,
     required TResult Function(TicketStandingPlaceHoldStateHolding value)
         holding,
     required TResult Function(_TicketStandingPlaceHoldErrorState value)
         holdingError,
   }) {
-    return success(this);
+    return holdingSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TicketStandingPlaceHoldDataState value)? data,
-    TResult? Function(_TicketStandingPlaceHoldSuccessState value)? success,
+    TResult? Function(_TicketStandingPlaceHoldSuccessState value)?
+        holdingSuccess,
     TResult? Function(TicketStandingPlaceHoldStateHolding value)? holding,
     TResult? Function(_TicketStandingPlaceHoldErrorState value)? holdingError,
   }) {
-    return success?.call(this);
+    return holdingSuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TicketStandingPlaceHoldDataState value)? data,
-    TResult Function(_TicketStandingPlaceHoldSuccessState value)? success,
+    TResult Function(_TicketStandingPlaceHoldSuccessState value)?
+        holdingSuccess,
     TResult Function(TicketStandingPlaceHoldStateHolding value)? holding,
     TResult Function(_TicketStandingPlaceHoldErrorState value)? holdingError,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (holdingSuccess != null) {
+      return holdingSuccess(this);
     }
     return orElse();
   }
@@ -470,12 +518,16 @@ class _$TicketStandingPlaceHoldSuccessStateImpl
 abstract class _TicketStandingPlaceHoldSuccessState
     extends TicketStandingPlaceHoldState {
   const factory _TicketStandingPlaceHoldSuccessState(
-          {required final List<TicketStandingPlacePick> chosenTickets}) =
+          {required final List<TicketStandingPlacePick> chosenTickets,
+          required final String bookingId,
+          required final double ticketsCost}) =
       _$TicketStandingPlaceHoldSuccessStateImpl;
   const _TicketStandingPlaceHoldSuccessState._() : super._();
 
   @override
   List<TicketStandingPlacePick> get chosenTickets;
+  String get bookingId;
+  double get ticketsCost;
   @override
   @JsonKey(ignore: true)
   _$$TicketStandingPlaceHoldSuccessStateImplCopyWith<
@@ -566,8 +618,9 @@ class _$TicketStandingPlaceHoldStateHoldingImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<TicketStandingPlacePick> chosenTickets) data,
-    required TResult Function(List<TicketStandingPlacePick> chosenTickets)
-        success,
+    required TResult Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)
+        holdingSuccess,
     required TResult Function(List<TicketStandingPlacePick> chosenTickets)
         holding,
     required TResult Function(
@@ -581,7 +634,9 @@ class _$TicketStandingPlaceHoldStateHoldingImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<TicketStandingPlacePick> chosenTickets)? data,
-    TResult? Function(List<TicketStandingPlacePick> chosenTickets)? success,
+    TResult? Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)?
+        holdingSuccess,
     TResult? Function(List<TicketStandingPlacePick> chosenTickets)? holding,
     TResult? Function(
             List<TicketStandingPlacePick> chosenTickets, String? errorMessage)?
@@ -594,7 +649,9 @@ class _$TicketStandingPlaceHoldStateHoldingImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<TicketStandingPlacePick> chosenTickets)? data,
-    TResult Function(List<TicketStandingPlacePick> chosenTickets)? success,
+    TResult Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)?
+        holdingSuccess,
     TResult Function(List<TicketStandingPlacePick> chosenTickets)? holding,
     TResult Function(
             List<TicketStandingPlacePick> chosenTickets, String? errorMessage)?
@@ -612,7 +669,7 @@ class _$TicketStandingPlaceHoldStateHoldingImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_TicketStandingPlaceHoldDataState value) data,
     required TResult Function(_TicketStandingPlaceHoldSuccessState value)
-        success,
+        holdingSuccess,
     required TResult Function(TicketStandingPlaceHoldStateHolding value)
         holding,
     required TResult Function(_TicketStandingPlaceHoldErrorState value)
@@ -625,7 +682,8 @@ class _$TicketStandingPlaceHoldStateHoldingImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TicketStandingPlaceHoldDataState value)? data,
-    TResult? Function(_TicketStandingPlaceHoldSuccessState value)? success,
+    TResult? Function(_TicketStandingPlaceHoldSuccessState value)?
+        holdingSuccess,
     TResult? Function(TicketStandingPlaceHoldStateHolding value)? holding,
     TResult? Function(_TicketStandingPlaceHoldErrorState value)? holdingError,
   }) {
@@ -636,7 +694,8 @@ class _$TicketStandingPlaceHoldStateHoldingImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TicketStandingPlaceHoldDataState value)? data,
-    TResult Function(_TicketStandingPlaceHoldSuccessState value)? success,
+    TResult Function(_TicketStandingPlaceHoldSuccessState value)?
+        holdingSuccess,
     TResult Function(TicketStandingPlaceHoldStateHolding value)? holding,
     TResult Function(_TicketStandingPlaceHoldErrorState value)? holdingError,
     required TResult orElse(),
@@ -759,8 +818,9 @@ class _$TicketStandingPlaceHoldErrorStateImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<TicketStandingPlacePick> chosenTickets) data,
-    required TResult Function(List<TicketStandingPlacePick> chosenTickets)
-        success,
+    required TResult Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)
+        holdingSuccess,
     required TResult Function(List<TicketStandingPlacePick> chosenTickets)
         holding,
     required TResult Function(
@@ -774,7 +834,9 @@ class _$TicketStandingPlaceHoldErrorStateImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<TicketStandingPlacePick> chosenTickets)? data,
-    TResult? Function(List<TicketStandingPlacePick> chosenTickets)? success,
+    TResult? Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)?
+        holdingSuccess,
     TResult? Function(List<TicketStandingPlacePick> chosenTickets)? holding,
     TResult? Function(
             List<TicketStandingPlacePick> chosenTickets, String? errorMessage)?
@@ -787,7 +849,9 @@ class _$TicketStandingPlaceHoldErrorStateImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<TicketStandingPlacePick> chosenTickets)? data,
-    TResult Function(List<TicketStandingPlacePick> chosenTickets)? success,
+    TResult Function(List<TicketStandingPlacePick> chosenTickets,
+            String bookingId, double ticketsCost)?
+        holdingSuccess,
     TResult Function(List<TicketStandingPlacePick> chosenTickets)? holding,
     TResult Function(
             List<TicketStandingPlacePick> chosenTickets, String? errorMessage)?
@@ -805,7 +869,7 @@ class _$TicketStandingPlaceHoldErrorStateImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_TicketStandingPlaceHoldDataState value) data,
     required TResult Function(_TicketStandingPlaceHoldSuccessState value)
-        success,
+        holdingSuccess,
     required TResult Function(TicketStandingPlaceHoldStateHolding value)
         holding,
     required TResult Function(_TicketStandingPlaceHoldErrorState value)
@@ -818,7 +882,8 @@ class _$TicketStandingPlaceHoldErrorStateImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TicketStandingPlaceHoldDataState value)? data,
-    TResult? Function(_TicketStandingPlaceHoldSuccessState value)? success,
+    TResult? Function(_TicketStandingPlaceHoldSuccessState value)?
+        holdingSuccess,
     TResult? Function(TicketStandingPlaceHoldStateHolding value)? holding,
     TResult? Function(_TicketStandingPlaceHoldErrorState value)? holdingError,
   }) {
@@ -829,7 +894,8 @@ class _$TicketStandingPlaceHoldErrorStateImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TicketStandingPlaceHoldDataState value)? data,
-    TResult Function(_TicketStandingPlaceHoldSuccessState value)? success,
+    TResult Function(_TicketStandingPlaceHoldSuccessState value)?
+        holdingSuccess,
     TResult Function(TicketStandingPlaceHoldStateHolding value)? holding,
     TResult Function(_TicketStandingPlaceHoldErrorState value)? holdingError,
     required TResult orElse(),

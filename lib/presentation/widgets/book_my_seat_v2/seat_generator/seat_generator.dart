@@ -1,3 +1,4 @@
+import 'package:eticket/common/common.dart';
 import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:collection/collection.dart';
 import 'package:eticket/data/models/models.dart';
@@ -67,17 +68,22 @@ class SeatGenerator {
         final rowLabel = secondaryPlace?.rowLabel ?? mainCurrentRowLabel;
         final seatPlace = secondaryPlace?.placeNumber ?? placeNumber++;
 
-        final isPlaceAvailable = tickets.any((t) =>
-            t.branchType == mainBranchIndex &&
-            t.rowNumber == rowIndex &&
-            t.placeNumber == seatPlace);
+        final currentPlace = tickets.firstWhereOrNull(
+          (item) =>
+              item.branchType == mainBranchIndex &&
+              item.rowNumber == rowIndex &&
+              item.placeNumber == seatPlace &&
+              // TODO: SHOW ONLY FREE?
+              item.status == TicketStatus.FREE,
+        );
 
         return SeatPlaceV2(
+          ticketId: currentPlace?.id,
           currentRowIndex: rowIndex,
           rowLabel: rowLabel,
-          seatState: isPlaceAvailable
-              ? PlaceStateV2.unselected
-              : PlaceStateV2.disabled,
+          seatState: currentPlace == null
+              ? PlaceStateV2.disabled
+              : PlaceStateV2.unselected,
           seatPlace: seatPlace,
         );
       },

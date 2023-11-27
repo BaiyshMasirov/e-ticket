@@ -31,14 +31,7 @@ class TicketStandingPlacePurchaseFab extends StatelessWidget {
                 onCancel: context.popRoute,
                 onConfirm: () {
                   context.popRoute();
-                  context
-                      .read<TicketStandingPlaceHoldCubit>()
-                      .holdTickets();
-
-                  context.router.pushAndPopUntil(
-                    PaymentMethodsRoute(),
-                    predicate: (route) => route.isFirst,
-                  );
+                  context.read<TicketStandingPlaceHoldCubit>().holdTickets();
                 },
               );
             }

@@ -28,6 +28,8 @@ mixin _$TicketDto {
   int get branchType => throw _privateConstructorUsedError;
   int get index => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: TicketStatus.unknown)
+  TicketStatus get status => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,7 +50,8 @@ abstract class $TicketDtoCopyWith<$Res> {
       int branchIndex,
       int branchType,
       int index,
-      double price});
+      double price,
+      @JsonKey(unknownEnumValue: TicketStatus.unknown) TicketStatus status});
 }
 
 /// @nodoc
@@ -72,6 +75,7 @@ class _$TicketDtoCopyWithImpl<$Res, $Val extends TicketDto>
     Object? branchType = null,
     Object? index = null,
     Object? price = null,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -106,6 +110,10 @@ class _$TicketDtoCopyWithImpl<$Res, $Val extends TicketDto>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as TicketStatus,
     ) as $Val);
   }
 }
@@ -126,7 +134,8 @@ abstract class _$$TicketDtoImplCopyWith<$Res>
       int branchIndex,
       int branchType,
       int index,
-      double price});
+      double price,
+      @JsonKey(unknownEnumValue: TicketStatus.unknown) TicketStatus status});
 }
 
 /// @nodoc
@@ -148,6 +157,7 @@ class __$$TicketDtoImplCopyWithImpl<$Res>
     Object? branchType = null,
     Object? index = null,
     Object? price = null,
+    Object? status = null,
   }) {
     return _then(_$TicketDtoImpl(
       id: null == id
@@ -182,6 +192,10 @@ class __$$TicketDtoImplCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as TicketStatus,
     ));
   }
 }
@@ -197,7 +211,8 @@ class _$TicketDtoImpl extends _TicketDto {
       required this.branchIndex,
       required this.branchType,
       required this.index,
-      required this.price})
+      required this.price,
+      @JsonKey(unknownEnumValue: TicketStatus.unknown) required this.status})
       : super._();
 
   factory _$TicketDtoImpl.fromJson(Map<String, dynamic> json) =>
@@ -219,10 +234,13 @@ class _$TicketDtoImpl extends _TicketDto {
   final int index;
   @override
   final double price;
+  @override
+  @JsonKey(unknownEnumValue: TicketStatus.unknown)
+  final TicketStatus status;
 
   @override
   String toString() {
-    return 'TicketDto(id: $id, type: $type, placeNumber: $placeNumber, rowNumber: $rowNumber, branchIndex: $branchIndex, branchType: $branchType, index: $index, price: $price)';
+    return 'TicketDto(id: $id, type: $type, placeNumber: $placeNumber, rowNumber: $rowNumber, branchIndex: $branchIndex, branchType: $branchType, index: $index, price: $price, status: $status)';
   }
 
   @override
@@ -241,13 +259,14 @@ class _$TicketDtoImpl extends _TicketDto {
             (identical(other.branchType, branchType) ||
                 other.branchType == branchType) &&
             (identical(other.index, index) || other.index == index) &&
-            (identical(other.price, price) || other.price == price));
+            (identical(other.price, price) || other.price == price) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, type, placeNumber, rowNumber,
-      branchIndex, branchType, index, price);
+      branchIndex, branchType, index, price, status);
 
   @JsonKey(ignore: true)
   @override
@@ -272,7 +291,9 @@ abstract class _TicketDto extends TicketDto {
       required final int branchIndex,
       required final int branchType,
       required final int index,
-      required final double price}) = _$TicketDtoImpl;
+      required final double price,
+      @JsonKey(unknownEnumValue: TicketStatus.unknown)
+      required final TicketStatus status}) = _$TicketDtoImpl;
   const _TicketDto._() : super._();
 
   factory _TicketDto.fromJson(Map<String, dynamic> json) =
@@ -294,6 +315,9 @@ abstract class _TicketDto extends TicketDto {
   int get index;
   @override
   double get price;
+  @override
+  @JsonKey(unknownEnumValue: TicketStatus.unknown)
+  TicketStatus get status;
   @override
   @JsonKey(ignore: true)
   _$$TicketDtoImplCopyWith<_$TicketDtoImpl> get copyWith =>

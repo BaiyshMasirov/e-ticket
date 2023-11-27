@@ -11,8 +11,10 @@ class TicketStandingPlaceHoldState with _$TicketStandingPlaceHoldState {
     required List<TicketStandingPlacePick> chosenTickets,
   }) = _TicketStandingPlaceHoldDataState;
 
-  const factory TicketStandingPlaceHoldState.success({
+  const factory TicketStandingPlaceHoldState.holdingSuccess({
     required List<TicketStandingPlacePick> chosenTickets,
+    required String bookingId,
+    required double ticketsCost,
   }) = _TicketStandingPlaceHoldSuccessState;
 
   const factory TicketStandingPlaceHoldState.holding({

@@ -3,13 +3,13 @@ import 'package:eticket/data/data.dart';
 
 class BookingRepository with NetworkRemoteRepositoryMixin {
   final BookingRemoteDatasource _bookingRemoteDatasource;
-  final HistoryBookingDataSources _historyBookingDatasource;
-  final BookingSembastDataSources _bookingDatasource;
+  final HistoryLocalDatasources _historyBookingDatasource;
+  final BookingLocalDataSources _bookingDatasource;
 
   BookingRepository({
     required BookingRemoteDatasource bookingRemoteDatasource,
-    required HistoryBookingDataSources historyBookingDatasource,
-    required BookingSembastDataSources bookingDatasource,
+    required HistoryLocalDatasources historyBookingDatasource,
+    required BookingLocalDataSources bookingDatasource,
   })  : _bookingRemoteDatasource = bookingRemoteDatasource,
         _bookingDatasource = bookingDatasource,
         _historyBookingDatasource = historyBookingDatasource;

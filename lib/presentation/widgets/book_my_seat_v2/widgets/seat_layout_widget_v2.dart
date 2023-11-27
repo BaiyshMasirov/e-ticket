@@ -8,6 +8,7 @@ class SeatLayoutWidgetV2 extends StatelessWidget {
     int currentIndex,
     int placeNumber,
     PlaceStateV2 currentState,
+    String? ticketId,
   ) onSeatStateChanged;
 
   const SeatLayoutWidgetV2({
@@ -35,17 +36,17 @@ class SeatLayoutWidgetV2 extends StatelessWidget {
                       stateModel.currentSeatsState[rowI].seatPlaces.length,
                       (colI) => colI).map(
                     (index) {
+                      final currentSeatPlace =
+                          stateModel.currentSeatsState[rowI].seatPlaces[index];
+
                       return SeatWidgetV2(
                         model: SeatModelV2(
                           seatPlaceTextPadding: stateModel.seatPlaceTextPadding,
-                          seatPlace: stateModel.currentSeatsState[rowI]
-                              .seatPlaces[index].seatPlace,
-                          currentRowIndex: stateModel.currentSeatsState[rowI]
-                              .seatPlaces[index].currentRowIndex,
-                          rowLabel: stateModel.currentSeatsState[rowI]
-                              .seatPlaces[index].rowLabel,
-                          seatState: stateModel.currentSeatsState[rowI]
-                              .seatPlaces[index].seatState,
+                          seatPlace: currentSeatPlace.seatPlace,
+                          currentRowIndex: currentSeatPlace.currentRowIndex,
+                          rowLabel: currentSeatPlace.rowLabel,
+                          seatState: currentSeatPlace.seatState,
+                          ticketId: currentSeatPlace.ticketId,
                           seatSvgSize: stateModel.seatSvgSize,
                           pathSelectedSeat: stateModel.pathSelectedSeat,
                           pathDisabledSeat: stateModel.pathDisabledSeat,

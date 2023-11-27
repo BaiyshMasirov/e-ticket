@@ -93,7 +93,9 @@ class RegisterView extends HookWidget {
                               lastName: lastNameController.text,
                               middleName: middleNameController.text,
                               password: passwordController.text,
-                              phoneNumber: phoneNumberController.text,
+                              phoneNumber: PhoneFormatters.unMaskPhoneNumber(
+                                phoneNumberController.text,
+                              ),
                             ),
                           );
                     }

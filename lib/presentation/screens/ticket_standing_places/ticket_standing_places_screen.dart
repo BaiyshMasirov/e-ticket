@@ -29,11 +29,14 @@ class TicketStandingPlacesScreen extends StatelessWidget {
         BlocProvider(
           create: (context) => TicketStandingPlacesCubit.initialize(
             eventId: eventId,
-            dateTime: dateTime,
+            eventDate: dateTime,
           )..getTickets(),
         ),
         BlocProvider(
-          create: (context) => TicketStandingPlaceHoldCubit.initialize(),
+          create: (context) => TicketStandingPlaceHoldCubit.initialize(
+            eventId: eventId,
+            eventDate: dateTime,
+          ),
         ),
       ],
       child: AppScaffold(

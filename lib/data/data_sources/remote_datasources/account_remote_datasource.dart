@@ -12,7 +12,7 @@ class AccountRemoteSource {
       RegisterUserCommandDto registerUserCommandDto,
       ) async {
     final response = await _dio.makeRequest(
-      request: () => _dio.post('/api/Account/register',
+      request: () => _dio.post('api/Account/register',
           data: registerUserCommandDto.toJson()),
       parse: (json) {
         return ApiUserTokenDto.fromJson(json['token']);
@@ -27,7 +27,7 @@ class AccountRemoteSource {
       ) async {
     final response = await _dio.makeRequest(
       request: () => _dio.post(
-        '/api/Account/login',
+        'api/Account/login',
         data: loginCommandDto.toJson(),
       ),
       parse: (json) => ApiUserTokenDto.fromJson(json['token']),
@@ -41,7 +41,7 @@ class AccountRemoteSource {
       ) async {
     final response = await _dio.makeRequest(
       request: () => _dio.post(
-        '/api/Account/login',
+        'api/Account/login',
         data: refreshPasswordCommandDto.toJson(),
       ),
       parse: (json) => ApiUserTokenDto.fromJson(json['token']),

@@ -63,11 +63,14 @@ Future<void> injectDependencies() async {
   getIt.registerSingleton<DictionaryRemoteSource>(
     DictionaryRemoteSource(dio: projectDio),
   );
-  getIt.registerSingleton<BookingSembastDataSources>(
-    BookingSembastDataSources(db: databaseClient),
+  getIt.registerSingleton<PaymentRemoteSource>(
+    PaymentRemoteSource(dio: projectDio),
   );
-  getIt.registerSingleton<HistoryBookingDataSources>(
-    HistoryBookingDataSources(db: databaseClient),
+  getIt.registerSingleton<BookingLocalDataSources>(
+    BookingLocalDataSources(db: databaseClient),
+  );
+  getIt.registerSingleton<HistoryLocalDatasources>(
+    HistoryLocalDatasources(db: databaseClient),
   );
   // end of remote sources
 
@@ -77,8 +80,8 @@ Future<void> injectDependencies() async {
   ));
   getIt.registerSingleton<BookingRepository>(BookingRepository(
     bookingRemoteDatasource: getIt.get<BookingRemoteDatasource>(),
-    bookingDatasource: getIt.get<BookingSembastDataSources>(),
-    historyBookingDatasource: getIt.get<HistoryBookingDataSources>(),
+    bookingDatasource: getIt.get<BookingLocalDataSources>(),
+    historyBookingDatasource: getIt.get<HistoryLocalDatasources>(),
   ));
   getIt.registerSingleton<EventRepository>(EventRepository(
     eventRemoteDatasource: getIt.get<EventRemoteDatasource>(),
@@ -88,6 +91,9 @@ Future<void> injectDependencies() async {
   ));
   getIt.registerSingleton<DictionaryRepository>(DictionaryRepository(
     dictionaryRemoteSource: getIt.get<DictionaryRemoteSource>(),
+  ));
+  getIt.registerSingleton<PaymentRepository>(PaymentRepository(
+    paymentRemoteSource: getIt.get<PaymentRemoteSource>(),
   ));
   // end of repositories
   // endregion END OF PROJECT MODULE
