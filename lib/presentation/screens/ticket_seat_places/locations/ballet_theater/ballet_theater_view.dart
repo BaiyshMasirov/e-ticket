@@ -946,7 +946,7 @@ const _lowerBranchIndex = 3;
 
 const _top5RowNumber = 5;
 const _top4RowNumber = 4;
-const _top3RowNumber = 6;
+const _top3RowNumber = 3;
 const _top2RowNumber = 2;
 const _top1RowNumber = 1;
 
