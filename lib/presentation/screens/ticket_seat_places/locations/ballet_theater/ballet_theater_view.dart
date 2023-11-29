@@ -214,28 +214,6 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
 
-      // SeatGenerator.generateSeatPlaces(
-      //   mainCurrentRowLabel: '',
-      //   tickets: tickets,
-      //   mainCurrentRowIndex: -1,
-      //   mainCurrentBigText: LocaleKeys.balcony.tr(),
-      //   rowLength: 20,
-      //   bigTextSpacingIndex: [17],
-      //   emptySpacingIndex: List.generate(20, (index) => index + 1).toList(),
-      //   leftOffsetCount: 0,
-      //   mainBranchIndex: -1,
-      // ),
-      // SeatGenerator.generateSeatPlaces(
-      //   mainCurrentRowLabel: '',
-      //   tickets: tickets,
-      //   mainCurrentRowIndex: -1,
-      //   mainCurrentBigText: '',
-      //   rowLength: 20,
-      //   emptySpacingIndex: List.generate(20, (index) => index + 1).toList(),
-      //   leftOffsetCount: 0,
-      //   mainBranchIndex: -1,
-      // ),
-
       /// endregion top places
       // region empty places
       SeatGenerator.generateSeatPlaces(
