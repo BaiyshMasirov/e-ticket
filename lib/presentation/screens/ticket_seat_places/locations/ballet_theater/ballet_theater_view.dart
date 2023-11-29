@@ -1,6 +1,8 @@
 import 'package:common/common.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/data/models/ticket/ticket_dto.dart';
 import 'package:eticket/generated/assets.gen.dart';
+import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/bloc/bloc.dart';
 import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +31,28 @@ class BalletTheaterView extends HookWidget {
     }, const []);
 
     final places = [
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowLabel: '',
+        tickets: tickets,
+        mainCurrentRowIndex: -1,
+        mainCurrentBigText: LocaleKeys.balcony.tr(),
+        rowLength: 40,
+        bigTextSpacingIndex: [17],
+        emptySpacingIndex: List.generate(40, (index) => index + 1).toList(),
+        leftOffsetCount: 0,
+        mainBranchIndex: -1,
+      ),
+      SeatGenerator.generateSeatPlaces(
+        mainCurrentRowLabel: '',
+        tickets: tickets,
+        mainCurrentRowIndex: -1,
+        mainCurrentBigText: '',
+        rowLength: 40,
+        emptySpacingIndex: List.generate(40, (index) => index + 1).toList(),
+        leftOffsetCount: 0,
+        mainBranchIndex: -1,
+      ),
+
       /// region top places
       SeatGenerator.generateSeatPlaces(
         tickets: tickets,
@@ -190,6 +214,28 @@ class BalletTheaterView extends HookWidget {
         ],
       ),
 
+      // SeatGenerator.generateSeatPlaces(
+      //   mainCurrentRowLabel: '',
+      //   tickets: tickets,
+      //   mainCurrentRowIndex: -1,
+      //   mainCurrentBigText: LocaleKeys.balcony.tr(),
+      //   rowLength: 20,
+      //   bigTextSpacingIndex: [17],
+      //   emptySpacingIndex: List.generate(20, (index) => index + 1).toList(),
+      //   leftOffsetCount: 0,
+      //   mainBranchIndex: -1,
+      // ),
+      // SeatGenerator.generateSeatPlaces(
+      //   mainCurrentRowLabel: '',
+      //   tickets: tickets,
+      //   mainCurrentRowIndex: -1,
+      //   mainCurrentBigText: '',
+      //   rowLength: 20,
+      //   emptySpacingIndex: List.generate(20, (index) => index + 1).toList(),
+      //   leftOffsetCount: 0,
+      //   mainBranchIndex: -1,
+      // ),
+
       /// endregion top places
       // region empty places
       SeatGenerator.generateSeatPlaces(
@@ -198,29 +244,31 @@ class BalletTheaterView extends HookWidget {
         rowLength: 44,
         mainCurrentRowIndex: -1,
         mainCurrentRowLabel: '',
+        mainCurrentBigText: LocaleKeys.amphitheater.tr(),
         halfSpacingIndex: [44],
-        emptySpacingIndex: List.generate(38, (index) => index + 4).toList(),
+        bigTextSpacingIndex: [25],
+        emptySpacingIndex: amphitheaterlacesNotExist,
         leftOffsetCount: 5,
         secondarySeatPlaces: [
           SeatPlaceSecondaryV2(
             branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 3',
             currentRowIndex: _top3RowNumber,
-            placeIndex: 1,
+            placeIndex: 4,
             placeNumber: 6,
           ),
           SeatPlaceSecondaryV2(
             branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 2',
             currentRowIndex: _top2RowNumber,
-            placeIndex: 2,
+            placeIndex: 5,
             placeNumber: 11,
           ),
           SeatPlaceSecondaryV2(
             branchIndex: _topBranchIndex,
             rowLabel: 'Ряд 1',
             currentRowIndex: _top1RowNumber,
-            placeIndex: 3,
+            placeIndex: 6,
             placeNumber: 12,
           ),
           SeatPlaceSecondaryV2(
@@ -731,11 +779,13 @@ class BalletTheaterView extends HookWidget {
       //region empty places
       SeatGenerator.generateSeatPlaces(
         tickets: tickets,
-        rowLength: 1,
+        rowLength: 44,
         mainBranchIndex: -1,
         mainCurrentRowIndex: -1,
         mainCurrentRowLabel: '',
-        emptySpacingIndex: [1],
+        mainCurrentBigText: LocaleKeys.parterre.tr(),
+        bigTextSpacingIndex: [20],
+        emptySpacingIndex: List.generate(44, (index) => index + 1).toList(),
       ),
       //endregion empty places
       //region lower places
@@ -850,6 +900,25 @@ class BalletTheaterView extends HookWidget {
         leftOffsetCount: 13,
       ),
       //endregion lower places
+
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
+        rowLength: 44,
+        mainBranchIndex: -1,
+        mainCurrentRowIndex: -1,
+        mainCurrentRowLabel: '',
+        emptySpacingIndex: List.generate(44, (index) => index + 1).toList(),
+      ),
+      SeatGenerator.generateSeatPlaces(
+        tickets: tickets,
+        rowLength: 44,
+        mainBranchIndex: -1,
+        mainCurrentRowIndex: -1,
+        mainCurrentRowLabel: '',
+        mainCurrentBigText: LocaleKeys.scene.tr(),
+        bigTextSpacingIndex: [20],
+        emptySpacingIndex: List.generate(44, (index) => index + 1).toList(),
+      ),
     ];
 
     return SeatLayoutWidgetV2(
@@ -899,7 +968,7 @@ const _lowerBranchIndex = 3;
 
 const _top5RowNumber = 5;
 const _top4RowNumber = 4;
-const _top3RowNumber = 3;
+const _top3RowNumber = 6;
 const _top2RowNumber = 2;
 const _top1RowNumber = 1;
 
@@ -926,3 +995,8 @@ const _lower4RowNumber = 4;
 const _lower3RowNumber = 3;
 const _lower2RowNumber = 2;
 const _lower1RowNumber = 1;
+
+final amphitheaterlacesNotExist = [
+  ...List.generate(35, (index) => index + 7).toList(),
+  ...List.generate(3, (index) => index + 1).toList(),
+];

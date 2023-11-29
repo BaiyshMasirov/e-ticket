@@ -45,6 +45,7 @@ class SeatLayoutWidgetV2 extends StatelessWidget {
                           seatPlace: currentSeatPlace.seatPlace,
                           currentRowIndex: currentSeatPlace.currentRowIndex,
                           rowLabel: currentSeatPlace.rowLabel,
+                          bigText: currentSeatPlace.bigText,
                           seatState: currentSeatPlace.seatState,
                           ticketId: currentSeatPlace.ticketId,
                           seatSvgSize: stateModel.seatSvgSize,

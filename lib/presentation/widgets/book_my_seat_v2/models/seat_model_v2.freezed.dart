@@ -25,6 +25,7 @@ mixin _$SeatModelV2 {
   String get pathDisabledSeat => throw _privateConstructorUsedError;
   int get currentRowIndex => throw _privateConstructorUsedError;
   String get rowLabel => throw _privateConstructorUsedError;
+  String get bigText => throw _privateConstructorUsedError;
   String? get ticketId => throw _privateConstructorUsedError;
   double get seatSvgSize => throw _privateConstructorUsedError;
 
@@ -49,6 +50,7 @@ abstract class $SeatModelV2CopyWith<$Res> {
       String pathDisabledSeat,
       int currentRowIndex,
       String rowLabel,
+      String bigText,
       String? ticketId,
       double seatSvgSize});
 }
@@ -75,6 +77,7 @@ class _$SeatModelV2CopyWithImpl<$Res, $Val extends SeatModelV2>
     Object? pathDisabledSeat = null,
     Object? currentRowIndex = null,
     Object? rowLabel = null,
+    Object? bigText = null,
     Object? ticketId = freezed,
     Object? seatSvgSize = null,
   }) {
@@ -115,6 +118,10 @@ class _$SeatModelV2CopyWithImpl<$Res, $Val extends SeatModelV2>
           ? _value.rowLabel
           : rowLabel // ignore: cast_nullable_to_non_nullable
               as String,
+      bigText: null == bigText
+          ? _value.bigText
+          : bigText // ignore: cast_nullable_to_non_nullable
+              as String,
       ticketId: freezed == ticketId
           ? _value.ticketId
           : ticketId // ignore: cast_nullable_to_non_nullable
@@ -145,6 +152,7 @@ abstract class _$$SeatModelV2ImplCopyWith<$Res>
       String pathDisabledSeat,
       int currentRowIndex,
       String rowLabel,
+      String bigText,
       String? ticketId,
       double seatSvgSize});
 }
@@ -169,6 +177,7 @@ class __$$SeatModelV2ImplCopyWithImpl<$Res>
     Object? pathDisabledSeat = null,
     Object? currentRowIndex = null,
     Object? rowLabel = null,
+    Object? bigText = null,
     Object? ticketId = freezed,
     Object? seatSvgSize = null,
   }) {
@@ -209,6 +218,10 @@ class __$$SeatModelV2ImplCopyWithImpl<$Res>
           ? _value.rowLabel
           : rowLabel // ignore: cast_nullable_to_non_nullable
               as String,
+      bigText: null == bigText
+          ? _value.bigText
+          : bigText // ignore: cast_nullable_to_non_nullable
+              as String,
       ticketId: freezed == ticketId
           ? _value.ticketId
           : ticketId // ignore: cast_nullable_to_non_nullable
@@ -234,6 +247,7 @@ class _$SeatModelV2Impl extends _SeatModelV2 {
       required this.pathDisabledSeat,
       required this.currentRowIndex,
       required this.rowLabel,
+      required this.bigText,
       this.ticketId,
       this.seatSvgSize = 50})
       : super._();
@@ -257,6 +271,8 @@ class _$SeatModelV2Impl extends _SeatModelV2 {
   @override
   final String rowLabel;
   @override
+  final String bigText;
+  @override
   final String? ticketId;
   @override
   @JsonKey()
@@ -264,7 +280,7 @@ class _$SeatModelV2Impl extends _SeatModelV2 {
 
   @override
   String toString() {
-    return 'SeatModelV2(seatState: $seatState, seatPlace: $seatPlace, seatPlaceTextPadding: $seatPlaceTextPadding, pathSelectedSeat: $pathSelectedSeat, pathUnSelectedSeat: $pathUnSelectedSeat, pathSoldSeat: $pathSoldSeat, pathDisabledSeat: $pathDisabledSeat, currentRowIndex: $currentRowIndex, rowLabel: $rowLabel, ticketId: $ticketId, seatSvgSize: $seatSvgSize)';
+    return 'SeatModelV2(seatState: $seatState, seatPlace: $seatPlace, seatPlaceTextPadding: $seatPlaceTextPadding, pathSelectedSeat: $pathSelectedSeat, pathUnSelectedSeat: $pathUnSelectedSeat, pathSoldSeat: $pathSoldSeat, pathDisabledSeat: $pathDisabledSeat, currentRowIndex: $currentRowIndex, rowLabel: $rowLabel, bigText: $bigText, ticketId: $ticketId, seatSvgSize: $seatSvgSize)';
   }
 
   @override
@@ -290,6 +306,7 @@ class _$SeatModelV2Impl extends _SeatModelV2 {
                 other.currentRowIndex == currentRowIndex) &&
             (identical(other.rowLabel, rowLabel) ||
                 other.rowLabel == rowLabel) &&
+            (identical(other.bigText, bigText) || other.bigText == bigText) &&
             (identical(other.ticketId, ticketId) ||
                 other.ticketId == ticketId) &&
             (identical(other.seatSvgSize, seatSvgSize) ||
@@ -308,6 +325,7 @@ class _$SeatModelV2Impl extends _SeatModelV2 {
       pathDisabledSeat,
       currentRowIndex,
       rowLabel,
+      bigText,
       ticketId,
       seatSvgSize);
 
@@ -329,6 +347,7 @@ abstract class _SeatModelV2 extends SeatModelV2 {
       required final String pathDisabledSeat,
       required final int currentRowIndex,
       required final String rowLabel,
+      required final String bigText,
       final String? ticketId,
       final double seatSvgSize}) = _$SeatModelV2Impl;
   const _SeatModelV2._() : super._();
@@ -351,6 +370,8 @@ abstract class _SeatModelV2 extends SeatModelV2 {
   int get currentRowIndex;
   @override
   String get rowLabel;
+  @override
+  String get bigText;
   @override
   String? get ticketId;
   @override

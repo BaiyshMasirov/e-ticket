@@ -63,6 +63,16 @@ class _SeatWidgetV2State extends State<SeatWidgetV2> {
             ),
           ),
         );
+      case PlaceStateV2.bigText:
+        child = SizedBox(
+          height: widget.model.seatSvgSize,
+          width: widget.model.seatSvgSize * 4,
+          child: FittedBox(
+            child: Text(
+              widget.model.bigText,
+            ),
+          ),
+        );
       default:
         child = Stack(
           children: [

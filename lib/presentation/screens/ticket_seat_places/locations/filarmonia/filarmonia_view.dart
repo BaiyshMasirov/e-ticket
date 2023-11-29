@@ -1,5 +1,7 @@
 import 'package:common/common.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/generated/assets.gen.dart';
+import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/bloc/bloc.dart';
 import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +25,27 @@ class FilarmoniaView extends HookWidget {
 
     final places = useMemoized(
       () => [
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowLabel: '',
+          tickets: tickets,
+          mainCurrentRowIndex: -1,
+          mainCurrentBigText: LocaleKeys.balcony.tr(),
+          rowLength: _maxPlaces,
+          bigTextSpacingIndex: [27],
+          emptySpacingIndex: _emptyRowPlaces,
+          leftOffsetCount: 0,
+          mainBranchIndex: -1,
+        ),
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowLabel: '',
+          tickets: tickets,
+          mainCurrentRowIndex: -1,
+          mainCurrentBigText: '',
+          rowLength: _maxPlaces,
+          emptySpacingIndex: _emptyRowPlaces,
+          leftOffsetCount: 0,
+          mainBranchIndex: -1,
+        ),
         SeatGenerator.generateSeatPlaces(
           tickets: tickets,
           mainCurrentRowIndex: 7,
@@ -68,6 +91,7 @@ class FilarmoniaView extends HookWidget {
           mainCurrentRowLabel: '',
           tickets: tickets,
           mainCurrentRowIndex: -1,
+          mainCurrentBigText: '',
           rowLength: _maxPlaces,
           emptySpacingIndex: _emptyRowPlaces,
           leftOffsetCount: 0,
@@ -109,6 +133,18 @@ class FilarmoniaView extends HookWidget {
           mainCurrentRowLabel: '',
           tickets: tickets,
           mainCurrentRowIndex: -1,
+          mainCurrentBigText: LocaleKeys.parterre.tr(),
+          bigTextSpacingIndex: [27],
+          rowLength: _maxPlaces,
+          emptySpacingIndex: _emptyRowPlaces,
+          leftOffsetCount: 0,
+          mainBranchIndex: -1,
+        ),
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowLabel: '',
+          tickets: tickets,
+          mainCurrentRowIndex: -1,
+          mainCurrentBigText: '',
           rowLength: _maxPlaces,
           emptySpacingIndex: _emptyRowPlaces,
           leftOffsetCount: 0,
@@ -296,6 +332,17 @@ class FilarmoniaView extends HookWidget {
           tickets: tickets,
           mainCurrentRowIndex: -1,
           rowLength: _maxPlaces,
+          emptySpacingIndex: _emptyRowPlaces,
+          leftOffsetCount: 0,
+          mainBranchIndex: -1,
+        ),
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowLabel: '',
+          tickets: tickets,
+          mainCurrentRowIndex: -1,
+          rowLength: _maxPlaces,
+          mainCurrentBigText: LocaleKeys.scene.tr(),
+          bigTextSpacingIndex: [27],
           emptySpacingIndex: _emptyRowPlaces,
           leftOffsetCount: 0,
           mainBranchIndex: -1,

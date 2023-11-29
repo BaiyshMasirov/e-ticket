@@ -1,6 +1,8 @@
 import 'package:common/common.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/assets.gen.dart';
+import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/bloc/bloc.dart';
 import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:flutter/material.dart';
@@ -346,6 +348,8 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: _emptyRowPlaces,
           leftOffsetCount: 0,
           mainCurrentRowIndex: -1,
+          mainCurrentBigText: LocaleKeys.amphitheater.tr(),
+          bigTextSpacingIndex: [34],
         ),
         // endregion
         // Low rows
@@ -507,6 +511,47 @@ class SportPalaceView extends HookWidget {
           emptySpacingIndex: [16, 30, 31, 32, 46, 47, 48, 63, 74, 75, 76, 77],
         ),
         // endregion 14 to 1
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowLabel: '',
+          tickets: tickets,
+          mainCurrentRowIndex: -1,
+          rowLength: _maxPlaces,
+          mainCurrentBigText: LocaleKeys.parterre.tr(),
+          bigTextSpacingIndex: [34],
+          emptySpacingIndex: _emptyRowPlaces,
+          leftOffsetCount: 0,
+          mainBranchIndex: -1,
+        ),
+
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowLabel: '',
+          tickets: tickets,
+          mainCurrentRowIndex: -1,
+          rowLength: _maxPlaces,
+          emptySpacingIndex: _emptyRowPlaces,
+          leftOffsetCount: 0,
+          mainBranchIndex: -1,
+        ),
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowLabel: '',
+          tickets: tickets,
+          mainCurrentRowIndex: -1,
+          rowLength: _maxPlaces,
+          emptySpacingIndex: _emptyRowPlaces,
+          leftOffsetCount: 0,
+          mainBranchIndex: -1,
+        ),
+        SeatGenerator.generateSeatPlaces(
+          mainCurrentRowLabel: '',
+          tickets: tickets,
+          mainCurrentRowIndex: -1,
+          rowLength: _maxPlaces,
+          mainCurrentBigText: LocaleKeys.scene.tr(),
+          bigTextSpacingIndex: [34],
+          emptySpacingIndex: _emptyRowPlaces,
+          leftOffsetCount: 0,
+          mainBranchIndex: -1,
+        ),
       ],
     );
 
