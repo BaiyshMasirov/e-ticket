@@ -14,12 +14,14 @@ class SeatGenerator {
     /// branch of row
     required int mainBranchIndex,
     required List<TicketDto> tickets,
+    String mainCurrentBigText = '',
     int leftOffsetCount = 0,
     int beginPlaceNumber = 1,
     List<int> blockedPlacesNumber = const [],
     List<int> halfSpacingIndex = const [],
     List<int> emptySpacingIndex = const [],
     List<int> textLabelSpacingIndex = const [],
+    List<int> bigTextSpacingIndex = const [],
     List<SeatPlaceSecondaryV2> secondarySeatPlaces = const [],
   }) {
     int placeNumber = beginPlaceNumber;
@@ -37,14 +39,25 @@ class SeatGenerator {
         if (textLabelSpacingIndex.contains(innerPlace)) {
           return SeatPlaceV2(
             rowLabel: mainCurrentRowLabel,
+            bigText: mainCurrentBigText,
             currentRowIndex: mainCurrentRowIndex,
             seatState: PlaceStateV2.text,
+            seatPlace: -1,
+          );
+        }
+        if (bigTextSpacingIndex.contains(innerPlace)) {
+          return SeatPlaceV2(
+            rowLabel: mainCurrentRowLabel,
+            bigText: mainCurrentBigText,
+            currentRowIndex: mainCurrentRowIndex,
+            seatState: PlaceStateV2.bigText,
             seatPlace: -1,
           );
         }
         if (halfSpacingIndex.contains(innerPlace)) {
           return SeatPlaceV2(
             rowLabel: mainCurrentRowLabel,
+            bigText: mainCurrentBigText,
             currentRowIndex: mainCurrentRowIndex,
             seatState: PlaceStateV2.emptyHalf,
             seatPlace: -1,
@@ -54,6 +67,7 @@ class SeatGenerator {
         if (emptySpacingIndex.contains(innerPlace)) {
           return SeatPlaceV2(
             rowLabel: mainCurrentRowLabel,
+            bigText: mainCurrentBigText,
             currentRowIndex: mainCurrentRowIndex,
             seatState: PlaceStateV2.empty,
             seatPlace: -1,
@@ -81,6 +95,7 @@ class SeatGenerator {
           ticketId: currentPlace?.id,
           currentRowIndex: rowIndex,
           rowLabel: rowLabel,
+          bigText: mainCurrentBigText,
           seatState: currentPlace == null
               ? PlaceStateV2.disabled
               : PlaceStateV2.unselected,
@@ -94,6 +109,7 @@ class SeatGenerator {
         leftOffsetCount,
         (index) => SeatPlaceV2(
           rowLabel: mainCurrentRowLabel,
+          bigText: mainCurrentBigText,
           currentRowIndex: mainCurrentRowIndex,
           seatState: PlaceStateV2.empty,
           seatPlace: -1,

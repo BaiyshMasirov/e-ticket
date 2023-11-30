@@ -21,4 +21,7 @@ enum PlaceStateV2 {
 
   /// text label instead of seat
   text,
+
+  ///  big text
+  bigText,
 }

@@ -18,6 +18,7 @@ class SeatModelV2 with _$SeatModelV2 {
     required String pathDisabledSeat,
     required int currentRowIndex,
     required String rowLabel,
+    required String bigText,
     String? ticketId,
     @Default(50) double seatSvgSize,
   }) = _SeatModelV2;

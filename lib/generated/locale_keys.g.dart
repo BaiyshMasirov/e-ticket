@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class  LocaleKeys {
+abstract class LocaleKeys {
   static const successfully_created = 'successfully_created';
   static const content_not_changed = 'content_not_changed';
   static const server_connection_timeout = 'server_connection_timeout';
@@ -73,8 +73,13 @@ abstract class  LocaleKeys {
   static const returned = 'returned';
   static const used = 'used';
   static const to_scan_tickets = 'to_scan_tickets';
-  static const request_access_to_camera_permission_description = 'request_access_to_camera_permission_description';
-  static const request_access_to_camera_permission_title = 'request_access_to_camera_permission_title';
+  static const request_access_to_camera_permission_description =
+      'request_access_to_camera_permission_description';
+  static const request_access_to_camera_permission_title =
+      'request_access_to_camera_permission_title';
   static const scan_qr_code = 'scan_qr_code';
-
+  static const parterre = 'parterre';
+  static const balcony = 'balcony';
+  static const scene = 'scene';
+  static const amphitheater = 'amphitheater';
 }

@@ -19,6 +19,7 @@ mixin _$SeatPlaceV2 {
   /// currentIndex row index *can be different fot the same row*
   int get currentRowIndex => throw _privateConstructorUsedError;
   String get rowLabel => throw _privateConstructorUsedError;
+  String get bigText => throw _privateConstructorUsedError;
   PlaceStateV2 get seatState => throw _privateConstructorUsedError;
   int get seatPlace => throw _privateConstructorUsedError;
   String? get ticketId => throw _privateConstructorUsedError;
@@ -37,6 +38,7 @@ abstract class $SeatPlaceV2CopyWith<$Res> {
   $Res call(
       {int currentRowIndex,
       String rowLabel,
+      String bigText,
       PlaceStateV2 seatState,
       int seatPlace,
       String? ticketId});
@@ -57,6 +59,7 @@ class _$SeatPlaceV2CopyWithImpl<$Res, $Val extends SeatPlaceV2>
   $Res call({
     Object? currentRowIndex = null,
     Object? rowLabel = null,
+    Object? bigText = null,
     Object? seatState = null,
     Object? seatPlace = null,
     Object? ticketId = freezed,
@@ -69,6 +72,10 @@ class _$SeatPlaceV2CopyWithImpl<$Res, $Val extends SeatPlaceV2>
       rowLabel: null == rowLabel
           ? _value.rowLabel
           : rowLabel // ignore: cast_nullable_to_non_nullable
+              as String,
+      bigText: null == bigText
+          ? _value.bigText
+          : bigText // ignore: cast_nullable_to_non_nullable
               as String,
       seatState: null == seatState
           ? _value.seatState
@@ -97,6 +104,7 @@ abstract class _$$SeatPlaceV2ImplCopyWith<$Res>
   $Res call(
       {int currentRowIndex,
       String rowLabel,
+      String bigText,
       PlaceStateV2 seatState,
       int seatPlace,
       String? ticketId});
@@ -115,6 +123,7 @@ class __$$SeatPlaceV2ImplCopyWithImpl<$Res>
   $Res call({
     Object? currentRowIndex = null,
     Object? rowLabel = null,
+    Object? bigText = null,
     Object? seatState = null,
     Object? seatPlace = null,
     Object? ticketId = freezed,
@@ -127,6 +136,10 @@ class __$$SeatPlaceV2ImplCopyWithImpl<$Res>
       rowLabel: null == rowLabel
           ? _value.rowLabel
           : rowLabel // ignore: cast_nullable_to_non_nullable
+              as String,
+      bigText: null == bigText
+          ? _value.bigText
+          : bigText // ignore: cast_nullable_to_non_nullable
               as String,
       seatState: null == seatState
           ? _value.seatState
@@ -150,6 +163,7 @@ class _$SeatPlaceV2Impl extends _SeatPlaceV2 {
   const _$SeatPlaceV2Impl(
       {required this.currentRowIndex,
       required this.rowLabel,
+      required this.bigText,
       required this.seatState,
       required this.seatPlace,
       this.ticketId})
@@ -161,6 +175,8 @@ class _$SeatPlaceV2Impl extends _SeatPlaceV2 {
   @override
   final String rowLabel;
   @override
+  final String bigText;
+  @override
   final PlaceStateV2 seatState;
   @override
   final int seatPlace;
@@ -169,7 +185,7 @@ class _$SeatPlaceV2Impl extends _SeatPlaceV2 {
 
   @override
   String toString() {
-    return 'SeatPlaceV2(currentRowIndex: $currentRowIndex, rowLabel: $rowLabel, seatState: $seatState, seatPlace: $seatPlace, ticketId: $ticketId)';
+    return 'SeatPlaceV2(currentRowIndex: $currentRowIndex, rowLabel: $rowLabel, bigText: $bigText, seatState: $seatState, seatPlace: $seatPlace, ticketId: $ticketId)';
   }
 
   @override
@@ -181,6 +197,7 @@ class _$SeatPlaceV2Impl extends _SeatPlaceV2 {
                 other.currentRowIndex == currentRowIndex) &&
             (identical(other.rowLabel, rowLabel) ||
                 other.rowLabel == rowLabel) &&
+            (identical(other.bigText, bigText) || other.bigText == bigText) &&
             (identical(other.seatState, seatState) ||
                 other.seatState == seatState) &&
             (identical(other.seatPlace, seatPlace) ||
@@ -190,8 +207,8 @@ class _$SeatPlaceV2Impl extends _SeatPlaceV2 {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, currentRowIndex, rowLabel, seatState, seatPlace, ticketId);
+  int get hashCode => Object.hash(runtimeType, currentRowIndex, rowLabel,
+      bigText, seatState, seatPlace, ticketId);
 
   @JsonKey(ignore: true)
   @override
@@ -204,6 +221,7 @@ abstract class _SeatPlaceV2 extends SeatPlaceV2 {
   const factory _SeatPlaceV2(
       {required final int currentRowIndex,
       required final String rowLabel,
+      required final String bigText,
       required final PlaceStateV2 seatState,
       required final int seatPlace,
       final String? ticketId}) = _$SeatPlaceV2Impl;
@@ -215,6 +233,8 @@ abstract class _SeatPlaceV2 extends SeatPlaceV2 {
   int get currentRowIndex;
   @override
   String get rowLabel;
+  @override
+  String get bigText;
   @override
   PlaceStateV2 get seatState;
   @override

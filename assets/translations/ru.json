@@ -73,6 +73,10 @@
   "to_scan_tickets": "Просканировать билеты",
   "request_access_to_camera_permission_description": "Для сканирования QR кода требуется доступ к камере мобильного устройства",
   "request_access_to_camera_permission_title": "Нужен доступ к вашей камере",
-  "scan_qr_code": "Просканируйте QR-code"
+  "scan_qr_code": "Просканируйте QR-code",
+  "balcony": "Балкон",
+  "parterre": "Партер",
+  "scene": "Сцена",
+  "amphitheater": "Амфитеатр"
 
 }

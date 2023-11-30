@@ -10,6 +10,7 @@ class SeatPlaceV2 with _$SeatPlaceV2 {
     /// currentIndex row index *can be different fot the same row*
     required int currentRowIndex,
     required String rowLabel,
+    required String bigText,
     required PlaceStateV2 seatState,
     required int seatPlace,
     String? ticketId,
