@@ -4,7 +4,7 @@ import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
-import 'package:eticket/presentation/screens/main/screens/settings/bloc/bloc.dart';
+import 'package:eticket/presentation/screens/main/screens/settings/settings_view/bloc/settings_cubit.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/buttons/buttons.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
@@ -30,7 +30,10 @@ class SettingsView extends StatelessWidget {
                 label: LocaleKeys.ops.tr(),
               ),
               SettingsButton(
-                label: LocaleKeys.ops.tr(),
+                onPress: () {
+                  context.navigateTo(const RefreshPasswordRoute());
+                },
+                label: LocaleKeys.change_password.tr(),
               ),
             ],
           ),

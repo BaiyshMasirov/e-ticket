@@ -82,4 +82,9 @@ abstract class LocaleKeys {
   static const balcony = 'balcony';
   static const scene = 'scene';
   static const amphitheater = 'amphitheater';
+  static const restore_password = 'restore_password';
+  static const confirm_password = 'confirm_password';
+  static const password_mismatch = 'password_mismatch';
+  static const password_updated_successfull = 'password_updated_successfull';
+  static const change_password = 'change_password';
 }

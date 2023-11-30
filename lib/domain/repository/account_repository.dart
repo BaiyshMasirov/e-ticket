@@ -53,7 +53,7 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
     );
   }
 
-  Future<Either<RequestFailure, UserCredentials>> refreshPassword(
+  Future<Either<RequestFailure, Unit>> refreshPassword(
     RefreshPasswordCommandDto refreshPasswordCommandDto,
   ) async {
     final response = await handleRemoteRequest(
@@ -61,18 +61,6 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
           _accountRemoteSource.refreshPassword(refreshPasswordCommandDto),
     );
 
-    return response.fold(
-      (l) => left(l),
-      (token) {
-        final userCredentials = UserCredentials(
-          accessToken: token.jwtToken,
-          refreshToken: token.rtToken,
-          accessTokenExpiresAt: JwtDecoder.getExpirationDate(token.jwtToken),
-          isAdmin: JwtDecoder.isAdmin(token.jwtToken),
-        );
-
-        return right(userCredentials);
-      },
-    );
+    return response;
   }
 }

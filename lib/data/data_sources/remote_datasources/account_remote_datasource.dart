@@ -9,8 +9,8 @@ class AccountRemoteSource {
   }) : _dio = dio;
 
   Future<RemoteResponse<ApiUserTokenDto>> register(
-      RegisterUserCommandDto registerUserCommandDto,
-      ) async {
+    RegisterUserCommandDto registerUserCommandDto,
+  ) async {
     final response = await _dio.makeRequest(
       request: () => _dio.post('api/Account/register',
           data: registerUserCommandDto.toJson()),
@@ -23,8 +23,8 @@ class AccountRemoteSource {
   }
 
   Future<RemoteResponse<ApiUserTokenDto>> login(
-      LoginCommandDto loginCommandDto,
-      ) async {
+    LoginCommandDto loginCommandDto,
+  ) async {
     final response = await _dio.makeRequest(
       request: () => _dio.post(
         'api/Account/login',
@@ -36,15 +36,15 @@ class AccountRemoteSource {
     return response;
   }
 
-  Future<RemoteResponse<ApiUserTokenDto>> refreshPassword(
-      RefreshPasswordCommandDto refreshPasswordCommandDto,
-      ) async {
+  Future<RemoteResponse<Unit>> refreshPassword(
+    RefreshPasswordCommandDto refreshPasswordCommandDto,
+  ) async {
     final response = await _dio.makeRequest(
       request: () => _dio.post(
-        'api/Account/login',
+        '/api/Account/refresh-password',
         data: refreshPasswordCommandDto.toJson(),
       ),
-      parse: (json) => ApiUserTokenDto.fromJson(json['token']),
+      parse: (json) => unit,
     );
 
     return response;
