@@ -1,7 +1,4 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:common/common.dart';
-import 'package:eticket/common/extensions/extensions.dart';
-import 'package:eticket/domain/models/event/events_filter.dart';
 import 'package:eticket/generated/assets.gen.dart';
 import 'package:eticket/presentation/screens/main/screens/search/bloc/search_cubit.dart';
 import 'package:eticket/presentation/screens/main/screens/search/widgets/search_widgets.dart';

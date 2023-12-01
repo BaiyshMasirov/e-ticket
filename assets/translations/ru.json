@@ -77,6 +77,12 @@
   "balcony": "Балкон",
   "parterre": "Партер",
   "scene": "Сцена",
-  "amphitheater": "Амфитеатр"
+  "amphitheater": "Амфитеатр",
+  "restore_password": "Восстановить пароль",
+  "confirm_password": "Подтвердите пароль",
+  "password_mismatch": "Пароли не совпадают",
+  "password_updated_successfull": "Пароль успешно обновлен",
+  "change_password": "Сменить пароль"
+
 
 }

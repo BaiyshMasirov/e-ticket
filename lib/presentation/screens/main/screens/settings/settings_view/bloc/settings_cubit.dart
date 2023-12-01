@@ -1,6 +1,6 @@
 import 'package:authentication/authentication.dart';
 import 'package:common/common.dart';
-import 'package:eticket/presentation/screens/main/screens/settings/bloc/settings_state.dart';
+import 'package:eticket/presentation/screens/main/screens/settings/settings_view/bloc/settings_state.dart';
 import 'package:get_it/get_it.dart';
 
 class SettingsCubit extends Cubit<SettingsState> {
