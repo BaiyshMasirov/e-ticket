@@ -70,7 +70,7 @@ class AppRouter extends $AppRouter {
         ),
         AutoRoute(
           page: RefreshPasswordRoute.page,
-          path: RouteConstants.scanTickets,
+          path: RouteConstants.refreshPassword,
         ),
       ];
 }

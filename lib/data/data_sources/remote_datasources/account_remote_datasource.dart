@@ -41,7 +41,7 @@ class AccountRemoteSource {
   ) async {
     final response = await _dio.makeRequest(
       request: () => _dio.post(
-        '/api/Account/refresh-password',
+        'api/Account/refresh-password',
         data: refreshPasswordCommandDto.toJson(),
       ),
       parse: (json) => unit,
