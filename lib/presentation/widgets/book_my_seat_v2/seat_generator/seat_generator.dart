@@ -84,7 +84,8 @@ class SeatGenerator {
 
         final currentPlace = tickets.firstWhereOrNull(
           (item) =>
-              item.branchType == mainBranchIndex &&
+              item.branchType ==
+                  (secondaryPlace?.branchIndex ?? mainBranchIndex) &&
               item.rowNumber == rowIndex &&
               item.placeNumber == seatPlace &&
               // TODO: SHOW ONLY FREE?
