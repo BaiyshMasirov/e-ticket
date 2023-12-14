@@ -33,7 +33,9 @@ class EventDatepickerDialog extends StatelessWidget {
                   onPressed: () {
                     context.popRoute();
                   },
-                  icon: const Icon(CupertinoIcons.clear_circled),
+                  icon: const Icon(
+                    CupertinoIcons.clear_circled,
+                  ),
                 ),
               ],
             ),
@@ -56,7 +58,8 @@ class EventDatepickerDialog extends StatelessWidget {
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    color: context.colorScheme.onError,
+                                    color:
+                                        context.colorScheme.tertiaryContainer,
                                     borderRadius: defaultBr,
                                   ),
                                   width: 70.w,

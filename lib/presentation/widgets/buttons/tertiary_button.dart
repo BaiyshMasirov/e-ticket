@@ -24,7 +24,8 @@ class TertiaryButton extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding ?? 0),
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-            foregroundColor: context.colorScheme.secondary,
+            foregroundColor: context.colorScheme.onTertiaryContainer,
+            backgroundColor: context.colorScheme.tertiaryContainer,
             minimumSize: Size.fromHeight(40.h),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.r),

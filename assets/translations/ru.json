@@ -82,7 +82,6 @@
   "confirm_password": "Подтвердите пароль",
   "password_mismatch": "Пароли не совпадают",
   "password_updated_successfull": "Пароль успешно обновлен",
-  "change_password": "Сменить пароль"
-
-
+  "change_password": "Сменить пароль",
+  "switch_theme": "Переключить тему"
 }

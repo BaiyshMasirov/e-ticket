@@ -13,8 +13,8 @@ class AppWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LocalizationWrapper(
-      child: BlocWrapper(
+    return BlocWrapper(
+      child: LocalizationWrapper(
         child: ScreenSizeWrapper(
           child: child,
         ),

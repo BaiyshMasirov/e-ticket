@@ -13,9 +13,9 @@ extension BuildContextX on BuildContext {
     return Theme.of(this);
   }
 
-  AppColors get appColors {
-    return Theme.of(this).extension<AppColors>()!;
-  }
+  // AppColors get appColors {
+  //   return Theme.of(this).extension<AppColors>()!;
+  // }
 
   ScreenUtil get screenSize {
     return ScreenUtil();

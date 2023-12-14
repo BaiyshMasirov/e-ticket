@@ -6,3 +6,4 @@ export 'enums/enums.dart';
 export 'dictionaries/dictionaries.dart';
 export 'history/user_bookings_dto/user_model.dart';
 export 'history/user_tickets_bookings_dto/user_ticket.dart';
+export 'settings/storage_settings.dart';

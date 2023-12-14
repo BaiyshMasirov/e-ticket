@@ -20,7 +20,7 @@ class PaymentOption extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: defaultBr,
         border: Border.all(color: context.colorScheme.outline),
-        color: context.appColors.container,
+        color: context.colorScheme.surfaceVariant,
       ),
       child: Material(
         color: Colors.transparent,
@@ -43,7 +43,7 @@ class PaymentOption extends StatelessWidget {
                 Text(
                   type.name.toLowerCase().tr(),
                   style: TextStyle(
-                    color: context.appColors.onContainer,
+                    color: context.colorScheme.onSurfaceVariant,
                   ),
                 ),
                 const Spacer(),

@@ -6,3 +6,4 @@ export 'remote_datasources/dictionary_remote_datasource.dart';
 export 'remote_datasources/payment_remote_source.dart';
 export 'local_datasources/booking_local_datasources.dart';
 export 'local_datasources/history_local_datasources.dart';
+export 'local_datasources/settings_local_datasources.dart';

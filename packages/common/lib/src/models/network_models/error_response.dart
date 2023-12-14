@@ -6,9 +6,11 @@ part 'error_response.freezed.dart';
 @freezed
 class ErrorResponse with _$ErrorResponse {
   const ErrorResponse._();
+
   const factory ErrorResponse({
     required int? statusCode,
     required String? message,
+    
   }) = _ErrorResponse;
 
   factory ErrorResponse.fromResponse(Response response) {

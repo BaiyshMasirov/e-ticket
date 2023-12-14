@@ -31,7 +31,7 @@ class DropDownFormFieldZ<T> extends StatelessWidget {
       isDense: true,
       dropdownStyleData: DropdownStyleData(
         decoration: BoxDecoration(
-          color: context.theme.cardColor,
+          color: context.colorScheme.surfaceVariant,
           border: Border.all(
             color: context.colorScheme.outline,
           ),

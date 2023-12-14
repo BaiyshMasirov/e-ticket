@@ -14,10 +14,17 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+SettingsState _$SettingsStateFromJson(Map<String, dynamic> json) {
+  return _SettingsState.fromJson(json);
+}
+
 /// @nodoc
 mixin _$SettingsState {
+  ThemeMode get themeMode => throw _privateConstructorUsedError;
+  String get locale => throw _privateConstructorUsedError;
   bool get isUserAdmin => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SettingsStateCopyWith<SettingsState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -29,7 +36,7 @@ abstract class $SettingsStateCopyWith<$Res> {
           SettingsState value, $Res Function(SettingsState) then) =
       _$SettingsStateCopyWithImpl<$Res, SettingsState>;
   @useResult
-  $Res call({bool isUserAdmin});
+  $Res call({ThemeMode themeMode, String locale, bool isUserAdmin});
 }
 
 /// @nodoc
@@ -45,9 +52,19 @@ class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? themeMode = null,
+    Object? locale = null,
     Object? isUserAdmin = null,
   }) {
     return _then(_value.copyWith(
+      themeMode: null == themeMode
+          ? _value.themeMode
+          : themeMode // ignore: cast_nullable_to_non_nullable
+              as ThemeMode,
+      locale: null == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String,
       isUserAdmin: null == isUserAdmin
           ? _value.isUserAdmin
           : isUserAdmin // ignore: cast_nullable_to_non_nullable
@@ -64,7 +81,7 @@ abstract class _$$SettingsStateImplCopyWith<$Res>
       __$$SettingsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isUserAdmin});
+  $Res call({ThemeMode themeMode, String locale, bool isUserAdmin});
 }
 
 /// @nodoc
@@ -78,9 +95,19 @@ class __$$SettingsStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? themeMode = null,
+    Object? locale = null,
     Object? isUserAdmin = null,
   }) {
     return _then(_$SettingsStateImpl(
+      themeMode: null == themeMode
+          ? _value.themeMode
+          : themeMode // ignore: cast_nullable_to_non_nullable
+              as ThemeMode,
+      locale: null == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String,
       isUserAdmin: null == isUserAdmin
           ? _value.isUserAdmin
           : isUserAdmin // ignore: cast_nullable_to_non_nullable
@@ -90,16 +117,27 @@ class __$$SettingsStateImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$SettingsStateImpl extends _SettingsState {
-  const _$SettingsStateImpl({required this.isUserAdmin}) : super._();
+  const _$SettingsStateImpl(
+      {required this.themeMode,
+      required this.locale,
+      required this.isUserAdmin})
+      : super._();
 
+  factory _$SettingsStateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SettingsStateImplFromJson(json);
+
+  @override
+  final ThemeMode themeMode;
+  @override
+  final String locale;
   @override
   final bool isUserAdmin;
 
   @override
   String toString() {
-    return 'SettingsState(isUserAdmin: $isUserAdmin)';
+    return 'SettingsState(themeMode: $themeMode, locale: $locale, isUserAdmin: $isUserAdmin)';
   }
 
   @override
@@ -107,25 +145,45 @@ class _$SettingsStateImpl extends _SettingsState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SettingsStateImpl &&
+            (identical(other.themeMode, themeMode) ||
+                other.themeMode == themeMode) &&
+            (identical(other.locale, locale) || other.locale == locale) &&
             (identical(other.isUserAdmin, isUserAdmin) ||
                 other.isUserAdmin == isUserAdmin));
   }
 
+  @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, isUserAdmin);
+  int get hashCode => Object.hash(runtimeType, themeMode, locale, isUserAdmin);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SettingsStateImplCopyWith<_$SettingsStateImpl> get copyWith =>
       __$$SettingsStateImplCopyWithImpl<_$SettingsStateImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SettingsStateImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _SettingsState extends SettingsState {
-  const factory _SettingsState({required final bool isUserAdmin}) =
-      _$SettingsStateImpl;
+  const factory _SettingsState(
+      {required final ThemeMode themeMode,
+      required final String locale,
+      required final bool isUserAdmin}) = _$SettingsStateImpl;
   const _SettingsState._() : super._();
 
+  factory _SettingsState.fromJson(Map<String, dynamic> json) =
+      _$SettingsStateImpl.fromJson;
+
+  @override
+  ThemeMode get themeMode;
+  @override
+  String get locale;
   @override
   bool get isUserAdmin;
   @override

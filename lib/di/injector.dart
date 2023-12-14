@@ -4,6 +4,7 @@ import 'package:eticket/data/data.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> injectDependencies() async {
   final getIt = GetIt.I;
@@ -45,9 +46,17 @@ Future<void> injectDependencies() async {
     getIt.get<AuthInterceptor>(),
   );
 
+  final prefs = await SharedPreferences.getInstance();
   final databaseClient = await DatabaseX.openDatabase();
 
+  final settingsLocalDatasource =
+      SettingsLocalDatasource(sharedPreferences: prefs);
+  await settingsLocalDatasource.read();
+
   // remote sources
+  getIt.registerSingleton<SettingsLocalDatasource>(
+    settingsLocalDatasource,
+  );
   getIt.registerSingleton<AccountRemoteSource>(
     AccountRemoteSource(dio: projectDio),
   );
@@ -75,6 +84,9 @@ Future<void> injectDependencies() async {
   // end of remote sources
 
   // repositories
+  getIt.registerSingleton<SettingsRepository>(SettingsRepository(
+    settingsLocalDatasource: getIt.get<SettingsLocalDatasource>(),
+  ));
   getIt.registerSingleton<AccountRepository>(AccountRepository(
     accountRemoteSource: getIt.get<AccountRemoteSource>(),
   ));

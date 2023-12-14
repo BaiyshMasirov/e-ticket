@@ -52,6 +52,7 @@ dependencies:
   dots_indicator: ^3.0.0
 
   sembast: ^3.5.0+1
+  shared_preferences: ^2.2.2
 
   mobile_scanner: ^3.5.2
 
@@ -122,8 +123,3 @@ flutter_gen:
   integrations:
     flutter_svg: true
     lottie: true
-
-  colors:
-    inputs:
-      - assets/colors/colors.xml
-

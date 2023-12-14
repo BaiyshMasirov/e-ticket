@@ -4,6 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/domain/repository/repository.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
+import 'package:eticket/presentation/app_blocs/settings/settings_cubit.dart';
 import 'package:eticket/presentation/routes/routes.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
 import 'package:eticket/presentation/theme/theme.dart';
@@ -50,7 +51,9 @@ class App extends StatelessWidget {
       child: MaterialApp.router(
         title: 'e-ticket',
         scrollBehavior: const CupertinoScrollBehavior(),
-        themeMode: ThemeMode.dark,
+        themeMode: context.select<SettingsCubit, ThemeMode>(
+          (value) => value.state.themeMode,
+        ),
         theme: AppTheme.getLightTheme(),
         darkTheme: AppTheme.getDarkTheme(),
         localizationsDelegates: context.localizationDelegates,

@@ -1,9 +1,10 @@
+import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:eticket/common/constants/common_constants.dart';
+import 'package:eticket/presentation/app_blocs/settings/settings_cubit.dart';
 import 'package:flutter/material.dart';
 
 class LocalizationWrapper extends StatelessWidget {
-  // TODO remove locales with constants
-  static final List<Locale> locales = [const Locale('ru')];
   final Widget child;
 
   const LocalizationWrapper({
@@ -16,7 +17,12 @@ class LocalizationWrapper extends StatelessWidget {
     return EasyLocalization(
       supportedLocales: locales,
       path: 'assets/translations',
-      fallbackLocale: const Locale('ru'),
+      startLocale: context.select<SettingsCubit, Locale>(
+        (value) => Locale(
+          value.state.locale,
+        ),
+      ),
+      fallbackLocale: locales[0],
       child: child,
     );
   }

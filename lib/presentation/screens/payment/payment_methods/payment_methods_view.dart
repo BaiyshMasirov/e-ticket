@@ -32,7 +32,7 @@ class PaymentMethodsView extends HookWidget {
             child: Container(
               padding: EdgeInsets.all(kDefaultPadding * 1.5),
               decoration: BoxDecoration(
-                color: context.appColors.primaryButton,
+                color: context.colorScheme.primaryContainer,
                 borderRadius: defaultBr,
               ),
               child: Row(
@@ -42,14 +42,14 @@ class PaymentMethodsView extends HookWidget {
                     '${LocaleKeys.cost.tr()}:',
                     style: TextStyle(
                       fontSize: 16.sp,
-                      color: context.appColors.onContainer,
+                      color: context.colorScheme.onPrimaryContainer,
                     ),
                   ),
                   Text(
                     preciseCost.toStringAsFixed(2),
                     style: TextStyle(
                       fontSize: 16.sp,
-                      color: context.appColors.onContainer,
+                      color: context.colorScheme.onPrimaryContainer,
                     ),
                   ),
                 ],

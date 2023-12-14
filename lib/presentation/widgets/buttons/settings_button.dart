@@ -7,9 +7,11 @@ class SettingsButton extends StatelessWidget {
   final Function()? onPress;
   final String label;
   final EdgeInsets? padding;
+  final Widget? icon;
 
   const SettingsButton({
     required this.label,
+    this.icon,
     this.padding,
     this.onPress,
     Key? key,
@@ -34,11 +36,12 @@ class SettingsButton extends StatelessWidget {
               ),
             ),
             SizedBox(width: 10.w),
-            Icon(
-              Icons.chevron_right_rounded,
-              size: 24.w,
-              color: context.colorScheme.outline.withOpacity(0.4),
-            ),
+            icon ??
+                Icon(
+                  Icons.chevron_right_rounded,
+                  size: 24.w,
+                  color: context.colorScheme.outline.withOpacity(0.4),
+                ),
           ],
         ),
       ),
