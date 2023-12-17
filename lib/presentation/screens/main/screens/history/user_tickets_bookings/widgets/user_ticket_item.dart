@@ -27,17 +27,18 @@ class UserTicketItem extends StatelessWidget {
     return InkWell(
       onTap: () {
         showDialog(
-            barrierDismissible: false,
-            context: context,
-            builder: (context) => Qr(
-                  ticket: arrayBookingTicket,
-                  selectedIndex: arrayBookingTicket.indexOf(bookingTicket),
-                ));
+          barrierDismissible: false,
+          context: context,
+          builder: (context) => Qr(
+            ticket: arrayBookingTicket,
+            selectedIndex: arrayBookingTicket.indexOf(bookingTicket),
+          ),
+        );
       },
       child: Container(
         padding: EdgeInsets.all(kDefaultPadding.w / 2),
         decoration: BoxDecoration(
-          color: context.colorScheme.onError,
+          color: context.colorScheme.surfaceVariant,
           borderRadius: BorderRadius.circular(20.r),
         ),
         child: Row(

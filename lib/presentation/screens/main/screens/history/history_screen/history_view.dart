@@ -17,47 +17,48 @@ class HistoryView extends HookWidget {
   Widget build(BuildContext context) {
     final bookingsState = context.watch<HistoryCubit>().state;
     return Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: kDefaultPadding,
-          vertical: 15.h,
+      padding: EdgeInsets.symmetric(
+        horizontal: kDefaultPadding,
+        vertical: 15.h,
+      ),
+      child: bookingsState.maybeWhen(
+        orElse: () => const SizedBox.shrink(),
+        loadError: (
+          booking,
+          _,
+          errorMessage,
+        ) =>
+            Center(
+          child: DataFetchFailure(
+            error: errorMessage,
+            onTryLoadAgain: () =>
+                context.read<HistoryCubit>().getUserBookings(),
+          ),
         ),
-        child: bookingsState.maybeWhen(
-          orElse: () => const SizedBox.shrink(),
-          loadError: (
-            booking,
-            _,
-            errorMessage,
-          ) =>
-              Center(
-            child: DataFetchFailure(
-              error: errorMessage,
-              onTryLoadAgain: () =>
-                  context.read<HistoryCubit>().getUserBookings(),
-            ),
-          ),
-          loadSuccess: (bookingsList, __, _) => AppSliverScrollView(
-            onRefresh: () => context.read<HistoryCubit>().refreshPage(),
-            slivers: [
-              SliverList.separated(
-                itemCount: bookingsList.length,
-                itemBuilder: (context, i) {
-                  final booking = bookingsList[i];
+        loadSuccess: (bookingsList, __, _) => AppSliverScrollView(
+          onRefresh: () => context.read<HistoryCubit>().refreshPage(),
+          slivers: [
+            SliverList.separated(
+              itemCount: bookingsList.length,
+              itemBuilder: (context, i) {
+                final booking = bookingsList[i];
 
-                  return HistoryContainerView(
-                    booking: booking,
-                  );
-                },
-                separatorBuilder: (context, index) => SizedBox(
-                  height: 10.h,
-                ),
+                return HistoryContainerView(
+                  booking: booking,
+                );
+              },
+              separatorBuilder: (context, index) => SizedBox(
+                height: 10.h,
               ),
-              SliverToBoxAdapter(
-                child: SizedBox(
-                  height: 50.h,
-                ),
-              )
-            ],
-          ),
-        ));
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 50.h,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

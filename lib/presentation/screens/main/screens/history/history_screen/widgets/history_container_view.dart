@@ -15,7 +15,7 @@ class HistoryContainerView extends StatelessWidget {
   Widget build(BuildContext context) {
     return HistoryItem(
       booking: booking,
-      key: ValueKey(booking.eventName),
+      key: ValueKey(booking.id),
     );
   }
 }

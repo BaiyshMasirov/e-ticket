@@ -29,6 +29,7 @@ class EventScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         // title: Text(event.name ?? ''),
       ),
+      bgColor: context.colorScheme.surfaceVariant,
       extendBodyBehindAppBar: true,
       floatingActionButton: PrimaryButton(
         title: LocaleKeys.buy_ticket.tr(),

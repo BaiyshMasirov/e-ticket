@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:eticket/common/common.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -55,18 +57,20 @@ class EventView extends StatelessWidget {
                   top: 0,
                   left: 0,
                   right: 0,
-                  child: Container(
-                    height: 100.h,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          context.colorScheme.surface.withOpacity(0.8),
-                          Colors.transparent
-                        ],
-                        tileMode: TileMode.mirror,
-                        stops: const [0.1, 0.7],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
+                  child: ClipRRect(
+                    child: Container(
+                      height: 70.h,
+                      decoration: BoxDecoration(
+                        color:
+                            context.colorScheme.surfaceVariant.withOpacity(0.6),
+                      ),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(
+                          sigmaX: 6,
+                          sigmaY: 1,
+                          tileMode: TileMode.mirror,
+                        ),
+                        child: Container(),
                       ),
                     ),
                   ),
@@ -75,18 +79,18 @@ class EventView extends StatelessWidget {
                   bottom: 0,
                   left: 0,
                   right: 0,
-                  child: Container(
-                    height: 150.h,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Colors.transparent,
-                          context.colorScheme.surface
-                        ],
-                        tileMode: TileMode.mirror,
-                        stops: const [0.1, 0.7],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
+                  child: ClipRRect(
+                    child: Container(
+                      height: 60.h,
+                      color:
+                          context.colorScheme.surfaceVariant.withOpacity(0.6),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(
+                          sigmaX: 8,
+                          sigmaY: 8,
+                          tileMode: TileMode.mirror,
+                        ),
+                        child: Container(),
                       ),
                     ),
                   ),

@@ -15,6 +15,7 @@ class AppScaffold extends StatelessWidget {
   final Widget? floatingActionButton;
   final FloatingActionButtonLocation? floatingActionButtonLocation;
   final bool? extendBody;
+  final Color? bgColor;
 
   const AppScaffold({
     required this.body,
@@ -25,6 +26,7 @@ class AppScaffold extends StatelessWidget {
     this.title,
     this.isLoadingFunc,
     this.extendBody,
+    this.bgColor,
     Key? key,
   }) : super(key: key);
 
@@ -35,6 +37,7 @@ class AppScaffold extends StatelessWidget {
         WillPopScope(
           onWillPop: () async => context.router.canPop(),
           child: Scaffold(
+            backgroundColor: bgColor,
             extendBody: extendBody ?? false,
             appBar: _buildAppBar(),
             floatingActionButton: floatingActionButton,

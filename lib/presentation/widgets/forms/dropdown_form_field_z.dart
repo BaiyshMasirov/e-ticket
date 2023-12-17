@@ -48,8 +48,9 @@ class DropDownFormFieldZ<T> extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            const Icon(
+            Icon(
               Icons.arrow_drop_down_circle_outlined,
+              color: context.colorScheme.onSurface,
             ),
           ],
         ),

@@ -18,7 +18,7 @@ class UserTicketContainerView extends StatelessWidget {
     return UserTicketItem(
       arrayBookingTicket: arrayBookingTicket,
       bookingTicket: bookingTicket,
-      key: ValueKey(bookingTicket.price),
+      key: ValueKey(bookingTicket.id),
     );
   }
 }

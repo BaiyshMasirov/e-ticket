@@ -16,7 +16,7 @@ class AppTheme {
         centerTitle: true,
         backgroundColor: ColorName.surfaceVariantL,
         foregroundColor: ColorName.onSurfaceVariantL,
-        iconTheme: IconThemeData(color: ColorName.primaryL),
+        iconTheme: IconThemeData(color: ColorName.onSurfaceVariantL),
         elevation: 3,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -70,7 +70,7 @@ class AppTheme {
         centerTitle: true,
         backgroundColor: ColorName.surfaceVariantD,
         foregroundColor: ColorName.onSurfaceVariantD,
-        iconTheme: IconThemeData(color: ColorName.primaryD),
+        iconTheme: IconThemeData(color: ColorName.onSurfaceVariantD),
         elevation: 3,
       ),
       navigationBarTheme: NavigationBarThemeData(

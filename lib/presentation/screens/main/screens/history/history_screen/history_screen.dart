@@ -24,11 +24,12 @@ class HistoryScreen extends StatelessWidget {
         ),
       ],
       child: AppScaffold(
-          isLoadingFunc: (context) => context.select<HistoryCubit, bool>(
-                (value) => value.state is HistoryProgress,
-              ),
-          title: LocaleKeys.history.tr(),
-          body: const HistoryView()),
+        isLoadingFunc: (context) => context.select<HistoryCubit, bool>(
+          (value) => value.state is HistoryProgress,
+        ),
+        title: LocaleKeys.history.tr(),
+        body: const HistoryView(),
+      ),
     );
   }
 }

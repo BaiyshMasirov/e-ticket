@@ -27,14 +27,15 @@ class UserTicketsBookingsScreen extends StatelessWidget {
         ),
       ],
       child: AppScaffold(
-          title: LocaleKeys.tickets.tr(),
-          isLoadingFunc: (context) =>
-              context.select<UserTicketsBookingsCubit, bool>(
-                (value) => value.state is UserTicketsBookingsLoading,
-              ),
-          body: UserTicketsBookingsView(
-            tiketId: tiketId,
-          )),
+        title: LocaleKeys.tickets.tr(),
+        isLoadingFunc: (context) =>
+            context.select<UserTicketsBookingsCubit, bool>(
+          (value) => value.state is UserTicketsBookingsLoading,
+        ),
+        body: UserTicketsBookingsView(
+          tiketId: tiketId,
+        ),
+      ),
     );
   }
 }

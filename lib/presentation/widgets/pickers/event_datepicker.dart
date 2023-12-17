@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:eticket/common/common.dart';
 import 'package:flutter/cupertino.dart';
@@ -29,12 +31,28 @@ class EventDatepickerDialog extends StatelessWidget {
             Row(
               children: [
                 const Spacer(),
-                IconButton(
-                  onPressed: () {
-                    context.popRoute();
-                  },
-                  icon: const Icon(
-                    CupertinoIcons.clear_circled,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(50.r),
+                  child: Container(
+                    padding: EdgeInsets.all(5.w),
+                    decoration: BoxDecoration(
+                      color: context.colorScheme.surface.withOpacity(0.9),
+                    ),
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(
+                        sigmaY: 15,
+                        sigmaX: 15,
+                        tileMode: TileMode.decal,
+                      ),
+                      child: IconButton(
+                        onPressed: () {
+                          context.popRoute();
+                        },
+                        icon: Icon(
+                          CupertinoIcons.clear_circled,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ],

@@ -32,7 +32,7 @@ class HistoryItem extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(kDefaultPadding.w / 2),
         decoration: BoxDecoration(
-          color: context.colorScheme.onError,
+          color: context.colorScheme.surfaceVariant,
           borderRadius: BorderRadius.circular(20.r),
         ),
         child: Row(

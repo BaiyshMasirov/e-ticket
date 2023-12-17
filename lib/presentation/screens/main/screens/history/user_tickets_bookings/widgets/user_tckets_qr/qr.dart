@@ -39,50 +39,83 @@ class Qr extends HookWidget {
       actionsAlignment: MainAxisAlignment.center,
       title: Column(
         children: [
-          SizedBox(
-            width: 350.w,
-            height: 270.h,
-            child: Stack(
-              children: [
-                PageView.builder(
-                  itemCount: ticket.length,
-                  controller: pageViewController,
-                  onPageChanged: (int index) {
-                    selectedIndex;
-                    position.value = index.toInt();
-                  },
-                  itemBuilder: (BuildContext context, int itemIndex) {
-                    return SizedBox(
-                      width: 350.w,
-                      height: 270.h,
-                      child: QrImageView(
-                        backgroundColor: Colors.transparent,
-                        data: ticket[itemIndex].qrCode ?? '',
-                        gapless: true,
-                      ),
-                    );
-                  },
-                ),
-              ],
+          Padding(
+            padding: EdgeInsets.all(5.w),
+            child: SizedBox(
+              width: 350.w,
+              height: 270.h,
+              child: Stack(
+                children: [
+                  Scrollbar(
+                    thumbVisibility: true,
+                    child: PageView.builder(
+                      itemCount: ticket.length,
+                      controller: pageViewController,
+                      onPageChanged: (int index) {
+                        selectedIndex;
+                        position.value = index.toInt();
+                      },
+                      itemBuilder: (BuildContext context, int itemIndex) {
+                        return SizedBox(
+                          width: 350.w,
+                          height: 270.h,
+                          child: QrImageView(
+                            backgroundColor: Colors.transparent,
+                            data: ticket[itemIndex].qrCode ?? '',
+                            gapless: true,
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
+          SizedBox(height: 10.h),
         ],
       ),
       actions: <Widget>[
         Center(
-          child: DotsIndicator(
-            dotsCount: ticket.length,
-            position: position.value,
-            decorator: DotsDecorator(
-              color: context.colorScheme.primary,
-              activeColor: context.colorScheme.errorContainer,
+          child: Text(
+            '${LocaleKeys.rowNumber.tr()}: ${ticket[position.value].rowNumber}\n'
+            '${LocaleKeys.placeNumber.tr()} ${ticket[position.value].placeNumber}',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 16.sp,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
+        SizedBox(height: 10.h),
+        Center(
+          child: Text(
+            '${position.value + 1} / ${ticket.length}',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 16.sp,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          // child: DotsIndicator(
+          //   dotsCount: ticket.length,
+          //   position: position.value,
+          //   decorator: DotsDecorator(
+          //     size: Size(10.w, 10.h),
+          //     activeSize: Size(10.w, 10.h),
+          //     color: context.colorScheme.outline,
+          //     activeColor: context.colorScheme.secondary,
+          //   ),
+          // ),
+        ),
+        SizedBox(height: 10.h),
         TertiaryButton(
+          horizontalPadding: 20.w,
           title: LocaleKeys.close.tr(),
           onPressed: () => context.popRoute(),
         ),
+        SizedBox(height: 5.h),
       ],
     );
   }
