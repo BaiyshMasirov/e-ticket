@@ -23,7 +23,10 @@ class SearchBarZ extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final showClearButton = useState(false);
-    final debouncer = useMemoized(() => Debouncer(milliseconds: 600));
+    final debouncer = useMemoized(
+      () => Debouncer(milliseconds: 600),
+      const [],
+    );
 
     return SizedBox(
       height: 28.h,
@@ -55,7 +58,6 @@ class SearchBarZ extends HookWidget {
             vertical: 0,
           ),
         ),
-
         onChanged: (text) {
           showClearButton.value = text.isNotEmpty;
 

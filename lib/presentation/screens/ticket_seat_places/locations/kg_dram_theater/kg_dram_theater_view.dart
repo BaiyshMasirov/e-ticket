@@ -21,10 +21,12 @@ class KgDramTheaterView extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final transformationController = useTransformationController();
+    final holdTickets = context.watch<TicketSeatHoldCubit>().state.tickets;
 
     final places = useMemoized(
       () => [
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 22,
           rowLength: _maxPlaces,
@@ -34,6 +36,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 21,
           rowLength: _maxPlaces,
@@ -43,6 +46,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 20,
           rowLength: _maxPlaces,
@@ -52,6 +56,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 19,
           rowLength: _maxPlaces,
@@ -61,6 +66,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 18,
           rowLength: _maxPlaces,
@@ -70,6 +76,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 17,
           rowLength: _maxPlaces,
@@ -79,6 +86,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 16,
           rowLength: _maxPlaces,
@@ -90,6 +98,7 @@ class KgDramTheaterView extends HookWidget {
         //endregion
         //region 15 to 4
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 15,
           rowLength: _rowTop15To4PlaceCount,
@@ -99,6 +108,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ), //2
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 14,
           rowLength: _rowTop15To4PlaceCount,
@@ -108,6 +118,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ), //2
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 13,
           rowLength: _rowTop15To4PlaceCount,
@@ -117,6 +128,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ), //2
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 12,
           rowLength: _rowTop15To4PlaceCount,
@@ -126,6 +138,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowLabel: '',
           mainCurrentRowIndex: -1,
@@ -135,6 +148,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: -1,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 11,
           rowLength: _rowTop15To4PlaceCount,
@@ -144,6 +158,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 10,
           rowLength: _rowTop15To4PlaceCount,
@@ -153,6 +168,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 9,
           rowLength: _rowTop15To4PlaceCount,
@@ -162,6 +178,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 8,
           rowLength: _rowTop15To4PlaceCount,
@@ -171,6 +188,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 7,
           rowLength: _rowTop15To4PlaceCount,
@@ -180,6 +198,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 6,
           rowLength: _rowTop15To4PlaceCount,
@@ -189,6 +208,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 5,
           rowLength: _rowTop15To4PlaceCount,
@@ -198,6 +218,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 4,
           rowLength: _rowTop15To4PlaceCount,
@@ -209,6 +230,7 @@ class KgDramTheaterView extends HookWidget {
         // endregion
         //region 3 to 1
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 3,
           rowLength: _rowTop3To1PlaceCount,
@@ -218,6 +240,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 2,
           rowLength: _rowTop3To1PlaceCount,
@@ -227,6 +250,7 @@ class KgDramTheaterView extends HookWidget {
           mainBranchIndex: _branchIndex,
         ),
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowIndex: 1,
           rowLength: _rowTop3To1PlaceCount,
@@ -237,6 +261,7 @@ class KgDramTheaterView extends HookWidget {
         ),
 
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           tickets: tickets,
           mainCurrentRowLabel: '',
           mainCurrentRowIndex: -1,
@@ -247,6 +272,7 @@ class KgDramTheaterView extends HookWidget {
         ),
 
         SeatGenerator.generateSeatPlaces(
+          holdTickets: holdTickets,
           mainCurrentRowLabel: '',
           tickets: tickets,
           mainCurrentRowIndex: -1,

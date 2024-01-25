@@ -13,7 +13,12 @@ class SeatGenerator {
 
     /// branch of row
     required int mainBranchIndex,
+
+    /// available tickets
     required List<TicketDto> tickets,
+
+    /// hold tickets
+    required List<TicketDto> holdTickets,
     String mainCurrentBigText = '',
     int leftOffsetCount = 0,
     int beginPlaceNumber = 1,
@@ -87,19 +92,29 @@ class SeatGenerator {
               item.branchType ==
                   (secondaryPlace?.branchIndex ?? mainBranchIndex) &&
               item.rowNumber == rowIndex &&
-              item.placeNumber == seatPlace &&
-              // TODO: SHOW ONLY FREE?
-              item.status == TicketStatus.FREE,
+              item.placeNumber == seatPlace,
         );
+
+        final PlaceStateV2 seatState;
+
+        switch (currentPlace?.status) {
+          case TicketStatus.FREE:
+            seatState = holdTickets.any((e) => e.id == currentPlace?.id)
+                ? PlaceStateV2.selected
+                : PlaceStateV2.unselected;
+          case TicketStatus.PAID:
+          case TicketStatus.WAITING_PAYMENT:
+            seatState = PlaceStateV2.sold;
+          default:
+            seatState = PlaceStateV2.disabled;
+        }
 
         return SeatPlaceV2(
           ticketId: currentPlace?.id,
           currentRowIndex: rowIndex,
           rowLabel: rowLabel,
           bigText: mainCurrentBigText,
-          seatState: currentPlace == null
-              ? PlaceStateV2.disabled
-              : PlaceStateV2.unselected,
+          seatState: seatState,
           seatPlace: seatPlace,
         );
       },

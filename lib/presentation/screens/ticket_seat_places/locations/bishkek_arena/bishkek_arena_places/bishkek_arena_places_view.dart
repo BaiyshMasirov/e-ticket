@@ -23,6 +23,7 @@ class BishkekArenaPlacesView extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final transformationController = useTransformationController();
+    final holdTickets = context.watch<TicketSeatHoldCubit>().state.tickets;
 
     useEffect(() {
       const zoomFactor = 5.0;
@@ -37,17 +38,35 @@ class BishkekArenaPlacesView extends HookWidget {
 
     switch (blockType) {
       case BishkekArenaBlockType.B:
-        places = seatGenerator.generateBBlock(tickets: tickets);
+        places = seatGenerator.generateBBlock(
+          tickets: tickets,
+          holdTickets: holdTickets,
+        );
       case BishkekArenaBlockType.C:
-        places = seatGenerator.generateCBlock(tickets: tickets);
+        places = seatGenerator.generateCBlock(
+          tickets: tickets,
+          holdTickets: holdTickets,
+        );
       case BishkekArenaBlockType.D:
-        places = seatGenerator.generateDBlock(tickets: tickets);
+        places = seatGenerator.generateDBlock(
+          tickets: tickets,
+          holdTickets: holdTickets,
+        );
       case BishkekArenaBlockType.E:
-        places = seatGenerator.generateEBlock(tickets: tickets);
+        places = seatGenerator.generateEBlock(
+          tickets: tickets,
+          holdTickets: holdTickets,
+        );
       case BishkekArenaBlockType.F:
-        places = seatGenerator.generateFBlock(tickets: tickets);
+        places = seatGenerator.generateFBlock(
+          tickets: tickets,
+          holdTickets: holdTickets,
+        );
       case BishkekArenaBlockType.G:
-        places = seatGenerator.generateGBlock(tickets: tickets);
+        places = seatGenerator.generateGBlock(
+          tickets: tickets,
+          holdTickets: holdTickets,
+        );
     }
 
     return Container(
@@ -118,9 +137,11 @@ class BishkekArenaPlacesView extends HookWidget {
 class BishkekArenaSeatPlacesManager {
   List<SeatRowPlaceV2> generateBBlock({
     required List<TicketDto> tickets,
+    required holdTickets,
   }) {
     return [
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 7,
         mainCurrentRowLabel: 'Ряд 7',
@@ -131,6 +152,7 @@ class BishkekArenaSeatPlacesManager {
         rowLength: _BBlockMaxPlaces + 1,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 6,
         mainCurrentRowLabel: 'Ряд 6',
@@ -141,6 +163,7 @@ class BishkekArenaSeatPlacesManager {
         rowLength: _BBlockMaxPlaces + 2,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 5,
         mainCurrentRowLabel: 'Ряд 5',
@@ -151,6 +174,7 @@ class BishkekArenaSeatPlacesManager {
         rowLength: _BBlockMaxPlaces + 2,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 4,
         mainCurrentRowLabel: 'Ряд 4',
@@ -160,6 +184,7 @@ class BishkekArenaSeatPlacesManager {
         rowLength: _BBlockMaxPlaces,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 3,
         mainCurrentRowLabel: 'Ряд 3',
@@ -169,6 +194,7 @@ class BishkekArenaSeatPlacesManager {
         rowLength: _BBlockMaxPlaces,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 2,
         mainCurrentRowLabel: 'Ряд 2',
@@ -178,6 +204,7 @@ class BishkekArenaSeatPlacesManager {
         rowLength: _BBlockMaxPlaces,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 1,
         mainCurrentRowLabel: 'Ряд 1',
@@ -192,9 +219,11 @@ class BishkekArenaSeatPlacesManager {
 
   List<SeatRowPlaceV2> generateCBlock({
     required List<TicketDto> tickets,
+    required holdTickets,
   }) {
     return [
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 7,
         rowLength: _CBlockMaxPlaces - 1,
@@ -205,6 +234,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 7',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 6,
         rowLength: _CBlockMaxPlaces - 3,
@@ -215,6 +245,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 6',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 5,
         rowLength: _CBlockMaxPlaces - 4,
@@ -225,6 +256,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 5',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 4,
         rowLength: _CBlockMaxPlaces - 4,
@@ -235,6 +267,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 4',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 3,
         rowLength: _CBlockMaxPlaces - 6,
@@ -245,6 +278,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 3',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 2,
         rowLength: _CBlockMaxPlaces - 7,
@@ -255,6 +289,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 2',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 1,
         rowLength: _CBlockMaxPlaces - 7,
@@ -265,6 +300,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 1',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 0,
         rowLength: 13,
@@ -279,9 +315,11 @@ class BishkekArenaSeatPlacesManager {
 
   List<SeatRowPlaceV2> generateDBlock({
     required List<TicketDto> tickets,
+    required holdTickets,
   }) {
     return [
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 7,
         rowLength: _DBlockMaxPlaces,
@@ -291,6 +329,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 7',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 6,
         rowLength: _DBlockMaxPlaces,
@@ -301,6 +340,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 6',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 5,
         rowLength: _DBlockMaxPlaces - 1,
@@ -311,6 +351,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 5',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 4,
         rowLength: _DBlockMaxPlaces - 2,
@@ -321,6 +362,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 4',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 3,
         rowLength: _DBlockMaxPlaces - 3,
@@ -331,6 +373,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 3',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 2,
         rowLength: 25,
@@ -341,6 +384,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 2',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 1,
         rowLength: 23,
@@ -351,6 +395,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 1',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 0,
         rowLength: 21,
@@ -365,9 +410,11 @@ class BishkekArenaSeatPlacesManager {
 
   List<SeatRowPlaceV2> generateEBlock({
     required List<TicketDto> tickets,
+    required holdTickets,
   }) {
     return [
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 7,
         rowLength: _EBlockMaxPlaces,
@@ -378,6 +425,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 7',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 6,
         rowLength: _EBlockMaxPlaces - 6,
@@ -388,6 +436,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 6',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 5,
         rowLength: _EBlockMaxPlaces - 8,
@@ -398,6 +447,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 5',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 4,
         rowLength: _EBlockMaxPlaces - 10,
@@ -408,6 +458,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 4',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 3,
         rowLength: _EBlockMaxPlaces - 12,
@@ -418,6 +469,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 3',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 2,
         rowLength: _EBlockMaxPlaces - 12,
@@ -428,6 +480,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 2',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 1,
         rowLength: _EBlockMaxPlaces - 14,
@@ -438,6 +491,7 @@ class BishkekArenaSeatPlacesManager {
         mainCurrentRowLabel: 'Ряд 1',
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 0,
         rowLength: _EBlockMaxPlaces - 16,
@@ -452,9 +506,11 @@ class BishkekArenaSeatPlacesManager {
 
   List<SeatRowPlaceV2> generateFBlock({
     required List<TicketDto> tickets,
+    required holdTickets,
   }) {
     return [
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 7,
         rowLength: 28,
@@ -465,6 +521,7 @@ class BishkekArenaSeatPlacesManager {
         mainBranchIndex: _fBranchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 6,
         rowLength: 27,
@@ -475,6 +532,7 @@ class BishkekArenaSeatPlacesManager {
         mainBranchIndex: _fBranchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 5,
         rowLength: 27,
@@ -485,6 +543,7 @@ class BishkekArenaSeatPlacesManager {
         mainBranchIndex: _fBranchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 4,
         rowLength: 27,
@@ -495,6 +554,7 @@ class BishkekArenaSeatPlacesManager {
         mainBranchIndex: _fBranchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 3,
         rowLength: 25,
@@ -505,6 +565,7 @@ class BishkekArenaSeatPlacesManager {
         mainBranchIndex: _fBranchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 2,
         rowLength: 25,
@@ -515,6 +576,7 @@ class BishkekArenaSeatPlacesManager {
         mainBranchIndex: _fBranchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 1,
         rowLength: 24,
@@ -525,6 +587,7 @@ class BishkekArenaSeatPlacesManager {
         mainBranchIndex: _fBranchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 0,
         rowLength: 14,
@@ -539,9 +602,11 @@ class BishkekArenaSeatPlacesManager {
 
   List<SeatRowPlaceV2> generateGBlock({
     required List<TicketDto> tickets,
+    required holdTickets,
   }) {
     return [
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 7,
         rowLength: 57,
@@ -552,6 +617,7 @@ class BishkekArenaSeatPlacesManager {
         mainBranchIndex: _gBranchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 6,
         rowLength: 56,
@@ -562,6 +628,7 @@ class BishkekArenaSeatPlacesManager {
         mainBranchIndex: _gBranchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 5,
         rowLength: 56,
@@ -572,6 +639,7 @@ class BishkekArenaSeatPlacesManager {
         mainBranchIndex: _gBranchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 4,
         rowLength: 55,
@@ -581,6 +649,7 @@ class BishkekArenaSeatPlacesManager {
         mainBranchIndex: _gBranchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 3,
         rowLength: 55,
@@ -590,6 +659,7 @@ class BishkekArenaSeatPlacesManager {
         mainBranchIndex: _gBranchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 2,
         rowLength: 55,
@@ -599,6 +669,7 @@ class BishkekArenaSeatPlacesManager {
         mainBranchIndex: _gBranchIndex,
       ),
       SeatGenerator.generateSeatPlaces(
+        holdTickets: holdTickets,
         tickets: tickets,
         mainCurrentRowIndex: 1,
         rowLength: 55,

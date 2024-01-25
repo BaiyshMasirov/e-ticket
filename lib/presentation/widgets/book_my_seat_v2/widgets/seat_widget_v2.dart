@@ -43,13 +43,13 @@ class _SeatWidgetV2State extends State<SeatWidgetV2> {
     switch (seatState) {
       case PlaceStateV2.empty:
         child = Container(
-          color: Colors.red,
+          // color: Colors.red,
           height: widget.model.seatSvgSize,
           width: widget.model.seatSvgSize,
         );
       case PlaceStateV2.emptyHalf:
         child = Container(
-          color: Colors.blue,
+          // color: Colors.blue,
           height: widget.model.seatSvgSize,
           width: widget.model.seatSvgSize / 2,
         );
