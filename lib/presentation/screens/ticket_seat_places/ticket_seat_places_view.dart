@@ -16,11 +16,27 @@ class TicketSeatPlacesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< Updated upstream
     return BlocBuilder<TicketSeatPlacesCubit, TicketSeatPlacesState>(
       builder: (context, state) => state.maybeWhen(
         orElse: () => const SizedBox.shrink(),
         data: (tickets) {
           final Widget child;
+=======
+    return BlocListener<TicketSeatHoldCubit, TicketSeatHoldState>(
+      listener: (ctx, s) => s.maybeWhen(
+        holdSuccess: (tickets, totalSum, bookingId) => context.replaceRoute(
+          PaymentMethodsRoute(
+              bookingId: bookingId, preciseCost: totalSum, tickets: tickets),
+        ),
+        orElse: () {},
+      ),
+      child: BlocBuilder<TicketSeatPlacesCubit, TicketSeatPlacesState>(
+        builder: (context, state) => state.maybeWhen(
+          orElse: () => const SizedBox.shrink(),
+          data: (tickets) {
+            final Widget child;
+>>>>>>> Stashed changes
 
           switch (locationType) {
             case LocationType.unknown:

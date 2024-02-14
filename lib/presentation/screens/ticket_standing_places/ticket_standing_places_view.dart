@@ -15,6 +15,7 @@ class TicketStandingPlacesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< Updated upstream
     return BlocConsumer<TicketStandingPlacesCubit, TicketStandingPlacesState>(
       listener: (context, state) => state.maybeWhen(
         orElse: () => context
@@ -34,6 +35,67 @@ class TicketStandingPlacesView extends StatelessWidget {
             slivers: [
               SliverToBoxAdapter(
                 child: SizedBox(height: kDefaultPadding),
+=======
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<TicketStandingPlacesCubit, TicketStandingPlacesState>(
+          listener: (ctx, state) => state.maybeWhen(
+            orElse: () => context
+                .read<TicketStandingPlaceHoldCubit>()
+                .clearChosenTickets(),
+            success: (tickets) => context
+                .read<TicketStandingPlaceHoldCubit>()
+                .initializeTickets(tickets: tickets),
+          ),
+        ),
+        BlocListener<TicketStandingPlaceHoldCubit,
+            TicketStandingPlaceHoldState>(
+          listener: (ctx, state) => state.maybeWhen(
+            orElse: () {},
+            holdingSuccess: (_, bookingId, totalSum) => context.replaceRoute(
+              PaymentMethodsRoute(
+                  bookingId: bookingId, preciseCost: totalSum, tickets: []),
+            ),
+          ),
+        ),
+      ],
+      child: BlocBuilder<TicketStandingPlacesCubit, TicketStandingPlacesState>(
+        builder: (context, state) => state.maybeWhen(
+          orElse: () => const SizedBox.shrink(),
+          success: (tickets) => Padding(
+            padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+            child: AppSliverScrollView(
+              onRefresh: () =>
+                  context.read<TicketStandingPlacesCubit>().getTickets(),
+              slivers: [
+                SliverToBoxAdapter(
+                  child: SizedBox(height: kDefaultPadding),
+                ),
+                SliverList.separated(
+                  itemCount: tickets.length,
+                  itemBuilder: (context, i) {
+                    final ticket = tickets[i];
+
+                    return TicketStandingPlacesContainerView(
+                      ticket: ticket,
+                    );
+                  },
+                  separatorBuilder: (context, index) => SizedBox(height: 10.h),
+                ),
+                SliverToBoxAdapter(
+                  child: SizedBox(height: 50.h),
+                )
+              ],
+            ),
+          ),
+          error: (error) => Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              DataFetchFailure(
+                onTryLoadAgain: () =>
+                    context.read<TicketStandingPlacesCubit>().getTickets(),
+                error: error?.tr(),
+>>>>>>> Stashed changes
               ),
               SliverList.separated(
                 itemCount: tickets.length,

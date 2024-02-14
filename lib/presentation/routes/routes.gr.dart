@@ -8,9 +8,15 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+<<<<<<< Updated upstream
 import 'package:auto_route/auto_route.dart' as _i15;
 import 'package:eticket/common/common.dart' as _i21;
+=======
+import 'package:auto_route/auto_route.dart' as _i17;
+import 'package:eticket/common/common.dart' as _i23;
+>>>>>>> Stashed changes
 import 'package:eticket/data/data.dart' as _i18;
+import 'package:eticket/data/models/ticket/ticket_dto.dart' as _i22;
 import 'package:eticket/presentation/screens/auth/login/login_screen.dart'
     as _i6;
 import 'package:eticket/presentation/screens/auth/register/register_screen.dart'
@@ -107,6 +113,27 @@ abstract class $AppRouter extends _i15.RootStackRouter {
         ),
       );
     },
+<<<<<<< Updated upstream
+=======
+    PaymentMethodsRoute.name: (routeData) {
+      final args = routeData.argsAs<PaymentMethodsRouteArgs>();
+      return _i17.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i7.PaymentMethodsScreen(
+          preciseCost: args.preciseCost,
+          bookingId: args.bookingId,
+          tickets: args.tickets,
+          key: args.key,
+        ),
+      );
+    },
+    RefreshPasswordRoute.name: (routeData) {
+      return _i17.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i8.RefreshPasswordScreen(),
+      );
+    },
+>>>>>>> Stashed changes
     RegisterRoute.name: (routeData) {
       return _i15.AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -362,9 +389,77 @@ class MainRouteArgs {
 }
 
 /// generated route for
+<<<<<<< Updated upstream
 /// [_i8.RegisterScreen]
 class RegisterRoute extends _i15.PageRouteInfo<void> {
   const RegisterRoute({List<_i15.PageRouteInfo>? children})
+=======
+/// [_i7.PaymentMethodsScreen]
+class PaymentMethodsRoute extends _i17.PageRouteInfo<PaymentMethodsRouteArgs> {
+  PaymentMethodsRoute({
+    required double preciseCost,
+    required String bookingId,
+    required List<_i22.TicketDto> tickets,
+    _i20.Key? key,
+    List<_i17.PageRouteInfo>? children,
+  }) : super(
+          PaymentMethodsRoute.name,
+          args: PaymentMethodsRouteArgs(
+            preciseCost: preciseCost,
+            bookingId: bookingId,
+            tickets: tickets,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'PaymentMethodsRoute';
+
+  static const _i17.PageInfo<PaymentMethodsRouteArgs> page =
+      _i17.PageInfo<PaymentMethodsRouteArgs>(name);
+}
+
+class PaymentMethodsRouteArgs {
+  const PaymentMethodsRouteArgs({
+    required this.preciseCost,
+    required this.bookingId,
+    required this.tickets,
+    this.key,
+  });
+
+  final double preciseCost;
+
+  final String bookingId;
+
+  final List<_i22.TicketDto> tickets;
+
+  final _i20.Key? key;
+
+  @override
+  String toString() {
+    return 'PaymentMethodsRouteArgs{preciseCost: $preciseCost, bookingId: $bookingId, tickets: $tickets, key: $key}';
+  }
+}
+
+/// generated route for
+/// [_i8.RefreshPasswordScreen]
+class RefreshPasswordRoute extends _i17.PageRouteInfo<void> {
+  const RefreshPasswordRoute({List<_i17.PageRouteInfo>? children})
+      : super(
+          RefreshPasswordRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'RefreshPasswordRoute';
+
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i9.RegisterScreen]
+class RegisterRoute extends _i17.PageRouteInfo<void> {
+  const RegisterRoute({List<_i17.PageRouteInfo>? children})
+>>>>>>> Stashed changes
       : super(
           RegisterRoute.name,
           initialChildren: children,
@@ -422,7 +517,11 @@ class SplashRoute extends _i15.PageRouteInfo<void> {
 class TicketSeatPlacesRoute
     extends _i15.PageRouteInfo<TicketSeatPlacesRouteArgs> {
   TicketSeatPlacesRoute({
+<<<<<<< Updated upstream
     required _i21.LocationType locationType,
+=======
+    required _i23.LocationType locationType,
+>>>>>>> Stashed changes
     required String eventId,
     _i17.Key? key,
     List<_i15.PageRouteInfo>? children,
@@ -449,7 +548,11 @@ class TicketSeatPlacesRouteArgs {
     this.key,
   });
 
+<<<<<<< Updated upstream
   final _i21.LocationType locationType;
+=======
+  final _i23.LocationType locationType;
+>>>>>>> Stashed changes
 
   final String eventId;
 

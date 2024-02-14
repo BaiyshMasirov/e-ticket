@@ -44,6 +44,7 @@ class EventView extends StatelessWidget {
                   top: 0,
                   left: 0,
                   right: 0,
+<<<<<<< Updated upstream
                   child: Container(
                     height: 100.h,
                     decoration: BoxDecoration(
@@ -105,6 +106,54 @@ class EventView extends StatelessWidget {
                     ),
                   ),
                 )
+=======
+                  child: ClipRRect(
+                    child: Container(
+                      height: 70.h,
+                      decoration: BoxDecoration(
+                        color:
+                            context.colorScheme.surfaceVariant.withOpacity(0.6),
+                      ),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(
+                          sigmaX: 6,
+                          sigmaY: 1,
+                          tileMode: TileMode.mirror,
+                        ),
+                        child: Container(),
+                      ),
+                    ),
+                  ),
+                ),
+                // Positioned(
+                //   bottom: 0,
+                //   left: 0,
+                //   right: 0,
+                //   child: ClipRRect(
+                //     child: Container(
+                //       height: 60.h,
+                //       color:
+                //           context.colorScheme.surfaceVariant.withOpacity(0.6),
+                //       child: BackdropFilter(
+                //         filter: ImageFilter.blur(
+                //           sigmaX: 8,
+                //           sigmaY: 8,
+                //           tileMode: TileMode.mirror,
+                //         ),
+                //         child: Container(),
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                // Positioned(
+                //   bottom: 0,
+                //   left: 0,
+                //   right: 0,
+                //   child: Column(
+                //     children: [],
+                //   ),
+                // )
+>>>>>>> Stashed changes
               ],
             ),
           ),
@@ -112,9 +161,23 @@ class EventView extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(event.description ?? '-'),
+                Text(
+                  event.name ?? '-',
+                  style: context.theme.textTheme.titleLarge,
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 10.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('${event.ageLimit}+'),
+                    SizedBox(width: 20.w),
+                    Text(formattedDateTime),
+                  ],
+                ),
+                // Text(event.description ?? '-'),
               ],
             ),
           ),

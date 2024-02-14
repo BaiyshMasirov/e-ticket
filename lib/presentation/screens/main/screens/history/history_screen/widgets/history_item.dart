@@ -3,6 +3,7 @@ import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/assets.gen.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
 import 'package:eticket/presentation/theme/theme.dart';
+import 'package:eticket/utils/styling.dart';
 import 'package:flutter/material.dart';
 
 import 'package:eticket/data/models/models.dart';
@@ -76,6 +77,7 @@ class HistoryItem extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+<<<<<<< Updated upstream
                   Row(children: [Text(booking.eventName.toString())]),
 
                   // TicketStandingPlaceCounter(
@@ -83,6 +85,34 @@ class HistoryItem extends StatelessWidget {
                   //   onDecreasePressed: onDecreasePressed,
                   //   onIncreasePressed: onIncreasePressed,
                   // ),
+=======
+                  Text(
+                    booking.eventName.toString(),
+                    style: body14Bold,
+                    maxLines: 2,
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 10.h),
+                  Text(
+                    formattedDate,
+                    style: body12Regular,
+                  ),
+                  SizedBox(height: 5.h),
+                  Text(
+                    context.dictionaries
+                            .getEventStatusByKey(booking.status)
+                            ?.value ??
+                        '',
+                    style: body12Regular,
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 5.h),
+                  Text(
+                    booking.type.name.tr(),
+                    style: body12Regular,
+                    textAlign: TextAlign.center,
+                  ),
+>>>>>>> Stashed changes
                 ],
               ),
             ),
