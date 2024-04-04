@@ -83,5 +83,7 @@
   "password_mismatch": "Пароли не совпадают",
   "password_updated_successfull": "Пароль успешно обновлен",
   "change_password": "Сменить пароль",
-  "switch_theme": "Переключить тему"
+  "switch_theme": "Переключить тему",
+  "sector": "Сектор",
+  "fun_zone": "Fun Zone"
 }

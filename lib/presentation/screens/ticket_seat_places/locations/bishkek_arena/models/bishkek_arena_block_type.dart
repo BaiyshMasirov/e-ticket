@@ -1,8 +1,1 @@
-enum BishkekArenaBlockType {
-  B,
-  C,
-  D,
-  E,
-  F,
-  G,
-}
+enum BishkekArenaBlockType { A, B, C, D, E, F, G, H }

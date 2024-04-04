@@ -86,5 +86,7 @@ abstract class  LocaleKeys {
   static const password_updated_successfull = 'password_updated_successfull';
   static const change_password = 'change_password';
   static const switch_theme = 'switch_theme';
+  static const sector = 'sector';
+  static const fun_zone = 'fun_zone';
 
 }

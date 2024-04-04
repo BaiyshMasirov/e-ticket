@@ -87,35 +87,40 @@ class _ZoomTapButtonState extends State<ZoomTapButton>
       // call one tap event
       onTap: widget.onTap,
       // call long tap one event if the long tap repeat(loop) is false
-      onLongPress: widget.onLongTap != null && !widget.enableLongTapRepeatEvent
-          ? _onLongPress
-          : null,
+      // onLongPress: widget.onLongTap != null && !widget.enableLongTapRepeatEvent
+      //     ? _onLongPress
+      //     : null,
       child: Listener(
           behavior: widget.behavior,
-          onPointerDown: (c) async {
-            // prevent the onTap event from beign triggered
-            _isOnTap = true;
-            // animate the Tween animation from the end point to the start point
-            _controller?.reverse();
-            // check if long tap loop is true
-            if (widget.enableLongTapRepeatEvent) {
-              // the duration before starting the loop event
-              await Future.delayed(widget.longTapRepeatDuration);
-              // _isOnTap is to check that the tap is still down (check onPointerUp method which assign _isOnTap to false)
-              while (_isOnTap)
-                // the duration between every onTap/onLongTap loop event.
-                await Future.delayed(widget.longTapRepeatDuration, () async {
-                  // call onTap if onLongTap is not specified
-                  await (widget.onLongTap ?? widget.onTap)?.call();
-                });
-            }
-          },
-          onPointerUp: (c) async {
-            // prevent the onTap event from beign triggered if the user has taped the widget for more than than 150 milliseconds
-            _isOnTap = false;
-            // animate the Tween animation from the begin point to the end point
-            await _controller?.forward();
-          },
+          onPointerDown: widget.onTap == null
+              ? null
+              : (c) async {
+                  // prevent the onTap event from beign triggered
+                  _isOnTap = true;
+                  // animate the Tween animation from the end point to the start point
+                  _controller?.reverse();
+                  // check if long tap loop is true
+                  if (widget.enableLongTapRepeatEvent) {
+                    // the duration before starting the loop event
+                    await Future.delayed(widget.longTapRepeatDuration);
+                    // _isOnTap is to check that the tap is still down (check onPointerUp method which assign _isOnTap to false)
+                    while (_isOnTap)
+                      // the duration between every onTap/onLongTap loop event.
+                      await Future.delayed(widget.longTapRepeatDuration,
+                          () async {
+                        // call onTap if onLongTap is not specified
+                        await (widget.onLongTap ?? widget.onTap)?.call();
+                      });
+                  }
+                },
+          onPointerUp: widget.onTap == null
+              ? null
+              : (c) async {
+                  // prevent the onTap event from beign triggered if the user has taped the widget for more than than 150 milliseconds
+                  _isOnTap = false;
+                  // animate the Tween animation from the begin point to the end point
+                  await _controller?.forward();
+                },
           child: ScaleTransition(scale: _animation, child: widget.child)),
     );
   }

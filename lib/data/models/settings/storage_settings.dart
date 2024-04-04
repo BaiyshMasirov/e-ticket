@@ -10,7 +10,7 @@ class StorageSettings with _$StorageSettings {
   const StorageSettings._();
 
   const factory StorageSettings({
-    @Default(ThemeMode.light) ThemeMode themeMode,
+    @Default(ThemeMode.dark) ThemeMode themeMode,
     @Default('ru') String locale,
   }) = _StorageSettings;
 

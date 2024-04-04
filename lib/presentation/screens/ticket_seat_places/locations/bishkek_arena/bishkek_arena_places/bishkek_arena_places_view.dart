@@ -67,6 +67,8 @@ class BishkekArenaPlacesView extends HookWidget {
           tickets: tickets,
           holdTickets: holdTickets,
         );
+      default:
+        places = [];
     }
 
     return Container(
