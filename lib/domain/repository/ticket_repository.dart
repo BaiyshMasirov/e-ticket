@@ -10,10 +10,12 @@ class TicketRepository with NetworkRemoteRepositoryMixin {
 
   Future<Either<RequestFailure, List<TicketDto>>> getSeatTicketsByEventId({
     required String eventId,
+    required DateTime eventDate,
   }) async {
     final response = await handleRemoteRequest(
       request: () => _ticketRemoteDatasource.getTicketsByEventId(
         eventId: eventId,
+        eventDate: eventDate,
       ),
     );
 

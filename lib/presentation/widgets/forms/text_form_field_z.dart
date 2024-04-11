@@ -91,7 +91,12 @@ class TextFormFieldZ extends StatelessWidget {
               horizontal: 15.w,
               vertical: 10.h,
             ),
-            border: OutlineInputBorder(),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.r),
+              borderSide: BorderSide(
+                color: context.colorScheme.outline,
+              ),
+            ),
           ),
       inputFormatters: textInputFormatters,
       validator: (value) {

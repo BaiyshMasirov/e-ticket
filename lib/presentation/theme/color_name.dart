@@ -74,4 +74,9 @@ class ColorName {
 
   static Color outlineD = const Color(0xFF8F9199);
   static Color outlineVariantD = const Color(0xFFB1B4B9);
+
+  static Color placeUnselected = const Color(0xFF3AA63A);
+  static Color placeSelected = const Color(0xFFC0AA58);
+  static Color placeDisabled = const Color(0xFFA9A8A8);
+  static Color placeSold = const Color(0xFFA82D2D);
 }

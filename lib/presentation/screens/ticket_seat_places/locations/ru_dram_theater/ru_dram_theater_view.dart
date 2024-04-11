@@ -8,6 +8,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:collection/collection.dart';
 import 'package:eticket/data/models/models.dart';
 
+final _minScale = 3.0;
+
 class RuDramTheaterView extends HookWidget {
   final List<TicketDto> tickets;
 
@@ -22,7 +24,7 @@ class RuDramTheaterView extends HookWidget {
     final holdTickets = context.watch<TicketSeatHoldCubit>().state.tickets;
 
     useEffect(() {
-      const zoomFactor = 5.0;
+      final zoomFactor = _minScale;
       transformationController.value.setEntry(0, 0, zoomFactor);
       transformationController.value.setEntry(1, 1, zoomFactor);
       transformationController.value.setEntry(2, 2, zoomFactor);
@@ -231,6 +233,7 @@ class RuDramTheaterView extends HookWidget {
     ];
 
     return SeatLayoutWidgetV2(
+      minScale: _minScale,
       transformationController: transformationController,
       stateModel: SeatLayoutStateModelV2(
         rows: places.length,

@@ -10,7 +10,7 @@ _$StorageSettingsImpl _$$StorageSettingsImplFromJson(
         Map<String, dynamic> json) =>
     _$StorageSettingsImpl(
       themeMode: $enumDecodeNullable(_$ThemeModeEnumMap, json['themeMode']) ??
-          ThemeMode.light,
+          ThemeMode.dark,
       locale: json['locale'] as String? ?? 'ru',
     );
 

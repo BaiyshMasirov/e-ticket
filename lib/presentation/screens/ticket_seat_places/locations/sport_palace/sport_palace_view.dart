@@ -11,6 +11,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:eticket/data/models/models.dart';
 import 'package:collection/collection.dart';
 
+final _minScale = 3.0;
+
 class SportPalaceView extends HookWidget {
   final List<TicketDto> tickets;
 
@@ -602,7 +604,7 @@ class SportPalaceView extends HookWidget {
     );
 
     useEffect(() {
-      const zoomFactor = 5.0;
+      final zoomFactor = _minScale;
       // const xTranslate = 300.0;
       // const yTranslate = 300.0;
       transformationController.value.setEntry(0, 0, zoomFactor);
@@ -614,6 +616,7 @@ class SportPalaceView extends HookWidget {
     }, const []);
 
     return SeatLayoutWidgetV2(
+      minScale: _minScale,
       transformationController: transformationController,
       onSeatStateChanged: (currentIndex, placeNumber, currentState, ticketId) {
         if (ticketId == null) currentState;

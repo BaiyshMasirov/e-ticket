@@ -152,7 +152,7 @@ abstract class $AppRouter extends _i17.RootStackRouter {
         routeData: routeData,
         child: _i14.TicketSeatPlacesScreen(
           locationType: args.locationType,
-          eventId: args.eventId,
+          event: args.event,
           eventDate: args.eventDate,
           key: args.key,
         ),
@@ -471,7 +471,7 @@ class TicketSeatPlacesRoute
     extends _i17.PageRouteInfo<TicketSeatPlacesRouteArgs> {
   TicketSeatPlacesRoute({
     required _i22.LocationType locationType,
-    required String eventId,
+    required _i18.EventDto event,
     required DateTime eventDate,
     _i20.Key? key,
     List<_i17.PageRouteInfo>? children,
@@ -479,7 +479,7 @@ class TicketSeatPlacesRoute
           TicketSeatPlacesRoute.name,
           args: TicketSeatPlacesRouteArgs(
             locationType: locationType,
-            eventId: eventId,
+            event: event,
             eventDate: eventDate,
             key: key,
           ),
@@ -495,14 +495,14 @@ class TicketSeatPlacesRoute
 class TicketSeatPlacesRouteArgs {
   const TicketSeatPlacesRouteArgs({
     required this.locationType,
-    required this.eventId,
+    required this.event,
     required this.eventDate,
     this.key,
   });
 
   final _i22.LocationType locationType;
 
-  final String eventId;
+  final _i18.EventDto event;
 
   final DateTime eventDate;
 
@@ -510,7 +510,7 @@ class TicketSeatPlacesRouteArgs {
 
   @override
   String toString() {
-    return 'TicketSeatPlacesRouteArgs{locationType: $locationType, eventId: $eventId, eventDate: $eventDate, key: $key}';
+    return 'TicketSeatPlacesRouteArgs{locationType: $locationType, event: $event, eventDate: $eventDate, key: $key}';
   }
 }
 

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:common/common.dart';
 import 'package:eticket/common/common.dart';
+import 'package:eticket/data/data.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/bloc/bloc.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/locations/locations.dart';
@@ -11,9 +12,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TicketSeatPlacesView extends StatelessWidget {
   final LocationType locationType;
+  final EventDto event;
+  final DateTime eventDate;
 
   const TicketSeatPlacesView({
     required this.locationType,
+    required this.event,
+    required this.eventDate,
     Key? key,
   }) : super(key: key);
 
@@ -41,7 +46,11 @@ class TicketSeatPlacesView extends StatelessWidget {
               case LocationType.balletTheater:
                 child = BalletTheaterView(tickets: tickets);
               case LocationType.bishkekArena:
-                child = BishkekArenaBlocksView(tickets: tickets);
+                child = BishkekArenaBlocksView(
+                  tickets: tickets,
+                  event: event,
+                  eventDate: eventDate,
+                );
               case LocationType.philarmonic:
                 child = FilarmoniaView(tickets: tickets);
               case LocationType.kgDramTheater:
@@ -53,13 +62,10 @@ class TicketSeatPlacesView extends StatelessWidget {
             }
 
             return Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                  child: Center(
-                    child: child,
-                  ),
-                ),
+                const SeatPlaceInfoV(),
+                SizedBox(height: 10.h),
+                Expanded(child: Center(child: child)),
                 SizedBox(height: 60.h),
               ],
             );

@@ -9,6 +9,7 @@ import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:collection/collection.dart';
 
 class TicketStandingPlacesView extends StatelessWidget {
   const TicketStandingPlacesView({
@@ -56,8 +57,19 @@ class TicketStandingPlacesView extends StatelessWidget {
                   itemBuilder: (context, i) {
                     final ticket = tickets[i];
 
-                    return TicketStandingPlacesContainerView(
+                    return TicketStandingPlaceItem(
                       ticket: ticket,
+                      onDecreasePressed: () {
+                        context
+                            .read<TicketStandingPlaceHoldCubit>()
+                            .decreaseTicketAmount(ticket.type, ticket.availableCount);
+                      },
+                      onIncreasePressed: () {
+                        context
+                            .read<TicketStandingPlaceHoldCubit>()
+                            .increaseTicketAmount(ticket.type, ticket.availableCount);
+                      },
+                      key: ValueKey(ticket.type),
                     );
                   },
                   separatorBuilder: (context, index) => SizedBox(height: 10.h),

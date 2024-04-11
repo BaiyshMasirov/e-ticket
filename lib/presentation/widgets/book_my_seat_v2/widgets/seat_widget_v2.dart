@@ -1,3 +1,4 @@
+import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -76,11 +77,10 @@ class _SeatWidgetV2State extends State<SeatWidgetV2> {
       default:
         child = Stack(
           children: [
-            SvgPicture.asset(
-              _getSvgPath(safeCheckedSeatState),
-              height: widget.model.seatSvgSize,
-              width: widget.model.seatSvgSize,
-              fit: BoxFit.cover,
+            Icon(
+              Icons.circle,
+              size: widget.model.seatSvgSize,
+              color: _getColor(safeCheckedSeatState),
             ),
             SizedBox(
               height: widget.model.seatSvgSize,
@@ -147,29 +147,26 @@ class _SeatWidgetV2State extends State<SeatWidgetV2> {
     );
   }
 
-  String _getSvgPath(PlaceStateV2 state) {
+  Color _getColor(PlaceStateV2 state) {
     switch (state) {
       case PlaceStateV2.unselected:
         {
-          return widget.model.pathUnSelectedSeat;
+          return ColorName.placeUnselected;
         }
       case PlaceStateV2.selected:
         {
-          return widget.model.pathSelectedSeat;
+          return ColorName.placeSelected;
         }
       case PlaceStateV2.disabled:
         {
-          return widget.model.pathDisabledSeat;
+          return ColorName.placeDisabled;
         }
       case PlaceStateV2.sold:
         {
-          return widget.model.pathSoldSeat;
+          return ColorName.placeSold;
         }
-      case PlaceStateV2.empty:
       default:
-        {
-          return widget.model.pathDisabledSeat;
-        }
+        return ColorName.placeDisabled;
     }
   }
 }

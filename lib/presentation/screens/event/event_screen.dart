@@ -89,7 +89,7 @@ class EventScreen extends StatelessWidget {
     context.navigateTo(TicketSeatPlacesRoute(
       locationType: event.locationType,
       eventDate: dateTime,
-      eventId: event.id,
+      event: event,
     ));
   }
 }

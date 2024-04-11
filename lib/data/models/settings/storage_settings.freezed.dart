@@ -109,7 +109,7 @@ class __$$StorageSettingsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$StorageSettingsImpl extends _StorageSettings {
   const _$StorageSettingsImpl(
-      {this.themeMode = ThemeMode.light, this.locale = 'ru'})
+      {this.themeMode = ThemeMode.dark, this.locale = 'ru'})
       : super._();
 
   factory _$StorageSettingsImpl.fromJson(Map<String, dynamic> json) =>

@@ -88,5 +88,9 @@ abstract class  LocaleKeys {
   static const switch_theme = 'switch_theme';
   static const sector = 'sector';
   static const fun_zone = 'fun_zone';
+  static const unselected = 'unselected';
+  static const selected = 'selected';
+  static const sold = 'sold';
+  static const disabled = 'disabled';
 
 }

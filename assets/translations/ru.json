@@ -85,5 +85,9 @@
   "change_password": "Сменить пароль",
   "switch_theme": "Переключить тему",
   "sector": "Сектор",
-  "fun_zone": "Fun Zone"
+  "fun_zone": "Фан Зона",
+  "unselected": "Не выбрано",
+  "selected": "Выбрано",
+  "sold": "Забронировано",
+  "disabled": "Заблокировано"
 }

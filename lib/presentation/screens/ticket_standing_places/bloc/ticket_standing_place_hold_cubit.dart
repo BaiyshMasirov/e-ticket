@@ -91,14 +91,14 @@ class TicketStandingPlaceHoldCubit extends Cubit<TicketStandingPlaceHoldState> {
     ));
   }
 
-  Future<void> increaseTicketAmount(int type) async {
+  Future<void> increaseTicketAmount(int type, int ticketsCount) async {
     final chosenTickets = [...state.chosenTickets];
 
     final chosenTick = chosenTickets.firstWhereOrNull(
       (item) => item.type == type,
     );
 
-    if (chosenTick == null) return;
+    if (chosenTick == null || chosenTick.count >= ticketsCount) return;
 
     chosenTickets.removeWhere((item) => item.type == type);
     final updatedTicket = chosenTick.copyWith(
@@ -111,7 +111,7 @@ class TicketStandingPlaceHoldCubit extends Cubit<TicketStandingPlaceHoldState> {
     ));
   }
 
-  Future<void> decreaseTicketAmount(int type) async {
+  Future<void> decreaseTicketAmount(int type, int ticketsCount) async {
     final chosenTickets = [...state.chosenTickets];
 
     final chosenTick = chosenTickets.firstWhereOrNull(

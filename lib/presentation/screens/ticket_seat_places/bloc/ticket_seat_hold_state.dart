@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:eticket/data/models/models.dart';
 
@@ -24,4 +26,26 @@ class TicketSeatHoldState with _$TicketSeatHoldState {
   const factory TicketSeatHoldState.holdError({
     required List<TicketDto> tickets,
   }) = _TicketSeatHoldErrorState;
+
+  List<String> getTicketsInfo() {
+    final ticketsTemp = [...tickets];
+    final groupedTickets = <int, List<TicketDto>>{};
+
+    for (final tick in ticketsTemp) {
+      if (groupedTickets.containsKey(tick.rowNumber)) {
+        groupedTickets[tick.rowNumber]?.add(tick);
+      } else {
+        groupedTickets[tick.rowNumber] = [tick];
+      }
+    }
+
+    final groupRowLabels = groupedTickets.entries.map((entry) {
+      var rowNumber = entry.key;
+      var ticketPlaceNumbers =
+          entry.value.map((tick) => tick.placeNumber).join(', ');
+      return '${LocaleKeys.rowNumber.tr()} $rowNumber: $ticketPlaceNumbers';
+    }).toList();
+
+    return groupRowLabels;
+  }
 }

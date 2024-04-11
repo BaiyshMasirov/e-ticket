@@ -1,11 +1,13 @@
+import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/assets.gen.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
+import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_place_hold_cubit.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/widgets/widgets.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
-
+import 'package:collection/collection.dart';
 import 'package:eticket/data/models/models.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,13 +15,11 @@ class TicketStandingPlaceItem extends StatelessWidget {
   final TicketTypeCountDto ticket;
   final Function() onDecreasePressed;
   final Function() onIncreasePressed;
-  final int ticketAmountChosen;
 
   const TicketStandingPlaceItem({
     required this.ticket,
     required this.onDecreasePressed,
     required this.onIncreasePressed,
-    required this.ticketAmountChosen,
     Key? key,
   }) : super(key: key);
 
@@ -108,7 +108,16 @@ class TicketStandingPlaceItem extends StatelessWidget {
                   ),
                 ),
                 TicketStandingPlaceCounter(
-                  amount: ticketAmountChosen.toString(),
+                  amount: context
+                      .select<TicketStandingPlaceHoldCubit, int>(
+                        (value) =>
+                            value.state.chosenTickets
+                                .firstWhereOrNull(
+                                    (item) => item.type == ticket.type)
+                                ?.count ??
+                            0,
+                      )
+                      .toString(),
                   onDecreasePressed: onDecreasePressed,
                   onIncreasePressed: onIncreasePressed,
                 ),

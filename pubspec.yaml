@@ -55,6 +55,7 @@ dependencies:
   shared_preferences: ^2.2.2
 
   mobile_scanner: ^3.5.2
+  zoom_widget: ^2.0.1
 
 dev_dependencies:
   flutter_test:

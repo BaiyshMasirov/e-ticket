@@ -37,6 +37,10 @@ class TicketSeatHoldCubit extends Cubit<TicketSeatHoldState> {
     }
   }
 
+  Future<void> removeAllTickets() async {
+    emit(const TicketSeatHoldState.data(tickets: []));
+  }
+
   Future<void> removeTicket({
     required TicketDto ticket,
   }) async {

@@ -10,6 +10,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:eticket/data/models/models.dart';
 import 'package:collection/collection.dart';
 
+const _minScale = 3.0;
+
 class BishkekArenaPlacesView extends HookWidget {
   final BishkekArenaBlockType blockType;
   final List<TicketDto> tickets;
@@ -26,7 +28,7 @@ class BishkekArenaPlacesView extends HookWidget {
     final holdTickets = context.watch<TicketSeatHoldCubit>().state.tickets;
 
     useEffect(() {
-      const zoomFactor = 5.0;
+      final zoomFactor = _minScale;
       transformationController.value.setEntry(0, 0, zoomFactor);
       transformationController.value.setEntry(1, 1, zoomFactor);
       transformationController.value.setEntry(2, 2, zoomFactor);
@@ -36,6 +38,7 @@ class BishkekArenaPlacesView extends HookWidget {
     final List<SeatRowPlaceV2> places;
     final seatGenerator = BishkekArenaSeatPlacesManager();
 
+    /// region switch
     switch (blockType) {
       case BishkekArenaBlockType.B:
         places = seatGenerator.generateBBlock(
@@ -71,6 +74,8 @@ class BishkekArenaPlacesView extends HookWidget {
         places = [];
     }
 
+    /// endregion
+
     return Container(
       color: context.colorScheme.background,
       child: Column(
@@ -84,6 +89,7 @@ class BishkekArenaPlacesView extends HookWidget {
           ),
           Expanded(
             child: SeatLayoutWidgetV2(
+              minScale: _minScale,
               transformationController: transformationController,
               stateModel: SeatLayoutStateModelV2(
                 rows: places.length,

@@ -14,6 +14,7 @@ class AppScaffold extends StatelessWidget {
   final bool extendBodyBehindAppBar;
   final Widget? floatingActionButton;
   final FloatingActionButtonLocation? floatingActionButtonLocation;
+  final Widget? bottomSheet;
   final bool? extendBody;
   final Color? bgColor;
 
@@ -22,6 +23,7 @@ class AppScaffold extends StatelessWidget {
     this.extendBodyBehindAppBar = false,
     this.floatingActionButtonLocation,
     this.floatingActionButton,
+    this.bottomSheet,
     this.appBar,
     this.title,
     this.isLoadingFunc,
@@ -43,6 +45,7 @@ class AppScaffold extends StatelessWidget {
             floatingActionButton: floatingActionButton,
             floatingActionButtonLocation: floatingActionButtonLocation,
             extendBodyBehindAppBar: extendBodyBehindAppBar,
+            bottomSheet: bottomSheet,
             body: body,
           ),
         ),
