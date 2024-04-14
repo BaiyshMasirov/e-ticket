@@ -1,4 +1,5 @@
 import 'package:common/common.dart';
+import 'package:eticket/common/constants/common_constants.dart';
 import 'package:eticket/common/extensions/extensions.dart';
 import 'package:eticket/generated/assets.gen.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/bloc/bloc.dart';
@@ -93,7 +94,7 @@ class BishkekArenaPlacesView extends HookWidget {
               transformationController: transformationController,
               stateModel: SeatLayoutStateModelV2(
                 rows: places.length,
-                seatSvgSize: 6.w,
+                seatSvgSize: seatSvgSize,
                 seatPlaceTextPadding: EdgeInsets.all(0.8.w),
                 pathDisabledSeat: Assets.svgs.booking.svgDisabledBusSeat.path,
                 pathSelectedSeat: Assets.svgs.booking.svgSelectedBusSeats.path,

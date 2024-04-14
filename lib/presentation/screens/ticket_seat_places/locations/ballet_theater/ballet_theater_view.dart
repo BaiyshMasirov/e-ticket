@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:collection/collection.dart';
+import 'package:eticket/common/common.dart';
 
 final _minScale = 3.0;
 
@@ -947,7 +948,7 @@ class BalletTheaterView extends HookWidget {
         pathSelectedSeat: Assets.svgs.booking.svgSelectedBusSeats.path,
         pathSoldSeat: Assets.svgs.booking.svgSoldBusSeat.path,
         pathUnSelectedSeat: Assets.svgs.booking.svgUnselectedBusSeat.path,
-        seatSvgSize: 6.w,
+        seatSvgSize: seatSvgSize,
         seatPlaceTextPadding: EdgeInsets.all(0.8.w),
       ),
       onSeatStateChanged: (currentIndex, placeNumber, currentState, ticketId) {

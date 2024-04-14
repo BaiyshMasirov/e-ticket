@@ -1,4 +1,5 @@
 import 'package:common/common.dart';
+import 'package:eticket/common/constants/common_constants.dart';
 import 'package:eticket/generated/assets.gen.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/bloc/bloc.dart';
 import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
@@ -242,7 +243,7 @@ class RuDramTheaterView extends HookWidget {
         pathSelectedSeat: Assets.svgs.booking.svgSelectedBusSeats.path,
         pathSoldSeat: Assets.svgs.booking.svgSoldBusSeat.path,
         pathUnSelectedSeat: Assets.svgs.booking.svgUnselectedBusSeat.path,
-        seatSvgSize: 6.w,
+        seatSvgSize: seatSvgSize,
         seatPlaceTextPadding: EdgeInsets.all(0.8.w),
       ),
       onSeatStateChanged: (currentIndex, placeNumber, currentState, ticketId) {

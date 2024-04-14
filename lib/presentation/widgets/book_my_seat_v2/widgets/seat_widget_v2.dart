@@ -1,7 +1,6 @@
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class SeatWidgetV2 extends StatefulWidget {
   final SeatModelV2 model;

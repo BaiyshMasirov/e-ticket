@@ -1,5 +1,6 @@
 import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:eticket/common/constants/common_constants.dart';
 import 'package:eticket/generated/assets.gen.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/bloc/bloc.dart';
@@ -326,7 +327,7 @@ class KgDramTheaterView extends HookWidget {
       },
       stateModel: SeatLayoutStateModelV2(
         rows: places.length,
-        seatSvgSize: 4.8.w,
+        seatSvgSize: seatSvgSize,
         seatPlaceTextPadding: EdgeInsets.all(0.8.w),
         pathDisabledSeat: Assets.svgs.booking.svgDisabledBusSeat.path,
         pathSelectedSeat: Assets.svgs.booking.svgSelectedBusSeats.path,

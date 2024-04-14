@@ -645,7 +645,7 @@ class SportPalaceView extends HookWidget {
       },
       stateModel: SeatLayoutStateModelV2(
         rows: places.length,
-        seatSvgSize: 4.8.w,
+        seatSvgSize: seatSvgSize,
         seatPlaceTextPadding: EdgeInsets.all(0.8.w),
         pathDisabledSeat: Assets.svgs.booking.svgDisabledBusSeat.path,
         pathSelectedSeat: Assets.svgs.booking.svgSelectedBusSeats.path,
