@@ -10,9 +10,11 @@ import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/auth_logo.dart';
 import 'package:eticket/presentation/widgets/buttons/buttons.dart';
 import 'package:eticket/presentation/widgets/forms/forms.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class RegisterView extends HookWidget {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -29,6 +31,7 @@ class RegisterView extends HookWidget {
     final middleNameController = useTextEditingController();
     final passwordController = useTextEditingController();
     final phoneNumberController = useTextEditingController();
+    final offerPolicyS = useState(false);
 
     return SafeArea(
       child: SingleChildScrollView(
@@ -78,6 +81,71 @@ class RegisterView extends HookWidget {
                 PhoneFormFieldZ(
                   controller: phoneNumberController,
                   validate: true,
+                ),
+                SizedBox(height: 10.h),
+                CheckboxListTile(
+                  value: offerPolicyS.value,
+                  controlAffinity: ListTileControlAffinity.leading,
+                  title: ExcludeSemantics(
+                    child: RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: '${LocaleKeys.offer_policy_begin.tr()} ',
+                          ),
+                          TextSpan(
+                            text: LocaleKeys.private_policy.tr(),
+                            style: const TextStyle(
+                              fontStyle: FontStyle.italic,
+                              fontWeight: FontWeight.w500,
+                              decoration: TextDecoration.underline,
+                            ),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () async {
+                                launchUrl(
+                                  Uri.parse(context.appConfigs.privacyPolicyUrl),
+                                );
+                              },
+                          ),
+                          TextSpan(
+                            text: ' ${LocaleKeys.offer_policy_middle.tr()} ',
+                          ),
+                          TextSpan(
+                              text: LocaleKeys.oferta.tr(),
+                              style: const TextStyle(
+                                fontStyle: FontStyle.italic,
+                                fontWeight: FontWeight.w500,
+                                decoration: TextDecoration.underline,
+                              ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () async {
+                                  launchUrl(
+                                      Uri.parse(context.appConfigs.offerUrl));
+                                }),
+                          TextSpan(
+                            text: ' ${LocaleKeys.offer_policy_end.tr()}',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  onChanged: (value) {
+                    if (value == null) return;
+
+                    offerPolicyS.value = value;
+                  },
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: ErrorFFZ(
+                    validator: () {
+                      if (!offerPolicyS.value) {
+                        return LocaleKeys.check_agreement.tr();
+                      }
+
+                      return null;
+                    },
+                  ),
                 ),
                 SizedBox(height: 25.h),
                 PrimaryButton(

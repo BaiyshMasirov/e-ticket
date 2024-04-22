@@ -92,5 +92,11 @@ abstract class  LocaleKeys {
   static const selected = 'selected';
   static const sold = 'sold';
   static const disabled = 'disabled';
+  static const offer_policy_begin = 'offer_policy_begin';
+  static const offer_policy_middle = 'offer_policy_middle';
+  static const offer_policy_end = 'offer_policy_end';
+  static const private_policy = 'private_policy';
+  static const oferta = 'oferta';
+  static const check_agreement = 'check_agreement';
 
 }

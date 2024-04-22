@@ -1,3 +1,4 @@
+import 'package:common/common.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -30,4 +31,6 @@ extension BuildContextX on BuildContext {
     // return GetIt.I.get<Configuration>().serverUrl;
     return 'https://e-tick.app/home/GetEventCategoryByType?type=';
   }
+
+  Configuration get appConfigs => GetIt.I.get<Configuration>();
 }

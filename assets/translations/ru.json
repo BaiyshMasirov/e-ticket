@@ -89,5 +89,11 @@
   "unselected": "Не выбрано",
   "selected": "Выбрано",
   "sold": "Забронировано",
-  "disabled": "Заблокировано"
+  "disabled": "Заблокировано",
+  "offer_policy_begin": "С условиями",
+  "offer_policy_middle": "и",
+  "offer_policy_end": "ознакомлен и согласен",
+  "private_policy": "политики конфиденциальности",
+  "oferta": "договором-оферты",
+  "check_agreement": "Подтвердите согласие"
 }
