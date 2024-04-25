@@ -3,6 +3,7 @@ import 'package:common/common.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
+import 'package:eticket/presentation/app_blocs/settings/settings_cubit.dart';
 import 'package:eticket/presentation/screens/auth/login/bloc/login_state.dart';
 import 'package:get_it/get_it.dart';
 
@@ -12,14 +13,17 @@ class LoginCubit extends Cubit<LoginState> {
   final SnackbarCubit _snackbarCubit;
   final AuthCubit _authCubit;
   final AccountRepository _accountRepository;
+  final SettingsCubit _settingsCubit;
 
   LoginCubit._({
     required SnackbarCubit snackbarCubit,
     required AuthCubit authCubit,
     required AccountRepository accountRepository,
+    required SettingsCubit settingsCubit,
   })  : _snackbarCubit = snackbarCubit,
         _authCubit = authCubit,
         _accountRepository = accountRepository,
+        _settingsCubit = settingsCubit,
         super(const LoginState.initial());
 
   Future<void> login({
@@ -36,6 +40,7 @@ class LoginCubit extends Cubit<LoginState> {
       (r) {
         emit(const LoginState.success());
         _authCubit.setToken(credentials: r);
+        _settingsCubit.updateState();
       },
     );
   }
@@ -45,6 +50,7 @@ class LoginCubit extends Cubit<LoginState> {
       snackbarCubit: GetIt.I.get(),
       authCubit: GetIt.I.get(),
       accountRepository: GetIt.I.get(),
+      settingsCubit: GetIt.I.get(),
     );
   }
 }

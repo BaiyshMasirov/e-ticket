@@ -98,5 +98,9 @@ abstract class  LocaleKeys {
   static const private_policy = 'private_policy';
   static const oferta = 'oferta';
   static const check_agreement = 'check_agreement';
+  static const delete_account = 'delete_account';
+  static const delete_account_title = 'delete_account_title';
+  static const yes = 'yes';
+  static const no = 'no';
 
 }

@@ -8,12 +8,14 @@ class SettingsButton extends StatelessWidget {
   final String label;
   final EdgeInsets? padding;
   final Widget? icon;
+  final TextStyle? labelStyle;
 
   const SettingsButton({
     required this.label,
     this.icon,
     this.padding,
     this.onPress,
+    this.labelStyle,
     Key? key,
   }) : super(key: key);
 
@@ -29,10 +31,11 @@ class SettingsButton extends StatelessWidget {
             Expanded(
               child: Text(
                 label,
-                style: TextStyle(
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w400,
-                ),
+                style: labelStyle ??
+                    TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                    ),
               ),
             ),
             SizedBox(width: 10.w),

@@ -63,4 +63,12 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
 
     return response;
   }
+
+  Future<Either<RequestFailure, Unit>> deleteAccount() async {
+    final response = await handleRemoteRequest(
+      request: () => _accountRemoteSource.deleteAccount(),
+    );
+
+    return response;
+  }
 }

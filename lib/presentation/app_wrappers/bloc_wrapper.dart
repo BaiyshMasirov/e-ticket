@@ -27,10 +27,7 @@ class BlocWrapper extends StatelessWidget {
           create: (context) => GetIt.I.get<DictionaryCubit>(),
         ),
         BlocProvider(
-          create: (context) => SettingsCubit(
-            settingsRepository: GetIt.I.get(),
-            authRepository: GetIt.I.get(),
-          ),
+          create: (context) => GetIt.I.get<SettingsCubit>(),
         ),
       ],
       child: child,

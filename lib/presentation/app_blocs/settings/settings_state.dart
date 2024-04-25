@@ -1,6 +1,5 @@
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'settings_state.freezed.dart';
 part 'settings_state.g.dart';

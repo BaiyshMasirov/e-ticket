@@ -3,6 +3,7 @@ import 'package:common/common.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
+import 'package:eticket/presentation/app_blocs/settings/settings_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -110,6 +111,7 @@ Future<void> injectDependencies() async {
   // end of repositories
   // endregion END OF PROJECT MODULE
 
+  getIt.registerSingleton<SettingsCubit>(SettingsCubit.initialize());
   getIt.registerSingleton<SnackbarCubit>(SnackbarCubit());
   getIt.registerSingleton<DictionaryCubit>(DictionaryCubit.initialize());
 }

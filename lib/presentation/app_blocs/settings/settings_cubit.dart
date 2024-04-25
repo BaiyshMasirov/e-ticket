@@ -3,12 +3,13 @@ import 'package:common/common.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/app_blocs/settings/settings_state.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
 class SettingsCubit extends Cubit<SettingsState> {
   final SettingsRepository _settingsRepository;
   final AuthRepository _authRepository;
 
-  SettingsCubit({
+  SettingsCubit._({
     required SettingsRepository settingsRepository,
     required AuthRepository authRepository,
   })  : _settingsRepository = settingsRepository,
@@ -18,6 +19,13 @@ class SettingsCubit extends Cubit<SettingsState> {
           locale: settingsRepository.getSettings().locale,
           isUserAdmin: false,
         ));
+
+  factory SettingsCubit.initialize() {
+    return SettingsCubit._(
+      settingsRepository: GetIt.I.get(),
+      authRepository: GetIt.I.get(),
+    );
+  }
 
   Future<void> updateState() async {
     final isUserAdmin = await _authRepository.isUserAdmin();

@@ -49,4 +49,16 @@ class AccountRemoteSource {
 
     return response;
   }
+
+  Future<RemoteResponse<Unit>> deleteAccount() async {
+    final response = await _dio.makeRequest(
+      request: () => _dio.post(
+        'api/Account/delete-account',
+        data: {},
+      ),
+      parse: (json) => unit,
+    );
+
+    return response;
+  }
 }
