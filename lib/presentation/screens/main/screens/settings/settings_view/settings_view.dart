@@ -39,27 +39,6 @@ class SettingsView extends StatelessWidget {
             SettingsContainer(
               children: [
                 SettingsButton(
-                  label: LocaleKeys.delete_account.tr(),
-                  labelStyle: TextStyle(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400,
-                    color: context.colorScheme.errorContainer,
-                  ),
-                  icon: const SizedBox.shrink(),
-                  onPress: () => YesNoDialog.showModal(
-                    context: context,
-                    title: LocaleKeys.delete_account_title.tr(),
-                    onNoPress: context.popRoute,
-                    onYesPress:
-                        context.read<AccountDeleteCubit>().deleteAccount,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: kDefaultPadding),
-            SettingsContainer(
-              children: [
-                SettingsButton(
                   label: LocaleKeys.switch_theme.tr(),
                   icon: Switch(
                     onChanged: (value) {
@@ -84,20 +63,42 @@ class SettingsView extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: kDefaultPadding),
             Visibility(
               visible: s.isUserAdmin,
-              child: PrimaryButton(
-                title: LocaleKeys.to_scan_tickets.tr(),
-                icon: const Icon(Icons.qr_code),
-                onPressed: () {
-                  context.navigateTo(
-                    const ScanTicketRoute(),
-                  );
-                },
+              child: Column(
+                children: [
+                  SizedBox(height: kDefaultPadding),
+                  PrimaryButton(
+                    title: LocaleKeys.to_scan_tickets.tr(),
+                    icon: const Icon(Icons.qr_code),
+                    onPressed: () =>
+                        context.navigateTo(const ScanTicketRoute()),
+                  ),
+                ],
               ),
             ),
-            Spacer(),
+            SizedBox(height: kDefaultPadding),
+            SettingsContainer(
+              children: [
+                SettingsButton(
+                  label: LocaleKeys.delete_account.tr(),
+                  labelStyle: TextStyle(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w400,
+                    color: context.colorScheme.errorContainer,
+                  ),
+                  icon: const SizedBox.shrink(),
+                  onPress: () => YesNoDialog.showModal(
+                    context: context,
+                    title: LocaleKeys.delete_account_title.tr(),
+                    onNoPress: context.popRoute,
+                    onYesPress:
+                        context.read<AccountDeleteCubit>().deleteAccount,
+                  ),
+                ),
+              ],
+            ),
+            const Spacer(),
             TertiaryButton(
               title: LocaleKeys.logout.tr(),
               onPressed: context.read<AuthCubit>().signOut,

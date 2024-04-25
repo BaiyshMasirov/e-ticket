@@ -55,6 +55,9 @@ Future<void> injectDependencies() async {
   await settingsLocalDatasource.read();
 
   // remote sources
+  getIt.registerSingleton<UserLocalSource>(
+    UserLocalSource(sharedPreferences: prefs),
+  );
   getIt.registerSingleton<SettingsLocalDatasource>(
     settingsLocalDatasource,
   );
@@ -85,6 +88,9 @@ Future<void> injectDependencies() async {
   // end of remote sources
 
   // repositories
+  getIt.registerSingleton<UserCachedRepo>(
+    UserCachedRepo(userLocalSource: getIt.get<UserLocalSource>()),
+  );
   getIt.registerSingleton<SettingsRepository>(SettingsRepository(
     settingsLocalDatasource: getIt.get<SettingsLocalDatasource>(),
   ));

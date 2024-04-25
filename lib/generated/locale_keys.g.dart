@@ -102,5 +102,6 @@ abstract class  LocaleKeys {
   static const delete_account_title = 'delete_account_title';
   static const yes = 'yes';
   static const no = 'no';
+  static const remember_me = 'remember_me';
 
 }

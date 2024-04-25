@@ -8,8 +8,8 @@ part 'login_command_dto.g.dart';
 class LoginCommandDto with _$LoginCommandDto {
   const LoginCommandDto._();
   const factory LoginCommandDto({
-    required String? email,
-    required String? password,
+    required String email,
+    required String password,
     required String? firebaseToken,
   }) = _LoginCommandDto;
 

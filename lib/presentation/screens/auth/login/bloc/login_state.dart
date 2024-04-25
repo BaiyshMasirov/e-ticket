@@ -6,7 +6,10 @@ part 'login_state.freezed.dart';
 class LoginState with _$LoginState {
   const LoginState._();
   const factory LoginState.initial() = _LoginInitial;
-  const factory LoginState.success() = _LoginSuccess;
+  const factory LoginState.success({
+    required String login,
+    required String password,
+  }) = _LoginSuccess;
   const factory LoginState.failure({
     String? errorMessage,
   }) = _LoginFailure;

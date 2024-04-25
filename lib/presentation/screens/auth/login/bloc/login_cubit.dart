@@ -38,7 +38,10 @@ class LoginCubit extends Cubit<LoginState> {
         _snackbarCubit.showErrorSnackbar(message: l.errorMessage);
       },
       (r) {
-        emit(const LoginState.success());
+        emit(LoginState.success(
+          login: loginCommandDto.email,
+          password: loginCommandDto.password,
+        ));
         _authCubit.setToken(credentials: r);
         _settingsCubit.updateState();
       },

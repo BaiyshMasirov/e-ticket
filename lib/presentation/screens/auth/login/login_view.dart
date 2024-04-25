@@ -8,12 +8,10 @@ import 'package:eticket/presentation/routes/routes.gr.dart';
 import 'package:eticket/presentation/screens/auth/login/bloc/login_cubit.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/auth_logo.dart';
-import 'package:eticket/presentation/widgets/buttons/buttons.dart';
-import 'package:eticket/presentation/widgets/forms/email_form_field_z.dart';
-import 'package:eticket/presentation/widgets/forms/forms.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:eticket/presentation/widgets/widgets.dart';
 
 class LoginView extends HookWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -24,51 +22,102 @@ class LoginView extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final emailController = useTextEditingController();
-    final passwordController = useTextEditingController();
+    final loginTC = useTextEditingController();
+    final passwordTC = useTextEditingController();
 
-    return SafeArea(
-      child: SingleChildScrollView(
-        child: Form(
-          key: _formKey,
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: kDefaultPadding,
-            ),
-            child: Column(
-              children: [
-                SizedBox(height: 60.h),
-                const Hero(
-                  tag: HeroConstants.appLogoImageTag,
-                  child: AuthLogo(),
-                ),
-                SizedBox(height: 60.h),
-                EmailFormFieldZ(controller: emailController),
-                SizedBox(height: 15.h),
-                PasswordFormFieldZ(controller: passwordController),
-                SizedBox(height: 15.h),
-                PrimaryButton(
-                  title: LocaleKeys.login.tr(),
-                  onPressed: () {
-                    primaryFocus?.unfocus();
+    final isRememberMeChecked = useState(
+      context.userCachedRepo.getData().isRememberMe,
+    );
 
-                    if (_formKey.currentState?.validate() ?? false) {
-                      context.read<LoginCubit>().login(
-                            loginCommandDto: LoginCommandDto(
-                              email: emailController.text,
-                              password: passwordController.text,
-                              firebaseToken: null,
-                            ),
-                          );
-                    }
-                  },
-                ),
-                SizedBox(height: 15.h),
-                TertiaryButton(
-                  title: LocaleKeys.registration.tr(),
-                  onPressed: () => context.replaceRoute(const RegisterRoute()),
-                ),
-              ],
+    useEffect(
+      () {
+        final settings = context.userCachedRepo.getData();
+
+        if (settings.isRememberMe) {
+          loginTC.text = settings.login;
+          passwordTC.text = settings.password;
+        }
+
+        return null;
+      },
+      const [],
+    );
+
+    return BlocListener<LoginCubit, LoginState>(
+      listener: (_, s) => s.maybeMap(
+        orElse: () => null,
+        success: (_) {
+          if (!context.userCachedRepo.getData().isRememberMe) return;
+
+          context.userCachedRepo.setUserAuthDataData(
+            login: _.login,
+            password: _.password,
+          );
+
+          return null;
+        },
+      ),
+      child: SafeArea(
+        child: SingleChildScrollView(
+          child: Form(
+            key: _formKey,
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: kDefaultPadding,
+              ),
+              child: Column(
+                children: [
+                  SizedBox(height: 60.h),
+                  const Hero(
+                    tag: HeroConstants.appLogoImageTag,
+                    child: AuthLogo(),
+                  ),
+                  SizedBox(height: 60.h),
+                  EmailFormFieldZ(controller: loginTC),
+                  SizedBox(height: 15.h),
+                  PasswordFormFieldZ(controller: passwordTC),
+                  SizedBox(height: 15.h),
+                  CheckboxControlBZ(
+                    borderRadius: 6.r,
+                    padding:
+                        EdgeInsets.symmetric(vertical: 10.h, horizontal: 2.w),
+                    direction: Direction.left,
+                    onChanged: (isChecked) {
+                      context.userCachedRepo.setRememberMe(
+                        isRememberMe: isChecked,
+                      );
+
+                      isRememberMeChecked.value = isChecked;
+                    },
+                    // labelTS: tsB14Regular.copyWith(color: ColorName.colorE1E3EA),
+                    label: LocaleKeys.remember_me.tr(),
+                    isChecked: isRememberMeChecked.value,
+                  ),
+                  SizedBox(height: 15.h),
+                  PrimaryButton(
+                    title: LocaleKeys.login.tr(),
+                    onPressed: () {
+                      primaryFocus?.unfocus();
+
+                      if (_formKey.currentState?.validate() ?? false) {
+                        context.read<LoginCubit>().login(
+                              loginCommandDto: LoginCommandDto(
+                                email: loginTC.text,
+                                password: passwordTC.text,
+                                firebaseToken: null,
+                              ),
+                            );
+                      }
+                    },
+                  ),
+                  SizedBox(height: 15.h),
+                  TertiaryButton(
+                    title: LocaleKeys.registration.tr(),
+                    onPressed: () =>
+                        context.replaceRoute(const RegisterRoute()),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

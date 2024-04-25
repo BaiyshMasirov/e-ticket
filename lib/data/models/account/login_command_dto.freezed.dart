@@ -20,8 +20,8 @@ LoginCommandDto _$LoginCommandDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$LoginCommandDto {
-  String? get email => throw _privateConstructorUsedError;
-  String? get password => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  String get password => throw _privateConstructorUsedError;
   String? get firebaseToken => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ abstract class $LoginCommandDtoCopyWith<$Res> {
           LoginCommandDto value, $Res Function(LoginCommandDto) then) =
       _$LoginCommandDtoCopyWithImpl<$Res, LoginCommandDto>;
   @useResult
-  $Res call({String? email, String? password, String? firebaseToken});
+  $Res call({String email, String password, String? firebaseToken});
 }
 
 /// @nodoc
@@ -52,19 +52,19 @@ class _$LoginCommandDtoCopyWithImpl<$Res, $Val extends LoginCommandDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? password = freezed,
+    Object? email = null,
+    Object? password = null,
     Object? firebaseToken = freezed,
   }) {
     return _then(_value.copyWith(
-      email: freezed == email
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
+              as String,
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       firebaseToken: freezed == firebaseToken
           ? _value.firebaseToken
           : firebaseToken // ignore: cast_nullable_to_non_nullable
@@ -81,7 +81,7 @@ abstract class _$$LoginCommandDtoImplCopyWith<$Res>
       __$$LoginCommandDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? email, String? password, String? firebaseToken});
+  $Res call({String email, String password, String? firebaseToken});
 }
 
 /// @nodoc
@@ -95,19 +95,19 @@ class __$$LoginCommandDtoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? password = freezed,
+    Object? email = null,
+    Object? password = null,
     Object? firebaseToken = freezed,
   }) {
     return _then(_$LoginCommandDtoImpl(
-      email: freezed == email
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
+              as String,
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       firebaseToken: freezed == firebaseToken
           ? _value.firebaseToken
           : firebaseToken // ignore: cast_nullable_to_non_nullable
@@ -129,9 +129,9 @@ class _$LoginCommandDtoImpl extends _LoginCommandDto {
       _$$LoginCommandDtoImplFromJson(json);
 
   @override
-  final String? email;
+  final String email;
   @override
-  final String? password;
+  final String password;
   @override
   final String? firebaseToken;
 
@@ -173,8 +173,8 @@ class _$LoginCommandDtoImpl extends _LoginCommandDto {
 
 abstract class _LoginCommandDto extends LoginCommandDto {
   const factory _LoginCommandDto(
-      {required final String? email,
-      required final String? password,
+      {required final String email,
+      required final String password,
       required final String? firebaseToken}) = _$LoginCommandDtoImpl;
   const _LoginCommandDto._() : super._();
 
@@ -182,9 +182,9 @@ abstract class _LoginCommandDto extends LoginCommandDto {
       _$LoginCommandDtoImpl.fromJson;
 
   @override
-  String? get email;
+  String get email;
   @override
-  String? get password;
+  String get password;
   @override
   String? get firebaseToken;
   @override
