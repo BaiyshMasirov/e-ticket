@@ -5,6 +5,7 @@ import 'package:eticket/data/data.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/bloc/bloc.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/locations/locations.dart';
+import 'package:eticket/presentation/screens/ticket_seat_places/locations/maple_leaf/maple_leaf_v.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
@@ -59,6 +60,12 @@ class TicketSeatPlacesView extends StatelessWidget {
                 child = RuDramTheaterView(tickets: tickets);
               case LocationType.sportPalace:
                 child = SportPalaceView(tickets: tickets);
+              case LocationType.mapleLeaf:
+                child = MapleLeafV(
+                  tickets: tickets,
+                  event: event,
+                  eventDate: eventDate,
+                );
             }
 
             return Column(

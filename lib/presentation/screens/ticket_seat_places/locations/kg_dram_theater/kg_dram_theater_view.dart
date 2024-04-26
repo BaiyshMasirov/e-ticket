@@ -11,8 +11,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:eticket/data/models/models.dart';
 import 'package:collection/collection.dart';
 
-final _minScale = 3.0;
-
 class KgDramTheaterView extends HookWidget {
   final List<TicketDto> tickets;
 
@@ -23,7 +21,6 @@ class KgDramTheaterView extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final transformationController = useTransformationController();
     final holdTickets = context.watch<TicketSeatHoldCubit>().state.tickets;
 
     final places = useMemoized(
@@ -289,17 +286,7 @@ class KgDramTheaterView extends HookWidget {
       ],
     );
 
-    useEffect(() {
-      final zoomFactor = _minScale;
-      transformationController.value.setEntry(0, 0, zoomFactor);
-      transformationController.value.setEntry(1, 1, zoomFactor);
-      transformationController.value.setEntry(2, 2, zoomFactor);
-      return null;
-    }, const []);
-
     return SeatLayoutWidgetV2(
-      minScale: _minScale,
-      transformationController: transformationController,
       onSeatStateChanged: (currentIndex, placeNumber, currentState, ticketId) {
         if (ticketId == null) currentState;
 

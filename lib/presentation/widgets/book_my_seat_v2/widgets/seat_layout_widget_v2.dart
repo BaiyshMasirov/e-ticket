@@ -8,9 +8,7 @@ import 'package:zoom_widget/zoom_widget.dart' show Zoom;
 final key = GlobalKey();
 
 class SeatLayoutWidgetV2 extends HookWidget {
-  final TransformationController transformationController;
   final SeatLayoutStateModelV2 stateModel;
-  final double minScale;
 
   final PlaceStateV2 Function(
     int currentIndex,
@@ -20,10 +18,8 @@ class SeatLayoutWidgetV2 extends HookWidget {
   ) onSeatStateChanged;
 
   const SeatLayoutWidgetV2({
-    required this.transformationController,
     required this.stateModel,
     required this.onSeatStateChanged,
-    required this.minScale,
     Key? key,
   }) : super(key: key);
 
@@ -43,12 +39,6 @@ class SeatLayoutWidgetV2 extends HookWidget {
       const [],
     );
 
-    // return InteractiveViewer(
-    //   transformationController: transformationController,
-    //   maxScale: 10,
-    //   minScale: minScale,
-    //   constrained: false,
-    //   boundaryMargin: EdgeInsets.all(8.w),
     return Stack(
       children: [
         Zoom(

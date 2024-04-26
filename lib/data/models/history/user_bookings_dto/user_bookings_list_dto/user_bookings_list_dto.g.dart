@@ -54,5 +54,6 @@ const _$LocationTypeEnumMap = {
   LocationType.ruDramTheater: 6,
   LocationType.kgDramTheater: 7,
   LocationType.nationalTheater: 8,
+  LocationType.mapleLeaf: 9,
   LocationType.unknown: 'unknown',
 };

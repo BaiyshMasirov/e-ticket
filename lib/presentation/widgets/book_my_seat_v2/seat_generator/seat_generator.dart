@@ -28,6 +28,9 @@ class SeatGenerator {
     List<int> textLabelSpacingIndex = const [],
     List<int> bigTextSpacingIndex = const [],
     List<SeatPlaceSecondaryV2> secondarySeatPlaces = const [],
+
+    /// reverse places
+    bool revert = false,
   }) {
     int placeNumber = beginPlaceNumber;
 
@@ -131,7 +134,8 @@ class SeatGenerator {
           seatPlace: -1,
         ),
       ),
-      ...places.nonNulls.toList().reversed.toList(),
+      if (!revert) ...places.nonNulls.toList().reversed.toList(),
+      if (revert) ...places.nonNulls.toList(),
     ];
 
     return SeatRowPlaceV2(

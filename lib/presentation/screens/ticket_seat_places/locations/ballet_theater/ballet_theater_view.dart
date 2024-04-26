@@ -11,8 +11,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:collection/collection.dart';
 import 'package:eticket/common/common.dart';
 
-final _minScale = 3.0;
-
 class BalletTheaterView extends HookWidget {
   final List<TicketDto> tickets;
 
@@ -26,14 +24,6 @@ class BalletTheaterView extends HookWidget {
     final transformationController = useTransformationController();
 
     final holdTickets = context.watch<TicketSeatHoldCubit>().state.tickets;
-
-    useEffect(() {
-      final zoomFactor = _minScale;
-      transformationController.value.setEntry(0, 0, zoomFactor);
-      transformationController.value.setEntry(1, 1, zoomFactor);
-      transformationController.value.setEntry(2, 2, zoomFactor);
-      return null;
-    }, const []);
 
     final places = [
       SeatGenerator.generateSeatPlaces(
@@ -939,8 +929,6 @@ class BalletTheaterView extends HookWidget {
     ];
 
     return SeatLayoutWidgetV2(
-      minScale: _minScale,
-      transformationController: transformationController,
       stateModel: SeatLayoutStateModelV2(
         rows: places.length,
         currentSeatsState: places,

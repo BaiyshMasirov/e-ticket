@@ -37,5 +37,8 @@ enum LocationType {
   @JsonValue(8)
   nationalTheater, // ?
 
+  @JsonValue(9)
+  mapleLeaf,
+
   unknown,
 }
