@@ -18,7 +18,7 @@ class TicketRemoteDatasource {
         'api/Ticket/get-tickets-by-eventId',
         queryParameters: {
           'eventId': eventId,
-          'eventDate': const DateTimeUTCSerializer().toJson(eventDate),
+          'date': const DateTimeUTCSerializer().toJson(eventDate),
         },
       ),
       parse: (json) {
@@ -35,12 +35,14 @@ class TicketRemoteDatasource {
   /// tickets for standing places event
   Future<RemoteResponse<List<TicketTypeCountDto>>> getTicketsCountByEventId({
     required String eventId,
+    required DateTime eventDate,
   }) async {
     final response = await _dio.makeRequest(
       request: () => _dio.get(
         'api/Ticket/get-tickets-count-eventId',
         queryParameters: {
           'eventId': eventId,
+          'date': const DateTimeUTCSerializer().toJson(eventDate),
         },
       ),
       parse: (json) {

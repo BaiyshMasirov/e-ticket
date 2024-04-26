@@ -25,10 +25,12 @@ class TicketRepository with NetworkRemoteRepositoryMixin {
   Future<Either<RequestFailure, List<TicketTypeCountDto>>>
       getStandingTicketsCountByEventId({
     required String eventId,
+    required DateTime eventDate,
   }) async {
     final response = await handleRemoteRequest(
       request: () => _ticketRemoteDatasource.getTicketsCountByEventId(
         eventId: eventId,
+        eventDate: eventDate,
       ),
     );
 

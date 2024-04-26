@@ -25,6 +25,7 @@ class TicketStandingPlacesCubit extends Cubit<TicketStandingPlacesState> {
 
     final response = await _ticketRepository.getStandingTicketsCountByEventId(
       eventId: _eventId,
+      eventDate: _eventDate,
     );
 
     response.fold(
