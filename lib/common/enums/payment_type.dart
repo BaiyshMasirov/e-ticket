@@ -1,3 +1,4 @@
+import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/assets.gen.dart';
 
 enum PaymentType {
@@ -24,6 +25,24 @@ extension PaymentTypeX on PaymentType {
         return Assets.images.payments.odengi.path;
       case PaymentType.Balance:
         return Assets.images.payments.balance.path;
+    }
+  }
+
+  PaymentMechanism get paymentMechanism {
+    switch (this) {
+      case PaymentType.Odengi:
+        return PaymentMechanism.deepLink;
+      default:
+        return PaymentMechanism.none;
+    }
+  }
+
+  PaymentCreds get paymentCreds {
+    switch (this) {
+      case PaymentType.Odengi:
+        return PaymentCreds.phoneNumber;
+      default:
+        return PaymentCreds.none;
     }
   }
 }

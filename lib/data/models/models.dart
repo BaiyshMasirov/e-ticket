@@ -8,3 +8,4 @@ export 'history/user_bookings_dto/user_model.dart';
 export 'history/user_tickets_bookings_dto/user_ticket.dart';
 export 'settings/storage_settings.dart';
 export 'user_login/user_login.dart';
+export 'payment/payment.dart';

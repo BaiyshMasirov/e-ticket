@@ -1,5 +1,6 @@
 import 'package:common/common.dart';
 import 'package:eticket/common/common.dart';
+import 'package:eticket/data/data.dart';
 import 'package:eticket/data/data_sources/data_sources.dart';
 
 class PaymentRepository with NetworkRemoteRepositoryMixin {
@@ -31,6 +32,20 @@ class PaymentRepository with NetworkRemoteRepositoryMixin {
       request: () => _paymentRemoteSource.confirmPayment(
         code: code,
         bookingId: bookingId,
+      ),
+    );
+  }
+
+  Future<Either<RequestFailure, PaymentDeepLinkDto>> createDeepLinkPayment({
+    required String phoneNumber,
+    required String bookingId,
+    required PaymentType paymentType,
+  }) {
+    return handleRemoteRequest(
+      request: () => _paymentRemoteSource.createDeepLinkPayment(
+        phoneNumber: phoneNumber,
+        bookingId: bookingId,
+        paymentType: paymentType,
       ),
     );
   }

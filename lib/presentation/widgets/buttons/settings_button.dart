@@ -21,7 +21,7 @@ class SettingsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: onPress,
       child: Container(
         padding: padding ?? EdgeInsets.all(14.w),

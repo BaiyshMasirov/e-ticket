@@ -12,6 +12,7 @@ import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({
@@ -32,6 +33,23 @@ class SettingsView extends StatelessWidget {
                     context.navigateTo(const RefreshPasswordRoute());
                   },
                   label: LocaleKeys.change_password.tr(),
+                ),
+              ],
+            ),
+            SizedBox(height: kDefaultPadding),
+            SettingsContainer(
+              children: [
+                SettingsButton(
+                  onPress: () {
+                    launchUrl(Uri.parse(context.appConfigs.privacyPolicyUrl));
+                  },
+                  label: LocaleKeys.privacy_policy.tr(),
+                ),
+                SettingsButton(
+                  onPress: () {
+                    launchUrl(Uri.parse(context.appConfigs.offerUrl));
+                  },
+                  label: LocaleKeys.terms_of_use.tr(),
                 ),
               ],
             ),

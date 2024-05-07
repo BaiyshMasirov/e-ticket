@@ -103,7 +103,8 @@ class RegisterView extends HookWidget {
                             recognizer: TapGestureRecognizer()
                               ..onTap = () async {
                                 launchUrl(
-                                  Uri.parse(context.appConfigs.privacyPolicyUrl),
+                                  Uri.parse(
+                                      context.appConfigs.privacyPolicyUrl),
                                 );
                               },
                           ),
@@ -120,7 +121,8 @@ class RegisterView extends HookWidget {
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () async {
                                   launchUrl(
-                                      Uri.parse(context.appConfigs.offerUrl));
+                                    Uri.parse(context.appConfigs.offerUrl),
+                                  );
                                 }),
                           TextSpan(
                             text: ' ${LocaleKeys.offer_policy_end.tr()}',

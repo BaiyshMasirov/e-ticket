@@ -10,12 +10,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PayConfirmBottom extends HookWidget {
+class PaySMSConfirmBottom extends HookWidget {
   final GlobalKey<FormState> _formKey;
   final Function() _onSuccess;
   final Function() _closePressed;
 
-  const PayConfirmBottom._({
+  const PaySMSConfirmBottom._({
     required GlobalKey<FormState> formKey,
     required Function() onSuccess,
     required Function() closePressed,
@@ -30,7 +30,7 @@ class PayConfirmBottom extends HookWidget {
     final phoneController = useTextEditingController();
     final codeController = useTextEditingController();
 
-    return BlocListener<PaymentCubit, PaymentState>(
+    return BlocListener<PaymentSMSCubit, PaymentSMSState>(
       listener: (ctx, s) => s.maybeMap(
         paymentConfirmSuccess: (_) => _onSuccess(),
         orElse: () {},
@@ -38,10 +38,10 @@ class PayConfirmBottom extends HookWidget {
       child: SizedBox(
         height: 300.h,
         child: Loader(
-          isLoadingFunc: (context) => context.select<PaymentCubit, bool>(
+          isLoadingFunc: (context) => context.select<PaymentSMSCubit, bool>(
             (cubit) =>
-                cubit is PaymentCreatingState ||
-                cubit is PaymentConfirmingState,
+                cubit is PaymentSMSStateCreating ||
+                cubit is PaymentSMSStateConfirming,
           ),
           child: Padding(
             padding: EdgeInsets.all(kDefaultPadding),
@@ -55,7 +55,7 @@ class PayConfirmBottom extends HookWidget {
                     children: [
                       Text(
                         context
-                            .read<PaymentCubit>()
+                            .read<PaymentSMSCubit>()
                             .paymentType
                             .name
                             .toLowerCase()
@@ -76,7 +76,7 @@ class PayConfirmBottom extends HookWidget {
                     ],
                   ),
                   SizedBox(height: 15.h),
-                  BlocBuilder<PaymentCubit, PaymentState>(
+                  BlocBuilder<PaymentSMSCubit, PaymentSMSState>(
                     builder: (context, state) => PhoneFormFieldZ(
                       controller: phoneController,
                       readOnly: state.maybeMap(
@@ -89,7 +89,7 @@ class PayConfirmBottom extends HookWidget {
                     ),
                   ),
                   SizedBox(height: 8.h),
-                  BlocBuilder<PaymentCubit, PaymentState>(
+                  BlocBuilder<PaymentSMSCubit, PaymentSMSState>(
                     builder: (context, state) => Visibility(
                       visible: state.maybeMap(
                         orElse: () => true,
@@ -106,7 +106,7 @@ class PayConfirmBottom extends HookWidget {
                     ),
                   ),
                   SizedBox(height: 10.h),
-                  BlocBuilder<PaymentCubit, PaymentState>(
+                  BlocBuilder<PaymentSMSCubit, PaymentSMSState>(
                     builder: (c, s) => Visibility(
                       visible: s.maybeMap(
                         orElse: () => false,
@@ -128,7 +128,7 @@ class PayConfirmBottom extends HookWidget {
                     ),
                   ),
                   const Spacer(),
-                  BlocBuilder<PaymentCubit, PaymentState>(
+                  BlocBuilder<PaymentSMSCubit, PaymentSMSState>(
                     builder: (context, state) => PrimaryButton(
                       title: state.map(
                         initial: (_) => LocaleKeys.get_confirmation_code.tr(),
@@ -182,7 +182,7 @@ class PayConfirmBottom extends HookWidget {
   ) {
     return () {
       if (_formKey.currentState?.validate() ?? false) {
-        context.read<PaymentCubit>().confirmPayment(
+        context.read<PaymentSMSCubit>().confirmPaymentBySms(
               phoneNumber: PhoneFormatters.unMaskPhoneNumber(
                 phoneController.text,
               ),
@@ -198,7 +198,7 @@ class PayConfirmBottom extends HookWidget {
   ) {
     return () {
       if (_formKey.currentState?.validate() ?? false) {
-        context.read<PaymentCubit>().createPayment(
+        context.read<PaymentSMSCubit>().createPaymentByPhoneNumber(
               phoneNumber: PhoneFormatters.unMaskPhoneNumber(
                 phoneController.text,
               ),
@@ -207,7 +207,7 @@ class PayConfirmBottom extends HookWidget {
     };
   }
 
-  static Future<void> showPayConfirmBottom({
+  static Future<void> show({
     required BuildContext context,
     required String bookingId,
     required PaymentType paymentType,
@@ -227,7 +227,7 @@ class PayConfirmBottom extends HookWidget {
       ),
       context: context,
       builder: (ctx) => BlocProvider(
-        create: (ctx2) => PaymentCubit.initialize(
+        create: (ctx2) => PaymentSMSCubit.initialize(
           bookingId: bookingId,
           paymentType: paymentType,
         ),
@@ -235,7 +235,7 @@ class PayConfirmBottom extends HookWidget {
           padding: EdgeInsets.only(
             bottom: MediaQuery.of(ctx).viewInsets.bottom,
           ),
-          child: PayConfirmBottom._(
+          child: PaySMSConfirmBottom._(
             formKey: formKey,
             closePressed: closePressed,
             onSuccess: onSuccess,

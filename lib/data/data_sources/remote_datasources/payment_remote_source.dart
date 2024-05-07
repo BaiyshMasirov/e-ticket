@@ -1,5 +1,6 @@
 import 'package:common/common.dart';
 import 'package:eticket/common/common.dart';
+import 'package:eticket/data/data.dart';
 
 class PaymentRemoteSource {
   final Dio _dio;
@@ -7,6 +8,24 @@ class PaymentRemoteSource {
   PaymentRemoteSource({
     required Dio dio,
   }) : _dio = dio;
+
+  Future<RemoteResponse<PaymentDeepLinkDto>> createDeepLinkPayment({
+    required String phoneNumber,
+    required PaymentType paymentType,
+    required String bookingId,
+  }) async {
+    return await _dio.makeRequest(
+      request: () => _dio.post(
+        'api/Payment/create-deep-link-payment',
+        data: {
+          'paymentType': paymentType.index,
+          'phoneNumber': phoneNumber,
+          'bookingId': bookingId,
+        },
+      ),
+      parse: (json) => PaymentDeepLinkDto.fromJson(json),
+    );
+  }
 
   Future<RemoteResponse<Unit>> createPayment({
     required String phoneNumber,
@@ -33,13 +52,10 @@ class PaymentRemoteSource {
     required String bookingId,
   }) async {
     final response = await _dio.makeRequest(
-      request: () => _dio.post(
-        '/api/Payment/confirm-payment',
-        data: {
-          'code': code,
-          'bookingId': bookingId,
-        }
-      ),
+      request: () => _dio.post('/api/Payment/confirm-payment', data: {
+        'code': code,
+        'bookingId': bookingId,
+      }),
       parse: (json) => unit,
     );
 

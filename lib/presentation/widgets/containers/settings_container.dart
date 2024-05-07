@@ -14,19 +14,23 @@ class SettingsContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: padding,
-      clipBehavior: Clip.hardEdge,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.r),
-        color: context.colorScheme.surfaceTint,
-      ),
-      child: ListView.separated(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: children.length,
-        itemBuilder: (ctx, i) => children[i],
-        separatorBuilder: (ctx, i) => Divider(height: 3.h),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20.r),
+      child: Container(
+        padding: padding,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.r),
+          color: context.colorScheme.surfaceTint,
+        ),
+        child: ListView.separated(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: children.length,
+          itemBuilder: (ctx, i) => children[i],
+          separatorBuilder: (ctx, i) => Divider(
+            thickness: 0.2.h,
+          ),
+        ),
       ),
     );
   }

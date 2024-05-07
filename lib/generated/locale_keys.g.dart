@@ -104,5 +104,8 @@ abstract class  LocaleKeys {
   static const yes = 'yes';
   static const no = 'no';
   static const remember_me = 'remember_me';
+  static const privacy_policy = 'privacy_policy';
+  static const terms_of_use = 'terms_of_use';
+  static const payment_system_not_implemented = 'payment_system_not_implemented';
 
 }

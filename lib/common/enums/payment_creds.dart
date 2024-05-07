@@ -1,0 +1,4 @@
+enum PaymentCreds {
+  phoneNumber,
+  none,
+}

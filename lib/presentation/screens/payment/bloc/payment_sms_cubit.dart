@@ -4,16 +4,16 @@ import 'package:eticket/common/common.dart';
 import 'package:eticket/domain/repository/repository.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
-import 'package:eticket/presentation/screens/payment/bloc/payment_state.dart';
+import 'package:eticket/presentation/screens/payment/bloc/payment_sms_state.dart';
 import 'package:get_it/get_it.dart';
 
-class PaymentCubit extends Cubit<PaymentState> {
+class PaymentSMSCubit extends Cubit<PaymentSMSState> {
   final SnackbarCubit _snackbarCubit;
   final PaymentRepository _paymentRepository;
   final String _bookingId;
   final PaymentType paymentType;
 
-  PaymentCubit._({
+  PaymentSMSCubit._({
     required SnackbarCubit snackbarCubit,
     required PaymentRepository paymentRepository,
     required String bookingId,
@@ -21,14 +21,12 @@ class PaymentCubit extends Cubit<PaymentState> {
   })  : _paymentRepository = paymentRepository,
         _snackbarCubit = snackbarCubit,
         _bookingId = bookingId,
-        super(const PaymentState.initial(
-          phoneNumber: null,
-        ));
+        super(const PaymentSMSState.initial());
 
-  Future<void> createPayment({
+  Future<void> createPaymentByPhoneNumber({
     required String phoneNumber,
   }) async {
-    emit(PaymentState.paymentCreating(phoneNumber: phoneNumber));
+    emit(PaymentSMSState.paymentCreating(phoneNumber: phoneNumber));
 
     final successOrFailure = await _paymentRepository.createPayment(
       phoneNumber: phoneNumber,
@@ -37,22 +35,21 @@ class PaymentCubit extends Cubit<PaymentState> {
     );
 
     successOrFailure.fold(
-      (l) => emit(PaymentState.paymentCreateError(
+      (l) => emit(PaymentSMSState.paymentCreateError(
         phoneNumber: phoneNumber,
         errorMessage: l.errorMessage,
       )),
-      (r) => emit(PaymentState.paymentCreateSuccess(
+      (r) => emit(PaymentSMSState.paymentCreateSuccess(
         phoneNumber: phoneNumber,
-        code: null,
       )),
     );
   }
 
-  Future<void> confirmPayment({
+  Future<void> confirmPaymentBySms({
     required String phoneNumber,
     required String code,
   }) async {
-    emit(PaymentState.paymentConfirming(
+    emit(PaymentSMSState.paymentConfirming(
       phoneNumber: phoneNumber,
       code: code,
     ));
@@ -63,7 +60,7 @@ class PaymentCubit extends Cubit<PaymentState> {
     );
 
     successOrFailure.fold(
-      (l) => emit(PaymentState.paymentConfirmError(
+      (l) => emit(PaymentSMSState.paymentConfirmError(
         phoneNumber: phoneNumber,
         code: code,
         errorMessage: l.errorMessage,
@@ -73,7 +70,7 @@ class PaymentCubit extends Cubit<PaymentState> {
           message: LocaleKeys.payment_success_description.tr(),
         );
 
-        emit(PaymentState.paymentConfirmSuccess(
+        emit(PaymentSMSState.paymentConfirmSuccess(
           phoneNumber: phoneNumber,
           code: code,
         ));
@@ -81,11 +78,11 @@ class PaymentCubit extends Cubit<PaymentState> {
     );
   }
 
-  factory PaymentCubit.initialize({
+  factory PaymentSMSCubit.initialize({
     required String bookingId,
     required PaymentType paymentType,
   }) {
-    return PaymentCubit._(
+    return PaymentSMSCubit._(
       paymentType: paymentType,
       bookingId: bookingId,
       snackbarCubit: GetIt.I.get(),
