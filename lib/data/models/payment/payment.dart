@@ -1,1 +1,1 @@
-export 'payment_deep_link_dto.dart';
+export 'payment_result.dart';

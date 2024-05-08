@@ -1,4 +1,4 @@
-import 'package:common/common.dart';
+import 'package:dio/dio.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/domain/domain.dart';
@@ -16,12 +16,8 @@ class EventRemoteDatasource {
     String? searchText,
   }) async {
     final queryParams = eventsFilter.toQueryParams();
-    queryParams.addAll({
-      'page': page,
+    queryParams.addAll({'page': page});
 
-      /// only active - 3
-      'status': EventStatusType.active.value,
-    });
     if (searchText != null && searchText.isNotEmpty) {
       queryParams.addAll({
         'text': searchText,

@@ -1,8 +1,8 @@
-import 'package:common/common.dart';
 import 'package:eticket/data/models/models.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/bloc/ticket_seat_hold_state.dart';
 import 'package:eticket/domain/repository/repository.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 class TicketSeatHoldCubit extends Cubit<TicketSeatHoldState> {

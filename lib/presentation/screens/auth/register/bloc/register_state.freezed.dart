@@ -19,7 +19,7 @@ mixin _$RegisterState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() success,
+    required TResult Function(String login, String password) success,
     required TResult Function(String? errorMessage) failure,
     required TResult Function() loading,
   }) =>
@@ -27,7 +27,7 @@ mixin _$RegisterState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? success,
+    TResult? Function(String login, String password)? success,
     TResult? Function(String? errorMessage)? failure,
     TResult? Function()? loading,
   }) =>
@@ -35,7 +35,7 @@ mixin _$RegisterState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(String login, String password)? success,
     TResult Function(String? errorMessage)? failure,
     TResult Function()? loading,
     required TResult orElse(),
@@ -125,7 +125,7 @@ class _$RegisterInitialImpl extends _RegisterInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() success,
+    required TResult Function(String login, String password) success,
     required TResult Function(String? errorMessage) failure,
     required TResult Function() loading,
   }) {
@@ -136,7 +136,7 @@ class _$RegisterInitialImpl extends _RegisterInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? success,
+    TResult? Function(String login, String password)? success,
     TResult? Function(String? errorMessage)? failure,
     TResult? Function()? loading,
   }) {
@@ -147,7 +147,7 @@ class _$RegisterInitialImpl extends _RegisterInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(String login, String password)? success,
     TResult Function(String? errorMessage)? failure,
     TResult Function()? loading,
     required TResult orElse(),
@@ -206,6 +206,8 @@ abstract class _$$RegisterSuccessImplCopyWith<$Res> {
   factory _$$RegisterSuccessImplCopyWith(_$RegisterSuccessImpl value,
           $Res Function(_$RegisterSuccessImpl) then) =
       __$$RegisterSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String login, String password});
 }
 
 /// @nodoc
@@ -215,60 +217,95 @@ class __$$RegisterSuccessImplCopyWithImpl<$Res>
   __$$RegisterSuccessImplCopyWithImpl(
       _$RegisterSuccessImpl _value, $Res Function(_$RegisterSuccessImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? login = null,
+    Object? password = null,
+  }) {
+    return _then(_$RegisterSuccessImpl(
+      login: null == login
+          ? _value.login
+          : login // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$RegisterSuccessImpl extends _RegisterSuccess {
-  const _$RegisterSuccessImpl() : super._();
+  const _$RegisterSuccessImpl({required this.login, required this.password})
+      : super._();
+
+  @override
+  final String login;
+  @override
+  final String password;
 
   @override
   String toString() {
-    return 'RegisterState.success()';
+    return 'RegisterState.success(login: $login, password: $password)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RegisterSuccessImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$RegisterSuccessImpl &&
+            (identical(other.login, login) || other.login == login) &&
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, login, password);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RegisterSuccessImplCopyWith<_$RegisterSuccessImpl> get copyWith =>
+      __$$RegisterSuccessImplCopyWithImpl<_$RegisterSuccessImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() success,
+    required TResult Function(String login, String password) success,
     required TResult Function(String? errorMessage) failure,
     required TResult Function() loading,
   }) {
-    return success();
+    return success(login, password);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? success,
+    TResult? Function(String login, String password)? success,
     TResult? Function(String? errorMessage)? failure,
     TResult? Function()? loading,
   }) {
-    return success?.call();
+    return success?.call(login, password);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(String login, String password)? success,
     TResult Function(String? errorMessage)? failure,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success();
+      return success(login, password);
     }
     return orElse();
   }
@@ -312,8 +349,16 @@ class _$RegisterSuccessImpl extends _RegisterSuccess {
 }
 
 abstract class _RegisterSuccess extends RegisterState {
-  const factory _RegisterSuccess() = _$RegisterSuccessImpl;
+  const factory _RegisterSuccess(
+      {required final String login,
+      required final String password}) = _$RegisterSuccessImpl;
   const _RegisterSuccess._() : super._();
+
+  String get login;
+  String get password;
+  @JsonKey(ignore: true)
+  _$$RegisterSuccessImplCopyWith<_$RegisterSuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -383,7 +428,7 @@ class _$RegisterFailureImpl extends _RegisterFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() success,
+    required TResult Function(String login, String password) success,
     required TResult Function(String? errorMessage) failure,
     required TResult Function() loading,
   }) {
@@ -394,7 +439,7 @@ class _$RegisterFailureImpl extends _RegisterFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? success,
+    TResult? Function(String login, String password)? success,
     TResult? Function(String? errorMessage)? failure,
     TResult? Function()? loading,
   }) {
@@ -405,7 +450,7 @@ class _$RegisterFailureImpl extends _RegisterFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(String login, String password)? success,
     TResult Function(String? errorMessage)? failure,
     TResult Function()? loading,
     required TResult orElse(),
@@ -504,7 +549,7 @@ class _$RegisterLoadingImpl extends RegisterLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() success,
+    required TResult Function(String login, String password) success,
     required TResult Function(String? errorMessage) failure,
     required TResult Function() loading,
   }) {
@@ -515,7 +560,7 @@ class _$RegisterLoadingImpl extends RegisterLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? success,
+    TResult? Function(String login, String password)? success,
     TResult? Function(String? errorMessage)? failure,
     TResult? Function()? loading,
   }) {
@@ -526,7 +571,7 @@ class _$RegisterLoadingImpl extends RegisterLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(String login, String password)? success,
     TResult Function(String? errorMessage)? failure,
     TResult Function()? loading,
     required TResult orElse(),

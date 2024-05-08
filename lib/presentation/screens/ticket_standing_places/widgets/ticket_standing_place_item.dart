@@ -1,4 +1,3 @@
-import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/assets.gen.dart';
@@ -9,6 +8,7 @@ import 'package:eticket/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
 import 'package:eticket/data/models/models.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TicketStandingPlaceItem extends StatelessWidget {

@@ -37,7 +37,9 @@ class AppScaffold extends StatelessWidget {
     return Stack(
       children: [
         WillPopScope(
-          onWillPop: () async => context.router.canPop(),
+          onWillPop: () async {
+            return context.router.canPop();
+          },
           child: Scaffold(
             backgroundColor: bgColor,
             extendBody: extendBody ?? false,

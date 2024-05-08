@@ -20,7 +20,7 @@
     </queries>
 
     <application
-        android:label="e-ticket"
+        android:label="TicketTune"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

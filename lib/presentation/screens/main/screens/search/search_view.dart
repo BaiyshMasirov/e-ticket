@@ -1,4 +1,3 @@
-import 'package:common/common.dart';
 import 'package:eticket/generated/assets.gen.dart';
 import 'package:eticket/presentation/screens/main/screens/search/bloc/search_cubit.dart';
 import 'package:eticket/presentation/screens/main/screens/search/widgets/search_widgets.dart';
@@ -6,6 +5,7 @@ import 'package:eticket/presentation/theme/styling.dart';
 import 'package:eticket/presentation/widgets/app_scaffold.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

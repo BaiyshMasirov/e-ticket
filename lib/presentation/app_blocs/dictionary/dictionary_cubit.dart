@@ -1,9 +1,11 @@
-import 'package:common/common.dart';
+import 'package:dartz/dartz.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/app_blocs/dictionary/dictionary_state.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:eticket/common/common.dart';
 
 export 'dictionary_state.dart';
 

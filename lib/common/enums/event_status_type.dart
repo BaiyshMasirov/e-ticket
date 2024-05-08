@@ -1,4 +1,4 @@
-import 'package:common/common.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 enum EventStatusType {
   /// - Не выбран

@@ -1,8 +1,8 @@
-import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/constants/common_constants.dart';
 import 'package:eticket/presentation/app_blocs/settings/settings_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LocalizationWrapper extends StatelessWidget {
   final Widget child;

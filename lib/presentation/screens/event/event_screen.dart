@@ -31,38 +31,40 @@ class EventScreen extends StatelessWidget {
       ),
       bgColor: context.colorScheme.surfaceVariant,
       extendBodyBehindAppBar: true,
-      floatingActionButton: PrimaryButton(
-        title: LocaleKeys.buy_ticket.tr(),
-        onPressed: () {
-          final eventDateTimes = DateTimeX.getDaysInBetween(
-            event.startDate,
-            event.endDate,
-          );
+      floatingActionButton: event.canPurchaseTickets
+          ? PrimaryButton(
+              title: LocaleKeys.buy_ticket.tr(),
+              onPressed: () {
+                final eventDateTimes = DateTimeX.getDaysInBetween(
+                  event.startDate,
+                  event.endDate,
+                );
 
-          if (eventDateTimes.length == 1) {
-            navigateToBooking(
-              context: context,
-              dateTime: eventDateTimes.first,
-              event: event,
-            );
-            return;
-          }
+                if (eventDateTimes.length == 1) {
+                  navigateToBooking(
+                    context: context,
+                    dateTime: eventDateTimes.first,
+                    event: event,
+                  );
+                  return;
+                }
 
-          EventDatepickerDialog.showEventDatepickerDialog(
-            context: context,
-            eventDateTimes: eventDateTimes,
-            onDatePick: (pickedDatetime) {
-              navigateToBooking(
-                dateTime: pickedDatetime,
-                event: event,
-                context: context,
-              );
-            },
-          );
-        },
-        horizontalPadding: 20.w,
-        icon: const Icon(CupertinoIcons.creditcard),
-      ),
+                EventDatepickerDialog.showEventDatepickerDialog(
+                  context: context,
+                  eventDateTimes: eventDateTimes,
+                  onDatePick: (pickedDatetime) {
+                    navigateToBooking(
+                      dateTime: pickedDatetime,
+                      event: event,
+                      context: context,
+                    );
+                  },
+                );
+              },
+              horizontalPadding: 20.w,
+              icon: const Icon(CupertinoIcons.creditcard),
+            )
+          : null,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
         top: false,

@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
@@ -9,6 +8,7 @@ import 'package:eticket/presentation/screens/ticket_standing_places/ticket_stand
 import 'package:eticket/presentation/screens/ticket_standing_places/widgets/widgets.dart';
 import 'package:eticket/presentation/widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class TicketStandingPlacesScreen extends StatelessWidget {

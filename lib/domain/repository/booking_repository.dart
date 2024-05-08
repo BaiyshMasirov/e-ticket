@@ -1,4 +1,5 @@
-import 'package:common/common.dart';
+import 'package:dartz/dartz.dart';
+import 'package:eticket/common/common.dart';
 import 'package:eticket/data/data.dart';
 
 class BookingRepository with NetworkRemoteRepositoryMixin {

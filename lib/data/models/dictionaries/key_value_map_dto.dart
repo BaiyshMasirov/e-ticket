@@ -1,4 +1,4 @@
-import 'package:common/common.dart';
+import 'package:eticket/utils/utils.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'key_value_map_dto.freezed.dart';

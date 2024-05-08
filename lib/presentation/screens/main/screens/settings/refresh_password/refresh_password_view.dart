@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/formatters/phone_formatters.dart';
 import 'package:eticket/data/data.dart';
@@ -8,9 +7,9 @@ import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/buttons/buttons.dart';
 import 'package:eticket/presentation/widgets/forms/forms.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:eticket/presentation/screens/main/screens/settings/refresh_password/bloc/bloc.dart';
 
 class RefreshPasswordView extends HookWidget {

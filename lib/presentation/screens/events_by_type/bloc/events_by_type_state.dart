@@ -1,5 +1,5 @@
-import 'package:common/common.dart';
 import 'package:eticket/data/models/models.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'events_by_type_state.freezed.dart';
 

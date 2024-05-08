@@ -1,5 +1,6 @@
-import 'package:common/common.dart';
+import 'package:dio/dio.dart';
 import 'package:eticket/data/models/models.dart';
+import 'package:eticket/common/common.dart';
 
 class TicketRemoteDatasource {
   final Dio _dio;

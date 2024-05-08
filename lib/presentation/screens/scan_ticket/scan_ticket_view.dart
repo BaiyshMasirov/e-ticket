@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/extensions/extensions.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
@@ -8,6 +7,7 @@ import 'package:eticket/presentation/screens/scan_ticket/widgets/widgets.dart';
 import 'package:eticket/presentation/widgets/modal_dialogs/modal_dialogs.dart';
 import 'package:eticket/utils/hooks/hooks.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';

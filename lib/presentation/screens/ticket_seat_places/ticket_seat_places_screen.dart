@@ -1,5 +1,4 @@
 import 'package:auto_route/annotations.dart';
-import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/data/data.dart';
@@ -8,6 +7,7 @@ import 'package:eticket/presentation/screens/ticket_seat_places/ticket_seat_plac
 import 'package:eticket/presentation/screens/ticket_seat_places/widgets/ticket_seat_place_purchase_fab.dart';
 import 'package:eticket/presentation/widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class TicketSeatPlacesScreen extends StatelessWidget {

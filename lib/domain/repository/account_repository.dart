@@ -1,6 +1,8 @@
-import 'package:common/common.dart';
+import 'package:dartz/dartz.dart';
+import 'package:eticket/auth/authentication.dart';
+import 'package:eticket/common/common.dart';
 import 'package:eticket/data/data.dart';
-import 'package:authentication/authentication.dart';
+import 'package:eticket/utils/utils.dart';
 
 class AccountRepository with NetworkRemoteRepositoryMixin {
   final AccountRemoteSource _accountRemoteSource;

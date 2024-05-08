@@ -1,5 +1,5 @@
-import 'package:common/common.dart';
 import 'package:eticket/presentation/app_blocs/snackbar/snackbar_state.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 export 'snackbar_state.dart';
 

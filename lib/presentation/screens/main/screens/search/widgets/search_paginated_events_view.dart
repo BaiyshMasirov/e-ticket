@@ -1,11 +1,10 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:common/common.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
-import 'package:eticket/presentation/screens/event/event_screen.dart';
 import 'package:eticket/presentation/screens/main/screens/search/bloc/search_cubit.dart';
 import 'package:eticket/presentation/screens/main/screens/search/widgets/search_widgets.dart';
 import 'package:eticket/presentation/widgets/alerts/alerts.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SearchSearchPaginatedEventsView extends StatelessWidget {

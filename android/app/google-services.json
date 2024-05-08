@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1052943904683",
+    "project_id": "tickettune-38954",
+    "storage_bucket": "tickettune-38954.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052943904683:android:1f89e2200e840a39d12cee",
+        "android_client_info": {
+          "package_name": "com.a1canea.eticket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbkc4gBysYC0cmmmjiBqiDoXCfxsKikWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

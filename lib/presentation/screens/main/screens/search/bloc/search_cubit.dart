@@ -1,6 +1,6 @@
-import 'package:common/common.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/screens/main/screens/search/bloc/search_state.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 export 'search_state.dart';

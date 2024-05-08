@@ -27,7 +27,7 @@ mixin _$EventDto {
   DateTime get startDate => throw _privateConstructorUsedError;
   @DateTimeUTCSerializer()
   DateTime get endDate => throw _privateConstructorUsedError;
-  int get status => throw _privateConstructorUsedError;
+  EventStatusType get status => throw _privateConstructorUsedError;
   int get ageLimit => throw _privateConstructorUsedError;
   double get minPrice => throw _privateConstructorUsedError;
   int get sold => throw _privateConstructorUsedError;
@@ -58,7 +58,7 @@ abstract class $EventDtoCopyWith<$Res> {
       String? description,
       @DateTimeUTCSerializer() DateTime startDate,
       @DateTimeUTCSerializer() DateTime endDate,
-      int status,
+      EventStatusType status,
       int ageLimit,
       double minPrice,
       int sold,
@@ -128,7 +128,7 @@ class _$EventDtoCopyWithImpl<$Res, $Val extends EventDto>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int,
+              as EventStatusType,
       ageLimit: null == ageLimit
           ? _value.ageLimit
           : ageLimit // ignore: cast_nullable_to_non_nullable
@@ -191,7 +191,7 @@ abstract class _$$EventDtoImplCopyWith<$Res>
       String? description,
       @DateTimeUTCSerializer() DateTime startDate,
       @DateTimeUTCSerializer() DateTime endDate,
-      int status,
+      EventStatusType status,
       int ageLimit,
       double minPrice,
       int sold,
@@ -259,7 +259,7 @@ class __$$EventDtoImplCopyWithImpl<$Res>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int,
+              as EventStatusType,
       ageLimit: null == ageLimit
           ? _value.ageLimit
           : ageLimit // ignore: cast_nullable_to_non_nullable
@@ -348,7 +348,7 @@ class _$EventDtoImpl extends _EventDto {
   @DateTimeUTCSerializer()
   final DateTime endDate;
   @override
-  final int status;
+  final EventStatusType status;
   @override
   final int ageLimit;
   @override
@@ -452,7 +452,7 @@ abstract class _EventDto extends EventDto {
       required final String? description,
       @DateTimeUTCSerializer() required final DateTime startDate,
       @DateTimeUTCSerializer() required final DateTime endDate,
-      required final int status,
+      required final EventStatusType status,
       required final int ageLimit,
       required final double minPrice,
       required final int sold,
@@ -483,7 +483,7 @@ abstract class _EventDto extends EventDto {
   @DateTimeUTCSerializer()
   DateTime get endDate;
   @override
-  int get status;
+  EventStatusType get status;
   @override
   int get ageLimit;
   @override

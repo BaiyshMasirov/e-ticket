@@ -1,5 +1,5 @@
-import 'package:common/common.dart';
 import 'package:eticket/common/common.dart';
+import 'package:eticket/utils/utils.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'event_dto.freezed.dart';
@@ -14,7 +14,7 @@ class EventDto with _$EventDto {
     required String? description,
     @DateTimeUTCSerializer() required DateTime startDate,
     @DateTimeUTCSerializer() required DateTime endDate,
-    required int status,
+    required EventStatusType status,
     required int ageLimit,
     required double minPrice,
     required int sold,
@@ -28,6 +28,8 @@ class EventDto with _$EventDto {
     required String? video,
     required String? image,
   }) = _EventDto;
+
+  bool get canPurchaseTickets => status == EventStatusType.active;
 
   factory EventDto.fromJson(Json json) => _$EventDtoFromJson(json);
 }

@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/data/data.dart';
@@ -8,7 +7,9 @@ import 'package:eticket/presentation/routes/routes.gr.dart';
 import 'package:eticket/presentation/screens/auth/login/bloc/login_cubit.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/auth_logo.dart';
+import 'package:eticket/utils/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
@@ -47,6 +48,8 @@ class LoginView extends HookWidget {
       listener: (_, s) => s.maybeMap(
         orElse: () => null,
         success: (_) {
+          Logger.setUserIdentifier(_.login);
+
           if (!context.userCachedRepo.getData().isRememberMe) return;
 
           context.userCachedRepo.setUserAuthDataData(

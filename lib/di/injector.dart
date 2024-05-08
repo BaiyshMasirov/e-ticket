@@ -1,11 +1,13 @@
-import 'package:authentication/authentication.dart';
-import 'package:common/common.dart';
+import 'package:eticket/auth/authentication.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
 import 'package:eticket/presentation/app_blocs/settings/settings_cubit.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:eticket/common/common.dart';
 
 Future<void> injectDependencies() async {
   final getIt = GetIt.I;

@@ -1,7 +1,7 @@
-import 'package:authentication/authentication.dart';
-import 'package:common/common.dart';
+import 'package:eticket/auth/authentication.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/screens/main/screens/settings/bloc/account_delete_state.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
 

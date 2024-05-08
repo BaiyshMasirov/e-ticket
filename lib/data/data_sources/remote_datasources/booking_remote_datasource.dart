@@ -1,5 +1,6 @@
-import 'package:common/common.dart';
+import 'package:dio/dio.dart';
 import 'package:eticket/data/data.dart';
+import 'package:eticket/common/common.dart';
 
 class BookingRemoteDatasource {
   final Dio _dio;

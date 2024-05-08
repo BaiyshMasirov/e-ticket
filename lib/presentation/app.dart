@@ -1,6 +1,5 @@
-import 'package:authentication/authentication.dart';
-import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:eticket/auth/authentication.dart';
 import 'package:eticket/domain/repository/repository.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
@@ -9,8 +8,10 @@ import 'package:eticket/presentation/routes/routes.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
+import 'package:eticket/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get_it/get_it.dart';
 
@@ -37,6 +38,9 @@ class App extends StatelessWidget {
             },
             unauthenticated: () {
               FlutterNativeSplash.remove();
+
+              Logger.clearUserIdentifier();
+
               clearDatabase();
 
               _appRouter.pushAndPopUntil(

@@ -1,10 +1,10 @@
-import 'package:common/common.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/bloc/ticket_standing_place_hold_state.dart';
 import 'package:eticket/data/models/models.dart';
 import 'package:eticket/presentation/screens/ticket_standing_places/models/models.dart';
 import 'package:collection/collection.dart';
 import 'package:eticket/domain/repository/repository.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 export 'ticket_standing_place_hold_state.dart';
 
