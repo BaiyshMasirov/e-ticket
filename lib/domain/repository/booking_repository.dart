@@ -29,9 +29,9 @@ class BookingRepository with NetworkRemoteRepositoryMixin {
     );
   }
 
-  Future<Either<RequestFailure, UserBookingsDto>> getUserBookings({
+  Future<Either<RequestFailure, BookingPagingDto>> getUserBookings({
     required int page,
-    required UserBookingsFilter filter,
+    required BookingFilter filter,
   }) async {
     final response = await handleRemoteRequest(
       request: () =>
@@ -56,7 +56,7 @@ class BookingRepository with NetworkRemoteRepositoryMixin {
     });
   }
 
-  Future<Either<RequestFailure, List<UserTicketsBookingsDto>>>
+  Future<Either<RequestFailure, List<TicketsDto>>>
       getUserTicketsId({
     required String id,
   }) async {

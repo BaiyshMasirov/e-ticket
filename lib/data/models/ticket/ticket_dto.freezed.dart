@@ -21,15 +21,16 @@ TicketDto _$TicketDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$TicketDto {
   String get id => throw _privateConstructorUsedError;
-  int get type => throw _privateConstructorUsedError;
+  @JsonKey(name: 'type')
+  int get ticketType => throw _privateConstructorUsedError;
   int get placeNumber => throw _privateConstructorUsedError;
   int get rowNumber => throw _privateConstructorUsedError;
   int get branchIndex => throw _privateConstructorUsedError;
   int get branchType => throw _privateConstructorUsedError;
   int get index => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
-  @JsonKey(unknownEnumValue: TicketStatus.unknown)
-  TicketStatus get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'status', unknownEnumValue: TicketStatus.unknown)
+  TicketStatus get ticketStatus => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,14 +45,15 @@ abstract class $TicketDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      int type,
+      @JsonKey(name: 'type') int ticketType,
       int placeNumber,
       int rowNumber,
       int branchIndex,
       int branchType,
       int index,
       double price,
-      @JsonKey(unknownEnumValue: TicketStatus.unknown) TicketStatus status});
+      @JsonKey(name: 'status', unknownEnumValue: TicketStatus.unknown)
+      TicketStatus ticketStatus});
 }
 
 /// @nodoc
@@ -68,23 +70,23 @@ class _$TicketDtoCopyWithImpl<$Res, $Val extends TicketDto>
   @override
   $Res call({
     Object? id = null,
-    Object? type = null,
+    Object? ticketType = null,
     Object? placeNumber = null,
     Object? rowNumber = null,
     Object? branchIndex = null,
     Object? branchType = null,
     Object? index = null,
     Object? price = null,
-    Object? status = null,
+    Object? ticketStatus = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
+      ticketType: null == ticketType
+          ? _value.ticketType
+          : ticketType // ignore: cast_nullable_to_non_nullable
               as int,
       placeNumber: null == placeNumber
           ? _value.placeNumber
@@ -110,9 +112,9 @@ class _$TicketDtoCopyWithImpl<$Res, $Val extends TicketDto>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      ticketStatus: null == ticketStatus
+          ? _value.ticketStatus
+          : ticketStatus // ignore: cast_nullable_to_non_nullable
               as TicketStatus,
     ) as $Val);
   }
@@ -128,14 +130,15 @@ abstract class _$$TicketDtoImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      int type,
+      @JsonKey(name: 'type') int ticketType,
       int placeNumber,
       int rowNumber,
       int branchIndex,
       int branchType,
       int index,
       double price,
-      @JsonKey(unknownEnumValue: TicketStatus.unknown) TicketStatus status});
+      @JsonKey(name: 'status', unknownEnumValue: TicketStatus.unknown)
+      TicketStatus ticketStatus});
 }
 
 /// @nodoc
@@ -150,23 +153,23 @@ class __$$TicketDtoImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? type = null,
+    Object? ticketType = null,
     Object? placeNumber = null,
     Object? rowNumber = null,
     Object? branchIndex = null,
     Object? branchType = null,
     Object? index = null,
     Object? price = null,
-    Object? status = null,
+    Object? ticketStatus = null,
   }) {
     return _then(_$TicketDtoImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
+      ticketType: null == ticketType
+          ? _value.ticketType
+          : ticketType // ignore: cast_nullable_to_non_nullable
               as int,
       placeNumber: null == placeNumber
           ? _value.placeNumber
@@ -192,9 +195,9 @@ class __$$TicketDtoImplCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      ticketStatus: null == ticketStatus
+          ? _value.ticketStatus
+          : ticketStatus // ignore: cast_nullable_to_non_nullable
               as TicketStatus,
     ));
   }
@@ -205,14 +208,15 @@ class __$$TicketDtoImplCopyWithImpl<$Res>
 class _$TicketDtoImpl extends _TicketDto {
   const _$TicketDtoImpl(
       {required this.id,
-      required this.type,
+      @JsonKey(name: 'type') required this.ticketType,
       required this.placeNumber,
       required this.rowNumber,
       required this.branchIndex,
       required this.branchType,
       required this.index,
       required this.price,
-      @JsonKey(unknownEnumValue: TicketStatus.unknown) required this.status})
+      @JsonKey(name: 'status', unknownEnumValue: TicketStatus.unknown)
+      required this.ticketStatus})
       : super._();
 
   factory _$TicketDtoImpl.fromJson(Map<String, dynamic> json) =>
@@ -221,7 +225,8 @@ class _$TicketDtoImpl extends _TicketDto {
   @override
   final String id;
   @override
-  final int type;
+  @JsonKey(name: 'type')
+  final int ticketType;
   @override
   final int placeNumber;
   @override
@@ -235,12 +240,12 @@ class _$TicketDtoImpl extends _TicketDto {
   @override
   final double price;
   @override
-  @JsonKey(unknownEnumValue: TicketStatus.unknown)
-  final TicketStatus status;
+  @JsonKey(name: 'status', unknownEnumValue: TicketStatus.unknown)
+  final TicketStatus ticketStatus;
 
   @override
   String toString() {
-    return 'TicketDto(id: $id, type: $type, placeNumber: $placeNumber, rowNumber: $rowNumber, branchIndex: $branchIndex, branchType: $branchType, index: $index, price: $price, status: $status)';
+    return 'TicketDto(id: $id, ticketType: $ticketType, placeNumber: $placeNumber, rowNumber: $rowNumber, branchIndex: $branchIndex, branchType: $branchType, index: $index, price: $price, ticketStatus: $ticketStatus)';
   }
 
   @override
@@ -249,7 +254,8 @@ class _$TicketDtoImpl extends _TicketDto {
         (other.runtimeType == runtimeType &&
             other is _$TicketDtoImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.type, type) || other.type == type) &&
+            (identical(other.ticketType, ticketType) ||
+                other.ticketType == ticketType) &&
             (identical(other.placeNumber, placeNumber) ||
                 other.placeNumber == placeNumber) &&
             (identical(other.rowNumber, rowNumber) ||
@@ -260,13 +266,14 @@ class _$TicketDtoImpl extends _TicketDto {
                 other.branchType == branchType) &&
             (identical(other.index, index) || other.index == index) &&
             (identical(other.price, price) || other.price == price) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.ticketStatus, ticketStatus) ||
+                other.ticketStatus == ticketStatus));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, type, placeNumber, rowNumber,
-      branchIndex, branchType, index, price, status);
+  int get hashCode => Object.hash(runtimeType, id, ticketType, placeNumber,
+      rowNumber, branchIndex, branchType, index, price, ticketStatus);
 
   @JsonKey(ignore: true)
   @override
@@ -285,15 +292,15 @@ class _$TicketDtoImpl extends _TicketDto {
 abstract class _TicketDto extends TicketDto {
   const factory _TicketDto(
       {required final String id,
-      required final int type,
+      @JsonKey(name: 'type') required final int ticketType,
       required final int placeNumber,
       required final int rowNumber,
       required final int branchIndex,
       required final int branchType,
       required final int index,
       required final double price,
-      @JsonKey(unknownEnumValue: TicketStatus.unknown)
-      required final TicketStatus status}) = _$TicketDtoImpl;
+      @JsonKey(name: 'status', unknownEnumValue: TicketStatus.unknown)
+      required final TicketStatus ticketStatus}) = _$TicketDtoImpl;
   const _TicketDto._() : super._();
 
   factory _TicketDto.fromJson(Map<String, dynamic> json) =
@@ -302,7 +309,8 @@ abstract class _TicketDto extends TicketDto {
   @override
   String get id;
   @override
-  int get type;
+  @JsonKey(name: 'type')
+  int get ticketType;
   @override
   int get placeNumber;
   @override
@@ -316,8 +324,8 @@ abstract class _TicketDto extends TicketDto {
   @override
   double get price;
   @override
-  @JsonKey(unknownEnumValue: TicketStatus.unknown)
-  TicketStatus get status;
+  @JsonKey(name: 'status', unknownEnumValue: TicketStatus.unknown)
+  TicketStatus get ticketStatus;
   @override
   @JsonKey(ignore: true)
   _$$TicketDtoImplCopyWith<_$TicketDtoImpl> get copyWith =>

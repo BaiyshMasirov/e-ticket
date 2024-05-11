@@ -10,9 +10,10 @@ part 'events_filter.g.dart';
 @freezed
 class EventsFilter with _$EventsFilter {
   const EventsFilter._();
+
   const factory EventsFilter({
     KeyValueMapDto? type,
-    KeyValueMapDto? status,
+    EventStatus? status,
     @DateTimeUTCSerializer() DateTime? date,
   }) = _EventsFilter;
 
@@ -26,7 +27,7 @@ class EventsFilter with _$EventsFilter {
       queryParams.addAll({'type': type?.key});
     }
     if (status != null) {
-      queryParams.addAll({'status': status?.key});
+      queryParams.addAll({'status': status?.value});
     }
     if (date != null) {
       queryParams.addAll({'date': const DateTimeUTCSerializer().toJson(date)});

@@ -100,13 +100,13 @@ class SeatGenerator {
 
         final PlaceStateV2 seatState;
 
-        switch (currentPlace?.status) {
-          case TicketStatus.FREE:
+        switch (currentPlace?.ticketStatus) {
+          case TicketStatus.free:
             seatState = holdTickets.any((e) => e.id == currentPlace?.id)
                 ? PlaceStateV2.selected
                 : PlaceStateV2.unselected;
-          case TicketStatus.PAID:
-          case TicketStatus.WAITING_PAYMENT:
+          case TicketStatus.payed:
+          case TicketStatus.inProcess:
             seatState = PlaceStateV2.sold;
           default:
             seatState = PlaceStateV2.disabled;

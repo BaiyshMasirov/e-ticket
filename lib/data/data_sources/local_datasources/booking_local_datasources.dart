@@ -12,7 +12,7 @@ class BookingLocalDataSources {
   final store = stringMapStoreFactory.store(folderName);
 
   Future saveBookingsTicket(
-      {required List<UserTicketsBookingsDto> todo}) async {
+      {required List<TicketsDto> todo}) async {
     final recordKeys = todo.map((item) => item.id).toList();
 
     await store
@@ -24,11 +24,11 @@ class BookingLocalDataSources {
     await store.delete(_db, finder: Finder());
   }
 
-  Future<List<UserTicketsBookingsDto>> getAllBookingsTicket() async {
+  Future<List<TicketsDto>> getAllBookingsTicket() async {
     final recordSnapshot = await store.find(_db);
 
     return recordSnapshot
-        .map((snapshot) => UserTicketsBookingsDto.fromJson(snapshot.value))
+        .map((snapshot) => TicketsDto.fromJson(snapshot.value))
         .toList();
   }
 }

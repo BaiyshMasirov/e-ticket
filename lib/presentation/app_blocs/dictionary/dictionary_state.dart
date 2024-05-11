@@ -9,31 +9,19 @@ class DictionaryState with _$DictionaryState {
   const DictionaryState._();
   const factory DictionaryState.initial({
     required List<KeyValueMapDto> eventTypes,
-    required List<KeyValueMapDto> eventStatuses,
     required List<KeyValueMapDto> ticketTypes,
-    required List<KeyValueMapDto> ticketStatuses,
-    required List<KeyValueMapDto> locationTypes,
   }) = _DictionaryInitial;
   const factory DictionaryState.data({
     required List<KeyValueMapDto> eventTypes,
-    required List<KeyValueMapDto> eventStatuses,
     required List<KeyValueMapDto> ticketTypes,
-    required List<KeyValueMapDto> ticketStatuses,
-    required List<KeyValueMapDto> locationTypes,
   }) = _DictionaryData;
   const factory DictionaryState.loading({
     required List<KeyValueMapDto> eventTypes,
-    required List<KeyValueMapDto> eventStatuses,
     required List<KeyValueMapDto> ticketTypes,
-    required List<KeyValueMapDto> ticketStatuses,
-    required List<KeyValueMapDto> locationTypes,
   }) = DictionaryLoading;
   const factory DictionaryState.failure({
     required List<KeyValueMapDto> eventTypes,
-    required List<KeyValueMapDto> eventStatuses,
     required List<KeyValueMapDto> ticketTypes,
-    required List<KeyValueMapDto> ticketStatuses,
-    required List<KeyValueMapDto> locationTypes,
     String? errorMessage,
   }) = _DictionaryFailure;
 
@@ -41,19 +29,7 @@ class DictionaryState with _$DictionaryState {
     return eventTypes.firstWhereOrNull((element) => element.key == key);
   }
 
-  KeyValueMapDto? getEventStatusByKey(int key) {
-    return eventStatuses.firstWhere((element) => element.key == key);
-  }
-
   KeyValueMapDto? getTicketTypeByKey(int key) {
     return ticketTypes.firstWhere((element) => element.key == key);
-  }
-
-  KeyValueMapDto? getTicketStatusByKey(int key) {
-    return ticketStatuses.firstWhere((element) => element.key == key);
-  }
-
-  KeyValueMapDto? getLocationTypeByKey(int key) {
-    return locationTypes.firstWhere((element) => element.key == key);
   }
 }

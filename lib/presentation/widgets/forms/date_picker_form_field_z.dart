@@ -42,7 +42,7 @@ class DatePickerFormFieldZ extends HookWidget {
         );
         if (result == null) return;
 
-        controller.text = DateFormatters.datetimeToSlashed(result);
+        controller.text = DateFormatters.toDateTime(result);
         onTap(result);
       },
       suffix: const Icon(

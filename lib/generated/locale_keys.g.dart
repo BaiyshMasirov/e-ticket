@@ -107,5 +107,21 @@ abstract class  LocaleKeys {
   static const privacy_policy = 'privacy_policy';
   static const terms_of_use = 'terms_of_use';
   static const payment_system_not_implemented = 'payment_system_not_implemented';
+  static const purchase_date = 'purchase_date';
+  static const ticket_status = 'ticket_status';
+  static const none = 'none';
+  static const error = 'error';
+  static const in_await = 'in_await';
+  static const in_process_adding_tickets = 'in_process_adding_tickets';
+  static const in_await_payment = 'in_await_payment';
+  static const in_process_payment = 'in_process_payment';
+  static const active = 'active';
+  static const in_active = 'in_active';
+  static const canceled = 'canceled';
+  static const event_date = 'event_date';
+  static const event_location = 'event_location';
+  static const event_status = 'event_status';
+  static const ticket_payment_status = 'ticket_payment_status';
+  static const ticket_payemnt_date = 'ticket_payemnt_date';
 
 }

@@ -8,24 +8,24 @@ class HistoryState with _$HistoryState {
   const HistoryState._();
 
   const factory HistoryState.initial({
-    required List<UserBookingsListDto> bookingsList,
-    required UserBookingsFilter filter,
+    required List<BookingDto> bookingsList,
+    required BookingFilter filter,
   }) = _HistoryStateInitial;
 
   const factory HistoryState.loadInProgress({
-    required List<UserBookingsListDto> bookingsList,
-    required UserBookingsFilter filter,
+    required List<BookingDto> bookingsList,
+    required BookingFilter filter,
   }) = HistoryProgress;
 
   const factory HistoryState.loadSuccess({
-    required List<UserBookingsListDto> bookingsList,
-    required UserBookingsFilter filter,
+    required List<BookingDto> bookingsList,
+    required BookingFilter filter,
     required bool isNextPageAvailable,
   }) = _HistoryStateSuccess;
 
   const factory HistoryState.loadError({
-    required List<UserBookingsListDto> bookingsList,
-    required UserBookingsFilter filter,
+    required List<BookingDto> bookingsList,
+    required BookingFilter filter,
     String? errorMessage,
   }) = _HistoryStateError;
 }

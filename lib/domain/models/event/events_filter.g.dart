@@ -11,9 +11,7 @@ _$EventsFilterImpl _$$EventsFilterImplFromJson(Map<String, dynamic> json) =>
       type: json['type'] == null
           ? null
           : KeyValueMapDto.fromJson(json['type'] as Map<String, dynamic>),
-      status: json['status'] == null
-          ? null
-          : KeyValueMapDto.fromJson(json['status'] as Map<String, dynamic>),
+      status: $enumDecodeNullable(_$EventStatusEnumMap, json['status']),
       date: const DateTimeUTCSerializer().fromJson(json['date'] as String?),
     );
 
@@ -27,7 +25,16 @@ Map<String, dynamic> _$$EventsFilterImplToJson(_$EventsFilterImpl instance) {
   }
 
   writeNotNull('type', instance.type?.toJson());
-  writeNotNull('status', instance.status?.toJson());
+  writeNotNull('status', _$EventStatusEnumMap[instance.status]);
   writeNotNull('date', const DateTimeUTCSerializer().toJson(instance.date));
   return val;
 }
+
+const _$EventStatusEnumMap = {
+  EventStatus.none: 0,
+  EventStatus.inAwait: 1,
+  EventStatus.inProcess: 2,
+  EventStatus.active: 3,
+  EventStatus.inActive: 4,
+  EventStatus.unknown: 'unknown',
+};

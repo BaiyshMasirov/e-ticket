@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:eticket/data/models/models.dart';
 
 class UserTicketContainerView extends StatelessWidget {
-  final UserTicketsBookingsDto bookingTicket;
-  final List<UserTicketsBookingsDto> arrayBookingTicket;
+  final TicketsDto bookingTicket;
+  final List<TicketsDto> arrayBookingTicket;
 
   const UserTicketContainerView({
     required this.bookingTicket,

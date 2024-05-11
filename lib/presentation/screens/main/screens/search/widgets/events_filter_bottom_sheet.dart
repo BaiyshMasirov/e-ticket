@@ -11,13 +11,13 @@ import 'package:eticket/presentation/app_blocs/dictionary/dictionary_cubit.dart'
 
 class EventsFilterBottomSheet extends HookWidget {
   final KeyValueMapDto? initialEventType;
-  final KeyValueMapDto? initialEventStatus;
+  final EventStatus? initialEventStatus;
   final DateTime? initialDate;
   final Function() onClearFilter;
   final Function(
     DateTime? data,
     KeyValueMapDto? paymentType,
-    KeyValueMapDto? eventsStatus,
+    EventStatus? eventsStatus,
   ) onSelect;
 
   const EventsFilterBottomSheet._({
@@ -36,14 +36,11 @@ class EventsFilterBottomSheet extends HookWidget {
     final dateTo = useState(initialDate);
 
     final dateToController = useTextEditingController(
-      text: DateFormatters.datetimeToSlashedNullable(initialDate),
+      text: DateFormatters.toDateTimeNullable(initialDate),
     );
 
     final eventTypesList =
         useMemoized(() => context.read<DictionaryCubit>().state.eventTypes);
-
-    final eventStatusList =
-        useMemoized(() => context.read<DictionaryCubit>().state.eventStatuses);
 
     return Padding(
       padding: EdgeInsets.all(15.r),
@@ -62,14 +59,14 @@ class EventsFilterBottomSheet extends HookWidget {
             onChanged: (value) => eventType.value = value,
           ),
           SizedBox(height: 10.h),
-          DropDownFormFieldZ<KeyValueMapDto>(
+          DropDownFormFieldZ<EventStatus>(
             label: LocaleKeys.select_from_list.tr(),
             value: eventStatus.value != null
-                ? DropDownFormFieldZModel<KeyValueMapDto>(
-                    eventStatus.value!.value, eventStatus.value!)
+                ? DropDownFormFieldZModel<EventStatus>(
+                    eventStatus.value!.localizedName, eventStatus.value!)
                 : null,
-            items: eventStatusList
-                .map((e) => DropDownFormFieldZModel(e.value, e))
+            items: EventStatus.values
+                .map((e) => DropDownFormFieldZModel(e.localizedName, e))
                 .toList(),
             onChanged: (value) => eventStatus.value = value,
           ),
@@ -110,13 +107,13 @@ class EventsFilterBottomSheet extends HookWidget {
   static showBottomSheet({
     required BuildContext context,
     required KeyValueMapDto? initialEventType,
-    required KeyValueMapDto? initialEventStatus,
+    required EventStatus? initialEventStatus,
     required DateTime? initialDate,
     required Function() onClearFilter,
     required Function(
       DateTime? data,
       KeyValueMapDto? paymentType,
-      KeyValueMapDto? eventsStatus,
+      EventStatus? eventsStatus,
     ) onSelect,
   }) {
     showModalBottomSheet(

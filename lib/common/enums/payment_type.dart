@@ -1,13 +1,29 @@
 import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/assets.gen.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 enum PaymentType {
-  Card,
-  Mbank,
-  Elsom,
-  Megapay,
-  Odengi,
-  Balance,
+  @JsonValue(1)
+  Card(value: 1),
+
+  @JsonValue(2)
+  Mbank(value: 2),
+
+  @JsonValue(3)
+  Elsom(value: 3),
+
+  @JsonValue(4)
+  Megapay(value: 4),
+
+  @JsonValue(5)
+  Odengi(value: 5),
+
+  @JsonValue(6)
+  Balance(value: 6);
+
+  final int value;
+
+  const PaymentType({required this.value});
 }
 
 extension PaymentTypeX on PaymentType {
@@ -32,6 +48,8 @@ extension PaymentTypeX on PaymentType {
     switch (this) {
       case PaymentType.Odengi:
         return PaymentMechanism.deepLink;
+      case PaymentType.Megapay:
+        return PaymentMechanism.smsCode;
       default:
         return PaymentMechanism.none;
     }
@@ -41,6 +59,8 @@ extension PaymentTypeX on PaymentType {
     switch (this) {
       case PaymentType.Odengi:
         return PaymentCreds.phoneNumber;
+      case PaymentType.Megapay:
+        return PaymentCreds.phoneSmsCode;
       default:
         return PaymentCreds.none;
     }

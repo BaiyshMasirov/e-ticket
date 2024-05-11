@@ -1,4 +1,5 @@
 import 'package:eticket/data/data.dart';
+import 'package:eticket/data/models/booking/booking_paging_dto.dart';
 import 'package:sembast/sembast.dart';
 
 class HistoryLocalDatasources {
@@ -11,7 +12,7 @@ class HistoryLocalDatasources {
   static const String folderName = 'History';
   final store = stringMapStoreFactory.store(folderName);
 
-  Future saveHistoryBooking({required UserBookingsDto userBooking}) async {
+  Future saveHistoryBooking({required BookingPagingDto userBooking}) async {
     final recordKey =
         userBooking.bookingsList.map((item) => item.toString()).join(',');
 
@@ -22,11 +23,11 @@ class HistoryLocalDatasources {
     await store.delete(_db, finder: Finder());
   }
 
-  Future<UserBookingsDto?> getAllHistoryBookings() async {
+  Future<BookingPagingDto?> getAllHistoryBookings() async {
     final recordSnapshot = await store.findFirst(_db);
 
     if (recordSnapshot != null) {
-      final booking = UserBookingsDto.fromJson(recordSnapshot.value);
+      final booking = BookingPagingDto.fromJson(recordSnapshot.value);
       return booking;
     }
 

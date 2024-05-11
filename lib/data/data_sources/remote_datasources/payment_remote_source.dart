@@ -19,7 +19,7 @@ class PaymentRemoteSource {
       request: () => _dio.post(
         'api/Payment/create-payment',
         data: {
-          'paymentType': paymentType.index,
+          'paymentType': paymentType.value,
           'phoneNumber': phoneNumber,
           'bookingId': bookingId,
         },

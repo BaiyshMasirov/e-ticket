@@ -21,7 +21,7 @@ EventsFilter _$EventsFilterFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$EventsFilter {
   KeyValueMapDto? get type => throw _privateConstructorUsedError;
-  KeyValueMapDto? get status => throw _privateConstructorUsedError;
+  EventStatus? get status => throw _privateConstructorUsedError;
   @DateTimeUTCSerializer()
   DateTime? get date => throw _privateConstructorUsedError;
 
@@ -39,11 +39,10 @@ abstract class $EventsFilterCopyWith<$Res> {
   @useResult
   $Res call(
       {KeyValueMapDto? type,
-      KeyValueMapDto? status,
+      EventStatus? status,
       @DateTimeUTCSerializer() DateTime? date});
 
   $KeyValueMapDtoCopyWith<$Res>? get type;
-  $KeyValueMapDtoCopyWith<$Res>? get status;
 }
 
 /// @nodoc
@@ -71,7 +70,7 @@ class _$EventsFilterCopyWithImpl<$Res, $Val extends EventsFilter>
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as KeyValueMapDto?,
+              as EventStatus?,
       date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -90,18 +89,6 @@ class _$EventsFilterCopyWithImpl<$Res, $Val extends EventsFilter>
       return _then(_value.copyWith(type: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $KeyValueMapDtoCopyWith<$Res>? get status {
-    if (_value.status == null) {
-      return null;
-    }
-
-    return $KeyValueMapDtoCopyWith<$Res>(_value.status!, (value) {
-      return _then(_value.copyWith(status: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -114,13 +101,11 @@ abstract class _$$EventsFilterImplCopyWith<$Res>
   @useResult
   $Res call(
       {KeyValueMapDto? type,
-      KeyValueMapDto? status,
+      EventStatus? status,
       @DateTimeUTCSerializer() DateTime? date});
 
   @override
   $KeyValueMapDtoCopyWith<$Res>? get type;
-  @override
-  $KeyValueMapDtoCopyWith<$Res>? get status;
 }
 
 /// @nodoc
@@ -146,7 +131,7 @@ class __$$EventsFilterImplCopyWithImpl<$Res>
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as KeyValueMapDto?,
+              as EventStatus?,
       date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -168,7 +153,7 @@ class _$EventsFilterImpl extends _EventsFilter {
   @override
   final KeyValueMapDto? type;
   @override
-  final KeyValueMapDto? status;
+  final EventStatus? status;
   @override
   @DateTimeUTCSerializer()
   final DateTime? date;
@@ -209,7 +194,7 @@ class _$EventsFilterImpl extends _EventsFilter {
 abstract class _EventsFilter extends EventsFilter {
   const factory _EventsFilter(
       {final KeyValueMapDto? type,
-      final KeyValueMapDto? status,
+      final EventStatus? status,
       @DateTimeUTCSerializer() final DateTime? date}) = _$EventsFilterImpl;
   const _EventsFilter._() : super._();
 
@@ -219,7 +204,7 @@ abstract class _EventsFilter extends EventsFilter {
   @override
   KeyValueMapDto? get type;
   @override
-  KeyValueMapDto? get status;
+  EventStatus? get status;
   @override
   @DateTimeUTCSerializer()
   DateTime? get date;

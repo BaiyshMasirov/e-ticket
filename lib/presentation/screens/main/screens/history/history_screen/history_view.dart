@@ -1,5 +1,5 @@
 import 'package:eticket/presentation/screens/main/screens/history/history_screen/bloc/history_cubit.dart';
-import 'package:eticket/presentation/screens/main/screens/history/history_screen/widgets/history_container_view.dart';
+import 'package:eticket/presentation/screens/main/screens/history/history_screen/widgets/history_item.dart';
 import 'package:eticket/presentation/theme/styling.dart';
 import 'package:eticket/presentation/widgets/alerts/data_fetch_failure.dart';
 import 'package:eticket/presentation/widgets/app_sliver_scroll_view.dart';
@@ -43,13 +43,9 @@ class HistoryView extends HookWidget {
               itemBuilder: (context, i) {
                 final booking = bookingsList[i];
 
-                return HistoryContainerView(
-                  booking: booking,
-                );
+                return HistoryItem(booking: booking);
               },
-              separatorBuilder: (context, index) => SizedBox(
-                height: 10.h,
-              ),
+              separatorBuilder: (context, index) => SizedBox(height: 10.h),
             ),
             SliverToBoxAdapter(
               child: SizedBox(

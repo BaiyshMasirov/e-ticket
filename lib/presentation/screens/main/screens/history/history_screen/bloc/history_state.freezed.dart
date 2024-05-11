@@ -16,54 +16,49 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HistoryState {
-  List<UserBookingsListDto> get bookingsList =>
-      throw _privateConstructorUsedError;
-  UserBookingsFilter get filter => throw _privateConstructorUsedError;
+  List<BookingDto> get bookingsList => throw _privateConstructorUsedError;
+  BookingFilter get filter => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)
+            List<BookingDto> bookingsList, BookingFilter filter)
         initial,
     required TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)
+            List<BookingDto> bookingsList, BookingFilter filter)
         loadInProgress,
-    required TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)
+    required TResult Function(List<BookingDto> bookingsList,
+            BookingFilter filter, bool isNextPageAvailable)
         loadSuccess,
-    required TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)
+    required TResult Function(List<BookingDto> bookingsList,
+            BookingFilter filter, String? errorMessage)
         loadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter)?
         initial,
-    TResult? Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter)?
         loadInProgress,
-    TResult? Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter,
+            bool isNextPageAvailable)?
         loadSuccess,
-    TResult? Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter,
+            String? errorMessage)?
         loadError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter)?
         initial,
-    TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter)?
         loadInProgress,
-    TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter,
+            bool isNextPageAvailable)?
         loadSuccess,
-    TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter,
+            String? errorMessage)?
         loadError,
     required TResult orElse(),
   }) =>
@@ -105,10 +100,9 @@ abstract class $HistoryStateCopyWith<$Res> {
           HistoryState value, $Res Function(HistoryState) then) =
       _$HistoryStateCopyWithImpl<$Res, HistoryState>;
   @useResult
-  $Res call(
-      {List<UserBookingsListDto> bookingsList, UserBookingsFilter filter});
+  $Res call({List<BookingDto> bookingsList, BookingFilter filter});
 
-  $UserBookingsFilterCopyWith<$Res> get filter;
+  $BookingFilterCopyWith<$Res> get filter;
 }
 
 /// @nodoc
@@ -131,18 +125,18 @@ class _$HistoryStateCopyWithImpl<$Res, $Val extends HistoryState>
       bookingsList: null == bookingsList
           ? _value.bookingsList
           : bookingsList // ignore: cast_nullable_to_non_nullable
-              as List<UserBookingsListDto>,
+              as List<BookingDto>,
       filter: null == filter
           ? _value.filter
           : filter // ignore: cast_nullable_to_non_nullable
-              as UserBookingsFilter,
+              as BookingFilter,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserBookingsFilterCopyWith<$Res> get filter {
-    return $UserBookingsFilterCopyWith<$Res>(_value.filter, (value) {
+  $BookingFilterCopyWith<$Res> get filter {
+    return $BookingFilterCopyWith<$Res>(_value.filter, (value) {
       return _then(_value.copyWith(filter: value) as $Val);
     });
   }
@@ -156,11 +150,10 @@ abstract class _$$HistoryStateInitialImplCopyWith<$Res>
       __$$HistoryStateInitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {List<UserBookingsListDto> bookingsList, UserBookingsFilter filter});
+  $Res call({List<BookingDto> bookingsList, BookingFilter filter});
 
   @override
-  $UserBookingsFilterCopyWith<$Res> get filter;
+  $BookingFilterCopyWith<$Res> get filter;
 }
 
 /// @nodoc
@@ -181,11 +174,11 @@ class __$$HistoryStateInitialImplCopyWithImpl<$Res>
       bookingsList: null == bookingsList
           ? _value._bookingsList
           : bookingsList // ignore: cast_nullable_to_non_nullable
-              as List<UserBookingsListDto>,
+              as List<BookingDto>,
       filter: null == filter
           ? _value.filter
           : filter // ignore: cast_nullable_to_non_nullable
-              as UserBookingsFilter,
+              as BookingFilter,
     ));
   }
 }
@@ -194,21 +187,20 @@ class __$$HistoryStateInitialImplCopyWithImpl<$Res>
 
 class _$HistoryStateInitialImpl extends _HistoryStateInitial {
   const _$HistoryStateInitialImpl(
-      {required final List<UserBookingsListDto> bookingsList,
-      required this.filter})
+      {required final List<BookingDto> bookingsList, required this.filter})
       : _bookingsList = bookingsList,
         super._();
 
-  final List<UserBookingsListDto> _bookingsList;
+  final List<BookingDto> _bookingsList;
   @override
-  List<UserBookingsListDto> get bookingsList {
+  List<BookingDto> get bookingsList {
     if (_bookingsList is EqualUnmodifiableListView) return _bookingsList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_bookingsList);
   }
 
   @override
-  final UserBookingsFilter filter;
+  final BookingFilter filter;
 
   @override
   String toString() {
@@ -240,16 +232,16 @@ class _$HistoryStateInitialImpl extends _HistoryStateInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)
+            List<BookingDto> bookingsList, BookingFilter filter)
         initial,
     required TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)
+            List<BookingDto> bookingsList, BookingFilter filter)
         loadInProgress,
-    required TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)
+    required TResult Function(List<BookingDto> bookingsList,
+            BookingFilter filter, bool isNextPageAvailable)
         loadSuccess,
-    required TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)
+    required TResult Function(List<BookingDto> bookingsList,
+            BookingFilter filter, String? errorMessage)
         loadError,
   }) {
     return initial(bookingsList, filter);
@@ -258,17 +250,15 @@ class _$HistoryStateInitialImpl extends _HistoryStateInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter)?
         initial,
-    TResult? Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter)?
         loadInProgress,
-    TResult? Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter,
+            bool isNextPageAvailable)?
         loadSuccess,
-    TResult? Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter,
+            String? errorMessage)?
         loadError,
   }) {
     return initial?.call(bookingsList, filter);
@@ -277,17 +267,15 @@ class _$HistoryStateInitialImpl extends _HistoryStateInitial {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter)?
         initial,
-    TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter)?
         loadInProgress,
-    TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter,
+            bool isNextPageAvailable)?
         loadSuccess,
-    TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter,
+            String? errorMessage)?
         loadError,
     required TResult orElse(),
   }) {
@@ -337,14 +325,14 @@ class _$HistoryStateInitialImpl extends _HistoryStateInitial {
 
 abstract class _HistoryStateInitial extends HistoryState {
   const factory _HistoryStateInitial(
-      {required final List<UserBookingsListDto> bookingsList,
-      required final UserBookingsFilter filter}) = _$HistoryStateInitialImpl;
+      {required final List<BookingDto> bookingsList,
+      required final BookingFilter filter}) = _$HistoryStateInitialImpl;
   const _HistoryStateInitial._() : super._();
 
   @override
-  List<UserBookingsListDto> get bookingsList;
+  List<BookingDto> get bookingsList;
   @override
-  UserBookingsFilter get filter;
+  BookingFilter get filter;
   @override
   @JsonKey(ignore: true)
   _$$HistoryStateInitialImplCopyWith<_$HistoryStateInitialImpl> get copyWith =>
@@ -359,11 +347,10 @@ abstract class _$$HistoryProgressImplCopyWith<$Res>
       __$$HistoryProgressImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {List<UserBookingsListDto> bookingsList, UserBookingsFilter filter});
+  $Res call({List<BookingDto> bookingsList, BookingFilter filter});
 
   @override
-  $UserBookingsFilterCopyWith<$Res> get filter;
+  $BookingFilterCopyWith<$Res> get filter;
 }
 
 /// @nodoc
@@ -384,11 +371,11 @@ class __$$HistoryProgressImplCopyWithImpl<$Res>
       bookingsList: null == bookingsList
           ? _value._bookingsList
           : bookingsList // ignore: cast_nullable_to_non_nullable
-              as List<UserBookingsListDto>,
+              as List<BookingDto>,
       filter: null == filter
           ? _value.filter
           : filter // ignore: cast_nullable_to_non_nullable
-              as UserBookingsFilter,
+              as BookingFilter,
     ));
   }
 }
@@ -397,21 +384,20 @@ class __$$HistoryProgressImplCopyWithImpl<$Res>
 
 class _$HistoryProgressImpl extends HistoryProgress {
   const _$HistoryProgressImpl(
-      {required final List<UserBookingsListDto> bookingsList,
-      required this.filter})
+      {required final List<BookingDto> bookingsList, required this.filter})
       : _bookingsList = bookingsList,
         super._();
 
-  final List<UserBookingsListDto> _bookingsList;
+  final List<BookingDto> _bookingsList;
   @override
-  List<UserBookingsListDto> get bookingsList {
+  List<BookingDto> get bookingsList {
     if (_bookingsList is EqualUnmodifiableListView) return _bookingsList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_bookingsList);
   }
 
   @override
-  final UserBookingsFilter filter;
+  final BookingFilter filter;
 
   @override
   String toString() {
@@ -443,16 +429,16 @@ class _$HistoryProgressImpl extends HistoryProgress {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)
+            List<BookingDto> bookingsList, BookingFilter filter)
         initial,
     required TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)
+            List<BookingDto> bookingsList, BookingFilter filter)
         loadInProgress,
-    required TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)
+    required TResult Function(List<BookingDto> bookingsList,
+            BookingFilter filter, bool isNextPageAvailable)
         loadSuccess,
-    required TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)
+    required TResult Function(List<BookingDto> bookingsList,
+            BookingFilter filter, String? errorMessage)
         loadError,
   }) {
     return loadInProgress(bookingsList, filter);
@@ -461,17 +447,15 @@ class _$HistoryProgressImpl extends HistoryProgress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter)?
         initial,
-    TResult? Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter)?
         loadInProgress,
-    TResult? Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter,
+            bool isNextPageAvailable)?
         loadSuccess,
-    TResult? Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter,
+            String? errorMessage)?
         loadError,
   }) {
     return loadInProgress?.call(bookingsList, filter);
@@ -480,17 +464,15 @@ class _$HistoryProgressImpl extends HistoryProgress {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter)?
         initial,
-    TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter)?
         loadInProgress,
-    TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter,
+            bool isNextPageAvailable)?
         loadSuccess,
-    TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter,
+            String? errorMessage)?
         loadError,
     required TResult orElse(),
   }) {
@@ -540,14 +522,14 @@ class _$HistoryProgressImpl extends HistoryProgress {
 
 abstract class HistoryProgress extends HistoryState {
   const factory HistoryProgress(
-      {required final List<UserBookingsListDto> bookingsList,
-      required final UserBookingsFilter filter}) = _$HistoryProgressImpl;
+      {required final List<BookingDto> bookingsList,
+      required final BookingFilter filter}) = _$HistoryProgressImpl;
   const HistoryProgress._() : super._();
 
   @override
-  List<UserBookingsListDto> get bookingsList;
+  List<BookingDto> get bookingsList;
   @override
-  UserBookingsFilter get filter;
+  BookingFilter get filter;
   @override
   @JsonKey(ignore: true)
   _$$HistoryProgressImplCopyWith<_$HistoryProgressImpl> get copyWith =>
@@ -563,12 +545,12 @@ abstract class _$$HistoryStateSuccessImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<UserBookingsListDto> bookingsList,
-      UserBookingsFilter filter,
+      {List<BookingDto> bookingsList,
+      BookingFilter filter,
       bool isNextPageAvailable});
 
   @override
-  $UserBookingsFilterCopyWith<$Res> get filter;
+  $BookingFilterCopyWith<$Res> get filter;
 }
 
 /// @nodoc
@@ -590,11 +572,11 @@ class __$$HistoryStateSuccessImplCopyWithImpl<$Res>
       bookingsList: null == bookingsList
           ? _value._bookingsList
           : bookingsList // ignore: cast_nullable_to_non_nullable
-              as List<UserBookingsListDto>,
+              as List<BookingDto>,
       filter: null == filter
           ? _value.filter
           : filter // ignore: cast_nullable_to_non_nullable
-              as UserBookingsFilter,
+              as BookingFilter,
       isNextPageAvailable: null == isNextPageAvailable
           ? _value.isNextPageAvailable
           : isNextPageAvailable // ignore: cast_nullable_to_non_nullable
@@ -607,22 +589,22 @@ class __$$HistoryStateSuccessImplCopyWithImpl<$Res>
 
 class _$HistoryStateSuccessImpl extends _HistoryStateSuccess {
   const _$HistoryStateSuccessImpl(
-      {required final List<UserBookingsListDto> bookingsList,
+      {required final List<BookingDto> bookingsList,
       required this.filter,
       required this.isNextPageAvailable})
       : _bookingsList = bookingsList,
         super._();
 
-  final List<UserBookingsListDto> _bookingsList;
+  final List<BookingDto> _bookingsList;
   @override
-  List<UserBookingsListDto> get bookingsList {
+  List<BookingDto> get bookingsList {
     if (_bookingsList is EqualUnmodifiableListView) return _bookingsList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_bookingsList);
   }
 
   @override
-  final UserBookingsFilter filter;
+  final BookingFilter filter;
   @override
   final bool isNextPageAvailable;
 
@@ -661,16 +643,16 @@ class _$HistoryStateSuccessImpl extends _HistoryStateSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)
+            List<BookingDto> bookingsList, BookingFilter filter)
         initial,
     required TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)
+            List<BookingDto> bookingsList, BookingFilter filter)
         loadInProgress,
-    required TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)
+    required TResult Function(List<BookingDto> bookingsList,
+            BookingFilter filter, bool isNextPageAvailable)
         loadSuccess,
-    required TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)
+    required TResult Function(List<BookingDto> bookingsList,
+            BookingFilter filter, String? errorMessage)
         loadError,
   }) {
     return loadSuccess(bookingsList, filter, isNextPageAvailable);
@@ -679,17 +661,15 @@ class _$HistoryStateSuccessImpl extends _HistoryStateSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter)?
         initial,
-    TResult? Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter)?
         loadInProgress,
-    TResult? Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter,
+            bool isNextPageAvailable)?
         loadSuccess,
-    TResult? Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter,
+            String? errorMessage)?
         loadError,
   }) {
     return loadSuccess?.call(bookingsList, filter, isNextPageAvailable);
@@ -698,17 +678,15 @@ class _$HistoryStateSuccessImpl extends _HistoryStateSuccess {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter)?
         initial,
-    TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter)?
         loadInProgress,
-    TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter,
+            bool isNextPageAvailable)?
         loadSuccess,
-    TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter,
+            String? errorMessage)?
         loadError,
     required TResult orElse(),
   }) {
@@ -758,15 +736,15 @@ class _$HistoryStateSuccessImpl extends _HistoryStateSuccess {
 
 abstract class _HistoryStateSuccess extends HistoryState {
   const factory _HistoryStateSuccess(
-      {required final List<UserBookingsListDto> bookingsList,
-      required final UserBookingsFilter filter,
+      {required final List<BookingDto> bookingsList,
+      required final BookingFilter filter,
       required final bool isNextPageAvailable}) = _$HistoryStateSuccessImpl;
   const _HistoryStateSuccess._() : super._();
 
   @override
-  List<UserBookingsListDto> get bookingsList;
+  List<BookingDto> get bookingsList;
   @override
-  UserBookingsFilter get filter;
+  BookingFilter get filter;
   bool get isNextPageAvailable;
   @override
   @JsonKey(ignore: true)
@@ -783,12 +761,12 @@ abstract class _$$HistoryStateErrorImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<UserBookingsListDto> bookingsList,
-      UserBookingsFilter filter,
+      {List<BookingDto> bookingsList,
+      BookingFilter filter,
       String? errorMessage});
 
   @override
-  $UserBookingsFilterCopyWith<$Res> get filter;
+  $BookingFilterCopyWith<$Res> get filter;
 }
 
 /// @nodoc
@@ -810,11 +788,11 @@ class __$$HistoryStateErrorImplCopyWithImpl<$Res>
       bookingsList: null == bookingsList
           ? _value._bookingsList
           : bookingsList // ignore: cast_nullable_to_non_nullable
-              as List<UserBookingsListDto>,
+              as List<BookingDto>,
       filter: null == filter
           ? _value.filter
           : filter // ignore: cast_nullable_to_non_nullable
-              as UserBookingsFilter,
+              as BookingFilter,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -827,22 +805,22 @@ class __$$HistoryStateErrorImplCopyWithImpl<$Res>
 
 class _$HistoryStateErrorImpl extends _HistoryStateError {
   const _$HistoryStateErrorImpl(
-      {required final List<UserBookingsListDto> bookingsList,
+      {required final List<BookingDto> bookingsList,
       required this.filter,
       this.errorMessage})
       : _bookingsList = bookingsList,
         super._();
 
-  final List<UserBookingsListDto> _bookingsList;
+  final List<BookingDto> _bookingsList;
   @override
-  List<UserBookingsListDto> get bookingsList {
+  List<BookingDto> get bookingsList {
     if (_bookingsList is EqualUnmodifiableListView) return _bookingsList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_bookingsList);
   }
 
   @override
-  final UserBookingsFilter filter;
+  final BookingFilter filter;
   @override
   final String? errorMessage;
 
@@ -878,16 +856,16 @@ class _$HistoryStateErrorImpl extends _HistoryStateError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)
+            List<BookingDto> bookingsList, BookingFilter filter)
         initial,
     required TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)
+            List<BookingDto> bookingsList, BookingFilter filter)
         loadInProgress,
-    required TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)
+    required TResult Function(List<BookingDto> bookingsList,
+            BookingFilter filter, bool isNextPageAvailable)
         loadSuccess,
-    required TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)
+    required TResult Function(List<BookingDto> bookingsList,
+            BookingFilter filter, String? errorMessage)
         loadError,
   }) {
     return loadError(bookingsList, filter, errorMessage);
@@ -896,17 +874,15 @@ class _$HistoryStateErrorImpl extends _HistoryStateError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter)?
         initial,
-    TResult? Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter)?
         loadInProgress,
-    TResult? Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter,
+            bool isNextPageAvailable)?
         loadSuccess,
-    TResult? Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)?
+    TResult? Function(List<BookingDto> bookingsList, BookingFilter filter,
+            String? errorMessage)?
         loadError,
   }) {
     return loadError?.call(bookingsList, filter, errorMessage);
@@ -915,17 +891,15 @@ class _$HistoryStateErrorImpl extends _HistoryStateError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter)?
         initial,
-    TResult Function(
-            List<UserBookingsListDto> bookingsList, UserBookingsFilter filter)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter)?
         loadInProgress,
-    TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, bool isNextPageAvailable)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter,
+            bool isNextPageAvailable)?
         loadSuccess,
-    TResult Function(List<UserBookingsListDto> bookingsList,
-            UserBookingsFilter filter, String? errorMessage)?
+    TResult Function(List<BookingDto> bookingsList, BookingFilter filter,
+            String? errorMessage)?
         loadError,
     required TResult orElse(),
   }) {
@@ -975,15 +949,15 @@ class _$HistoryStateErrorImpl extends _HistoryStateError {
 
 abstract class _HistoryStateError extends HistoryState {
   const factory _HistoryStateError(
-      {required final List<UserBookingsListDto> bookingsList,
-      required final UserBookingsFilter filter,
+      {required final List<BookingDto> bookingsList,
+      required final BookingFilter filter,
       final String? errorMessage}) = _$HistoryStateErrorImpl;
   const _HistoryStateError._() : super._();
 
   @override
-  List<UserBookingsListDto> get bookingsList;
+  List<BookingDto> get bookingsList;
   @override
-  UserBookingsFilter get filter;
+  BookingFilter get filter;
   String? get errorMessage;
   @override
   @JsonKey(ignore: true)

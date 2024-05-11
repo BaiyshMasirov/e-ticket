@@ -17,21 +17,21 @@ class HistoryCubit extends Cubit<HistoryState> {
     required this.snackbarCubit,
   }) : super(const HistoryState.initial(
           bookingsList: [],
-          filter: UserBookingsFilter(),
+          filter: BookingFilter(),
         ));
 
   Future<void> clearFilter() async {
-    emit(state.copyWith(filter: const UserBookingsFilter()));
+    emit(state.copyWith(filter: const BookingFilter()));
     refreshPage();
   }
 
-  Future<void> refreshPage({UserBookingsFilter? filter}) async {
+  Future<void> refreshPage({BookingFilter? filter}) async {
     _page = 1;
 
     emit(
       HistoryState.initial(
         bookingsList: [],
-        filter: filter ?? const UserBookingsFilter(),
+        filter: filter ?? const BookingFilter(),
       ),
     );
     await getUserBookings();

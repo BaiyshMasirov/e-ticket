@@ -79,6 +79,16 @@ class PaymentMethodsView extends HookWidget {
                         )),
                         closePressed: () => context.popRoute(),
                       );
+                    case PaymentCreds.phoneSmsCode:
+                      return PaySMSConfirmBottom.show(
+                        context: context,
+                        bookingId: bookingId,
+                        paymentType: type,
+                        onSuccess: () => context.navigateTo(MainRoute(
+                          initialTab: MAIN_SCREEN_TAB.HISTORY,
+                        )),
+                        closePressed: () => context.popRoute(),
+                      );
                     default:
                       context.read<SnackbarCubit>().showErrorSnackbar(
                           message:

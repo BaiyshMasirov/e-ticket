@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 enum LocationType {
@@ -41,4 +43,33 @@ enum LocationType {
   mapleLeaf,
 
   unknown,
+}
+
+extension LocationTypeX on LocationType {
+  String get localizedName {
+    switch (this) {
+      case LocationType.noSeating:
+        return LocaleKeys.noSeating.tr();
+      case LocationType.sportPalace:
+        return LocaleKeys.sportPalace.tr();
+      case LocationType.bishkekArena:
+        return LocaleKeys.bishkekArena.tr();
+      case LocationType.spartakStadium:
+        return LocaleKeys.spartakStadium.tr();
+      case LocationType.balletTheater:
+        return LocaleKeys.balletTheater.tr();
+      case LocationType.philarmonic:
+        return LocaleKeys.philarmonic.tr();
+      case LocationType.ruDramTheater:
+        return LocaleKeys.ruDramTheater.tr();
+      case LocationType.kgDramTheater:
+        return LocaleKeys.kgDramTheater.tr();
+      case LocationType.nationalTheater:
+        return LocaleKeys.nationalTheater.tr();
+      case LocationType.mapleLeaf:
+        return LocaleKeys.mapleLeaf.tr();
+      default:
+        return '-';
+    }
+  }
 }

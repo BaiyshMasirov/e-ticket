@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'user_bookings_dto.dart';
+part of 'booking_paging_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,42 +14,41 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-UserBookingsDto _$UserBookingsDtoFromJson(Map<String, dynamic> json) {
-  return _UserBookingsDto.fromJson(json);
+BookingPagingDto _$BookingPagingDtoFromJson(Map<String, dynamic> json) {
+  return _BookingPagingDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$UserBookingsDto {
+mixin _$BookingPagingDto {
   int get currentPageIndex => throw _privateConstructorUsedError;
   int get pageSize => throw _privateConstructorUsedError;
   int get totalItemCount => throw _privateConstructorUsedError;
   @JsonKey(name: 'list')
-  List<UserBookingsListDto> get bookingsList =>
-      throw _privateConstructorUsedError;
+  List<BookingDto> get bookingsList => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserBookingsDtoCopyWith<UserBookingsDto> get copyWith =>
+  $BookingPagingDtoCopyWith<BookingPagingDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserBookingsDtoCopyWith<$Res> {
-  factory $UserBookingsDtoCopyWith(
-          UserBookingsDto value, $Res Function(UserBookingsDto) then) =
-      _$UserBookingsDtoCopyWithImpl<$Res, UserBookingsDto>;
+abstract class $BookingPagingDtoCopyWith<$Res> {
+  factory $BookingPagingDtoCopyWith(
+          BookingPagingDto value, $Res Function(BookingPagingDto) then) =
+      _$BookingPagingDtoCopyWithImpl<$Res, BookingPagingDto>;
   @useResult
   $Res call(
       {int currentPageIndex,
       int pageSize,
       int totalItemCount,
-      @JsonKey(name: 'list') List<UserBookingsListDto> bookingsList});
+      @JsonKey(name: 'list') List<BookingDto> bookingsList});
 }
 
 /// @nodoc
-class _$UserBookingsDtoCopyWithImpl<$Res, $Val extends UserBookingsDto>
-    implements $UserBookingsDtoCopyWith<$Res> {
-  _$UserBookingsDtoCopyWithImpl(this._value, this._then);
+class _$BookingPagingDtoCopyWithImpl<$Res, $Val extends BookingPagingDto>
+    implements $BookingPagingDtoCopyWith<$Res> {
+  _$BookingPagingDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -80,32 +79,32 @@ class _$UserBookingsDtoCopyWithImpl<$Res, $Val extends UserBookingsDto>
       bookingsList: null == bookingsList
           ? _value.bookingsList
           : bookingsList // ignore: cast_nullable_to_non_nullable
-              as List<UserBookingsListDto>,
+              as List<BookingDto>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$UserBookingsDtoImplCopyWith<$Res>
-    implements $UserBookingsDtoCopyWith<$Res> {
-  factory _$$UserBookingsDtoImplCopyWith(_$UserBookingsDtoImpl value,
-          $Res Function(_$UserBookingsDtoImpl) then) =
-      __$$UserBookingsDtoImplCopyWithImpl<$Res>;
+abstract class _$$BookingPagingDtoImplCopyWith<$Res>
+    implements $BookingPagingDtoCopyWith<$Res> {
+  factory _$$BookingPagingDtoImplCopyWith(_$BookingPagingDtoImpl value,
+          $Res Function(_$BookingPagingDtoImpl) then) =
+      __$$BookingPagingDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {int currentPageIndex,
       int pageSize,
       int totalItemCount,
-      @JsonKey(name: 'list') List<UserBookingsListDto> bookingsList});
+      @JsonKey(name: 'list') List<BookingDto> bookingsList});
 }
 
 /// @nodoc
-class __$$UserBookingsDtoImplCopyWithImpl<$Res>
-    extends _$UserBookingsDtoCopyWithImpl<$Res, _$UserBookingsDtoImpl>
-    implements _$$UserBookingsDtoImplCopyWith<$Res> {
-  __$$UserBookingsDtoImplCopyWithImpl(
-      _$UserBookingsDtoImpl _value, $Res Function(_$UserBookingsDtoImpl) _then)
+class __$$BookingPagingDtoImplCopyWithImpl<$Res>
+    extends _$BookingPagingDtoCopyWithImpl<$Res, _$BookingPagingDtoImpl>
+    implements _$$BookingPagingDtoImplCopyWith<$Res> {
+  __$$BookingPagingDtoImplCopyWithImpl(_$BookingPagingDtoImpl _value,
+      $Res Function(_$BookingPagingDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -116,7 +115,7 @@ class __$$UserBookingsDtoImplCopyWithImpl<$Res>
     Object? totalItemCount = null,
     Object? bookingsList = null,
   }) {
-    return _then(_$UserBookingsDtoImpl(
+    return _then(_$BookingPagingDtoImpl(
       currentPageIndex: null == currentPageIndex
           ? _value.currentPageIndex
           : currentPageIndex // ignore: cast_nullable_to_non_nullable
@@ -132,25 +131,24 @@ class __$$UserBookingsDtoImplCopyWithImpl<$Res>
       bookingsList: null == bookingsList
           ? _value._bookingsList
           : bookingsList // ignore: cast_nullable_to_non_nullable
-              as List<UserBookingsListDto>,
+              as List<BookingDto>,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$UserBookingsDtoImpl extends _UserBookingsDto {
-  const _$UserBookingsDtoImpl(
+class _$BookingPagingDtoImpl extends _BookingPagingDto {
+  const _$BookingPagingDtoImpl(
       {required this.currentPageIndex,
       required this.pageSize,
       required this.totalItemCount,
-      @JsonKey(name: 'list')
-      required final List<UserBookingsListDto> bookingsList})
+      @JsonKey(name: 'list') required final List<BookingDto> bookingsList})
       : _bookingsList = bookingsList,
         super._();
 
-  factory _$UserBookingsDtoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UserBookingsDtoImplFromJson(json);
+  factory _$BookingPagingDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BookingPagingDtoImplFromJson(json);
 
   @override
   final int currentPageIndex;
@@ -158,10 +156,10 @@ class _$UserBookingsDtoImpl extends _UserBookingsDto {
   final int pageSize;
   @override
   final int totalItemCount;
-  final List<UserBookingsListDto> _bookingsList;
+  final List<BookingDto> _bookingsList;
   @override
   @JsonKey(name: 'list')
-  List<UserBookingsListDto> get bookingsList {
+  List<BookingDto> get bookingsList {
     if (_bookingsList is EqualUnmodifiableListView) return _bookingsList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_bookingsList);
@@ -169,14 +167,14 @@ class _$UserBookingsDtoImpl extends _UserBookingsDto {
 
   @override
   String toString() {
-    return 'UserBookingsDto(currentPageIndex: $currentPageIndex, pageSize: $pageSize, totalItemCount: $totalItemCount, bookingsList: $bookingsList)';
+    return 'BookingPagingDto(currentPageIndex: $currentPageIndex, pageSize: $pageSize, totalItemCount: $totalItemCount, bookingsList: $bookingsList)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserBookingsDtoImpl &&
+            other is _$BookingPagingDtoImpl &&
             (identical(other.currentPageIndex, currentPageIndex) ||
                 other.currentPageIndex == currentPageIndex) &&
             (identical(other.pageSize, pageSize) ||
@@ -195,30 +193,29 @@ class _$UserBookingsDtoImpl extends _UserBookingsDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserBookingsDtoImplCopyWith<_$UserBookingsDtoImpl> get copyWith =>
-      __$$UserBookingsDtoImplCopyWithImpl<_$UserBookingsDtoImpl>(
+  _$$BookingPagingDtoImplCopyWith<_$BookingPagingDtoImpl> get copyWith =>
+      __$$BookingPagingDtoImplCopyWithImpl<_$BookingPagingDtoImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$UserBookingsDtoImplToJson(
+    return _$$BookingPagingDtoImplToJson(
       this,
     );
   }
 }
 
-abstract class _UserBookingsDto extends UserBookingsDto {
-  const factory _UserBookingsDto(
-          {required final int currentPageIndex,
-          required final int pageSize,
-          required final int totalItemCount,
-          @JsonKey(name: 'list')
-          required final List<UserBookingsListDto> bookingsList}) =
-      _$UserBookingsDtoImpl;
-  const _UserBookingsDto._() : super._();
+abstract class _BookingPagingDto extends BookingPagingDto {
+  const factory _BookingPagingDto(
+      {required final int currentPageIndex,
+      required final int pageSize,
+      required final int totalItemCount,
+      @JsonKey(name: 'list')
+      required final List<BookingDto> bookingsList}) = _$BookingPagingDtoImpl;
+  const _BookingPagingDto._() : super._();
 
-  factory _UserBookingsDto.fromJson(Map<String, dynamic> json) =
-      _$UserBookingsDtoImpl.fromJson;
+  factory _BookingPagingDto.fromJson(Map<String, dynamic> json) =
+      _$BookingPagingDtoImpl.fromJson;
 
   @override
   int get currentPageIndex;
@@ -228,9 +225,9 @@ abstract class _UserBookingsDto extends UserBookingsDto {
   int get totalItemCount;
   @override
   @JsonKey(name: 'list')
-  List<UserBookingsListDto> get bookingsList;
+  List<BookingDto> get bookingsList;
   @override
   @JsonKey(ignore: true)
-  _$$UserBookingsDtoImplCopyWith<_$UserBookingsDtoImpl> get copyWith =>
+  _$$BookingPagingDtoImplCopyWith<_$BookingPagingDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -11,8 +11,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class UserTicketItem extends StatelessWidget {
-  final UserTicketsBookingsDto bookingTicket;
-  final List<UserTicketsBookingsDto> arrayBookingTicket;
+  final TicketsDto bookingTicket;
+  final List<TicketsDto> arrayBookingTicket;
 
   const UserTicketItem({
     required this.bookingTicket,
@@ -73,7 +73,10 @@ class UserTicketItem extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          bookingTicket.type.name.tr(),
+                          context.dictionaries
+                                  .getTicketTypeByKey(bookingTicket.ticketType)
+                                  ?.value ??
+                              '-',
                         ),
                       ],
                     ),

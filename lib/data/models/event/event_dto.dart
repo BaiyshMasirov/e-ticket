@@ -14,7 +14,8 @@ class EventDto with _$EventDto {
     required String? description,
     @DateTimeUTCSerializer() required DateTime startDate,
     @DateTimeUTCSerializer() required DateTime endDate,
-    required EventStatusType status,
+    @JsonKey(unknownEnumValue: EventStatus.unknown)
+    required EventStatus status,
     required int ageLimit,
     required double minPrice,
     required int sold,
@@ -29,7 +30,7 @@ class EventDto with _$EventDto {
     required String? image,
   }) = _EventDto;
 
-  bool get canPurchaseTickets => status == EventStatusType.active;
+  bool get canPurchaseTickets => status == EventStatus.active;
 
   factory EventDto.fromJson(Json json) => _$EventDtoFromJson(json);
 }

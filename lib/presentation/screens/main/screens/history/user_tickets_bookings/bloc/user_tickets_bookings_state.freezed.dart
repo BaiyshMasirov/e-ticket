@@ -20,7 +20,7 @@ mixin _$UserTicketsBookingsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<UserTicketsBookingsDto> data) data,
+    required TResult Function(List<TicketsDto> data) data,
     required TResult Function(String? errorMessage) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$UserTicketsBookingsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<UserTicketsBookingsDto> data)? data,
+    TResult? Function(List<TicketsDto> data)? data,
     TResult? Function(String? errorMessage)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$UserTicketsBookingsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<UserTicketsBookingsDto> data)? data,
+    TResult Function(List<TicketsDto> data)? data,
     TResult Function(String? errorMessage)? error,
     required TResult orElse(),
   }) =>
@@ -132,7 +132,7 @@ class _$UserTicketsBookingsStateInitialImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<UserTicketsBookingsDto> data) data,
+    required TResult Function(List<TicketsDto> data) data,
     required TResult Function(String? errorMessage) error,
   }) {
     return initial();
@@ -143,7 +143,7 @@ class _$UserTicketsBookingsStateInitialImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<UserTicketsBookingsDto> data)? data,
+    TResult? Function(List<TicketsDto> data)? data,
     TResult? Function(String? errorMessage)? error,
   }) {
     return initial?.call();
@@ -154,7 +154,7 @@ class _$UserTicketsBookingsStateInitialImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<UserTicketsBookingsDto> data)? data,
+    TResult Function(List<TicketsDto> data)? data,
     TResult Function(String? errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -253,7 +253,7 @@ class _$UserTicketsBookingsLoadingImpl extends UserTicketsBookingsLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<UserTicketsBookingsDto> data) data,
+    required TResult Function(List<TicketsDto> data) data,
     required TResult Function(String? errorMessage) error,
   }) {
     return loading();
@@ -264,7 +264,7 @@ class _$UserTicketsBookingsLoadingImpl extends UserTicketsBookingsLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<UserTicketsBookingsDto> data)? data,
+    TResult? Function(List<TicketsDto> data)? data,
     TResult? Function(String? errorMessage)? error,
   }) {
     return loading?.call();
@@ -275,7 +275,7 @@ class _$UserTicketsBookingsLoadingImpl extends UserTicketsBookingsLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<UserTicketsBookingsDto> data)? data,
+    TResult Function(List<TicketsDto> data)? data,
     TResult Function(String? errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -335,7 +335,7 @@ abstract class _$$UserTicketsBookingsStateDataImplCopyWith<$Res> {
           $Res Function(_$UserTicketsBookingsStateDataImpl) then) =
       __$$UserTicketsBookingsStateDataImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<UserTicketsBookingsDto> data});
+  $Res call({List<TicketsDto> data});
 }
 
 /// @nodoc
@@ -357,7 +357,7 @@ class __$$UserTicketsBookingsStateDataImplCopyWithImpl<$Res>
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<UserTicketsBookingsDto>,
+              as List<TicketsDto>,
     ));
   }
 }
@@ -366,13 +366,13 @@ class __$$UserTicketsBookingsStateDataImplCopyWithImpl<$Res>
 
 class _$UserTicketsBookingsStateDataImpl extends _UserTicketsBookingsStateData {
   const _$UserTicketsBookingsStateDataImpl(
-      {required final List<UserTicketsBookingsDto> data})
+      {required final List<TicketsDto> data})
       : _data = data,
         super._();
 
-  final List<UserTicketsBookingsDto> _data;
+  final List<TicketsDto> _data;
   @override
-  List<UserTicketsBookingsDto> get data {
+  List<TicketsDto> get data {
     if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
@@ -408,7 +408,7 @@ class _$UserTicketsBookingsStateDataImpl extends _UserTicketsBookingsStateData {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<UserTicketsBookingsDto> data) data,
+    required TResult Function(List<TicketsDto> data) data,
     required TResult Function(String? errorMessage) error,
   }) {
     return data(this.data);
@@ -419,7 +419,7 @@ class _$UserTicketsBookingsStateDataImpl extends _UserTicketsBookingsStateData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<UserTicketsBookingsDto> data)? data,
+    TResult? Function(List<TicketsDto> data)? data,
     TResult? Function(String? errorMessage)? error,
   }) {
     return data?.call(this.data);
@@ -430,7 +430,7 @@ class _$UserTicketsBookingsStateDataImpl extends _UserTicketsBookingsStateData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<UserTicketsBookingsDto> data)? data,
+    TResult Function(List<TicketsDto> data)? data,
     TResult Function(String? errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -480,11 +480,11 @@ class _$UserTicketsBookingsStateDataImpl extends _UserTicketsBookingsStateData {
 
 abstract class _UserTicketsBookingsStateData extends UserTicketsBookingsState {
   const factory _UserTicketsBookingsStateData(
-          {required final List<UserTicketsBookingsDto> data}) =
+          {required final List<TicketsDto> data}) =
       _$UserTicketsBookingsStateDataImpl;
   const _UserTicketsBookingsStateData._() : super._();
 
-  List<UserTicketsBookingsDto> get data;
+  List<TicketsDto> get data;
   @JsonKey(ignore: true)
   _$$UserTicketsBookingsStateDataImplCopyWith<
           _$UserTicketsBookingsStateDataImpl>
@@ -564,7 +564,7 @@ class _$UserTicketsBookingsStateErrorImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<UserTicketsBookingsDto> data) data,
+    required TResult Function(List<TicketsDto> data) data,
     required TResult Function(String? errorMessage) error,
   }) {
     return error(errorMessage);
@@ -575,7 +575,7 @@ class _$UserTicketsBookingsStateErrorImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<UserTicketsBookingsDto> data)? data,
+    TResult? Function(List<TicketsDto> data)? data,
     TResult? Function(String? errorMessage)? error,
   }) {
     return error?.call(errorMessage);
@@ -586,7 +586,7 @@ class _$UserTicketsBookingsStateErrorImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<UserTicketsBookingsDto> data)? data,
+    TResult Function(List<TicketsDto> data)? data,
     TResult Function(String? errorMessage)? error,
     required TResult orElse(),
   }) {

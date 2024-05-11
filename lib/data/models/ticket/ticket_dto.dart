@@ -10,15 +10,15 @@ class TicketDto with _$TicketDto {
   const TicketDto._();
   const factory TicketDto({
     required String id,
-    required int type,
+    @JsonKey(name: 'type') required int ticketType,
     required int placeNumber,
     required int rowNumber,
     required int branchIndex,
     required int branchType,
     required int index,
     required double price,
-    @JsonKey(unknownEnumValue: TicketStatus.unknown)
-    required TicketStatus status,
+    @JsonKey(name: 'status', unknownEnumValue: TicketStatus.unknown)
+    required TicketStatus ticketStatus,
   }) = _TicketDto;
 
   factory TicketDto.fromJson(Json json) => _$TicketDtoFromJson(json);

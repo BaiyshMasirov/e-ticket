@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/common/common.dart';
+import 'package:eticket/data/models/booking/booking_paging_dto.dart';
 
 class BookingRemoteDatasource {
   final Dio _dio;
@@ -23,8 +24,8 @@ class BookingRemoteDatasource {
     return response;
   }
 
-  Future<RemoteResponse<UserBookingsDto>> getUserBookings({
-    required UserBookingsFilter filter,
+  Future<RemoteResponse<BookingPagingDto>> getUserBookings({
+    required BookingFilter filter,
     required int page,
   }) async {
     final queryP = filter.toJson();
@@ -36,13 +37,13 @@ class BookingRemoteDatasource {
         'api/Booking/get-user-bookings',
         queryParameters: queryP,
       ),
-      parse: (json) => UserBookingsDto.fromJson(json),
+      parse: (json) => BookingPagingDto.fromJson(json),
     );
 
     return response;
   }
 
-  Future<RemoteResponse<List<UserTicketsBookingsDto>>> getUserTicketsBookings(
+  Future<RemoteResponse<List<TicketsDto>>> getUserTicketsBookings(
     String id,
   ) async {
     return await _dio.makeRequest(
@@ -54,8 +55,7 @@ class BookingRemoteDatasource {
       ),
       parse: (json) {
         final data = json as List;
-        final result =
-            data.map((item) => UserTicketsBookingsDto.fromJson(item)).toList();
+        final result = data.map((item) => TicketsDto.fromJson(item)).toList();
         return result;
       },
     );
