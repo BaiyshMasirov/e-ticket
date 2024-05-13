@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Constants {
   static String envFileName = '.env';
-}
 
-final List<Locale> locales = [const Locale('ru')];
+  static const Locale defaultLocale = Locale('ru');
+
+  static const List<Locale> locales = [defaultLocale];
+}
 
 final double seatSvgSize = 4.8.w;

@@ -8,14 +8,17 @@ class AuthInterceptor extends QueuedInterceptor {
   final Dio _dio;
   final AuthRepository _authRepository;
   final AuthCubit _authCubit;
+  final Configuration _configuration;
 
   AuthInterceptor(
     Dio dio,
     AuthRepository authRepository,
     AuthCubit authCubit,
+    Configuration configuration,
   )   : _dio = dio,
         _authRepository = authRepository,
-        _authCubit = authCubit;
+        _authCubit = authCubit,
+        _configuration = configuration;
 
   @override
   Future<void> onRequest(
@@ -28,6 +31,8 @@ class AuthInterceptor extends QueuedInterceptor {
           ? {}
           : {
               HttpConstants.authorization: 'Bearer ${credentials.accessToken}',
+              'app-version': _configuration.appVersion,
+              'app-build-number': _configuration.appBuildNumber,
             });
 
     handler.next(modifiedOptions);

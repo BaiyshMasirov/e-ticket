@@ -24,11 +24,6 @@ class EventScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        // title: Text(event.name ?? ''),
-      ),
       bgColor: context.colorScheme.surfaceVariant,
       extendBodyBehindAppBar: true,
       floatingActionButton: event.canPurchaseTickets
@@ -39,15 +34,6 @@ class EventScreen extends StatelessWidget {
                   event.startDate,
                   event.endDate,
                 );
-
-                if (eventDateTimes.length == 1) {
-                  navigateToBooking(
-                    context: context,
-                    dateTime: eventDateTimes.first,
-                    event: event,
-                  );
-                  return;
-                }
 
                 EventDatepickerDialog.showEventDatepickerDialog(
                   context: context,

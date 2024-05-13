@@ -15,14 +15,14 @@ class LocalizationWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return EasyLocalization(
-      supportedLocales: locales,
+      supportedLocales: Constants.locales,
       path: 'assets/translations',
       startLocale: context.select<SettingsCubit, Locale>(
         (value) => Locale(
           value.state.locale,
         ),
       ),
-      fallbackLocale: locales[0],
+      fallbackLocale: Constants.defaultLocale,
       child: child,
     );
   }

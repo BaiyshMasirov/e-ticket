@@ -123,5 +123,7 @@ abstract class  LocaleKeys {
   static const event_status = 'event_status';
   static const ticket_payment_status = 'ticket_payment_status';
   static const ticket_payemnt_date = 'ticket_payemnt_date';
+  static const from = 'from';
+  static const schedule = 'schedule';
 
 }

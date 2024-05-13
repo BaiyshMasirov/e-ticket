@@ -1,6 +1,9 @@
 import 'dart:ui';
 
+import 'package:auto_route/auto_route.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
+import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +23,13 @@ class EventView extends StatelessWidget {
     final formattedDateTime = DateFormatters.buildEventDateTime(
       startDate: event.startDate,
       endDate: event.endDate,
+      pattern: DateFormatters.dMMMSpacedTemplate,
+      locale: context.locale,
+    );
+
+    final formattedTime = DateFormatters.toDateTime(
+      event.startDate,
+      pattern: DateFormatters.hhmmColonTemplate,
     );
 
     return SingleChildScrollView(
@@ -54,23 +64,22 @@ class EventView extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: 0,
-                  left: 0,
-                  right: 0,
+                  top: context.screenSize.statusBarHeight + 8.h,
+                  left: 8.w,
                   child: ClipRRect(
-                    child: Container(
-                      height: 70.h,
-                      decoration: BoxDecoration(
-                        color:
-                            context.colorScheme.surfaceVariant.withOpacity(0.6),
+                    borderRadius: BorderRadius.circular(50.r),
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(
+                        sigmaX: 2,
+                        sigmaY: 2,
+                        tileMode: TileMode.mirror,
                       ),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(
-                          sigmaX: 6,
-                          sigmaY: 1,
-                          tileMode: TileMode.mirror,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: context.colorScheme.outline.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(50.r),
                         ),
-                        child: Container(),
+                        child: const AutoLeadingButton(),
                       ),
                     ),
                   ),
@@ -103,7 +112,9 @@ class EventView extends StatelessWidget {
                     children: [
                       Text(
                         event.name ?? '-',
-                        style: context.theme.textTheme.titleLarge,
+                        style: context.theme.textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.w500,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                       SizedBox(height: 10.h),
@@ -112,7 +123,11 @@ class EventView extends StatelessWidget {
                         children: [
                           Text('${event.ageLimit}+'),
                           SizedBox(width: 20.w),
-                          Text(formattedDateTime),
+                          Text(
+                            '${LocaleKeys.from.tr()} ${event.minPrice.toInt()}',
+                          ),
+                          SizedBox(width: 20.w),
+                          Text('$formattedDateTime ${formattedTime}'),
                         ],
                       )
                     ],
@@ -127,6 +142,8 @@ class EventView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text(event.locationName ?? event.locationType.localizedName),
+                SizedBox(height: 4.h),
                 Text(event.description ?? '-'),
               ],
             ),

@@ -6,6 +6,7 @@ import 'package:eticket/presentation/app_blocs/settings/settings_cubit.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:eticket/common/common.dart';
 
@@ -13,9 +14,15 @@ Future<void> injectDependencies() async {
   final getIt = GetIt.I;
   await dotenv.load(fileName: Constants.envFileName);
 
+  final packageInfo = await PackageInfo.fromPlatform();
+
   // APP CONFIGURATION
   getIt.registerSingleton<Configuration>(
-    Configuration.getFromDotEnv(dotEnv: dotenv),
+    Configuration.getFromDotEnv(
+      dotEnv: dotenv,
+      appVersion: packageInfo.version,
+      appBuildNumber: packageInfo.buildNumber,
+    ),
   );
   final authDio = DioX.setupAuth(getIt.get<Configuration>().serverUrl);
 
@@ -40,6 +47,7 @@ Future<void> injectDependencies() async {
     authDio,
     getIt.get<AuthRepository>(),
     getIt.get<AuthCubit>(),
+    getIt.get<Configuration>(),
   ));
   // endregion END OF AUTH MODULE
 
