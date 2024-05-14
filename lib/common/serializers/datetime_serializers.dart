@@ -16,4 +16,12 @@ class DateTimeUTCSerializer implements JsonConverter<DateTime?, String?> {
 
     return datetime.toUtc().toIso8601String();
   }
+
+  static List<DateTime> fromListJson(List<dynamic> json) {
+    return json.map((e) => DateTime.parse(e).toLocal()).toList();
+  }
+
+  static List<dynamic> toListJson(List<DateTime> json) {
+    return json.map((e) => e.toUtc().toIso8601String()).toList();
+  }
 }

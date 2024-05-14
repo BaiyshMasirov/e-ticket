@@ -23,10 +23,6 @@ mixin _$EventDto {
   String get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
-  @DateTimeUTCSerializer()
-  DateTime get startDate => throw _privateConstructorUsedError;
-  @DateTimeUTCSerializer()
-  DateTime get endDate => throw _privateConstructorUsedError;
   @JsonKey(unknownEnumValue: EventStatus.unknown)
   EventStatus get status => throw _privateConstructorUsedError;
   int get ageLimit => throw _privateConstructorUsedError;
@@ -41,6 +37,10 @@ mixin _$EventDto {
   int get type => throw _privateConstructorUsedError;
   String? get video => throw _privateConstructorUsedError;
   String? get image => throw _privateConstructorUsedError;
+  @JsonKey(
+      toJson: DateTimeUTCSerializer.toListJson,
+      fromJson: DateTimeUTCSerializer.fromListJson)
+  List<DateTime> get dateRange => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -57,8 +57,6 @@ abstract class $EventDtoCopyWith<$Res> {
       {String id,
       String? name,
       String? description,
-      @DateTimeUTCSerializer() DateTime startDate,
-      @DateTimeUTCSerializer() DateTime endDate,
       @JsonKey(unknownEnumValue: EventStatus.unknown) EventStatus status,
       int ageLimit,
       double minPrice,
@@ -71,7 +69,11 @@ abstract class $EventDtoCopyWith<$Res> {
       String? poster,
       int type,
       String? video,
-      String? image});
+      String? image,
+      @JsonKey(
+          toJson: DateTimeUTCSerializer.toListJson,
+          fromJson: DateTimeUTCSerializer.fromListJson)
+      List<DateTime> dateRange});
 }
 
 /// @nodoc
@@ -90,8 +92,6 @@ class _$EventDtoCopyWithImpl<$Res, $Val extends EventDto>
     Object? id = null,
     Object? name = freezed,
     Object? description = freezed,
-    Object? startDate = null,
-    Object? endDate = null,
     Object? status = null,
     Object? ageLimit = null,
     Object? minPrice = null,
@@ -104,6 +104,7 @@ class _$EventDtoCopyWithImpl<$Res, $Val extends EventDto>
     Object? type = null,
     Object? video = freezed,
     Object? image = freezed,
+    Object? dateRange = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -118,14 +119,6 @@ class _$EventDtoCopyWithImpl<$Res, $Val extends EventDto>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      startDate: null == startDate
-          ? _value.startDate
-          : startDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      endDate: null == endDate
-          ? _value.endDate
-          : endDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -174,6 +167,10 @@ class _$EventDtoCopyWithImpl<$Res, $Val extends EventDto>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
+      dateRange: null == dateRange
+          ? _value.dateRange
+          : dateRange // ignore: cast_nullable_to_non_nullable
+              as List<DateTime>,
     ) as $Val);
   }
 }
@@ -190,8 +187,6 @@ abstract class _$$EventDtoImplCopyWith<$Res>
       {String id,
       String? name,
       String? description,
-      @DateTimeUTCSerializer() DateTime startDate,
-      @DateTimeUTCSerializer() DateTime endDate,
       @JsonKey(unknownEnumValue: EventStatus.unknown) EventStatus status,
       int ageLimit,
       double minPrice,
@@ -204,7 +199,11 @@ abstract class _$$EventDtoImplCopyWith<$Res>
       String? poster,
       int type,
       String? video,
-      String? image});
+      String? image,
+      @JsonKey(
+          toJson: DateTimeUTCSerializer.toListJson,
+          fromJson: DateTimeUTCSerializer.fromListJson)
+      List<DateTime> dateRange});
 }
 
 /// @nodoc
@@ -221,8 +220,6 @@ class __$$EventDtoImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = freezed,
     Object? description = freezed,
-    Object? startDate = null,
-    Object? endDate = null,
     Object? status = null,
     Object? ageLimit = null,
     Object? minPrice = null,
@@ -235,6 +232,7 @@ class __$$EventDtoImplCopyWithImpl<$Res>
     Object? type = null,
     Object? video = freezed,
     Object? image = freezed,
+    Object? dateRange = null,
   }) {
     return _then(_$EventDtoImpl(
       id: null == id
@@ -249,14 +247,6 @@ class __$$EventDtoImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      startDate: null == startDate
-          ? _value.startDate
-          : startDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      endDate: null == endDate
-          ? _value.endDate
-          : endDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -305,6 +295,10 @@ class __$$EventDtoImplCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
+      dateRange: null == dateRange
+          ? _value._dateRange
+          : dateRange // ignore: cast_nullable_to_non_nullable
+              as List<DateTime>,
     ));
   }
 }
@@ -316,8 +310,6 @@ class _$EventDtoImpl extends _EventDto {
       {required this.id,
       required this.name,
       required this.description,
-      @DateTimeUTCSerializer() required this.startDate,
-      @DateTimeUTCSerializer() required this.endDate,
       @JsonKey(unknownEnumValue: EventStatus.unknown) required this.status,
       required this.ageLimit,
       required this.minPrice,
@@ -330,8 +322,13 @@ class _$EventDtoImpl extends _EventDto {
       required this.poster,
       required this.type,
       required this.video,
-      required this.image})
-      : super._();
+      required this.image,
+      @JsonKey(
+          toJson: DateTimeUTCSerializer.toListJson,
+          fromJson: DateTimeUTCSerializer.fromListJson)
+      required final List<DateTime> dateRange})
+      : _dateRange = dateRange,
+        super._();
 
   factory _$EventDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$EventDtoImplFromJson(json);
@@ -342,12 +339,6 @@ class _$EventDtoImpl extends _EventDto {
   final String? name;
   @override
   final String? description;
-  @override
-  @DateTimeUTCSerializer()
-  final DateTime startDate;
-  @override
-  @DateTimeUTCSerializer()
-  final DateTime endDate;
   @override
   @JsonKey(unknownEnumValue: EventStatus.unknown)
   final EventStatus status;
@@ -374,10 +365,20 @@ class _$EventDtoImpl extends _EventDto {
   final String? video;
   @override
   final String? image;
+  final List<DateTime> _dateRange;
+  @override
+  @JsonKey(
+      toJson: DateTimeUTCSerializer.toListJson,
+      fromJson: DateTimeUTCSerializer.fromListJson)
+  List<DateTime> get dateRange {
+    if (_dateRange is EqualUnmodifiableListView) return _dateRange;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_dateRange);
+  }
 
   @override
   String toString() {
-    return 'EventDto(id: $id, name: $name, description: $description, startDate: $startDate, endDate: $endDate, status: $status, ageLimit: $ageLimit, minPrice: $minPrice, sold: $sold, count: $count, locationName: $locationName, locationId: $locationId, locationType: $locationType, poster: $poster, type: $type, video: $video, image: $image)';
+    return 'EventDto(id: $id, name: $name, description: $description, status: $status, ageLimit: $ageLimit, minPrice: $minPrice, sold: $sold, count: $count, locationName: $locationName, locationId: $locationId, locationType: $locationType, poster: $poster, type: $type, video: $video, image: $image, dateRange: $dateRange)';
   }
 
   @override
@@ -389,9 +390,6 @@ class _$EventDtoImpl extends _EventDto {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.startDate, startDate) ||
-                other.startDate == startDate) &&
-            (identical(other.endDate, endDate) || other.endDate == endDate) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.ageLimit, ageLimit) ||
                 other.ageLimit == ageLimit) &&
@@ -408,7 +406,9 @@ class _$EventDtoImpl extends _EventDto {
             (identical(other.poster, poster) || other.poster == poster) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.video, video) || other.video == video) &&
-            (identical(other.image, image) || other.image == image));
+            (identical(other.image, image) || other.image == image) &&
+            const DeepCollectionEquality()
+                .equals(other._dateRange, _dateRange));
   }
 
   @JsonKey(ignore: true)
@@ -418,8 +418,6 @@ class _$EventDtoImpl extends _EventDto {
       id,
       name,
       description,
-      startDate,
-      endDate,
       status,
       ageLimit,
       minPrice,
@@ -431,7 +429,8 @@ class _$EventDtoImpl extends _EventDto {
       poster,
       type,
       video,
-      image);
+      image,
+      const DeepCollectionEquality().hash(_dateRange));
 
   @JsonKey(ignore: true)
   @override
@@ -452,8 +451,6 @@ abstract class _EventDto extends EventDto {
       {required final String id,
       required final String? name,
       required final String? description,
-      @DateTimeUTCSerializer() required final DateTime startDate,
-      @DateTimeUTCSerializer() required final DateTime endDate,
       @JsonKey(unknownEnumValue: EventStatus.unknown)
       required final EventStatus status,
       required final int ageLimit,
@@ -467,7 +464,11 @@ abstract class _EventDto extends EventDto {
       required final String? poster,
       required final int type,
       required final String? video,
-      required final String? image}) = _$EventDtoImpl;
+      required final String? image,
+      @JsonKey(
+          toJson: DateTimeUTCSerializer.toListJson,
+          fromJson: DateTimeUTCSerializer.fromListJson)
+      required final List<DateTime> dateRange}) = _$EventDtoImpl;
   const _EventDto._() : super._();
 
   factory _EventDto.fromJson(Map<String, dynamic> json) =
@@ -479,12 +480,6 @@ abstract class _EventDto extends EventDto {
   String? get name;
   @override
   String? get description;
-  @override
-  @DateTimeUTCSerializer()
-  DateTime get startDate;
-  @override
-  @DateTimeUTCSerializer()
-  DateTime get endDate;
   @override
   @JsonKey(unknownEnumValue: EventStatus.unknown)
   EventStatus get status;
@@ -511,6 +506,11 @@ abstract class _EventDto extends EventDto {
   String? get video;
   @override
   String? get image;
+  @override
+  @JsonKey(
+      toJson: DateTimeUTCSerializer.toListJson,
+      fromJson: DateTimeUTCSerializer.fromListJson)
+  List<DateTime> get dateRange;
   @override
   @JsonKey(ignore: true)
   _$$EventDtoImplCopyWith<_$EventDtoImpl> get copyWith =>

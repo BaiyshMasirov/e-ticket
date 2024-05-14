@@ -28,16 +28,11 @@ class EventScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       floatingActionButton: event.canPurchaseTickets
           ? PrimaryButton(
-              title: LocaleKeys.buy_ticket.tr(),
+              title: LocaleKeys.schedule.tr(),
               onPressed: () {
-                final eventDateTimes = DateTimeX.getDaysInBetween(
-                  event.startDate,
-                  event.endDate,
-                );
-
                 EventDatepickerDialog.showEventDatepickerDialog(
                   context: context,
-                  eventDateTimes: eventDateTimes,
+                  eventDateTimes: event.dateRange,
                   onDatePick: (pickedDatetime) {
                     navigateToBooking(
                       dateTime: pickedDatetime,

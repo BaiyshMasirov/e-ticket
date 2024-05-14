@@ -125,5 +125,6 @@ abstract class  LocaleKeys {
   static const ticket_payemnt_date = 'ticket_payemnt_date';
   static const from = 'from';
   static const schedule = 'schedule';
+  static const empty = 'empty';
 
 }

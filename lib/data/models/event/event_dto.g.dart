@@ -11,8 +11,6 @@ _$EventDtoImpl _$$EventDtoImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       name: json['name'] as String?,
       description: json['description'] as String?,
-      startDate: DateTime.parse(json['startDate'] as String),
-      endDate: DateTime.parse(json['endDate'] as String),
       status: $enumDecode(_$EventStatusEnumMap, json['status'],
           unknownValue: EventStatus.unknown),
       ageLimit: json['ageLimit'] as int,
@@ -27,6 +25,7 @@ _$EventDtoImpl _$$EventDtoImplFromJson(Map<String, dynamic> json) =>
       type: json['type'] as int,
       video: json['video'] as String?,
       image: json['image'] as String?,
+      dateRange: DateTimeUTCSerializer.fromListJson(json['dateRange'] as List),
     );
 
 Map<String, dynamic> _$$EventDtoImplToJson(_$EventDtoImpl instance) {
@@ -42,8 +41,6 @@ Map<String, dynamic> _$$EventDtoImplToJson(_$EventDtoImpl instance) {
 
   writeNotNull('name', instance.name);
   writeNotNull('description', instance.description);
-  val['startDate'] = instance.startDate.toIso8601String();
-  val['endDate'] = instance.endDate.toIso8601String();
   val['status'] = _$EventStatusEnumMap[instance.status]!;
   val['ageLimit'] = instance.ageLimit;
   val['minPrice'] = instance.minPrice;
@@ -56,6 +53,7 @@ Map<String, dynamic> _$$EventDtoImplToJson(_$EventDtoImpl instance) {
   val['type'] = instance.type;
   writeNotNull('video', instance.video);
   writeNotNull('image', instance.image);
+  val['dateRange'] = DateTimeUTCSerializer.toListJson(instance.dateRange);
   return val;
 }
 

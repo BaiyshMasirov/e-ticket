@@ -32,26 +32,41 @@ class DateFormatters {
     return DateFormat(pattern, locale.languageCode).format(dateTime);
   }
 
-  static String buildEventDateTime({
-    required DateTime startDate,
-    required DateTime endDate,
+  static String buildEventRangeDateTime({
+    required List<DateTime> dates,
     String pattern = dmYHmsDashedTemplate,
     Locale locale = Constants.defaultLocale,
   }) {
-    if (startDate == endDate) {
+    if (dates.isEmpty) {
+      return '-';
+    }
+
+    final onlyDates = dates
+        .map((d) => DateTime(
+              d.year,
+              d.month,
+              d.day,
+            ))
+        .toList();
+
+    final distinctDates = onlyDates.toSet().toList();
+
+    if (distinctDates.length == 1) {
       return DateFormatters.toDateTime(
-        startDate,
+        onlyDates.first,
         pattern: pattern,
         locale: locale,
       );
     }
 
+    distinctDates.sort();
+
     return '${DateFormatters.toDateTime(
-      startDate,
+      distinctDates.first,
       pattern: pattern,
       locale: locale,
     )} - ${DateFormatters.toDateTime(
-      endDate,
+      distinctDates.last,
       pattern: pattern,
       locale: locale,
     )}';

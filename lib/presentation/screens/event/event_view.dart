@@ -20,15 +20,14 @@ class EventView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final formattedDateTime = DateFormatters.buildEventDateTime(
-      startDate: event.startDate,
-      endDate: event.endDate,
+    final formattedDateTime = DateFormatters.buildEventRangeDateTime(
+      dates: event.dateRange,
       pattern: DateFormatters.dMMMSpacedTemplate,
       locale: context.locale,
     );
 
-    final formattedTime = DateFormatters.toDateTime(
-      event.startDate,
+    final formattedTime = DateFormatters.toDateTimeNullable(
+      event.dateRange.firstOrNull,
       pattern: DateFormatters.hhmmColonTemplate,
     );
 

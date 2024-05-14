@@ -122,6 +122,6 @@
   "ticket_payment_status": "Статус оплаты билета",
   "ticket_payemnt_date": "Дата приобретения билета",
   "from": "от",
-  "schedule": "Расписание"
-
+  "schedule": "Расписание",
+  "empty": "Пусто"
 }

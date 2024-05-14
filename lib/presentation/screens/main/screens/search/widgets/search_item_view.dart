@@ -20,15 +20,14 @@ class SearchItemView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final date = DateFormatters.buildEventDateTime(
-      startDate: event.startDate,
-      endDate: event.endDate,
+    final date = DateFormatters.buildEventRangeDateTime(
+      dates: event.dateRange,
       pattern: DateFormatters.dMMMSpacedTemplate,
       locale: context.locale,
     );
 
-    final time = DateFormatters.toDateTime(
-      event.startDate,
+    final time = DateFormatters.toDateTimeNullable(
+      event.dateRange.firstOrNull,
       pattern: DateFormatters.hhmmColonTemplate,
     );
 
@@ -119,7 +118,7 @@ class SearchItemView extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      time,
+                      time ?? '-',
                       style: TextStyle(
                         fontSize: 13.sp,
                         fontWeight: FontWeight.w500,

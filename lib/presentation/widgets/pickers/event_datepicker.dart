@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
+import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -58,79 +59,92 @@ class EventDatepickerDialog extends StatelessWidget {
             ),
             SizedBox(
               height: 120.h,
-              child: RotatedBox(
-                quarterTurns: -1,
-                child: ListWheelScrollView(
-                  physics: const FixedExtentScrollPhysics(),
-                  itemExtent: 90.w,
-                  diameterRatio: 2,
-                  children: eventDateTimes
-                      .map(
-                        (eventDate) => RotatedBox(
-                          quarterTurns: 1,
-                          child: Center(
-                            child: GestureDetector(
-                              onTap: () {
-                                context.popRoute();
-                                onDatePick(eventDate);
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: context.colorScheme.tertiaryContainer,
-                                  borderRadius: defaultBr,
-                                ),
-                                // width: 70.w,
-                                height: 80.h,
+              child: eventDateTimes.isEmpty
+                  ? Center(
+                      child: Container(
+                        padding: EdgeInsets.all(kDefaultPadding),
+                        decoration: BoxDecoration(
+                          color: context.colorScheme.tertiaryContainer,
+                          borderRadius: defaultBr,
+                        ),
+                        child: Text(LocaleKeys.empty.tr()),
+                      ),
+                    )
+                  : RotatedBox(
+                      quarterTurns: -1,
+                      child: ListWheelScrollView(
+                        physics: const FixedExtentScrollPhysics(),
+                        itemExtent: 90.w,
+                        diameterRatio: 2,
+                        children: eventDateTimes
+                            .map(
+                              (eventDate) => RotatedBox(
+                                quarterTurns: 1,
                                 child: Center(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        DateFormatters.toDateTime(
-                                          eventDate,
-                                          pattern:
-                                              DateFormatters.dMMMSpacedTemplate,
-                                          locale: context.locale,
-                                        ),
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 20.sp,
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      context.popRoute();
+                                      onDatePick(eventDate);
+                                    },
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: context
+                                            .colorScheme.tertiaryContainer,
+                                        borderRadius: defaultBr,
+                                      ),
+                                      // width: 70.w,
+                                      height: 80.h,
+                                      child: Center(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              DateFormatters.toDateTime(
+                                                eventDate,
+                                                pattern: DateFormatters
+                                                    .dMMMSpacedTemplate,
+                                                locale: context.locale,
+                                              ),
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 20.sp,
+                                              ),
+                                            ),
+                                            Text(
+                                              DateFormatters.toDateTime(
+                                                eventDate,
+                                                pattern: DateFormatters
+                                                    .hhmmColonTemplate,
+                                                locale: context.locale,
+                                              ),
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 14.sp,
+                                              ),
+                                            ),
+                                            Divider(
+                                              color: context
+                                                  .colorScheme.inverseSurface,
+                                            ),
+                                            Text(
+                                              eventDate.year.toString(),
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 14.sp,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                      Text(
-                                        DateFormatters.toDateTime(
-                                          eventDate,
-                                          pattern:
-                                              DateFormatters.hhmmColonTemplate,
-                                          locale: context.locale,
-                                        ),
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 14.sp,
-                                        ),
-                                      ),
-                                      Divider(
-                                        color:
-                                            context.colorScheme.inverseSurface,
-                                      ),
-                                      Text(
-                                        eventDate.year.toString(),
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 14.sp,
-                                        ),
-                                      ),
-                                    ],
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ),
-                      )
-                      .toList(),
-                ),
-              ),
+                            )
+                            .toList(),
+                      ),
+                    ),
             ),
           ],
         ),

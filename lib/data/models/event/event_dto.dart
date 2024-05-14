@@ -12,10 +12,7 @@ class EventDto with _$EventDto {
     required String id,
     required String? name,
     required String? description,
-    @DateTimeUTCSerializer() required DateTime startDate,
-    @DateTimeUTCSerializer() required DateTime endDate,
-    @JsonKey(unknownEnumValue: EventStatus.unknown)
-    required EventStatus status,
+    @JsonKey(unknownEnumValue: EventStatus.unknown) required EventStatus status,
     required int ageLimit,
     required double minPrice,
     required int sold,
@@ -28,6 +25,11 @@ class EventDto with _$EventDto {
     required int type,
     required String? video,
     required String? image,
+    @JsonKey(
+      toJson: DateTimeUTCSerializer.toListJson,
+      fromJson: DateTimeUTCSerializer.fromListJson,
+    )
+    required List<DateTime> dateRange,
   }) = _EventDto;
 
   bool get canPurchaseTickets => status == EventStatus.active;
