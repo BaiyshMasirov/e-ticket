@@ -28,7 +28,7 @@ mixin _$PaymentSMSState {
     required TResult Function(String phoneNumber, String code)
         paymentConfirmSuccess,
     required TResult Function(
-            String phoneNumber, String code, String? errorMessage)
+            String phoneNumber, String code, String errorMessage)
         paymentConfirmError,
   }) =>
       throw _privateConstructorUsedError;
@@ -41,7 +41,7 @@ mixin _$PaymentSMSState {
     TResult? Function(String phoneNumber)? paymentCreateSuccess,
     TResult? Function(String phoneNumber, String code)? paymentConfirming,
     TResult? Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult? Function(String phoneNumber, String code, String? errorMessage)?
+    TResult? Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,7 +54,7 @@ mixin _$PaymentSMSState {
     TResult Function(String phoneNumber)? paymentCreateSuccess,
     TResult Function(String phoneNumber, String code)? paymentConfirming,
     TResult Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult Function(String phoneNumber, String code, String? errorMessage)?
+    TResult Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
     required TResult orElse(),
   }) =>
@@ -172,7 +172,7 @@ class _$PaymentSMSStateInitialImpl extends _PaymentSMSStateInitial {
     required TResult Function(String phoneNumber, String code)
         paymentConfirmSuccess,
     required TResult Function(
-            String phoneNumber, String code, String? errorMessage)
+            String phoneNumber, String code, String errorMessage)
         paymentConfirmError,
   }) {
     return initial();
@@ -188,7 +188,7 @@ class _$PaymentSMSStateInitialImpl extends _PaymentSMSStateInitial {
     TResult? Function(String phoneNumber)? paymentCreateSuccess,
     TResult? Function(String phoneNumber, String code)? paymentConfirming,
     TResult? Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult? Function(String phoneNumber, String code, String? errorMessage)?
+    TResult? Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
   }) {
     return initial?.call();
@@ -204,7 +204,7 @@ class _$PaymentSMSStateInitialImpl extends _PaymentSMSStateInitial {
     TResult Function(String phoneNumber)? paymentCreateSuccess,
     TResult Function(String phoneNumber, String code)? paymentConfirming,
     TResult Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult Function(String phoneNumber, String code, String? errorMessage)?
+    TResult Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
     required TResult orElse(),
   }) {
@@ -352,7 +352,7 @@ class _$PaymentSMSStateCreatingImpl extends PaymentSMSStateCreating {
     required TResult Function(String phoneNumber, String code)
         paymentConfirmSuccess,
     required TResult Function(
-            String phoneNumber, String code, String? errorMessage)
+            String phoneNumber, String code, String errorMessage)
         paymentConfirmError,
   }) {
     return paymentCreating(phoneNumber);
@@ -368,7 +368,7 @@ class _$PaymentSMSStateCreatingImpl extends PaymentSMSStateCreating {
     TResult? Function(String phoneNumber)? paymentCreateSuccess,
     TResult? Function(String phoneNumber, String code)? paymentConfirming,
     TResult? Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult? Function(String phoneNumber, String code, String? errorMessage)?
+    TResult? Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
   }) {
     return paymentCreating?.call(phoneNumber);
@@ -384,7 +384,7 @@ class _$PaymentSMSStateCreatingImpl extends PaymentSMSStateCreating {
     TResult Function(String phoneNumber)? paymentCreateSuccess,
     TResult Function(String phoneNumber, String code)? paymentConfirming,
     TResult Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult Function(String phoneNumber, String code, String? errorMessage)?
+    TResult Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
     required TResult orElse(),
   }) {
@@ -550,7 +550,7 @@ class _$PaymentSMSStateCreateErrorImpl extends _PaymentSMSStateCreateError {
     required TResult Function(String phoneNumber, String code)
         paymentConfirmSuccess,
     required TResult Function(
-            String phoneNumber, String code, String? errorMessage)
+            String phoneNumber, String code, String errorMessage)
         paymentConfirmError,
   }) {
     return paymentCreateError(phoneNumber, errorMessage);
@@ -566,7 +566,7 @@ class _$PaymentSMSStateCreateErrorImpl extends _PaymentSMSStateCreateError {
     TResult? Function(String phoneNumber)? paymentCreateSuccess,
     TResult? Function(String phoneNumber, String code)? paymentConfirming,
     TResult? Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult? Function(String phoneNumber, String code, String? errorMessage)?
+    TResult? Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
   }) {
     return paymentCreateError?.call(phoneNumber, errorMessage);
@@ -582,7 +582,7 @@ class _$PaymentSMSStateCreateErrorImpl extends _PaymentSMSStateCreateError {
     TResult Function(String phoneNumber)? paymentCreateSuccess,
     TResult Function(String phoneNumber, String code)? paymentConfirming,
     TResult Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult Function(String phoneNumber, String code, String? errorMessage)?
+    TResult Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
     required TResult orElse(),
   }) {
@@ -741,7 +741,7 @@ class _$PaymentSMSStateCreateSuccessImpl extends _PaymentSMSStateCreateSuccess {
     required TResult Function(String phoneNumber, String code)
         paymentConfirmSuccess,
     required TResult Function(
-            String phoneNumber, String code, String? errorMessage)
+            String phoneNumber, String code, String errorMessage)
         paymentConfirmError,
   }) {
     return paymentCreateSuccess(phoneNumber);
@@ -757,7 +757,7 @@ class _$PaymentSMSStateCreateSuccessImpl extends _PaymentSMSStateCreateSuccess {
     TResult? Function(String phoneNumber)? paymentCreateSuccess,
     TResult? Function(String phoneNumber, String code)? paymentConfirming,
     TResult? Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult? Function(String phoneNumber, String code, String? errorMessage)?
+    TResult? Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
   }) {
     return paymentCreateSuccess?.call(phoneNumber);
@@ -773,7 +773,7 @@ class _$PaymentSMSStateCreateSuccessImpl extends _PaymentSMSStateCreateSuccess {
     TResult Function(String phoneNumber)? paymentCreateSuccess,
     TResult Function(String phoneNumber, String code)? paymentConfirming,
     TResult Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult Function(String phoneNumber, String code, String? errorMessage)?
+    TResult Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
     required TResult orElse(),
   }) {
@@ -938,7 +938,7 @@ class _$PaymentSMSStateConfirmingImpl extends PaymentSMSStateConfirming {
     required TResult Function(String phoneNumber, String code)
         paymentConfirmSuccess,
     required TResult Function(
-            String phoneNumber, String code, String? errorMessage)
+            String phoneNumber, String code, String errorMessage)
         paymentConfirmError,
   }) {
     return paymentConfirming(phoneNumber, code);
@@ -954,7 +954,7 @@ class _$PaymentSMSStateConfirmingImpl extends PaymentSMSStateConfirming {
     TResult? Function(String phoneNumber)? paymentCreateSuccess,
     TResult? Function(String phoneNumber, String code)? paymentConfirming,
     TResult? Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult? Function(String phoneNumber, String code, String? errorMessage)?
+    TResult? Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
   }) {
     return paymentConfirming?.call(phoneNumber, code);
@@ -970,7 +970,7 @@ class _$PaymentSMSStateConfirmingImpl extends PaymentSMSStateConfirming {
     TResult Function(String phoneNumber)? paymentCreateSuccess,
     TResult Function(String phoneNumber, String code)? paymentConfirming,
     TResult Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult Function(String phoneNumber, String code, String? errorMessage)?
+    TResult Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
     required TResult orElse(),
   }) {
@@ -1139,7 +1139,7 @@ class _$PaymentSMSStateConfirmSuccessImpl
     required TResult Function(String phoneNumber, String code)
         paymentConfirmSuccess,
     required TResult Function(
-            String phoneNumber, String code, String? errorMessage)
+            String phoneNumber, String code, String errorMessage)
         paymentConfirmError,
   }) {
     return paymentConfirmSuccess(phoneNumber, code);
@@ -1155,7 +1155,7 @@ class _$PaymentSMSStateConfirmSuccessImpl
     TResult? Function(String phoneNumber)? paymentCreateSuccess,
     TResult? Function(String phoneNumber, String code)? paymentConfirming,
     TResult? Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult? Function(String phoneNumber, String code, String? errorMessage)?
+    TResult? Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
   }) {
     return paymentConfirmSuccess?.call(phoneNumber, code);
@@ -1171,7 +1171,7 @@ class _$PaymentSMSStateConfirmSuccessImpl
     TResult Function(String phoneNumber)? paymentCreateSuccess,
     TResult Function(String phoneNumber, String code)? paymentConfirming,
     TResult Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult Function(String phoneNumber, String code, String? errorMessage)?
+    TResult Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
     required TResult orElse(),
   }) {
@@ -1257,7 +1257,7 @@ abstract class _$$PaymentSMSStateConfirmErrorImplCopyWith<$Res> {
           $Res Function(_$PaymentSMSStateConfirmErrorImpl) then) =
       __$$PaymentSMSStateConfirmErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String phoneNumber, String code, String? errorMessage});
+  $Res call({String phoneNumber, String code, String errorMessage});
 }
 
 /// @nodoc
@@ -1275,7 +1275,7 @@ class __$$PaymentSMSStateConfirmErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? phoneNumber = null,
     Object? code = null,
-    Object? errorMessage = freezed,
+    Object? errorMessage = null,
   }) {
     return _then(_$PaymentSMSStateConfirmErrorImpl(
       phoneNumber: null == phoneNumber
@@ -1286,10 +1286,10 @@ class __$$PaymentSMSStateConfirmErrorImplCopyWithImpl<$Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      errorMessage: freezed == errorMessage
+      errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -1308,7 +1308,7 @@ class _$PaymentSMSStateConfirmErrorImpl extends _PaymentSMSStateConfirmError {
   @override
   final String code;
   @override
-  final String? errorMessage;
+  final String errorMessage;
 
   @override
   String toString() {
@@ -1350,7 +1350,7 @@ class _$PaymentSMSStateConfirmErrorImpl extends _PaymentSMSStateConfirmError {
     required TResult Function(String phoneNumber, String code)
         paymentConfirmSuccess,
     required TResult Function(
-            String phoneNumber, String code, String? errorMessage)
+            String phoneNumber, String code, String errorMessage)
         paymentConfirmError,
   }) {
     return paymentConfirmError(phoneNumber, code, errorMessage);
@@ -1366,7 +1366,7 @@ class _$PaymentSMSStateConfirmErrorImpl extends _PaymentSMSStateConfirmError {
     TResult? Function(String phoneNumber)? paymentCreateSuccess,
     TResult? Function(String phoneNumber, String code)? paymentConfirming,
     TResult? Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult? Function(String phoneNumber, String code, String? errorMessage)?
+    TResult? Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
   }) {
     return paymentConfirmError?.call(phoneNumber, code, errorMessage);
@@ -1382,7 +1382,7 @@ class _$PaymentSMSStateConfirmErrorImpl extends _PaymentSMSStateConfirmError {
     TResult Function(String phoneNumber)? paymentCreateSuccess,
     TResult Function(String phoneNumber, String code)? paymentConfirming,
     TResult Function(String phoneNumber, String code)? paymentConfirmSuccess,
-    TResult Function(String phoneNumber, String code, String? errorMessage)?
+    TResult Function(String phoneNumber, String code, String errorMessage)?
         paymentConfirmError,
     required TResult orElse(),
   }) {
@@ -1451,12 +1451,12 @@ abstract class _PaymentSMSStateConfirmError extends PaymentSMSState {
   const factory _PaymentSMSStateConfirmError(
       {required final String phoneNumber,
       required final String code,
-      required final String? errorMessage}) = _$PaymentSMSStateConfirmErrorImpl;
+      required final String errorMessage}) = _$PaymentSMSStateConfirmErrorImpl;
   const _PaymentSMSStateConfirmError._() : super._();
 
   String get phoneNumber;
   String get code;
-  String? get errorMessage;
+  String get errorMessage;
   @JsonKey(ignore: true)
   _$$PaymentSMSStateConfirmErrorImplCopyWith<_$PaymentSMSStateConfirmErrorImpl>
       get copyWith => throw _privateConstructorUsedError;

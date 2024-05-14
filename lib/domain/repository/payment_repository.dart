@@ -23,14 +23,16 @@ class PaymentRepository with NetworkRemoteRepositoryMixin {
     );
   }
 
-  Future<Either<RequestFailure, Unit>> confirmPayment({
+  Future<Either<RequestFailure, ResponseResult>> confirmPayment({
     required String code,
     required String bookingId,
+    required String phoneNumber,
   }) async {
     return await handleRemoteRequest(
       request: () => _paymentRemoteSource.confirmPayment(
         code: code,
         bookingId: bookingId,
+        phoneNumber: phoneNumber,
       ),
     );
   }

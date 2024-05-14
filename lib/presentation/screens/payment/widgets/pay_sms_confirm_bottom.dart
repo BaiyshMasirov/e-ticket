@@ -39,9 +39,11 @@ class PaySMSConfirmBottom extends HookWidget {
         height: 300.h,
         child: Loader(
           isLoadingFunc: (context) => context.select<PaymentSMSCubit, bool>(
-            (cubit) =>
-                cubit is PaymentSMSStateCreating ||
-                cubit is PaymentSMSStateConfirming,
+            (c) => c.state.maybeMap(
+              orElse: () => false,
+              paymentCreating: (_) => true,
+              paymentConfirming: (_) => true,
+            ),
           ),
           child: Padding(
             padding: EdgeInsets.all(kDefaultPadding),
@@ -118,7 +120,7 @@ class PaySMSConfirmBottom extends HookWidget {
                         child: Text(
                           s.maybeMap(
                             orElse: () => '',
-                            paymentConfirmError: (_) => _.errorMessage ?? '',
+                            paymentConfirmError: (_) => _.errorMessage,
                             paymentCreateError: (_) => _.errorMessage ?? '',
                           ),
                           maxLines: 3,

@@ -66,23 +66,39 @@ class PaymentSMSCubit extends Cubit<PaymentSMSState> {
     final successOrFailure = await _paymentRepository.confirmPayment(
       code: code,
       bookingId: _bookingId,
+      phoneNumber: phoneNumber,
     );
 
     successOrFailure.fold(
-      (l) => emit(PaymentSMSState.paymentConfirmError(
+      (e) => emit(PaymentSMSState.paymentConfirmError(
         phoneNumber: phoneNumber,
         code: code,
-        errorMessage: l.errorMessage,
+        errorMessage: e.errorMessage ?? LocaleKeys.unknown_error.tr(),
       )),
-      (r) {
-        _snackbarCubit.showSuccessSnackbar(
-          message: LocaleKeys.payment_success_description.tr(),
-        );
+      (result) {
+        if (result.succeed) {
+          _snackbarCubit.showSuccessSnackbar(
+            message:
+                result.message ?? LocaleKeys.payment_success_description.tr(),
+          );
 
-        emit(PaymentSMSState.paymentConfirmSuccess(
-          phoneNumber: phoneNumber,
-          code: code,
-        ));
+          emit(
+            PaymentSMSState.paymentConfirmSuccess(
+              phoneNumber: phoneNumber,
+              code: code,
+            ),
+          );
+        } else {
+          _snackbarCubit.showErrorSnackbar(
+            message: LocaleKeys.payment_success_description.tr(),
+          );
+
+          emit(PaymentSMSState.paymentConfirmError(
+            phoneNumber: phoneNumber,
+            code: code,
+            errorMessage: result.message ?? LocaleKeys.unknown_error.tr(),
+          ));
+        }
       },
     );
   }

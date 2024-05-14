@@ -30,16 +30,18 @@ class PaymentRemoteSource {
     return response;
   }
 
-  Future<RemoteResponse<Unit>> confirmPayment({
+  Future<RemoteResponse<ResponseResult>> confirmPayment({
     required String code,
     required String bookingId,
+    required String phoneNumber,
   }) async {
     final response = await _dio.makeRequest(
       request: () => _dio.post('/api/Payment/confirm-payment', data: {
-        'code': code,
+        'pinCode': code,
         'bookingId': bookingId,
+        'phoneNumber': phoneNumber,
       }),
-      parse: (json) => unit,
+      parse: (json) => ResponseResult.fromJson(json),
     );
 
     return response;

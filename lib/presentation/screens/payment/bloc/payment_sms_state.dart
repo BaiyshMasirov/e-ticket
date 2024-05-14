@@ -34,6 +34,6 @@ class PaymentSMSState with _$PaymentSMSState {
   const factory PaymentSMSState.paymentConfirmError({
     required String phoneNumber,
     required String code,
-    required String? errorMessage,
+    required String errorMessage,
   }) = _PaymentSMSStateConfirmError;
 }

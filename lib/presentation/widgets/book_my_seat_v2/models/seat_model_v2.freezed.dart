@@ -70,7 +70,7 @@ class _$SeatModelV2CopyWithImpl<$Res, $Val extends SeatModelV2>
   $Res call({
     Object? seatState = null,
     Object? seatPlace = null,
-    Object? seatPlaceTextPadding = null,
+    Object? seatPlaceTextPadding = freezed,
     Object? pathSelectedSeat = null,
     Object? pathUnSelectedSeat = null,
     Object? pathSoldSeat = null,
@@ -90,7 +90,7 @@ class _$SeatModelV2CopyWithImpl<$Res, $Val extends SeatModelV2>
           ? _value.seatPlace
           : seatPlace // ignore: cast_nullable_to_non_nullable
               as int,
-      seatPlaceTextPadding: null == seatPlaceTextPadding
+      seatPlaceTextPadding: freezed == seatPlaceTextPadding
           ? _value.seatPlaceTextPadding
           : seatPlaceTextPadding // ignore: cast_nullable_to_non_nullable
               as EdgeInsets,
@@ -170,7 +170,7 @@ class __$$SeatModelV2ImplCopyWithImpl<$Res>
   $Res call({
     Object? seatState = null,
     Object? seatPlace = null,
-    Object? seatPlaceTextPadding = null,
+    Object? seatPlaceTextPadding = freezed,
     Object? pathSelectedSeat = null,
     Object? pathUnSelectedSeat = null,
     Object? pathSoldSeat = null,
@@ -190,7 +190,7 @@ class __$$SeatModelV2ImplCopyWithImpl<$Res>
           ? _value.seatPlace
           : seatPlace // ignore: cast_nullable_to_non_nullable
               as int,
-      seatPlaceTextPadding: null == seatPlaceTextPadding
+      seatPlaceTextPadding: freezed == seatPlaceTextPadding
           ? _value.seatPlaceTextPadding
           : seatPlaceTextPadding // ignore: cast_nullable_to_non_nullable
               as EdgeInsets,
@@ -292,8 +292,8 @@ class _$SeatModelV2Impl extends _SeatModelV2 {
                 other.seatState == seatState) &&
             (identical(other.seatPlace, seatPlace) ||
                 other.seatPlace == seatPlace) &&
-            (identical(other.seatPlaceTextPadding, seatPlaceTextPadding) ||
-                other.seatPlaceTextPadding == seatPlaceTextPadding) &&
+            const DeepCollectionEquality()
+                .equals(other.seatPlaceTextPadding, seatPlaceTextPadding) &&
             (identical(other.pathSelectedSeat, pathSelectedSeat) ||
                 other.pathSelectedSeat == pathSelectedSeat) &&
             (identical(other.pathUnSelectedSeat, pathUnSelectedSeat) ||
@@ -318,7 +318,7 @@ class _$SeatModelV2Impl extends _SeatModelV2 {
       runtimeType,
       seatState,
       seatPlace,
-      seatPlaceTextPadding,
+      const DeepCollectionEquality().hash(seatPlaceTextPadding),
       pathSelectedSeat,
       pathUnSelectedSeat,
       pathSoldSeat,

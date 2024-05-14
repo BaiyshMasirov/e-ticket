@@ -48,6 +48,8 @@ class PaymentPhoneCubit extends Cubit<PaymentPhoneState> {
             deepLink: r.link!,
           ));
         } else {
+          _snackbarCubit.showErrorSnackbar(message: r.message ?? '');
+
           emit(PaymentPhoneState.paymentCreateError(
             phoneNumber: phoneNumber,
             errorMessage: r.message ?? LocaleKeys.unknown_error.tr(),
