@@ -12,6 +12,7 @@ class PaymentResult with _$PaymentResult {
     required bool succeded,
     @Default([]) List<String> messages,
     String? link,
+    String? redirectUrl,
   }) = _PaymentResult;
 
   factory PaymentResult.fromJson(Json json) => _$PaymentResultFromJson(json);

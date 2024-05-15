@@ -50,6 +50,8 @@ extension PaymentTypeX on PaymentType {
         return PaymentMechanism.deepLink;
       case PaymentType.Megapay:
         return PaymentMechanism.smsCode;
+      case PaymentType.Card:
+        return PaymentMechanism.acquiring;
       default:
         return PaymentMechanism.none;
     }
@@ -61,6 +63,8 @@ extension PaymentTypeX on PaymentType {
         return PaymentCreds.phoneNumber;
       case PaymentType.Megapay:
         return PaymentCreds.phoneSmsCode;
+      case PaymentType.Card:
+        return PaymentCreds.webView;
       default:
         return PaymentCreds.none;
     }

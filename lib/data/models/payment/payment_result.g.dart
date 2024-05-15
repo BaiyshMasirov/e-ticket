@@ -14,6 +14,7 @@ _$PaymentResultImpl _$$PaymentResultImplFromJson(Map<String, dynamic> json) =>
               .toList() ??
           const [],
       link: json['link'] as String?,
+      redirectUrl: json['redirectUrl'] as String?,
     );
 
 Map<String, dynamic> _$$PaymentResultImplToJson(_$PaymentResultImpl instance) {
@@ -29,5 +30,6 @@ Map<String, dynamic> _$$PaymentResultImplToJson(_$PaymentResultImpl instance) {
   }
 
   writeNotNull('link', instance.link);
+  writeNotNull('redirectUrl', instance.redirectUrl);
   return val;
 }

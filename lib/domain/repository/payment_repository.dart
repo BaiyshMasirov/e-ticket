@@ -36,4 +36,16 @@ class PaymentRepository with NetworkRemoteRepositoryMixin {
       ),
     );
   }
+
+  Future<Either<RequestFailure, PaymentResult>> createWebViewPayment({
+    required String bookingId,
+    required PaymentType paymentType,
+  }) async {
+    return await handleRemoteRequest(
+      request: () => _paymentRemoteSource.createWebViewPayment(
+        bookingId: bookingId,
+        paymentType: paymentType,
+      ),
+    );
+  }
 }

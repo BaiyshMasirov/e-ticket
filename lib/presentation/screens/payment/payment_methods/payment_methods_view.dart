@@ -67,8 +67,21 @@ class PaymentMethodsView extends HookWidget {
 
               return PaymentOption(
                 type: type,
-                onSelected: (type) {
+                onSelected: (type) async {
                   switch (type.paymentCreds) {
+                    case PaymentCreds.webView:
+                      context.navigateTo(MainRoute(
+                        initialTab: MAIN_SCREEN_TAB.HISTORY,
+                      ));
+                      context.navigateTo(
+                        PaymentWebViewRoute(
+                          bookingId: bookingId,
+                          paymentType: type,
+                          onSuccess: () => context.navigateTo(MainRoute(
+                            initialTab: MAIN_SCREEN_TAB.HISTORY,
+                          )),
+                        ),
+                      );
                     case PaymentCreds.phoneNumber:
                       return PayPhoneNumberConfirmBottom.show(
                         context: context,

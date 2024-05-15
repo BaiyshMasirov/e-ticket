@@ -23,6 +23,7 @@ mixin _$PaymentResult {
   bool get succeded => throw _privateConstructorUsedError;
   List<String> get messages => throw _privateConstructorUsedError;
   String? get link => throw _privateConstructorUsedError;
+  String? get redirectUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +37,11 @@ abstract class $PaymentResultCopyWith<$Res> {
           PaymentResult value, $Res Function(PaymentResult) then) =
       _$PaymentResultCopyWithImpl<$Res, PaymentResult>;
   @useResult
-  $Res call({bool succeded, List<String> messages, String? link});
+  $Res call(
+      {bool succeded,
+      List<String> messages,
+      String? link,
+      String? redirectUrl});
 }
 
 /// @nodoc
@@ -55,6 +60,7 @@ class _$PaymentResultCopyWithImpl<$Res, $Val extends PaymentResult>
     Object? succeded = null,
     Object? messages = null,
     Object? link = freezed,
+    Object? redirectUrl = freezed,
   }) {
     return _then(_value.copyWith(
       succeded: null == succeded
@@ -69,6 +75,10 @@ class _$PaymentResultCopyWithImpl<$Res, $Val extends PaymentResult>
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
               as String?,
+      redirectUrl: freezed == redirectUrl
+          ? _value.redirectUrl
+          : redirectUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -81,7 +91,11 @@ abstract class _$$PaymentResultImplCopyWith<$Res>
       __$$PaymentResultImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool succeded, List<String> messages, String? link});
+  $Res call(
+      {bool succeded,
+      List<String> messages,
+      String? link,
+      String? redirectUrl});
 }
 
 /// @nodoc
@@ -98,6 +112,7 @@ class __$$PaymentResultImplCopyWithImpl<$Res>
     Object? succeded = null,
     Object? messages = null,
     Object? link = freezed,
+    Object? redirectUrl = freezed,
   }) {
     return _then(_$PaymentResultImpl(
       succeded: null == succeded
@@ -112,6 +127,10 @@ class __$$PaymentResultImplCopyWithImpl<$Res>
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
               as String?,
+      redirectUrl: freezed == redirectUrl
+          ? _value.redirectUrl
+          : redirectUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -122,7 +141,8 @@ class _$PaymentResultImpl extends _PaymentResult {
   const _$PaymentResultImpl(
       {required this.succeded,
       final List<String> messages = const [],
-      this.link})
+      this.link,
+      this.redirectUrl})
       : _messages = messages,
         super._();
 
@@ -142,10 +162,12 @@ class _$PaymentResultImpl extends _PaymentResult {
 
   @override
   final String? link;
+  @override
+  final String? redirectUrl;
 
   @override
   String toString() {
-    return 'PaymentResult(succeded: $succeded, messages: $messages, link: $link)';
+    return 'PaymentResult(succeded: $succeded, messages: $messages, link: $link, redirectUrl: $redirectUrl)';
   }
 
   @override
@@ -156,13 +178,15 @@ class _$PaymentResultImpl extends _PaymentResult {
             (identical(other.succeded, succeded) ||
                 other.succeded == succeded) &&
             const DeepCollectionEquality().equals(other._messages, _messages) &&
-            (identical(other.link, link) || other.link == link));
+            (identical(other.link, link) || other.link == link) &&
+            (identical(other.redirectUrl, redirectUrl) ||
+                other.redirectUrl == redirectUrl));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, succeded,
-      const DeepCollectionEquality().hash(_messages), link);
+      const DeepCollectionEquality().hash(_messages), link, redirectUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -182,7 +206,8 @@ abstract class _PaymentResult extends PaymentResult {
   const factory _PaymentResult(
       {required final bool succeded,
       final List<String> messages,
-      final String? link}) = _$PaymentResultImpl;
+      final String? link,
+      final String? redirectUrl}) = _$PaymentResultImpl;
   const _PaymentResult._() : super._();
 
   factory _PaymentResult.fromJson(Map<String, dynamic> json) =
@@ -194,6 +219,8 @@ abstract class _PaymentResult extends PaymentResult {
   List<String> get messages;
   @override
   String? get link;
+  @override
+  String? get redirectUrl;
   @override
   @JsonKey(ignore: true)
   _$$PaymentResultImplCopyWith<_$PaymentResultImpl> get copyWith =>

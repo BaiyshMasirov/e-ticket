@@ -47,6 +47,7 @@ class SearchItemView extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: imageBoxWidth,
+                    height: 100.h,
                     child: ClipRRect(
                       borderRadius: defaultBr,
                       child: Image.network(

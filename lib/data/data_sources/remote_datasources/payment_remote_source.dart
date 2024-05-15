@@ -46,4 +46,22 @@ class PaymentRemoteSource {
 
     return response;
   }
+
+  Future<RemoteResponse<PaymentResult>> createWebViewPayment({
+    required String bookingId,
+    required PaymentType paymentType,
+  }) async {
+    final response = await _dio.makeRequest(
+      request: () => _dio.post(
+        'api/Payment/create-card-payment',
+        data: {
+          'bookingId': bookingId,
+          'paymentType': paymentType.value,
+        },
+      ),
+      parse: (json) => PaymentResult.fromJson(json),
+    );
+
+    return response;
+  }
 }
