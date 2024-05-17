@@ -25,9 +25,9 @@ class SearchFilterButton extends StatelessWidget {
           initialEventStatus: filter.status,
           initialDate: filter.date,
           onClearFilter: context.read<SearchCubit>().clearFilter,
-          onSelect: (date, paymentType, eventStatus) {
+          onSelect: (date, eventType, eventStatus) {
             final filter = EventsFilter(
-              type: paymentType,
+              type: eventType,
               date: date,
               status: eventStatus,
             );

@@ -1,22 +1,22 @@
-import 'package:eticket/data/data.dart';
+import 'package:eticket/common/common.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/screens/events_by_type/bloc/events_by_type_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-
 export 'events_by_type_state.dart';
 
 class EventsByTypeCubit extends Cubit<EventsByTypeState> {
   final EventRepository _eventRepository;
-  final KeyValueMapDto _eventKeyValue;
+  final EventType _eventType;
 
-  int _page = 1;
+  int _page = Constants.initialPage;
+  final _pageSize = Constants.initialPageSize;
 
   EventsByTypeCubit._({
     required EventRepository eventRepository,
-    required KeyValueMapDto eventKeyValue,
+    required EventType eventType,
   })  : _eventRepository = eventRepository,
-        _eventKeyValue = eventKeyValue,
+        _eventType = eventType,
         super(const EventsByTypeState.initial(
           events: [],
         ));
@@ -39,7 +39,8 @@ class EventsByTypeCubit extends Cubit<EventsByTypeState> {
 
     final result = await _eventRepository.getEvents(
       page: _page,
-      eventsFilter: EventsFilter(type: _eventKeyValue),
+      pageSize: _pageSize,
+      eventsFilter: EventsFilter.initial().copyWith(type: _eventType),
     );
 
     result.fold(
@@ -69,10 +70,10 @@ class EventsByTypeCubit extends Cubit<EventsByTypeState> {
     );
   }
 
-  factory EventsByTypeCubit.initialize(KeyValueMapDto eventKeyValue) {
+  factory EventsByTypeCubit.initialize(EventType eventType) {
     return EventsByTypeCubit._(
       eventRepository: GetIt.I.get(),
-      eventKeyValue: eventKeyValue,
+      eventType: eventType,
     );
   }
 }

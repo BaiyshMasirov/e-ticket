@@ -10,10 +10,11 @@ class ErrorResponse with _$ErrorResponse {
   const factory ErrorResponse({
     required int? statusCode,
     required String? message,
-    
   }) = _ErrorResponse;
 
-  factory ErrorResponse.fromResponse(Response response) {
+  factory ErrorResponse.fromResponse({
+    required Response response,
+  }) {
     String? errorMessage = '';
     try {
       errorMessage = response.data['messages'][0].toString();

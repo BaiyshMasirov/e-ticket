@@ -5,12 +5,21 @@ abstract class  LocaleKeys {
   static const content_not_changed = 'content_not_changed';
   static const server_connection_timeout = 'server_connection_timeout';
   static const internet_connection_missing = 'internet_connection_missing';
+  static const internet_connection_restored = 'internet_connection_restored';
   static const access_denied = 'access_denied';
   static const auth_to_use_app = 'auth_to_use_app';
+  static const wrong_login_or_password = 'wrong_login_or_password';
   static const server_error = 'server_error';
   static const server_not_available = 'server_not_available';
   static const unknown_error = 'unknown_error';
+  static const response_handle_error = 'response_handle_error';
   static const request_handle_error = 'request_handle_error';
+  static const access_locked = 'access_locked';
+  static const upgrade_required = 'upgrade_required';
+  static const error_occurred_when_loading_data = 'error_occurred_when_loading_data';
+  static const no_internet_connection = 'no_internet_connection';
+  static const failed_refresh_data_try_again_later = 'failed_refresh_data_try_again_later';
+  static const data_outdated = 'data_outdated';
   static const fillEmptyField = 'fillEmptyField';
   static const phoneNumber = 'phoneNumber';
   static const wrongPhoneFormat = 'wrongPhoneFormat';
@@ -38,6 +47,8 @@ abstract class  LocaleKeys {
   static const clear_form = 'clear_form';
   static const date = 'date';
   static const select_from_list = 'select_from_list';
+  static const select_event_status = 'select_event_status';
+  static const select_event_type = 'select_event_type';
   static const enter_text = 'enter_text';
   static const places = 'places';
   static const noSeating = 'noSeating';
@@ -126,5 +137,15 @@ abstract class  LocaleKeys {
   static const from = 'from';
   static const schedule = 'schedule';
   static const empty = 'empty';
+  static const simple = 'simple';
+  static const comfort = 'comfort';
+  static const vip = 'vip';
+  static const concert = 'concert';
+  static const tourism = 'tourism';
+  static const sport = 'sport';
+  static const cinema = 'cinema';
+  static const business = 'business';
+  static const museum = 'museum';
+  static const theater = 'theater';
 
 }

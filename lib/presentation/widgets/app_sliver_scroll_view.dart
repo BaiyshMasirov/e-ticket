@@ -9,11 +9,13 @@ class AppSliverScrollView extends StatelessWidget {
   final Future<void> Function()? onRefresh;
   final Widget? headerSliver;
   final List<Widget> slivers;
+  final ScrollController? scrollController;
 
   const AppSliverScrollView({
     required this.slivers,
     this.headerSliver,
     this.onRefresh,
+    this.scrollController,
     Key? key,
   }) : super(key: key);
 
@@ -23,6 +25,7 @@ class AppSliverScrollView extends StatelessWidget {
       slivers: slivers,
       headerSliver: headerSliver,
       onRefresh: onRefresh,
+      scrollController: scrollController,
     );
 
     return refreshIndicatorWidget;
@@ -32,15 +35,16 @@ class AppSliverScrollView extends StatelessWidget {
     required List<Widget> slivers,
     Widget? headerSliver,
     Future<void> Function()? onRefresh,
+    ScrollController? scrollController,
   }) {
     return CustomScrollView(
+      controller: scrollController,
       physics: const BouncingScrollPhysics(
         parent: AlwaysScrollableScrollPhysics(),
       ),
       slivers: [
         if (headerSliver != null) headerSliver,
-        if (onRefresh != null)
-          _buildSliverRefreshControl(onRefresh: onRefresh),
+        if (onRefresh != null) _buildSliverRefreshControl(onRefresh: onRefresh),
         ...slivers,
       ],
     );
@@ -76,13 +80,16 @@ Widget _buildAndroidRefreshIndicator(
     child: Padding(
       padding: const EdgeInsets.only(bottom: 16.0),
       child: refreshState == RefreshIndicatorMode.drag
-          ? Opacity(
-              opacity: opacityCurve.transform(
-                  min(pulledExtent / refreshTriggerPullDistance, 1.0)),
-              child: const Icon(
-                CupertinoIcons.down_arrow,
-                color: CupertinoColors.inactiveGray,
-                size: 36.0,
+          ? Transform.rotate(
+              angle: pulledExtent / refreshIndicatorExtent,
+              child: Opacity(
+                opacity: opacityCurve.transform(
+                    min(pulledExtent / refreshTriggerPullDistance, 1.0)),
+                child: const Icon(
+                  Icons.refresh,
+                  color: CupertinoColors.inactiveGray,
+                  size: 36.0,
+                ),
               ),
             )
           : Opacity(

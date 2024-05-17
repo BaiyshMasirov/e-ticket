@@ -16,6 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$TicketStandingPlacePick {
+  /// ticketType = [TicketType]
+  TicketKeyValueModel get ticketType => throw _privateConstructorUsedError;
+
+  /// ticketType = [TicketType]
   int get type => throw _privateConstructorUsedError;
   int get count => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
@@ -31,7 +35,10 @@ abstract class $TicketStandingPlacePickCopyWith<$Res> {
           $Res Function(TicketStandingPlacePick) then) =
       _$TicketStandingPlacePickCopyWithImpl<$Res, TicketStandingPlacePick>;
   @useResult
-  $Res call({int type, int count, double price});
+  $Res call(
+      {TicketKeyValueModel ticketType, int type, int count, double price});
+
+  $TicketKeyValueModelCopyWith<$Res> get ticketType;
 }
 
 /// @nodoc
@@ -48,11 +55,16 @@ class _$TicketStandingPlacePickCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? ticketType = null,
     Object? type = null,
     Object? count = null,
     Object? price = null,
   }) {
     return _then(_value.copyWith(
+      ticketType: null == ticketType
+          ? _value.ticketType
+          : ticketType // ignore: cast_nullable_to_non_nullable
+              as TicketKeyValueModel,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -67,6 +79,14 @@ class _$TicketStandingPlacePickCopyWithImpl<$Res,
               as double,
     ) as $Val);
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TicketKeyValueModelCopyWith<$Res> get ticketType {
+    return $TicketKeyValueModelCopyWith<$Res>(_value.ticketType, (value) {
+      return _then(_value.copyWith(ticketType: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -78,7 +98,11 @@ abstract class _$$TicketStandingPlacePickImplCopyWith<$Res>
       __$$TicketStandingPlacePickImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int type, int count, double price});
+  $Res call(
+      {TicketKeyValueModel ticketType, int type, int count, double price});
+
+  @override
+  $TicketKeyValueModelCopyWith<$Res> get ticketType;
 }
 
 /// @nodoc
@@ -94,11 +118,16 @@ class __$$TicketStandingPlacePickImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? ticketType = null,
     Object? type = null,
     Object? count = null,
     Object? price = null,
   }) {
     return _then(_$TicketStandingPlacePickImpl(
+      ticketType: null == ticketType
+          ? _value.ticketType
+          : ticketType // ignore: cast_nullable_to_non_nullable
+              as TicketKeyValueModel,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -119,9 +148,17 @@ class __$$TicketStandingPlacePickImplCopyWithImpl<$Res>
 
 class _$TicketStandingPlacePickImpl extends _TicketStandingPlacePick {
   const _$TicketStandingPlacePickImpl(
-      {required this.type, required this.count, required this.price})
+      {required this.ticketType,
+      required this.type,
+      required this.count,
+      required this.price})
       : super._();
 
+  /// ticketType = [TicketType]
+  @override
+  final TicketKeyValueModel ticketType;
+
+  /// ticketType = [TicketType]
   @override
   final int type;
   @override
@@ -131,7 +168,7 @@ class _$TicketStandingPlacePickImpl extends _TicketStandingPlacePick {
 
   @override
   String toString() {
-    return 'TicketStandingPlacePick(type: $type, count: $count, price: $price)';
+    return 'TicketStandingPlacePick(ticketType: $ticketType, type: $type, count: $count, price: $price)';
   }
 
   @override
@@ -139,13 +176,15 @@ class _$TicketStandingPlacePickImpl extends _TicketStandingPlacePick {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TicketStandingPlacePickImpl &&
+            (identical(other.ticketType, ticketType) ||
+                other.ticketType == ticketType) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.count, count) || other.count == count) &&
             (identical(other.price, price) || other.price == price));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, count, price);
+  int get hashCode => Object.hash(runtimeType, ticketType, type, count, price);
 
   @JsonKey(ignore: true)
   @override
@@ -157,12 +196,19 @@ class _$TicketStandingPlacePickImpl extends _TicketStandingPlacePick {
 
 abstract class _TicketStandingPlacePick extends TicketStandingPlacePick {
   const factory _TicketStandingPlacePick(
-      {required final int type,
+      {required final TicketKeyValueModel ticketType,
+      required final int type,
       required final int count,
       required final double price}) = _$TicketStandingPlacePickImpl;
   const _TicketStandingPlacePick._() : super._();
 
   @override
+
+  /// ticketType = [TicketType]
+  TicketKeyValueModel get ticketType;
+  @override
+
+  /// ticketType = [TicketType]
   int get type;
   @override
   int get count;

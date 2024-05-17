@@ -89,11 +89,8 @@ Future<void> injectDependencies() async {
   getIt.registerSingleton<PaymentRemoteSource>(
     PaymentRemoteSource(dio: projectDio),
   );
-  getIt.registerSingleton<BookingLocalDataSources>(
-    BookingLocalDataSources(db: databaseClient),
-  );
-  getIt.registerSingleton<HistoryLocalDatasources>(
-    HistoryLocalDatasources(db: databaseClient),
+  getIt.registerSingleton<BookingHistoryLocalDatasources>(
+    BookingHistoryLocalDatasources(db: databaseClient),
   );
   // end of remote sources
 
@@ -109,8 +106,7 @@ Future<void> injectDependencies() async {
   ));
   getIt.registerSingleton<BookingRepository>(BookingRepository(
     bookingRemoteDatasource: getIt.get<BookingRemoteDatasource>(),
-    bookingDatasource: getIt.get<BookingLocalDataSources>(),
-    historyBookingDatasource: getIt.get<HistoryLocalDatasources>(),
+    historyBookingDatasource: getIt.get<BookingHistoryLocalDatasources>(),
   ));
   getIt.registerSingleton<EventRepository>(EventRepository(
     eventRemoteDatasource: getIt.get<EventRemoteDatasource>(),
@@ -129,5 +125,4 @@ Future<void> injectDependencies() async {
 
   getIt.registerSingleton<SettingsCubit>(SettingsCubit.initialize());
   getIt.registerSingleton<SnackbarCubit>(SnackbarCubit());
-  getIt.registerSingleton<DictionaryCubit>(DictionaryCubit.initialize());
 }

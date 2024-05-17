@@ -31,8 +31,8 @@ class AppRouter extends $AppRouter {
               path: RouteConstants.categoriesScreen,
             ),
             AutoRoute(
-              page: HistoryRoute.page,
-              path: RouteConstants.historyScreen,
+              page: BookingHistoryRoute.page,
+              path: RouteConstants.bookingHistoryScreen,
             ),
             AutoRoute(
               page: SettingsRoute.page,
@@ -57,8 +57,8 @@ class AppRouter extends $AppRouter {
           path: RouteConstants.ticketSeatPlaces,
         ),
         AutoRoute(
-          page: UserTicketsBookingsRoute.page,
-          path: RouteConstants.userTicketsBookings,
+          page: BookingTicketsRoute.page,
+          path: RouteConstants.bookingTickets,
         ),
         AutoRoute(
           page: PaymentMethodsRoute.page,

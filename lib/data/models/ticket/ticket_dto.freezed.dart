@@ -21,6 +21,8 @@ TicketDto _$TicketDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$TicketDto {
   String get id => throw _privateConstructorUsedError;
+
+  /// ticketType == [TicketType]
   @JsonKey(name: 'type')
   int get ticketType => throw _privateConstructorUsedError;
   int get placeNumber => throw _privateConstructorUsedError;
@@ -224,6 +226,8 @@ class _$TicketDtoImpl extends _TicketDto {
 
   @override
   final String id;
+
+  /// ticketType == [TicketType]
   @override
   @JsonKey(name: 'type')
   final int ticketType;
@@ -309,6 +313,8 @@ abstract class _TicketDto extends TicketDto {
   @override
   String get id;
   @override
+
+  /// ticketType == [TicketType]
   @JsonKey(name: 'type')
   int get ticketType;
   @override

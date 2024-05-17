@@ -12,7 +12,7 @@ _$BookingPagingDtoImpl _$$BookingPagingDtoImplFromJson(
       currentPageIndex: json['currentPageIndex'] as int,
       pageSize: json['pageSize'] as int,
       totalItemCount: json['totalItemCount'] as int,
-      bookingsList: (json['list'] as List<dynamic>)
+      bookings: (json['list'] as List<dynamic>)
           .map((e) => BookingDto.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
@@ -23,5 +23,5 @@ Map<String, dynamic> _$$BookingPagingDtoImplToJson(
       'currentPageIndex': instance.currentPageIndex,
       'pageSize': instance.pageSize,
       'totalItemCount': instance.totalItemCount,
-      'list': instance.bookingsList.map((e) => e.toJson()).toList(),
+      'list': instance.bookings.map((e) => e.toJson()).toList(),
     };

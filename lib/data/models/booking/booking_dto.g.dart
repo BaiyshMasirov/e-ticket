@@ -9,16 +9,21 @@ part of 'booking_dto.dart';
 _$BookingDtoImpl _$$BookingDtoImplFromJson(Map<String, dynamic> json) =>
     _$BookingDtoImpl(
       id: json['id'] as String,
-      eventDate: DateTime.parse(json['eventDate'] as String),
       created: DateTime.parse(json['created'] as String),
+      eventDate: DateTime.parse(json['eventDate'] as String),
       bookingStatus: $enumDecode(_$BookingStatusEnumMap, json['status'],
           unknownValue: BookingStatus.unknown),
       eventStatus: $enumDecode(_$EventStatusEnumMap, json['eventStatus'],
           unknownValue: EventStatus.unknown),
       eventId: json['eventId'] as String,
       bookingSum: (json['bookingSum'] as num).toDouble(),
-      locationType: $enumDecode(_$LocationTypeEnumMap, json['type']),
+      locationType: $enumDecode(_$LocationTypeEnumMap, json['type'],
+          unknownValue: LocationType.unknown),
       locationName: json['locationName'] as String,
+      tickets: (json['tickets'] as List<dynamic>?)
+              ?.map((e) => TicketBookedDto.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       eventName: json['eventName'] as String?,
       eventImage: json['eventImage'] as String?,
     );
@@ -26,14 +31,15 @@ _$BookingDtoImpl _$$BookingDtoImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$BookingDtoImplToJson(_$BookingDtoImpl instance) {
   final val = <String, dynamic>{
     'id': instance.id,
-    'eventDate': instance.eventDate.toIso8601String(),
     'created': instance.created.toIso8601String(),
+    'eventDate': instance.eventDate.toIso8601String(),
     'status': _$BookingStatusEnumMap[instance.bookingStatus]!,
     'eventStatus': _$EventStatusEnumMap[instance.eventStatus]!,
     'eventId': instance.eventId,
     'bookingSum': instance.bookingSum,
     'type': _$LocationTypeEnumMap[instance.locationType]!,
     'locationName': instance.locationName,
+    'tickets': instance.tickets.map((e) => e.toJson()).toList(),
   };
 
   void writeNotNull(String key, dynamic value) {

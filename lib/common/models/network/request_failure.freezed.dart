@@ -28,6 +28,10 @@ mixin _$RequestFailure {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -45,6 +49,8 @@ mixin _$RequestFailure {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,6 +60,9 @@ mixin _$RequestFailure {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -65,6 +74,7 @@ mixin _$RequestFailure {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -74,6 +84,9 @@ mixin _$RequestFailure {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -84,6 +97,7 @@ mixin _$RequestFailure {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -94,6 +108,9 @@ mixin _$RequestFailure {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -104,6 +121,7 @@ mixin _$RequestFailure {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -113,6 +131,9 @@ mixin _$RequestFailure {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -123,6 +144,7 @@ mixin _$RequestFailure {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -132,6 +154,9 @@ mixin _$RequestFailure {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -142,6 +167,7 @@ mixin _$RequestFailure {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -273,6 +299,10 @@ class _$NoConnectionImpl extends _NoConnection {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -290,6 +320,8 @@ class _$NoConnectionImpl extends _NoConnection {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return noConnection(errorCode, errorMessage);
   }
@@ -302,6 +334,9 @@ class _$NoConnectionImpl extends _NoConnection {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -313,6 +348,7 @@ class _$NoConnectionImpl extends _NoConnection {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return noConnection?.call(errorCode, errorMessage);
   }
@@ -325,6 +361,9 @@ class _$NoConnectionImpl extends _NoConnection {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -335,6 +374,7 @@ class _$NoConnectionImpl extends _NoConnection {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (noConnection != null) {
@@ -351,6 +391,9 @@ class _$NoConnectionImpl extends _NoConnection {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -361,6 +404,7 @@ class _$NoConnectionImpl extends _NoConnection {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return noConnection(this);
   }
@@ -373,6 +417,9 @@ class _$NoConnectionImpl extends _NoConnection {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -383,6 +430,7 @@ class _$NoConnectionImpl extends _NoConnection {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return noConnection?.call(this);
   }
@@ -395,6 +443,9 @@ class _$NoConnectionImpl extends _NoConnection {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -405,6 +456,7 @@ class _$NoConnectionImpl extends _NoConnection {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (noConnection != null) {
@@ -513,6 +565,10 @@ class _$BadRequestImpl extends _BadRequest {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -530,6 +586,8 @@ class _$BadRequestImpl extends _BadRequest {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return badRequest(errorCode, errorMessage);
   }
@@ -542,6 +600,9 @@ class _$BadRequestImpl extends _BadRequest {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -553,6 +614,7 @@ class _$BadRequestImpl extends _BadRequest {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return badRequest?.call(errorCode, errorMessage);
   }
@@ -565,6 +627,9 @@ class _$BadRequestImpl extends _BadRequest {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -575,6 +640,7 @@ class _$BadRequestImpl extends _BadRequest {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (badRequest != null) {
@@ -591,6 +657,9 @@ class _$BadRequestImpl extends _BadRequest {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -601,6 +670,7 @@ class _$BadRequestImpl extends _BadRequest {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return badRequest(this);
   }
@@ -613,6 +683,9 @@ class _$BadRequestImpl extends _BadRequest {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -623,6 +696,7 @@ class _$BadRequestImpl extends _BadRequest {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return badRequest?.call(this);
   }
@@ -635,6 +709,9 @@ class _$BadRequestImpl extends _BadRequest {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -645,6 +722,7 @@ class _$BadRequestImpl extends _BadRequest {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (badRequest != null) {
@@ -753,6 +831,10 @@ class _$NotFoundImpl extends _NotFound {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -770,6 +852,8 @@ class _$NotFoundImpl extends _NotFound {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return notFound(errorCode, errorMessage);
   }
@@ -782,6 +866,9 @@ class _$NotFoundImpl extends _NotFound {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -793,6 +880,7 @@ class _$NotFoundImpl extends _NotFound {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return notFound?.call(errorCode, errorMessage);
   }
@@ -805,6 +893,9 @@ class _$NotFoundImpl extends _NotFound {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -815,6 +906,7 @@ class _$NotFoundImpl extends _NotFound {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (notFound != null) {
@@ -831,6 +923,9 @@ class _$NotFoundImpl extends _NotFound {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -841,6 +936,7 @@ class _$NotFoundImpl extends _NotFound {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return notFound(this);
   }
@@ -853,6 +949,9 @@ class _$NotFoundImpl extends _NotFound {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -863,6 +962,7 @@ class _$NotFoundImpl extends _NotFound {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return notFound?.call(this);
   }
@@ -875,6 +975,9 @@ class _$NotFoundImpl extends _NotFound {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -885,6 +988,7 @@ class _$NotFoundImpl extends _NotFound {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (notFound != null) {
@@ -994,6 +1098,10 @@ class _$MethodNotAllowedImpl extends _MethodNotAllowed {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -1011,6 +1119,8 @@ class _$MethodNotAllowedImpl extends _MethodNotAllowed {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return methodNotAllowed(errorCode, errorMessage);
   }
@@ -1023,6 +1133,9 @@ class _$MethodNotAllowedImpl extends _MethodNotAllowed {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -1034,6 +1147,7 @@ class _$MethodNotAllowedImpl extends _MethodNotAllowed {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return methodNotAllowed?.call(errorCode, errorMessage);
   }
@@ -1046,6 +1160,9 @@ class _$MethodNotAllowedImpl extends _MethodNotAllowed {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -1056,6 +1173,7 @@ class _$MethodNotAllowedImpl extends _MethodNotAllowed {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (methodNotAllowed != null) {
@@ -1072,6 +1190,9 @@ class _$MethodNotAllowedImpl extends _MethodNotAllowed {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -1082,6 +1203,7 @@ class _$MethodNotAllowedImpl extends _MethodNotAllowed {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return methodNotAllowed(this);
   }
@@ -1094,6 +1216,9 @@ class _$MethodNotAllowedImpl extends _MethodNotAllowed {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -1104,6 +1229,7 @@ class _$MethodNotAllowedImpl extends _MethodNotAllowed {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return methodNotAllowed?.call(this);
   }
@@ -1116,6 +1242,9 @@ class _$MethodNotAllowedImpl extends _MethodNotAllowed {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -1126,6 +1255,7 @@ class _$MethodNotAllowedImpl extends _MethodNotAllowed {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (methodNotAllowed != null) {
@@ -1236,6 +1366,10 @@ class _$TooManyRequestImpl extends _TooManyRequest {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -1253,6 +1387,8 @@ class _$TooManyRequestImpl extends _TooManyRequest {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return tooManyRequest(errorCode, errorMessage);
   }
@@ -1265,6 +1401,9 @@ class _$TooManyRequestImpl extends _TooManyRequest {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -1276,6 +1415,7 @@ class _$TooManyRequestImpl extends _TooManyRequest {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return tooManyRequest?.call(errorCode, errorMessage);
   }
@@ -1288,6 +1428,9 @@ class _$TooManyRequestImpl extends _TooManyRequest {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -1298,6 +1441,7 @@ class _$TooManyRequestImpl extends _TooManyRequest {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (tooManyRequest != null) {
@@ -1314,6 +1458,9 @@ class _$TooManyRequestImpl extends _TooManyRequest {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -1324,6 +1471,7 @@ class _$TooManyRequestImpl extends _TooManyRequest {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return tooManyRequest(this);
   }
@@ -1336,6 +1484,9 @@ class _$TooManyRequestImpl extends _TooManyRequest {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -1346,6 +1497,7 @@ class _$TooManyRequestImpl extends _TooManyRequest {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return tooManyRequest?.call(this);
   }
@@ -1358,6 +1510,9 @@ class _$TooManyRequestImpl extends _TooManyRequest {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -1368,6 +1523,7 @@ class _$TooManyRequestImpl extends _TooManyRequest {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (tooManyRequest != null) {
@@ -1389,6 +1545,805 @@ abstract class _TooManyRequest extends RequestFailure {
   @override
   @JsonKey(ignore: true)
   _$$TooManyRequestImplCopyWith<_$TooManyRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ConflictImplCopyWith<$Res>
+    implements $RequestFailureCopyWith<$Res> {
+  factory _$$ConflictImplCopyWith(
+          _$ConflictImpl value, $Res Function(_$ConflictImpl) then) =
+      __$$ConflictImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? errorCode, String? errorMessage});
+}
+
+/// @nodoc
+class __$$ConflictImplCopyWithImpl<$Res>
+    extends _$RequestFailureCopyWithImpl<$Res, _$ConflictImpl>
+    implements _$$ConflictImplCopyWith<$Res> {
+  __$$ConflictImplCopyWithImpl(
+      _$ConflictImpl _value, $Res Function(_$ConflictImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorCode = freezed,
+    Object? errorMessage = freezed,
+  }) {
+    return _then(_$ConflictImpl(
+      freezed == errorCode
+          ? _value.errorCode
+          : errorCode // ignore: cast_nullable_to_non_nullable
+              as int?,
+      freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ConflictImpl extends _Conflict {
+  const _$ConflictImpl(this.errorCode, this.errorMessage) : super._();
+
+  @override
+  final int? errorCode;
+  @override
+  final String? errorMessage;
+
+  @override
+  String toString() {
+    return 'RequestFailure.conflict(errorCode: $errorCode, errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConflictImpl &&
+            (identical(other.errorCode, errorCode) ||
+                other.errorCode == errorCode) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConflictImplCopyWith<_$ConflictImpl> get copyWith =>
+      __$$ConflictImplCopyWithImpl<_$ConflictImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int? errorCode, String? errorMessage)
+        noConnection,
+    required TResult Function(int? errorCode, String? errorMessage) badRequest,
+    required TResult Function(int? errorCode, String? errorMessage) notFound,
+    required TResult Function(int? errorCode, String? errorMessage)
+        methodNotAllowed,
+    required TResult Function(int? errorCode, String? errorMessage)
+        tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
+    required TResult Function(int? errorCode, String? errorMessage)
+        internalServerError,
+    required TResult Function(int? errorCode, String? errorMessage)
+        serviceUnavailable,
+    required TResult Function(int? errorCode, String? errorMessage)
+        unknownError,
+    required TResult Function(int? errorCode, String? errorMessage)
+        statusNotHandled,
+    required TResult Function(int? errorCode, String? errorMessage) created,
+    required TResult Function(int? errorCode, String? errorMessage) notModified,
+    required TResult Function(int? errorCode, String? errorMessage)
+        connectionTimeout,
+    required TResult Function(int? errorCode, String? errorMessage)
+        contentTooLarge,
+    required TResult Function(int? errorCode, String? errorMessage) forbidden,
+    required TResult Function(int? errorCode, String? errorMessage)
+        unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
+  }) {
+    return conflict(errorCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int? errorCode, String? errorMessage)? noConnection,
+    TResult? Function(int? errorCode, String? errorMessage)? badRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? notFound,
+    TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
+    TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
+    TResult? Function(int? errorCode, String? errorMessage)?
+        internalServerError,
+    TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
+    TResult? Function(int? errorCode, String? errorMessage)? unknownError,
+    TResult? Function(int? errorCode, String? errorMessage)? statusNotHandled,
+    TResult? Function(int? errorCode, String? errorMessage)? created,
+    TResult? Function(int? errorCode, String? errorMessage)? notModified,
+    TResult? Function(int? errorCode, String? errorMessage)? connectionTimeout,
+    TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
+    TResult? Function(int? errorCode, String? errorMessage)? forbidden,
+    TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
+  }) {
+    return conflict?.call(errorCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int? errorCode, String? errorMessage)? noConnection,
+    TResult Function(int? errorCode, String? errorMessage)? badRequest,
+    TResult Function(int? errorCode, String? errorMessage)? notFound,
+    TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
+    TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
+    TResult Function(int? errorCode, String? errorMessage)? internalServerError,
+    TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
+    TResult Function(int? errorCode, String? errorMessage)? unknownError,
+    TResult Function(int? errorCode, String? errorMessage)? statusNotHandled,
+    TResult Function(int? errorCode, String? errorMessage)? created,
+    TResult Function(int? errorCode, String? errorMessage)? notModified,
+    TResult Function(int? errorCode, String? errorMessage)? connectionTimeout,
+    TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
+    TResult Function(int? errorCode, String? errorMessage)? forbidden,
+    TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
+    required TResult orElse(),
+  }) {
+    if (conflict != null) {
+      return conflict(errorCode, errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_NoConnection value) noConnection,
+    required TResult Function(_BadRequest value) badRequest,
+    required TResult Function(_NotFound value) notFound,
+    required TResult Function(_MethodNotAllowed value) methodNotAllowed,
+    required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
+    required TResult Function(_InternalServerError value) internalServerError,
+    required TResult Function(_ServiceUnavailable value) serviceUnavailable,
+    required TResult Function(_UnknownError value) unknownError,
+    required TResult Function(_StatusNotHandled value) statusNotHandled,
+    required TResult Function(_Created value) created,
+    required TResult Function(_NotModified value) notModified,
+    required TResult Function(_ConnectionTimeout value) connectionTimeout,
+    required TResult Function(_ContentTooLarge value) contentTooLarge,
+    required TResult Function(_Forbidden value) forbidden,
+    required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
+  }) {
+    return conflict(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NoConnection value)? noConnection,
+    TResult? Function(_BadRequest value)? badRequest,
+    TResult? Function(_NotFound value)? notFound,
+    TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
+    TResult? Function(_InternalServerError value)? internalServerError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_UnknownError value)? unknownError,
+    TResult? Function(_StatusNotHandled value)? statusNotHandled,
+    TResult? Function(_Created value)? created,
+    TResult? Function(_NotModified value)? notModified,
+    TResult? Function(_ConnectionTimeout value)? connectionTimeout,
+    TResult? Function(_ContentTooLarge value)? contentTooLarge,
+    TResult? Function(_Forbidden value)? forbidden,
+    TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
+  }) {
+    return conflict?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NoConnection value)? noConnection,
+    TResult Function(_BadRequest value)? badRequest,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_MethodNotAllowed value)? methodNotAllowed,
+    TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
+    TResult Function(_InternalServerError value)? internalServerError,
+    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult Function(_UnknownError value)? unknownError,
+    TResult Function(_StatusNotHandled value)? statusNotHandled,
+    TResult Function(_Created value)? created,
+    TResult Function(_NotModified value)? notModified,
+    TResult Function(_ConnectionTimeout value)? connectionTimeout,
+    TResult Function(_ContentTooLarge value)? contentTooLarge,
+    TResult Function(_Forbidden value)? forbidden,
+    TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
+    required TResult orElse(),
+  }) {
+    if (conflict != null) {
+      return conflict(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Conflict extends RequestFailure {
+  const factory _Conflict(final int? errorCode, final String? errorMessage) =
+      _$ConflictImpl;
+  const _Conflict._() : super._();
+
+  @override
+  int? get errorCode;
+  @override
+  String? get errorMessage;
+  @override
+  @JsonKey(ignore: true)
+  _$$ConflictImplCopyWith<_$ConflictImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LockedImplCopyWith<$Res>
+    implements $RequestFailureCopyWith<$Res> {
+  factory _$$LockedImplCopyWith(
+          _$LockedImpl value, $Res Function(_$LockedImpl) then) =
+      __$$LockedImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? errorCode, String? errorMessage});
+}
+
+/// @nodoc
+class __$$LockedImplCopyWithImpl<$Res>
+    extends _$RequestFailureCopyWithImpl<$Res, _$LockedImpl>
+    implements _$$LockedImplCopyWith<$Res> {
+  __$$LockedImplCopyWithImpl(
+      _$LockedImpl _value, $Res Function(_$LockedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorCode = freezed,
+    Object? errorMessage = freezed,
+  }) {
+    return _then(_$LockedImpl(
+      freezed == errorCode
+          ? _value.errorCode
+          : errorCode // ignore: cast_nullable_to_non_nullable
+              as int?,
+      freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LockedImpl extends _Locked {
+  const _$LockedImpl(this.errorCode, this.errorMessage) : super._();
+
+  @override
+  final int? errorCode;
+  @override
+  final String? errorMessage;
+
+  @override
+  String toString() {
+    return 'RequestFailure.locked(errorCode: $errorCode, errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LockedImpl &&
+            (identical(other.errorCode, errorCode) ||
+                other.errorCode == errorCode) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LockedImplCopyWith<_$LockedImpl> get copyWith =>
+      __$$LockedImplCopyWithImpl<_$LockedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int? errorCode, String? errorMessage)
+        noConnection,
+    required TResult Function(int? errorCode, String? errorMessage) badRequest,
+    required TResult Function(int? errorCode, String? errorMessage) notFound,
+    required TResult Function(int? errorCode, String? errorMessage)
+        methodNotAllowed,
+    required TResult Function(int? errorCode, String? errorMessage)
+        tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
+    required TResult Function(int? errorCode, String? errorMessage)
+        internalServerError,
+    required TResult Function(int? errorCode, String? errorMessage)
+        serviceUnavailable,
+    required TResult Function(int? errorCode, String? errorMessage)
+        unknownError,
+    required TResult Function(int? errorCode, String? errorMessage)
+        statusNotHandled,
+    required TResult Function(int? errorCode, String? errorMessage) created,
+    required TResult Function(int? errorCode, String? errorMessage) notModified,
+    required TResult Function(int? errorCode, String? errorMessage)
+        connectionTimeout,
+    required TResult Function(int? errorCode, String? errorMessage)
+        contentTooLarge,
+    required TResult Function(int? errorCode, String? errorMessage) forbidden,
+    required TResult Function(int? errorCode, String? errorMessage)
+        unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
+  }) {
+    return locked(errorCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int? errorCode, String? errorMessage)? noConnection,
+    TResult? Function(int? errorCode, String? errorMessage)? badRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? notFound,
+    TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
+    TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
+    TResult? Function(int? errorCode, String? errorMessage)?
+        internalServerError,
+    TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
+    TResult? Function(int? errorCode, String? errorMessage)? unknownError,
+    TResult? Function(int? errorCode, String? errorMessage)? statusNotHandled,
+    TResult? Function(int? errorCode, String? errorMessage)? created,
+    TResult? Function(int? errorCode, String? errorMessage)? notModified,
+    TResult? Function(int? errorCode, String? errorMessage)? connectionTimeout,
+    TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
+    TResult? Function(int? errorCode, String? errorMessage)? forbidden,
+    TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
+  }) {
+    return locked?.call(errorCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int? errorCode, String? errorMessage)? noConnection,
+    TResult Function(int? errorCode, String? errorMessage)? badRequest,
+    TResult Function(int? errorCode, String? errorMessage)? notFound,
+    TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
+    TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
+    TResult Function(int? errorCode, String? errorMessage)? internalServerError,
+    TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
+    TResult Function(int? errorCode, String? errorMessage)? unknownError,
+    TResult Function(int? errorCode, String? errorMessage)? statusNotHandled,
+    TResult Function(int? errorCode, String? errorMessage)? created,
+    TResult Function(int? errorCode, String? errorMessage)? notModified,
+    TResult Function(int? errorCode, String? errorMessage)? connectionTimeout,
+    TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
+    TResult Function(int? errorCode, String? errorMessage)? forbidden,
+    TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
+    required TResult orElse(),
+  }) {
+    if (locked != null) {
+      return locked(errorCode, errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_NoConnection value) noConnection,
+    required TResult Function(_BadRequest value) badRequest,
+    required TResult Function(_NotFound value) notFound,
+    required TResult Function(_MethodNotAllowed value) methodNotAllowed,
+    required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
+    required TResult Function(_InternalServerError value) internalServerError,
+    required TResult Function(_ServiceUnavailable value) serviceUnavailable,
+    required TResult Function(_UnknownError value) unknownError,
+    required TResult Function(_StatusNotHandled value) statusNotHandled,
+    required TResult Function(_Created value) created,
+    required TResult Function(_NotModified value) notModified,
+    required TResult Function(_ConnectionTimeout value) connectionTimeout,
+    required TResult Function(_ContentTooLarge value) contentTooLarge,
+    required TResult Function(_Forbidden value) forbidden,
+    required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
+  }) {
+    return locked(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NoConnection value)? noConnection,
+    TResult? Function(_BadRequest value)? badRequest,
+    TResult? Function(_NotFound value)? notFound,
+    TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
+    TResult? Function(_InternalServerError value)? internalServerError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_UnknownError value)? unknownError,
+    TResult? Function(_StatusNotHandled value)? statusNotHandled,
+    TResult? Function(_Created value)? created,
+    TResult? Function(_NotModified value)? notModified,
+    TResult? Function(_ConnectionTimeout value)? connectionTimeout,
+    TResult? Function(_ContentTooLarge value)? contentTooLarge,
+    TResult? Function(_Forbidden value)? forbidden,
+    TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
+  }) {
+    return locked?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NoConnection value)? noConnection,
+    TResult Function(_BadRequest value)? badRequest,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_MethodNotAllowed value)? methodNotAllowed,
+    TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
+    TResult Function(_InternalServerError value)? internalServerError,
+    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult Function(_UnknownError value)? unknownError,
+    TResult Function(_StatusNotHandled value)? statusNotHandled,
+    TResult Function(_Created value)? created,
+    TResult Function(_NotModified value)? notModified,
+    TResult Function(_ConnectionTimeout value)? connectionTimeout,
+    TResult Function(_ContentTooLarge value)? contentTooLarge,
+    TResult Function(_Forbidden value)? forbidden,
+    TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
+    required TResult orElse(),
+  }) {
+    if (locked != null) {
+      return locked(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Locked extends RequestFailure {
+  const factory _Locked(final int? errorCode, final String? errorMessage) =
+      _$LockedImpl;
+  const _Locked._() : super._();
+
+  @override
+  int? get errorCode;
+  @override
+  String? get errorMessage;
+  @override
+  @JsonKey(ignore: true)
+  _$$LockedImplCopyWith<_$LockedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpgradeRequiredImplCopyWith<$Res>
+    implements $RequestFailureCopyWith<$Res> {
+  factory _$$UpgradeRequiredImplCopyWith(_$UpgradeRequiredImpl value,
+          $Res Function(_$UpgradeRequiredImpl) then) =
+      __$$UpgradeRequiredImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? errorCode, String? errorMessage});
+}
+
+/// @nodoc
+class __$$UpgradeRequiredImplCopyWithImpl<$Res>
+    extends _$RequestFailureCopyWithImpl<$Res, _$UpgradeRequiredImpl>
+    implements _$$UpgradeRequiredImplCopyWith<$Res> {
+  __$$UpgradeRequiredImplCopyWithImpl(
+      _$UpgradeRequiredImpl _value, $Res Function(_$UpgradeRequiredImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorCode = freezed,
+    Object? errorMessage = freezed,
+  }) {
+    return _then(_$UpgradeRequiredImpl(
+      freezed == errorCode
+          ? _value.errorCode
+          : errorCode // ignore: cast_nullable_to_non_nullable
+              as int?,
+      freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpgradeRequiredImpl extends _UpgradeRequired {
+  const _$UpgradeRequiredImpl(this.errorCode, this.errorMessage) : super._();
+
+  @override
+  final int? errorCode;
+  @override
+  final String? errorMessage;
+
+  @override
+  String toString() {
+    return 'RequestFailure.upgradeRequired(errorCode: $errorCode, errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpgradeRequiredImpl &&
+            (identical(other.errorCode, errorCode) ||
+                other.errorCode == errorCode) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpgradeRequiredImplCopyWith<_$UpgradeRequiredImpl> get copyWith =>
+      __$$UpgradeRequiredImplCopyWithImpl<_$UpgradeRequiredImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int? errorCode, String? errorMessage)
+        noConnection,
+    required TResult Function(int? errorCode, String? errorMessage) badRequest,
+    required TResult Function(int? errorCode, String? errorMessage) notFound,
+    required TResult Function(int? errorCode, String? errorMessage)
+        methodNotAllowed,
+    required TResult Function(int? errorCode, String? errorMessage)
+        tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
+    required TResult Function(int? errorCode, String? errorMessage)
+        internalServerError,
+    required TResult Function(int? errorCode, String? errorMessage)
+        serviceUnavailable,
+    required TResult Function(int? errorCode, String? errorMessage)
+        unknownError,
+    required TResult Function(int? errorCode, String? errorMessage)
+        statusNotHandled,
+    required TResult Function(int? errorCode, String? errorMessage) created,
+    required TResult Function(int? errorCode, String? errorMessage) notModified,
+    required TResult Function(int? errorCode, String? errorMessage)
+        connectionTimeout,
+    required TResult Function(int? errorCode, String? errorMessage)
+        contentTooLarge,
+    required TResult Function(int? errorCode, String? errorMessage) forbidden,
+    required TResult Function(int? errorCode, String? errorMessage)
+        unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
+  }) {
+    return upgradeRequired(errorCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int? errorCode, String? errorMessage)? noConnection,
+    TResult? Function(int? errorCode, String? errorMessage)? badRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? notFound,
+    TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
+    TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
+    TResult? Function(int? errorCode, String? errorMessage)?
+        internalServerError,
+    TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
+    TResult? Function(int? errorCode, String? errorMessage)? unknownError,
+    TResult? Function(int? errorCode, String? errorMessage)? statusNotHandled,
+    TResult? Function(int? errorCode, String? errorMessage)? created,
+    TResult? Function(int? errorCode, String? errorMessage)? notModified,
+    TResult? Function(int? errorCode, String? errorMessage)? connectionTimeout,
+    TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
+    TResult? Function(int? errorCode, String? errorMessage)? forbidden,
+    TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
+  }) {
+    return upgradeRequired?.call(errorCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int? errorCode, String? errorMessage)? noConnection,
+    TResult Function(int? errorCode, String? errorMessage)? badRequest,
+    TResult Function(int? errorCode, String? errorMessage)? notFound,
+    TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
+    TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
+    TResult Function(int? errorCode, String? errorMessage)? internalServerError,
+    TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
+    TResult Function(int? errorCode, String? errorMessage)? unknownError,
+    TResult Function(int? errorCode, String? errorMessage)? statusNotHandled,
+    TResult Function(int? errorCode, String? errorMessage)? created,
+    TResult Function(int? errorCode, String? errorMessage)? notModified,
+    TResult Function(int? errorCode, String? errorMessage)? connectionTimeout,
+    TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
+    TResult Function(int? errorCode, String? errorMessage)? forbidden,
+    TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
+    required TResult orElse(),
+  }) {
+    if (upgradeRequired != null) {
+      return upgradeRequired(errorCode, errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_NoConnection value) noConnection,
+    required TResult Function(_BadRequest value) badRequest,
+    required TResult Function(_NotFound value) notFound,
+    required TResult Function(_MethodNotAllowed value) methodNotAllowed,
+    required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
+    required TResult Function(_InternalServerError value) internalServerError,
+    required TResult Function(_ServiceUnavailable value) serviceUnavailable,
+    required TResult Function(_UnknownError value) unknownError,
+    required TResult Function(_StatusNotHandled value) statusNotHandled,
+    required TResult Function(_Created value) created,
+    required TResult Function(_NotModified value) notModified,
+    required TResult Function(_ConnectionTimeout value) connectionTimeout,
+    required TResult Function(_ContentTooLarge value) contentTooLarge,
+    required TResult Function(_Forbidden value) forbidden,
+    required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
+  }) {
+    return upgradeRequired(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NoConnection value)? noConnection,
+    TResult? Function(_BadRequest value)? badRequest,
+    TResult? Function(_NotFound value)? notFound,
+    TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
+    TResult? Function(_InternalServerError value)? internalServerError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_UnknownError value)? unknownError,
+    TResult? Function(_StatusNotHandled value)? statusNotHandled,
+    TResult? Function(_Created value)? created,
+    TResult? Function(_NotModified value)? notModified,
+    TResult? Function(_ConnectionTimeout value)? connectionTimeout,
+    TResult? Function(_ContentTooLarge value)? contentTooLarge,
+    TResult? Function(_Forbidden value)? forbidden,
+    TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
+  }) {
+    return upgradeRequired?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NoConnection value)? noConnection,
+    TResult Function(_BadRequest value)? badRequest,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_MethodNotAllowed value)? methodNotAllowed,
+    TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
+    TResult Function(_InternalServerError value)? internalServerError,
+    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult Function(_UnknownError value)? unknownError,
+    TResult Function(_StatusNotHandled value)? statusNotHandled,
+    TResult Function(_Created value)? created,
+    TResult Function(_NotModified value)? notModified,
+    TResult Function(_ConnectionTimeout value)? connectionTimeout,
+    TResult Function(_ContentTooLarge value)? contentTooLarge,
+    TResult Function(_Forbidden value)? forbidden,
+    TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
+    required TResult orElse(),
+  }) {
+    if (upgradeRequired != null) {
+      return upgradeRequired(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpgradeRequired extends RequestFailure {
+  const factory _UpgradeRequired(
+      final int? errorCode, final String? errorMessage) = _$UpgradeRequiredImpl;
+  const _UpgradeRequired._() : super._();
+
+  @override
+  int? get errorCode;
+  @override
+  String? get errorMessage;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpgradeRequiredImplCopyWith<_$UpgradeRequiredImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1478,6 +2433,10 @@ class _$InternalServerErrorImpl extends _InternalServerError {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -1495,6 +2454,8 @@ class _$InternalServerErrorImpl extends _InternalServerError {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return internalServerError(errorCode, errorMessage);
   }
@@ -1507,6 +2468,9 @@ class _$InternalServerErrorImpl extends _InternalServerError {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -1518,6 +2482,7 @@ class _$InternalServerErrorImpl extends _InternalServerError {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return internalServerError?.call(errorCode, errorMessage);
   }
@@ -1530,6 +2495,9 @@ class _$InternalServerErrorImpl extends _InternalServerError {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -1540,6 +2508,7 @@ class _$InternalServerErrorImpl extends _InternalServerError {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (internalServerError != null) {
@@ -1556,6 +2525,9 @@ class _$InternalServerErrorImpl extends _InternalServerError {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -1566,6 +2538,7 @@ class _$InternalServerErrorImpl extends _InternalServerError {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return internalServerError(this);
   }
@@ -1578,6 +2551,9 @@ class _$InternalServerErrorImpl extends _InternalServerError {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -1588,6 +2564,7 @@ class _$InternalServerErrorImpl extends _InternalServerError {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return internalServerError?.call(this);
   }
@@ -1600,6 +2577,9 @@ class _$InternalServerErrorImpl extends _InternalServerError {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -1610,6 +2590,7 @@ class _$InternalServerErrorImpl extends _InternalServerError {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (internalServerError != null) {
@@ -1720,6 +2701,10 @@ class _$ServiceUnavailableImpl extends _ServiceUnavailable {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -1737,6 +2722,8 @@ class _$ServiceUnavailableImpl extends _ServiceUnavailable {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return serviceUnavailable(errorCode, errorMessage);
   }
@@ -1749,6 +2736,9 @@ class _$ServiceUnavailableImpl extends _ServiceUnavailable {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -1760,6 +2750,7 @@ class _$ServiceUnavailableImpl extends _ServiceUnavailable {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return serviceUnavailable?.call(errorCode, errorMessage);
   }
@@ -1772,6 +2763,9 @@ class _$ServiceUnavailableImpl extends _ServiceUnavailable {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -1782,6 +2776,7 @@ class _$ServiceUnavailableImpl extends _ServiceUnavailable {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (serviceUnavailable != null) {
@@ -1798,6 +2793,9 @@ class _$ServiceUnavailableImpl extends _ServiceUnavailable {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -1808,6 +2806,7 @@ class _$ServiceUnavailableImpl extends _ServiceUnavailable {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return serviceUnavailable(this);
   }
@@ -1820,6 +2819,9 @@ class _$ServiceUnavailableImpl extends _ServiceUnavailable {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -1830,6 +2832,7 @@ class _$ServiceUnavailableImpl extends _ServiceUnavailable {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return serviceUnavailable?.call(this);
   }
@@ -1842,6 +2845,9 @@ class _$ServiceUnavailableImpl extends _ServiceUnavailable {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -1852,6 +2858,7 @@ class _$ServiceUnavailableImpl extends _ServiceUnavailable {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (serviceUnavailable != null) {
@@ -1961,6 +2968,10 @@ class _$UnknownErrorImpl extends _UnknownError {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -1978,6 +2989,8 @@ class _$UnknownErrorImpl extends _UnknownError {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return unknownError(errorCode, errorMessage);
   }
@@ -1990,6 +3003,9 @@ class _$UnknownErrorImpl extends _UnknownError {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -2001,6 +3017,7 @@ class _$UnknownErrorImpl extends _UnknownError {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return unknownError?.call(errorCode, errorMessage);
   }
@@ -2013,6 +3030,9 @@ class _$UnknownErrorImpl extends _UnknownError {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -2023,6 +3043,7 @@ class _$UnknownErrorImpl extends _UnknownError {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (unknownError != null) {
@@ -2039,6 +3060,9 @@ class _$UnknownErrorImpl extends _UnknownError {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -2049,6 +3073,7 @@ class _$UnknownErrorImpl extends _UnknownError {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return unknownError(this);
   }
@@ -2061,6 +3086,9 @@ class _$UnknownErrorImpl extends _UnknownError {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -2071,6 +3099,7 @@ class _$UnknownErrorImpl extends _UnknownError {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return unknownError?.call(this);
   }
@@ -2083,6 +3112,9 @@ class _$UnknownErrorImpl extends _UnknownError {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -2093,6 +3125,7 @@ class _$UnknownErrorImpl extends _UnknownError {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (unknownError != null) {
@@ -2202,6 +3235,10 @@ class _$StatusNotHandledImpl extends _StatusNotHandled {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -2219,6 +3256,8 @@ class _$StatusNotHandledImpl extends _StatusNotHandled {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return statusNotHandled(errorCode, errorMessage);
   }
@@ -2231,6 +3270,9 @@ class _$StatusNotHandledImpl extends _StatusNotHandled {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -2242,6 +3284,7 @@ class _$StatusNotHandledImpl extends _StatusNotHandled {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return statusNotHandled?.call(errorCode, errorMessage);
   }
@@ -2254,6 +3297,9 @@ class _$StatusNotHandledImpl extends _StatusNotHandled {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -2264,6 +3310,7 @@ class _$StatusNotHandledImpl extends _StatusNotHandled {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (statusNotHandled != null) {
@@ -2280,6 +3327,9 @@ class _$StatusNotHandledImpl extends _StatusNotHandled {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -2290,6 +3340,7 @@ class _$StatusNotHandledImpl extends _StatusNotHandled {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return statusNotHandled(this);
   }
@@ -2302,6 +3353,9 @@ class _$StatusNotHandledImpl extends _StatusNotHandled {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -2312,6 +3366,7 @@ class _$StatusNotHandledImpl extends _StatusNotHandled {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return statusNotHandled?.call(this);
   }
@@ -2324,6 +3379,9 @@ class _$StatusNotHandledImpl extends _StatusNotHandled {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -2334,6 +3392,7 @@ class _$StatusNotHandledImpl extends _StatusNotHandled {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (statusNotHandled != null) {
@@ -2443,6 +3502,10 @@ class _$CreatedImpl extends _Created {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -2460,6 +3523,8 @@ class _$CreatedImpl extends _Created {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return created(errorCode, errorMessage);
   }
@@ -2472,6 +3537,9 @@ class _$CreatedImpl extends _Created {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -2483,6 +3551,7 @@ class _$CreatedImpl extends _Created {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return created?.call(errorCode, errorMessage);
   }
@@ -2495,6 +3564,9 @@ class _$CreatedImpl extends _Created {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -2505,6 +3577,7 @@ class _$CreatedImpl extends _Created {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (created != null) {
@@ -2521,6 +3594,9 @@ class _$CreatedImpl extends _Created {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -2531,6 +3607,7 @@ class _$CreatedImpl extends _Created {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return created(this);
   }
@@ -2543,6 +3620,9 @@ class _$CreatedImpl extends _Created {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -2553,6 +3633,7 @@ class _$CreatedImpl extends _Created {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return created?.call(this);
   }
@@ -2565,6 +3646,9 @@ class _$CreatedImpl extends _Created {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -2575,6 +3659,7 @@ class _$CreatedImpl extends _Created {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (created != null) {
@@ -2683,6 +3768,10 @@ class _$NotModifiedImpl extends _NotModified {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -2700,6 +3789,8 @@ class _$NotModifiedImpl extends _NotModified {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return notModified(errorCode, errorMessage);
   }
@@ -2712,6 +3803,9 @@ class _$NotModifiedImpl extends _NotModified {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -2723,6 +3817,7 @@ class _$NotModifiedImpl extends _NotModified {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return notModified?.call(errorCode, errorMessage);
   }
@@ -2735,6 +3830,9 @@ class _$NotModifiedImpl extends _NotModified {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -2745,6 +3843,7 @@ class _$NotModifiedImpl extends _NotModified {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (notModified != null) {
@@ -2761,6 +3860,9 @@ class _$NotModifiedImpl extends _NotModified {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -2771,6 +3873,7 @@ class _$NotModifiedImpl extends _NotModified {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return notModified(this);
   }
@@ -2783,6 +3886,9 @@ class _$NotModifiedImpl extends _NotModified {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -2793,6 +3899,7 @@ class _$NotModifiedImpl extends _NotModified {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return notModified?.call(this);
   }
@@ -2805,6 +3912,9 @@ class _$NotModifiedImpl extends _NotModified {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -2815,6 +3925,7 @@ class _$NotModifiedImpl extends _NotModified {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (notModified != null) {
@@ -2924,6 +4035,10 @@ class _$ConnectionTimeoutImpl extends _ConnectionTimeout {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -2941,6 +4056,8 @@ class _$ConnectionTimeoutImpl extends _ConnectionTimeout {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return connectionTimeout(errorCode, errorMessage);
   }
@@ -2953,6 +4070,9 @@ class _$ConnectionTimeoutImpl extends _ConnectionTimeout {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -2964,6 +4084,7 @@ class _$ConnectionTimeoutImpl extends _ConnectionTimeout {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return connectionTimeout?.call(errorCode, errorMessage);
   }
@@ -2976,6 +4097,9 @@ class _$ConnectionTimeoutImpl extends _ConnectionTimeout {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -2986,6 +4110,7 @@ class _$ConnectionTimeoutImpl extends _ConnectionTimeout {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (connectionTimeout != null) {
@@ -3002,6 +4127,9 @@ class _$ConnectionTimeoutImpl extends _ConnectionTimeout {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -3012,6 +4140,7 @@ class _$ConnectionTimeoutImpl extends _ConnectionTimeout {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return connectionTimeout(this);
   }
@@ -3024,6 +4153,9 @@ class _$ConnectionTimeoutImpl extends _ConnectionTimeout {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -3034,6 +4166,7 @@ class _$ConnectionTimeoutImpl extends _ConnectionTimeout {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return connectionTimeout?.call(this);
   }
@@ -3046,6 +4179,9 @@ class _$ConnectionTimeoutImpl extends _ConnectionTimeout {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -3056,6 +4192,7 @@ class _$ConnectionTimeoutImpl extends _ConnectionTimeout {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (connectionTimeout != null) {
@@ -3166,6 +4303,10 @@ class _$ContentTooLargeImpl extends _ContentTooLarge {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -3183,6 +4324,8 @@ class _$ContentTooLargeImpl extends _ContentTooLarge {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return contentTooLarge(errorCode, errorMessage);
   }
@@ -3195,6 +4338,9 @@ class _$ContentTooLargeImpl extends _ContentTooLarge {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -3206,6 +4352,7 @@ class _$ContentTooLargeImpl extends _ContentTooLarge {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return contentTooLarge?.call(errorCode, errorMessage);
   }
@@ -3218,6 +4365,9 @@ class _$ContentTooLargeImpl extends _ContentTooLarge {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -3228,6 +4378,7 @@ class _$ContentTooLargeImpl extends _ContentTooLarge {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (contentTooLarge != null) {
@@ -3244,6 +4395,9 @@ class _$ContentTooLargeImpl extends _ContentTooLarge {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -3254,6 +4408,7 @@ class _$ContentTooLargeImpl extends _ContentTooLarge {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return contentTooLarge(this);
   }
@@ -3266,6 +4421,9 @@ class _$ContentTooLargeImpl extends _ContentTooLarge {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -3276,6 +4434,7 @@ class _$ContentTooLargeImpl extends _ContentTooLarge {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return contentTooLarge?.call(this);
   }
@@ -3288,6 +4447,9 @@ class _$ContentTooLargeImpl extends _ContentTooLarge {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -3298,6 +4460,7 @@ class _$ContentTooLargeImpl extends _ContentTooLarge {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (contentTooLarge != null) {
@@ -3406,6 +4569,10 @@ class _$ForbiddenImpl extends _Forbidden {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -3423,6 +4590,8 @@ class _$ForbiddenImpl extends _Forbidden {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return forbidden(errorCode, errorMessage);
   }
@@ -3435,6 +4604,9 @@ class _$ForbiddenImpl extends _Forbidden {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -3446,6 +4618,7 @@ class _$ForbiddenImpl extends _Forbidden {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return forbidden?.call(errorCode, errorMessage);
   }
@@ -3458,6 +4631,9 @@ class _$ForbiddenImpl extends _Forbidden {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -3468,6 +4644,7 @@ class _$ForbiddenImpl extends _Forbidden {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (forbidden != null) {
@@ -3484,6 +4661,9 @@ class _$ForbiddenImpl extends _Forbidden {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -3494,6 +4674,7 @@ class _$ForbiddenImpl extends _Forbidden {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return forbidden(this);
   }
@@ -3506,6 +4687,9 @@ class _$ForbiddenImpl extends _Forbidden {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -3516,6 +4700,7 @@ class _$ForbiddenImpl extends _Forbidden {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return forbidden?.call(this);
   }
@@ -3528,6 +4713,9 @@ class _$ForbiddenImpl extends _Forbidden {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -3538,6 +4726,7 @@ class _$ForbiddenImpl extends _Forbidden {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (forbidden != null) {
@@ -3646,6 +4835,10 @@ class _$UnAuthorizedImpl extends _UnAuthorized {
         methodNotAllowed,
     required TResult Function(int? errorCode, String? errorMessage)
         tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
     required TResult Function(int? errorCode, String? errorMessage)
         internalServerError,
     required TResult Function(int? errorCode, String? errorMessage)
@@ -3663,6 +4856,8 @@ class _$UnAuthorizedImpl extends _UnAuthorized {
     required TResult Function(int? errorCode, String? errorMessage) forbidden,
     required TResult Function(int? errorCode, String? errorMessage)
         unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
   }) {
     return unAuthorized(errorCode, errorMessage);
   }
@@ -3675,6 +4870,9 @@ class _$UnAuthorizedImpl extends _UnAuthorized {
     TResult? Function(int? errorCode, String? errorMessage)? notFound,
     TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult? Function(int? errorCode, String? errorMessage)?
         internalServerError,
     TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
@@ -3686,6 +4884,7 @@ class _$UnAuthorizedImpl extends _UnAuthorized {
     TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult? Function(int? errorCode, String? errorMessage)? forbidden,
     TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
   }) {
     return unAuthorized?.call(errorCode, errorMessage);
   }
@@ -3698,6 +4897,9 @@ class _$UnAuthorizedImpl extends _UnAuthorized {
     TResult Function(int? errorCode, String? errorMessage)? notFound,
     TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
     TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
     TResult Function(int? errorCode, String? errorMessage)? internalServerError,
     TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
     TResult Function(int? errorCode, String? errorMessage)? unknownError,
@@ -3708,6 +4910,7 @@ class _$UnAuthorizedImpl extends _UnAuthorized {
     TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
     TResult Function(int? errorCode, String? errorMessage)? forbidden,
     TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
     required TResult orElse(),
   }) {
     if (unAuthorized != null) {
@@ -3724,6 +4927,9 @@ class _$UnAuthorizedImpl extends _UnAuthorized {
     required TResult Function(_NotFound value) notFound,
     required TResult Function(_MethodNotAllowed value) methodNotAllowed,
     required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
     required TResult Function(_InternalServerError value) internalServerError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_UnknownError value) unknownError,
@@ -3734,6 +4940,7 @@ class _$UnAuthorizedImpl extends _UnAuthorized {
     required TResult Function(_ContentTooLarge value) contentTooLarge,
     required TResult Function(_Forbidden value) forbidden,
     required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
   }) {
     return unAuthorized(this);
   }
@@ -3746,6 +4953,9 @@ class _$UnAuthorizedImpl extends _UnAuthorized {
     TResult? Function(_NotFound value)? notFound,
     TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
     TResult? Function(_InternalServerError value)? internalServerError,
     TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult? Function(_UnknownError value)? unknownError,
@@ -3756,6 +4966,7 @@ class _$UnAuthorizedImpl extends _UnAuthorized {
     TResult? Function(_ContentTooLarge value)? contentTooLarge,
     TResult? Function(_Forbidden value)? forbidden,
     TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
   }) {
     return unAuthorized?.call(this);
   }
@@ -3768,6 +4979,9 @@ class _$UnAuthorizedImpl extends _UnAuthorized {
     TResult Function(_NotFound value)? notFound,
     TResult Function(_MethodNotAllowed value)? methodNotAllowed,
     TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
     TResult Function(_InternalServerError value)? internalServerError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_UnknownError value)? unknownError,
@@ -3778,6 +4992,7 @@ class _$UnAuthorizedImpl extends _UnAuthorized {
     TResult Function(_ContentTooLarge value)? contentTooLarge,
     TResult Function(_Forbidden value)? forbidden,
     TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
     required TResult orElse(),
   }) {
     if (unAuthorized != null) {
@@ -3799,5 +5014,271 @@ abstract class _UnAuthorized extends RequestFailure {
   @override
   @JsonKey(ignore: true)
   _$$UnAuthorizedImplCopyWith<_$UnAuthorizedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ParsingErrorImplCopyWith<$Res>
+    implements $RequestFailureCopyWith<$Res> {
+  factory _$$ParsingErrorImplCopyWith(
+          _$ParsingErrorImpl value, $Res Function(_$ParsingErrorImpl) then) =
+      __$$ParsingErrorImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? errorCode, String? errorMessage});
+}
+
+/// @nodoc
+class __$$ParsingErrorImplCopyWithImpl<$Res>
+    extends _$RequestFailureCopyWithImpl<$Res, _$ParsingErrorImpl>
+    implements _$$ParsingErrorImplCopyWith<$Res> {
+  __$$ParsingErrorImplCopyWithImpl(
+      _$ParsingErrorImpl _value, $Res Function(_$ParsingErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorCode = freezed,
+    Object? errorMessage = freezed,
+  }) {
+    return _then(_$ParsingErrorImpl(
+      freezed == errorCode
+          ? _value.errorCode
+          : errorCode // ignore: cast_nullable_to_non_nullable
+              as int?,
+      freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ParsingErrorImpl extends _ParsingError {
+  const _$ParsingErrorImpl(this.errorCode, this.errorMessage) : super._();
+
+  @override
+  final int? errorCode;
+  @override
+  final String? errorMessage;
+
+  @override
+  String toString() {
+    return 'RequestFailure.parsingError(errorCode: $errorCode, errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ParsingErrorImpl &&
+            (identical(other.errorCode, errorCode) ||
+                other.errorCode == errorCode) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ParsingErrorImplCopyWith<_$ParsingErrorImpl> get copyWith =>
+      __$$ParsingErrorImplCopyWithImpl<_$ParsingErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int? errorCode, String? errorMessage)
+        noConnection,
+    required TResult Function(int? errorCode, String? errorMessage) badRequest,
+    required TResult Function(int? errorCode, String? errorMessage) notFound,
+    required TResult Function(int? errorCode, String? errorMessage)
+        methodNotAllowed,
+    required TResult Function(int? errorCode, String? errorMessage)
+        tooManyRequest,
+    required TResult Function(int? errorCode, String? errorMessage) conflict,
+    required TResult Function(int? errorCode, String? errorMessage) locked,
+    required TResult Function(int? errorCode, String? errorMessage)
+        upgradeRequired,
+    required TResult Function(int? errorCode, String? errorMessage)
+        internalServerError,
+    required TResult Function(int? errorCode, String? errorMessage)
+        serviceUnavailable,
+    required TResult Function(int? errorCode, String? errorMessage)
+        unknownError,
+    required TResult Function(int? errorCode, String? errorMessage)
+        statusNotHandled,
+    required TResult Function(int? errorCode, String? errorMessage) created,
+    required TResult Function(int? errorCode, String? errorMessage) notModified,
+    required TResult Function(int? errorCode, String? errorMessage)
+        connectionTimeout,
+    required TResult Function(int? errorCode, String? errorMessage)
+        contentTooLarge,
+    required TResult Function(int? errorCode, String? errorMessage) forbidden,
+    required TResult Function(int? errorCode, String? errorMessage)
+        unAuthorized,
+    required TResult Function(int? errorCode, String? errorMessage)
+        parsingError,
+  }) {
+    return parsingError(errorCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int? errorCode, String? errorMessage)? noConnection,
+    TResult? Function(int? errorCode, String? errorMessage)? badRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? notFound,
+    TResult? Function(int? errorCode, String? errorMessage)? methodNotAllowed,
+    TResult? Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult? Function(int? errorCode, String? errorMessage)? conflict,
+    TResult? Function(int? errorCode, String? errorMessage)? locked,
+    TResult? Function(int? errorCode, String? errorMessage)? upgradeRequired,
+    TResult? Function(int? errorCode, String? errorMessage)?
+        internalServerError,
+    TResult? Function(int? errorCode, String? errorMessage)? serviceUnavailable,
+    TResult? Function(int? errorCode, String? errorMessage)? unknownError,
+    TResult? Function(int? errorCode, String? errorMessage)? statusNotHandled,
+    TResult? Function(int? errorCode, String? errorMessage)? created,
+    TResult? Function(int? errorCode, String? errorMessage)? notModified,
+    TResult? Function(int? errorCode, String? errorMessage)? connectionTimeout,
+    TResult? Function(int? errorCode, String? errorMessage)? contentTooLarge,
+    TResult? Function(int? errorCode, String? errorMessage)? forbidden,
+    TResult? Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult? Function(int? errorCode, String? errorMessage)? parsingError,
+  }) {
+    return parsingError?.call(errorCode, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int? errorCode, String? errorMessage)? noConnection,
+    TResult Function(int? errorCode, String? errorMessage)? badRequest,
+    TResult Function(int? errorCode, String? errorMessage)? notFound,
+    TResult Function(int? errorCode, String? errorMessage)? methodNotAllowed,
+    TResult Function(int? errorCode, String? errorMessage)? tooManyRequest,
+    TResult Function(int? errorCode, String? errorMessage)? conflict,
+    TResult Function(int? errorCode, String? errorMessage)? locked,
+    TResult Function(int? errorCode, String? errorMessage)? upgradeRequired,
+    TResult Function(int? errorCode, String? errorMessage)? internalServerError,
+    TResult Function(int? errorCode, String? errorMessage)? serviceUnavailable,
+    TResult Function(int? errorCode, String? errorMessage)? unknownError,
+    TResult Function(int? errorCode, String? errorMessage)? statusNotHandled,
+    TResult Function(int? errorCode, String? errorMessage)? created,
+    TResult Function(int? errorCode, String? errorMessage)? notModified,
+    TResult Function(int? errorCode, String? errorMessage)? connectionTimeout,
+    TResult Function(int? errorCode, String? errorMessage)? contentTooLarge,
+    TResult Function(int? errorCode, String? errorMessage)? forbidden,
+    TResult Function(int? errorCode, String? errorMessage)? unAuthorized,
+    TResult Function(int? errorCode, String? errorMessage)? parsingError,
+    required TResult orElse(),
+  }) {
+    if (parsingError != null) {
+      return parsingError(errorCode, errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_NoConnection value) noConnection,
+    required TResult Function(_BadRequest value) badRequest,
+    required TResult Function(_NotFound value) notFound,
+    required TResult Function(_MethodNotAllowed value) methodNotAllowed,
+    required TResult Function(_TooManyRequest value) tooManyRequest,
+    required TResult Function(_Conflict value) conflict,
+    required TResult Function(_Locked value) locked,
+    required TResult Function(_UpgradeRequired value) upgradeRequired,
+    required TResult Function(_InternalServerError value) internalServerError,
+    required TResult Function(_ServiceUnavailable value) serviceUnavailable,
+    required TResult Function(_UnknownError value) unknownError,
+    required TResult Function(_StatusNotHandled value) statusNotHandled,
+    required TResult Function(_Created value) created,
+    required TResult Function(_NotModified value) notModified,
+    required TResult Function(_ConnectionTimeout value) connectionTimeout,
+    required TResult Function(_ContentTooLarge value) contentTooLarge,
+    required TResult Function(_Forbidden value) forbidden,
+    required TResult Function(_UnAuthorized value) unAuthorized,
+    required TResult Function(_ParsingError value) parsingError,
+  }) {
+    return parsingError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NoConnection value)? noConnection,
+    TResult? Function(_BadRequest value)? badRequest,
+    TResult? Function(_NotFound value)? notFound,
+    TResult? Function(_MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(_TooManyRequest value)? tooManyRequest,
+    TResult? Function(_Conflict value)? conflict,
+    TResult? Function(_Locked value)? locked,
+    TResult? Function(_UpgradeRequired value)? upgradeRequired,
+    TResult? Function(_InternalServerError value)? internalServerError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_UnknownError value)? unknownError,
+    TResult? Function(_StatusNotHandled value)? statusNotHandled,
+    TResult? Function(_Created value)? created,
+    TResult? Function(_NotModified value)? notModified,
+    TResult? Function(_ConnectionTimeout value)? connectionTimeout,
+    TResult? Function(_ContentTooLarge value)? contentTooLarge,
+    TResult? Function(_Forbidden value)? forbidden,
+    TResult? Function(_UnAuthorized value)? unAuthorized,
+    TResult? Function(_ParsingError value)? parsingError,
+  }) {
+    return parsingError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NoConnection value)? noConnection,
+    TResult Function(_BadRequest value)? badRequest,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_MethodNotAllowed value)? methodNotAllowed,
+    TResult Function(_TooManyRequest value)? tooManyRequest,
+    TResult Function(_Conflict value)? conflict,
+    TResult Function(_Locked value)? locked,
+    TResult Function(_UpgradeRequired value)? upgradeRequired,
+    TResult Function(_InternalServerError value)? internalServerError,
+    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult Function(_UnknownError value)? unknownError,
+    TResult Function(_StatusNotHandled value)? statusNotHandled,
+    TResult Function(_Created value)? created,
+    TResult Function(_NotModified value)? notModified,
+    TResult Function(_ConnectionTimeout value)? connectionTimeout,
+    TResult Function(_ContentTooLarge value)? contentTooLarge,
+    TResult Function(_Forbidden value)? forbidden,
+    TResult Function(_UnAuthorized value)? unAuthorized,
+    TResult Function(_ParsingError value)? parsingError,
+    required TResult orElse(),
+  }) {
+    if (parsingError != null) {
+      return parsingError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ParsingError extends RequestFailure {
+  const factory _ParsingError(
+      final int? errorCode, final String? errorMessage) = _$ParsingErrorImpl;
+  const _ParsingError._() : super._();
+
+  @override
+  int? get errorCode;
+  @override
+  String? get errorMessage;
+  @override
+  @JsonKey(ignore: true)
+  _$$ParsingErrorImplCopyWith<_$ParsingErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

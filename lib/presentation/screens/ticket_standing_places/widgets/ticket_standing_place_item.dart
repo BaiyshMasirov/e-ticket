@@ -53,10 +53,7 @@ class TicketStandingPlaceItem extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          context.dictionaries
-                                  .getTicketTypeByKey(ticket.type)
-                                  ?.value ??
-                              '',
+                          ticket.ticketType.value,
                           textAlign: TextAlign.center,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
@@ -113,7 +110,8 @@ class TicketStandingPlaceItem extends StatelessWidget {
                         (value) =>
                             value.state.chosenTickets
                                 .firstWhereOrNull(
-                                    (item) => item.type == ticket.type)
+                                  (item) => item.type == ticket.type,
+                                )
                                 ?.count ??
                             0,
                       )

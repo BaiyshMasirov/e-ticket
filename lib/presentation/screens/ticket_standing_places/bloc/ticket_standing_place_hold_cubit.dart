@@ -6,6 +6,7 @@ import 'package:collection/collection.dart';
 import 'package:eticket/domain/repository/repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:eticket/domain/models/ticket/ticket.dart';
 export 'ticket_standing_place_hold_state.dart';
 
 class TicketStandingPlaceHoldCubit extends Cubit<TicketStandingPlaceHoldState> {
@@ -39,7 +40,8 @@ class TicketStandingPlaceHoldCubit extends Cubit<TicketStandingPlaceHoldState> {
                 count: t.count,
                 availableCount: 0,
                 price: 0,
-                type: t.type,
+                type: t.ticketType.key,
+                ticketType: t.ticketType.toDto(),
               ))
           .toList(),
       eventId: _eventId,
@@ -75,6 +77,7 @@ class TicketStandingPlaceHoldCubit extends Cubit<TicketStandingPlaceHoldState> {
     final chosenTickets = tickets
         .map((e) => TicketStandingPlacePick(
               price: e.price,
+              ticketType: TicketKeyValueModel.fromDto(dto: e.ticketType),
               type: e.type,
               count: 0,
             ))
@@ -95,12 +98,12 @@ class TicketStandingPlaceHoldCubit extends Cubit<TicketStandingPlaceHoldState> {
     final chosenTickets = [...state.chosenTickets];
 
     final chosenTick = chosenTickets.firstWhereOrNull(
-      (item) => item.type == type,
+      (item) => item.ticketType.key == type,
     );
 
     if (chosenTick == null || chosenTick.count >= ticketsCount) return;
 
-    chosenTickets.removeWhere((item) => item.type == type);
+    chosenTickets.removeWhere((item) => item.ticketType.key == type);
     final updatedTicket = chosenTick.copyWith(
       count: chosenTick.count + 1,
     );
@@ -115,13 +118,13 @@ class TicketStandingPlaceHoldCubit extends Cubit<TicketStandingPlaceHoldState> {
     final chosenTickets = [...state.chosenTickets];
 
     final chosenTick = chosenTickets.firstWhereOrNull(
-      (item) => item.type == type,
+      (item) => item.ticketType.key == type,
     );
     if (chosenTick == null) return;
 
     if (chosenTick.count <= 0) return;
 
-    chosenTickets.removeWhere((item) => item.type == type);
+    chosenTickets.removeWhere((item) => item.ticketType.key == type);
     final updatedTicket = chosenTick.copyWith(
       count: chosenTick.count - 1,
     );

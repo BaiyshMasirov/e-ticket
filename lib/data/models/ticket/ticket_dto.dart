@@ -10,6 +10,8 @@ class TicketDto with _$TicketDto {
   const TicketDto._();
   const factory TicketDto({
     required String id,
+
+    /// ticketType == [TicketType]
     @JsonKey(name: 'type') required int ticketType,
     required int placeNumber,
     required int rowNumber,

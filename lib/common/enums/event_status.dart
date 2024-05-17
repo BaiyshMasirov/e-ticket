@@ -28,6 +28,9 @@ enum EventStatus {
   const EventStatus(this.value);
 
   final int value;
+
+  static List<EventStatus> typesForFilter =
+      EventStatus.values.where((e) => e != EventStatus.unknown).toList();
 }
 
 extension EventStatusX on EventStatus {

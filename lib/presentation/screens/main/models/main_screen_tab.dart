@@ -6,22 +6,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 enum MAIN_SCREEN_TAB {
-  HOME,
-  CATEGORIES,
-  HISTORY,
-  SETTINGS,
+  home,
+  categories,
+  bookingHistory,
+  settings,
 }
 
 extension MAIN_SCREEN_TABX on MAIN_SCREEN_TAB {
   int get index {
     switch (this) {
-      case MAIN_SCREEN_TAB.HOME:
+      case MAIN_SCREEN_TAB.home:
         return 0;
-      case MAIN_SCREEN_TAB.CATEGORIES:
+      case MAIN_SCREEN_TAB.categories:
         return 1;
-      case MAIN_SCREEN_TAB.HISTORY:
+      case MAIN_SCREEN_TAB.bookingHistory:
         return 2;
-      case MAIN_SCREEN_TAB.SETTINGS:
+      case MAIN_SCREEN_TAB.settings:
         return 3;
     }
   }
@@ -47,28 +47,28 @@ final mainScreenTabs = [
   _MainScreenTab(
     iconData: CupertinoIcons.home,
     selectedIconData: CupertinoIcons.house_fill,
-    tab: MAIN_SCREEN_TAB.HOME,
+    tab: MAIN_SCREEN_TAB.home,
     generateRoute: () => const SearchRoute(),
     label: LocaleKeys.home.tr(),
   ),
   _MainScreenTab(
     iconData: CupertinoIcons.circle_grid_3x3,
     selectedIconData: CupertinoIcons.circle_grid_3x3_fill,
-    tab: MAIN_SCREEN_TAB.CATEGORIES,
+    tab: MAIN_SCREEN_TAB.categories,
     generateRoute: () => const CategoriesRoute(),
     label: LocaleKeys.categories.tr(),
   ),
   _MainScreenTab(
     iconData: CupertinoIcons.bookmark,
     selectedIconData: CupertinoIcons.bookmark_fill,
-    tab: MAIN_SCREEN_TAB.HISTORY,
-    generateRoute: () => const HistoryRoute(),
+    tab: MAIN_SCREEN_TAB.bookingHistory,
+    generateRoute: () => const BookingHistoryRoute(),
     label: LocaleKeys.history.tr(),
   ),
   _MainScreenTab(
     iconData: Icons.settings_outlined,
     selectedIconData: Icons.settings,
-    tab: MAIN_SCREEN_TAB.SETTINGS,
+    tab: MAIN_SCREEN_TAB.settings,
     generateRoute: () => const SettingsRoute(),
     label: LocaleKeys.settings.tr(),
   ),

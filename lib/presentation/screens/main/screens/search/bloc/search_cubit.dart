@@ -1,3 +1,4 @@
+import 'package:eticket/common/common.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/screens/main/screens/search/bloc/search_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,14 +9,15 @@ export 'search_state.dart';
 class SearchCubit extends Cubit<SearchState> {
   final EventRepository _eventRepository;
 
-  int _page = 1;
+  int _page = Constants.initialPage;
+  final _pageSize = Constants.initialPageSize;
 
   SearchCubit._({
     required EventRepository eventRepository,
   })  : _eventRepository = eventRepository,
-        super(const SearchState.initial(
+        super(SearchState.initial(
           events: [],
-          eventsFilter: EventsFilter(),
+          eventsFilter: EventsFilter.initial(),
           searchText: '',
         ));
 
@@ -30,7 +32,7 @@ class SearchCubit extends Cubit<SearchState> {
   }
 
   Future<void> clearFilter() async {
-    emit(state.copyWith(eventsFilter: const EventsFilter()));
+    emit(state.copyWith(eventsFilter: EventsFilter.initial()));
     refreshPage();
   }
 
@@ -61,6 +63,7 @@ class SearchCubit extends Cubit<SearchState> {
       eventsFilter: state.eventsFilter,
       searchText: state.searchText,
       page: _page,
+      pageSize: _pageSize,
     );
 
     result.fold(

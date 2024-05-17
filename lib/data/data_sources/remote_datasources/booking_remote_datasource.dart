@@ -27,11 +27,15 @@ class BookingRemoteDatasource {
   Future<RemoteResponse<BookingPagingDto>> getUserBookings({
     required BookingFilter filter,
     required int page,
+    required int pageSize,
   }) async {
     final queryP = filter.toJson();
+
     queryP.addAll({
       'page': page,
+      'pageSize': pageSize,
     });
+
     final response = await _dio.makeRequest(
       request: () => _dio.get(
         'api/Booking/get-user-bookings',
@@ -41,23 +45,5 @@ class BookingRemoteDatasource {
     );
 
     return response;
-  }
-
-  Future<RemoteResponse<List<TicketsDto>>> getUserTicketsBookings(
-    String id,
-  ) async {
-    return await _dio.makeRequest(
-      request: () => _dio.get(
-        'api/Ticket/get-user-tickets-bookingId',
-        queryParameters: {
-          'id': id,
-        },
-      ),
-      parse: (json) {
-        final data = json as List;
-        final result = data.map((item) => TicketsDto.fromJson(item)).toList();
-        return result;
-      },
-    );
   }
 }

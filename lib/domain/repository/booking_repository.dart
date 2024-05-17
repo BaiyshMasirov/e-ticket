@@ -1,18 +1,16 @@
 import 'package:dartz/dartz.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/data/data.dart';
+import 'package:eticket/domain/models/models.dart';
 
 class BookingRepository with NetworkRemoteRepositoryMixin {
   final BookingRemoteDatasource _bookingRemoteDatasource;
-  final HistoryLocalDatasources _historyBookingDatasource;
-  final BookingLocalDataSources _bookingDatasource;
+  final BookingHistoryLocalDatasources _historyBookingDatasource;
 
   BookingRepository({
     required BookingRemoteDatasource bookingRemoteDatasource,
-    required HistoryLocalDatasources historyBookingDatasource,
-    required BookingLocalDataSources bookingDatasource,
+    required BookingHistoryLocalDatasources historyBookingDatasource,
   })  : _bookingRemoteDatasource = bookingRemoteDatasource,
-        _bookingDatasource = bookingDatasource,
         _historyBookingDatasource = historyBookingDatasource;
 
   Future<Either<RequestFailure, Unit>> createBooking({
@@ -29,61 +27,76 @@ class BookingRepository with NetworkRemoteRepositoryMixin {
     );
   }
 
-  Future<Either<RequestFailure, BookingPagingDto>> getUserBookings({
+  Future<Either<RequestFailure, Fresh<BookingPagingModel>>> getUserBookings({
     required int page,
+    required int pageSize,
     required BookingFilter filter,
+    required bool? prevIsFreshData,
   }) async {
+    if (prevIsFreshData != null && !prevIsFreshData) {
+      final storageResponse = await handleRemoteRequest(
+        request: () => _historyBookingDatasource.getUserBookings(
+          bookingFilter: filter,
+          page: page,
+          pageSize: pageSize,
+        ),
+      );
+
+      return storageResponse.fold(
+        (l) => left(l),
+        (data) => right(
+          Fresh.no(
+            BookingPagingModel.fromEntity(entity: data),
+          ),
+        ),
+      );
+    }
+
     final response = await handleRemoteRequest(
-      request: () =>
-          _bookingRemoteDatasource.getUserBookings(filter: filter, page: page),
+      request: () => _bookingRemoteDatasource.getUserBookings(
+        filter: filter,
+        pageSize: pageSize,
+        page: page,
+      ),
     );
 
-    return response.fold((l) {
-      return l.maybeWhen(
-        orElse: () => left(l),
-        noConnection: (_, __) async {
-          final currentHistory =
-              await _historyBookingDatasource.getAllHistoryBookings();
+    return response.fold((responseFailure) {
+      return responseFailure.maybeWhen(
+        orElse: () async {
+          final storageResponse = await handleRemoteRequest(
+            request: () => _historyBookingDatasource.getUserBookings(
+              bookingFilter: filter,
+              page: page,
+              pageSize: pageSize,
+            ),
+          );
 
-          return right(currentHistory!);
+          return storageResponse.fold(
+            (l) => left(responseFailure),
+            (data) => right(
+              Fresh.no(
+                BookingPagingModel.fromEntity(entity: data),
+              ),
+            ),
+          );
         },
       );
-    }, (r) async {
-      await _historyBookingDatasource.clearAllHistoryBookings();
-      await _historyBookingDatasource.saveHistoryBooking(userBooking: r);
+    }, (data) async {
+      if (page == Constants.initialPage) {
+        await _historyBookingDatasource.clear();
+      }
 
-      return right(r);
-    });
-  }
+      final bookingPagingModel = BookingPagingModel.fromDto(dto: data);
 
-  Future<Either<RequestFailure, List<TicketsDto>>>
-      getUserTicketsId({
-    required String id,
-  }) async {
-    final response = await handleRemoteRequest(
-      request: () => _bookingRemoteDatasource.getUserTicketsBookings(id),
-    );
-
-    return response.fold((l) async {
-      return l.maybeWhen(
-        orElse: () => left(l),
-        noConnection: (_, __) async {
-          final currentBookingList =
-              await _bookingDatasource.getAllBookingsTicket();
-
-          return right(currentBookingList);
-        },
+      await _historyBookingDatasource.saveHistoryBooking(
+        bookingPaging: bookingPagingModel.toEntity(),
       );
-    }, (r) async {
-      await _bookingDatasource.clearAllBookingsTiccket();
-      await _bookingDatasource.saveBookingsTicket(todo: r);
 
-      return right(r);
+      return right(Fresh.yes(bookingPagingModel));
     });
   }
 
   Future<void> clearBookingSavedData() async {
-    await _bookingDatasource.clearAllBookingsTiccket();
-    await _historyBookingDatasource.clearAllHistoryBookings();
+    await _historyBookingDatasource.clear();
   }
 }

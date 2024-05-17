@@ -8,7 +8,7 @@ class MainScreen extends HookWidget {
   final MAIN_SCREEN_TAB initialTab;
 
   const MainScreen({
-    this.initialTab = MAIN_SCREEN_TAB.HOME,
+    this.initialTab = MAIN_SCREEN_TAB.home,
     Key? key,
   }) : super(key: key);
 

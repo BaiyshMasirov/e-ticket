@@ -22,18 +22,19 @@ BookingDto _$BookingDtoFromJson(Map<String, dynamic> json) {
 mixin _$BookingDto {
   String get id => throw _privateConstructorUsedError;
   @DateTimeUTCSerializer()
-  DateTime get eventDate => throw _privateConstructorUsedError;
-  @DateTimeUTCSerializer()
   DateTime get created => throw _privateConstructorUsedError;
+  @DateTimeUTCSerializer()
+  DateTime get eventDate => throw _privateConstructorUsedError;
   @JsonKey(name: 'status', unknownEnumValue: BookingStatus.unknown)
   BookingStatus get bookingStatus => throw _privateConstructorUsedError;
   @JsonKey(unknownEnumValue: EventStatus.unknown)
   EventStatus get eventStatus => throw _privateConstructorUsedError;
   String get eventId => throw _privateConstructorUsedError;
   double get bookingSum => throw _privateConstructorUsedError;
-  @JsonKey(name: 'type')
+  @JsonKey(name: 'type', unknownEnumValue: LocationType.unknown)
   LocationType get locationType => throw _privateConstructorUsedError;
   String get locationName => throw _privateConstructorUsedError;
+  List<TicketBookedDto> get tickets => throw _privateConstructorUsedError;
   String? get eventName => throw _privateConstructorUsedError;
   String? get eventImage => throw _privateConstructorUsedError;
 
@@ -51,15 +52,17 @@ abstract class $BookingDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      @DateTimeUTCSerializer() DateTime eventDate,
       @DateTimeUTCSerializer() DateTime created,
+      @DateTimeUTCSerializer() DateTime eventDate,
       @JsonKey(name: 'status', unknownEnumValue: BookingStatus.unknown)
       BookingStatus bookingStatus,
       @JsonKey(unknownEnumValue: EventStatus.unknown) EventStatus eventStatus,
       String eventId,
       double bookingSum,
-      @JsonKey(name: 'type') LocationType locationType,
+      @JsonKey(name: 'type', unknownEnumValue: LocationType.unknown)
+      LocationType locationType,
       String locationName,
+      List<TicketBookedDto> tickets,
       String? eventName,
       String? eventImage});
 }
@@ -78,14 +81,15 @@ class _$BookingDtoCopyWithImpl<$Res, $Val extends BookingDto>
   @override
   $Res call({
     Object? id = null,
-    Object? eventDate = null,
     Object? created = null,
+    Object? eventDate = null,
     Object? bookingStatus = null,
     Object? eventStatus = null,
     Object? eventId = null,
     Object? bookingSum = null,
     Object? locationType = null,
     Object? locationName = null,
+    Object? tickets = null,
     Object? eventName = freezed,
     Object? eventImage = freezed,
   }) {
@@ -94,13 +98,13 @@ class _$BookingDtoCopyWithImpl<$Res, $Val extends BookingDto>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      eventDate: null == eventDate
-          ? _value.eventDate
-          : eventDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      eventDate: null == eventDate
+          ? _value.eventDate
+          : eventDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
       bookingStatus: null == bookingStatus
           ? _value.bookingStatus
@@ -126,6 +130,10 @@ class _$BookingDtoCopyWithImpl<$Res, $Val extends BookingDto>
           ? _value.locationName
           : locationName // ignore: cast_nullable_to_non_nullable
               as String,
+      tickets: null == tickets
+          ? _value.tickets
+          : tickets // ignore: cast_nullable_to_non_nullable
+              as List<TicketBookedDto>,
       eventName: freezed == eventName
           ? _value.eventName
           : eventName // ignore: cast_nullable_to_non_nullable
@@ -148,15 +156,17 @@ abstract class _$$BookingDtoImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      @DateTimeUTCSerializer() DateTime eventDate,
       @DateTimeUTCSerializer() DateTime created,
+      @DateTimeUTCSerializer() DateTime eventDate,
       @JsonKey(name: 'status', unknownEnumValue: BookingStatus.unknown)
       BookingStatus bookingStatus,
       @JsonKey(unknownEnumValue: EventStatus.unknown) EventStatus eventStatus,
       String eventId,
       double bookingSum,
-      @JsonKey(name: 'type') LocationType locationType,
+      @JsonKey(name: 'type', unknownEnumValue: LocationType.unknown)
+      LocationType locationType,
       String locationName,
+      List<TicketBookedDto> tickets,
       String? eventName,
       String? eventImage});
 }
@@ -173,14 +183,15 @@ class __$$BookingDtoImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? eventDate = null,
     Object? created = null,
+    Object? eventDate = null,
     Object? bookingStatus = null,
     Object? eventStatus = null,
     Object? eventId = null,
     Object? bookingSum = null,
     Object? locationType = null,
     Object? locationName = null,
+    Object? tickets = null,
     Object? eventName = freezed,
     Object? eventImage = freezed,
   }) {
@@ -189,13 +200,13 @@ class __$$BookingDtoImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      eventDate: null == eventDate
-          ? _value.eventDate
-          : eventDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      eventDate: null == eventDate
+          ? _value.eventDate
+          : eventDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
       bookingStatus: null == bookingStatus
           ? _value.bookingStatus
@@ -221,6 +232,10 @@ class __$$BookingDtoImplCopyWithImpl<$Res>
           ? _value.locationName
           : locationName // ignore: cast_nullable_to_non_nullable
               as String,
+      tickets: null == tickets
+          ? _value._tickets
+          : tickets // ignore: cast_nullable_to_non_nullable
+              as List<TicketBookedDto>,
       eventName: freezed == eventName
           ? _value.eventName
           : eventName // ignore: cast_nullable_to_non_nullable
@@ -238,18 +253,21 @@ class __$$BookingDtoImplCopyWithImpl<$Res>
 class _$BookingDtoImpl extends _BookingDto {
   const _$BookingDtoImpl(
       {required this.id,
-      @DateTimeUTCSerializer() required this.eventDate,
       @DateTimeUTCSerializer() required this.created,
+      @DateTimeUTCSerializer() required this.eventDate,
       @JsonKey(name: 'status', unknownEnumValue: BookingStatus.unknown)
       required this.bookingStatus,
       @JsonKey(unknownEnumValue: EventStatus.unknown) required this.eventStatus,
       required this.eventId,
       required this.bookingSum,
-      @JsonKey(name: 'type') required this.locationType,
+      @JsonKey(name: 'type', unknownEnumValue: LocationType.unknown)
+      required this.locationType,
       required this.locationName,
+      final List<TicketBookedDto> tickets = const [],
       this.eventName,
       this.eventImage})
-      : super._();
+      : _tickets = tickets,
+        super._();
 
   factory _$BookingDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$BookingDtoImplFromJson(json);
@@ -258,10 +276,10 @@ class _$BookingDtoImpl extends _BookingDto {
   final String id;
   @override
   @DateTimeUTCSerializer()
-  final DateTime eventDate;
+  final DateTime created;
   @override
   @DateTimeUTCSerializer()
-  final DateTime created;
+  final DateTime eventDate;
   @override
   @JsonKey(name: 'status', unknownEnumValue: BookingStatus.unknown)
   final BookingStatus bookingStatus;
@@ -273,10 +291,19 @@ class _$BookingDtoImpl extends _BookingDto {
   @override
   final double bookingSum;
   @override
-  @JsonKey(name: 'type')
+  @JsonKey(name: 'type', unknownEnumValue: LocationType.unknown)
   final LocationType locationType;
   @override
   final String locationName;
+  final List<TicketBookedDto> _tickets;
+  @override
+  @JsonKey()
+  List<TicketBookedDto> get tickets {
+    if (_tickets is EqualUnmodifiableListView) return _tickets;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tickets);
+  }
+
   @override
   final String? eventName;
   @override
@@ -284,7 +311,7 @@ class _$BookingDtoImpl extends _BookingDto {
 
   @override
   String toString() {
-    return 'BookingDto(id: $id, eventDate: $eventDate, created: $created, bookingStatus: $bookingStatus, eventStatus: $eventStatus, eventId: $eventId, bookingSum: $bookingSum, locationType: $locationType, locationName: $locationName, eventName: $eventName, eventImage: $eventImage)';
+    return 'BookingDto(id: $id, created: $created, eventDate: $eventDate, bookingStatus: $bookingStatus, eventStatus: $eventStatus, eventId: $eventId, bookingSum: $bookingSum, locationType: $locationType, locationName: $locationName, tickets: $tickets, eventName: $eventName, eventImage: $eventImage)';
   }
 
   @override
@@ -293,9 +320,9 @@ class _$BookingDtoImpl extends _BookingDto {
         (other.runtimeType == runtimeType &&
             other is _$BookingDtoImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.created, created) || other.created == created) &&
             (identical(other.eventDate, eventDate) ||
                 other.eventDate == eventDate) &&
-            (identical(other.created, created) || other.created == created) &&
             (identical(other.bookingStatus, bookingStatus) ||
                 other.bookingStatus == bookingStatus) &&
             (identical(other.eventStatus, eventStatus) ||
@@ -307,6 +334,7 @@ class _$BookingDtoImpl extends _BookingDto {
                 other.locationType == locationType) &&
             (identical(other.locationName, locationName) ||
                 other.locationName == locationName) &&
+            const DeepCollectionEquality().equals(other._tickets, _tickets) &&
             (identical(other.eventName, eventName) ||
                 other.eventName == eventName) &&
             (identical(other.eventImage, eventImage) ||
@@ -318,14 +346,15 @@ class _$BookingDtoImpl extends _BookingDto {
   int get hashCode => Object.hash(
       runtimeType,
       id,
-      eventDate,
       created,
+      eventDate,
       bookingStatus,
       eventStatus,
       eventId,
       bookingSum,
       locationType,
       locationName,
+      const DeepCollectionEquality().hash(_tickets),
       eventName,
       eventImage);
 
@@ -346,16 +375,18 @@ class _$BookingDtoImpl extends _BookingDto {
 abstract class _BookingDto extends BookingDto {
   const factory _BookingDto(
       {required final String id,
-      @DateTimeUTCSerializer() required final DateTime eventDate,
       @DateTimeUTCSerializer() required final DateTime created,
+      @DateTimeUTCSerializer() required final DateTime eventDate,
       @JsonKey(name: 'status', unknownEnumValue: BookingStatus.unknown)
       required final BookingStatus bookingStatus,
       @JsonKey(unknownEnumValue: EventStatus.unknown)
       required final EventStatus eventStatus,
       required final String eventId,
       required final double bookingSum,
-      @JsonKey(name: 'type') required final LocationType locationType,
+      @JsonKey(name: 'type', unknownEnumValue: LocationType.unknown)
+      required final LocationType locationType,
       required final String locationName,
+      final List<TicketBookedDto> tickets,
       final String? eventName,
       final String? eventImage}) = _$BookingDtoImpl;
   const _BookingDto._() : super._();
@@ -367,10 +398,10 @@ abstract class _BookingDto extends BookingDto {
   String get id;
   @override
   @DateTimeUTCSerializer()
-  DateTime get eventDate;
+  DateTime get created;
   @override
   @DateTimeUTCSerializer()
-  DateTime get created;
+  DateTime get eventDate;
   @override
   @JsonKey(name: 'status', unknownEnumValue: BookingStatus.unknown)
   BookingStatus get bookingStatus;
@@ -382,10 +413,12 @@ abstract class _BookingDto extends BookingDto {
   @override
   double get bookingSum;
   @override
-  @JsonKey(name: 'type')
+  @JsonKey(name: 'type', unknownEnumValue: LocationType.unknown)
   LocationType get locationType;
   @override
   String get locationName;
+  @override
+  List<TicketBookedDto> get tickets;
   @override
   String? get eventName;
   @override

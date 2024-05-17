@@ -6,3 +6,5 @@ export 'payment_mechanism.dart';
 export 'payment_creds.dart';
 export 'booking_status.dart';
 export 'payment_status.dart';
+export 'ticket_type.dart';
+export 'event_type.dart';

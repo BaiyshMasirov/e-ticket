@@ -24,7 +24,7 @@ mixin _$BookingPagingDto {
   int get pageSize => throw _privateConstructorUsedError;
   int get totalItemCount => throw _privateConstructorUsedError;
   @JsonKey(name: 'list')
-  List<BookingDto> get bookingsList => throw _privateConstructorUsedError;
+  List<BookingDto> get bookings => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,7 +42,7 @@ abstract class $BookingPagingDtoCopyWith<$Res> {
       {int currentPageIndex,
       int pageSize,
       int totalItemCount,
-      @JsonKey(name: 'list') List<BookingDto> bookingsList});
+      @JsonKey(name: 'list') List<BookingDto> bookings});
 }
 
 /// @nodoc
@@ -61,7 +61,7 @@ class _$BookingPagingDtoCopyWithImpl<$Res, $Val extends BookingPagingDto>
     Object? currentPageIndex = null,
     Object? pageSize = null,
     Object? totalItemCount = null,
-    Object? bookingsList = null,
+    Object? bookings = null,
   }) {
     return _then(_value.copyWith(
       currentPageIndex: null == currentPageIndex
@@ -76,9 +76,9 @@ class _$BookingPagingDtoCopyWithImpl<$Res, $Val extends BookingPagingDto>
           ? _value.totalItemCount
           : totalItemCount // ignore: cast_nullable_to_non_nullable
               as int,
-      bookingsList: null == bookingsList
-          ? _value.bookingsList
-          : bookingsList // ignore: cast_nullable_to_non_nullable
+      bookings: null == bookings
+          ? _value.bookings
+          : bookings // ignore: cast_nullable_to_non_nullable
               as List<BookingDto>,
     ) as $Val);
   }
@@ -96,7 +96,7 @@ abstract class _$$BookingPagingDtoImplCopyWith<$Res>
       {int currentPageIndex,
       int pageSize,
       int totalItemCount,
-      @JsonKey(name: 'list') List<BookingDto> bookingsList});
+      @JsonKey(name: 'list') List<BookingDto> bookings});
 }
 
 /// @nodoc
@@ -113,7 +113,7 @@ class __$$BookingPagingDtoImplCopyWithImpl<$Res>
     Object? currentPageIndex = null,
     Object? pageSize = null,
     Object? totalItemCount = null,
-    Object? bookingsList = null,
+    Object? bookings = null,
   }) {
     return _then(_$BookingPagingDtoImpl(
       currentPageIndex: null == currentPageIndex
@@ -128,9 +128,9 @@ class __$$BookingPagingDtoImplCopyWithImpl<$Res>
           ? _value.totalItemCount
           : totalItemCount // ignore: cast_nullable_to_non_nullable
               as int,
-      bookingsList: null == bookingsList
-          ? _value._bookingsList
-          : bookingsList // ignore: cast_nullable_to_non_nullable
+      bookings: null == bookings
+          ? _value._bookings
+          : bookings // ignore: cast_nullable_to_non_nullable
               as List<BookingDto>,
     ));
   }
@@ -143,8 +143,8 @@ class _$BookingPagingDtoImpl extends _BookingPagingDto {
       {required this.currentPageIndex,
       required this.pageSize,
       required this.totalItemCount,
-      @JsonKey(name: 'list') required final List<BookingDto> bookingsList})
-      : _bookingsList = bookingsList,
+      @JsonKey(name: 'list') required final List<BookingDto> bookings})
+      : _bookings = bookings,
         super._();
 
   factory _$BookingPagingDtoImpl.fromJson(Map<String, dynamic> json) =>
@@ -156,18 +156,18 @@ class _$BookingPagingDtoImpl extends _BookingPagingDto {
   final int pageSize;
   @override
   final int totalItemCount;
-  final List<BookingDto> _bookingsList;
+  final List<BookingDto> _bookings;
   @override
   @JsonKey(name: 'list')
-  List<BookingDto> get bookingsList {
-    if (_bookingsList is EqualUnmodifiableListView) return _bookingsList;
+  List<BookingDto> get bookings {
+    if (_bookings is EqualUnmodifiableListView) return _bookings;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_bookingsList);
+    return EqualUnmodifiableListView(_bookings);
   }
 
   @override
   String toString() {
-    return 'BookingPagingDto(currentPageIndex: $currentPageIndex, pageSize: $pageSize, totalItemCount: $totalItemCount, bookingsList: $bookingsList)';
+    return 'BookingPagingDto(currentPageIndex: $currentPageIndex, pageSize: $pageSize, totalItemCount: $totalItemCount, bookings: $bookings)';
   }
 
   @override
@@ -181,14 +181,13 @@ class _$BookingPagingDtoImpl extends _BookingPagingDto {
                 other.pageSize == pageSize) &&
             (identical(other.totalItemCount, totalItemCount) ||
                 other.totalItemCount == totalItemCount) &&
-            const DeepCollectionEquality()
-                .equals(other._bookingsList, _bookingsList));
+            const DeepCollectionEquality().equals(other._bookings, _bookings));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, currentPageIndex, pageSize,
-      totalItemCount, const DeepCollectionEquality().hash(_bookingsList));
+      totalItemCount, const DeepCollectionEquality().hash(_bookings));
 
   @JsonKey(ignore: true)
   @override
@@ -207,11 +206,11 @@ class _$BookingPagingDtoImpl extends _BookingPagingDto {
 
 abstract class _BookingPagingDto extends BookingPagingDto {
   const factory _BookingPagingDto(
-      {required final int currentPageIndex,
-      required final int pageSize,
-      required final int totalItemCount,
-      @JsonKey(name: 'list')
-      required final List<BookingDto> bookingsList}) = _$BookingPagingDtoImpl;
+          {required final int currentPageIndex,
+          required final int pageSize,
+          required final int totalItemCount,
+          @JsonKey(name: 'list') required final List<BookingDto> bookings}) =
+      _$BookingPagingDtoImpl;
   const _BookingPagingDto._() : super._();
 
   factory _BookingPagingDto.fromJson(Map<String, dynamic> json) =
@@ -225,7 +224,7 @@ abstract class _BookingPagingDto extends BookingPagingDto {
   int get totalItemCount;
   @override
   @JsonKey(name: 'list')
-  List<BookingDto> get bookingsList;
+  List<BookingDto> get bookings;
   @override
   @JsonKey(ignore: true)
   _$$BookingPagingDtoImplCopyWith<_$BookingPagingDtoImpl> get copyWith =>

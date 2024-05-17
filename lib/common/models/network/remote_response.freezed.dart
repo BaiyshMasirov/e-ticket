@@ -18,68 +18,80 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$RemoteResponse<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -89,6 +101,9 @@ mixin _$RemoteResponse<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -96,11 +111,12 @@ mixin _$RemoteResponse<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -110,17 +126,21 @@ mixin _$RemoteResponse<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -130,12 +150,16 @@ mixin _$RemoteResponse<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -160,136 +184,159 @@ class _$RemoteResponseCopyWithImpl<T, $Res, $Val extends RemoteResponse<T>>
 }
 
 /// @nodoc
-abstract class _$$DataImplCopyWith<T, $Res> {
-  factory _$$DataImplCopyWith(
-          _$DataImpl<T> value, $Res Function(_$DataImpl<T>) then) =
-      __$$DataImplCopyWithImpl<T, $Res>;
+abstract class _$$DataWithHeadersImplCopyWith<T, $Res> {
+  factory _$$DataWithHeadersImplCopyWith(_$DataWithHeadersImpl<T> value,
+          $Res Function(_$DataWithHeadersImpl<T>) then) =
+      __$$DataWithHeadersImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T data});
+  $Res call({ResponseData<T> response});
+
+  $ResponseDataCopyWith<T, $Res> get response;
 }
 
 /// @nodoc
-class __$$DataImplCopyWithImpl<T, $Res>
-    extends _$RemoteResponseCopyWithImpl<T, $Res, _$DataImpl<T>>
-    implements _$$DataImplCopyWith<T, $Res> {
-  __$$DataImplCopyWithImpl(
-      _$DataImpl<T> _value, $Res Function(_$DataImpl<T>) _then)
+class __$$DataWithHeadersImplCopyWithImpl<T, $Res>
+    extends _$RemoteResponseCopyWithImpl<T, $Res, _$DataWithHeadersImpl<T>>
+    implements _$$DataWithHeadersImplCopyWith<T, $Res> {
+  __$$DataWithHeadersImplCopyWithImpl(_$DataWithHeadersImpl<T> _value,
+      $Res Function(_$DataWithHeadersImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? response = null,
   }) {
-    return _then(_$DataImpl<T>(
-      freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as T,
+    return _then(_$DataWithHeadersImpl<T>(
+      null == response
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as ResponseData<T>,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ResponseDataCopyWith<T, $Res> get response {
+    return $ResponseDataCopyWith<T, $Res>(_value.response, (value) {
+      return _then(_value.copyWith(response: value));
+    });
   }
 }
 
 /// @nodoc
 
-class _$DataImpl<T> extends _Data<T> {
-  const _$DataImpl(this.data) : super._();
+class _$DataWithHeadersImpl<T> extends _DataWithHeaders<T> {
+  const _$DataWithHeadersImpl(this.response) : super._();
 
   @override
-  final T data;
+  final ResponseData<T> response;
 
   @override
   String toString() {
-    return 'RemoteResponse<$T>.data(data: $data)';
+    return 'RemoteResponse<$T>.dataWithHeaders(response: $response)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DataImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
+            other is _$DataWithHeadersImpl<T> &&
+            (identical(other.response, response) ||
+                other.response == response));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, response);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DataImplCopyWith<T, _$DataImpl<T>> get copyWith =>
-      __$$DataImplCopyWithImpl<T, _$DataImpl<T>>(this, _$identity);
+  _$$DataWithHeadersImplCopyWith<T, _$DataWithHeadersImpl<T>> get copyWith =>
+      __$$DataWithHeadersImplCopyWithImpl<T, _$DataWithHeadersImpl<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
-    return data(this.data);
+    return dataWithHeaders(response);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
-    return data?.call(this.data);
+    return dataWithHeaders?.call(response);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
-    if (data != null) {
-      return data(this.data);
+    if (dataWithHeaders != null) {
+      return dataWithHeaders(response);
     }
     return orElse();
   }
@@ -297,7 +344,7 @@ class _$DataImpl<T> extends _Data<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -307,6 +354,9 @@ class _$DataImpl<T> extends _Data<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -314,14 +364,15 @@ class _$DataImpl<T> extends _Data<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
-    return data(this);
+    return dataWithHeaders(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -331,20 +382,24 @@ class _$DataImpl<T> extends _Data<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
-    return data?.call(this);
+    return dataWithHeaders?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -354,28 +409,33 @@ class _$DataImpl<T> extends _Data<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
-    if (data != null) {
-      return data(this);
+    if (dataWithHeaders != null) {
+      return dataWithHeaders(this);
     }
     return orElse();
   }
 }
 
-abstract class _Data<T> extends RemoteResponse<T> {
-  const factory _Data(final T data) = _$DataImpl<T>;
-  const _Data._() : super._();
+abstract class _DataWithHeaders<T> extends RemoteResponse<T> {
+  const factory _DataWithHeaders(final ResponseData<T> response) =
+      _$DataWithHeadersImpl<T>;
+  const _DataWithHeaders._() : super._();
 
-  T get data;
+  ResponseData<T> get response;
   @JsonKey(ignore: true)
-  _$$DataImplCopyWith<T, _$DataImpl<T>> get copyWith =>
+  _$$DataWithHeadersImplCopyWith<T, _$DataWithHeadersImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -417,22 +477,26 @@ class _$CreatedImpl<T> extends _Created<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
     return created();
   }
@@ -440,22 +504,26 @@ class _$CreatedImpl<T> extends _Created<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
     return created?.call();
   }
@@ -463,22 +531,26 @@ class _$CreatedImpl<T> extends _Created<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (created != null) {
@@ -490,7 +562,7 @@ class _$CreatedImpl<T> extends _Created<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -500,6 +572,9 @@ class _$CreatedImpl<T> extends _Created<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -507,6 +582,7 @@ class _$CreatedImpl<T> extends _Created<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return created(this);
   }
@@ -514,7 +590,7 @@ class _$CreatedImpl<T> extends _Created<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -524,12 +600,16 @@ class _$CreatedImpl<T> extends _Created<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return created?.call(this);
   }
@@ -537,7 +617,7 @@ class _$CreatedImpl<T> extends _Created<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -547,12 +627,16 @@ class _$CreatedImpl<T> extends _Created<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (created != null) {
@@ -605,22 +689,26 @@ class _$NotModifiedImpl<T> extends _NotModified<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
     return notModified();
   }
@@ -628,22 +716,26 @@ class _$NotModifiedImpl<T> extends _NotModified<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
     return notModified?.call();
   }
@@ -651,22 +743,26 @@ class _$NotModifiedImpl<T> extends _NotModified<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (notModified != null) {
@@ -678,7 +774,7 @@ class _$NotModifiedImpl<T> extends _NotModified<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -688,6 +784,9 @@ class _$NotModifiedImpl<T> extends _NotModified<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -695,6 +794,7 @@ class _$NotModifiedImpl<T> extends _NotModified<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return notModified(this);
   }
@@ -702,7 +802,7 @@ class _$NotModifiedImpl<T> extends _NotModified<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -712,12 +812,16 @@ class _$NotModifiedImpl<T> extends _NotModified<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return notModified?.call(this);
   }
@@ -725,7 +829,7 @@ class _$NotModifiedImpl<T> extends _NotModified<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -735,12 +839,16 @@ class _$NotModifiedImpl<T> extends _NotModified<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (notModified != null) {
@@ -793,22 +901,26 @@ class _$UnAuthorizedImpl<T> extends _UnAuthorized<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
     return unAuthorized();
   }
@@ -816,22 +928,26 @@ class _$UnAuthorizedImpl<T> extends _UnAuthorized<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
     return unAuthorized?.call();
   }
@@ -839,22 +955,26 @@ class _$UnAuthorizedImpl<T> extends _UnAuthorized<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (unAuthorized != null) {
@@ -866,7 +986,7 @@ class _$UnAuthorizedImpl<T> extends _UnAuthorized<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -876,6 +996,9 @@ class _$UnAuthorizedImpl<T> extends _UnAuthorized<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -883,6 +1006,7 @@ class _$UnAuthorizedImpl<T> extends _UnAuthorized<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return unAuthorized(this);
   }
@@ -890,7 +1014,7 @@ class _$UnAuthorizedImpl<T> extends _UnAuthorized<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -900,12 +1024,16 @@ class _$UnAuthorizedImpl<T> extends _UnAuthorized<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return unAuthorized?.call(this);
   }
@@ -913,7 +1041,7 @@ class _$UnAuthorizedImpl<T> extends _UnAuthorized<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -923,12 +1051,16 @@ class _$UnAuthorizedImpl<T> extends _UnAuthorized<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (unAuthorized != null) {
@@ -948,6 +1080,10 @@ abstract class _$$ForbiddenImplCopyWith<T, $Res> {
   factory _$$ForbiddenImplCopyWith(
           _$ForbiddenImpl<T> value, $Res Function(_$ForbiddenImpl<T>) then) =
       __$$ForbiddenImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ErrorResponse errorResponse});
+
+  $ErrorResponseCopyWith<$Res> get errorResponse;
 }
 
 /// @nodoc
@@ -957,96 +1093,141 @@ class __$$ForbiddenImplCopyWithImpl<T, $Res>
   __$$ForbiddenImplCopyWithImpl(
       _$ForbiddenImpl<T> _value, $Res Function(_$ForbiddenImpl<T>) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorResponse = null,
+  }) {
+    return _then(_$ForbiddenImpl<T>(
+      null == errorResponse
+          ? _value.errorResponse
+          : errorResponse // ignore: cast_nullable_to_non_nullable
+              as ErrorResponse,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ErrorResponseCopyWith<$Res> get errorResponse {
+    return $ErrorResponseCopyWith<$Res>(_value.errorResponse, (value) {
+      return _then(_value.copyWith(errorResponse: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$ForbiddenImpl<T> extends _Forbidden<T> {
-  const _$ForbiddenImpl() : super._();
+  const _$ForbiddenImpl(this.errorResponse) : super._();
+
+  @override
+  final ErrorResponse errorResponse;
 
   @override
   String toString() {
-    return 'RemoteResponse<$T>.forbidden()';
+    return 'RemoteResponse<$T>.forbidden(errorResponse: $errorResponse)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ForbiddenImpl<T>);
+        (other.runtimeType == runtimeType &&
+            other is _$ForbiddenImpl<T> &&
+            (identical(other.errorResponse, errorResponse) ||
+                other.errorResponse == errorResponse));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, errorResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ForbiddenImplCopyWith<T, _$ForbiddenImpl<T>> get copyWith =>
+      __$$ForbiddenImplCopyWithImpl<T, _$ForbiddenImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
-    return forbidden();
+    return forbidden(errorResponse);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
-    return forbidden?.call();
+    return forbidden?.call(errorResponse);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (forbidden != null) {
-      return forbidden();
+      return forbidden(errorResponse);
     }
     return orElse();
   }
@@ -1054,7 +1235,7 @@ class _$ForbiddenImpl<T> extends _Forbidden<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -1064,6 +1245,9 @@ class _$ForbiddenImpl<T> extends _Forbidden<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -1071,6 +1255,7 @@ class _$ForbiddenImpl<T> extends _Forbidden<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return forbidden(this);
   }
@@ -1078,7 +1263,7 @@ class _$ForbiddenImpl<T> extends _Forbidden<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -1088,12 +1273,16 @@ class _$ForbiddenImpl<T> extends _Forbidden<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return forbidden?.call(this);
   }
@@ -1101,7 +1290,7 @@ class _$ForbiddenImpl<T> extends _Forbidden<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -1111,12 +1300,16 @@ class _$ForbiddenImpl<T> extends _Forbidden<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (forbidden != null) {
@@ -1127,8 +1320,14 @@ class _$ForbiddenImpl<T> extends _Forbidden<T> {
 }
 
 abstract class _Forbidden<T> extends RemoteResponse<T> {
-  const factory _Forbidden() = _$ForbiddenImpl<T>;
+  const factory _Forbidden(final ErrorResponse errorResponse) =
+      _$ForbiddenImpl<T>;
   const _Forbidden._() : super._();
+
+  ErrorResponse get errorResponse;
+  @JsonKey(ignore: true)
+  _$$ForbiddenImplCopyWith<T, _$ForbiddenImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1207,22 +1406,26 @@ class _$ContentTooLargeImpl<T> extends _ContentTooLarge<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
     return contentTooLarge(errorResponse);
   }
@@ -1230,22 +1433,26 @@ class _$ContentTooLargeImpl<T> extends _ContentTooLarge<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
     return contentTooLarge?.call(errorResponse);
   }
@@ -1253,22 +1460,26 @@ class _$ContentTooLargeImpl<T> extends _ContentTooLarge<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (contentTooLarge != null) {
@@ -1280,7 +1491,7 @@ class _$ContentTooLargeImpl<T> extends _ContentTooLarge<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -1290,6 +1501,9 @@ class _$ContentTooLargeImpl<T> extends _ContentTooLarge<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -1297,6 +1511,7 @@ class _$ContentTooLargeImpl<T> extends _ContentTooLarge<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return contentTooLarge(this);
   }
@@ -1304,7 +1519,7 @@ class _$ContentTooLargeImpl<T> extends _ContentTooLarge<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -1314,12 +1529,16 @@ class _$ContentTooLargeImpl<T> extends _ContentTooLarge<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return contentTooLarge?.call(this);
   }
@@ -1327,7 +1546,7 @@ class _$ContentTooLargeImpl<T> extends _ContentTooLarge<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -1337,12 +1556,16 @@ class _$ContentTooLargeImpl<T> extends _ContentTooLarge<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (contentTooLarge != null) {
@@ -1438,22 +1661,26 @@ class _$BadRequestImpl<T> extends _BadRequest<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
     return badRequest(errorResponse);
   }
@@ -1461,22 +1688,26 @@ class _$BadRequestImpl<T> extends _BadRequest<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
     return badRequest?.call(errorResponse);
   }
@@ -1484,22 +1715,26 @@ class _$BadRequestImpl<T> extends _BadRequest<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (badRequest != null) {
@@ -1511,7 +1746,7 @@ class _$BadRequestImpl<T> extends _BadRequest<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -1521,6 +1756,9 @@ class _$BadRequestImpl<T> extends _BadRequest<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -1528,6 +1766,7 @@ class _$BadRequestImpl<T> extends _BadRequest<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return badRequest(this);
   }
@@ -1535,7 +1774,7 @@ class _$BadRequestImpl<T> extends _BadRequest<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -1545,12 +1784,16 @@ class _$BadRequestImpl<T> extends _BadRequest<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return badRequest?.call(this);
   }
@@ -1558,7 +1801,7 @@ class _$BadRequestImpl<T> extends _BadRequest<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -1568,12 +1811,16 @@ class _$BadRequestImpl<T> extends _BadRequest<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (badRequest != null) {
@@ -1669,22 +1916,26 @@ class _$NotFoundImpl<T> extends _NotFound<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
     return notFound(errorResponse);
   }
@@ -1692,22 +1943,26 @@ class _$NotFoundImpl<T> extends _NotFound<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
     return notFound?.call(errorResponse);
   }
@@ -1715,22 +1970,26 @@ class _$NotFoundImpl<T> extends _NotFound<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (notFound != null) {
@@ -1742,7 +2001,7 @@ class _$NotFoundImpl<T> extends _NotFound<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -1752,6 +2011,9 @@ class _$NotFoundImpl<T> extends _NotFound<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -1759,6 +2021,7 @@ class _$NotFoundImpl<T> extends _NotFound<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return notFound(this);
   }
@@ -1766,7 +2029,7 @@ class _$NotFoundImpl<T> extends _NotFound<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -1776,12 +2039,16 @@ class _$NotFoundImpl<T> extends _NotFound<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return notFound?.call(this);
   }
@@ -1789,7 +2056,7 @@ class _$NotFoundImpl<T> extends _NotFound<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -1799,12 +2066,16 @@ class _$NotFoundImpl<T> extends _NotFound<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (notFound != null) {
@@ -1901,22 +2172,26 @@ class _$MethodNotAllowedImpl<T> extends _MethodNotAllowed<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
     return methodNotAllowed(errorResponse);
   }
@@ -1924,22 +2199,26 @@ class _$MethodNotAllowedImpl<T> extends _MethodNotAllowed<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
     return methodNotAllowed?.call(errorResponse);
   }
@@ -1947,22 +2226,26 @@ class _$MethodNotAllowedImpl<T> extends _MethodNotAllowed<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (methodNotAllowed != null) {
@@ -1974,7 +2257,7 @@ class _$MethodNotAllowedImpl<T> extends _MethodNotAllowed<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -1984,6 +2267,9 @@ class _$MethodNotAllowedImpl<T> extends _MethodNotAllowed<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -1991,6 +2277,7 @@ class _$MethodNotAllowedImpl<T> extends _MethodNotAllowed<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return methodNotAllowed(this);
   }
@@ -1998,7 +2285,7 @@ class _$MethodNotAllowedImpl<T> extends _MethodNotAllowed<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -2008,12 +2295,16 @@ class _$MethodNotAllowedImpl<T> extends _MethodNotAllowed<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return methodNotAllowed?.call(this);
   }
@@ -2021,7 +2312,7 @@ class _$MethodNotAllowedImpl<T> extends _MethodNotAllowed<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -2031,12 +2322,16 @@ class _$MethodNotAllowedImpl<T> extends _MethodNotAllowed<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (methodNotAllowed != null) {
@@ -2133,22 +2428,26 @@ class _$TooManyRequestImpl<T> extends _TooManyRequest<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
     return tooManyRequest(errorResponse);
   }
@@ -2156,22 +2455,26 @@ class _$TooManyRequestImpl<T> extends _TooManyRequest<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
     return tooManyRequest?.call(errorResponse);
   }
@@ -2179,22 +2482,26 @@ class _$TooManyRequestImpl<T> extends _TooManyRequest<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (tooManyRequest != null) {
@@ -2206,7 +2513,7 @@ class _$TooManyRequestImpl<T> extends _TooManyRequest<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -2216,6 +2523,9 @@ class _$TooManyRequestImpl<T> extends _TooManyRequest<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -2223,6 +2533,7 @@ class _$TooManyRequestImpl<T> extends _TooManyRequest<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return tooManyRequest(this);
   }
@@ -2230,7 +2541,7 @@ class _$TooManyRequestImpl<T> extends _TooManyRequest<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -2240,12 +2551,16 @@ class _$TooManyRequestImpl<T> extends _TooManyRequest<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return tooManyRequest?.call(this);
   }
@@ -2253,7 +2568,7 @@ class _$TooManyRequestImpl<T> extends _TooManyRequest<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -2263,12 +2578,16 @@ class _$TooManyRequestImpl<T> extends _TooManyRequest<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (tooManyRequest != null) {
@@ -2286,6 +2605,771 @@ abstract class _TooManyRequest<T> extends RemoteResponse<T> {
   ErrorResponse get errorResponse;
   @JsonKey(ignore: true)
   _$$TooManyRequestImplCopyWith<T, _$TooManyRequestImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ConflictImplCopyWith<T, $Res> {
+  factory _$$ConflictImplCopyWith(
+          _$ConflictImpl<T> value, $Res Function(_$ConflictImpl<T>) then) =
+      __$$ConflictImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ErrorResponse errorResponse});
+
+  $ErrorResponseCopyWith<$Res> get errorResponse;
+}
+
+/// @nodoc
+class __$$ConflictImplCopyWithImpl<T, $Res>
+    extends _$RemoteResponseCopyWithImpl<T, $Res, _$ConflictImpl<T>>
+    implements _$$ConflictImplCopyWith<T, $Res> {
+  __$$ConflictImplCopyWithImpl(
+      _$ConflictImpl<T> _value, $Res Function(_$ConflictImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorResponse = null,
+  }) {
+    return _then(_$ConflictImpl<T>(
+      null == errorResponse
+          ? _value.errorResponse
+          : errorResponse // ignore: cast_nullable_to_non_nullable
+              as ErrorResponse,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ErrorResponseCopyWith<$Res> get errorResponse {
+    return $ErrorResponseCopyWith<$Res>(_value.errorResponse, (value) {
+      return _then(_value.copyWith(errorResponse: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ConflictImpl<T> extends _Conflict<T> {
+  const _$ConflictImpl(this.errorResponse) : super._();
+
+  @override
+  final ErrorResponse errorResponse;
+
+  @override
+  String toString() {
+    return 'RemoteResponse<$T>.conflict(errorResponse: $errorResponse)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConflictImpl<T> &&
+            (identical(other.errorResponse, errorResponse) ||
+                other.errorResponse == errorResponse));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConflictImplCopyWith<T, _$ConflictImpl<T>> get copyWith =>
+      __$$ConflictImplCopyWithImpl<T, _$ConflictImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
+    required TResult Function() created,
+    required TResult Function() notModified,
+    required TResult Function() unAuthorized,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
+    required TResult Function(ErrorResponse errorResponse) contentTooLarge,
+    required TResult Function(ErrorResponse errorResponse) badRequest,
+    required TResult Function(ErrorResponse errorResponse) notFound,
+    required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
+    required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
+    required TResult Function() internalServerError,
+    required TResult Function() serviceUnavailable,
+    required TResult Function() unknownError,
+    required TResult Function() noConnection,
+    required TResult Function() connectionTimeout,
+    required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
+  }) {
+    return conflict(errorResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
+    TResult? Function()? created,
+    TResult? Function()? notModified,
+    TResult? Function()? unAuthorized,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
+    TResult? Function(ErrorResponse errorResponse)? badRequest,
+    TResult? Function(ErrorResponse errorResponse)? notFound,
+    TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
+    TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
+    TResult? Function()? internalServerError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? unknownError,
+    TResult? Function()? noConnection,
+    TResult? Function()? connectionTimeout,
+    TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
+  }) {
+    return conflict?.call(errorResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
+    TResult Function()? created,
+    TResult Function()? notModified,
+    TResult Function()? unAuthorized,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
+    TResult Function(ErrorResponse errorResponse)? contentTooLarge,
+    TResult Function(ErrorResponse errorResponse)? badRequest,
+    TResult Function(ErrorResponse errorResponse)? notFound,
+    TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
+    TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
+    TResult Function()? internalServerError,
+    TResult Function()? serviceUnavailable,
+    TResult Function()? unknownError,
+    TResult Function()? noConnection,
+    TResult Function()? connectionTimeout,
+    TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
+    required TResult orElse(),
+  }) {
+    if (conflict != null) {
+      return conflict(errorResponse);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
+    required TResult Function(_Created<T> value) created,
+    required TResult Function(_NotModified<T> value) notModified,
+    required TResult Function(_UnAuthorized<T> value) unAuthorized,
+    required TResult Function(_Forbidden<T> value) forbidden,
+    required TResult Function(_ContentTooLarge<T> value) contentTooLarge,
+    required TResult Function(_BadRequest<T> value) badRequest,
+    required TResult Function(_NotFound<T> value) notFound,
+    required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
+    required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
+    required TResult Function(_InternalServerError<T> value)
+        internalServerError,
+    required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
+    required TResult Function(_UnknownError<T> value) unknownError,
+    required TResult Function(_NoConnection<T> value) noConnection,
+    required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
+    required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
+  }) {
+    return conflict(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
+    TResult? Function(_Created<T> value)? created,
+    TResult? Function(_NotModified<T> value)? notModified,
+    TResult? Function(_UnAuthorized<T> value)? unAuthorized,
+    TResult? Function(_Forbidden<T> value)? forbidden,
+    TResult? Function(_ContentTooLarge<T> value)? contentTooLarge,
+    TResult? Function(_BadRequest<T> value)? badRequest,
+    TResult? Function(_NotFound<T> value)? notFound,
+    TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
+    TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
+    TResult? Function(_InternalServerError<T> value)? internalServerError,
+    TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
+    TResult? Function(_UnknownError<T> value)? unknownError,
+    TResult? Function(_NoConnection<T> value)? noConnection,
+    TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
+    TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
+  }) {
+    return conflict?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
+    TResult Function(_Created<T> value)? created,
+    TResult Function(_NotModified<T> value)? notModified,
+    TResult Function(_UnAuthorized<T> value)? unAuthorized,
+    TResult Function(_Forbidden<T> value)? forbidden,
+    TResult Function(_ContentTooLarge<T> value)? contentTooLarge,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
+    TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
+    TResult Function(_UnknownError<T> value)? unknownError,
+    TResult Function(_NoConnection<T> value)? noConnection,
+    TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
+    TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
+    required TResult orElse(),
+  }) {
+    if (conflict != null) {
+      return conflict(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Conflict<T> extends RemoteResponse<T> {
+  const factory _Conflict(final ErrorResponse errorResponse) =
+      _$ConflictImpl<T>;
+  const _Conflict._() : super._();
+
+  ErrorResponse get errorResponse;
+  @JsonKey(ignore: true)
+  _$$ConflictImplCopyWith<T, _$ConflictImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LockedImplCopyWith<T, $Res> {
+  factory _$$LockedImplCopyWith(
+          _$LockedImpl<T> value, $Res Function(_$LockedImpl<T>) then) =
+      __$$LockedImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ErrorResponse errorResponse});
+
+  $ErrorResponseCopyWith<$Res> get errorResponse;
+}
+
+/// @nodoc
+class __$$LockedImplCopyWithImpl<T, $Res>
+    extends _$RemoteResponseCopyWithImpl<T, $Res, _$LockedImpl<T>>
+    implements _$$LockedImplCopyWith<T, $Res> {
+  __$$LockedImplCopyWithImpl(
+      _$LockedImpl<T> _value, $Res Function(_$LockedImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorResponse = null,
+  }) {
+    return _then(_$LockedImpl<T>(
+      null == errorResponse
+          ? _value.errorResponse
+          : errorResponse // ignore: cast_nullable_to_non_nullable
+              as ErrorResponse,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ErrorResponseCopyWith<$Res> get errorResponse {
+    return $ErrorResponseCopyWith<$Res>(_value.errorResponse, (value) {
+      return _then(_value.copyWith(errorResponse: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$LockedImpl<T> extends _Locked<T> {
+  const _$LockedImpl(this.errorResponse) : super._();
+
+  @override
+  final ErrorResponse errorResponse;
+
+  @override
+  String toString() {
+    return 'RemoteResponse<$T>.locked(errorResponse: $errorResponse)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LockedImpl<T> &&
+            (identical(other.errorResponse, errorResponse) ||
+                other.errorResponse == errorResponse));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LockedImplCopyWith<T, _$LockedImpl<T>> get copyWith =>
+      __$$LockedImplCopyWithImpl<T, _$LockedImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
+    required TResult Function() created,
+    required TResult Function() notModified,
+    required TResult Function() unAuthorized,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
+    required TResult Function(ErrorResponse errorResponse) contentTooLarge,
+    required TResult Function(ErrorResponse errorResponse) badRequest,
+    required TResult Function(ErrorResponse errorResponse) notFound,
+    required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
+    required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
+    required TResult Function() internalServerError,
+    required TResult Function() serviceUnavailable,
+    required TResult Function() unknownError,
+    required TResult Function() noConnection,
+    required TResult Function() connectionTimeout,
+    required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
+  }) {
+    return locked(errorResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
+    TResult? Function()? created,
+    TResult? Function()? notModified,
+    TResult? Function()? unAuthorized,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
+    TResult? Function(ErrorResponse errorResponse)? badRequest,
+    TResult? Function(ErrorResponse errorResponse)? notFound,
+    TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
+    TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
+    TResult? Function()? internalServerError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? unknownError,
+    TResult? Function()? noConnection,
+    TResult? Function()? connectionTimeout,
+    TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
+  }) {
+    return locked?.call(errorResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
+    TResult Function()? created,
+    TResult Function()? notModified,
+    TResult Function()? unAuthorized,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
+    TResult Function(ErrorResponse errorResponse)? contentTooLarge,
+    TResult Function(ErrorResponse errorResponse)? badRequest,
+    TResult Function(ErrorResponse errorResponse)? notFound,
+    TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
+    TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
+    TResult Function()? internalServerError,
+    TResult Function()? serviceUnavailable,
+    TResult Function()? unknownError,
+    TResult Function()? noConnection,
+    TResult Function()? connectionTimeout,
+    TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
+    required TResult orElse(),
+  }) {
+    if (locked != null) {
+      return locked(errorResponse);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
+    required TResult Function(_Created<T> value) created,
+    required TResult Function(_NotModified<T> value) notModified,
+    required TResult Function(_UnAuthorized<T> value) unAuthorized,
+    required TResult Function(_Forbidden<T> value) forbidden,
+    required TResult Function(_ContentTooLarge<T> value) contentTooLarge,
+    required TResult Function(_BadRequest<T> value) badRequest,
+    required TResult Function(_NotFound<T> value) notFound,
+    required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
+    required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
+    required TResult Function(_InternalServerError<T> value)
+        internalServerError,
+    required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
+    required TResult Function(_UnknownError<T> value) unknownError,
+    required TResult Function(_NoConnection<T> value) noConnection,
+    required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
+    required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
+  }) {
+    return locked(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
+    TResult? Function(_Created<T> value)? created,
+    TResult? Function(_NotModified<T> value)? notModified,
+    TResult? Function(_UnAuthorized<T> value)? unAuthorized,
+    TResult? Function(_Forbidden<T> value)? forbidden,
+    TResult? Function(_ContentTooLarge<T> value)? contentTooLarge,
+    TResult? Function(_BadRequest<T> value)? badRequest,
+    TResult? Function(_NotFound<T> value)? notFound,
+    TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
+    TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
+    TResult? Function(_InternalServerError<T> value)? internalServerError,
+    TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
+    TResult? Function(_UnknownError<T> value)? unknownError,
+    TResult? Function(_NoConnection<T> value)? noConnection,
+    TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
+    TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
+  }) {
+    return locked?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
+    TResult Function(_Created<T> value)? created,
+    TResult Function(_NotModified<T> value)? notModified,
+    TResult Function(_UnAuthorized<T> value)? unAuthorized,
+    TResult Function(_Forbidden<T> value)? forbidden,
+    TResult Function(_ContentTooLarge<T> value)? contentTooLarge,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
+    TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
+    TResult Function(_UnknownError<T> value)? unknownError,
+    TResult Function(_NoConnection<T> value)? noConnection,
+    TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
+    TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
+    required TResult orElse(),
+  }) {
+    if (locked != null) {
+      return locked(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Locked<T> extends RemoteResponse<T> {
+  const factory _Locked(final ErrorResponse errorResponse) = _$LockedImpl<T>;
+  const _Locked._() : super._();
+
+  ErrorResponse get errorResponse;
+  @JsonKey(ignore: true)
+  _$$LockedImplCopyWith<T, _$LockedImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpgradeRequiredImplCopyWith<T, $Res> {
+  factory _$$UpgradeRequiredImplCopyWith(_$UpgradeRequiredImpl<T> value,
+          $Res Function(_$UpgradeRequiredImpl<T>) then) =
+      __$$UpgradeRequiredImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ErrorResponse errorResponse});
+
+  $ErrorResponseCopyWith<$Res> get errorResponse;
+}
+
+/// @nodoc
+class __$$UpgradeRequiredImplCopyWithImpl<T, $Res>
+    extends _$RemoteResponseCopyWithImpl<T, $Res, _$UpgradeRequiredImpl<T>>
+    implements _$$UpgradeRequiredImplCopyWith<T, $Res> {
+  __$$UpgradeRequiredImplCopyWithImpl(_$UpgradeRequiredImpl<T> _value,
+      $Res Function(_$UpgradeRequiredImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorResponse = null,
+  }) {
+    return _then(_$UpgradeRequiredImpl<T>(
+      null == errorResponse
+          ? _value.errorResponse
+          : errorResponse // ignore: cast_nullable_to_non_nullable
+              as ErrorResponse,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ErrorResponseCopyWith<$Res> get errorResponse {
+    return $ErrorResponseCopyWith<$Res>(_value.errorResponse, (value) {
+      return _then(_value.copyWith(errorResponse: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UpgradeRequiredImpl<T> extends _UpgradeRequired<T> {
+  const _$UpgradeRequiredImpl(this.errorResponse) : super._();
+
+  @override
+  final ErrorResponse errorResponse;
+
+  @override
+  String toString() {
+    return 'RemoteResponse<$T>.upgradeRequired(errorResponse: $errorResponse)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpgradeRequiredImpl<T> &&
+            (identical(other.errorResponse, errorResponse) ||
+                other.errorResponse == errorResponse));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpgradeRequiredImplCopyWith<T, _$UpgradeRequiredImpl<T>> get copyWith =>
+      __$$UpgradeRequiredImplCopyWithImpl<T, _$UpgradeRequiredImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
+    required TResult Function() created,
+    required TResult Function() notModified,
+    required TResult Function() unAuthorized,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
+    required TResult Function(ErrorResponse errorResponse) contentTooLarge,
+    required TResult Function(ErrorResponse errorResponse) badRequest,
+    required TResult Function(ErrorResponse errorResponse) notFound,
+    required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
+    required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
+    required TResult Function() internalServerError,
+    required TResult Function() serviceUnavailable,
+    required TResult Function() unknownError,
+    required TResult Function() noConnection,
+    required TResult Function() connectionTimeout,
+    required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
+  }) {
+    return upgradeRequired(errorResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
+    TResult? Function()? created,
+    TResult? Function()? notModified,
+    TResult? Function()? unAuthorized,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
+    TResult? Function(ErrorResponse errorResponse)? badRequest,
+    TResult? Function(ErrorResponse errorResponse)? notFound,
+    TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
+    TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
+    TResult? Function()? internalServerError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? unknownError,
+    TResult? Function()? noConnection,
+    TResult? Function()? connectionTimeout,
+    TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
+  }) {
+    return upgradeRequired?.call(errorResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
+    TResult Function()? created,
+    TResult Function()? notModified,
+    TResult Function()? unAuthorized,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
+    TResult Function(ErrorResponse errorResponse)? contentTooLarge,
+    TResult Function(ErrorResponse errorResponse)? badRequest,
+    TResult Function(ErrorResponse errorResponse)? notFound,
+    TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
+    TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
+    TResult Function()? internalServerError,
+    TResult Function()? serviceUnavailable,
+    TResult Function()? unknownError,
+    TResult Function()? noConnection,
+    TResult Function()? connectionTimeout,
+    TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
+    required TResult orElse(),
+  }) {
+    if (upgradeRequired != null) {
+      return upgradeRequired(errorResponse);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
+    required TResult Function(_Created<T> value) created,
+    required TResult Function(_NotModified<T> value) notModified,
+    required TResult Function(_UnAuthorized<T> value) unAuthorized,
+    required TResult Function(_Forbidden<T> value) forbidden,
+    required TResult Function(_ContentTooLarge<T> value) contentTooLarge,
+    required TResult Function(_BadRequest<T> value) badRequest,
+    required TResult Function(_NotFound<T> value) notFound,
+    required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
+    required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
+    required TResult Function(_InternalServerError<T> value)
+        internalServerError,
+    required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
+    required TResult Function(_UnknownError<T> value) unknownError,
+    required TResult Function(_NoConnection<T> value) noConnection,
+    required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
+    required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
+  }) {
+    return upgradeRequired(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
+    TResult? Function(_Created<T> value)? created,
+    TResult? Function(_NotModified<T> value)? notModified,
+    TResult? Function(_UnAuthorized<T> value)? unAuthorized,
+    TResult? Function(_Forbidden<T> value)? forbidden,
+    TResult? Function(_ContentTooLarge<T> value)? contentTooLarge,
+    TResult? Function(_BadRequest<T> value)? badRequest,
+    TResult? Function(_NotFound<T> value)? notFound,
+    TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
+    TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
+    TResult? Function(_InternalServerError<T> value)? internalServerError,
+    TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
+    TResult? Function(_UnknownError<T> value)? unknownError,
+    TResult? Function(_NoConnection<T> value)? noConnection,
+    TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
+    TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
+  }) {
+    return upgradeRequired?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
+    TResult Function(_Created<T> value)? created,
+    TResult Function(_NotModified<T> value)? notModified,
+    TResult Function(_UnAuthorized<T> value)? unAuthorized,
+    TResult Function(_Forbidden<T> value)? forbidden,
+    TResult Function(_ContentTooLarge<T> value)? contentTooLarge,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
+    TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
+    TResult Function(_UnknownError<T> value)? unknownError,
+    TResult Function(_NoConnection<T> value)? noConnection,
+    TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
+    TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
+    required TResult orElse(),
+  }) {
+    if (upgradeRequired != null) {
+      return upgradeRequired(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpgradeRequired<T> extends RemoteResponse<T> {
+  const factory _UpgradeRequired(final ErrorResponse errorResponse) =
+      _$UpgradeRequiredImpl<T>;
+  const _UpgradeRequired._() : super._();
+
+  ErrorResponse get errorResponse;
+  @JsonKey(ignore: true)
+  _$$UpgradeRequiredImplCopyWith<T, _$UpgradeRequiredImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2328,22 +3412,26 @@ class _$InternalServerErrorImpl<T> extends _InternalServerError<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
     return internalServerError();
   }
@@ -2351,22 +3439,26 @@ class _$InternalServerErrorImpl<T> extends _InternalServerError<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
     return internalServerError?.call();
   }
@@ -2374,22 +3466,26 @@ class _$InternalServerErrorImpl<T> extends _InternalServerError<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (internalServerError != null) {
@@ -2401,7 +3497,7 @@ class _$InternalServerErrorImpl<T> extends _InternalServerError<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -2411,6 +3507,9 @@ class _$InternalServerErrorImpl<T> extends _InternalServerError<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -2418,6 +3517,7 @@ class _$InternalServerErrorImpl<T> extends _InternalServerError<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return internalServerError(this);
   }
@@ -2425,7 +3525,7 @@ class _$InternalServerErrorImpl<T> extends _InternalServerError<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -2435,12 +3535,16 @@ class _$InternalServerErrorImpl<T> extends _InternalServerError<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return internalServerError?.call(this);
   }
@@ -2448,7 +3552,7 @@ class _$InternalServerErrorImpl<T> extends _InternalServerError<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -2458,12 +3562,16 @@ class _$InternalServerErrorImpl<T> extends _InternalServerError<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (internalServerError != null) {
@@ -2517,22 +3625,26 @@ class _$ServiceUnavailableImpl<T> extends _ServiceUnavailable<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
     return serviceUnavailable();
   }
@@ -2540,22 +3652,26 @@ class _$ServiceUnavailableImpl<T> extends _ServiceUnavailable<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
     return serviceUnavailable?.call();
   }
@@ -2563,22 +3679,26 @@ class _$ServiceUnavailableImpl<T> extends _ServiceUnavailable<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (serviceUnavailable != null) {
@@ -2590,7 +3710,7 @@ class _$ServiceUnavailableImpl<T> extends _ServiceUnavailable<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -2600,6 +3720,9 @@ class _$ServiceUnavailableImpl<T> extends _ServiceUnavailable<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -2607,6 +3730,7 @@ class _$ServiceUnavailableImpl<T> extends _ServiceUnavailable<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return serviceUnavailable(this);
   }
@@ -2614,7 +3738,7 @@ class _$ServiceUnavailableImpl<T> extends _ServiceUnavailable<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -2624,12 +3748,16 @@ class _$ServiceUnavailableImpl<T> extends _ServiceUnavailable<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return serviceUnavailable?.call(this);
   }
@@ -2637,7 +3765,7 @@ class _$ServiceUnavailableImpl<T> extends _ServiceUnavailable<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -2647,12 +3775,16 @@ class _$ServiceUnavailableImpl<T> extends _ServiceUnavailable<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (serviceUnavailable != null) {
@@ -2705,22 +3837,26 @@ class _$UnknownErrorImpl<T> extends _UnknownError<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
     return unknownError();
   }
@@ -2728,22 +3864,26 @@ class _$UnknownErrorImpl<T> extends _UnknownError<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
     return unknownError?.call();
   }
@@ -2751,22 +3891,26 @@ class _$UnknownErrorImpl<T> extends _UnknownError<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (unknownError != null) {
@@ -2778,7 +3922,7 @@ class _$UnknownErrorImpl<T> extends _UnknownError<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -2788,6 +3932,9 @@ class _$UnknownErrorImpl<T> extends _UnknownError<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -2795,6 +3942,7 @@ class _$UnknownErrorImpl<T> extends _UnknownError<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return unknownError(this);
   }
@@ -2802,7 +3950,7 @@ class _$UnknownErrorImpl<T> extends _UnknownError<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -2812,12 +3960,16 @@ class _$UnknownErrorImpl<T> extends _UnknownError<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return unknownError?.call(this);
   }
@@ -2825,7 +3977,7 @@ class _$UnknownErrorImpl<T> extends _UnknownError<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -2835,12 +3987,16 @@ class _$UnknownErrorImpl<T> extends _UnknownError<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (unknownError != null) {
@@ -2893,22 +4049,26 @@ class _$NoConnectionImpl<T> extends _NoConnection<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
     return noConnection();
   }
@@ -2916,22 +4076,26 @@ class _$NoConnectionImpl<T> extends _NoConnection<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
     return noConnection?.call();
   }
@@ -2939,22 +4103,26 @@ class _$NoConnectionImpl<T> extends _NoConnection<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (noConnection != null) {
@@ -2966,7 +4134,7 @@ class _$NoConnectionImpl<T> extends _NoConnection<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -2976,6 +4144,9 @@ class _$NoConnectionImpl<T> extends _NoConnection<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -2983,6 +4154,7 @@ class _$NoConnectionImpl<T> extends _NoConnection<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return noConnection(this);
   }
@@ -2990,7 +4162,7 @@ class _$NoConnectionImpl<T> extends _NoConnection<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -3000,12 +4172,16 @@ class _$NoConnectionImpl<T> extends _NoConnection<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return noConnection?.call(this);
   }
@@ -3013,7 +4189,7 @@ class _$NoConnectionImpl<T> extends _NoConnection<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -3023,12 +4199,16 @@ class _$NoConnectionImpl<T> extends _NoConnection<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (noConnection != null) {
@@ -3082,22 +4262,26 @@ class _$ConnectionTimeoutImpl<T> extends _ConnectionTimeout<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
     return connectionTimeout();
   }
@@ -3105,22 +4289,26 @@ class _$ConnectionTimeoutImpl<T> extends _ConnectionTimeout<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
     return connectionTimeout?.call();
   }
@@ -3128,22 +4316,26 @@ class _$ConnectionTimeoutImpl<T> extends _ConnectionTimeout<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (connectionTimeout != null) {
@@ -3155,7 +4347,7 @@ class _$ConnectionTimeoutImpl<T> extends _ConnectionTimeout<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -3165,6 +4357,9 @@ class _$ConnectionTimeoutImpl<T> extends _ConnectionTimeout<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -3172,6 +4367,7 @@ class _$ConnectionTimeoutImpl<T> extends _ConnectionTimeout<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return connectionTimeout(this);
   }
@@ -3179,7 +4375,7 @@ class _$ConnectionTimeoutImpl<T> extends _ConnectionTimeout<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -3189,12 +4385,16 @@ class _$ConnectionTimeoutImpl<T> extends _ConnectionTimeout<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return connectionTimeout?.call(this);
   }
@@ -3202,7 +4402,7 @@ class _$ConnectionTimeoutImpl<T> extends _ConnectionTimeout<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -3212,12 +4412,16 @@ class _$ConnectionTimeoutImpl<T> extends _ConnectionTimeout<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (connectionTimeout != null) {
@@ -3308,22 +4512,26 @@ class _$StatusNotHandledImpl<T> extends _StatusNotHandled<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T data) data,
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
     required TResult Function() created,
     required TResult Function() notModified,
     required TResult Function() unAuthorized,
-    required TResult Function() forbidden,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
     required TResult Function(ErrorResponse errorResponse) contentTooLarge,
     required TResult Function(ErrorResponse errorResponse) badRequest,
     required TResult Function(ErrorResponse errorResponse) notFound,
     required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
     required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
     required TResult Function() internalServerError,
     required TResult Function() serviceUnavailable,
     required TResult Function() unknownError,
     required TResult Function() noConnection,
     required TResult Function() connectionTimeout,
     required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
   }) {
     return statusNotHandled(response);
   }
@@ -3331,22 +4539,26 @@ class _$StatusNotHandledImpl<T> extends _StatusNotHandled<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T data)? data,
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
     TResult? Function()? created,
     TResult? Function()? notModified,
     TResult? Function()? unAuthorized,
-    TResult? Function()? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
     TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult? Function(ErrorResponse errorResponse)? badRequest,
     TResult? Function(ErrorResponse errorResponse)? notFound,
     TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult? Function()? internalServerError,
     TResult? Function()? serviceUnavailable,
     TResult? Function()? unknownError,
     TResult? Function()? noConnection,
     TResult? Function()? connectionTimeout,
     TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
   }) {
     return statusNotHandled?.call(response);
   }
@@ -3354,22 +4566,26 @@ class _$StatusNotHandledImpl<T> extends _StatusNotHandled<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T data)? data,
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
     TResult Function()? created,
     TResult Function()? notModified,
     TResult Function()? unAuthorized,
-    TResult Function()? forbidden,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
     TResult Function(ErrorResponse errorResponse)? contentTooLarge,
     TResult Function(ErrorResponse errorResponse)? badRequest,
     TResult Function(ErrorResponse errorResponse)? notFound,
     TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
     TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
     TResult Function()? internalServerError,
     TResult Function()? serviceUnavailable,
     TResult Function()? unknownError,
     TResult Function()? noConnection,
     TResult Function()? connectionTimeout,
     TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
     required TResult orElse(),
   }) {
     if (statusNotHandled != null) {
@@ -3381,7 +4597,7 @@ class _$StatusNotHandledImpl<T> extends _StatusNotHandled<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Data<T> value) data,
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
     required TResult Function(_Created<T> value) created,
     required TResult Function(_NotModified<T> value) notModified,
     required TResult Function(_UnAuthorized<T> value) unAuthorized,
@@ -3391,6 +4607,9 @@ class _$StatusNotHandledImpl<T> extends _StatusNotHandled<T> {
     required TResult Function(_NotFound<T> value) notFound,
     required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
     required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
     required TResult Function(_InternalServerError<T> value)
         internalServerError,
     required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
@@ -3398,6 +4617,7 @@ class _$StatusNotHandledImpl<T> extends _StatusNotHandled<T> {
     required TResult Function(_NoConnection<T> value) noConnection,
     required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
     required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
   }) {
     return statusNotHandled(this);
   }
@@ -3405,7 +4625,7 @@ class _$StatusNotHandledImpl<T> extends _StatusNotHandled<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Data<T> value)? data,
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult? Function(_Created<T> value)? created,
     TResult? Function(_NotModified<T> value)? notModified,
     TResult? Function(_UnAuthorized<T> value)? unAuthorized,
@@ -3415,12 +4635,16 @@ class _$StatusNotHandledImpl<T> extends _StatusNotHandled<T> {
     TResult? Function(_NotFound<T> value)? notFound,
     TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult? Function(_InternalServerError<T> value)? internalServerError,
     TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult? Function(_UnknownError<T> value)? unknownError,
     TResult? Function(_NoConnection<T> value)? noConnection,
     TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
   }) {
     return statusNotHandled?.call(this);
   }
@@ -3428,7 +4652,7 @@ class _$StatusNotHandledImpl<T> extends _StatusNotHandled<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Data<T> value)? data,
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
     TResult Function(_Created<T> value)? created,
     TResult Function(_NotModified<T> value)? notModified,
     TResult Function(_UnAuthorized<T> value)? unAuthorized,
@@ -3438,12 +4662,16 @@ class _$StatusNotHandledImpl<T> extends _StatusNotHandled<T> {
     TResult Function(_NotFound<T> value)? notFound,
     TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
     TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
     TResult Function(_InternalServerError<T> value)? internalServerError,
     TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
     TResult Function(_UnknownError<T> value)? unknownError,
     TResult Function(_NoConnection<T> value)? noConnection,
     TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
     TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
     required TResult orElse(),
   }) {
     if (statusNotHandled != null) {
@@ -3462,4 +4690,216 @@ abstract class _StatusNotHandled<T> extends RemoteResponse<T> {
   @JsonKey(ignore: true)
   _$$StatusNotHandledImplCopyWith<T, _$StatusNotHandledImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ParsingErrorImplCopyWith<T, $Res> {
+  factory _$$ParsingErrorImplCopyWith(_$ParsingErrorImpl<T> value,
+          $Res Function(_$ParsingErrorImpl<T>) then) =
+      __$$ParsingErrorImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ParsingErrorImplCopyWithImpl<T, $Res>
+    extends _$RemoteResponseCopyWithImpl<T, $Res, _$ParsingErrorImpl<T>>
+    implements _$$ParsingErrorImplCopyWith<T, $Res> {
+  __$$ParsingErrorImplCopyWithImpl(
+      _$ParsingErrorImpl<T> _value, $Res Function(_$ParsingErrorImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ParsingErrorImpl<T> extends _ParsingError<T> {
+  const _$ParsingErrorImpl() : super._();
+
+  @override
+  String toString() {
+    return 'RemoteResponse<$T>.parsingError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ParsingErrorImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ResponseData<T> response) dataWithHeaders,
+    required TResult Function() created,
+    required TResult Function() notModified,
+    required TResult Function() unAuthorized,
+    required TResult Function(ErrorResponse errorResponse) forbidden,
+    required TResult Function(ErrorResponse errorResponse) contentTooLarge,
+    required TResult Function(ErrorResponse errorResponse) badRequest,
+    required TResult Function(ErrorResponse errorResponse) notFound,
+    required TResult Function(ErrorResponse errorResponse) methodNotAllowed,
+    required TResult Function(ErrorResponse errorResponse) tooManyRequest,
+    required TResult Function(ErrorResponse errorResponse) conflict,
+    required TResult Function(ErrorResponse errorResponse) locked,
+    required TResult Function(ErrorResponse errorResponse) upgradeRequired,
+    required TResult Function() internalServerError,
+    required TResult Function() serviceUnavailable,
+    required TResult Function() unknownError,
+    required TResult Function() noConnection,
+    required TResult Function() connectionTimeout,
+    required TResult Function(ErrorResponse response) statusNotHandled,
+    required TResult Function() parsingError,
+  }) {
+    return parsingError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ResponseData<T> response)? dataWithHeaders,
+    TResult? Function()? created,
+    TResult? Function()? notModified,
+    TResult? Function()? unAuthorized,
+    TResult? Function(ErrorResponse errorResponse)? forbidden,
+    TResult? Function(ErrorResponse errorResponse)? contentTooLarge,
+    TResult? Function(ErrorResponse errorResponse)? badRequest,
+    TResult? Function(ErrorResponse errorResponse)? notFound,
+    TResult? Function(ErrorResponse errorResponse)? methodNotAllowed,
+    TResult? Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult? Function(ErrorResponse errorResponse)? conflict,
+    TResult? Function(ErrorResponse errorResponse)? locked,
+    TResult? Function(ErrorResponse errorResponse)? upgradeRequired,
+    TResult? Function()? internalServerError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? unknownError,
+    TResult? Function()? noConnection,
+    TResult? Function()? connectionTimeout,
+    TResult? Function(ErrorResponse response)? statusNotHandled,
+    TResult? Function()? parsingError,
+  }) {
+    return parsingError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ResponseData<T> response)? dataWithHeaders,
+    TResult Function()? created,
+    TResult Function()? notModified,
+    TResult Function()? unAuthorized,
+    TResult Function(ErrorResponse errorResponse)? forbidden,
+    TResult Function(ErrorResponse errorResponse)? contentTooLarge,
+    TResult Function(ErrorResponse errorResponse)? badRequest,
+    TResult Function(ErrorResponse errorResponse)? notFound,
+    TResult Function(ErrorResponse errorResponse)? methodNotAllowed,
+    TResult Function(ErrorResponse errorResponse)? tooManyRequest,
+    TResult Function(ErrorResponse errorResponse)? conflict,
+    TResult Function(ErrorResponse errorResponse)? locked,
+    TResult Function(ErrorResponse errorResponse)? upgradeRequired,
+    TResult Function()? internalServerError,
+    TResult Function()? serviceUnavailable,
+    TResult Function()? unknownError,
+    TResult Function()? noConnection,
+    TResult Function()? connectionTimeout,
+    TResult Function(ErrorResponse response)? statusNotHandled,
+    TResult Function()? parsingError,
+    required TResult orElse(),
+  }) {
+    if (parsingError != null) {
+      return parsingError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DataWithHeaders<T> value) dataWithHeaders,
+    required TResult Function(_Created<T> value) created,
+    required TResult Function(_NotModified<T> value) notModified,
+    required TResult Function(_UnAuthorized<T> value) unAuthorized,
+    required TResult Function(_Forbidden<T> value) forbidden,
+    required TResult Function(_ContentTooLarge<T> value) contentTooLarge,
+    required TResult Function(_BadRequest<T> value) badRequest,
+    required TResult Function(_NotFound<T> value) notFound,
+    required TResult Function(_MethodNotAllowed<T> value) methodNotAllowed,
+    required TResult Function(_TooManyRequest<T> value) tooManyRequest,
+    required TResult Function(_Conflict<T> value) conflict,
+    required TResult Function(_Locked<T> value) locked,
+    required TResult Function(_UpgradeRequired<T> value) upgradeRequired,
+    required TResult Function(_InternalServerError<T> value)
+        internalServerError,
+    required TResult Function(_ServiceUnavailable<T> value) serviceUnavailable,
+    required TResult Function(_UnknownError<T> value) unknownError,
+    required TResult Function(_NoConnection<T> value) noConnection,
+    required TResult Function(_ConnectionTimeout<T> value) connectionTimeout,
+    required TResult Function(_StatusNotHandled<T> value) statusNotHandled,
+    required TResult Function(_ParsingError<T> value) parsingError,
+  }) {
+    return parsingError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DataWithHeaders<T> value)? dataWithHeaders,
+    TResult? Function(_Created<T> value)? created,
+    TResult? Function(_NotModified<T> value)? notModified,
+    TResult? Function(_UnAuthorized<T> value)? unAuthorized,
+    TResult? Function(_Forbidden<T> value)? forbidden,
+    TResult? Function(_ContentTooLarge<T> value)? contentTooLarge,
+    TResult? Function(_BadRequest<T> value)? badRequest,
+    TResult? Function(_NotFound<T> value)? notFound,
+    TResult? Function(_MethodNotAllowed<T> value)? methodNotAllowed,
+    TResult? Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult? Function(_Conflict<T> value)? conflict,
+    TResult? Function(_Locked<T> value)? locked,
+    TResult? Function(_UpgradeRequired<T> value)? upgradeRequired,
+    TResult? Function(_InternalServerError<T> value)? internalServerError,
+    TResult? Function(_ServiceUnavailable<T> value)? serviceUnavailable,
+    TResult? Function(_UnknownError<T> value)? unknownError,
+    TResult? Function(_NoConnection<T> value)? noConnection,
+    TResult? Function(_ConnectionTimeout<T> value)? connectionTimeout,
+    TResult? Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult? Function(_ParsingError<T> value)? parsingError,
+  }) {
+    return parsingError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DataWithHeaders<T> value)? dataWithHeaders,
+    TResult Function(_Created<T> value)? created,
+    TResult Function(_NotModified<T> value)? notModified,
+    TResult Function(_UnAuthorized<T> value)? unAuthorized,
+    TResult Function(_Forbidden<T> value)? forbidden,
+    TResult Function(_ContentTooLarge<T> value)? contentTooLarge,
+    TResult Function(_BadRequest<T> value)? badRequest,
+    TResult Function(_NotFound<T> value)? notFound,
+    TResult Function(_MethodNotAllowed<T> value)? methodNotAllowed,
+    TResult Function(_TooManyRequest<T> value)? tooManyRequest,
+    TResult Function(_Conflict<T> value)? conflict,
+    TResult Function(_Locked<T> value)? locked,
+    TResult Function(_UpgradeRequired<T> value)? upgradeRequired,
+    TResult Function(_InternalServerError<T> value)? internalServerError,
+    TResult Function(_ServiceUnavailable<T> value)? serviceUnavailable,
+    TResult Function(_UnknownError<T> value)? unknownError,
+    TResult Function(_NoConnection<T> value)? noConnection,
+    TResult Function(_ConnectionTimeout<T> value)? connectionTimeout,
+    TResult Function(_StatusNotHandled<T> value)? statusNotHandled,
+    TResult Function(_ParsingError<T> value)? parsingError,
+    required TResult orElse(),
+  }) {
+    if (parsingError != null) {
+      return parsingError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ParsingError<T> extends RemoteResponse<T> {
+  const factory _ParsingError() = _$ParsingErrorImpl<T>;
+  const _ParsingError._() : super._();
 }

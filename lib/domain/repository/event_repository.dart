@@ -13,6 +13,7 @@ class EventRepository with NetworkRemoteRepositoryMixin {
   Future<Either<RequestFailure, EventPagingDto>> getEvents({
     required EventsFilter eventsFilter,
     required int page,
+    required int pageSize,
     String? searchText,
   }) async {
     final response = await handleRemoteRequest(
@@ -20,6 +21,7 @@ class EventRepository with NetworkRemoteRepositoryMixin {
         eventsFilter: eventsFilter,
         page: page,
         searchText: searchText,
+        pageSize: pageSize,
       ),
     );
 
@@ -29,16 +31,6 @@ class EventRepository with NetworkRemoteRepositoryMixin {
   Future<Either<RequestFailure, EventDto>> getEventById(String id) async {
     final response = await handleRemoteRequest(
       request: () => _eventRemoteDatasource.getEventById(id),
-    );
-
-    return response;
-  }
-
-  Future<Either<RequestFailure, List<EventDto>>> getUserEvents({
-    required int page,
-  }) async {
-    final response = await handleRemoteRequest(
-      request: () => _eventRemoteDatasource.getUserEvents(page: page),
     );
 
     return response;

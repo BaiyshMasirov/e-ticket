@@ -126,12 +126,6 @@ class SearchItemView extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      context.dictionaries
-                              .getEventTypeByKey(event.type)
-                              ?.value ??
-                          '',
-                    ),
-                    Text(
                       event.locationName ?? event.locationType.name.tr(),
                       textAlign: TextAlign.center,
                     ),

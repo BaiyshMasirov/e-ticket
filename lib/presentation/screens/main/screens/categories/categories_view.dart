@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:eticket/common/common.dart';
 import 'package:eticket/common/extensions/extensions.dart';
 import 'package:eticket/data/models/models.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
@@ -12,7 +13,7 @@ final _defaultItemWidth = 100.w;
 final _defaultItemPadding = 5.r;
 
 class CategoriesView extends HookWidget {
-  final List<KeyValueMapDto> eventTypes;
+  final List<EventType> eventTypes;
 
   const CategoriesView({
     required this.eventTypes,
@@ -33,7 +34,7 @@ class CategoriesView extends HookWidget {
             itemBuilder: (ctx, i) => InkWell(
               borderRadius: BorderRadius.circular(5.r),
               onTap: () => context.navigateTo(
-                EventsByTypeRoute(eventKeyValue: eventTypes[i]),
+                EventsByTypeRoute(eventType: eventTypes[i]),
               ),
               child: SizedBox(
                 height: _defaultItemPadding + _defaultItemWidth,
@@ -42,12 +43,12 @@ class CategoriesView extends HookWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(eventTypes[i].value),
+                      Text(eventTypes[i].localizedName),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(5.r),
                         child: Image.network(
                           context.categoryImageUrlPath +
-                              eventTypes[i].key.toString(),
+                              eventTypes[i].value.toString(),
                           width: _defaultItemWidth,
                           height: _defaultItemWidth,
                           fit: BoxFit.cover,

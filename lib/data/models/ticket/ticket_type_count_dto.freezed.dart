@@ -23,7 +23,12 @@ mixin _$TicketTypeCountDto {
   int get count => throw _privateConstructorUsedError;
   int get availableCount => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
+
+  /// type == [TicketType]
   int get type => throw _privateConstructorUsedError;
+
+  /// ticketType == [TicketType]
+  KeyValueMapDto get ticketType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +42,14 @@ abstract class $TicketTypeCountDtoCopyWith<$Res> {
           TicketTypeCountDto value, $Res Function(TicketTypeCountDto) then) =
       _$TicketTypeCountDtoCopyWithImpl<$Res, TicketTypeCountDto>;
   @useResult
-  $Res call({int count, int availableCount, double price, int type});
+  $Res call(
+      {int count,
+      int availableCount,
+      double price,
+      int type,
+      KeyValueMapDto ticketType});
+
+  $KeyValueMapDtoCopyWith<$Res> get ticketType;
 }
 
 /// @nodoc
@@ -57,6 +69,7 @@ class _$TicketTypeCountDtoCopyWithImpl<$Res, $Val extends TicketTypeCountDto>
     Object? availableCount = null,
     Object? price = null,
     Object? type = null,
+    Object? ticketType = null,
   }) {
     return _then(_value.copyWith(
       count: null == count
@@ -75,7 +88,19 @@ class _$TicketTypeCountDtoCopyWithImpl<$Res, $Val extends TicketTypeCountDto>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as int,
+      ticketType: null == ticketType
+          ? _value.ticketType
+          : ticketType // ignore: cast_nullable_to_non_nullable
+              as KeyValueMapDto,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $KeyValueMapDtoCopyWith<$Res> get ticketType {
+    return $KeyValueMapDtoCopyWith<$Res>(_value.ticketType, (value) {
+      return _then(_value.copyWith(ticketType: value) as $Val);
+    });
   }
 }
 
@@ -87,7 +112,15 @@ abstract class _$$TicketTypeCountDtoImplCopyWith<$Res>
       __$$TicketTypeCountDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int count, int availableCount, double price, int type});
+  $Res call(
+      {int count,
+      int availableCount,
+      double price,
+      int type,
+      KeyValueMapDto ticketType});
+
+  @override
+  $KeyValueMapDtoCopyWith<$Res> get ticketType;
 }
 
 /// @nodoc
@@ -105,6 +138,7 @@ class __$$TicketTypeCountDtoImplCopyWithImpl<$Res>
     Object? availableCount = null,
     Object? price = null,
     Object? type = null,
+    Object? ticketType = null,
   }) {
     return _then(_$TicketTypeCountDtoImpl(
       count: null == count
@@ -123,6 +157,10 @@ class __$$TicketTypeCountDtoImplCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as int,
+      ticketType: null == ticketType
+          ? _value.ticketType
+          : ticketType // ignore: cast_nullable_to_non_nullable
+              as KeyValueMapDto,
     ));
   }
 }
@@ -134,7 +172,8 @@ class _$TicketTypeCountDtoImpl extends _TicketTypeCountDto {
       {required this.count,
       required this.availableCount,
       required this.price,
-      required this.type})
+      required this.type,
+      required this.ticketType})
       : super._();
 
   factory _$TicketTypeCountDtoImpl.fromJson(Map<String, dynamic> json) =>
@@ -146,12 +185,18 @@ class _$TicketTypeCountDtoImpl extends _TicketTypeCountDto {
   final int availableCount;
   @override
   final double price;
+
+  /// type == [TicketType]
   @override
   final int type;
 
+  /// ticketType == [TicketType]
+  @override
+  final KeyValueMapDto ticketType;
+
   @override
   String toString() {
-    return 'TicketTypeCountDto(count: $count, availableCount: $availableCount, price: $price, type: $type)';
+    return 'TicketTypeCountDto(count: $count, availableCount: $availableCount, price: $price, type: $type, ticketType: $ticketType)';
   }
 
   @override
@@ -163,13 +208,15 @@ class _$TicketTypeCountDtoImpl extends _TicketTypeCountDto {
             (identical(other.availableCount, availableCount) ||
                 other.availableCount == availableCount) &&
             (identical(other.price, price) || other.price == price) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.ticketType, ticketType) ||
+                other.ticketType == ticketType));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, count, availableCount, price, type);
+      Object.hash(runtimeType, count, availableCount, price, type, ticketType);
 
   @JsonKey(ignore: true)
   @override
@@ -191,7 +238,8 @@ abstract class _TicketTypeCountDto extends TicketTypeCountDto {
       {required final int count,
       required final int availableCount,
       required final double price,
-      required final int type}) = _$TicketTypeCountDtoImpl;
+      required final int type,
+      required final KeyValueMapDto ticketType}) = _$TicketTypeCountDtoImpl;
   const _TicketTypeCountDto._() : super._();
 
   factory _TicketTypeCountDto.fromJson(Map<String, dynamic> json) =
@@ -204,7 +252,13 @@ abstract class _TicketTypeCountDto extends TicketTypeCountDto {
   @override
   double get price;
   @override
+
+  /// type == [TicketType]
   int get type;
+  @override
+
+  /// ticketType == [TicketType]
+  KeyValueMapDto get ticketType;
   @override
   @JsonKey(ignore: true)
   _$$TicketTypeCountDtoImplCopyWith<_$TicketTypeCountDtoImpl> get copyWith =>

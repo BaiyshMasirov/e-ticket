@@ -7,6 +7,7 @@ part 'key_value_map_dto.g.dart';
 @freezed
 class KeyValueMapDto with _$KeyValueMapDto {
   const KeyValueMapDto._();
+
   const factory KeyValueMapDto({
     required int key,
     required String value,

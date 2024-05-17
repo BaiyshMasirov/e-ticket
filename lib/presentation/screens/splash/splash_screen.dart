@@ -18,35 +18,13 @@ class SplashScreen extends HookWidget {
   Widget build(BuildContext context) {
     useEffect(
       () {
-        context.read<DictionaryCubit>().getAllDictionaries();
+        context.read<AuthCubit>().checkAndUpdateAuthStatus();
         return null;
       },
     );
-    return AppScaffold(
-      isLoadingFunc: (context) => context.select<DictionaryCubit, bool>(
-        (value) => value.state is DictionaryLoading,
-      ),
+    return const AppScaffold(
       body: Center(
-        child: BlocConsumer<DictionaryCubit, DictionaryState>(
-          listener: (context, state) {
-            state.maybeMap(
-              orElse: () {},
-              data: (value) =>
-                  context.read<AuthCubit>().checkAndUpdateAuthStatus(),
-            );
-          },
-          builder: (context, state) => state.maybeMap(
-            orElse: () => const SizedBox.shrink(),
-            failure: (value) {
-              FlutterNativeSplash.remove();
-              return DataFetchFailure(
-                onTryLoadAgain:
-                    context.read<DictionaryCubit>().getAllDictionaries,
-                error: value.errorMessage,
-              );
-            },
-          ),
-        ),
+        child: CircularProgressIndicator(),
       ),
     );
   }

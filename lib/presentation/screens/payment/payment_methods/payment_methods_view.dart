@@ -71,14 +71,14 @@ class PaymentMethodsView extends HookWidget {
                   switch (type.paymentCreds) {
                     case PaymentCreds.webView:
                       context.navigateTo(MainRoute(
-                        initialTab: MAIN_SCREEN_TAB.HISTORY,
+                        initialTab: MAIN_SCREEN_TAB.bookingHistory,
                       ));
                       context.navigateTo(
                         PaymentWebViewRoute(
                           bookingId: bookingId,
                           paymentType: type,
                           onSuccess: () => context.navigateTo(MainRoute(
-                            initialTab: MAIN_SCREEN_TAB.HISTORY,
+                            initialTab: MAIN_SCREEN_TAB.bookingHistory,
                           )),
                         ),
                       );
@@ -88,7 +88,7 @@ class PaymentMethodsView extends HookWidget {
                         bookingId: bookingId,
                         paymentType: type,
                         onSuccess: () => context.navigateTo(MainRoute(
-                          initialTab: MAIN_SCREEN_TAB.HISTORY,
+                          initialTab: MAIN_SCREEN_TAB.bookingHistory,
                         )),
                         closePressed: () => context.popRoute(),
                       );
@@ -98,7 +98,7 @@ class PaymentMethodsView extends HookWidget {
                         bookingId: bookingId,
                         paymentType: type,
                         onSuccess: () => context.navigateTo(MainRoute(
-                          initialTab: MAIN_SCREEN_TAB.HISTORY,
+                          initialTab: MAIN_SCREEN_TAB.bookingHistory,
                         )),
                         closePressed: () => context.popRoute(),
                       );

@@ -13,10 +13,14 @@ class EventRemoteDatasource {
   Future<RemoteResponse<EventPagingDto>> getEvents({
     required EventsFilter eventsFilter,
     required int page,
+    required int pageSize,
     String? searchText,
   }) async {
     final queryParams = eventsFilter.toQueryParams();
-    queryParams.addAll({'page': page});
+    queryParams.addAll({
+      'page': page,
+      'pageSize': pageSize,
+    });
 
     if (searchText != null && searchText.isNotEmpty) {
       queryParams.addAll({
@@ -44,25 +48,6 @@ class EventRemoteDatasource {
         },
       ),
       parse: (json) => EventDto.fromJson(json),
-    );
-
-    return response;
-  }
-
-  Future<RemoteResponse<List<EventDto>>> getUserEvents({
-    required int page,
-  }) async {
-    final response = await _dio.makeRequest(
-      request: () => _dio.get(
-        'api/Event/get-user-events',
-        queryParameters: {'page': page},
-      ),
-      parse: (json) {
-        final list = json as List;
-        final data = list.map((e) => EventDto.fromJson(e)).toList();
-
-        return data;
-      },
     );
 
     return response;

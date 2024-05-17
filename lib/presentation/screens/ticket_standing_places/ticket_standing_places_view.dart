@@ -62,12 +62,18 @@ class TicketStandingPlacesView extends StatelessWidget {
                       onDecreasePressed: () {
                         context
                             .read<TicketStandingPlaceHoldCubit>()
-                            .decreaseTicketAmount(ticket.type, ticket.availableCount);
+                            .decreaseTicketAmount(
+                              ticket.type,
+                              ticket.availableCount,
+                            );
                       },
                       onIncreasePressed: () {
                         context
                             .read<TicketStandingPlaceHoldCubit>()
-                            .increaseTicketAmount(ticket.type, ticket.availableCount);
+                            .increaseTicketAmount(
+                              ticket.type,
+                              ticket.availableCount,
+                            );
                       },
                       key: ValueKey(ticket.type),
                     );

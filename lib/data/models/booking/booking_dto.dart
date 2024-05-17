@@ -1,5 +1,6 @@
 import 'package:eticket/common/common.dart';
 import 'package:eticket/common/enums/booking_status.dart';
+import 'package:eticket/data/data.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'booking_dto.freezed.dart';
@@ -11,16 +12,18 @@ class BookingDto with _$BookingDto {
 
   const factory BookingDto({
     required String id,
-    @DateTimeUTCSerializer() required DateTime eventDate,
     @DateTimeUTCSerializer() required DateTime created,
+    @DateTimeUTCSerializer() required DateTime eventDate,
     @JsonKey(name: 'status', unknownEnumValue: BookingStatus.unknown)
     required BookingStatus bookingStatus,
     @JsonKey(unknownEnumValue: EventStatus.unknown)
     required EventStatus eventStatus,
     required String eventId,
     required double bookingSum,
-    @JsonKey(name: 'type') required LocationType locationType,
+    @JsonKey(name: 'type', unknownEnumValue: LocationType.unknown)
+    required LocationType locationType,
     required String locationName,
+    @Default([]) List<TicketBookedDto> tickets,
     String? eventName,
     String? eventImage,
   }) = _BookingDto;

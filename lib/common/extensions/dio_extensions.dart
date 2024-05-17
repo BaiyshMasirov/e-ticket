@@ -1,7 +1,10 @@
 import 'dart:async';
+import 'dart:developer';
 import 'dart:io';
 import 'package:dio/dio.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
+import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/utils/utils.dart';
 
 extension DioErrorX on DioException {
@@ -123,26 +126,37 @@ extension DioX on Dio {
         try {
           final data = parse(response.data);
 
-          return RemoteResponse.data(data);
-        } catch (e) {
-          return RemoteResponse.statusNotHandled(
-            ErrorResponse.fromResponse(response),
+          return RemoteResponse.dataWithHeaders(ResponseData(
+            data: data,
+            headers: response.headers,
+          ));
+        } catch (e, st) {
+          log(e.toString());
+
+          Logger.recordError(
+            exception: e,
+            stackTrace: st,
+            reason: e.toString(),
           );
+
+          return const RemoteResponse.parsingError();
         }
-      } else if (response.statusCode == HttpStatus.created) {
+      }
+
+      if (response.statusCode == HttpStatus.created) {
         return const RemoteResponse.created();
       } else if (response.statusCode == HttpStatus.notModified) {
         return const RemoteResponse.notModified();
       } else if (response.statusCode == HttpStatus.unauthorized) {
         return const RemoteResponse.unAuthorized();
-      } else if (response.statusCode == HttpStatus.forbidden) {
-        return const RemoteResponse.forbidden();
       } else {
-        final errorResponse = ErrorResponse.fromResponse(response);
+        final errorResponse = ErrorResponse.fromResponse(response: response);
 
         switch (response.statusCode) {
           case HttpStatus.badRequest:
             return RemoteResponse.badRequest(errorResponse);
+          case HttpStatus.forbidden:
+            return RemoteResponse.forbidden(errorResponse);
           case HttpStatus.notFound:
             return RemoteResponse.notFound(errorResponse);
           case HttpStatus.methodNotAllowed:
@@ -151,6 +165,12 @@ extension DioX on Dio {
             return RemoteResponse.contentTooLarge(errorResponse);
           case HttpStatus.tooManyRequests:
             return RemoteResponse.tooManyRequest(errorResponse);
+          case HttpStatus.conflict:
+            return RemoteResponse.conflict(errorResponse);
+          case HttpStatus.locked:
+            return RemoteResponse.locked(errorResponse);
+          case HttpStatus.upgradeRequired:
+            return RemoteResponse.upgradeRequired(errorResponse);
           case HttpStatus.internalServerError:
             return const RemoteResponse.internalServerError();
           case HttpStatus.notImplemented:
@@ -160,19 +180,44 @@ extension DioX on Dio {
           case HttpStatus.serviceUnavailable:
             return const RemoteResponse.serviceUnavailable();
         }
+
         return RemoteResponse.statusNotHandled(
-          ErrorResponse.fromResponse(response),
+          ErrorResponse.fromResponse(response: response),
         );
       }
     } on DioException catch (e) {
       if (e.isNoConnectionException) {
+        Logger.recordError(
+          exception: e,
+          stackTrace: e.stackTrace,
+          reason: LocaleKeys.no_internet_connection.tr(),
+        );
+
         return const RemoteResponse.noConnection();
       } else if (e.isConnectionTimeoutException) {
+        Logger.recordError(
+          exception: e,
+          stackTrace: e.stackTrace,
+          reason: 'TimeoutException: ${e.message}',
+        );
+
         return const RemoteResponse.connectionTimeout();
       } else {
+        Logger.recordError(
+          exception: e,
+          stackTrace: e.stackTrace,
+          reason: e.message,
+        );
+
         return const RemoteResponse.unknownError();
       }
-    } catch (e) {
+    } catch (e, st) {
+      Logger.recordError(
+        exception: e,
+        stackTrace: st,
+        reason: 'Unknown error',
+      );
+
       return const RemoteResponse.unknownError();
     }
   }

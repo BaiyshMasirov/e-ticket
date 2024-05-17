@@ -1,48 +1,55 @@
 import 'dart:io';
 import 'package:dartz/dartz.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/models/models.dart';
+import 'package:eticket/generated/locale_keys.g.dart';
 
 mixin NetworkRemoteRepositoryMixin {
   Future<Either<RequestFailure, T>> handleRemoteRequest<T>({
     required Future<RemoteResponse<T>> Function() request,
-    Function()? whenNotModified,
-    Function()? whenNoConnection,
-    Function(ErrorResponse)? whenBadRequest,
-    Function(ErrorResponse)? whenNotFound,
-    Function(ErrorResponse)? whenMethodNotAllowed,
-    Function(ErrorResponse)? whenTooManyRequest,
-    Function()? whenInternalServerError,
-    Function()? whenServiceUnavailable,
-    Function()? whenUnknownError,
+  }) async {
+    final result = await handleRemoteRequestWithHeaders(
+      request: request,
+    );
+
+    return result.fold(
+      (l) => left(l),
+      (r) => right(r.data),
+    );
+  }
+
+  Future<Either<RequestFailure, ResponseData<T>>>
+      handleRemoteRequestWithHeaders<T>({
+    required Future<RemoteResponse<T>> Function() request,
   }) async {
     final result = await request();
 
     try {
       return result.when(
-        data: (result) => right(result),
+        dataWithHeaders: (data) => right(data),
         created: () => left(
-          const RequestFailure.created(
-              HttpStatus.created, 'successfully_created'),
+          RequestFailure.created(
+            HttpStatus.created,
+            LocaleKeys.successfully_created.tr(),
+          ),
         ),
         notModified: () => left(
-          whenNotModified?.call() ??
-              const RequestFailure.notModified(
-                HttpStatus.notModified,
-                'content_not_changed',
-              ),
+          RequestFailure.notModified(
+            HttpStatus.notModified,
+            LocaleKeys.content_not_changed.tr(),
+          ),
         ),
         connectionTimeout: () => left(
-          const RequestFailure.connectionTimeout(
+          RequestFailure.connectionTimeout(
             null,
-            'server_connection_timeout',
+            LocaleKeys.server_connection_timeout.tr(),
           ),
         ),
         noConnection: () => left(
-          whenNoConnection?.call() ??
-              const RequestFailure.noConnection(
-                null,
-                'internet_connection_missing',
-              ),
+          RequestFailure.noConnection(
+            null,
+            LocaleKeys.internet_connection_missing.tr(),
+          ),
         ),
         contentTooLarge: (errorResponse) => left(
           RequestFailure.contentTooLarge(
@@ -52,70 +59,81 @@ mixin NetworkRemoteRepositoryMixin {
         ),
         badRequest: (errorResponse) {
           return left(
-            whenBadRequest?.call(errorResponse) ??
-                RequestFailure.badRequest(
-                  errorResponse.statusCode,
-                  errorResponse.message,
-                ),
+            RequestFailure.unAuthorized(
+              errorResponse.statusCode,
+              errorResponse.message,
+            ),
           );
         },
         notFound: (errorResponse) {
           return left(
-            whenNotFound?.call(errorResponse) ??
-                RequestFailure.notFound(
-                  errorResponse.statusCode,
-                  errorResponse.message,
-                ),
+            RequestFailure.notFound(
+              errorResponse.statusCode,
+              errorResponse.message,
+            ),
           );
         },
         methodNotAllowed: (errorResponse) {
           return left(
-            whenMethodNotAllowed?.call(errorResponse) ??
-                RequestFailure.methodNotAllowed(
-                  errorResponse.statusCode,
-                  errorResponse.message,
-                ),
+            RequestFailure.methodNotAllowed(
+              errorResponse.statusCode,
+              errorResponse.message,
+            ),
           );
         },
         tooManyRequest: (errorResponse) => left(
-          whenTooManyRequest?.call(errorResponse) ??
-              RequestFailure.tooManyRequest(
-                errorResponse.statusCode,
-                errorResponse.message,
-              ),
+          RequestFailure.tooManyRequest(
+            errorResponse.statusCode,
+            errorResponse.message,
+          ),
         ),
-        forbidden: () => left(
-          const RequestFailure.forbidden(
+        forbidden: (errorResponse) => left(
+          RequestFailure.forbidden(
             HttpStatus.forbidden,
-            'access_denied',
+            errorResponse.message ?? LocaleKeys.access_denied.tr(),
           ),
         ),
         unAuthorized: () => left(
-          const RequestFailure.unAuthorized(
+          RequestFailure.unAuthorized(
             HttpStatus.unauthorized,
-            'auth_to_use_app',
+            LocaleKeys.auth_to_use_app.tr(),
+          ),
+        ),
+        conflict: (errorResponse) => left(
+          RequestFailure.conflict(
+            errorResponse.statusCode,
+            errorResponse.message,
+          ),
+        ),
+        locked: (errorResponse) => left(
+          RequestFailure.locked(
+            errorResponse.statusCode,
+            errorResponse.message ?? LocaleKeys.access_locked.tr(),
+          ),
+        ),
+        upgradeRequired: (errorResponse) => left(
+          RequestFailure.upgradeRequired(
+            errorResponse.statusCode,
+            errorResponse.message ?? LocaleKeys.upgrade_required.tr(),
           ),
         ),
         internalServerError: () => left(
-          whenInternalServerError?.call() ??
-              const RequestFailure.internalServerError(
-                HttpStatus.internalServerError,
-                'server_error',
-              ),
+          RequestFailure.internalServerError(
+            HttpStatus.internalServerError,
+            LocaleKeys.server_error.tr(),
+          ),
         ),
         serviceUnavailable: () => left(
-          whenServiceUnavailable?.call() ??
-              const RequestFailure.serviceUnavailable(
-                HttpStatus.serviceUnavailable,
-                'server_not_available',
-              ),
+          RequestFailure.serviceUnavailable(
+            HttpStatus.serviceUnavailable,
+            LocaleKeys.server_not_available.tr(),
+          ),
         ),
         unknownError: () => left(
-          whenUnknownError?.call() ??
-              const RequestFailure.unknownError(
-                null,
-                'unknown_error',
-              ),
+          RequestFailure.unknownError(
+            null,
+            LocaleKeys.unknown_error.tr(),
+          ),
         ),
         statusNotHandled: (errorResponse) => left(
           RequestFailure.statusNotHandled(
@@ -123,12 +141,20 @@ mixin NetworkRemoteRepositoryMixin {
             errorResponse.message,
           ),
         ),
+        parsingError: () => left(
+          RequestFailure.parsingError(
+            null,
+            LocaleKeys.response_handle_error.tr(),
+          ),
+        ),
       );
     } catch (e) {
-      return left(const RequestFailure.unknownError(
-        null,
-        'request_handle_error',
-      ));
+      return left(
+        RequestFailure.unknownError(
+          null,
+          LocaleKeys.unknown_error.tr(),
+        ),
+      );
     }
   }
 }

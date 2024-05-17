@@ -12,23 +12,29 @@ class EventsFilter with _$EventsFilter {
   const EventsFilter._();
 
   const factory EventsFilter({
-    KeyValueMapDto? type,
-    EventStatus? status,
+    required EventType type,
+    required EventStatus status,
     @DateTimeUTCSerializer() DateTime? date,
   }) = _EventsFilter;
 
   factory EventsFilter.fromJson(Json json) => _$EventsFilterFromJson(json);
 
-  bool get isFilterActive => type != null || status != null || date != null;
+  factory EventsFilter.initial() {
+    return const EventsFilter(
+      type: EventType.none,
+      status: EventStatus.none,
+    );
+  }
+
+  bool get isFilterActive =>
+      type != EventType.none || status != EventStatus.none || date != null;
 
   Json toQueryParams() {
-    final queryParams = <String, dynamic>{};
-    if (type != null) {
-      queryParams.addAll({'type': type?.key});
-    }
-    if (status != null) {
-      queryParams.addAll({'status': status?.value});
-    }
+    final queryParams = <String, dynamic>{
+      'type': type.value,
+      'status': status.value,
+    };
+
     if (date != null) {
       queryParams.addAll({'date': const DateTimeUTCSerializer().toJson(date)});
     }

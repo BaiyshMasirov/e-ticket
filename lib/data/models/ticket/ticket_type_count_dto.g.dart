@@ -13,6 +13,8 @@ _$TicketTypeCountDtoImpl _$$TicketTypeCountDtoImplFromJson(
       availableCount: json['availableCount'] as int,
       price: (json['price'] as num).toDouble(),
       type: json['type'] as int,
+      ticketType:
+          KeyValueMapDto.fromJson(json['ticketType'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$TicketTypeCountDtoImplToJson(
@@ -22,4 +24,5 @@ Map<String, dynamic> _$$TicketTypeCountDtoImplToJson(
       'availableCount': instance.availableCount,
       'price': instance.price,
       'type': instance.type,
+      'ticketType': instance.ticketType.toJson(),
     };

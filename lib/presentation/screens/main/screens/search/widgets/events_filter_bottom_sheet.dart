@@ -1,23 +1,20 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
-import 'package:eticket/data/models/dictionaries/key_value_map_dto.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:eticket/presentation/app_blocs/dictionary/dictionary_cubit.dart';
 
 class EventsFilterBottomSheet extends HookWidget {
-  final KeyValueMapDto? initialEventType;
-  final EventStatus? initialEventStatus;
+  final EventType initialEventType;
+  final EventStatus initialEventStatus;
   final DateTime? initialDate;
   final Function() onClearFilter;
   final Function(
     DateTime? data,
-    KeyValueMapDto? paymentType,
-    EventStatus? eventsStatus,
+    EventType eventType,
+    EventStatus eventsStatus,
   ) onSelect;
 
   const EventsFilterBottomSheet._({
@@ -39,36 +36,51 @@ class EventsFilterBottomSheet extends HookWidget {
       text: DateFormatters.toDateTimeNullable(initialDate),
     );
 
-    final eventTypesList =
-        useMemoized(() => context.read<DictionaryCubit>().state.eventTypes);
+    final eventTypesList = useMemoized(
+      () => EventType.typesForFilter,
+      const [],
+    );
+
+    final eventStatusList = useMemoized(
+      () => EventStatus.typesForFilter,
+      const [],
+    );
 
     return Padding(
       padding: EdgeInsets.all(15.r),
       child: ListView(
         shrinkWrap: true,
         children: [
-          DropDownFormFieldZ<KeyValueMapDto>(
-            label: LocaleKeys.select_from_list.tr(),
-            value: eventType.value != null
-                ? DropDownFormFieldZModel<KeyValueMapDto>(
-                    eventType.value!.value, eventType.value!)
-                : null,
+          DropDownFormFieldZ<EventType>(
+            label: LocaleKeys.select_event_type.tr(),
+            value: DropDownFormFieldZModel<EventType>(
+              eventType.value.localizedName,
+              eventType.value,
+            ),
             items: eventTypesList
-                .map((e) => DropDownFormFieldZModel(e.value, e))
+                .map((e) => DropDownFormFieldZModel(e.localizedName, e))
                 .toList(),
-            onChanged: (value) => eventType.value = value,
+            onChanged: (value) {
+              if (value == null) return;
+
+              eventType.value = value;
+            },
           ),
           SizedBox(height: 10.h),
           DropDownFormFieldZ<EventStatus>(
-            label: LocaleKeys.select_from_list.tr(),
-            value: eventStatus.value != null
-                ? DropDownFormFieldZModel<EventStatus>(
-                    eventStatus.value!.localizedName, eventStatus.value!)
-                : null,
-            items: EventStatus.values
+            label: LocaleKeys.select_event_status.tr(),
+            value: DropDownFormFieldZModel<EventStatus>(
+              eventStatus.value.localizedName,
+              eventStatus.value,
+            ),
+            items: eventStatusList
                 .map((e) => DropDownFormFieldZModel(e.localizedName, e))
                 .toList(),
-            onChanged: (value) => eventStatus.value = value,
+            onChanged: (value) {
+              if (value == null) return;
+
+              eventStatus.value = value;
+            },
           ),
           SizedBox(height: 10.h),
           DatePickerFormFieldZ(
@@ -91,8 +103,8 @@ class EventsFilterBottomSheet extends HookWidget {
           TertiaryButton(
             title: LocaleKeys.clear_form.tr(),
             onPressed: () {
-              eventType.value = null;
-              eventStatus.value = null;
+              eventType.value = EventType.none;
+              eventStatus.value = EventStatus.none;
               dateTo.value = null;
               dateToController.text = '';
               onClearFilter();
@@ -106,14 +118,14 @@ class EventsFilterBottomSheet extends HookWidget {
   // ignore: always_declare_return_types
   static showBottomSheet({
     required BuildContext context,
-    required KeyValueMapDto? initialEventType,
-    required EventStatus? initialEventStatus,
+    required EventType initialEventType,
+    required EventStatus initialEventStatus,
     required DateTime? initialDate,
     required Function() onClearFilter,
     required Function(
       DateTime? data,
-      KeyValueMapDto? paymentType,
-      EventStatus? eventsStatus,
+      EventType eventType,
+      EventStatus eventsStatus,
     ) onSelect,
   }) {
     showModalBottomSheet(

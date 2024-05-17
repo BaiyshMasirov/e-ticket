@@ -12,7 +12,7 @@ class BookingPagingDto with _$BookingPagingDto {
     required int currentPageIndex,
     required int pageSize,
     required int totalItemCount,
-    @JsonKey(name: 'list') required List<BookingDto> bookingsList,
+    @JsonKey(name: 'list') required List<BookingDto> bookings,
   }) = _BookingPagingDto;
 
   int get maxPage => (totalItemCount / pageSize).ceil();
