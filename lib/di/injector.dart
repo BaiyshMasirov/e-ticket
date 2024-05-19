@@ -24,9 +24,38 @@ Future<void> injectDependencies() async {
       appBuildNumber: packageInfo.buildNumber,
     ),
   );
-  final authDio = DioX.setupAuth(getIt.get<Configuration>().serverUrl);
+
+  final prefs = await SharedPreferences.getInstance();
+  final databaseClient = await DatabaseX.openDatabase();
+
+  // region settings
+  final appSettingsLocalSource =
+      AppSettingsLocalSource(sharedPreferences: prefs);
+  await appSettingsLocalSource.read();
+
+  // remote sources
+  getIt.registerSingleton<UserLocalSource>(
+    UserLocalSource(sharedPreferences: prefs),
+  );
+
+  getIt.registerSingleton<AppSettingsLocalSource>(
+    appSettingsLocalSource,
+  );
+
+  getIt.registerSingleton<UserCachedRepo>(
+    UserCachedRepo(userLocalSource: getIt.get<UserLocalSource>()),
+  );
+  getIt.registerSingleton<AppSettingsRepository>(AppSettingsRepository(
+    appSettingsLocalSource: getIt.get<AppSettingsLocalSource>(),
+  ));
+  // endregion
 
   // region AUTH MODULE
+  final authDio = DioX.setupAuth(
+    getIt.get<Configuration>().serverUrl,
+    getIt.get<AppSettingsRepository>(),
+  );
+
   getIt.registerSingleton<FlutterSecureStorage>(
     const FlutterSecureStorage(),
   );
@@ -48,6 +77,7 @@ Future<void> injectDependencies() async {
     getIt.get<AuthRepository>(),
     getIt.get<AuthCubit>(),
     getIt.get<Configuration>(),
+    getIt.get<AppSettingsRepository>(),
   ));
   // endregion END OF AUTH MODULE
 
@@ -57,20 +87,6 @@ Future<void> injectDependencies() async {
     getIt.get<AuthInterceptor>(),
   );
 
-  final prefs = await SharedPreferences.getInstance();
-  final databaseClient = await DatabaseX.openDatabase();
-
-  final settingsLocalDatasource =
-      SettingsLocalDatasource(sharedPreferences: prefs);
-  await settingsLocalDatasource.read();
-
-  // remote sources
-  getIt.registerSingleton<UserLocalSource>(
-    UserLocalSource(sharedPreferences: prefs),
-  );
-  getIt.registerSingleton<SettingsLocalDatasource>(
-    settingsLocalDatasource,
-  );
   getIt.registerSingleton<AccountRemoteSource>(
     AccountRemoteSource(dio: projectDio),
   );
@@ -95,12 +111,6 @@ Future<void> injectDependencies() async {
   // end of remote sources
 
   // repositories
-  getIt.registerSingleton<UserCachedRepo>(
-    UserCachedRepo(userLocalSource: getIt.get<UserLocalSource>()),
-  );
-  getIt.registerSingleton<SettingsRepository>(SettingsRepository(
-    settingsLocalDatasource: getIt.get<SettingsLocalDatasource>(),
-  ));
   getIt.registerSingleton<AccountRepository>(AccountRepository(
     accountRemoteSource: getIt.get<AccountRemoteSource>(),
   ));

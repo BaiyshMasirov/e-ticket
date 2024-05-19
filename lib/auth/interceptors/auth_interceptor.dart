@@ -3,22 +3,26 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:eticket/auth/authentication.dart';
 import 'package:eticket/common/common.dart';
+import 'package:eticket/domain/domain.dart';
 
 class AuthInterceptor extends QueuedInterceptor {
   final Dio _dio;
   final AuthRepository _authRepository;
   final AuthCubit _authCubit;
   final Configuration _configuration;
+  final AppSettingsRepository _appSettingsRepository;
 
   AuthInterceptor(
     Dio dio,
     AuthRepository authRepository,
     AuthCubit authCubit,
     Configuration configuration,
+    AppSettingsRepository appSettingsRepository,
   )   : _dio = dio,
         _authRepository = authRepository,
         _authCubit = authCubit,
-        _configuration = configuration;
+        _configuration = configuration,
+        _appSettingsRepository = appSettingsRepository;
 
   @override
   Future<void> onRequest(
@@ -30,9 +34,12 @@ class AuthInterceptor extends QueuedInterceptor {
       ..headers.addAll(credentials == null
           ? {}
           : {
-              HttpConstants.authorization: 'Bearer ${credentials.accessToken}',
-              'app-version': _configuration.appVersion,
-              'app-build-number': _configuration.appBuildNumber,
+              HttpHeaders.authorizationHeader:
+                  'Bearer ${credentials.accessToken}',
+              HttpConstants.appVersion: _configuration.appVersion,
+              HttpConstants.appBuildNumber: _configuration.appBuildNumber,
+              HttpHeaders.acceptLanguageHeader:
+                  _appSettingsRepository.getAppSettings().locale,
             });
 
     handler.next(modifiedOptions);
@@ -56,7 +63,7 @@ class AuthInterceptor extends QueuedInterceptor {
         handler.resolve(
           await _dio.fetch(
             response.requestOptions
-              ..headers[HttpConstants.authorization] =
+              ..headers[HttpHeaders.authorizationHeader] =
                   'Bearer ${refreshedCredentials.accessToken}',
           ),
         );

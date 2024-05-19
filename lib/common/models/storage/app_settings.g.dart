@@ -1,21 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'storage_settings.dart';
+part of 'app_settings.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StorageSettingsImpl _$$StorageSettingsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$StorageSettingsImpl(
+_$AppSettingsImpl _$$AppSettingsImplFromJson(Map<String, dynamic> json) =>
+    _$AppSettingsImpl(
       themeMode: $enumDecodeNullable(_$ThemeModeEnumMap, json['themeMode']) ??
           ThemeMode.dark,
       locale: json['locale'] as String? ?? 'ru',
     );
 
-Map<String, dynamic> _$$StorageSettingsImplToJson(
-        _$StorageSettingsImpl instance) =>
+Map<String, dynamic> _$$AppSettingsImplToJson(_$AppSettingsImpl instance) =>
     <String, dynamic>{
       'themeMode': _$ThemeModeEnumMap[instance.themeMode]!,
       'locale': instance.locale,

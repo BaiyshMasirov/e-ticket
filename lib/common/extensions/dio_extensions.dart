@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
+import 'package:eticket/domain/repository/app_settings_repository.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/utils/utils.dart';
 
@@ -43,16 +44,32 @@ extension DioX on Dio {
       ]);
   }
 
-  static Dio setupAuth(String serverUrl) {
+  static Dio setupAuth(
+    String serverUrl,
+    AppSettingsRepository appSettingsRepository,
+  ) {
     return Dio()
       ..options = BaseOptions(
         baseUrl: serverUrl,
         contentType: HttpConstants.jsonContentType,
       )
-      ..interceptors.add(LogInterceptor(
-        requestBody: true,
-        responseBody: true,
-      ));
+      ..interceptors.addAll([
+        LogInterceptor(
+          requestBody: true,
+          responseBody: true,
+        ),
+        InterceptorsWrapper(
+          onRequest: (options, handler) {
+            final modifiedOptions = options
+              ..headers.addAll({
+                HttpHeaders.acceptLanguageHeader:
+                    appSettingsRepository.getAppSettings().locale,
+              });
+
+            handler.next(modifiedOptions);
+          },
+        ),
+      ]);
   }
 
   static Future<FormData> buildMultiPartWithMultipleFile({

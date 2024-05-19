@@ -6,17 +6,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 class SettingsCubit extends Cubit<SettingsState> {
-  final SettingsRepository _settingsRepository;
+  final AppSettingsRepository _settingsRepository;
   final AuthRepository _authRepository;
 
   SettingsCubit._({
-    required SettingsRepository settingsRepository,
+    required AppSettingsRepository settingsRepository,
     required AuthRepository authRepository,
   })  : _settingsRepository = settingsRepository,
         _authRepository = authRepository,
         super(SettingsState(
-          themeMode: settingsRepository.getSettings().themeMode,
-          locale: settingsRepository.getSettings().locale,
+          themeMode: settingsRepository.getAppSettings().themeMode,
+          locale: settingsRepository.getAppSettings().locale,
           isUserAdmin: false,
         ));
 
