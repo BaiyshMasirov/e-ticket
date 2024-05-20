@@ -13,10 +13,6 @@ extension BuildContextX on BuildContext {
     return Theme.of(this);
   }
 
-  // AppColors get appColors {
-  //   return Theme.of(this).extension<AppColors>()!;
-  // }
-
   ScreenUtil get screenSize {
     return ScreenUtil();
   }
@@ -29,5 +25,9 @@ extension BuildContextX on BuildContext {
 
   Configuration get appConfigs => GetIt.I.get<Configuration>();
 
-  UserCachedRepo get userCachedRepo => GetIt.I.get<UserCachedRepo>();
+  UserPrefsRepository get userPrefsRepository =>
+      GetIt.I.get<UserPrefsRepository>();
+
+  AppSettingsRepository get appSettingsRepository =>
+      GetIt.I.get<AppSettingsRepository>();
 }

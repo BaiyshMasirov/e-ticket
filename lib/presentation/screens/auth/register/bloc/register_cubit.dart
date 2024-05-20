@@ -14,16 +14,19 @@ class RegisterCubit extends Cubit<RegisterState> {
   final AuthCubit _authCubit;
   final SettingsCubit _settingsCubit;
   final AccountRepository _accountRepository;
+  final UserPrefsRepository _userPrefsRepository;
 
   RegisterCubit._({
     required SnackbarCubit snackbarCubit,
     required AuthCubit authCubit,
     required SettingsCubit settingsCubit,
     required AccountRepository accountRepository,
+    required UserPrefsRepository userPrefsRepository,
   })  : _snackbarCubit = snackbarCubit,
         _authCubit = authCubit,
         _accountRepository = accountRepository,
         _settingsCubit = settingsCubit,
+        _userPrefsRepository = userPrefsRepository,
         super(const RegisterState.initial());
 
   Future<void> register({
@@ -37,12 +40,15 @@ class RegisterCubit extends Cubit<RegisterState> {
         emit(RegisterState.failure(errorMessage: l.errorMessage));
         _snackbarCubit.showErrorSnackbar(message: l.errorMessage);
       },
-      (r) {
+      (creds) async {
         emit(RegisterState.success(
           login: registerCommandDto.email ?? '',
           password: registerCommandDto.password ?? '',
         ));
-        _authCubit.setToken(credentials: r);
+
+        await _userPrefsRepository.needToSetPinCode(needToSetPinCode: true);
+
+        _authCubit.setToken(credentials: creds);
         _settingsCubit.updateState();
       },
     );
@@ -54,6 +60,7 @@ class RegisterCubit extends Cubit<RegisterState> {
       authCubit: GetIt.I.get(),
       accountRepository: GetIt.I.get(),
       settingsCubit: GetIt.I.get(),
+      userPrefsRepository: GetIt.I.get(),
     );
   }
 }

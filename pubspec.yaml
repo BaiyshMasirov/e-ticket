@@ -67,6 +67,8 @@ dependencies:
   package_info_plus: 4.2.0
   webview_flutter: ^4.7.0
 
+  local_auth: ^2.1.7
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

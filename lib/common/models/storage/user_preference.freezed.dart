@@ -23,6 +23,7 @@ mixin _$UserPreference {
   bool get isOnboardingShown => throw _privateConstructorUsedError;
   bool get isPrivacyPolicyAccepted => throw _privateConstructorUsedError;
   String get pinCode => throw _privateConstructorUsedError;
+  bool get needToSetPinCode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +38,10 @@ abstract class $UserPreferenceCopyWith<$Res> {
       _$UserPreferenceCopyWithImpl<$Res, UserPreference>;
   @useResult
   $Res call(
-      {bool isOnboardingShown, bool isPrivacyPolicyAccepted, String pinCode});
+      {bool isOnboardingShown,
+      bool isPrivacyPolicyAccepted,
+      String pinCode,
+      bool needToSetPinCode});
 }
 
 /// @nodoc
@@ -56,6 +60,7 @@ class _$UserPreferenceCopyWithImpl<$Res, $Val extends UserPreference>
     Object? isOnboardingShown = null,
     Object? isPrivacyPolicyAccepted = null,
     Object? pinCode = null,
+    Object? needToSetPinCode = null,
   }) {
     return _then(_value.copyWith(
       isOnboardingShown: null == isOnboardingShown
@@ -70,6 +75,10 @@ class _$UserPreferenceCopyWithImpl<$Res, $Val extends UserPreference>
           ? _value.pinCode
           : pinCode // ignore: cast_nullable_to_non_nullable
               as String,
+      needToSetPinCode: null == needToSetPinCode
+          ? _value.needToSetPinCode
+          : needToSetPinCode // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -83,7 +92,10 @@ abstract class _$$UserPreferenceImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {bool isOnboardingShown, bool isPrivacyPolicyAccepted, String pinCode});
+      {bool isOnboardingShown,
+      bool isPrivacyPolicyAccepted,
+      String pinCode,
+      bool needToSetPinCode});
 }
 
 /// @nodoc
@@ -100,6 +112,7 @@ class __$$UserPreferenceImplCopyWithImpl<$Res>
     Object? isOnboardingShown = null,
     Object? isPrivacyPolicyAccepted = null,
     Object? pinCode = null,
+    Object? needToSetPinCode = null,
   }) {
     return _then(_$UserPreferenceImpl(
       isOnboardingShown: null == isOnboardingShown
@@ -114,6 +127,10 @@ class __$$UserPreferenceImplCopyWithImpl<$Res>
           ? _value.pinCode
           : pinCode // ignore: cast_nullable_to_non_nullable
               as String,
+      needToSetPinCode: null == needToSetPinCode
+          ? _value.needToSetPinCode
+          : needToSetPinCode // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -124,7 +141,8 @@ class _$UserPreferenceImpl extends _UserPreference {
   const _$UserPreferenceImpl(
       {this.isOnboardingShown = false,
       this.isPrivacyPolicyAccepted = false,
-      this.pinCode = ''})
+      this.pinCode = '',
+      this.needToSetPinCode = false})
       : super._();
 
   factory _$UserPreferenceImpl.fromJson(Map<String, dynamic> json) =>
@@ -139,10 +157,13 @@ class _$UserPreferenceImpl extends _UserPreference {
   @override
   @JsonKey()
   final String pinCode;
+  @override
+  @JsonKey()
+  final bool needToSetPinCode;
 
   @override
   String toString() {
-    return 'UserPreference(isOnboardingShown: $isOnboardingShown, isPrivacyPolicyAccepted: $isPrivacyPolicyAccepted, pinCode: $pinCode)';
+    return 'UserPreference(isOnboardingShown: $isOnboardingShown, isPrivacyPolicyAccepted: $isPrivacyPolicyAccepted, pinCode: $pinCode, needToSetPinCode: $needToSetPinCode)';
   }
 
   @override
@@ -155,13 +176,15 @@ class _$UserPreferenceImpl extends _UserPreference {
             (identical(
                     other.isPrivacyPolicyAccepted, isPrivacyPolicyAccepted) ||
                 other.isPrivacyPolicyAccepted == isPrivacyPolicyAccepted) &&
-            (identical(other.pinCode, pinCode) || other.pinCode == pinCode));
+            (identical(other.pinCode, pinCode) || other.pinCode == pinCode) &&
+            (identical(other.needToSetPinCode, needToSetPinCode) ||
+                other.needToSetPinCode == needToSetPinCode));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, isOnboardingShown, isPrivacyPolicyAccepted, pinCode);
+  int get hashCode => Object.hash(runtimeType, isOnboardingShown,
+      isPrivacyPolicyAccepted, pinCode, needToSetPinCode);
 
   @JsonKey(ignore: true)
   @override
@@ -182,7 +205,8 @@ abstract class _UserPreference extends UserPreference {
   const factory _UserPreference(
       {final bool isOnboardingShown,
       final bool isPrivacyPolicyAccepted,
-      final String pinCode}) = _$UserPreferenceImpl;
+      final String pinCode,
+      final bool needToSetPinCode}) = _$UserPreferenceImpl;
   const _UserPreference._() : super._();
 
   factory _UserPreference.fromJson(Map<String, dynamic> json) =
@@ -194,6 +218,8 @@ abstract class _UserPreference extends UserPreference {
   bool get isPrivacyPolicyAccepted;
   @override
   String get pinCode;
+  @override
+  bool get needToSetPinCode;
   @override
   @JsonKey(ignore: true)
   _$$UserPreferenceImplCopyWith<_$UserPreferenceImpl> get copyWith =>

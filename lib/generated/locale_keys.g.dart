@@ -147,5 +147,12 @@ abstract class  LocaleKeys {
   static const business = 'business';
   static const museum = 'museum';
   static const theater = 'theater';
+  static const wrong_pin_code = 'wrong_pin_code';
+  static const authentication_is_required_to_log_in_to_the_application = 'authentication_is_required_to_log_in_to_the_application';
+  static const are_you_sure_you_want_to_logout_form_application = 'are_you_sure_you_want_to_logout_form_application';
+  static const create_pin_code = 'create_pin_code';
+  static const repeat_pin_code = 'repeat_pin_code';
+  static const enter_pin_code = 'enter_pin_code';
+  static const dont_remember_pin_code = 'dont_remember_pin_code';
 
 }

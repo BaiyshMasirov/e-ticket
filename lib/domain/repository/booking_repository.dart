@@ -96,7 +96,7 @@ class BookingRepository with NetworkRemoteRepositoryMixin {
     });
   }
 
-  Future<void> clearBookingSavedData() async {
+  Future<void> clear() async {
     await _historyBookingDatasource.clear();
   }
 }

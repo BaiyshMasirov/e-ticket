@@ -12,6 +12,7 @@ class UserPreference with _$UserPreference {
     @Default(false) bool isOnboardingShown,
     @Default(false) bool isPrivacyPolicyAccepted,
     @Default('') String pinCode,
+    @Default(false) bool needToSetPinCode,
   }) = _UserPreference;
 
   factory UserPreference.fromJson(Json json) => _$UserPreferenceFromJson(json);

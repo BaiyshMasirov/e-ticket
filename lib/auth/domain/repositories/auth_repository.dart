@@ -1,17 +1,21 @@
 import 'package:dartz/dartz.dart';
 import 'package:eticket/auth/authentication.dart';
 import 'package:eticket/common/common.dart';
+import 'package:eticket/domain/domain.dart';
 import 'package:eticket/utils/utils.dart';
 
 class AuthRepository with NetworkRemoteRepositoryMixin {
   final AuthLocalDatasource _authLocalDatasource;
   final AuthRemoteDatasource _authRemoteDatasource;
+  final UserPrefsRepository _userPrefRepository;
 
   AuthRepository({
     required AuthLocalDatasource authLocalDatasource,
     required AuthRemoteDatasource authRemoteDatasource,
+    required UserPrefsRepository userPrefRepository,
   })  : _authRemoteDatasource = authRemoteDatasource,
-        _authLocalDatasource = authLocalDatasource;
+        _authLocalDatasource = authLocalDatasource,
+        _userPrefRepository = userPrefRepository;
 
   Future<bool> isUserAdmin() async {
     final credential = await getSignedInCredentials();
@@ -27,6 +31,7 @@ class AuthRepository with NetworkRemoteRepositoryMixin {
     if (storedCredentials != null) {
       if (storedCredentials.canRefresh && storedCredentials.isExpired) {
         final failureOrCredentials = await refreshToken(storedCredentials);
+
         return failureOrCredentials.fold(
           (error) => null,
           (credentials) => credentials,

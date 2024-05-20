@@ -37,18 +37,7 @@ class RegisterView extends HookWidget {
     return BlocListener<RegisterCubit, RegisterState>(
       listener: (_, s) => s.maybeMap(
         orElse: () => null,
-        success: (_) {
-          Logger.setUserIdentifier(_.login);
-
-          context.userCachedRepo.setRememberMe(isRememberMe: true);
-
-          context.userCachedRepo.setUserAuthDataData(
-            login: _.login,
-            password: _.password,
-          );
-
-          return null;
-        },
+        success: (_) => Logger.setUserIdentifier(_.login),
       ),
       child: SafeArea(
         child: SingleChildScrollView(
@@ -66,6 +55,7 @@ class RegisterView extends HookWidget {
                   SizedBox(height: 30.h),
                   EmailFormFieldZ(
                     controller: emailController,
+                    textInputAction: TextInputAction.next,
                     validate: true,
                   ),
                   SizedBox(height: 10.h),
@@ -74,6 +64,7 @@ class RegisterView extends HookWidget {
                     checkForNullEmpty: true,
                     label: LocaleKeys.first_name.tr(),
                     textCapitalization: TextCapitalization.words,
+                    textInputAction: TextInputAction.next,
                   ),
                   SizedBox(height: 10.h),
                   TextFormFieldZ(
@@ -81,6 +72,7 @@ class RegisterView extends HookWidget {
                     checkForNullEmpty: true,
                     label: LocaleKeys.surname.tr(),
                     textCapitalization: TextCapitalization.words,
+                    textInputAction: TextInputAction.next,
                   ),
                   SizedBox(height: 10.h),
                   TextFormFieldZ(
@@ -88,16 +80,19 @@ class RegisterView extends HookWidget {
                     checkForNullEmpty: true,
                     label: LocaleKeys.middle_name.tr(),
                     textCapitalization: TextCapitalization.words,
+                    textInputAction: TextInputAction.next,
                   ),
                   SizedBox(height: 10.h),
                   PasswordFormFieldZ(
                     controller: passwordController,
                     checkForNullEmpty: true,
+                    textInputAction: TextInputAction.next,
                   ),
                   SizedBox(height: 10.h),
                   PhoneFormFieldZ(
                     controller: phoneNumberController,
                     validate: true,
+                    textInputAction: TextInputAction.done,
                   ),
                   SizedBox(height: 10.h),
                   CheckboxListTile(

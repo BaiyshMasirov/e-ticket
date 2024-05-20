@@ -10,12 +10,14 @@ class PhoneFormFieldZ extends StatelessWidget {
   final bool readOnly;
   final bool enabled;
   final bool validate;
+  final TextInputAction textInputAction;
 
   const PhoneFormFieldZ({
     required this.controller,
     this.validate = true,
     this.readOnly = false,
     this.enabled = true,
+    this.textInputAction = TextInputAction.done,
     Key? key,
   }) : super(key: key);
 
@@ -32,6 +34,7 @@ class PhoneFormFieldZ extends StatelessWidget {
       onTap: null,
       enabled: enabled,
       readonly: readOnly,
+      textInputAction: textInputAction,
       textInputType: TextInputType.phone,
       inputFormatters: [maskFormatter],
       validate: validate

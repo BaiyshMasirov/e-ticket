@@ -14,16 +14,19 @@ class LoginCubit extends Cubit<LoginState> {
   final AuthCubit _authCubit;
   final AccountRepository _accountRepository;
   final SettingsCubit _settingsCubit;
+  final UserPrefsRepository _userPrefsRepository;
 
   LoginCubit._({
     required SnackbarCubit snackbarCubit,
     required AuthCubit authCubit,
     required AccountRepository accountRepository,
     required SettingsCubit settingsCubit,
+    required UserPrefsRepository userPrefsRepository,
   })  : _snackbarCubit = snackbarCubit,
         _authCubit = authCubit,
         _accountRepository = accountRepository,
         _settingsCubit = settingsCubit,
+        _userPrefsRepository = userPrefsRepository,
         super(const LoginState.initial());
 
   Future<void> login({
@@ -37,12 +40,14 @@ class LoginCubit extends Cubit<LoginState> {
         emit(LoginState.failure(errorMessage: l.errorMessage));
         _snackbarCubit.showErrorSnackbar(message: l.errorMessage);
       },
-      (r) {
+      (creds) async {
         emit(LoginState.success(
           login: loginCommandDto.email,
           password: loginCommandDto.password,
         ));
-        _authCubit.setToken(credentials: r);
+
+        await _userPrefsRepository.needToSetPinCode(needToSetPinCode: true);
+        _authCubit.setToken(credentials: creds);
         _settingsCubit.updateState();
       },
     );
@@ -54,6 +59,7 @@ class LoginCubit extends Cubit<LoginState> {
       authCubit: GetIt.I.get(),
       accountRepository: GetIt.I.get(),
       settingsCubit: GetIt.I.get(),
+      userPrefsRepository: GetIt.I.get(),
     );
   }
 }

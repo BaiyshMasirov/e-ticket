@@ -26,39 +26,10 @@ class LoginView extends HookWidget {
     final loginTC = useTextEditingController();
     final passwordTC = useTextEditingController();
 
-    final isRememberMeChecked = useState(
-      context.userCachedRepo.getData().isRememberMe,
-    );
-
-    useEffect(
-      () {
-        final settings = context.userCachedRepo.getData();
-
-        if (settings.isRememberMe) {
-          loginTC.text = settings.login;
-          passwordTC.text = settings.password;
-        }
-
-        return null;
-      },
-      const [],
-    );
-
     return BlocListener<LoginCubit, LoginState>(
       listener: (_, s) => s.maybeMap(
         orElse: () => null,
-        success: (_) {
-          Logger.setUserIdentifier(_.login);
-
-          if (!context.userCachedRepo.getData().isRememberMe) return;
-
-          context.userCachedRepo.setUserAuthDataData(
-            login: _.login,
-            password: _.password,
-          );
-
-          return null;
-        },
+        success: (_) => Logger.setUserIdentifier(_.login),
       ),
       child: SafeArea(
         child: SingleChildScrollView(
@@ -76,26 +47,12 @@ class LoginView extends HookWidget {
                     child: AuthLogo(),
                   ),
                   SizedBox(height: 60.h),
-                  EmailFormFieldZ(controller: loginTC),
+                  EmailFormFieldZ(
+                    controller: loginTC,
+                    textInputAction: TextInputAction.next,
+                  ),
                   SizedBox(height: 15.h),
                   PasswordFormFieldZ(controller: passwordTC),
-                  SizedBox(height: 15.h),
-                  CheckboxControlBZ(
-                    borderRadius: 6.r,
-                    padding:
-                        EdgeInsets.symmetric(vertical: 10.h, horizontal: 2.w),
-                    direction: Direction.left,
-                    onChanged: (isChecked) {
-                      context.userCachedRepo.setRememberMe(
-                        isRememberMe: isChecked,
-                      );
-
-                      isRememberMeChecked.value = isChecked;
-                    },
-                    // labelTS: tsB14Regular.copyWith(color: ColorName.colorE1E3EA),
-                    label: LocaleKeys.remember_me.tr(),
-                    isChecked: isRememberMeChecked.value,
-                  ),
                   SizedBox(height: 15.h),
                   PrimaryButton(
                     title: LocaleKeys.login.tr(),

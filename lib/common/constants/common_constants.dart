@@ -14,6 +14,8 @@ class Constants {
   static const initialPageSize = 20;
 
   static const heroHistoryCachedTitleTag = 'heroHistoryCachedTitleTag';
+
+  static const maxDigitsCount = 4;
 }
 
 final double seatSvgSize = 4.8.w;

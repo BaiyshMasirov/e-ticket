@@ -29,22 +29,23 @@ Future<void> injectDependencies() async {
   final databaseClient = await DatabaseX.openDatabase();
 
   // region settings
-  final appSettingsLocalSource =
-      AppSettingsLocalSource(sharedPreferences: prefs);
-  await appSettingsLocalSource.read();
+  final appSettingsLocalSource = AppSettingsLocalSource(
+    sharedPreferences: prefs,
+  )..read();
+
+  final userPrefsLocalSource = UserPrefsLocalSource(
+    sharedPreferences: prefs,
+  )..read();
 
   // remote sources
-  getIt.registerSingleton<UserLocalSource>(
-    UserLocalSource(sharedPreferences: prefs),
+  getIt.registerSingleton<UserPrefsLocalSource>(userPrefsLocalSource);
+
+  getIt.registerSingleton<AppSettingsLocalSource>(appSettingsLocalSource);
+
+  getIt.registerSingleton<UserPrefsRepository>(
+    UserPrefsRepository(userLocalSource: getIt.get<UserPrefsLocalSource>()),
   );
 
-  getIt.registerSingleton<AppSettingsLocalSource>(
-    appSettingsLocalSource,
-  );
-
-  getIt.registerSingleton<UserCachedRepo>(
-    UserCachedRepo(userLocalSource: getIt.get<UserLocalSource>()),
-  );
   getIt.registerSingleton<AppSettingsRepository>(AppSettingsRepository(
     appSettingsLocalSource: getIt.get<AppSettingsLocalSource>(),
   ));
@@ -59,19 +60,25 @@ Future<void> injectDependencies() async {
   getIt.registerSingleton<FlutterSecureStorage>(
     const FlutterSecureStorage(),
   );
+
   getIt.registerSingleton<AuthLocalDatasource>(
     AuthLocalDatasource(storage: getIt.get<FlutterSecureStorage>()),
   );
+
   getIt.registerSingleton<AuthRemoteDatasource>(
     AuthRemoteDatasource(dio: authDio),
   );
+
   getIt.registerSingleton<AuthRepository>(AuthRepository(
     authLocalDatasource: getIt.get<AuthLocalDatasource>(),
     authRemoteDatasource: getIt.get<AuthRemoteDatasource>(),
+    userPrefRepository: getIt.get<UserPrefsRepository>(),
   ));
+
   getIt.registerSingleton<AuthCubit>(
     AuthCubit(authRepository: getIt.get<AuthRepository>()),
   );
+
   getIt.registerSingleton<AuthInterceptor>(AuthInterceptor(
     authDio,
     getIt.get<AuthRepository>(),

@@ -16,4 +16,6 @@ class RouteConstants {
   static const String paymentWebView = '/payment-web-view';
   static const String scanTickets = '/scan-tickets';
   static const String refreshPassword = '/refresh-password';
+  static const String pinCodeCreate = '/pin-code-create';
+  static const String pinCodeVerify = '/pin-code-verify';
 }

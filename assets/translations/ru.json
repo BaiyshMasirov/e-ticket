@@ -145,5 +145,12 @@
   "cinema": "Кино",
   "business": "Бизнес",
   "museum": "Музей",
-  "theater": "Театр"
+  "theater": "Театр",
+  "wrong_pin_code": "Неверный ПИН-код",
+  "authentication_is_required_to_log_in_to_the_application": "Требуется аутентификация для входа в приложение",
+  "are_you_sure_you_want_to_logout_form_application": "Вы действительно хотите выйти из приложения?",
+  "create_pin_code": "Придумайте ПИН-код",
+  "repeat_pin_code": "Повторите ПИН-код",
+  "enter_pin_code": "Введите ПИН-код",
+  "dont_remember_pin_code": "Не помню ПИН-код"
 }

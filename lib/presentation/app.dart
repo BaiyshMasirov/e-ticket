@@ -1,5 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/auth/authentication.dart';
+import 'package:eticket/common/common.dart';
+import 'package:eticket/domain/domain.dart';
 import 'package:eticket/domain/repository/repository.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
@@ -29,12 +32,48 @@ class App extends StatelessWidget {
         BlocListener<AuthCubit, AuthState>(
           listener: (context, state) => state.maybeWhen(
             authenticated: () {
+              final userPrefs = context.userPrefsRepository.getUserPrefs();
+
               FlutterNativeSplash.remove();
 
-              _appRouter.pushAndPopUntil(
-                MainRoute(),
-                predicate: (route) => false,
-              );
+              if (!userPrefs.needToSetPinCode && userPrefs.pinCode.isEmpty) {
+                context.read<AuthCubit>().signOut();
+
+                return;
+              } else if (userPrefs.pinCode.isNotEmpty) {
+                _appRouter.pushAndPopUntil(
+                  PinCodeVerifyRoute(
+                    onBackPressed: () => YesNoDialog.showModal(
+                      context: context,
+                      title: LocaleKeys
+                          .are_you_sure_you_want_to_logout_form_application
+                          .tr(),
+                      onNoPress: () => _appRouter.pop(),
+                      onYesPress: context.read<AuthCubit>().signOut,
+                    ),
+                    navigateOnPinCodeCreate: () => _appRouter.pushAndPopUntil(
+                      MainRoute(),
+                      predicate: (route) => false,
+                    ),
+                  ),
+                  predicate: (route) => false,
+                );
+
+                return;
+              } else {
+                _appRouter.pushAndPopUntil(
+                  PinCodeCreateRoute(
+                    onBackPressed: () => null,
+                    navigateOnPinCodeCreate: () => _appRouter.pushAndPopUntil(
+                      MainRoute(),
+                      predicate: (route) => false,
+                    ),
+                  ),
+                  predicate: (route) => false,
+                );
+
+                return;
+              }
             },
             unauthenticated: () {
               FlutterNativeSplash.remove();
@@ -88,6 +127,8 @@ class App extends StatelessWidget {
   }
 
   Future<void> clearDatabase() async {
-    await GetIt.I.get<BookingRepository>().clearBookingSavedData();
+    await GetIt.I.get<BookingRepository>().clear();
+    await GetIt.I.get<UserPrefsRepository>().clear();
+    await GetIt.I.get<AppSettingsRepository>().clear();
   }
 }

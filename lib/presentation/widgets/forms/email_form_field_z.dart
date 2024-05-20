@@ -13,6 +13,7 @@ class EmailFormFieldZ extends StatelessWidget {
   final bool enabled;
   final bool validate;
   final bool checkForNullEmpty;
+  final TextInputAction textInputAction;
 
   const EmailFormFieldZ({
     required this.controller,
@@ -20,6 +21,7 @@ class EmailFormFieldZ extends StatelessWidget {
     this.readOnly = false,
     this.enabled = true,
     this.checkForNullEmpty = false,
+    this.textInputAction = TextInputAction.done,
     Key? key,
   }) : super(key: key);
 
@@ -31,6 +33,7 @@ class EmailFormFieldZ extends StatelessWidget {
       enabled: enabled,
       readonly: readOnly,
       checkForNullEmpty: checkForNullEmpty,
+      textInputAction: textInputAction,
       textInputType: TextInputType.emailAddress,
       validate: validate
           ? (value) {

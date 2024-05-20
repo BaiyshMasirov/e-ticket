@@ -12,6 +12,7 @@ _$UserPreferenceImpl _$$UserPreferenceImplFromJson(Map<String, dynamic> json) =>
       isPrivacyPolicyAccepted:
           json['isPrivacyPolicyAccepted'] as bool? ?? false,
       pinCode: json['pinCode'] as String? ?? '',
+      needToSetPinCode: json['needToSetPinCode'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$UserPreferenceImplToJson(
@@ -20,4 +21,5 @@ Map<String, dynamic> _$$UserPreferenceImplToJson(
       'isOnboardingShown': instance.isOnboardingShown,
       'isPrivacyPolicyAccepted': instance.isPrivacyPolicyAccepted,
       'pinCode': instance.pinCode,
+      'needToSetPinCode': instance.needToSetPinCode,
     };

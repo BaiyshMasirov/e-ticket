@@ -119,7 +119,14 @@ class SettingsView extends StatelessWidget {
             const Spacer(),
             TertiaryButton(
               title: LocaleKeys.logout.tr(),
-              onPressed: context.read<AuthCubit>().signOut,
+              onPressed: () => YesNoDialog.showModal(
+                context: context,
+                title: LocaleKeys
+                    .are_you_sure_you_want_to_logout_form_application
+                    .tr(),
+                onNoPress: () => context.popRoute(),
+                onYesPress: context.read<AuthCubit>().signOut,
+              ),
             ),
           ],
         ),
