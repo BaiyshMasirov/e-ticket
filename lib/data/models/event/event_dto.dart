@@ -8,6 +8,7 @@ part 'event_dto.g.dart';
 @freezed
 class EventDto with _$EventDto {
   const EventDto._();
+
   const factory EventDto({
     required String id,
     required String? name,
@@ -25,6 +26,7 @@ class EventDto with _$EventDto {
     required int type,
     required String? video,
     required String? image,
+    // TODO: add Ticket Type [Standing, Seating, Both]
     @JsonKey(
       toJson: DateTimeUTCSerializer.toListJson,
       fromJson: DateTimeUTCSerializer.fromListJson,

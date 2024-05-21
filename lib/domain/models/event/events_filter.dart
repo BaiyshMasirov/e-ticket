@@ -22,12 +22,12 @@ class EventsFilter with _$EventsFilter {
   factory EventsFilter.initial() {
     return const EventsFilter(
       type: EventType.none,
-      status: EventStatus.none,
+      status: EventStatus.active,
     );
   }
 
   bool get isFilterActive =>
-      type != EventType.none || status != EventStatus.none || date != null;
+      type != EventType.none || status != EventStatus.active || date != null;
 
   Json toQueryParams() {
     final queryParams = <String, dynamic>{

@@ -84,7 +84,7 @@ class SearchItemView extends StatelessWidget {
                         child: Container(
                           padding: EdgeInsets.all(4.w),
                           decoration: BoxDecoration(
-                            color: context.colorScheme.outline.withOpacity(0.4),
+                            color: context.colorScheme.outline.withOpacity(0.8),
                             borderRadius: BorderRadius.circular(50.r),
                           ),
                           child: Text(

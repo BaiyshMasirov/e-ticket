@@ -45,7 +45,7 @@ extension EventStatusX on EventStatus {
       case EventStatus.active:
         return LocaleKeys.active.tr();
       case EventStatus.inActive:
-        return LocaleKeys.in_active;
+        return LocaleKeys.in_active.tr();
       default:
         return '-';
     }

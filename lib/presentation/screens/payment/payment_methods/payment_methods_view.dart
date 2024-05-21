@@ -26,6 +26,11 @@ class PaymentMethodsView extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final activePaymentsType = useMemoized(
+      () => PaymentType.activePayments,
+      const [],
+    );
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
       child: AppSliverScrollView(
@@ -61,9 +66,9 @@ class PaymentMethodsView extends HookWidget {
           ),
           SliverToBoxAdapter(child: SizedBox(height: kDefaultPadding * 3)),
           SliverList.separated(
-            itemCount: PaymentType.values.length,
+            itemCount: activePaymentsType.length,
             itemBuilder: (_, i) {
-              final type = PaymentType.values[i];
+              final type = activePaymentsType[i];
 
               return PaymentOption(
                 type: type,

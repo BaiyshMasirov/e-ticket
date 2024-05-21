@@ -5,6 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/theme/theme.dart';
+import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 import 'package:eticket/data/data.dart';
@@ -78,7 +79,9 @@ class EventView extends StatelessWidget {
                           color: context.colorScheme.outline.withOpacity(0.5),
                           borderRadius: BorderRadius.circular(50.r),
                         ),
-                        child: const AutoLeadingButton(),
+                        child: AppBackButton(
+                          onTapped: () => context.popRoute(),
+                        ),
                       ),
                     ),
                   ),

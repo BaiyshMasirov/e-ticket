@@ -32,6 +32,7 @@ class PinCodeVerifyCubit extends Cubit<PinCodeVerifyState> {
       emit(const PinCodeVerifyState.success());
     } else {
       emit(const PinCodeVerifyState.error());
+
       _snackbarCubit.showErrorSnackbar(message: LocaleKeys.wrong_pin_code.tr());
     }
   }
@@ -47,10 +48,11 @@ class PinCodeVerifyCubit extends Cubit<PinCodeVerifyState> {
   Future<void> tryAuthenticateWithBiometric() async {
     try {
       final didAuth = await _localAuthentication.authenticate(
-          localizedReason: LocaleKeys
-              .authentication_is_required_to_log_in_to_the_application
-              .tr(),
-          options: const AuthenticationOptions(biometricOnly: true));
+        localizedReason: LocaleKeys
+            .authentication_is_required_to_log_in_to_the_application
+            .tr(),
+        options: const AuthenticationOptions(biometricOnly: true),
+      );
 
       if (didAuth) {
         emit(const PinCodeVerifyState.success());

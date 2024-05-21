@@ -24,6 +24,12 @@ enum PaymentType {
   final int value;
 
   const PaymentType({required this.value});
+
+  static List<PaymentType> activePayments = [
+    PaymentType.Card,
+    PaymentType.Megapay,
+    PaymentType.Odengi,
+  ];
 }
 
 extension PaymentTypeX on PaymentType {

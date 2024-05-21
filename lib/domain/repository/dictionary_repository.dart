@@ -51,4 +51,12 @@ class DictionaryRepository with NetworkRemoteRepositoryMixin {
 
     return response;
   }
+
+  Future<Either<RequestFailure, List<CategoryDto>>> getCategories() async {
+    final response = await handleRemoteRequest(
+      request: () => _dictionaryRemoteSource.getCategories(),
+    );
+
+    return response;
+  }
 }
