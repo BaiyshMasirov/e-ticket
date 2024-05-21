@@ -49,8 +49,16 @@ class AuthInterceptor extends QueuedInterceptor {
   void onResponse(Response response, ResponseInterceptorHandler handler) async {
     if (response.statusCode == HttpStatus.unauthorized) {
       final credentials = await _authRepository.getSignedInCredentials();
+
       if (credentials != null && credentials.canRefresh) {
-        await _authRepository.refreshToken(credentials);
+        final result = await _authRepository.refreshToken(credentials);
+
+        result.fold(
+          (failure) async {
+            await _authRepository.clearCredentialsStorage();
+          },
+          (r) => null,
+        );
       } else {
         await _authRepository.clearCredentialsStorage();
       }
@@ -59,6 +67,7 @@ class AuthInterceptor extends QueuedInterceptor {
 
       final refreshedCredentials =
           await _authRepository.getSignedInCredentials();
+
       if (refreshedCredentials != null) {
         handler.resolve(
           await _dio.fetch(
@@ -67,6 +76,8 @@ class AuthInterceptor extends QueuedInterceptor {
                   'Bearer ${refreshedCredentials.accessToken}',
           ),
         );
+      } else {
+        handler.next(response);
       }
     } else {
       handler.next(response);
