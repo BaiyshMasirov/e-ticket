@@ -26,7 +26,8 @@ class EventDto with _$EventDto {
     required int type,
     required String? video,
     required String? image,
-    // TODO: add Ticket Type [Standing, Seating, Both]
+    @JsonKey(unknownEnumValue: EventSeatingType.unknown)
+    required EventSeatingType seatingType,
     @JsonKey(
       toJson: DateTimeUTCSerializer.toListJson,
       fromJson: DateTimeUTCSerializer.fromListJson,

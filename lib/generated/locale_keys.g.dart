@@ -154,5 +154,6 @@ abstract class  LocaleKeys {
   static const repeat_pin_code = 'repeat_pin_code';
   static const enter_pin_code = 'enter_pin_code';
   static const dont_remember_pin_code = 'dont_remember_pin_code';
+  static const standing_places = 'standing_places';
 
 }

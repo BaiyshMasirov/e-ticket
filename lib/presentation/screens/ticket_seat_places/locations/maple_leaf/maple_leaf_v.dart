@@ -266,21 +266,6 @@ class MapleLeafV extends HookWidget {
             },
           ),
         ),
-        SizedBox(height: 20.h),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: kDefaultPadding.w),
-          child: TertiaryButton(
-            title: LocaleKeys.noSeating.tr(),
-            onPressed: () {
-              context.navigateTo(
-                TicketStandingPlacesRoute(
-                  eventId: event.id,
-                  dateTime: eventDate,
-                ),
-              );
-            },
-          ),
-        ),
       ],
     );
   }

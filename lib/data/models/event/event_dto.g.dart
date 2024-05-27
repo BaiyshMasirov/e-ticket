@@ -25,6 +25,8 @@ _$EventDtoImpl _$$EventDtoImplFromJson(Map<String, dynamic> json) =>
       type: json['type'] as int,
       video: json['video'] as String?,
       image: json['image'] as String?,
+      seatingType: $enumDecode(_$EventSeatingTypeEnumMap, json['seatingType'],
+          unknownValue: EventSeatingType.unknown),
       dateRange: DateTimeUTCSerializer.fromListJson(json['dateRange'] as List),
     );
 
@@ -53,6 +55,7 @@ Map<String, dynamic> _$$EventDtoImplToJson(_$EventDtoImpl instance) {
   val['type'] = instance.type;
   writeNotNull('video', instance.video);
   writeNotNull('image', instance.image);
+  val['seatingType'] = _$EventSeatingTypeEnumMap[instance.seatingType]!;
   val['dateRange'] = DateTimeUTCSerializer.toListJson(instance.dateRange);
   return val;
 }
@@ -78,4 +81,12 @@ const _$LocationTypeEnumMap = {
   LocationType.nationalTheater: 8,
   LocationType.mapleLeaf: 9,
   LocationType.unknown: 'unknown',
+};
+
+const _$EventSeatingTypeEnumMap = {
+  EventSeatingType.none: 0,
+  EventSeatingType.noSeating: 1,
+  EventSeatingType.seating: 2,
+  EventSeatingType.combo: 3,
+  EventSeatingType.unknown: 'unknown',
 };

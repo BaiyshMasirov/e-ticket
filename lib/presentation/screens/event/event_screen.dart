@@ -26,7 +26,8 @@ class EventScreen extends StatelessWidget {
     return AppScaffold(
       bgColor: context.colorScheme.surfaceVariant,
       extendBodyBehindAppBar: true,
-      floatingActionButton: event.canPurchaseTickets
+      floatingActionButton: event.canPurchaseTickets &&
+              EventSeatingType.hasAvailableSeatingType(event.seatingType)
           ? PrimaryButton(
               title: LocaleKeys.schedule.tr(),
               onPressed: () {
@@ -59,7 +60,7 @@ class EventScreen extends StatelessWidget {
     required EventDto event,
     required DateTime dateTime,
   }) {
-    if (event.locationType == LocationType.noSeating) {
+    if (event.seatingType == EventSeatingType.noSeating) {
       context.navigateTo(
         TicketStandingPlacesRoute(
           eventId: event.id,
@@ -69,6 +70,7 @@ class EventScreen extends StatelessWidget {
 
       return;
     }
+
     context.navigateTo(TicketSeatPlacesRoute(
       locationType: event.locationType,
       eventDate: dateTime,

@@ -152,5 +152,6 @@
   "create_pin_code": "Придумайте ПИН-код",
   "repeat_pin_code": "Повторите ПИН-код",
   "enter_pin_code": "Введите ПИН-код",
-  "dont_remember_pin_code": "Не помню ПИН-код"
+  "dont_remember_pin_code": "Не помню ПИН-код",
+  "standing_places": "Стоячие места"
 }

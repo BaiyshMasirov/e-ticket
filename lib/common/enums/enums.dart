@@ -8,3 +8,5 @@ export 'booking_status.dart';
 export 'payment_status.dart';
 export 'ticket_type.dart';
 export 'event_type.dart';
+export 'event_seating_type.dart';
+export 'ticket_seating_type.dart';
