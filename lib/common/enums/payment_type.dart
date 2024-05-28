@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/assets.gen.dart';
+import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 enum PaymentType {
@@ -19,7 +21,10 @@ enum PaymentType {
   Odengi(value: 5),
 
   @JsonValue(6)
-  Balance(value: 6);
+  Balance(value: 6),
+
+  unknown(value: -1),
+  ;
 
   final int value;
 
@@ -33,6 +38,25 @@ enum PaymentType {
 }
 
 extension PaymentTypeX on PaymentType {
+  String get localizedName {
+    switch (this) {
+      case PaymentType.Card:
+        return LocaleKeys.card.tr();
+      case PaymentType.Mbank:
+        return LocaleKeys.mbank.tr();
+      case PaymentType.Elsom:
+        return LocaleKeys.elsom.tr();
+      case PaymentType.Megapay:
+        return LocaleKeys.megapay.tr();
+      case PaymentType.Odengi:
+        return LocaleKeys.odengi.tr();
+      case PaymentType.Balance:
+        return LocaleKeys.balance.tr();
+      default:
+        return '-';
+    }
+  }
+
   String get getImagePath {
     switch (this) {
       case PaymentType.Card:
@@ -47,6 +71,8 @@ extension PaymentTypeX on PaymentType {
         return Assets.images.payments.odengi.path;
       case PaymentType.Balance:
         return Assets.images.payments.balance.path;
+      case PaymentType.unknown:
+        return '-';
     }
   }
 

@@ -24,6 +24,8 @@ class TicketBookedEntity with _$TicketBookedEntity {
 
     /// ticketType == [TicketType]
     required TicketKeyValueEntity ticketType,
+    @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+    required TicketSeatingType seatingType,
   }) = _TicketBookedEntity;
 
   factory TicketBookedEntity.fromJson(Json json) =>

@@ -34,6 +34,10 @@ mixin _$BookingEntity {
   @JsonKey(unknownEnumValue: LocationType.unknown)
   LocationType get locationType => throw _privateConstructorUsedError;
   String get locationName => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: PaymentType.unknown)
+  PaymentType get paymentType => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: EventSeatingType.unknown)
+  EventSeatingType get seatingType => throw _privateConstructorUsedError;
   List<TicketBookedEntity> get tickets => throw _privateConstructorUsedError;
   String? get eventName => throw _privateConstructorUsedError;
   String? get eventImage => throw _privateConstructorUsedError;
@@ -62,6 +66,9 @@ abstract class $BookingEntityCopyWith<$Res> {
       @JsonKey(unknownEnumValue: LocationType.unknown)
       LocationType locationType,
       String locationName,
+      @JsonKey(unknownEnumValue: PaymentType.unknown) PaymentType paymentType,
+      @JsonKey(unknownEnumValue: EventSeatingType.unknown)
+      EventSeatingType seatingType,
       List<TicketBookedEntity> tickets,
       String? eventName,
       String? eventImage});
@@ -89,6 +96,8 @@ class _$BookingEntityCopyWithImpl<$Res, $Val extends BookingEntity>
     Object? bookingSum = null,
     Object? locationType = null,
     Object? locationName = null,
+    Object? paymentType = null,
+    Object? seatingType = null,
     Object? tickets = null,
     Object? eventName = freezed,
     Object? eventImage = freezed,
@@ -130,6 +139,14 @@ class _$BookingEntityCopyWithImpl<$Res, $Val extends BookingEntity>
           ? _value.locationName
           : locationName // ignore: cast_nullable_to_non_nullable
               as String,
+      paymentType: null == paymentType
+          ? _value.paymentType
+          : paymentType // ignore: cast_nullable_to_non_nullable
+              as PaymentType,
+      seatingType: null == seatingType
+          ? _value.seatingType
+          : seatingType // ignore: cast_nullable_to_non_nullable
+              as EventSeatingType,
       tickets: null == tickets
           ? _value.tickets
           : tickets // ignore: cast_nullable_to_non_nullable
@@ -166,6 +183,9 @@ abstract class _$$BookingEntityImplCopyWith<$Res>
       @JsonKey(unknownEnumValue: LocationType.unknown)
       LocationType locationType,
       String locationName,
+      @JsonKey(unknownEnumValue: PaymentType.unknown) PaymentType paymentType,
+      @JsonKey(unknownEnumValue: EventSeatingType.unknown)
+      EventSeatingType seatingType,
       List<TicketBookedEntity> tickets,
       String? eventName,
       String? eventImage});
@@ -191,6 +211,8 @@ class __$$BookingEntityImplCopyWithImpl<$Res>
     Object? bookingSum = null,
     Object? locationType = null,
     Object? locationName = null,
+    Object? paymentType = null,
+    Object? seatingType = null,
     Object? tickets = null,
     Object? eventName = freezed,
     Object? eventImage = freezed,
@@ -232,6 +254,14 @@ class __$$BookingEntityImplCopyWithImpl<$Res>
           ? _value.locationName
           : locationName // ignore: cast_nullable_to_non_nullable
               as String,
+      paymentType: null == paymentType
+          ? _value.paymentType
+          : paymentType // ignore: cast_nullable_to_non_nullable
+              as PaymentType,
+      seatingType: null == seatingType
+          ? _value.seatingType
+          : seatingType // ignore: cast_nullable_to_non_nullable
+              as EventSeatingType,
       tickets: null == tickets
           ? _value._tickets
           : tickets // ignore: cast_nullable_to_non_nullable
@@ -263,6 +293,9 @@ class _$BookingEntityImpl extends _BookingEntity {
       @JsonKey(unknownEnumValue: LocationType.unknown)
       required this.locationType,
       required this.locationName,
+      @JsonKey(unknownEnumValue: PaymentType.unknown) required this.paymentType,
+      @JsonKey(unknownEnumValue: EventSeatingType.unknown)
+      required this.seatingType,
       required final List<TicketBookedEntity> tickets,
       this.eventName,
       this.eventImage})
@@ -295,6 +328,12 @@ class _$BookingEntityImpl extends _BookingEntity {
   final LocationType locationType;
   @override
   final String locationName;
+  @override
+  @JsonKey(unknownEnumValue: PaymentType.unknown)
+  final PaymentType paymentType;
+  @override
+  @JsonKey(unknownEnumValue: EventSeatingType.unknown)
+  final EventSeatingType seatingType;
   final List<TicketBookedEntity> _tickets;
   @override
   List<TicketBookedEntity> get tickets {
@@ -310,7 +349,7 @@ class _$BookingEntityImpl extends _BookingEntity {
 
   @override
   String toString() {
-    return 'BookingEntity(id: $id, eventDate: $eventDate, created: $created, bookingStatus: $bookingStatus, eventStatus: $eventStatus, eventId: $eventId, bookingSum: $bookingSum, locationType: $locationType, locationName: $locationName, tickets: $tickets, eventName: $eventName, eventImage: $eventImage)';
+    return 'BookingEntity(id: $id, eventDate: $eventDate, created: $created, bookingStatus: $bookingStatus, eventStatus: $eventStatus, eventId: $eventId, bookingSum: $bookingSum, locationType: $locationType, locationName: $locationName, paymentType: $paymentType, seatingType: $seatingType, tickets: $tickets, eventName: $eventName, eventImage: $eventImage)';
   }
 
   @override
@@ -333,6 +372,10 @@ class _$BookingEntityImpl extends _BookingEntity {
                 other.locationType == locationType) &&
             (identical(other.locationName, locationName) ||
                 other.locationName == locationName) &&
+            (identical(other.paymentType, paymentType) ||
+                other.paymentType == paymentType) &&
+            (identical(other.seatingType, seatingType) ||
+                other.seatingType == seatingType) &&
             const DeepCollectionEquality().equals(other._tickets, _tickets) &&
             (identical(other.eventName, eventName) ||
                 other.eventName == eventName) &&
@@ -353,6 +396,8 @@ class _$BookingEntityImpl extends _BookingEntity {
       bookingSum,
       locationType,
       locationName,
+      paymentType,
+      seatingType,
       const DeepCollectionEquality().hash(_tickets),
       eventName,
       eventImage);
@@ -385,6 +430,10 @@ abstract class _BookingEntity extends BookingEntity {
       @JsonKey(unknownEnumValue: LocationType.unknown)
       required final LocationType locationType,
       required final String locationName,
+      @JsonKey(unknownEnumValue: PaymentType.unknown)
+      required final PaymentType paymentType,
+      @JsonKey(unknownEnumValue: EventSeatingType.unknown)
+      required final EventSeatingType seatingType,
       required final List<TicketBookedEntity> tickets,
       final String? eventName,
       final String? eventImage}) = _$BookingEntityImpl;
@@ -416,6 +465,12 @@ abstract class _BookingEntity extends BookingEntity {
   LocationType get locationType;
   @override
   String get locationName;
+  @override
+  @JsonKey(unknownEnumValue: PaymentType.unknown)
+  PaymentType get paymentType;
+  @override
+  @JsonKey(unknownEnumValue: EventSeatingType.unknown)
+  EventSeatingType get seatingType;
   @override
   List<TicketBookedEntity> get tickets;
   @override

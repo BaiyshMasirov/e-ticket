@@ -19,6 +19,8 @@ _$TicketBookedDtoImpl _$$TicketBookedDtoImplFromJson(
       type: json['type'] as int,
       ticketType:
           KeyValueMapDto.fromJson(json['ticketType'] as Map<String, dynamic>),
+      seatingType: $enumDecode(_$TicketSeatingTypeEnumMap, json['seatingType'],
+          unknownValue: TicketSeatingType.unknown),
     );
 
 Map<String, dynamic> _$$TicketBookedDtoImplToJson(
@@ -32,6 +34,7 @@ Map<String, dynamic> _$$TicketBookedDtoImplToJson(
       'qrCode': instance.qrCode,
       'type': instance.type,
       'ticketType': instance.ticketType.toJson(),
+      'seatingType': _$TicketSeatingTypeEnumMap[instance.seatingType]!,
     };
 
 const _$TicketStatusEnumMap = {
@@ -41,4 +44,11 @@ const _$TicketStatusEnumMap = {
   TicketStatus.returned: 3,
   TicketStatus.used: 4,
   TicketStatus.unknown: 'unknown',
+};
+
+const _$TicketSeatingTypeEnumMap = {
+  TicketSeatingType.none: 0,
+  TicketSeatingType.noSeating: 1,
+  TicketSeatingType.seating: 2,
+  TicketSeatingType.unknown: 'unknown',
 };

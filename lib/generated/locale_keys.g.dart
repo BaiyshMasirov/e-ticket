@@ -69,6 +69,7 @@ abstract class  LocaleKeys {
   static const placeNumber = 'placeNumber';
   static const hold_ticket_description = 'hold_ticket_description';
   static const payment_methods = 'payment_methods';
+  static const payment_method = 'payment_method';
   static const cost = 'cost';
   static const card = 'card';
   static const mbank = 'mbank';
@@ -132,8 +133,8 @@ abstract class  LocaleKeys {
   static const event_date = 'event_date';
   static const event_location = 'event_location';
   static const event_status = 'event_status';
-  static const ticket_payment_status = 'ticket_payment_status';
-  static const ticket_payemnt_date = 'ticket_payemnt_date';
+  static const payment_status = 'payment_status';
+  static const payment_date = 'payment_date';
   static const from = 'from';
   static const schedule = 'schedule';
   static const empty = 'empty';

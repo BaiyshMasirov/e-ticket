@@ -79,4 +79,22 @@ class ColorName {
   static Color placeSelected = const Color(0xFFC0AA58);
   static Color placeDisabled = const Color(0xFFA9A8A8);
   static Color placeSold = const Color(0xFFA82D2D);
+
+  static Color greyL = const Color(0xFF867C7C);
+  static Color greyD = const Color(0xFFA9A5A5);
+
+  static Color yellowL = const Color(0xFFC7A908);
+  static Color yellowD = const Color(0xFFB9A219);
+
+  static Color orangeL = const Color(0xFFC57212);
+  static Color orangeD = const Color(0xFFE17F1D);
+
+  static Color greenL = const Color(0xFF1F8118);
+  static Color greenD = const Color(0xFF73E073);
+
+  static Color redL = const Color(0xFFB21515);
+  static Color redD = const Color(0xFFCC2C2C);
+
+  static Color blueL = const Color(0xFF3F55C5);
+  static Color blueD = const Color(0xFF6B80E5);
 }

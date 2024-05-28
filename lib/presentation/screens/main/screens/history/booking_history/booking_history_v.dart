@@ -57,53 +57,6 @@ class BookingHistoryV extends HookWidget {
         ),
       ),
     );
-
-    // final bookingsState = context.watch<HistoryCubit>().state;
-    // return Padding(
-    //   padding: EdgeInsets.symmetric(
-    //     horizontal: kDefaultPadding,
-    //     vertical: 15.h,
-    //   ),
-    //   child: bookingsState.maybeWhen(
-    //     orElse: () => const SizedBox.shrink(),
-    //     loadError: (
-    //       booking,
-    //       _,
-    //       errorMessage,
-    //     ) =>
-    //         Center(
-    //       child: DataFetchFailure(
-    //         error: errorMessage,
-    //         onTryLoadAgain: () =>
-    //             context.read<HistoryCubit>().getUserBookings(),
-    //       ),
-    //     ),
-    //     loadSuccess: (bookingsList, __, _) => AppSliverScrollView(
-    //       onRefresh: () => context.read<HistoryCubit>().refreshPage(),
-    //       slivers: [
-    //         SliverList.separated(
-    //           itemCount: bookingsList.length,
-    //           itemBuilder: (context, i) {
-    //             final booking = bookingsList[i];
-    //
-    //             return HistoryItem(
-    //               booking: booking,
-    //               onTapped: () => context.navigateTo(
-    //                 BookingTicketsRoute(tiketId: booking.id),
-    //               ),
-    //             );
-    //           },
-    //           separatorBuilder: (context, index) => SizedBox(height: 10.h),
-    //         ),
-    //         SliverToBoxAdapter(
-    //           child: SizedBox(
-    //             height: 50.h,
-    //           ),
-    //         )
-    //       ],
-    //     ),
-    //   ),
-    // );
   }
 }
 

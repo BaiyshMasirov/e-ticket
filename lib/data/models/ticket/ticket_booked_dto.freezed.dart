@@ -33,6 +33,8 @@ mixin _$TicketBookedDto {
 
   /// ticketType == [TicketType]
   KeyValueMapDto get ticketType => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+  TicketSeatingType get seatingType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,7 +57,9 @@ abstract class $TicketBookedDtoCopyWith<$Res> {
       double price,
       String qrCode,
       int type,
-      KeyValueMapDto ticketType});
+      KeyValueMapDto ticketType,
+      @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+      TicketSeatingType seatingType});
 
   $KeyValueMapDtoCopyWith<$Res> get ticketType;
 }
@@ -81,6 +85,7 @@ class _$TicketBookedDtoCopyWithImpl<$Res, $Val extends TicketBookedDto>
     Object? qrCode = null,
     Object? type = null,
     Object? ticketType = null,
+    Object? seatingType = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -115,6 +120,10 @@ class _$TicketBookedDtoCopyWithImpl<$Res, $Val extends TicketBookedDto>
           ? _value.ticketType
           : ticketType // ignore: cast_nullable_to_non_nullable
               as KeyValueMapDto,
+      seatingType: null == seatingType
+          ? _value.seatingType
+          : seatingType // ignore: cast_nullable_to_non_nullable
+              as TicketSeatingType,
     ) as $Val);
   }
 
@@ -144,7 +153,9 @@ abstract class _$$TicketBookedDtoImplCopyWith<$Res>
       double price,
       String qrCode,
       int type,
-      KeyValueMapDto ticketType});
+      KeyValueMapDto ticketType,
+      @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+      TicketSeatingType seatingType});
 
   @override
   $KeyValueMapDtoCopyWith<$Res> get ticketType;
@@ -169,6 +180,7 @@ class __$$TicketBookedDtoImplCopyWithImpl<$Res>
     Object? qrCode = null,
     Object? type = null,
     Object? ticketType = null,
+    Object? seatingType = null,
   }) {
     return _then(_$TicketBookedDtoImpl(
       id: null == id
@@ -203,6 +215,10 @@ class __$$TicketBookedDtoImplCopyWithImpl<$Res>
           ? _value.ticketType
           : ticketType // ignore: cast_nullable_to_non_nullable
               as KeyValueMapDto,
+      seatingType: null == seatingType
+          ? _value.seatingType
+          : seatingType // ignore: cast_nullable_to_non_nullable
+              as TicketSeatingType,
     ));
   }
 }
@@ -219,7 +235,9 @@ class _$TicketBookedDtoImpl extends _TicketBookedDto {
       required this.price,
       required this.qrCode,
       required this.type,
-      required this.ticketType})
+      required this.ticketType,
+      @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+      required this.seatingType})
       : super._();
 
   factory _$TicketBookedDtoImpl.fromJson(Map<String, dynamic> json) =>
@@ -246,10 +264,13 @@ class _$TicketBookedDtoImpl extends _TicketBookedDto {
   /// ticketType == [TicketType]
   @override
   final KeyValueMapDto ticketType;
+  @override
+  @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+  final TicketSeatingType seatingType;
 
   @override
   String toString() {
-    return 'TicketBookedDto(id: $id, rowNumber: $rowNumber, placeNumber: $placeNumber, ticketStatus: $ticketStatus, price: $price, qrCode: $qrCode, type: $type, ticketType: $ticketType)';
+    return 'TicketBookedDto(id: $id, rowNumber: $rowNumber, placeNumber: $placeNumber, ticketStatus: $ticketStatus, price: $price, qrCode: $qrCode, type: $type, ticketType: $ticketType, seatingType: $seatingType)';
   }
 
   @override
@@ -268,13 +289,15 @@ class _$TicketBookedDtoImpl extends _TicketBookedDto {
             (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.ticketType, ticketType) ||
-                other.ticketType == ticketType));
+                other.ticketType == ticketType) &&
+            (identical(other.seatingType, seatingType) ||
+                other.seatingType == seatingType));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, rowNumber, placeNumber,
-      ticketStatus, price, qrCode, type, ticketType);
+      ticketStatus, price, qrCode, type, ticketType, seatingType);
 
   @JsonKey(ignore: true)
   @override
@@ -301,7 +324,9 @@ abstract class _TicketBookedDto extends TicketBookedDto {
       required final double price,
       required final String qrCode,
       required final int type,
-      required final KeyValueMapDto ticketType}) = _$TicketBookedDtoImpl;
+      required final KeyValueMapDto ticketType,
+      @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+      required final TicketSeatingType seatingType}) = _$TicketBookedDtoImpl;
   const _TicketBookedDto._() : super._();
 
   factory _TicketBookedDto.fromJson(Map<String, dynamic> json) =
@@ -328,6 +353,9 @@ abstract class _TicketBookedDto extends TicketBookedDto {
 
   /// ticketType == [TicketType]
   KeyValueMapDto get ticketType;
+  @override
+  @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+  TicketSeatingType get seatingType;
   @override
   @JsonKey(ignore: true)
   _$$TicketBookedDtoImplCopyWith<_$TicketBookedDtoImpl> get copyWith =>

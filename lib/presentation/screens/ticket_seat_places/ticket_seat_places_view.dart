@@ -75,7 +75,7 @@ class TicketSeatPlacesView extends StatelessWidget {
                 const SeatPlaceInfoV(),
                 SizedBox(height: 10.h),
                 Visibility(
-                  visible: event.seatingType == EventSeatingType.noSeating,
+                  visible: event.seatingType == EventSeatingType.combo,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [

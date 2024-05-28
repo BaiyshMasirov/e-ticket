@@ -40,40 +40,59 @@ class BookingHistoryItemV extends StatelessWidget {
               ),
             ),
             _vSized,
+            Align(
+              alignment: Alignment.center,
+              child: Text(
+                booking.locationName,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp),
+              ),
+            ),
+            const Divider(),
             RowItemV(
               title: '${LocaleKeys.event_date.tr()}:',
               value: DateFormatters.toDateTime(
                 booking.eventDate,
-                pattern: DateFormatters.dmYHmsDashedTemplate,
+                pattern: DateFormatters.dMMMYHmsSpacedTemplate,
               ),
-            ),
-            _vSized,
-            RowItemV(
-              title: '${LocaleKeys.event_location.tr()}:',
-              value: booking.locationName,
             ),
             _vSized,
             RowItemV(
               title: '${LocaleKeys.event_status.tr()}:',
               value: booking.eventStatus.localizedName,
+              valueStyle: TextStyle(
+                color: booking.eventStatus.getColor(context),
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            _vSized,
+            RowItemV(
+              title: '${LocaleKeys.payment_date.tr()}:',
+              value: DateFormatters.toDateTime(
+                booking.created,
+                pattern: DateFormatters.dMMMYHmsSpacedTemplate,
+              ),
+            ),
+            _vSized,
+            RowItemV(
+              title: '${LocaleKeys.payment_status.tr()}:',
+              value: booking.bookingStatus.localizedName,
+              valueStyle: TextStyle(
+                color: booking.bookingStatus.getColor(context),
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            _vSized,
+            RowItemV(
+              title: '${LocaleKeys.payment_method.tr()}:',
+              value: booking.paymentType.localizedName,
+              valueStyle: const TextStyle(fontWeight: FontWeight.w500),
             ),
             _vSized,
             RowItemV(
               title: '${LocaleKeys.cost.tr()}:',
               value: booking.bookingSum.toStringAsFixed(2),
-            ),
-            _vSized,
-            RowItemV(
-              title: '${LocaleKeys.ticket_payment_status.tr()}:',
-              value: booking.bookingStatus.localizedName,
-            ),
-            _vSized,
-            RowItemV(
-              title: '${LocaleKeys.ticket_payemnt_date.tr()}:',
-              value: DateFormatters.toDateTime(
-                booking.created,
-                pattern: DateFormatters.dmYHmsDashedTemplate,
-              ),
+              valueStyle: const TextStyle(fontWeight: FontWeight.w500),
             ),
           ],
         ),

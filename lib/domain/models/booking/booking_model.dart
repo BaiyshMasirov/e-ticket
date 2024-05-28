@@ -21,6 +21,8 @@ class BookingModel with _$BookingModel {
     required LocationType locationType,
     required String locationName,
     required List<TicketBookedModel> tickets,
+    required PaymentType paymentType,
+    required EventSeatingType seatingType,
     String? eventName,
     String? eventImage,
   }) = _BookingModel;
@@ -40,6 +42,8 @@ class BookingModel with _$BookingModel {
       locationName: dto.locationName,
       eventName: dto.eventName,
       eventImage: dto.eventImage,
+      paymentType: dto.paymentType,
+      seatingType: dto.seatingType,
       tickets:
           dto.tickets.map((t) => TicketBookedModel.fromDto(dto: t)).toList(),
     );
@@ -60,6 +64,8 @@ class BookingModel with _$BookingModel {
       locationName: entity.locationName,
       eventName: entity.eventName,
       eventImage: entity.eventImage,
+      paymentType: entity.paymentType,
+      seatingType: entity.seatingType,
       tickets: entity.tickets
           .map((t) => TicketBookedModel.fromEntity(entity: t))
           .toList(),
@@ -79,6 +85,8 @@ class BookingModel with _$BookingModel {
       locationName: locationName,
       eventName: eventName,
       eventImage: eventImage,
+      paymentType: paymentType,
+      seatingType: seatingType,
       tickets: tickets.map((ticket) => ticket.toEntity()).toList(),
     );
   }

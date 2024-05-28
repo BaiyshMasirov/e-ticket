@@ -19,6 +19,42 @@ class BookingTicketItemV extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  Widget buildTicketInfo() {
+    switch (ticket.seatingType) {
+      case TicketSeatingType.noSeating:
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(ticket.ticketType.value),
+          ],
+        );
+      case TicketSeatingType.seating:
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(children: [
+              Text('${LocaleKeys.rowNumber.tr()}:'),
+              SizedBox(width: 5.w),
+              Text(ticket.rowNumber.toString())
+            ]),
+            SizedBox(height: 10.h),
+            Row(
+              children: [
+                Text('${LocaleKeys.placeNumber.tr()}:'),
+                SizedBox(width: 5.w),
+                Text(ticket.placeNumber.toString())
+              ],
+            ),
+          ],
+        );
+      default:
+        return const Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [Text('-')],
+        );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final imageWidth = context.screenSize.screenWidth / 2.1;
@@ -46,14 +82,12 @@ class BookingTicketItemV extends StatelessWidget {
             Stack(
               alignment: Alignment.center,
               children: [
-                Assets.images.ticket.image(
-                  width: imageWidth,
-                ),
+                Assets.images.ticket.image(width: imageWidth),
                 SizedBox(
                   width: 90.w,
                   child: QrImageView(
                     backgroundColor: Colors.transparent,
-                    data: ticket.qrCode ?? '',
+                    data: ticket.qrCode,
                     gapless: true,
                     embeddedImageStyle: const QrEmbeddedImageStyle(
                       size: Size(100, 100),
@@ -63,41 +97,7 @@ class BookingTicketItemV extends StatelessWidget {
               ],
             ),
             SizedBox(width: 10.w),
-            ticket.rowNumber == 0
-                ? Expanded(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(ticket.ticketType.value),
-                      ],
-                    ),
-                  )
-                : Expanded(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Row(children: [
-                          Text(
-                            '${LocaleKeys.rowNumber.tr()}:',
-                          ),
-                          SizedBox(
-                            width: 5.w,
-                          ),
-                          Text(ticket.rowNumber.toString())
-                        ]),
-                        SizedBox(height: 10.h),
-                        Row(children: [
-                          Text(
-                            '${LocaleKeys.placeNumber.tr()}:',
-                          ),
-                          SizedBox(
-                            width: 5.w,
-                          ),
-                          Text(ticket.placeNumber.toString())
-                        ]),
-                      ],
-                    ),
-                  ),
+            Expanded(child: buildTicketInfo()),
           ],
         ),
       ),

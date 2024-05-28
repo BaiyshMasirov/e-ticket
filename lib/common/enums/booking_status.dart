@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 enum BookingStatus {
@@ -41,6 +43,23 @@ extension BookingStatusX on BookingStatus {
         return LocaleKeys.canceled.tr();
       default:
         return '-';
+    }
+  }
+
+  Color getColor(BuildContext context) {
+    switch (this) {
+      case BookingStatus.none:
+        return context.appColors.grey;
+      case BookingStatus.inAwait:
+        return context.appColors.yellow;
+      case BookingStatus.inProcess:
+        return context.appColors.orange;
+      case BookingStatus.active:
+        return context.appColors.green;
+      case BookingStatus.canceled:
+        return context.appColors.red;
+      default:
+        return context.appColors.grey;
     }
   }
 }

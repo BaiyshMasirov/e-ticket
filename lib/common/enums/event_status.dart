@@ -1,5 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
+import 'package:eticket/presentation/theme/theme.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 enum EventStatus {
@@ -48,6 +51,23 @@ extension EventStatusX on EventStatus {
         return LocaleKeys.in_active.tr();
       default:
         return '-';
+    }
+  }
+
+  Color getColor(BuildContext context) {
+    switch (this) {
+      case EventStatus.none:
+        return context.appColors.grey;
+      case EventStatus.inAwait:
+        return context.appColors.yellow;
+      case EventStatus.inProcess:
+        return context.appColors.orange;
+      case EventStatus.active:
+        return context.appColors.green;
+      case EventStatus.inActive:
+        return context.appColors.grey;
+      default:
+        return context.appColors.grey;
     }
   }
 }

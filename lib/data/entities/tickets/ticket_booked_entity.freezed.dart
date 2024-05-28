@@ -33,6 +33,8 @@ mixin _$TicketBookedEntity {
 
   /// ticketType == [TicketType]
   TicketKeyValueEntity get ticketType => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+  TicketSeatingType get seatingType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,7 +57,9 @@ abstract class $TicketBookedEntityCopyWith<$Res> {
       double price,
       String qrCode,
       int type,
-      TicketKeyValueEntity ticketType});
+      TicketKeyValueEntity ticketType,
+      @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+      TicketSeatingType seatingType});
 
   $TicketKeyValueEntityCopyWith<$Res> get ticketType;
 }
@@ -81,6 +85,7 @@ class _$TicketBookedEntityCopyWithImpl<$Res, $Val extends TicketBookedEntity>
     Object? qrCode = null,
     Object? type = null,
     Object? ticketType = null,
+    Object? seatingType = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -115,6 +120,10 @@ class _$TicketBookedEntityCopyWithImpl<$Res, $Val extends TicketBookedEntity>
           ? _value.ticketType
           : ticketType // ignore: cast_nullable_to_non_nullable
               as TicketKeyValueEntity,
+      seatingType: null == seatingType
+          ? _value.seatingType
+          : seatingType // ignore: cast_nullable_to_non_nullable
+              as TicketSeatingType,
     ) as $Val);
   }
 
@@ -144,7 +153,9 @@ abstract class _$$TicketBookedEntityImplCopyWith<$Res>
       double price,
       String qrCode,
       int type,
-      TicketKeyValueEntity ticketType});
+      TicketKeyValueEntity ticketType,
+      @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+      TicketSeatingType seatingType});
 
   @override
   $TicketKeyValueEntityCopyWith<$Res> get ticketType;
@@ -169,6 +180,7 @@ class __$$TicketBookedEntityImplCopyWithImpl<$Res>
     Object? qrCode = null,
     Object? type = null,
     Object? ticketType = null,
+    Object? seatingType = null,
   }) {
     return _then(_$TicketBookedEntityImpl(
       id: null == id
@@ -203,6 +215,10 @@ class __$$TicketBookedEntityImplCopyWithImpl<$Res>
           ? _value.ticketType
           : ticketType // ignore: cast_nullable_to_non_nullable
               as TicketKeyValueEntity,
+      seatingType: null == seatingType
+          ? _value.seatingType
+          : seatingType // ignore: cast_nullable_to_non_nullable
+              as TicketSeatingType,
     ));
   }
 }
@@ -219,7 +235,9 @@ class _$TicketBookedEntityImpl extends _TicketBookedEntity {
       required this.price,
       required this.qrCode,
       required this.type,
-      required this.ticketType})
+      required this.ticketType,
+      @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+      required this.seatingType})
       : super._();
 
   factory _$TicketBookedEntityImpl.fromJson(Map<String, dynamic> json) =>
@@ -246,10 +264,13 @@ class _$TicketBookedEntityImpl extends _TicketBookedEntity {
   /// ticketType == [TicketType]
   @override
   final TicketKeyValueEntity ticketType;
+  @override
+  @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+  final TicketSeatingType seatingType;
 
   @override
   String toString() {
-    return 'TicketBookedEntity(id: $id, rowNumber: $rowNumber, placeNumber: $placeNumber, ticketStatus: $ticketStatus, price: $price, qrCode: $qrCode, type: $type, ticketType: $ticketType)';
+    return 'TicketBookedEntity(id: $id, rowNumber: $rowNumber, placeNumber: $placeNumber, ticketStatus: $ticketStatus, price: $price, qrCode: $qrCode, type: $type, ticketType: $ticketType, seatingType: $seatingType)';
   }
 
   @override
@@ -268,13 +289,15 @@ class _$TicketBookedEntityImpl extends _TicketBookedEntity {
             (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.ticketType, ticketType) ||
-                other.ticketType == ticketType));
+                other.ticketType == ticketType) &&
+            (identical(other.seatingType, seatingType) ||
+                other.seatingType == seatingType));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, rowNumber, placeNumber,
-      ticketStatus, price, qrCode, type, ticketType);
+      ticketStatus, price, qrCode, type, ticketType, seatingType);
 
   @JsonKey(ignore: true)
   @override
@@ -293,16 +316,17 @@ class _$TicketBookedEntityImpl extends _TicketBookedEntity {
 
 abstract class _TicketBookedEntity extends TicketBookedEntity {
   const factory _TicketBookedEntity(
-          {required final String id,
-          required final int rowNumber,
-          required final int placeNumber,
-          @JsonKey(unknownEnumValue: TicketStatus.unknown)
-          required final TicketStatus ticketStatus,
-          required final double price,
-          required final String qrCode,
-          required final int type,
-          required final TicketKeyValueEntity ticketType}) =
-      _$TicketBookedEntityImpl;
+      {required final String id,
+      required final int rowNumber,
+      required final int placeNumber,
+      @JsonKey(unknownEnumValue: TicketStatus.unknown)
+      required final TicketStatus ticketStatus,
+      required final double price,
+      required final String qrCode,
+      required final int type,
+      required final TicketKeyValueEntity ticketType,
+      @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+      required final TicketSeatingType seatingType}) = _$TicketBookedEntityImpl;
   const _TicketBookedEntity._() : super._();
 
   factory _TicketBookedEntity.fromJson(Map<String, dynamic> json) =
@@ -329,6 +353,9 @@ abstract class _TicketBookedEntity extends TicketBookedEntity {
 
   /// ticketType == [TicketType]
   TicketKeyValueEntity get ticketType;
+  @override
+  @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
+  TicketSeatingType get seatingType;
   @override
   @JsonKey(ignore: true)
   _$$TicketBookedEntityImplCopyWith<_$TicketBookedEntityImpl> get copyWith =>

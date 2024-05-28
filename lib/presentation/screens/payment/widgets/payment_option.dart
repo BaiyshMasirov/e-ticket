@@ -41,7 +41,7 @@ class PaymentOption extends StatelessWidget {
                 ),
                 SizedBox(width: 10.w),
                 Text(
-                  type.name.toLowerCase().tr(),
+                  type.localizedName,
                   style: TextStyle(
                     color: context.colorScheme.onSurfaceVariant,
                   ),

@@ -23,6 +23,7 @@ class TicketBookedModel with _$TicketBookedModel {
 
     /// ticketType == [TicketType]
     required TicketKeyValueModel ticketType,
+    required TicketSeatingType seatingType,
   }) = _TicketBookedModel;
 
   factory TicketBookedModel.fromDto({
@@ -37,6 +38,7 @@ class TicketBookedModel with _$TicketBookedModel {
       ticketStatus: dto.ticketStatus,
       price: dto.price,
       qrCode: dto.qrCode,
+      seatingType: dto.seatingType,
     );
   }
 
@@ -52,6 +54,7 @@ class TicketBookedModel with _$TicketBookedModel {
       ticketStatus: entity.ticketStatus,
       price: entity.price,
       qrCode: entity.qrCode,
+      seatingType: entity.seatingType,
     );
   }
 
@@ -65,6 +68,7 @@ class TicketBookedModel with _$TicketBookedModel {
       ticketStatus: ticketStatus,
       price: price,
       qrCode: qrCode,
+      seatingType: seatingType,
     );
   }
 }

@@ -118,25 +118,37 @@ class AppTheme {
 // generate colors for light theme
 List<ThemeExtension<AppColors>> _getAppColorsLight() {
   return [
-    // const AppColors(
-    //   scaffoldBackground: ColorName.backgroundLight,
-    //   onPrimaryButton: ColorName.onPrimaryButtonLight,
-    //   primaryButton: ColorName.primaryButtonLight,
-    //   container: ColorName.container,
-    //   onContainer: ColorName.onContainer,
-    // )
+    AppColors(
+      scaffoldBackground: ColorName.surfaceL,
+      onPrimaryButton: ColorName.onPrimaryL,
+      primaryButton: ColorName.primaryL,
+      container: ColorName.surfaceL,
+      onContainer: ColorName.onSurfaceL,
+      grey: ColorName.greyL,
+      blue: ColorName.blueL,
+      orange: ColorName.orangeL,
+      yellow: ColorName.yellowL,
+      red: ColorName.redL,
+      green: ColorName.greenL,
+    )
   ];
 }
 
 // generate colors for dark theme
 List<ThemeExtension<AppColors>> _getAppColorsDark() {
   return [
-    // const AppColors(
-    // scaffoldBackground: ColorName.backgroundDark,
-    // onPrimaryButton: ColorName.onPrimaryButtonDark,
-    // primaryButton: ColorName.primaryButtonDark,
-    // container: ColorName.container,
-    // onContainer: ColorName.onContainer,
-    // )
+    AppColors(
+      scaffoldBackground: ColorName.surfaceD,
+      onPrimaryButton: ColorName.onPrimaryD,
+      primaryButton: ColorName.primaryD,
+      container: ColorName.surfaceD,
+      onContainer: ColorName.onSurfaceD,
+      grey: ColorName.greyD,
+      blue: ColorName.blueD,
+      orange: ColorName.orangeD,
+      yellow: ColorName.yellowD,
+      red: ColorName.redD,
+      green: ColorName.greenD,
+    )
   ];
 }

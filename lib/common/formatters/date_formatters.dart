@@ -9,6 +9,7 @@ class DateFormatters {
   static const dMMMSpacedTemplate = 'dd MMM';
   static const hhmmColonTemplate = 'HH:mm';
   static const dmYHmsDashedTemplate = 'dd/MM/yyyy HH:mm';
+  static const dMMMYHmsSpacedTemplate = 'dd MMM yyyy HH:mm';
 
   static String? toDateTimeNullable(
     DateTime? dateTime, {

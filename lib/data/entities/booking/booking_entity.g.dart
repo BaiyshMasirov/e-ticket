@@ -20,6 +20,10 @@ _$BookingEntityImpl _$$BookingEntityImplFromJson(Map<String, dynamic> json) =>
       locationType: $enumDecode(_$LocationTypeEnumMap, json['locationType'],
           unknownValue: LocationType.unknown),
       locationName: json['locationName'] as String,
+      paymentType: $enumDecode(_$PaymentTypeEnumMap, json['paymentType'],
+          unknownValue: PaymentType.unknown),
+      seatingType: $enumDecode(_$EventSeatingTypeEnumMap, json['seatingType'],
+          unknownValue: EventSeatingType.unknown),
       tickets: (json['tickets'] as List<dynamic>)
           .map((e) => TicketBookedEntity.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -38,6 +42,8 @@ Map<String, dynamic> _$$BookingEntityImplToJson(_$BookingEntityImpl instance) {
     'bookingSum': instance.bookingSum,
     'locationType': _$LocationTypeEnumMap[instance.locationType]!,
     'locationName': instance.locationName,
+    'paymentType': _$PaymentTypeEnumMap[instance.paymentType]!,
+    'seatingType': _$EventSeatingTypeEnumMap[instance.seatingType]!,
     'tickets': instance.tickets.map((e) => e.toJson()).toList(),
   };
 
@@ -82,4 +88,22 @@ const _$LocationTypeEnumMap = {
   LocationType.nationalTheater: 8,
   LocationType.mapleLeaf: 9,
   LocationType.unknown: 'unknown',
+};
+
+const _$PaymentTypeEnumMap = {
+  PaymentType.Card: 1,
+  PaymentType.Mbank: 2,
+  PaymentType.Elsom: 3,
+  PaymentType.Megapay: 4,
+  PaymentType.Odengi: 5,
+  PaymentType.Balance: 6,
+  PaymentType.unknown: 'unknown',
+};
+
+const _$EventSeatingTypeEnumMap = {
+  EventSeatingType.none: 0,
+  EventSeatingType.noSeating: 1,
+  EventSeatingType.seating: 2,
+  EventSeatingType.combo: 3,
+  EventSeatingType.unknown: 'unknown',
 };

@@ -8,6 +8,12 @@ class AppColors extends ThemeExtension<AppColors> {
   final Color onPrimaryButton;
   final Color container;
   final Color onContainer;
+  final Color grey;
+  final Color yellow;
+  final Color orange;
+  final Color red;
+  final Color blue;
+  final Color green;
 
   const AppColors({
     required this.scaffoldBackground,
@@ -15,6 +21,12 @@ class AppColors extends ThemeExtension<AppColors> {
     required this.onPrimaryButton,
     required this.container,
     required this.onContainer,
+    required this.grey,
+    required this.yellow,
+    required this.orange,
+    required this.red,
+    required this.blue,
+    required this.green,
   });
 
   @override
@@ -24,6 +36,12 @@ class AppColors extends ThemeExtension<AppColors> {
     Color? onPrimaryButton,
     Color? container,
     Color? onContainer,
+    Color? grey,
+    Color? yellow,
+    Color? orange,
+    Color? red,
+    Color? blue,
+    Color? green,
   }) {
     return AppColors(
       scaffoldBackground: scaffoldBackground ?? this.scaffoldBackground,
@@ -31,6 +49,12 @@ class AppColors extends ThemeExtension<AppColors> {
       onPrimaryButton: onPrimaryButton ?? this.onPrimaryButton,
       container: container ?? this.container,
       onContainer: onContainer ?? this.onContainer,
+      grey: grey ?? this.grey,
+      yellow: yellow ?? this.yellow,
+      orange: orange ?? this.orange,
+      red: red ?? this.red,
+      blue: blue ?? this.blue,
+      green: green ?? this.green,
     );
   }
 
@@ -39,21 +63,6 @@ class AppColors extends ThemeExtension<AppColors> {
     covariant ThemeExtension<AppColors>? other,
     double t,
   ) {
-    if (other is! AppColors) {
-      return this;
-    }
-
-    return AppColors(
-      scaffoldBackground:
-          Color.lerp(scaffoldBackground, other.scaffoldBackground, t)!,
-      primaryButton:
-          Color.lerp(primaryButton, other.primaryButton, t)!,
-      onPrimaryButton:
-          Color.lerp(onPrimaryButton, other.onPrimaryButton, t)!,
-      container:
-          Color.lerp(container, other.container, t)!,
-      onContainer:
-          Color.lerp(onContainer, other.onContainer, t)!,
-    );
+    return this;
   }
 }

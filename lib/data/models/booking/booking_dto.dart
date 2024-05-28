@@ -23,6 +23,10 @@ class BookingDto with _$BookingDto {
     @JsonKey(name: 'type', unknownEnumValue: LocationType.unknown)
     required LocationType locationType,
     required String locationName,
+    @JsonKey(unknownEnumValue: PaymentType.unknown)
+    required PaymentType paymentType,
+    @JsonKey(unknownEnumValue: EventSeatingType.unknown)
+    required EventSeatingType seatingType,
     @Default([]) List<TicketBookedDto> tickets,
     String? eventName,
     String? eventImage,

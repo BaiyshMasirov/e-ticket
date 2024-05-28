@@ -1,3 +1,4 @@
+import 'package:eticket/common/common.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/screens/main/screens/history/booking_tickets/widgets/widgets.dart';
 import 'package:eticket/presentation/screens/main/screens/history/widgets/widgets.dart';
@@ -24,6 +25,31 @@ class BookingTicketsV extends StatelessWidget {
         Visibility(
           visible: booking.isFresh == false,
           child: const HistoryCachedTitleV(),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: kDefaultPadding,
+            vertical: 15.h,
+          ),
+          child: Column(
+            children: [
+              Text(
+                booking.entity.eventName ?? '-',
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14.sp),
+              ),
+              Text(
+                DateFormatters.toDateTime(
+                  booking.entity.eventDate,
+                  pattern: DateFormatters.dMMMYHmsSpacedTemplate,
+                ),
+                style: const TextStyle(fontWeight: FontWeight.w500),
+              ),
+              Text(
+                booking.entity.locationName,
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 13.sp),
+              ),
+            ],
+          ),
         ),
         Expanded(
           child: tickets.isEmpty

@@ -28,6 +28,7 @@ mixin _$TicketBookedModel {
 
   /// ticketType == [TicketType]
   TicketKeyValueModel get ticketType => throw _privateConstructorUsedError;
+  TicketSeatingType get seatingType => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TicketBookedModelCopyWith<TicketBookedModel> get copyWith =>
@@ -48,7 +49,8 @@ abstract class $TicketBookedModelCopyWith<$Res> {
       double price,
       String qrCode,
       int type,
-      TicketKeyValueModel ticketType});
+      TicketKeyValueModel ticketType,
+      TicketSeatingType seatingType});
 
   $TicketKeyValueModelCopyWith<$Res> get ticketType;
 }
@@ -74,6 +76,7 @@ class _$TicketBookedModelCopyWithImpl<$Res, $Val extends TicketBookedModel>
     Object? qrCode = null,
     Object? type = null,
     Object? ticketType = null,
+    Object? seatingType = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -108,6 +111,10 @@ class _$TicketBookedModelCopyWithImpl<$Res, $Val extends TicketBookedModel>
           ? _value.ticketType
           : ticketType // ignore: cast_nullable_to_non_nullable
               as TicketKeyValueModel,
+      seatingType: null == seatingType
+          ? _value.seatingType
+          : seatingType // ignore: cast_nullable_to_non_nullable
+              as TicketSeatingType,
     ) as $Val);
   }
 
@@ -136,7 +143,8 @@ abstract class _$$TicketBookedModelImplCopyWith<$Res>
       double price,
       String qrCode,
       int type,
-      TicketKeyValueModel ticketType});
+      TicketKeyValueModel ticketType,
+      TicketSeatingType seatingType});
 
   @override
   $TicketKeyValueModelCopyWith<$Res> get ticketType;
@@ -161,6 +169,7 @@ class __$$TicketBookedModelImplCopyWithImpl<$Res>
     Object? qrCode = null,
     Object? type = null,
     Object? ticketType = null,
+    Object? seatingType = null,
   }) {
     return _then(_$TicketBookedModelImpl(
       id: null == id
@@ -195,6 +204,10 @@ class __$$TicketBookedModelImplCopyWithImpl<$Res>
           ? _value.ticketType
           : ticketType // ignore: cast_nullable_to_non_nullable
               as TicketKeyValueModel,
+      seatingType: null == seatingType
+          ? _value.seatingType
+          : seatingType // ignore: cast_nullable_to_non_nullable
+              as TicketSeatingType,
     ));
   }
 }
@@ -210,7 +223,8 @@ class _$TicketBookedModelImpl extends _TicketBookedModel {
       required this.price,
       required this.qrCode,
       required this.type,
-      required this.ticketType})
+      required this.ticketType,
+      required this.seatingType})
       : super._();
 
   @override
@@ -233,10 +247,12 @@ class _$TicketBookedModelImpl extends _TicketBookedModel {
   /// ticketType == [TicketType]
   @override
   final TicketKeyValueModel ticketType;
+  @override
+  final TicketSeatingType seatingType;
 
   @override
   String toString() {
-    return 'TicketBookedModel(id: $id, rowNumber: $rowNumber, placeNumber: $placeNumber, ticketStatus: $ticketStatus, price: $price, qrCode: $qrCode, type: $type, ticketType: $ticketType)';
+    return 'TicketBookedModel(id: $id, rowNumber: $rowNumber, placeNumber: $placeNumber, ticketStatus: $ticketStatus, price: $price, qrCode: $qrCode, type: $type, ticketType: $ticketType, seatingType: $seatingType)';
   }
 
   @override
@@ -255,12 +271,14 @@ class _$TicketBookedModelImpl extends _TicketBookedModel {
             (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.ticketType, ticketType) ||
-                other.ticketType == ticketType));
+                other.ticketType == ticketType) &&
+            (identical(other.seatingType, seatingType) ||
+                other.seatingType == seatingType));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, id, rowNumber, placeNumber,
-      ticketStatus, price, qrCode, type, ticketType);
+      ticketStatus, price, qrCode, type, ticketType, seatingType);
 
   @JsonKey(ignore: true)
   @override
@@ -279,7 +297,8 @@ abstract class _TicketBookedModel extends TicketBookedModel {
       required final double price,
       required final String qrCode,
       required final int type,
-      required final TicketKeyValueModel ticketType}) = _$TicketBookedModelImpl;
+      required final TicketKeyValueModel ticketType,
+      required final TicketSeatingType seatingType}) = _$TicketBookedModelImpl;
   const _TicketBookedModel._() : super._();
 
   @override
@@ -302,6 +321,8 @@ abstract class _TicketBookedModel extends TicketBookedModel {
 
   /// ticketType == [TicketType]
   TicketKeyValueModel get ticketType;
+  @override
+  TicketSeatingType get seatingType;
   @override
   @JsonKey(ignore: true)
   _$$TicketBookedModelImplCopyWith<_$TicketBookedModelImpl> get copyWith =>

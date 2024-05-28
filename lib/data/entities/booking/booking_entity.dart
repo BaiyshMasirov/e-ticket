@@ -23,6 +23,10 @@ class BookingEntity with _$BookingEntity {
     @JsonKey(unknownEnumValue: LocationType.unknown)
     required LocationType locationType,
     required String locationName,
+    @JsonKey(unknownEnumValue: PaymentType.unknown)
+    required PaymentType paymentType,
+    @JsonKey(unknownEnumValue: EventSeatingType.unknown)
+    required EventSeatingType seatingType,
     required List<TicketBookedEntity> tickets,
     String? eventName,
     String? eventImage,
