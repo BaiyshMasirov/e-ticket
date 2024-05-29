@@ -17,7 +17,7 @@ class TicketBookedEntity with _$TicketBookedEntity {
     @JsonKey(unknownEnumValue: TicketStatus.unknown)
     required TicketStatus ticketStatus,
     required double price,
-    required String qrCode,
+    required String? qrCode,
 
     /// type == [TicketType]
     required int type,

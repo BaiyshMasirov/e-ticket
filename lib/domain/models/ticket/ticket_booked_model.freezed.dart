@@ -21,7 +21,7 @@ mixin _$TicketBookedModel {
   int get placeNumber => throw _privateConstructorUsedError;
   TicketStatus get ticketStatus => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
-  String get qrCode => throw _privateConstructorUsedError;
+  String? get qrCode => throw _privateConstructorUsedError;
 
   /// type == [TicketType]
   int get type => throw _privateConstructorUsedError;
@@ -47,7 +47,7 @@ abstract class $TicketBookedModelCopyWith<$Res> {
       int placeNumber,
       TicketStatus ticketStatus,
       double price,
-      String qrCode,
+      String? qrCode,
       int type,
       TicketKeyValueModel ticketType,
       TicketSeatingType seatingType});
@@ -73,7 +73,7 @@ class _$TicketBookedModelCopyWithImpl<$Res, $Val extends TicketBookedModel>
     Object? placeNumber = null,
     Object? ticketStatus = null,
     Object? price = null,
-    Object? qrCode = null,
+    Object? qrCode = freezed,
     Object? type = null,
     Object? ticketType = null,
     Object? seatingType = null,
@@ -99,10 +99,10 @@ class _$TicketBookedModelCopyWithImpl<$Res, $Val extends TicketBookedModel>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
-      qrCode: null == qrCode
+      qrCode: freezed == qrCode
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -141,7 +141,7 @@ abstract class _$$TicketBookedModelImplCopyWith<$Res>
       int placeNumber,
       TicketStatus ticketStatus,
       double price,
-      String qrCode,
+      String? qrCode,
       int type,
       TicketKeyValueModel ticketType,
       TicketSeatingType seatingType});
@@ -166,7 +166,7 @@ class __$$TicketBookedModelImplCopyWithImpl<$Res>
     Object? placeNumber = null,
     Object? ticketStatus = null,
     Object? price = null,
-    Object? qrCode = null,
+    Object? qrCode = freezed,
     Object? type = null,
     Object? ticketType = null,
     Object? seatingType = null,
@@ -192,10 +192,10 @@ class __$$TicketBookedModelImplCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
-      qrCode: null == qrCode
+      qrCode: freezed == qrCode
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -238,7 +238,7 @@ class _$TicketBookedModelImpl extends _TicketBookedModel {
   @override
   final double price;
   @override
-  final String qrCode;
+  final String? qrCode;
 
   /// type == [TicketType]
   @override
@@ -295,7 +295,7 @@ abstract class _TicketBookedModel extends TicketBookedModel {
       required final int placeNumber,
       required final TicketStatus ticketStatus,
       required final double price,
-      required final String qrCode,
+      required final String? qrCode,
       required final int type,
       required final TicketKeyValueModel ticketType,
       required final TicketSeatingType seatingType}) = _$TicketBookedModelImpl;
@@ -312,7 +312,7 @@ abstract class _TicketBookedModel extends TicketBookedModel {
   @override
   double get price;
   @override
-  String get qrCode;
+  String? get qrCode;
   @override
 
   /// type == [TicketType]

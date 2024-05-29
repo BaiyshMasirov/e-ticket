@@ -13,88 +13,101 @@ final _vSized = SizedBox(height: 4.h);
 class BookingHistoryItemV extends StatelessWidget {
   final BookingModel booking;
   final Function() onTapped;
+  final bool allowTap;
 
   const BookingHistoryItemV({
     required this.booking,
     required this.onTapped,
+    required this.allowTap,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTapped,
-      child: Container(
-        padding: EdgeInsets.all(kDefaultPadding.w / 2),
-        decoration: BoxDecoration(
-          color: context.colorScheme.surfaceVariant,
+    return Container(
+      decoration: BoxDecoration(
+        color: context.colorScheme.surfaceVariant,
+        borderRadius: BorderRadius.circular(_bR),
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
           borderRadius: BorderRadius.circular(_bR),
-        ),
-        child: Column(
-          children: [
-            Align(
-              alignment: Alignment.center,
-              child: Text(
-                booking.eventName ?? '-',
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15.sp),
-              ),
+          onTap: allowTap ? onTapped : null,
+          child: Container(
+            padding: EdgeInsets.all(kDefaultPadding.w / 2),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(_bR),
             ),
-            _vSized,
-            Align(
-              alignment: Alignment.center,
-              child: Text(
-                booking.locationName,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp),
-              ),
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    booking.eventName ?? '-',
+                    style:
+                        TextStyle(fontWeight: FontWeight.w600, fontSize: 15.sp),
+                  ),
+                ),
+                _vSized,
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    booking.locationName,
+                    textAlign: TextAlign.center,
+                    style:
+                        TextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp),
+                  ),
+                ),
+                const Divider(),
+                RowItemV(
+                  title: '${LocaleKeys.event_date.tr()}:',
+                  value: DateFormatters.toDateTime(
+                    booking.eventDate,
+                    pattern: DateFormatters.dMMMYHmsSpacedTemplate,
+                  ),
+                ),
+                _vSized,
+                RowItemV(
+                  title: '${LocaleKeys.event_status.tr()}:',
+                  value: booking.eventStatus.localizedName,
+                  valueStyle: TextStyle(
+                    color: booking.eventStatus.getColor(context),
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                _vSized,
+                RowItemV(
+                  title: '${LocaleKeys.payment_date.tr()}:',
+                  value: DateFormatters.toDateTime(
+                    booking.created,
+                    pattern: DateFormatters.dMMMYHmsSpacedTemplate,
+                  ),
+                ),
+                _vSized,
+                RowItemV(
+                  title: '${LocaleKeys.payment_status.tr()}:',
+                  value: booking.bookingStatus.localizedName,
+                  valueStyle: TextStyle(
+                    color: booking.bookingStatus.getColor(context),
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                _vSized,
+                RowItemV(
+                  title: '${LocaleKeys.payment_method.tr()}:',
+                  value: booking.paymentType.localizedName,
+                  valueStyle: const TextStyle(fontWeight: FontWeight.w500),
+                ),
+                _vSized,
+                RowItemV(
+                  title: '${LocaleKeys.cost.tr()}:',
+                  value: booking.bookingSum.toStringAsFixed(2),
+                  valueStyle: const TextStyle(fontWeight: FontWeight.w500),
+                ),
+              ],
             ),
-            const Divider(),
-            RowItemV(
-              title: '${LocaleKeys.event_date.tr()}:',
-              value: DateFormatters.toDateTime(
-                booking.eventDate,
-                pattern: DateFormatters.dMMMYHmsSpacedTemplate,
-              ),
-            ),
-            _vSized,
-            RowItemV(
-              title: '${LocaleKeys.event_status.tr()}:',
-              value: booking.eventStatus.localizedName,
-              valueStyle: TextStyle(
-                color: booking.eventStatus.getColor(context),
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            _vSized,
-            RowItemV(
-              title: '${LocaleKeys.payment_date.tr()}:',
-              value: DateFormatters.toDateTime(
-                booking.created,
-                pattern: DateFormatters.dMMMYHmsSpacedTemplate,
-              ),
-            ),
-            _vSized,
-            RowItemV(
-              title: '${LocaleKeys.payment_status.tr()}:',
-              value: booking.bookingStatus.localizedName,
-              valueStyle: TextStyle(
-                color: booking.bookingStatus.getColor(context),
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            _vSized,
-            RowItemV(
-              title: '${LocaleKeys.payment_method.tr()}:',
-              value: booking.paymentType.localizedName,
-              valueStyle: const TextStyle(fontWeight: FontWeight.w500),
-            ),
-            _vSized,
-            RowItemV(
-              title: '${LocaleKeys.cost.tr()}:',
-              value: booking.bookingSum.toStringAsFixed(2),
-              valueStyle: const TextStyle(fontWeight: FontWeight.w500),
-            ),
-          ],
+          ),
         ),
       ),
     );

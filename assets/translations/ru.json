@@ -88,6 +88,7 @@
   "request_access_to_camera_permission_description": "Для сканирования QR кода требуется доступ к камере мобильного устройства",
   "request_access_to_camera_permission_title": "Нужен доступ к вашей камере",
   "scan_qr_code": "Просканируйте QR-code",
+  "qr_code_missing": "QR-code отсутствует",
   "balcony": "Балкон",
   "parterre": "Партер",
   "scene": "Сцена",

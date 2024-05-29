@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:eticket/common/common.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
 import 'package:eticket/presentation/screens/main/screens/history/booking_history/bloc/bloc.dart';
 import 'package:eticket/presentation/screens/main/screens/history/booking_history/widgets/widgets.dart';
@@ -98,6 +99,8 @@ class _BookingHistoryContentV extends HookWidget {
                         return BookingHistoryItemV(
                           key: ValueKey(_.bookings[i].entity.id),
                           booking: _.bookings[i].entity,
+                          allowTap: _.bookings[i].entity.bookingStatus ==
+                              BookingStatus.active,
                           onTapped: () =>
                               context.navigateTo(BookingTicketsRoute(
                             booking: _.bookings[i],
@@ -110,6 +113,8 @@ class _BookingHistoryContentV extends HookWidget {
                     success: (_) => BookingHistoryItemV(
                       key: ValueKey(_.bookings[i].entity.id),
                       booking: _.bookings[i].entity,
+                      allowTap: _.bookings[i].entity.bookingStatus ==
+                          BookingStatus.active,
                       onTapped: () => context.navigateTo(BookingTicketsRoute(
                         booking: _.bookings[i],
                       )),
@@ -119,6 +124,8 @@ class _BookingHistoryContentV extends HookWidget {
                         return BookingHistoryItemV(
                           key: ValueKey(_.bookings[i].entity.id),
                           booking: _.bookings[i].entity,
+                          allowTap: _.bookings[i].entity.bookingStatus ==
+                              BookingStatus.active,
                           onTapped: () =>
                               context.navigateTo(BookingTicketsRoute(
                             booking: _.bookings[i],

@@ -22,12 +22,6 @@ class BookingHistoryScreen extends StatelessWidget {
         ),
       ],
       child: AppScaffold(
-        isLoadingFunc: (context) => context.select<BookingHistoryCubit, bool>(
-          (c) => c.state.maybeMap(
-            orElse: () => false,
-            loading: (_) => true,
-          ),
-        ),
         title: LocaleKeys.history.tr(),
         body: const BookingHistoryV(),
       ),

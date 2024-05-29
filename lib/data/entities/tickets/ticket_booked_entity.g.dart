@@ -15,7 +15,7 @@ _$TicketBookedEntityImpl _$$TicketBookedEntityImplFromJson(
       ticketStatus: $enumDecode(_$TicketStatusEnumMap, json['ticketStatus'],
           unknownValue: TicketStatus.unknown),
       price: (json['price'] as num).toDouble(),
-      qrCode: json['qrCode'] as String,
+      qrCode: json['qrCode'] as String?,
       type: json['type'] as int,
       ticketType: TicketKeyValueEntity.fromJson(
           json['ticketType'] as Map<String, dynamic>),
@@ -24,18 +24,27 @@ _$TicketBookedEntityImpl _$$TicketBookedEntityImplFromJson(
     );
 
 Map<String, dynamic> _$$TicketBookedEntityImplToJson(
-        _$TicketBookedEntityImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'rowNumber': instance.rowNumber,
-      'placeNumber': instance.placeNumber,
-      'ticketStatus': _$TicketStatusEnumMap[instance.ticketStatus]!,
-      'price': instance.price,
-      'qrCode': instance.qrCode,
-      'type': instance.type,
-      'ticketType': instance.ticketType.toJson(),
-      'seatingType': _$TicketSeatingTypeEnumMap[instance.seatingType]!,
-    };
+    _$TicketBookedEntityImpl instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'rowNumber': instance.rowNumber,
+    'placeNumber': instance.placeNumber,
+    'ticketStatus': _$TicketStatusEnumMap[instance.ticketStatus]!,
+    'price': instance.price,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('qrCode', instance.qrCode);
+  val['type'] = instance.type;
+  val['ticketType'] = instance.ticketType.toJson();
+  val['seatingType'] = _$TicketSeatingTypeEnumMap[instance.seatingType]!;
+  return val;
+}
 
 const _$TicketStatusEnumMap = {
   TicketStatus.free: 0,

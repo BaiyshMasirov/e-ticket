@@ -26,7 +26,7 @@ mixin _$TicketBookedDto {
   @JsonKey(name: 'status', unknownEnumValue: TicketStatus.unknown)
   TicketStatus get ticketStatus => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
-  String get qrCode => throw _privateConstructorUsedError;
+  String? get qrCode => throw _privateConstructorUsedError;
 
   /// type == [TicketType]
   int get type => throw _privateConstructorUsedError;
@@ -55,7 +55,7 @@ abstract class $TicketBookedDtoCopyWith<$Res> {
       @JsonKey(name: 'status', unknownEnumValue: TicketStatus.unknown)
       TicketStatus ticketStatus,
       double price,
-      String qrCode,
+      String? qrCode,
       int type,
       KeyValueMapDto ticketType,
       @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
@@ -82,7 +82,7 @@ class _$TicketBookedDtoCopyWithImpl<$Res, $Val extends TicketBookedDto>
     Object? placeNumber = null,
     Object? ticketStatus = null,
     Object? price = null,
-    Object? qrCode = null,
+    Object? qrCode = freezed,
     Object? type = null,
     Object? ticketType = null,
     Object? seatingType = null,
@@ -108,10 +108,10 @@ class _$TicketBookedDtoCopyWithImpl<$Res, $Val extends TicketBookedDto>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
-      qrCode: null == qrCode
+      qrCode: freezed == qrCode
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -151,7 +151,7 @@ abstract class _$$TicketBookedDtoImplCopyWith<$Res>
       @JsonKey(name: 'status', unknownEnumValue: TicketStatus.unknown)
       TicketStatus ticketStatus,
       double price,
-      String qrCode,
+      String? qrCode,
       int type,
       KeyValueMapDto ticketType,
       @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
@@ -177,7 +177,7 @@ class __$$TicketBookedDtoImplCopyWithImpl<$Res>
     Object? placeNumber = null,
     Object? ticketStatus = null,
     Object? price = null,
-    Object? qrCode = null,
+    Object? qrCode = freezed,
     Object? type = null,
     Object? ticketType = null,
     Object? seatingType = null,
@@ -203,10 +203,10 @@ class __$$TicketBookedDtoImplCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
-      qrCode: null == qrCode
+      qrCode: freezed == qrCode
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -255,7 +255,7 @@ class _$TicketBookedDtoImpl extends _TicketBookedDto {
   @override
   final double price;
   @override
-  final String qrCode;
+  final String? qrCode;
 
   /// type == [TicketType]
   @override
@@ -322,7 +322,7 @@ abstract class _TicketBookedDto extends TicketBookedDto {
       @JsonKey(name: 'status', unknownEnumValue: TicketStatus.unknown)
       required final TicketStatus ticketStatus,
       required final double price,
-      required final String qrCode,
+      required final String? qrCode,
       required final int type,
       required final KeyValueMapDto ticketType,
       @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
@@ -344,7 +344,7 @@ abstract class _TicketBookedDto extends TicketBookedDto {
   @override
   double get price;
   @override
-  String get qrCode;
+  String? get qrCode;
   @override
 
   /// type == [TicketType]

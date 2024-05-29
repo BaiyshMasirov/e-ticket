@@ -26,7 +26,7 @@ mixin _$TicketBookedEntity {
   @JsonKey(unknownEnumValue: TicketStatus.unknown)
   TicketStatus get ticketStatus => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
-  String get qrCode => throw _privateConstructorUsedError;
+  String? get qrCode => throw _privateConstructorUsedError;
 
   /// type == [TicketType]
   int get type => throw _privateConstructorUsedError;
@@ -55,7 +55,7 @@ abstract class $TicketBookedEntityCopyWith<$Res> {
       @JsonKey(unknownEnumValue: TicketStatus.unknown)
       TicketStatus ticketStatus,
       double price,
-      String qrCode,
+      String? qrCode,
       int type,
       TicketKeyValueEntity ticketType,
       @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
@@ -82,7 +82,7 @@ class _$TicketBookedEntityCopyWithImpl<$Res, $Val extends TicketBookedEntity>
     Object? placeNumber = null,
     Object? ticketStatus = null,
     Object? price = null,
-    Object? qrCode = null,
+    Object? qrCode = freezed,
     Object? type = null,
     Object? ticketType = null,
     Object? seatingType = null,
@@ -108,10 +108,10 @@ class _$TicketBookedEntityCopyWithImpl<$Res, $Val extends TicketBookedEntity>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
-      qrCode: null == qrCode
+      qrCode: freezed == qrCode
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -151,7 +151,7 @@ abstract class _$$TicketBookedEntityImplCopyWith<$Res>
       @JsonKey(unknownEnumValue: TicketStatus.unknown)
       TicketStatus ticketStatus,
       double price,
-      String qrCode,
+      String? qrCode,
       int type,
       TicketKeyValueEntity ticketType,
       @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
@@ -177,7 +177,7 @@ class __$$TicketBookedEntityImplCopyWithImpl<$Res>
     Object? placeNumber = null,
     Object? ticketStatus = null,
     Object? price = null,
-    Object? qrCode = null,
+    Object? qrCode = freezed,
     Object? type = null,
     Object? ticketType = null,
     Object? seatingType = null,
@@ -203,10 +203,10 @@ class __$$TicketBookedEntityImplCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
-      qrCode: null == qrCode
+      qrCode: freezed == qrCode
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -255,7 +255,7 @@ class _$TicketBookedEntityImpl extends _TicketBookedEntity {
   @override
   final double price;
   @override
-  final String qrCode;
+  final String? qrCode;
 
   /// type == [TicketType]
   @override
@@ -322,7 +322,7 @@ abstract class _TicketBookedEntity extends TicketBookedEntity {
       @JsonKey(unknownEnumValue: TicketStatus.unknown)
       required final TicketStatus ticketStatus,
       required final double price,
-      required final String qrCode,
+      required final String? qrCode,
       required final int type,
       required final TicketKeyValueEntity ticketType,
       @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
@@ -344,7 +344,7 @@ abstract class _TicketBookedEntity extends TicketBookedEntity {
   @override
   double get price;
   @override
-  String get qrCode;
+  String? get qrCode;
   @override
 
   /// type == [TicketType]

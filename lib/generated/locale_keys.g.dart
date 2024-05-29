@@ -89,6 +89,7 @@ abstract class  LocaleKeys {
   static const request_access_to_camera_permission_description = 'request_access_to_camera_permission_description';
   static const request_access_to_camera_permission_title = 'request_access_to_camera_permission_title';
   static const scan_qr_code = 'scan_qr_code';
+  static const qr_code_missing = 'qr_code_missing';
   static const balcony = 'balcony';
   static const parterre = 'parterre';
   static const scene = 'scene';

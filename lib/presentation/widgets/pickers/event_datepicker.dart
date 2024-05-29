@@ -74,8 +74,8 @@ class EventDatepickerDialog extends StatelessWidget {
                       quarterTurns: -1,
                       child: ListWheelScrollView(
                         physics: const FixedExtentScrollPhysics(),
-                        itemExtent: 90.w,
-                        diameterRatio: 2,
+                        itemExtent: 100.w,
+                        diameterRatio: 1.2,
                         children: eventDateTimes
                             .map(
                               (eventDate) => RotatedBox(

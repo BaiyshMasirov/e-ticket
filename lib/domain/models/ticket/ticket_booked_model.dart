@@ -16,7 +16,7 @@ class TicketBookedModel with _$TicketBookedModel {
     required int placeNumber,
     required TicketStatus ticketStatus,
     required double price,
-    required String qrCode,
+    required String? qrCode,
 
     /// type == [TicketType]
     required int type,
