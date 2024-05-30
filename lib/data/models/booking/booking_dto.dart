@@ -1,5 +1,4 @@
 import 'package:eticket/common/common.dart';
-import 'package:eticket/common/enums/booking_status.dart';
 import 'package:eticket/data/data.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -28,9 +27,30 @@ class BookingDto with _$BookingDto {
     @JsonKey(unknownEnumValue: EventSeatingType.unknown)
     required EventSeatingType seatingType,
     @Default([]) List<TicketBookedDto> tickets,
+    @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable,
+    )
+    required double? yCordinate,
+    @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable,
+    )
+    required double? xCordinate,
     String? eventName,
     String? eventImage,
   }) = _BookingDto;
+
+  LatLngDto? get latLng {
+    if (xCordinate == null || yCordinate == null) {
+      return null;
+    }
+
+    return LatLngDto(
+      lat: xCordinate!,
+      lng: yCordinate!,
+    );
+  }
 
   factory BookingDto.fromJson(Map<String, dynamic> json) =>
       _$BookingDtoFromJson(json);

@@ -1,4 +1,6 @@
 import 'package:eticket/common/common.dart';
+import 'package:eticket/data/data.dart';
+import 'package:eticket/domain/domain.dart';
 import 'package:eticket/utils/utils.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -29,11 +31,32 @@ class EventDto with _$EventDto {
     @JsonKey(unknownEnumValue: EventSeatingType.unknown)
     required EventSeatingType seatingType,
     @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable,
+    )
+    required double? yCordinate,
+    @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable,
+    )
+    required double? xCordinate,
+    @JsonKey(
       toJson: DateTimeUTCSerializer.toListJson,
       fromJson: DateTimeUTCSerializer.fromListJson,
     )
     required List<DateTime> dateRange,
   }) = _EventDto;
+
+  LatLngDto? get latLng {
+    if (xCordinate == null || yCordinate == null) {
+      return null;
+    }
+
+    return LatLngDto(
+      lat: xCordinate!,
+      lng: yCordinate!,
+    );
+  }
 
   bool get canPurchaseTickets => status == EventStatus.active;
 

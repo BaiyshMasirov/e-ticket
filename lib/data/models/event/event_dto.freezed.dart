@@ -40,6 +40,14 @@ mixin _$EventDto {
   @JsonKey(unknownEnumValue: EventSeatingType.unknown)
   EventSeatingType get seatingType => throw _privateConstructorUsedError;
   @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable)
+  double? get yCordinate => throw _privateConstructorUsedError;
+  @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable)
+  double? get xCordinate => throw _privateConstructorUsedError;
+  @JsonKey(
       toJson: DateTimeUTCSerializer.toListJson,
       fromJson: DateTimeUTCSerializer.fromListJson)
   List<DateTime> get dateRange => throw _privateConstructorUsedError;
@@ -75,6 +83,14 @@ abstract class $EventDtoCopyWith<$Res> {
       @JsonKey(unknownEnumValue: EventSeatingType.unknown)
       EventSeatingType seatingType,
       @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      double? yCordinate,
+      @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      double? xCordinate,
+      @JsonKey(
           toJson: DateTimeUTCSerializer.toListJson,
           fromJson: DateTimeUTCSerializer.fromListJson)
       List<DateTime> dateRange});
@@ -109,6 +125,8 @@ class _$EventDtoCopyWithImpl<$Res, $Val extends EventDto>
     Object? video = freezed,
     Object? image = freezed,
     Object? seatingType = null,
+    Object? yCordinate = freezed,
+    Object? xCordinate = freezed,
     Object? dateRange = null,
   }) {
     return _then(_value.copyWith(
@@ -176,6 +194,14 @@ class _$EventDtoCopyWithImpl<$Res, $Val extends EventDto>
           ? _value.seatingType
           : seatingType // ignore: cast_nullable_to_non_nullable
               as EventSeatingType,
+      yCordinate: freezed == yCordinate
+          ? _value.yCordinate
+          : yCordinate // ignore: cast_nullable_to_non_nullable
+              as double?,
+      xCordinate: freezed == xCordinate
+          ? _value.xCordinate
+          : xCordinate // ignore: cast_nullable_to_non_nullable
+              as double?,
       dateRange: null == dateRange
           ? _value.dateRange
           : dateRange // ignore: cast_nullable_to_non_nullable
@@ -212,6 +238,14 @@ abstract class _$$EventDtoImplCopyWith<$Res>
       @JsonKey(unknownEnumValue: EventSeatingType.unknown)
       EventSeatingType seatingType,
       @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      double? yCordinate,
+      @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      double? xCordinate,
+      @JsonKey(
           toJson: DateTimeUTCSerializer.toListJson,
           fromJson: DateTimeUTCSerializer.fromListJson)
       List<DateTime> dateRange});
@@ -244,6 +278,8 @@ class __$$EventDtoImplCopyWithImpl<$Res>
     Object? video = freezed,
     Object? image = freezed,
     Object? seatingType = null,
+    Object? yCordinate = freezed,
+    Object? xCordinate = freezed,
     Object? dateRange = null,
   }) {
     return _then(_$EventDtoImpl(
@@ -311,6 +347,14 @@ class __$$EventDtoImplCopyWithImpl<$Res>
           ? _value.seatingType
           : seatingType // ignore: cast_nullable_to_non_nullable
               as EventSeatingType,
+      yCordinate: freezed == yCordinate
+          ? _value.yCordinate
+          : yCordinate // ignore: cast_nullable_to_non_nullable
+              as double?,
+      xCordinate: freezed == xCordinate
+          ? _value.xCordinate
+          : xCordinate // ignore: cast_nullable_to_non_nullable
+              as double?,
       dateRange: null == dateRange
           ? _value._dateRange
           : dateRange // ignore: cast_nullable_to_non_nullable
@@ -341,6 +385,14 @@ class _$EventDtoImpl extends _EventDto {
       required this.image,
       @JsonKey(unknownEnumValue: EventSeatingType.unknown)
       required this.seatingType,
+      @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      required this.yCordinate,
+      @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      required this.xCordinate,
       @JsonKey(
           toJson: DateTimeUTCSerializer.toListJson,
           fromJson: DateTimeUTCSerializer.fromListJson)
@@ -386,6 +438,16 @@ class _$EventDtoImpl extends _EventDto {
   @override
   @JsonKey(unknownEnumValue: EventSeatingType.unknown)
   final EventSeatingType seatingType;
+  @override
+  @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable)
+  final double? yCordinate;
+  @override
+  @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable)
+  final double? xCordinate;
   final List<DateTime> _dateRange;
   @override
   @JsonKey(
@@ -399,7 +461,7 @@ class _$EventDtoImpl extends _EventDto {
 
   @override
   String toString() {
-    return 'EventDto(id: $id, name: $name, description: $description, status: $status, ageLimit: $ageLimit, minPrice: $minPrice, sold: $sold, count: $count, locationName: $locationName, locationId: $locationId, locationType: $locationType, poster: $poster, type: $type, video: $video, image: $image, seatingType: $seatingType, dateRange: $dateRange)';
+    return 'EventDto(id: $id, name: $name, description: $description, status: $status, ageLimit: $ageLimit, minPrice: $minPrice, sold: $sold, count: $count, locationName: $locationName, locationId: $locationId, locationType: $locationType, poster: $poster, type: $type, video: $video, image: $image, seatingType: $seatingType, yCordinate: $yCordinate, xCordinate: $xCordinate, dateRange: $dateRange)';
   }
 
   @override
@@ -430,31 +492,38 @@ class _$EventDtoImpl extends _EventDto {
             (identical(other.image, image) || other.image == image) &&
             (identical(other.seatingType, seatingType) ||
                 other.seatingType == seatingType) &&
+            (identical(other.yCordinate, yCordinate) ||
+                other.yCordinate == yCordinate) &&
+            (identical(other.xCordinate, xCordinate) ||
+                other.xCordinate == xCordinate) &&
             const DeepCollectionEquality()
                 .equals(other._dateRange, _dateRange));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      description,
-      status,
-      ageLimit,
-      minPrice,
-      sold,
-      count,
-      locationName,
-      locationId,
-      locationType,
-      poster,
-      type,
-      video,
-      image,
-      seatingType,
-      const DeepCollectionEquality().hash(_dateRange));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        description,
+        status,
+        ageLimit,
+        minPrice,
+        sold,
+        count,
+        locationName,
+        locationId,
+        locationType,
+        poster,
+        type,
+        video,
+        image,
+        seatingType,
+        yCordinate,
+        xCordinate,
+        const DeepCollectionEquality().hash(_dateRange)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -491,6 +560,14 @@ abstract class _EventDto extends EventDto {
       required final String? image,
       @JsonKey(unknownEnumValue: EventSeatingType.unknown)
       required final EventSeatingType seatingType,
+      @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      required final double? yCordinate,
+      @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      required final double? xCordinate,
       @JsonKey(
           toJson: DateTimeUTCSerializer.toListJson,
           fromJson: DateTimeUTCSerializer.fromListJson)
@@ -535,6 +612,16 @@ abstract class _EventDto extends EventDto {
   @override
   @JsonKey(unknownEnumValue: EventSeatingType.unknown)
   EventSeatingType get seatingType;
+  @override
+  @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable)
+  double? get yCordinate;
+  @override
+  @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable)
+  double? get xCordinate;
   @override
   @JsonKey(
       toJson: DateTimeUTCSerializer.toListJson,

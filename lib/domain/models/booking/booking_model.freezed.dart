@@ -28,6 +28,7 @@ mixin _$BookingModel {
   List<TicketBookedModel> get tickets => throw _privateConstructorUsedError;
   PaymentType get paymentType => throw _privateConstructorUsedError;
   EventSeatingType get seatingType => throw _privateConstructorUsedError;
+  LatLngModel? get latLng => throw _privateConstructorUsedError;
   String? get eventName => throw _privateConstructorUsedError;
   String? get eventImage => throw _privateConstructorUsedError;
 
@@ -55,8 +56,11 @@ abstract class $BookingModelCopyWith<$Res> {
       List<TicketBookedModel> tickets,
       PaymentType paymentType,
       EventSeatingType seatingType,
+      LatLngModel? latLng,
       String? eventName,
       String? eventImage});
+
+  $LatLngModelCopyWith<$Res>? get latLng;
 }
 
 /// @nodoc
@@ -84,6 +88,7 @@ class _$BookingModelCopyWithImpl<$Res, $Val extends BookingModel>
     Object? tickets = null,
     Object? paymentType = null,
     Object? seatingType = null,
+    Object? latLng = freezed,
     Object? eventName = freezed,
     Object? eventImage = freezed,
   }) {
@@ -136,6 +141,10 @@ class _$BookingModelCopyWithImpl<$Res, $Val extends BookingModel>
           ? _value.seatingType
           : seatingType // ignore: cast_nullable_to_non_nullable
               as EventSeatingType,
+      latLng: freezed == latLng
+          ? _value.latLng
+          : latLng // ignore: cast_nullable_to_non_nullable
+              as LatLngModel?,
       eventName: freezed == eventName
           ? _value.eventName
           : eventName // ignore: cast_nullable_to_non_nullable
@@ -145,6 +154,18 @@ class _$BookingModelCopyWithImpl<$Res, $Val extends BookingModel>
           : eventImage // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LatLngModelCopyWith<$Res>? get latLng {
+    if (_value.latLng == null) {
+      return null;
+    }
+
+    return $LatLngModelCopyWith<$Res>(_value.latLng!, (value) {
+      return _then(_value.copyWith(latLng: value) as $Val);
+    });
   }
 }
 
@@ -169,8 +190,12 @@ abstract class _$$BookingModelImplCopyWith<$Res>
       List<TicketBookedModel> tickets,
       PaymentType paymentType,
       EventSeatingType seatingType,
+      LatLngModel? latLng,
       String? eventName,
       String? eventImage});
+
+  @override
+  $LatLngModelCopyWith<$Res>? get latLng;
 }
 
 /// @nodoc
@@ -196,6 +221,7 @@ class __$$BookingModelImplCopyWithImpl<$Res>
     Object? tickets = null,
     Object? paymentType = null,
     Object? seatingType = null,
+    Object? latLng = freezed,
     Object? eventName = freezed,
     Object? eventImage = freezed,
   }) {
@@ -248,6 +274,10 @@ class __$$BookingModelImplCopyWithImpl<$Res>
           ? _value.seatingType
           : seatingType // ignore: cast_nullable_to_non_nullable
               as EventSeatingType,
+      latLng: freezed == latLng
+          ? _value.latLng
+          : latLng // ignore: cast_nullable_to_non_nullable
+              as LatLngModel?,
       eventName: freezed == eventName
           ? _value.eventName
           : eventName // ignore: cast_nullable_to_non_nullable
@@ -276,6 +306,7 @@ class _$BookingModelImpl extends _BookingModel {
       required final List<TicketBookedModel> tickets,
       required this.paymentType,
       required this.seatingType,
+      required this.latLng,
       this.eventName,
       this.eventImage})
       : _tickets = tickets,
@@ -312,13 +343,15 @@ class _$BookingModelImpl extends _BookingModel {
   @override
   final EventSeatingType seatingType;
   @override
+  final LatLngModel? latLng;
+  @override
   final String? eventName;
   @override
   final String? eventImage;
 
   @override
   String toString() {
-    return 'BookingModel(id: $id, eventDate: $eventDate, created: $created, bookingStatus: $bookingStatus, eventStatus: $eventStatus, eventId: $eventId, bookingSum: $bookingSum, locationType: $locationType, locationName: $locationName, tickets: $tickets, paymentType: $paymentType, seatingType: $seatingType, eventName: $eventName, eventImage: $eventImage)';
+    return 'BookingModel(id: $id, eventDate: $eventDate, created: $created, bookingStatus: $bookingStatus, eventStatus: $eventStatus, eventId: $eventId, bookingSum: $bookingSum, locationType: $locationType, locationName: $locationName, tickets: $tickets, paymentType: $paymentType, seatingType: $seatingType, latLng: $latLng, eventName: $eventName, eventImage: $eventImage)';
   }
 
   @override
@@ -346,6 +379,7 @@ class _$BookingModelImpl extends _BookingModel {
                 other.paymentType == paymentType) &&
             (identical(other.seatingType, seatingType) ||
                 other.seatingType == seatingType) &&
+            (identical(other.latLng, latLng) || other.latLng == latLng) &&
             (identical(other.eventName, eventName) ||
                 other.eventName == eventName) &&
             (identical(other.eventImage, eventImage) ||
@@ -367,6 +401,7 @@ class _$BookingModelImpl extends _BookingModel {
       const DeepCollectionEquality().hash(_tickets),
       paymentType,
       seatingType,
+      latLng,
       eventName,
       eventImage);
 
@@ -391,6 +426,7 @@ abstract class _BookingModel extends BookingModel {
       required final List<TicketBookedModel> tickets,
       required final PaymentType paymentType,
       required final EventSeatingType seatingType,
+      required final LatLngModel? latLng,
       final String? eventName,
       final String? eventImage}) = _$BookingModelImpl;
   const _BookingModel._() : super._();
@@ -419,6 +455,8 @@ abstract class _BookingModel extends BookingModel {
   PaymentType get paymentType;
   @override
   EventSeatingType get seatingType;
+  @override
+  LatLngModel? get latLng;
   @override
   String? get eventName;
   @override

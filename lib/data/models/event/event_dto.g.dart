@@ -27,6 +27,8 @@ _$EventDtoImpl _$$EventDtoImplFromJson(Map<String, dynamic> json) =>
       image: json['image'] as String?,
       seatingType: $enumDecode(_$EventSeatingTypeEnumMap, json['seatingType'],
           unknownValue: EventSeatingType.unknown),
+      yCordinate: DoubleSerializers.fromJsonZeroNullable(json['yCordinate']),
+      xCordinate: DoubleSerializers.fromJsonZeroNullable(json['xCordinate']),
       dateRange: DateTimeUTCSerializer.fromListJson(json['dateRange'] as List),
     );
 
@@ -56,6 +58,10 @@ Map<String, dynamic> _$$EventDtoImplToJson(_$EventDtoImpl instance) {
   writeNotNull('video', instance.video);
   writeNotNull('image', instance.image);
   val['seatingType'] = _$EventSeatingTypeEnumMap[instance.seatingType]!;
+  writeNotNull(
+      'yCordinate', DoubleSerializers.toJsonZeroNullable(instance.yCordinate));
+  writeNotNull(
+      'xCordinate', DoubleSerializers.toJsonZeroNullable(instance.xCordinate));
   val['dateRange'] = DateTimeUTCSerializer.toListJson(instance.dateRange);
   return val;
 }

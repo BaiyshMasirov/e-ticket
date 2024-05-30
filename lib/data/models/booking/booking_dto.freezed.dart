@@ -39,6 +39,14 @@ mixin _$BookingDto {
   @JsonKey(unknownEnumValue: EventSeatingType.unknown)
   EventSeatingType get seatingType => throw _privateConstructorUsedError;
   List<TicketBookedDto> get tickets => throw _privateConstructorUsedError;
+  @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable)
+  double? get yCordinate => throw _privateConstructorUsedError;
+  @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable)
+  double? get xCordinate => throw _privateConstructorUsedError;
   String? get eventName => throw _privateConstructorUsedError;
   String? get eventImage => throw _privateConstructorUsedError;
 
@@ -70,6 +78,14 @@ abstract class $BookingDtoCopyWith<$Res> {
       @JsonKey(unknownEnumValue: EventSeatingType.unknown)
       EventSeatingType seatingType,
       List<TicketBookedDto> tickets,
+      @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      double? yCordinate,
+      @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      double? xCordinate,
       String? eventName,
       String? eventImage});
 }
@@ -99,6 +115,8 @@ class _$BookingDtoCopyWithImpl<$Res, $Val extends BookingDto>
     Object? paymentType = null,
     Object? seatingType = null,
     Object? tickets = null,
+    Object? yCordinate = freezed,
+    Object? xCordinate = freezed,
     Object? eventName = freezed,
     Object? eventImage = freezed,
   }) {
@@ -151,6 +169,14 @@ class _$BookingDtoCopyWithImpl<$Res, $Val extends BookingDto>
           ? _value.tickets
           : tickets // ignore: cast_nullable_to_non_nullable
               as List<TicketBookedDto>,
+      yCordinate: freezed == yCordinate
+          ? _value.yCordinate
+          : yCordinate // ignore: cast_nullable_to_non_nullable
+              as double?,
+      xCordinate: freezed == xCordinate
+          ? _value.xCordinate
+          : xCordinate // ignore: cast_nullable_to_non_nullable
+              as double?,
       eventName: freezed == eventName
           ? _value.eventName
           : eventName // ignore: cast_nullable_to_non_nullable
@@ -187,6 +213,14 @@ abstract class _$$BookingDtoImplCopyWith<$Res>
       @JsonKey(unknownEnumValue: EventSeatingType.unknown)
       EventSeatingType seatingType,
       List<TicketBookedDto> tickets,
+      @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      double? yCordinate,
+      @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      double? xCordinate,
       String? eventName,
       String? eventImage});
 }
@@ -214,6 +248,8 @@ class __$$BookingDtoImplCopyWithImpl<$Res>
     Object? paymentType = null,
     Object? seatingType = null,
     Object? tickets = null,
+    Object? yCordinate = freezed,
+    Object? xCordinate = freezed,
     Object? eventName = freezed,
     Object? eventImage = freezed,
   }) {
@@ -266,6 +302,14 @@ class __$$BookingDtoImplCopyWithImpl<$Res>
           ? _value._tickets
           : tickets // ignore: cast_nullable_to_non_nullable
               as List<TicketBookedDto>,
+      yCordinate: freezed == yCordinate
+          ? _value.yCordinate
+          : yCordinate // ignore: cast_nullable_to_non_nullable
+              as double?,
+      xCordinate: freezed == xCordinate
+          ? _value.xCordinate
+          : xCordinate // ignore: cast_nullable_to_non_nullable
+              as double?,
       eventName: freezed == eventName
           ? _value.eventName
           : eventName // ignore: cast_nullable_to_non_nullable
@@ -297,6 +341,14 @@ class _$BookingDtoImpl extends _BookingDto {
       @JsonKey(unknownEnumValue: EventSeatingType.unknown)
       required this.seatingType,
       final List<TicketBookedDto> tickets = const [],
+      @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      required this.yCordinate,
+      @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      required this.xCordinate,
       this.eventName,
       this.eventImage})
       : _tickets = tickets,
@@ -344,13 +396,23 @@ class _$BookingDtoImpl extends _BookingDto {
   }
 
   @override
+  @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable)
+  final double? yCordinate;
+  @override
+  @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable)
+  final double? xCordinate;
+  @override
   final String? eventName;
   @override
   final String? eventImage;
 
   @override
   String toString() {
-    return 'BookingDto(id: $id, created: $created, eventDate: $eventDate, bookingStatus: $bookingStatus, eventStatus: $eventStatus, eventId: $eventId, bookingSum: $bookingSum, locationType: $locationType, locationName: $locationName, paymentType: $paymentType, seatingType: $seatingType, tickets: $tickets, eventName: $eventName, eventImage: $eventImage)';
+    return 'BookingDto(id: $id, created: $created, eventDate: $eventDate, bookingStatus: $bookingStatus, eventStatus: $eventStatus, eventId: $eventId, bookingSum: $bookingSum, locationType: $locationType, locationName: $locationName, paymentType: $paymentType, seatingType: $seatingType, tickets: $tickets, yCordinate: $yCordinate, xCordinate: $xCordinate, eventName: $eventName, eventImage: $eventImage)';
   }
 
   @override
@@ -378,6 +440,10 @@ class _$BookingDtoImpl extends _BookingDto {
             (identical(other.seatingType, seatingType) ||
                 other.seatingType == seatingType) &&
             const DeepCollectionEquality().equals(other._tickets, _tickets) &&
+            (identical(other.yCordinate, yCordinate) ||
+                other.yCordinate == yCordinate) &&
+            (identical(other.xCordinate, xCordinate) ||
+                other.xCordinate == xCordinate) &&
             (identical(other.eventName, eventName) ||
                 other.eventName == eventName) &&
             (identical(other.eventImage, eventImage) ||
@@ -400,6 +466,8 @@ class _$BookingDtoImpl extends _BookingDto {
       paymentType,
       seatingType,
       const DeepCollectionEquality().hash(_tickets),
+      yCordinate,
+      xCordinate,
       eventName,
       eventImage);
 
@@ -436,6 +504,14 @@ abstract class _BookingDto extends BookingDto {
       @JsonKey(unknownEnumValue: EventSeatingType.unknown)
       required final EventSeatingType seatingType,
       final List<TicketBookedDto> tickets,
+      @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      required final double? yCordinate,
+      @JsonKey(
+          fromJson: DoubleSerializers.fromJsonZeroNullable,
+          toJson: DoubleSerializers.toJsonZeroNullable)
+      required final double? xCordinate,
       final String? eventName,
       final String? eventImage}) = _$BookingDtoImpl;
   const _BookingDto._() : super._();
@@ -474,6 +550,16 @@ abstract class _BookingDto extends BookingDto {
   EventSeatingType get seatingType;
   @override
   List<TicketBookedDto> get tickets;
+  @override
+  @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable)
+  double? get yCordinate;
+  @override
+  @JsonKey(
+      fromJson: DoubleSerializers.fromJsonZeroNullable,
+      toJson: DoubleSerializers.toJsonZeroNullable)
+  double? get xCordinate;
   @override
   String? get eventName;
   @override

@@ -5,3 +5,4 @@ export 'ticket/ticket.dart';
 export 'dictionaries/dictionaries.dart';
 export 'payment/payment.dart';
 export 'response_result.dart';
+export 'common/common.dart';

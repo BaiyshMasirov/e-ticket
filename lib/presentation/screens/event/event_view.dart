@@ -3,9 +3,12 @@ import 'dart:ui';
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
+import 'package:eticket/domain/domain.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
+import 'package:eticket/utils/redirects/redirects.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:eticket/data/data.dart';
@@ -81,6 +84,45 @@ class EventView extends StatelessWidget {
                         ),
                         child: AppBackButton(
                           onTapped: () => context.popRoute(),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: context.screenSize.statusBarHeight + 8.h,
+                  right: 8.w,
+                  child: Visibility(
+                    visible: event.latLng != null,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(50.r),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(
+                          sigmaX: 2,
+                          sigmaY: 2,
+                          tileMode: TileMode.mirror,
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: context.colorScheme.outline.withOpacity(0.8),
+                            borderRadius: BorderRadius.circular(50.r),
+                          ),
+                          child: IconButton(
+                            icon: Icon(
+                              Icons.pin_drop_rounded,
+                              color: context.appColors.green,
+                            ),
+                            onPressed: () {
+                              final latLng = event.latLng;
+
+                              if (latLng == null) return;
+
+                              MapRedirect.redirectTo(
+                                context: context,
+                                latLngModel: LatLngModel.fromDto(dto: latLng),
+                              );
+                            },
+                          ),
                         ),
                       ),
                     ),

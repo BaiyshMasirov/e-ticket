@@ -27,6 +27,9 @@ _$BookingEntityImpl _$$BookingEntityImplFromJson(Map<String, dynamic> json) =>
       tickets: (json['tickets'] as List<dynamic>)
           .map((e) => TicketBookedEntity.fromJson(e as Map<String, dynamic>))
           .toList(),
+      latLng: json['latLng'] == null
+          ? null
+          : LatLngEntity.fromJson(json['latLng'] as Map<String, dynamic>),
       eventName: json['eventName'] as String?,
       eventImage: json['eventImage'] as String?,
     );
@@ -53,6 +56,7 @@ Map<String, dynamic> _$$BookingEntityImplToJson(_$BookingEntityImpl instance) {
     }
   }
 
+  writeNotNull('latLng', instance.latLng?.toJson());
   writeNotNull('eventName', instance.eventName);
   writeNotNull('eventImage', instance.eventImage);
   return val;

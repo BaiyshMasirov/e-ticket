@@ -39,6 +39,7 @@ mixin _$BookingEntity {
   @JsonKey(unknownEnumValue: EventSeatingType.unknown)
   EventSeatingType get seatingType => throw _privateConstructorUsedError;
   List<TicketBookedEntity> get tickets => throw _privateConstructorUsedError;
+  LatLngEntity? get latLng => throw _privateConstructorUsedError;
   String? get eventName => throw _privateConstructorUsedError;
   String? get eventImage => throw _privateConstructorUsedError;
 
@@ -70,8 +71,11 @@ abstract class $BookingEntityCopyWith<$Res> {
       @JsonKey(unknownEnumValue: EventSeatingType.unknown)
       EventSeatingType seatingType,
       List<TicketBookedEntity> tickets,
+      LatLngEntity? latLng,
       String? eventName,
       String? eventImage});
+
+  $LatLngEntityCopyWith<$Res>? get latLng;
 }
 
 /// @nodoc
@@ -99,6 +103,7 @@ class _$BookingEntityCopyWithImpl<$Res, $Val extends BookingEntity>
     Object? paymentType = null,
     Object? seatingType = null,
     Object? tickets = null,
+    Object? latLng = freezed,
     Object? eventName = freezed,
     Object? eventImage = freezed,
   }) {
@@ -151,6 +156,10 @@ class _$BookingEntityCopyWithImpl<$Res, $Val extends BookingEntity>
           ? _value.tickets
           : tickets // ignore: cast_nullable_to_non_nullable
               as List<TicketBookedEntity>,
+      latLng: freezed == latLng
+          ? _value.latLng
+          : latLng // ignore: cast_nullable_to_non_nullable
+              as LatLngEntity?,
       eventName: freezed == eventName
           ? _value.eventName
           : eventName // ignore: cast_nullable_to_non_nullable
@@ -160,6 +169,18 @@ class _$BookingEntityCopyWithImpl<$Res, $Val extends BookingEntity>
           : eventImage // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LatLngEntityCopyWith<$Res>? get latLng {
+    if (_value.latLng == null) {
+      return null;
+    }
+
+    return $LatLngEntityCopyWith<$Res>(_value.latLng!, (value) {
+      return _then(_value.copyWith(latLng: value) as $Val);
+    });
   }
 }
 
@@ -187,8 +208,12 @@ abstract class _$$BookingEntityImplCopyWith<$Res>
       @JsonKey(unknownEnumValue: EventSeatingType.unknown)
       EventSeatingType seatingType,
       List<TicketBookedEntity> tickets,
+      LatLngEntity? latLng,
       String? eventName,
       String? eventImage});
+
+  @override
+  $LatLngEntityCopyWith<$Res>? get latLng;
 }
 
 /// @nodoc
@@ -214,6 +239,7 @@ class __$$BookingEntityImplCopyWithImpl<$Res>
     Object? paymentType = null,
     Object? seatingType = null,
     Object? tickets = null,
+    Object? latLng = freezed,
     Object? eventName = freezed,
     Object? eventImage = freezed,
   }) {
@@ -266,6 +292,10 @@ class __$$BookingEntityImplCopyWithImpl<$Res>
           ? _value._tickets
           : tickets // ignore: cast_nullable_to_non_nullable
               as List<TicketBookedEntity>,
+      latLng: freezed == latLng
+          ? _value.latLng
+          : latLng // ignore: cast_nullable_to_non_nullable
+              as LatLngEntity?,
       eventName: freezed == eventName
           ? _value.eventName
           : eventName // ignore: cast_nullable_to_non_nullable
@@ -297,6 +327,7 @@ class _$BookingEntityImpl extends _BookingEntity {
       @JsonKey(unknownEnumValue: EventSeatingType.unknown)
       required this.seatingType,
       required final List<TicketBookedEntity> tickets,
+      required this.latLng,
       this.eventName,
       this.eventImage})
       : _tickets = tickets,
@@ -343,13 +374,15 @@ class _$BookingEntityImpl extends _BookingEntity {
   }
 
   @override
+  final LatLngEntity? latLng;
+  @override
   final String? eventName;
   @override
   final String? eventImage;
 
   @override
   String toString() {
-    return 'BookingEntity(id: $id, eventDate: $eventDate, created: $created, bookingStatus: $bookingStatus, eventStatus: $eventStatus, eventId: $eventId, bookingSum: $bookingSum, locationType: $locationType, locationName: $locationName, paymentType: $paymentType, seatingType: $seatingType, tickets: $tickets, eventName: $eventName, eventImage: $eventImage)';
+    return 'BookingEntity(id: $id, eventDate: $eventDate, created: $created, bookingStatus: $bookingStatus, eventStatus: $eventStatus, eventId: $eventId, bookingSum: $bookingSum, locationType: $locationType, locationName: $locationName, paymentType: $paymentType, seatingType: $seatingType, tickets: $tickets, latLng: $latLng, eventName: $eventName, eventImage: $eventImage)';
   }
 
   @override
@@ -377,6 +410,7 @@ class _$BookingEntityImpl extends _BookingEntity {
             (identical(other.seatingType, seatingType) ||
                 other.seatingType == seatingType) &&
             const DeepCollectionEquality().equals(other._tickets, _tickets) &&
+            (identical(other.latLng, latLng) || other.latLng == latLng) &&
             (identical(other.eventName, eventName) ||
                 other.eventName == eventName) &&
             (identical(other.eventImage, eventImage) ||
@@ -399,6 +433,7 @@ class _$BookingEntityImpl extends _BookingEntity {
       paymentType,
       seatingType,
       const DeepCollectionEquality().hash(_tickets),
+      latLng,
       eventName,
       eventImage);
 
@@ -435,6 +470,7 @@ abstract class _BookingEntity extends BookingEntity {
       @JsonKey(unknownEnumValue: EventSeatingType.unknown)
       required final EventSeatingType seatingType,
       required final List<TicketBookedEntity> tickets,
+      required final LatLngEntity? latLng,
       final String? eventName,
       final String? eventImage}) = _$BookingEntityImpl;
   const _BookingEntity._() : super._();
@@ -473,6 +509,8 @@ abstract class _BookingEntity extends BookingEntity {
   EventSeatingType get seatingType;
   @override
   List<TicketBookedEntity> get tickets;
+  @override
+  LatLngEntity? get latLng;
   @override
   String? get eventName;
   @override

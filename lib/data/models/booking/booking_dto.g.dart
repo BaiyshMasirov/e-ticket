@@ -28,6 +28,8 @@ _$BookingDtoImpl _$$BookingDtoImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => TicketBookedDto.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      yCordinate: DoubleSerializers.fromJsonZeroNullable(json['yCordinate']),
+      xCordinate: DoubleSerializers.fromJsonZeroNullable(json['xCordinate']),
       eventName: json['eventName'] as String?,
       eventImage: json['eventImage'] as String?,
     );
@@ -54,6 +56,10 @@ Map<String, dynamic> _$$BookingDtoImplToJson(_$BookingDtoImpl instance) {
     }
   }
 
+  writeNotNull(
+      'yCordinate', DoubleSerializers.toJsonZeroNullable(instance.yCordinate));
+  writeNotNull(
+      'xCordinate', DoubleSerializers.toJsonZeroNullable(instance.xCordinate));
   writeNotNull('eventName', instance.eventName);
   writeNotNull('eventImage', instance.eventImage);
   return val;
