@@ -184,11 +184,27 @@ class RegisterView extends HookWidget {
                     },
                   ),
                   SizedBox(height: 15.h),
-                  TertiaryButton(
-                    title: LocaleKeys.login.tr(),
-                    onPressed: () {
-                      context.replaceRoute(const LoginRoute());
-                    },
+                  TextButton(
+                    onPressed: () => context.replaceRoute(const LoginRoute()),
+                    child: Text(
+                      LocaleKeys.login.tr(),
+                      style: TextStyle(
+                        fontSize: 13.sp,
+                        color: context.appColors.blue,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 15.h),
+                  TextButton(
+                    onPressed: () =>
+                        context.navigateTo(const ContactInfoRoute()),
+                    child: Text(
+                      LocaleKeys.contact_info.tr(),
+                      style: TextStyle(
+                        fontSize: 13.sp,
+                        color: context.colorScheme.onSurface,
+                      ),
+                    ),
                   ),
                   SizedBox(height: 25.h),
                 ],

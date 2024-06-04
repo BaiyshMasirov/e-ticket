@@ -31,52 +31,80 @@ class LoginView extends HookWidget {
         orElse: () => null,
         success: (_) => Logger.setUserIdentifier(_.login),
       ),
-      child: SafeArea(
-        child: SingleChildScrollView(
-          child: Form(
-            key: _formKey,
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: kDefaultPadding,
-              ),
-              child: Column(
-                children: [
-                  SizedBox(height: 60.h),
-                  const Hero(
-                    tag: HeroConstants.appLogoImageTag,
-                    child: AuthLogo(),
-                  ),
-                  SizedBox(height: 60.h),
-                  EmailFormFieldZ(
-                    controller: loginTC,
-                    textInputAction: TextInputAction.next,
-                  ),
-                  SizedBox(height: 15.h),
-                  PasswordFormFieldZ(controller: passwordTC),
-                  SizedBox(height: 15.h),
-                  PrimaryButton(
-                    title: LocaleKeys.login.tr(),
-                    onPressed: () {
-                      primaryFocus?.unfocus();
+      child: SingleChildScrollView(
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child: SafeArea(
+            child: Form(
+              key: _formKey,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: kDefaultPadding,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        SizedBox(height: 60.h),
+                        const Hero(
+                          tag: HeroConstants.appLogoImageTag,
+                          child: AuthLogo(),
+                        ),
+                        SizedBox(height: 60.h),
+                        EmailFormFieldZ(
+                          controller: loginTC,
+                          textInputAction: TextInputAction.next,
+                        ),
+                        SizedBox(height: 15.h),
+                        PasswordFormFieldZ(controller: passwordTC),
+                        SizedBox(height: 15.h),
+                        PrimaryButton(
+                          title: LocaleKeys.login.tr(),
+                          onPressed: () {
+                            primaryFocus?.unfocus();
 
-                      if (_formKey.currentState?.validate() ?? false) {
-                        context.read<LoginCubit>().login(
-                              loginCommandDto: LoginCommandDto(
-                                email: loginTC.text,
-                                password: passwordTC.text,
-                                firebaseToken: null,
-                              ),
-                            );
-                      }
-                    },
-                  ),
-                  SizedBox(height: 15.h),
-                  TertiaryButton(
-                    title: LocaleKeys.registration.tr(),
-                    onPressed: () =>
-                        context.replaceRoute(const RegisterRoute()),
-                  ),
-                ],
+                            if (_formKey.currentState?.validate() ?? false) {
+                              context.read<LoginCubit>().login(
+                                    loginCommandDto: LoginCommandDto(
+                                      email: loginTC.text,
+                                      password: passwordTC.text,
+                                      firebaseToken: null,
+                                    ),
+                                  );
+                            }
+                          },
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        TextButton(
+                          onPressed: () =>
+                              context.replaceRoute(const RegisterRoute()),
+                          child: Text(
+                            LocaleKeys.registration.tr(),
+                            style: TextStyle(
+                              fontSize: 13.sp,
+                              color: context.appColors.blue,
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () =>
+                              context.navigateTo(const ContactInfoRoute()),
+                          child: Text(
+                            LocaleKeys.contact_info.tr(),
+                            style: TextStyle(
+                              fontSize: 13.sp,
+                              color: context.colorScheme.onSurface,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

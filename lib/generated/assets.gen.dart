@@ -86,11 +86,14 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/face_id.svg
   SvgGenImage get faceId => const SvgGenImage('assets/svgs/face_id.svg');
 
+  /// File path: assets/svgs/instagram.svg
+  SvgGenImage get instagram => const SvgGenImage('assets/svgs/instagram.svg');
+
   /// File path: assets/svgs/touch_id.svg
   SvgGenImage get touchId => const SvgGenImage('assets/svgs/touch_id.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [deleteLeft, faceId, touchId];
+  List<SvgGenImage> get values => [deleteLeft, faceId, instagram, touchId];
 }
 
 class $AssetsTranslationsGen {

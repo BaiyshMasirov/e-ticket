@@ -13,7 +13,9 @@ class AuthRemoteDatasource {
     UserCredentials userCredentials,
   ) async {
     final response = await _dio.makeRequest(
-      request: () => _dio.post('api/Account/token'),
+      request: () => _dio.post('api/Account/refresh-token', data: {
+        'token': userCredentials.refreshToken,
+      }),
       parse: (json) => ApiUserTokenDto.fromJson(json['token']),
     );
 

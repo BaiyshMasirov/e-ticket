@@ -18,4 +18,5 @@ class RouteConstants {
   static const String refreshPassword = '/refresh-password';
   static const String pinCodeCreate = '/pin-code-create';
   static const String pinCodeVerify = '/pin-code-verify';
+  static const String contactInfo = '/contact-info';
 }

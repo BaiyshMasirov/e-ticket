@@ -157,5 +157,14 @@ abstract class  LocaleKeys {
   static const enter_pin_code = 'enter_pin_code';
   static const dont_remember_pin_code = 'dont_remember_pin_code';
   static const standing_places = 'standing_places';
+  static const contact_info = 'contact_info';
+  static const contact_info_desc = 'contact_info_desc';
+  static const contact_phone_number = 'contact_phone_number';
+  static const email_address = 'email_address';
+  static const social_media = 'social_media';
+  static const instagram = 'instagram';
+  static const website = 'website';
+  static const customer_support = 'customer_support';
+  static const copied = 'copied';
 
 }

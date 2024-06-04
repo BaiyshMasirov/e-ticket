@@ -84,5 +84,9 @@ class AppRouter extends $AppRouter {
           page: PinCodeVerifyRoute.page,
           path: RouteConstants.pinCodeVerify,
         ),
+        AutoRoute(
+          page: ContactInfoRoute.page,
+          path: RouteConstants.contactInfo,
+        ),
       ];
 }

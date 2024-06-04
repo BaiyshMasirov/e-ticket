@@ -99,11 +99,21 @@ class SettingsView extends StatelessWidget {
             SettingsContainer(
               children: [
                 SettingsButton(
+                  label: LocaleKeys.contact_info.tr(),
+                  icon: const SizedBox.shrink(),
+                  onPress: () => context.navigateTo(const ContactInfoRoute()),
+                ),
+              ],
+            ),
+            SizedBox(height: kDefaultPadding),
+            SettingsContainer(
+              children: [
+                SettingsButton(
                   label: LocaleKeys.delete_account.tr(),
                   labelStyle: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
-                    color: context.colorScheme.errorContainer,
+                    color: context.appColors.red,
                   ),
                   icon: const SizedBox.shrink(),
                   onPress: () => YesNoDialog.showModal(

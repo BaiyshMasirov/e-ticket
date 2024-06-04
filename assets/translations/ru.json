@@ -155,5 +155,14 @@
   "repeat_pin_code": "Повторите ПИН-код",
   "enter_pin_code": "Введите ПИН-код",
   "dont_remember_pin_code": "Не помню ПИН-код",
-  "standing_places": "Стоячие места"
+  "standing_places": "Стоячие места",
+  "contact_info": "Контактная информация",
+  "contact_info_desc": "Мы всегда готовы помочь вам с любыми вопросами и предоставить оперативную поддержку.",
+  "contact_phone_number": "Контактный телефон",
+  "email_address": "Адрес электронной почты",
+  "social_media": "Социальные сети",
+  "instagram": "Instagram",
+  "website": "Веб-сайт",
+  "customer_support": "Служба поддержки",
+  "copied": "Скопировано"
 }

@@ -20,12 +20,6 @@ extension BuildContextX on BuildContext {
     return ScreenUtil();
   }
 
-  // TODO: change to server url in future
-  String get categoryImageUrlPath {
-    // return GetIt.I.get<Configuration>().serverUrl;
-    return 'https://e-tick.app/home/GetEventCategoryByType?type=';
-  }
-
   Configuration get appConfigs => GetIt.I.get<Configuration>();
 
   UserPrefsRepository get userPrefsRepository =>
