@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAbkc4gBysYC0cmmmjiBqiDoXCfxsKikWw',
-    appId: '1:1052943904683:android:1f89e2200e840a39d12cee',
+    appId: '1:1052943904683:android:7a69a23a74d99d1fd12cee',
     messagingSenderId: '1052943904683',
     projectId: 'tickettune-38954',
     storageBucket: 'tickettune-38954.appspot.com',
