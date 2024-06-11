@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'refresh_password_command_dto.dart';
+part of 'change_password_command_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,13 +14,13 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-RefreshPasswordCommandDto _$RefreshPasswordCommandDtoFromJson(
+ChangePasswordCommandDto _$ChangePasswordCommandDtoFromJson(
     Map<String, dynamic> json) {
-  return _RefreshPasswordCommandDto.fromJson(json);
+  return _ChangePasswordCommandDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$RefreshPasswordCommandDto {
+mixin _$ChangePasswordCommandDto {
   String? get email => throw _privateConstructorUsedError;
   String? get phoneNumber => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
@@ -28,15 +28,15 @@ mixin _$RefreshPasswordCommandDto {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RefreshPasswordCommandDtoCopyWith<RefreshPasswordCommandDto> get copyWith =>
+  $ChangePasswordCommandDtoCopyWith<ChangePasswordCommandDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RefreshPasswordCommandDtoCopyWith<$Res> {
-  factory $RefreshPasswordCommandDtoCopyWith(RefreshPasswordCommandDto value,
-          $Res Function(RefreshPasswordCommandDto) then) =
-      _$RefreshPasswordCommandDtoCopyWithImpl<$Res, RefreshPasswordCommandDto>;
+abstract class $ChangePasswordCommandDtoCopyWith<$Res> {
+  factory $ChangePasswordCommandDtoCopyWith(ChangePasswordCommandDto value,
+          $Res Function(ChangePasswordCommandDto) then) =
+      _$ChangePasswordCommandDtoCopyWithImpl<$Res, ChangePasswordCommandDto>;
   @useResult
   $Res call(
       {String? email,
@@ -46,10 +46,10 @@ abstract class $RefreshPasswordCommandDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RefreshPasswordCommandDtoCopyWithImpl<$Res,
-        $Val extends RefreshPasswordCommandDto>
-    implements $RefreshPasswordCommandDtoCopyWith<$Res> {
-  _$RefreshPasswordCommandDtoCopyWithImpl(this._value, this._then);
+class _$ChangePasswordCommandDtoCopyWithImpl<$Res,
+        $Val extends ChangePasswordCommandDto>
+    implements $ChangePasswordCommandDtoCopyWith<$Res> {
+  _$ChangePasswordCommandDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -86,12 +86,12 @@ class _$RefreshPasswordCommandDtoCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$RefreshPasswordCommandDtoImplCopyWith<$Res>
-    implements $RefreshPasswordCommandDtoCopyWith<$Res> {
-  factory _$$RefreshPasswordCommandDtoImplCopyWith(
-          _$RefreshPasswordCommandDtoImpl value,
-          $Res Function(_$RefreshPasswordCommandDtoImpl) then) =
-      __$$RefreshPasswordCommandDtoImplCopyWithImpl<$Res>;
+abstract class _$$ChangePasswordCommandDtoImplCopyWith<$Res>
+    implements $ChangePasswordCommandDtoCopyWith<$Res> {
+  factory _$$ChangePasswordCommandDtoImplCopyWith(
+          _$ChangePasswordCommandDtoImpl value,
+          $Res Function(_$ChangePasswordCommandDtoImpl) then) =
+      __$$ChangePasswordCommandDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -102,13 +102,13 @@ abstract class _$$RefreshPasswordCommandDtoImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$RefreshPasswordCommandDtoImplCopyWithImpl<$Res>
-    extends _$RefreshPasswordCommandDtoCopyWithImpl<$Res,
-        _$RefreshPasswordCommandDtoImpl>
-    implements _$$RefreshPasswordCommandDtoImplCopyWith<$Res> {
-  __$$RefreshPasswordCommandDtoImplCopyWithImpl(
-      _$RefreshPasswordCommandDtoImpl _value,
-      $Res Function(_$RefreshPasswordCommandDtoImpl) _then)
+class __$$ChangePasswordCommandDtoImplCopyWithImpl<$Res>
+    extends _$ChangePasswordCommandDtoCopyWithImpl<$Res,
+        _$ChangePasswordCommandDtoImpl>
+    implements _$$ChangePasswordCommandDtoImplCopyWith<$Res> {
+  __$$ChangePasswordCommandDtoImplCopyWithImpl(
+      _$ChangePasswordCommandDtoImpl _value,
+      $Res Function(_$ChangePasswordCommandDtoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -119,7 +119,7 @@ class __$$RefreshPasswordCommandDtoImplCopyWithImpl<$Res>
     Object? password = freezed,
     Object? confirmPassword = freezed,
   }) {
-    return _then(_$RefreshPasswordCommandDtoImpl(
+    return _then(_$ChangePasswordCommandDtoImpl(
       email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -142,16 +142,16 @@ class __$$RefreshPasswordCommandDtoImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RefreshPasswordCommandDtoImpl extends _RefreshPasswordCommandDto {
-  const _$RefreshPasswordCommandDtoImpl(
+class _$ChangePasswordCommandDtoImpl extends _ChangePasswordCommandDto {
+  const _$ChangePasswordCommandDtoImpl(
       {required this.email,
       required this.phoneNumber,
       required this.password,
       required this.confirmPassword})
       : super._();
 
-  factory _$RefreshPasswordCommandDtoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RefreshPasswordCommandDtoImplFromJson(json);
+  factory _$ChangePasswordCommandDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ChangePasswordCommandDtoImplFromJson(json);
 
   @override
   final String? email;
@@ -164,14 +164,14 @@ class _$RefreshPasswordCommandDtoImpl extends _RefreshPasswordCommandDto {
 
   @override
   String toString() {
-    return 'RefreshPasswordCommandDto(email: $email, phoneNumber: $phoneNumber, password: $password, confirmPassword: $confirmPassword)';
+    return 'ChangePasswordCommandDto(email: $email, phoneNumber: $phoneNumber, password: $password, confirmPassword: $confirmPassword)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RefreshPasswordCommandDtoImpl &&
+            other is _$ChangePasswordCommandDtoImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
@@ -189,29 +189,28 @@ class _$RefreshPasswordCommandDtoImpl extends _RefreshPasswordCommandDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RefreshPasswordCommandDtoImplCopyWith<_$RefreshPasswordCommandDtoImpl>
-      get copyWith => __$$RefreshPasswordCommandDtoImplCopyWithImpl<
-          _$RefreshPasswordCommandDtoImpl>(this, _$identity);
+  _$$ChangePasswordCommandDtoImplCopyWith<_$ChangePasswordCommandDtoImpl>
+      get copyWith => __$$ChangePasswordCommandDtoImplCopyWithImpl<
+          _$ChangePasswordCommandDtoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$RefreshPasswordCommandDtoImplToJson(
+    return _$$ChangePasswordCommandDtoImplToJson(
       this,
     );
   }
 }
 
-abstract class _RefreshPasswordCommandDto extends RefreshPasswordCommandDto {
-  const factory _RefreshPasswordCommandDto(
-          {required final String? email,
-          required final String? phoneNumber,
-          required final String? password,
-          required final String? confirmPassword}) =
-      _$RefreshPasswordCommandDtoImpl;
-  const _RefreshPasswordCommandDto._() : super._();
+abstract class _ChangePasswordCommandDto extends ChangePasswordCommandDto {
+  const factory _ChangePasswordCommandDto(
+      {required final String? email,
+      required final String? phoneNumber,
+      required final String? password,
+      required final String? confirmPassword}) = _$ChangePasswordCommandDtoImpl;
+  const _ChangePasswordCommandDto._() : super._();
 
-  factory _RefreshPasswordCommandDto.fromJson(Map<String, dynamic> json) =
-      _$RefreshPasswordCommandDtoImpl.fromJson;
+  factory _ChangePasswordCommandDto.fromJson(Map<String, dynamic> json) =
+      _$ChangePasswordCommandDtoImpl.fromJson;
 
   @override
   String? get email;
@@ -223,6 +222,6 @@ abstract class _RefreshPasswordCommandDto extends RefreshPasswordCommandDto {
   String? get confirmPassword;
   @override
   @JsonKey(ignore: true)
-  _$$RefreshPasswordCommandDtoImplCopyWith<_$RefreshPasswordCommandDtoImpl>
+  _$$ChangePasswordCommandDtoImplCopyWith<_$ChangePasswordCommandDtoImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

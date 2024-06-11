@@ -13,15 +13,15 @@ import 'package:eticket/common/common.dart' as _i26;
 import 'package:eticket/data/data.dart' as _i24;
 import 'package:eticket/domain/domain.dart' as _i22;
 import 'package:eticket/presentation/screens/auth/login/login_screen.dart'
-    as _i7;
+    as _i8;
 import 'package:eticket/presentation/screens/auth/register/register_screen.dart'
     as _i14;
 import 'package:eticket/presentation/screens/contact_info/contact_info_screen.dart'
-    as _i4;
-import 'package:eticket/presentation/screens/event/event_screen.dart' as _i5;
+    as _i5;
+import 'package:eticket/presentation/screens/event/event_screen.dart' as _i6;
 import 'package:eticket/presentation/screens/events_by_type/events_by_type_screen.dart'
-    as _i6;
-import 'package:eticket/presentation/screens/main/main_screen.dart' as _i8;
+    as _i7;
+import 'package:eticket/presentation/screens/main/main_screen.dart' as _i9;
 import 'package:eticket/presentation/screens/main/models/main_screen_tab.dart'
     as _i27;
 import 'package:eticket/presentation/screens/main/screens/categories/categories_screen.dart'
@@ -32,18 +32,18 @@ import 'package:eticket/presentation/screens/main/screens/history/booking_ticket
     as _i2;
 import 'package:eticket/presentation/screens/main/screens/search/search_screen.dart'
     as _i16;
-import 'package:eticket/presentation/screens/main/screens/settings/refresh_password/refresh_password_screen.dart'
-    as _i13;
+import 'package:eticket/presentation/screens/main/screens/settings/change_password/change_password_screen.dart'
+    as _i4;
 import 'package:eticket/presentation/screens/main/screens/settings/settings_view/settings_screen.dart'
     as _i17;
 import 'package:eticket/presentation/screens/payment/pages/payment_web_view/payment_web_view_screen.dart'
-    as _i10;
-import 'package:eticket/presentation/screens/payment/payment_methods/payment_methods_screen.dart'
-    as _i9;
-import 'package:eticket/presentation/screens/pin_code/pin_code_create/pin_code_create_screen.dart'
     as _i11;
-import 'package:eticket/presentation/screens/pin_code/pin_code_verify/pin_code_verify_screen.dart'
+import 'package:eticket/presentation/screens/payment/payment_methods/payment_methods_screen.dart'
+    as _i10;
+import 'package:eticket/presentation/screens/pin_code/pin_code_create/pin_code_create_screen.dart'
     as _i12;
+import 'package:eticket/presentation/screens/pin_code/pin_code_verify/pin_code_verify_screen.dart'
+    as _i13;
 import 'package:eticket/presentation/screens/scan_ticket/scan_ticket_screen.dart'
     as _i15;
 import 'package:eticket/presentation/screens/splash/splash_screen.dart' as _i18;
@@ -81,17 +81,23 @@ abstract class $AppRouter extends _i21.RootStackRouter {
         child: const _i3.CategoriesScreen(),
       );
     },
+    ChangePasswordRoute.name: (routeData) {
+      return _i21.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i4.ChangePasswordScreen(),
+      );
+    },
     ContactInfoRoute.name: (routeData) {
       return _i21.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i4.ContactInfoScreen(),
+        child: const _i5.ContactInfoScreen(),
       );
     },
     EventRoute.name: (routeData) {
       final args = routeData.argsAs<EventRouteArgs>();
       return _i21.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i5.EventScreen(
+        child: _i6.EventScreen(
           event: args.event,
           key: args.key,
         ),
@@ -101,7 +107,7 @@ abstract class $AppRouter extends _i21.RootStackRouter {
       final args = routeData.argsAs<EventsByTypeRouteArgs>();
       return _i21.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i6.EventsByTypeScreen(
+        child: _i7.EventsByTypeScreen(
           eventType: args.eventType,
           key: args.key,
         ),
@@ -110,7 +116,7 @@ abstract class $AppRouter extends _i21.RootStackRouter {
     LoginRoute.name: (routeData) {
       return _i21.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i7.LoginScreen(),
+        child: const _i8.LoginScreen(),
       );
     },
     MainRoute.name: (routeData) {
@@ -118,7 +124,7 @@ abstract class $AppRouter extends _i21.RootStackRouter {
           routeData.argsAs<MainRouteArgs>(orElse: () => const MainRouteArgs());
       return _i21.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i8.MainScreen(
+        child: _i9.MainScreen(
           initialTab: args.initialTab,
           key: args.key,
         ),
@@ -128,7 +134,7 @@ abstract class $AppRouter extends _i21.RootStackRouter {
       final args = routeData.argsAs<PaymentMethodsRouteArgs>();
       return _i21.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i9.PaymentMethodsScreen(
+        child: _i10.PaymentMethodsScreen(
           preciseCost: args.preciseCost,
           bookingId: args.bookingId,
           key: args.key,
@@ -139,7 +145,7 @@ abstract class $AppRouter extends _i21.RootStackRouter {
       final args = routeData.argsAs<PaymentWebViewRouteArgs>();
       return _i21.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i10.PaymentWebViewScreen(
+        child: _i11.PaymentWebViewScreen(
           bookingId: args.bookingId,
           paymentType: args.paymentType,
           onSuccess: args.onSuccess,
@@ -151,7 +157,7 @@ abstract class $AppRouter extends _i21.RootStackRouter {
       final args = routeData.argsAs<PinCodeCreateRouteArgs>();
       return _i21.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i11.PinCodeCreateScreen(
+        child: _i12.PinCodeCreateScreen(
           onBackPressed: args.onBackPressed,
           navigateOnPinCodeCreate: args.navigateOnPinCodeCreate,
           key: args.key,
@@ -162,17 +168,11 @@ abstract class $AppRouter extends _i21.RootStackRouter {
       final args = routeData.argsAs<PinCodeVerifyRouteArgs>();
       return _i21.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i12.PinCodeVerifyScreen(
+        child: _i13.PinCodeVerifyScreen(
           onBackPressed: args.onBackPressed,
           navigateOnPinCodeCreate: args.navigateOnPinCodeCreate,
           key: args.key,
         ),
-      );
-    },
-    RefreshPasswordRoute.name: (routeData) {
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i13.RefreshPasswordScreen(),
       );
     },
     RegisterRoute.name: (routeData) {
@@ -298,7 +298,21 @@ class CategoriesRoute extends _i21.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.ContactInfoScreen]
+/// [_i4.ChangePasswordScreen]
+class ChangePasswordRoute extends _i21.PageRouteInfo<void> {
+  const ChangePasswordRoute({List<_i21.PageRouteInfo>? children})
+      : super(
+          ChangePasswordRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ChangePasswordRoute';
+
+  static const _i21.PageInfo<void> page = _i21.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i5.ContactInfoScreen]
 class ContactInfoRoute extends _i21.PageRouteInfo<void> {
   const ContactInfoRoute({List<_i21.PageRouteInfo>? children})
       : super(
@@ -312,7 +326,7 @@ class ContactInfoRoute extends _i21.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i5.EventScreen]
+/// [_i6.EventScreen]
 class EventRoute extends _i21.PageRouteInfo<EventRouteArgs> {
   EventRoute({
     required _i24.EventDto event,
@@ -350,7 +364,7 @@ class EventRouteArgs {
 }
 
 /// generated route for
-/// [_i6.EventsByTypeScreen]
+/// [_i7.EventsByTypeScreen]
 class EventsByTypeRoute extends _i21.PageRouteInfo<EventsByTypeRouteArgs> {
   EventsByTypeRoute({
     required _i26.EventType eventType,
@@ -388,7 +402,7 @@ class EventsByTypeRouteArgs {
 }
 
 /// generated route for
-/// [_i7.LoginScreen]
+/// [_i8.LoginScreen]
 class LoginRoute extends _i21.PageRouteInfo<void> {
   const LoginRoute({List<_i21.PageRouteInfo>? children})
       : super(
@@ -402,7 +416,7 @@ class LoginRoute extends _i21.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i8.MainScreen]
+/// [_i9.MainScreen]
 class MainRoute extends _i21.PageRouteInfo<MainRouteArgs> {
   MainRoute({
     _i27.MAIN_SCREEN_TAB initialTab = _i27.MAIN_SCREEN_TAB.home,
@@ -440,7 +454,7 @@ class MainRouteArgs {
 }
 
 /// generated route for
-/// [_i9.PaymentMethodsScreen]
+/// [_i10.PaymentMethodsScreen]
 class PaymentMethodsRoute extends _i21.PageRouteInfo<PaymentMethodsRouteArgs> {
   PaymentMethodsRoute({
     required double preciseCost,
@@ -483,7 +497,7 @@ class PaymentMethodsRouteArgs {
 }
 
 /// generated route for
-/// [_i10.PaymentWebViewScreen]
+/// [_i11.PaymentWebViewScreen]
 class PaymentWebViewRoute extends _i21.PageRouteInfo<PaymentWebViewRouteArgs> {
   PaymentWebViewRoute({
     required String bookingId,
@@ -531,7 +545,7 @@ class PaymentWebViewRouteArgs {
 }
 
 /// generated route for
-/// [_i11.PinCodeCreateScreen]
+/// [_i12.PinCodeCreateScreen]
 class PinCodeCreateRoute extends _i21.PageRouteInfo<PinCodeCreateRouteArgs> {
   PinCodeCreateRoute({
     required dynamic Function() onBackPressed,
@@ -574,7 +588,7 @@ class PinCodeCreateRouteArgs {
 }
 
 /// generated route for
-/// [_i12.PinCodeVerifyScreen]
+/// [_i13.PinCodeVerifyScreen]
 class PinCodeVerifyRoute extends _i21.PageRouteInfo<PinCodeVerifyRouteArgs> {
   PinCodeVerifyRoute({
     required dynamic Function() onBackPressed,
@@ -614,20 +628,6 @@ class PinCodeVerifyRouteArgs {
   String toString() {
     return 'PinCodeVerifyRouteArgs{onBackPressed: $onBackPressed, navigateOnPinCodeCreate: $navigateOnPinCodeCreate, key: $key}';
   }
-}
-
-/// generated route for
-/// [_i13.RefreshPasswordScreen]
-class RefreshPasswordRoute extends _i21.PageRouteInfo<void> {
-  const RefreshPasswordRoute({List<_i21.PageRouteInfo>? children})
-      : super(
-          RefreshPasswordRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'RefreshPasswordRoute';
-
-  static const _i21.PageInfo<void> page = _i21.PageInfo<void>(name);
 }
 
 /// generated route for

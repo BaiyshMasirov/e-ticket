@@ -30,7 +30,7 @@ class SettingsView extends StatelessWidget {
               children: [
                 SettingsButton(
                   onPress: () {
-                    context.navigateTo(const RefreshPasswordRoute());
+                    context.navigateTo(const ChangePasswordRoute());
                   },
                   label: LocaleKeys.change_password.tr(),
                 ),

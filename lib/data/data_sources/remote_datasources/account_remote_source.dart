@@ -38,13 +38,13 @@ class AccountRemoteSource {
     return response;
   }
 
-  Future<RemoteResponse<Unit>> refreshPassword(
-    RefreshPasswordCommandDto refreshPasswordCommandDto,
+  Future<RemoteResponse<Unit>> changePassword(
+    ChangePasswordCommandDto changePasswordCommandDto,
   ) async {
     final response = await _dio.makeRequest(
       request: () => _dio.post(
-        'api/Account/refresh-password',
-        data: refreshPasswordCommandDto.toJson(),
+        'api/Account/change-password',
+        data: changePasswordCommandDto.toJson(),
       ),
       parse: (json) => unit,
     );

@@ -55,12 +55,12 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
     );
   }
 
-  Future<Either<RequestFailure, Unit>> refreshPassword(
-    RefreshPasswordCommandDto refreshPasswordCommandDto,
+  Future<Either<RequestFailure, Unit>> changePassword(
+    ChangePasswordCommandDto ChangePasswordCommandDto,
   ) async {
     final response = await handleRemoteRequest(
       request: () =>
-          _accountRemoteSource.refreshPassword(refreshPasswordCommandDto),
+          _accountRemoteSource.changePassword(ChangePasswordCommandDto),
     );
 
     return response;

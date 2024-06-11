@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'refresh_password_command_dto.dart';
+part of 'change_password_command_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RefreshPasswordCommandDtoImpl _$$RefreshPasswordCommandDtoImplFromJson(
+_$ChangePasswordCommandDtoImpl _$$ChangePasswordCommandDtoImplFromJson(
         Map<String, dynamic> json) =>
-    _$RefreshPasswordCommandDtoImpl(
+    _$ChangePasswordCommandDtoImpl(
       email: json['email'] as String?,
       phoneNumber: json['phoneNumber'] as String?,
       password: json['password'] as String?,
       confirmPassword: json['confirmPassword'] as String?,
     );
 
-Map<String, dynamic> _$$RefreshPasswordCommandDtoImplToJson(
-    _$RefreshPasswordCommandDtoImpl instance) {
+Map<String, dynamic> _$$ChangePasswordCommandDtoImplToJson(
+    _$ChangePasswordCommandDtoImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

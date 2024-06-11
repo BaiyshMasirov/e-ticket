@@ -73,8 +73,8 @@ class AppRouter extends $AppRouter {
           path: RouteConstants.scanTickets,
         ),
         AutoRoute(
-          page: RefreshPasswordRoute.page,
-          path: RouteConstants.refreshPassword,
+          page: ChangePasswordRoute.page,
+          path: RouteConstants.changePassword,
         ),
         AutoRoute(
           page: PinCodeCreateRoute.page,

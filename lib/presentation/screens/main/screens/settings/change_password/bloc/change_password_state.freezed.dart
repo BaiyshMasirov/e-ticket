@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'refresh_password_state.dart';
+part of 'change_password_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$RefreshPasswordState {
+mixin _$ChangePasswordState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -43,43 +43,42 @@ mixin _$RefreshPasswordState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_RefreshPasswordInitial value) initial,
-    required TResult Function(_RefreshPasswordSuccess value) success,
-    required TResult Function(_RefreshPasswordFailure value) failure,
-    required TResult Function(RefreshPasswordLoading value) loading,
+    required TResult Function(_ChangePasswordInitial value) initial,
+    required TResult Function(_ChangePasswordSuccess value) success,
+    required TResult Function(_ChangePasswordFailure value) failure,
+    required TResult Function(ChangePasswordLoading value) loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_RefreshPasswordInitial value)? initial,
-    TResult? Function(_RefreshPasswordSuccess value)? success,
-    TResult? Function(_RefreshPasswordFailure value)? failure,
-    TResult? Function(RefreshPasswordLoading value)? loading,
+    TResult? Function(_ChangePasswordInitial value)? initial,
+    TResult? Function(_ChangePasswordSuccess value)? success,
+    TResult? Function(_ChangePasswordFailure value)? failure,
+    TResult? Function(ChangePasswordLoading value)? loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_RefreshPasswordInitial value)? initial,
-    TResult Function(_RefreshPasswordSuccess value)? success,
-    TResult Function(_RefreshPasswordFailure value)? failure,
-    TResult Function(RefreshPasswordLoading value)? loading,
+    TResult Function(_ChangePasswordInitial value)? initial,
+    TResult Function(_ChangePasswordSuccess value)? success,
+    TResult Function(_ChangePasswordFailure value)? failure,
+    TResult Function(ChangePasswordLoading value)? loading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RefreshPasswordStateCopyWith<$Res> {
-  factory $RefreshPasswordStateCopyWith(RefreshPasswordState value,
-          $Res Function(RefreshPasswordState) then) =
-      _$RefreshPasswordStateCopyWithImpl<$Res, RefreshPasswordState>;
+abstract class $ChangePasswordStateCopyWith<$Res> {
+  factory $ChangePasswordStateCopyWith(
+          ChangePasswordState value, $Res Function(ChangePasswordState) then) =
+      _$ChangePasswordStateCopyWithImpl<$Res, ChangePasswordState>;
 }
 
 /// @nodoc
-class _$RefreshPasswordStateCopyWithImpl<$Res,
-        $Val extends RefreshPasswordState>
-    implements $RefreshPasswordStateCopyWith<$Res> {
-  _$RefreshPasswordStateCopyWithImpl(this._value, this._then);
+class _$ChangePasswordStateCopyWithImpl<$Res, $Val extends ChangePasswordState>
+    implements $ChangePasswordStateCopyWith<$Res> {
+  _$ChangePasswordStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -88,39 +87,37 @@ class _$RefreshPasswordStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$RefreshPasswordInitialImplCopyWith<$Res> {
-  factory _$$RefreshPasswordInitialImplCopyWith(
-          _$RefreshPasswordInitialImpl value,
-          $Res Function(_$RefreshPasswordInitialImpl) then) =
-      __$$RefreshPasswordInitialImplCopyWithImpl<$Res>;
+abstract class _$$ChangePasswordInitialImplCopyWith<$Res> {
+  factory _$$ChangePasswordInitialImplCopyWith(
+          _$ChangePasswordInitialImpl value,
+          $Res Function(_$ChangePasswordInitialImpl) then) =
+      __$$ChangePasswordInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RefreshPasswordInitialImplCopyWithImpl<$Res>
-    extends _$RefreshPasswordStateCopyWithImpl<$Res,
-        _$RefreshPasswordInitialImpl>
-    implements _$$RefreshPasswordInitialImplCopyWith<$Res> {
-  __$$RefreshPasswordInitialImplCopyWithImpl(
-      _$RefreshPasswordInitialImpl _value,
-      $Res Function(_$RefreshPasswordInitialImpl) _then)
+class __$$ChangePasswordInitialImplCopyWithImpl<$Res>
+    extends _$ChangePasswordStateCopyWithImpl<$Res, _$ChangePasswordInitialImpl>
+    implements _$$ChangePasswordInitialImplCopyWith<$Res> {
+  __$$ChangePasswordInitialImplCopyWithImpl(_$ChangePasswordInitialImpl _value,
+      $Res Function(_$ChangePasswordInitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$RefreshPasswordInitialImpl extends _RefreshPasswordInitial {
-  const _$RefreshPasswordInitialImpl() : super._();
+class _$ChangePasswordInitialImpl extends _ChangePasswordInitial {
+  const _$ChangePasswordInitialImpl() : super._();
 
   @override
   String toString() {
-    return 'RefreshPasswordState.initial()';
+    return 'ChangePasswordState.initial()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RefreshPasswordInitialImpl);
+            other is _$ChangePasswordInitialImpl);
   }
 
   @override
@@ -166,10 +163,10 @@ class _$RefreshPasswordInitialImpl extends _RefreshPasswordInitial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_RefreshPasswordInitial value) initial,
-    required TResult Function(_RefreshPasswordSuccess value) success,
-    required TResult Function(_RefreshPasswordFailure value) failure,
-    required TResult Function(RefreshPasswordLoading value) loading,
+    required TResult Function(_ChangePasswordInitial value) initial,
+    required TResult Function(_ChangePasswordSuccess value) success,
+    required TResult Function(_ChangePasswordFailure value) failure,
+    required TResult Function(ChangePasswordLoading value) loading,
   }) {
     return initial(this);
   }
@@ -177,10 +174,10 @@ class _$RefreshPasswordInitialImpl extends _RefreshPasswordInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_RefreshPasswordInitial value)? initial,
-    TResult? Function(_RefreshPasswordSuccess value)? success,
-    TResult? Function(_RefreshPasswordFailure value)? failure,
-    TResult? Function(RefreshPasswordLoading value)? loading,
+    TResult? Function(_ChangePasswordInitial value)? initial,
+    TResult? Function(_ChangePasswordSuccess value)? success,
+    TResult? Function(_ChangePasswordFailure value)? failure,
+    TResult? Function(ChangePasswordLoading value)? loading,
   }) {
     return initial?.call(this);
   }
@@ -188,10 +185,10 @@ class _$RefreshPasswordInitialImpl extends _RefreshPasswordInitial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_RefreshPasswordInitial value)? initial,
-    TResult Function(_RefreshPasswordSuccess value)? success,
-    TResult Function(_RefreshPasswordFailure value)? failure,
-    TResult Function(RefreshPasswordLoading value)? loading,
+    TResult Function(_ChangePasswordInitial value)? initial,
+    TResult Function(_ChangePasswordSuccess value)? success,
+    TResult Function(_ChangePasswordFailure value)? failure,
+    TResult Function(ChangePasswordLoading value)? loading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -201,45 +198,43 @@ class _$RefreshPasswordInitialImpl extends _RefreshPasswordInitial {
   }
 }
 
-abstract class _RefreshPasswordInitial extends RefreshPasswordState {
-  const factory _RefreshPasswordInitial() = _$RefreshPasswordInitialImpl;
-  const _RefreshPasswordInitial._() : super._();
+abstract class _ChangePasswordInitial extends ChangePasswordState {
+  const factory _ChangePasswordInitial() = _$ChangePasswordInitialImpl;
+  const _ChangePasswordInitial._() : super._();
 }
 
 /// @nodoc
-abstract class _$$RefreshPasswordSuccessImplCopyWith<$Res> {
-  factory _$$RefreshPasswordSuccessImplCopyWith(
-          _$RefreshPasswordSuccessImpl value,
-          $Res Function(_$RefreshPasswordSuccessImpl) then) =
-      __$$RefreshPasswordSuccessImplCopyWithImpl<$Res>;
+abstract class _$$ChangePasswordSuccessImplCopyWith<$Res> {
+  factory _$$ChangePasswordSuccessImplCopyWith(
+          _$ChangePasswordSuccessImpl value,
+          $Res Function(_$ChangePasswordSuccessImpl) then) =
+      __$$ChangePasswordSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RefreshPasswordSuccessImplCopyWithImpl<$Res>
-    extends _$RefreshPasswordStateCopyWithImpl<$Res,
-        _$RefreshPasswordSuccessImpl>
-    implements _$$RefreshPasswordSuccessImplCopyWith<$Res> {
-  __$$RefreshPasswordSuccessImplCopyWithImpl(
-      _$RefreshPasswordSuccessImpl _value,
-      $Res Function(_$RefreshPasswordSuccessImpl) _then)
+class __$$ChangePasswordSuccessImplCopyWithImpl<$Res>
+    extends _$ChangePasswordStateCopyWithImpl<$Res, _$ChangePasswordSuccessImpl>
+    implements _$$ChangePasswordSuccessImplCopyWith<$Res> {
+  __$$ChangePasswordSuccessImplCopyWithImpl(_$ChangePasswordSuccessImpl _value,
+      $Res Function(_$ChangePasswordSuccessImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$RefreshPasswordSuccessImpl extends _RefreshPasswordSuccess {
-  const _$RefreshPasswordSuccessImpl() : super._();
+class _$ChangePasswordSuccessImpl extends _ChangePasswordSuccess {
+  const _$ChangePasswordSuccessImpl() : super._();
 
   @override
   String toString() {
-    return 'RefreshPasswordState.success()';
+    return 'ChangePasswordState.success()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RefreshPasswordSuccessImpl);
+            other is _$ChangePasswordSuccessImpl);
   }
 
   @override
@@ -285,10 +280,10 @@ class _$RefreshPasswordSuccessImpl extends _RefreshPasswordSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_RefreshPasswordInitial value) initial,
-    required TResult Function(_RefreshPasswordSuccess value) success,
-    required TResult Function(_RefreshPasswordFailure value) failure,
-    required TResult Function(RefreshPasswordLoading value) loading,
+    required TResult Function(_ChangePasswordInitial value) initial,
+    required TResult Function(_ChangePasswordSuccess value) success,
+    required TResult Function(_ChangePasswordFailure value) failure,
+    required TResult Function(ChangePasswordLoading value) loading,
   }) {
     return success(this);
   }
@@ -296,10 +291,10 @@ class _$RefreshPasswordSuccessImpl extends _RefreshPasswordSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_RefreshPasswordInitial value)? initial,
-    TResult? Function(_RefreshPasswordSuccess value)? success,
-    TResult? Function(_RefreshPasswordFailure value)? failure,
-    TResult? Function(RefreshPasswordLoading value)? loading,
+    TResult? Function(_ChangePasswordInitial value)? initial,
+    TResult? Function(_ChangePasswordSuccess value)? success,
+    TResult? Function(_ChangePasswordFailure value)? failure,
+    TResult? Function(ChangePasswordLoading value)? loading,
   }) {
     return success?.call(this);
   }
@@ -307,10 +302,10 @@ class _$RefreshPasswordSuccessImpl extends _RefreshPasswordSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_RefreshPasswordInitial value)? initial,
-    TResult Function(_RefreshPasswordSuccess value)? success,
-    TResult Function(_RefreshPasswordFailure value)? failure,
-    TResult Function(RefreshPasswordLoading value)? loading,
+    TResult Function(_ChangePasswordInitial value)? initial,
+    TResult Function(_ChangePasswordSuccess value)? success,
+    TResult Function(_ChangePasswordFailure value)? failure,
+    TResult Function(ChangePasswordLoading value)? loading,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -320,29 +315,27 @@ class _$RefreshPasswordSuccessImpl extends _RefreshPasswordSuccess {
   }
 }
 
-abstract class _RefreshPasswordSuccess extends RefreshPasswordState {
-  const factory _RefreshPasswordSuccess() = _$RefreshPasswordSuccessImpl;
-  const _RefreshPasswordSuccess._() : super._();
+abstract class _ChangePasswordSuccess extends ChangePasswordState {
+  const factory _ChangePasswordSuccess() = _$ChangePasswordSuccessImpl;
+  const _ChangePasswordSuccess._() : super._();
 }
 
 /// @nodoc
-abstract class _$$RefreshPasswordFailureImplCopyWith<$Res> {
-  factory _$$RefreshPasswordFailureImplCopyWith(
-          _$RefreshPasswordFailureImpl value,
-          $Res Function(_$RefreshPasswordFailureImpl) then) =
-      __$$RefreshPasswordFailureImplCopyWithImpl<$Res>;
+abstract class _$$ChangePasswordFailureImplCopyWith<$Res> {
+  factory _$$ChangePasswordFailureImplCopyWith(
+          _$ChangePasswordFailureImpl value,
+          $Res Function(_$ChangePasswordFailureImpl) then) =
+      __$$ChangePasswordFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? errorMessage});
 }
 
 /// @nodoc
-class __$$RefreshPasswordFailureImplCopyWithImpl<$Res>
-    extends _$RefreshPasswordStateCopyWithImpl<$Res,
-        _$RefreshPasswordFailureImpl>
-    implements _$$RefreshPasswordFailureImplCopyWith<$Res> {
-  __$$RefreshPasswordFailureImplCopyWithImpl(
-      _$RefreshPasswordFailureImpl _value,
-      $Res Function(_$RefreshPasswordFailureImpl) _then)
+class __$$ChangePasswordFailureImplCopyWithImpl<$Res>
+    extends _$ChangePasswordStateCopyWithImpl<$Res, _$ChangePasswordFailureImpl>
+    implements _$$ChangePasswordFailureImplCopyWith<$Res> {
+  __$$ChangePasswordFailureImplCopyWithImpl(_$ChangePasswordFailureImpl _value,
+      $Res Function(_$ChangePasswordFailureImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -350,7 +343,7 @@ class __$$RefreshPasswordFailureImplCopyWithImpl<$Res>
   $Res call({
     Object? errorMessage = freezed,
   }) {
-    return _then(_$RefreshPasswordFailureImpl(
+    return _then(_$ChangePasswordFailureImpl(
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -361,22 +354,22 @@ class __$$RefreshPasswordFailureImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RefreshPasswordFailureImpl extends _RefreshPasswordFailure {
-  const _$RefreshPasswordFailureImpl({this.errorMessage}) : super._();
+class _$ChangePasswordFailureImpl extends _ChangePasswordFailure {
+  const _$ChangePasswordFailureImpl({this.errorMessage}) : super._();
 
   @override
   final String? errorMessage;
 
   @override
   String toString() {
-    return 'RefreshPasswordState.failure(errorMessage: $errorMessage)';
+    return 'ChangePasswordState.failure(errorMessage: $errorMessage)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RefreshPasswordFailureImpl &&
+            other is _$ChangePasswordFailureImpl &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
@@ -387,9 +380,9 @@ class _$RefreshPasswordFailureImpl extends _RefreshPasswordFailure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RefreshPasswordFailureImplCopyWith<_$RefreshPasswordFailureImpl>
-      get copyWith => __$$RefreshPasswordFailureImplCopyWithImpl<
-          _$RefreshPasswordFailureImpl>(this, _$identity);
+  _$$ChangePasswordFailureImplCopyWith<_$ChangePasswordFailureImpl>
+      get copyWith => __$$ChangePasswordFailureImplCopyWithImpl<
+          _$ChangePasswordFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -431,10 +424,10 @@ class _$RefreshPasswordFailureImpl extends _RefreshPasswordFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_RefreshPasswordInitial value) initial,
-    required TResult Function(_RefreshPasswordSuccess value) success,
-    required TResult Function(_RefreshPasswordFailure value) failure,
-    required TResult Function(RefreshPasswordLoading value) loading,
+    required TResult Function(_ChangePasswordInitial value) initial,
+    required TResult Function(_ChangePasswordSuccess value) success,
+    required TResult Function(_ChangePasswordFailure value) failure,
+    required TResult Function(ChangePasswordLoading value) loading,
   }) {
     return failure(this);
   }
@@ -442,10 +435,10 @@ class _$RefreshPasswordFailureImpl extends _RefreshPasswordFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_RefreshPasswordInitial value)? initial,
-    TResult? Function(_RefreshPasswordSuccess value)? success,
-    TResult? Function(_RefreshPasswordFailure value)? failure,
-    TResult? Function(RefreshPasswordLoading value)? loading,
+    TResult? Function(_ChangePasswordInitial value)? initial,
+    TResult? Function(_ChangePasswordSuccess value)? success,
+    TResult? Function(_ChangePasswordFailure value)? failure,
+    TResult? Function(ChangePasswordLoading value)? loading,
   }) {
     return failure?.call(this);
   }
@@ -453,10 +446,10 @@ class _$RefreshPasswordFailureImpl extends _RefreshPasswordFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_RefreshPasswordInitial value)? initial,
-    TResult Function(_RefreshPasswordSuccess value)? success,
-    TResult Function(_RefreshPasswordFailure value)? failure,
-    TResult Function(RefreshPasswordLoading value)? loading,
+    TResult Function(_ChangePasswordInitial value)? initial,
+    TResult Function(_ChangePasswordSuccess value)? success,
+    TResult Function(_ChangePasswordFailure value)? failure,
+    TResult Function(ChangePasswordLoading value)? loading,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -466,51 +459,49 @@ class _$RefreshPasswordFailureImpl extends _RefreshPasswordFailure {
   }
 }
 
-abstract class _RefreshPasswordFailure extends RefreshPasswordState {
-  const factory _RefreshPasswordFailure({final String? errorMessage}) =
-      _$RefreshPasswordFailureImpl;
-  const _RefreshPasswordFailure._() : super._();
+abstract class _ChangePasswordFailure extends ChangePasswordState {
+  const factory _ChangePasswordFailure({final String? errorMessage}) =
+      _$ChangePasswordFailureImpl;
+  const _ChangePasswordFailure._() : super._();
 
   String? get errorMessage;
   @JsonKey(ignore: true)
-  _$$RefreshPasswordFailureImplCopyWith<_$RefreshPasswordFailureImpl>
+  _$$ChangePasswordFailureImplCopyWith<_$ChangePasswordFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$RefreshPasswordLoadingImplCopyWith<$Res> {
-  factory _$$RefreshPasswordLoadingImplCopyWith(
-          _$RefreshPasswordLoadingImpl value,
-          $Res Function(_$RefreshPasswordLoadingImpl) then) =
-      __$$RefreshPasswordLoadingImplCopyWithImpl<$Res>;
+abstract class _$$ChangePasswordLoadingImplCopyWith<$Res> {
+  factory _$$ChangePasswordLoadingImplCopyWith(
+          _$ChangePasswordLoadingImpl value,
+          $Res Function(_$ChangePasswordLoadingImpl) then) =
+      __$$ChangePasswordLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RefreshPasswordLoadingImplCopyWithImpl<$Res>
-    extends _$RefreshPasswordStateCopyWithImpl<$Res,
-        _$RefreshPasswordLoadingImpl>
-    implements _$$RefreshPasswordLoadingImplCopyWith<$Res> {
-  __$$RefreshPasswordLoadingImplCopyWithImpl(
-      _$RefreshPasswordLoadingImpl _value,
-      $Res Function(_$RefreshPasswordLoadingImpl) _then)
+class __$$ChangePasswordLoadingImplCopyWithImpl<$Res>
+    extends _$ChangePasswordStateCopyWithImpl<$Res, _$ChangePasswordLoadingImpl>
+    implements _$$ChangePasswordLoadingImplCopyWith<$Res> {
+  __$$ChangePasswordLoadingImplCopyWithImpl(_$ChangePasswordLoadingImpl _value,
+      $Res Function(_$ChangePasswordLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$RefreshPasswordLoadingImpl extends RefreshPasswordLoading {
-  const _$RefreshPasswordLoadingImpl() : super._();
+class _$ChangePasswordLoadingImpl extends ChangePasswordLoading {
+  const _$ChangePasswordLoadingImpl() : super._();
 
   @override
   String toString() {
-    return 'RefreshPasswordState.loading()';
+    return 'ChangePasswordState.loading()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RefreshPasswordLoadingImpl);
+            other is _$ChangePasswordLoadingImpl);
   }
 
   @override
@@ -556,10 +547,10 @@ class _$RefreshPasswordLoadingImpl extends RefreshPasswordLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_RefreshPasswordInitial value) initial,
-    required TResult Function(_RefreshPasswordSuccess value) success,
-    required TResult Function(_RefreshPasswordFailure value) failure,
-    required TResult Function(RefreshPasswordLoading value) loading,
+    required TResult Function(_ChangePasswordInitial value) initial,
+    required TResult Function(_ChangePasswordSuccess value) success,
+    required TResult Function(_ChangePasswordFailure value) failure,
+    required TResult Function(ChangePasswordLoading value) loading,
   }) {
     return loading(this);
   }
@@ -567,10 +558,10 @@ class _$RefreshPasswordLoadingImpl extends RefreshPasswordLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_RefreshPasswordInitial value)? initial,
-    TResult? Function(_RefreshPasswordSuccess value)? success,
-    TResult? Function(_RefreshPasswordFailure value)? failure,
-    TResult? Function(RefreshPasswordLoading value)? loading,
+    TResult? Function(_ChangePasswordInitial value)? initial,
+    TResult? Function(_ChangePasswordSuccess value)? success,
+    TResult? Function(_ChangePasswordFailure value)? failure,
+    TResult? Function(ChangePasswordLoading value)? loading,
   }) {
     return loading?.call(this);
   }
@@ -578,10 +569,10 @@ class _$RefreshPasswordLoadingImpl extends RefreshPasswordLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_RefreshPasswordInitial value)? initial,
-    TResult Function(_RefreshPasswordSuccess value)? success,
-    TResult Function(_RefreshPasswordFailure value)? failure,
-    TResult Function(RefreshPasswordLoading value)? loading,
+    TResult Function(_ChangePasswordInitial value)? initial,
+    TResult Function(_ChangePasswordSuccess value)? success,
+    TResult Function(_ChangePasswordFailure value)? failure,
+    TResult Function(ChangePasswordLoading value)? loading,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -591,7 +582,7 @@ class _$RefreshPasswordLoadingImpl extends RefreshPasswordLoading {
   }
 }
 
-abstract class RefreshPasswordLoading extends RefreshPasswordState {
-  const factory RefreshPasswordLoading() = _$RefreshPasswordLoadingImpl;
-  const RefreshPasswordLoading._() : super._();
+abstract class ChangePasswordLoading extends ChangePasswordState {
+  const factory ChangePasswordLoading() = _$ChangePasswordLoadingImpl;
+  const ChangePasswordLoading._() : super._();
 }

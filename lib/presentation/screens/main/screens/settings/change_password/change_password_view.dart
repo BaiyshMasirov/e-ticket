@@ -10,12 +10,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:eticket/presentation/screens/main/screens/settings/refresh_password/bloc/bloc.dart';
+import 'package:eticket/presentation/screens/main/screens/settings/change_password/bloc/bloc.dart';
 
-class RefreshPasswordView extends HookWidget {
+class ChangePasswordView extends HookWidget {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  RefreshPasswordView({
+  ChangePasswordView({
     Key? key,
   }) : super(key: key);
 
@@ -26,7 +26,7 @@ class RefreshPasswordView extends HookWidget {
     final confirmPasswordController = useTextEditingController();
     final phoneNumberController = useTextEditingController();
 
-    return BlocListener<RefreshPasswordCubit, RefreshPasswordState>(
+    return BlocListener<ChangePasswordCubit, ChangePasswordState>(
       listener: (context, state) {
         state.maybeWhen(
           orElse: () {},
@@ -77,9 +77,9 @@ class RefreshPasswordView extends HookWidget {
                     primaryFocus?.unfocus();
 
                     if (formKey.currentState?.validate() ?? false) {
-                      context.read<RefreshPasswordCubit>().refreshPassword(
-                            refreshPasswordCommandDto:
-                                RefreshPasswordCommandDto(
+                      context.read<ChangePasswordCubit>().changePassword(
+                            ChangePasswordCommandDto:
+                                ChangePasswordCommandDto(
                               email: emailController.text,
                               password: passwordController.text,
                               confirmPassword: confirmPasswordController.text,
