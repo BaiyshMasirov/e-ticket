@@ -19,21 +19,24 @@ mixin _$AccountConfirmState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(ApiUserTokenDto tokenData) success,
+    required TResult Function() loading,
+    required TResult Function(UserCredentials userCreds, String email) success,
     required TResult Function(String? errorMessage) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(ApiUserTokenDto tokenData)? success,
+    TResult? Function()? loading,
+    TResult? Function(UserCredentials userCreds, String email)? success,
     TResult? Function(String? errorMessage)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ApiUserTokenDto tokenData)? success,
+    TResult Function()? loading,
+    TResult Function(UserCredentials userCreds, String email)? success,
     TResult Function(String? errorMessage)? failure,
     required TResult orElse(),
   }) =>
@@ -41,6 +44,7 @@ mixin _$AccountConfirmState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AccountConfirmStateInitial value) initial,
+    required TResult Function(_AccountConfirmStateLoading value) loading,
     required TResult Function(_AccountConfirmStateSuccess value) success,
     required TResult Function(_AccountConfirmStateFailure value) failure,
   }) =>
@@ -48,6 +52,7 @@ mixin _$AccountConfirmState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AccountConfirmStateInitial value)? initial,
+    TResult? Function(_AccountConfirmStateLoading value)? loading,
     TResult? Function(_AccountConfirmStateSuccess value)? success,
     TResult? Function(_AccountConfirmStateFailure value)? failure,
   }) =>
@@ -55,6 +60,7 @@ mixin _$AccountConfirmState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AccountConfirmStateInitial value)? initial,
+    TResult Function(_AccountConfirmStateLoading value)? loading,
     TResult Function(_AccountConfirmStateSuccess value)? success,
     TResult Function(_AccountConfirmStateFailure value)? failure,
     required TResult orElse(),
@@ -123,7 +129,8 @@ class _$AccountConfirmStateInitialImpl extends _AccountConfirmStateInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(ApiUserTokenDto tokenData) success,
+    required TResult Function() loading,
+    required TResult Function(UserCredentials userCreds, String email) success,
     required TResult Function(String? errorMessage) failure,
   }) {
     return initial();
@@ -133,7 +140,8 @@ class _$AccountConfirmStateInitialImpl extends _AccountConfirmStateInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(ApiUserTokenDto tokenData)? success,
+    TResult? Function()? loading,
+    TResult? Function(UserCredentials userCreds, String email)? success,
     TResult? Function(String? errorMessage)? failure,
   }) {
     return initial?.call();
@@ -143,7 +151,8 @@ class _$AccountConfirmStateInitialImpl extends _AccountConfirmStateInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ApiUserTokenDto tokenData)? success,
+    TResult Function()? loading,
+    TResult Function(UserCredentials userCreds, String email)? success,
     TResult Function(String? errorMessage)? failure,
     required TResult orElse(),
   }) {
@@ -157,6 +166,7 @@ class _$AccountConfirmStateInitialImpl extends _AccountConfirmStateInitial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AccountConfirmStateInitial value) initial,
+    required TResult Function(_AccountConfirmStateLoading value) loading,
     required TResult Function(_AccountConfirmStateSuccess value) success,
     required TResult Function(_AccountConfirmStateFailure value) failure,
   }) {
@@ -167,6 +177,7 @@ class _$AccountConfirmStateInitialImpl extends _AccountConfirmStateInitial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AccountConfirmStateInitial value)? initial,
+    TResult? Function(_AccountConfirmStateLoading value)? loading,
     TResult? Function(_AccountConfirmStateSuccess value)? success,
     TResult? Function(_AccountConfirmStateFailure value)? failure,
   }) {
@@ -177,6 +188,7 @@ class _$AccountConfirmStateInitialImpl extends _AccountConfirmStateInitial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AccountConfirmStateInitial value)? initial,
+    TResult Function(_AccountConfirmStateLoading value)? loading,
     TResult Function(_AccountConfirmStateSuccess value)? success,
     TResult Function(_AccountConfirmStateFailure value)? failure,
     required TResult orElse(),
@@ -195,15 +207,135 @@ abstract class _AccountConfirmStateInitial extends AccountConfirmState {
 }
 
 /// @nodoc
+abstract class _$$AccountConfirmStateLoadingImplCopyWith<$Res> {
+  factory _$$AccountConfirmStateLoadingImplCopyWith(
+          _$AccountConfirmStateLoadingImpl value,
+          $Res Function(_$AccountConfirmStateLoadingImpl) then) =
+      __$$AccountConfirmStateLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AccountConfirmStateLoadingImplCopyWithImpl<$Res>
+    extends _$AccountConfirmStateCopyWithImpl<$Res,
+        _$AccountConfirmStateLoadingImpl>
+    implements _$$AccountConfirmStateLoadingImplCopyWith<$Res> {
+  __$$AccountConfirmStateLoadingImplCopyWithImpl(
+      _$AccountConfirmStateLoadingImpl _value,
+      $Res Function(_$AccountConfirmStateLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AccountConfirmStateLoadingImpl extends _AccountConfirmStateLoading {
+  const _$AccountConfirmStateLoadingImpl() : super._();
+
+  @override
+  String toString() {
+    return 'AccountConfirmState.loading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AccountConfirmStateLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UserCredentials userCreds, String email) success,
+    required TResult Function(String? errorMessage) failure,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UserCredentials userCreds, String email)? success,
+    TResult? Function(String? errorMessage)? failure,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UserCredentials userCreds, String email)? success,
+    TResult Function(String? errorMessage)? failure,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AccountConfirmStateInitial value) initial,
+    required TResult Function(_AccountConfirmStateLoading value) loading,
+    required TResult Function(_AccountConfirmStateSuccess value) success,
+    required TResult Function(_AccountConfirmStateFailure value) failure,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AccountConfirmStateInitial value)? initial,
+    TResult? Function(_AccountConfirmStateLoading value)? loading,
+    TResult? Function(_AccountConfirmStateSuccess value)? success,
+    TResult? Function(_AccountConfirmStateFailure value)? failure,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AccountConfirmStateInitial value)? initial,
+    TResult Function(_AccountConfirmStateLoading value)? loading,
+    TResult Function(_AccountConfirmStateSuccess value)? success,
+    TResult Function(_AccountConfirmStateFailure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AccountConfirmStateLoading extends AccountConfirmState {
+  const factory _AccountConfirmStateLoading() =
+      _$AccountConfirmStateLoadingImpl;
+  const _AccountConfirmStateLoading._() : super._();
+}
+
+/// @nodoc
 abstract class _$$AccountConfirmStateSuccessImplCopyWith<$Res> {
   factory _$$AccountConfirmStateSuccessImplCopyWith(
           _$AccountConfirmStateSuccessImpl value,
           $Res Function(_$AccountConfirmStateSuccessImpl) then) =
       __$$AccountConfirmStateSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ApiUserTokenDto tokenData});
+  $Res call({UserCredentials userCreds, String email});
 
-  $ApiUserTokenDtoCopyWith<$Res> get tokenData;
+  $UserCredentialsCopyWith<$Res> get userCreds;
 }
 
 /// @nodoc
@@ -219,21 +351,26 @@ class __$$AccountConfirmStateSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? tokenData = null,
+    Object? userCreds = null,
+    Object? email = null,
   }) {
     return _then(_$AccountConfirmStateSuccessImpl(
-      tokenData: null == tokenData
-          ? _value.tokenData
-          : tokenData // ignore: cast_nullable_to_non_nullable
-              as ApiUserTokenDto,
+      userCreds: null == userCreds
+          ? _value.userCreds
+          : userCreds // ignore: cast_nullable_to_non_nullable
+              as UserCredentials,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ApiUserTokenDtoCopyWith<$Res> get tokenData {
-    return $ApiUserTokenDtoCopyWith<$Res>(_value.tokenData, (value) {
-      return _then(_value.copyWith(tokenData: value));
+  $UserCredentialsCopyWith<$Res> get userCreds {
+    return $UserCredentialsCopyWith<$Res>(_value.userCreds, (value) {
+      return _then(_value.copyWith(userCreds: value));
     });
   }
 }
@@ -241,14 +378,18 @@ class __$$AccountConfirmStateSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AccountConfirmStateSuccessImpl extends _AccountConfirmStateSuccess {
-  const _$AccountConfirmStateSuccessImpl({required this.tokenData}) : super._();
+  const _$AccountConfirmStateSuccessImpl(
+      {required this.userCreds, required this.email})
+      : super._();
 
   @override
-  final ApiUserTokenDto tokenData;
+  final UserCredentials userCreds;
+  @override
+  final String email;
 
   @override
   String toString() {
-    return 'AccountConfirmState.success(tokenData: $tokenData)';
+    return 'AccountConfirmState.success(userCreds: $userCreds, email: $email)';
   }
 
   @override
@@ -256,12 +397,13 @@ class _$AccountConfirmStateSuccessImpl extends _AccountConfirmStateSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AccountConfirmStateSuccessImpl &&
-            (identical(other.tokenData, tokenData) ||
-                other.tokenData == tokenData));
+            (identical(other.userCreds, userCreds) ||
+                other.userCreds == userCreds) &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, tokenData);
+  int get hashCode => Object.hash(runtimeType, userCreds, email);
 
   @JsonKey(ignore: true)
   @override
@@ -274,32 +416,35 @@ class _$AccountConfirmStateSuccessImpl extends _AccountConfirmStateSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(ApiUserTokenDto tokenData) success,
+    required TResult Function() loading,
+    required TResult Function(UserCredentials userCreds, String email) success,
     required TResult Function(String? errorMessage) failure,
   }) {
-    return success(tokenData);
+    return success(userCreds, email);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(ApiUserTokenDto tokenData)? success,
+    TResult? Function()? loading,
+    TResult? Function(UserCredentials userCreds, String email)? success,
     TResult? Function(String? errorMessage)? failure,
   }) {
-    return success?.call(tokenData);
+    return success?.call(userCreds, email);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ApiUserTokenDto tokenData)? success,
+    TResult Function()? loading,
+    TResult Function(UserCredentials userCreds, String email)? success,
     TResult Function(String? errorMessage)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(tokenData);
+      return success(userCreds, email);
     }
     return orElse();
   }
@@ -308,6 +453,7 @@ class _$AccountConfirmStateSuccessImpl extends _AccountConfirmStateSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AccountConfirmStateInitial value) initial,
+    required TResult Function(_AccountConfirmStateLoading value) loading,
     required TResult Function(_AccountConfirmStateSuccess value) success,
     required TResult Function(_AccountConfirmStateFailure value) failure,
   }) {
@@ -318,6 +464,7 @@ class _$AccountConfirmStateSuccessImpl extends _AccountConfirmStateSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AccountConfirmStateInitial value)? initial,
+    TResult? Function(_AccountConfirmStateLoading value)? loading,
     TResult? Function(_AccountConfirmStateSuccess value)? success,
     TResult? Function(_AccountConfirmStateFailure value)? failure,
   }) {
@@ -328,6 +475,7 @@ class _$AccountConfirmStateSuccessImpl extends _AccountConfirmStateSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AccountConfirmStateInitial value)? initial,
+    TResult Function(_AccountConfirmStateLoading value)? loading,
     TResult Function(_AccountConfirmStateSuccess value)? success,
     TResult Function(_AccountConfirmStateFailure value)? failure,
     required TResult orElse(),
@@ -341,11 +489,12 @@ class _$AccountConfirmStateSuccessImpl extends _AccountConfirmStateSuccess {
 
 abstract class _AccountConfirmStateSuccess extends AccountConfirmState {
   const factory _AccountConfirmStateSuccess(
-          {required final ApiUserTokenDto tokenData}) =
-      _$AccountConfirmStateSuccessImpl;
+      {required final UserCredentials userCreds,
+      required final String email}) = _$AccountConfirmStateSuccessImpl;
   const _AccountConfirmStateSuccess._() : super._();
 
-  ApiUserTokenDto get tokenData;
+  UserCredentials get userCreds;
+  String get email;
   @JsonKey(ignore: true)
   _$$AccountConfirmStateSuccessImplCopyWith<_$AccountConfirmStateSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -421,7 +570,8 @@ class _$AccountConfirmStateFailureImpl extends _AccountConfirmStateFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(ApiUserTokenDto tokenData) success,
+    required TResult Function() loading,
+    required TResult Function(UserCredentials userCreds, String email) success,
     required TResult Function(String? errorMessage) failure,
   }) {
     return failure(errorMessage);
@@ -431,7 +581,8 @@ class _$AccountConfirmStateFailureImpl extends _AccountConfirmStateFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(ApiUserTokenDto tokenData)? success,
+    TResult? Function()? loading,
+    TResult? Function(UserCredentials userCreds, String email)? success,
     TResult? Function(String? errorMessage)? failure,
   }) {
     return failure?.call(errorMessage);
@@ -441,7 +592,8 @@ class _$AccountConfirmStateFailureImpl extends _AccountConfirmStateFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(ApiUserTokenDto tokenData)? success,
+    TResult Function()? loading,
+    TResult Function(UserCredentials userCreds, String email)? success,
     TResult Function(String? errorMessage)? failure,
     required TResult orElse(),
   }) {
@@ -455,6 +607,7 @@ class _$AccountConfirmStateFailureImpl extends _AccountConfirmStateFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AccountConfirmStateInitial value) initial,
+    required TResult Function(_AccountConfirmStateLoading value) loading,
     required TResult Function(_AccountConfirmStateSuccess value) success,
     required TResult Function(_AccountConfirmStateFailure value) failure,
   }) {
@@ -465,6 +618,7 @@ class _$AccountConfirmStateFailureImpl extends _AccountConfirmStateFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AccountConfirmStateInitial value)? initial,
+    TResult? Function(_AccountConfirmStateLoading value)? loading,
     TResult? Function(_AccountConfirmStateSuccess value)? success,
     TResult? Function(_AccountConfirmStateFailure value)? failure,
   }) {
@@ -475,6 +629,7 @@ class _$AccountConfirmStateFailureImpl extends _AccountConfirmStateFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AccountConfirmStateInitial value)? initial,
+    TResult Function(_AccountConfirmStateLoading value)? loading,
     TResult Function(_AccountConfirmStateSuccess value)? success,
     TResult Function(_AccountConfirmStateFailure value)? failure,
     required TResult orElse(),

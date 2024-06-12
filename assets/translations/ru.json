@@ -78,6 +78,7 @@
   "balance": "Balance.kg",
   "get_confirmation_code": "Получить код подтверждения",
   "confirmation_code": "Код подтверждения",
+  "confirm_success": "Успешно подтверждено",
   "confirm_code_must_contain_at_least": {
     "zero": "Код подтверждения должен содержать не менее {} символов",
     "one": "Код подтверждения должен содержать не менее {} символа",

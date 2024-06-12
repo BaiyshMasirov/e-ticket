@@ -11,22 +11,13 @@ export 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
   final SnackbarCubit _snackbarCubit;
-  final AuthCubit _authCubit;
-  final SettingsCubit _settingsCubit;
   final AccountRepository _accountRepository;
-  final UserPrefsRepository _userPrefsRepository;
 
   RegisterCubit._({
     required SnackbarCubit snackbarCubit,
-    required AuthCubit authCubit,
-    required SettingsCubit settingsCubit,
     required AccountRepository accountRepository,
-    required UserPrefsRepository userPrefsRepository,
   })  : _snackbarCubit = snackbarCubit,
-        _authCubit = authCubit,
         _accountRepository = accountRepository,
-        _settingsCubit = settingsCubit,
-        _userPrefsRepository = userPrefsRepository,
         super(const RegisterState.initial());
 
   Future<void> register({
@@ -38,18 +29,22 @@ class RegisterCubit extends Cubit<RegisterState> {
     result.fold(
       (l) {
         emit(RegisterState.failure(errorMessage: l.errorMessage));
+
         _snackbarCubit.showErrorSnackbar(message: l.errorMessage);
       },
-      (creds) async {
-        emit(RegisterState.success(
-          login: registerCommandDto.email ?? '',
-          password: registerCommandDto.password ?? '',
-        ));
+      (result) async {
+        if (result.succeed && result.message != null) {
+          _snackbarCubit.showSuccessSnackbar(message: result.message!);
 
-        await _userPrefsRepository.needToSetPinCode(needToSetPinCode: true);
+          emit(RegisterState.success(
+            login: registerCommandDto.email ?? '',
+            password: registerCommandDto.password ?? '',
+          ));
+        } else {
+          emit(RegisterState.failure(errorMessage: result.message));
 
-        _authCubit.setToken(credentials: creds);
-        _settingsCubit.updateState();
+          _snackbarCubit.showErrorSnackbar(message: result.message);
+        }
       },
     );
   }
@@ -57,10 +52,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   factory RegisterCubit.initialize() {
     return RegisterCubit._(
       snackbarCubit: GetIt.I.get(),
-      authCubit: GetIt.I.get(),
       accountRepository: GetIt.I.get(),
-      settingsCubit: GetIt.I.get(),
-      userPrefsRepository: GetIt.I.get(),
     );
   }
 }

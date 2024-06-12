@@ -10,14 +10,16 @@ class AccountRemoteSource {
     required Dio dio,
   }) : _dio = dio;
 
-  Future<RemoteResponse<ApiUserTokenDto>> register(
+  Future<RemoteResponse<ResponseResult>> register(
     RegisterUserCommandDto registerUserCommandDto,
   ) async {
     final response = await _dio.makeRequest(
-      request: () => _dio.post('api/Account/register',
-          data: registerUserCommandDto.toJson()),
+      request: () => _dio.post(
+        'api/Account/register',
+        data: registerUserCommandDto.toJson(),
+      ),
       parse: (json) {
-        return ApiUserTokenDto.fromJson(json['token']);
+        return ResponseResult.fromJson(json);
       },
     );
 

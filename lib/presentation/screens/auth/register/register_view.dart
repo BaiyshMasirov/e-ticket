@@ -4,6 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
+import 'package:eticket/presentation/screens/auth/account_confirm/account_confirm_v.dart';
 import 'package:eticket/presentation/screens/auth/register/bloc/register_cubit.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/auth_logo.dart';
@@ -37,7 +38,11 @@ class RegisterView extends HookWidget {
     return BlocListener<RegisterCubit, RegisterState>(
       listener: (_, s) => s.maybeMap(
         orElse: () => null,
-        success: (_) => Logger.setUserIdentifier(_.login),
+        success: (_) => AccountConfirmView.showBS(
+          context,
+          accountConfirmed: () => null,
+          email: _.login,
+        ),
       ),
       child: SafeArea(
         child: SingleChildScrollView(

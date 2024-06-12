@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:eticket/auth/authentication.dart';
 import 'package:eticket/common/common.dart';
@@ -11,26 +13,14 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
     required AccountRemoteSource accountRemoteSource,
   }) : _accountRemoteSource = accountRemoteSource;
 
-  Future<Either<RequestFailure, UserCredentials>> register(
+  Future<Either<RequestFailure, ResponseResult>> register(
     RegisterUserCommandDto registerUserCommandDto,
   ) async {
     final response = await handleRemoteRequest(
       request: () => _accountRemoteSource.register(registerUserCommandDto),
     );
 
-    return response.fold(
-      (l) => left(l),
-      (token) {
-        final userCredentials = UserCredentials(
-          accessToken: token.jwtToken,
-          refreshToken: token.rtToken,
-          accessTokenExpiresAt: JwtDecoder.getExpirationDate(token.jwtToken),
-          isAdmin: JwtDecoder.isAdmin(token.jwtToken),
-        );
-
-        return right(userCredentials);
-      },
-    );
+    return response;
   }
 
   Future<Either<RequestFailure, UserCredentials>> login(
@@ -84,7 +74,7 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
     return response;
   }
 
-  Future<Either<RequestFailure, AuthResult>> confirmAccount({
+  Future<Either<RequestFailure, UserCredentials>> confirmAccount({
     required String email,
     required String code,
   }) async {
@@ -95,7 +85,27 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
       ),
     );
 
-    return response;
+    return response.fold(
+      (l) => left(l),
+      (r) {
+        if (r.succeed && r.token != null) {
+          return right(
+            UserCredentials(
+              accessToken: r.token!.jwtToken,
+              refreshToken: r.token!.rtToken,
+              accessTokenExpiresAt:
+                  JwtDecoder.getExpirationDate(r.token!.jwtToken),
+              isAdmin: JwtDecoder.isAdmin(r.token!.jwtToken),
+            ),
+          );
+        }
+
+        return left(RequestFailure.badRequest(
+          HttpStatus.badRequest,
+          r.message,
+        ));
+      },
+    );
   }
 
   Future<Either<RequestFailure, ResponseResult>> sendRecoveryCode({
