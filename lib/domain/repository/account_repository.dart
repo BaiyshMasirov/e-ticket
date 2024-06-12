@@ -73,4 +73,56 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
 
     return response;
   }
+
+  Future<Either<RequestFailure, ResponseResult>> sendConfirmCode({
+    required String email,
+  }) async {
+    final response = await handleRemoteRequest(
+      request: () => _accountRemoteSource.sendConfirmCode(email: email),
+    );
+
+    return response;
+  }
+
+  Future<Either<RequestFailure, ResponseResult>> confirmAccount({
+    required String email,
+    required String code,
+  }) async {
+    final response = await handleRemoteRequest(
+      request: () => _accountRemoteSource.confirmAccount(
+        email: email,
+        code: code,
+      ),
+    );
+
+    return response;
+  }
+
+  Future<Either<RequestFailure, ResponseResult>> sendRecoveryCode({
+    required String email,
+  }) async {
+    final response = await handleRemoteRequest(
+      request: () => _accountRemoteSource.sendRecoveryCode(email: email),
+    );
+
+    return response;
+  }
+
+  Future<Either<RequestFailure, ResponseResult>> recoveryPassword({
+    required String email,
+    required String code,
+    required String password,
+    required String confirmPassword,
+  }) async {
+    final response = await handleRemoteRequest(
+      request: () => _accountRemoteSource.recoveryPassword(
+        email: email,
+        code: code,
+        password: password,
+        confirmPassword: password,
+      ),
+    );
+
+    return response;
+  }
 }

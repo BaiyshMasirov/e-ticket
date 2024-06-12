@@ -63,4 +63,76 @@ class AccountRemoteSource {
 
     return response;
   }
+
+  Future<RemoteResponse<ResponseResult>> sendConfirmCode({
+    required String email,
+  }) async {
+    final response = await _dio.makeRequest(
+      request: () => _dio.get(
+        'api/Account/send-confirma-code',
+        queryParameters: {
+          'email': email,
+        },
+      ),
+      parse: (json) => ResponseResult.fromJson(json),
+    );
+
+    return response;
+  }
+
+  Future<RemoteResponse<ResponseResult>> confirmAccount({
+    required String email,
+    required String code,
+  }) async {
+    final response = await _dio.makeRequest(
+      request: () => _dio.post(
+        'api/Account/confirm-account',
+        data: {
+          'email': email,
+          'code': code,
+        },
+      ),
+      parse: (json) => ResponseResult.fromJson(json),
+    );
+
+    return response;
+  }
+
+  Future<RemoteResponse<ResponseResult>> sendRecoveryCode({
+    required String email,
+  }) async {
+    final response = await _dio.makeRequest(
+      request: () => _dio.get(
+        'api/Account/send-recovery-code',
+        queryParameters: {
+          'email': email,
+        },
+      ),
+      parse: (json) => ResponseResult.fromJson(json),
+    );
+
+    return response;
+  }
+
+  Future<RemoteResponse<ResponseResult>> recoveryPassword({
+    required String email,
+    required String code,
+    required String password,
+    required String confirmPassword,
+  }) async {
+    final response = await _dio.makeRequest(
+      request: () => _dio.post(
+        'api/Account/recovery-password',
+        data: {
+          'email': email,
+          'code': code,
+          'password': password,
+          'confirmPassword': confirmPassword,
+        },
+      ),
+      parse: (json) => ResponseResult.fromJson(json),
+    );
+
+    return response;
+  }
 }

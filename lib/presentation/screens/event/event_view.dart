@@ -5,6 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
+import 'package:eticket/presentation/screens/event/widgets/widgets.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:eticket/utils/redirects/redirects.dart';
@@ -188,7 +189,9 @@ class EventView extends StatelessWidget {
               children: [
                 Text(event.locationName ?? event.locationType.localizedName),
                 SizedBox(height: 4.h),
-                Text(event.description ?? '-'),
+                EventDescriptionV(
+                  descriptionQuill: event.description ?? '',
+                )
               ],
             ),
           ),
