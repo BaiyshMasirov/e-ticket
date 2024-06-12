@@ -32,15 +32,23 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
 
     return response.fold(
       (l) => left(l),
-      (token) {
-        final userCredentials = UserCredentials(
-          accessToken: token.jwtToken,
-          refreshToken: token.rtToken,
-          accessTokenExpiresAt: JwtDecoder.getExpirationDate(token.jwtToken),
-          isAdmin: JwtDecoder.isAdmin(token.jwtToken),
-        );
+      (r) {
+        if (r.succeed && r.token != null) {
+          return right(
+            UserCredentials(
+              accessToken: r.token!.jwtToken,
+              refreshToken: r.token!.rtToken,
+              accessTokenExpiresAt:
+                  JwtDecoder.getExpirationDate(r.token!.jwtToken),
+              isAdmin: JwtDecoder.isAdmin(r.token!.jwtToken),
+            ),
+          );
+        }
 
-        return right(userCredentials);
+        return left(RequestFailure.badRequest(
+          HttpStatus.badRequest,
+          r.message,
+        ));
       },
     );
   }

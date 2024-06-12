@@ -50,6 +50,7 @@ class AccountConfirmView extends HookWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+                // TODO: code confirm title
                 EmailFormFieldZ(
                   controller: useEmailTC,
                   readOnly: true,

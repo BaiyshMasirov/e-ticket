@@ -4,6 +4,7 @@ import 'package:eticket/common/common.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
+import 'package:eticket/presentation/screens/auth/account_confirm/account_confirm_v.dart';
 import 'package:eticket/presentation/screens/auth/login/bloc/login_cubit.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/auth_logo.dart';
@@ -30,6 +31,11 @@ class LoginView extends HookWidget {
       listener: (_, s) => s.maybeMap(
         orElse: () => null,
         success: (_) => Logger.setUserIdentifier(_.login),
+        confirmCodeRequired: (_) => AccountConfirmView.showBS(
+          context,
+          accountConfirmed: () => null,
+          email: _.email,
+        ),
       ),
       child: SingleChildScrollView(
         child: SizedBox(

@@ -26,7 +26,7 @@ class AccountRemoteSource {
     return response;
   }
 
-  Future<RemoteResponse<ApiUserTokenDto>> login(
+  Future<RemoteResponse<AuthResult>> login(
     LoginCommandDto loginCommandDto,
   ) async {
     final response = await _dio.makeRequest(
@@ -34,7 +34,7 @@ class AccountRemoteSource {
         'api/Account/login',
         data: loginCommandDto.toJson(),
       ),
-      parse: (json) => ApiUserTokenDto.fromJson(json['token']),
+      parse: (json) => AuthResult.fromJson(json),
     );
 
     return response;
@@ -71,7 +71,7 @@ class AccountRemoteSource {
   }) async {
     final response = await _dio.makeRequest(
       request: () => _dio.get(
-        'api/Account/send-confirma-code',
+        'api/Account/send-confirm-code',
         queryParameters: {
           'email': email,
         },

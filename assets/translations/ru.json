@@ -170,5 +170,6 @@
   "instagram": "Instagram",
   "website": "Веб-сайт",
   "customer_support": "Служба поддержки",
-  "copied": "Скопировано"
+  "copied": "Скопировано",
+  "confirm_code_sent_on_mail": "Код подтверждения отправлен на вашу почту {}"
 }

@@ -8,6 +8,7 @@ part 'user_credentials.g.dart';
 @freezed
 class UserCredentials with _$UserCredentials {
   const UserCredentials._();
+
   const factory UserCredentials({
     required String accessToken,
     required String refreshToken,

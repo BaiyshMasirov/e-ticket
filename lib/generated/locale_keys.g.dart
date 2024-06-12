@@ -168,5 +168,6 @@ abstract class  LocaleKeys {
   static const website = 'website';
   static const customer_support = 'customer_support';
   static const copied = 'copied';
+  static const confirm_code_sent_on_mail = 'confirm_code_sent_on_mail';
 
 }

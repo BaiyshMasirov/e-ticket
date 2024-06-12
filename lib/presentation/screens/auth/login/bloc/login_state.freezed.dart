@@ -21,6 +21,8 @@ mixin _$LoginState {
     required TResult Function() initial,
     required TResult Function(String login, String password) success,
     required TResult Function(String? errorMessage) failure,
+    required TResult Function(String email, String? errorMessage)
+        confirmCodeRequired,
     required TResult Function() loading,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +31,7 @@ mixin _$LoginState {
     TResult? Function()? initial,
     TResult? Function(String login, String password)? success,
     TResult? Function(String? errorMessage)? failure,
+    TResult? Function(String email, String? errorMessage)? confirmCodeRequired,
     TResult? Function()? loading,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +40,7 @@ mixin _$LoginState {
     TResult Function()? initial,
     TResult Function(String login, String password)? success,
     TResult Function(String? errorMessage)? failure,
+    TResult Function(String email, String? errorMessage)? confirmCodeRequired,
     TResult Function()? loading,
     required TResult orElse(),
   }) =>
@@ -46,6 +50,8 @@ mixin _$LoginState {
     required TResult Function(_LoginInitial value) initial,
     required TResult Function(_LoginSuccess value) success,
     required TResult Function(_LoginFailure value) failure,
+    required TResult Function(_LoginConfirmCodeRequired value)
+        confirmCodeRequired,
     required TResult Function(LoginLoading value) loading,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +60,7 @@ mixin _$LoginState {
     TResult? Function(_LoginInitial value)? initial,
     TResult? Function(_LoginSuccess value)? success,
     TResult? Function(_LoginFailure value)? failure,
+    TResult? Function(_LoginConfirmCodeRequired value)? confirmCodeRequired,
     TResult? Function(LoginLoading value)? loading,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +69,7 @@ mixin _$LoginState {
     TResult Function(_LoginInitial value)? initial,
     TResult Function(_LoginSuccess value)? success,
     TResult Function(_LoginFailure value)? failure,
+    TResult Function(_LoginConfirmCodeRequired value)? confirmCodeRequired,
     TResult Function(LoginLoading value)? loading,
     required TResult orElse(),
   }) =>
@@ -127,6 +135,8 @@ class _$LoginInitialImpl extends _LoginInitial {
     required TResult Function() initial,
     required TResult Function(String login, String password) success,
     required TResult Function(String? errorMessage) failure,
+    required TResult Function(String email, String? errorMessage)
+        confirmCodeRequired,
     required TResult Function() loading,
   }) {
     return initial();
@@ -138,6 +148,7 @@ class _$LoginInitialImpl extends _LoginInitial {
     TResult? Function()? initial,
     TResult? Function(String login, String password)? success,
     TResult? Function(String? errorMessage)? failure,
+    TResult? Function(String email, String? errorMessage)? confirmCodeRequired,
     TResult? Function()? loading,
   }) {
     return initial?.call();
@@ -149,6 +160,7 @@ class _$LoginInitialImpl extends _LoginInitial {
     TResult Function()? initial,
     TResult Function(String login, String password)? success,
     TResult Function(String? errorMessage)? failure,
+    TResult Function(String email, String? errorMessage)? confirmCodeRequired,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
@@ -164,6 +176,8 @@ class _$LoginInitialImpl extends _LoginInitial {
     required TResult Function(_LoginInitial value) initial,
     required TResult Function(_LoginSuccess value) success,
     required TResult Function(_LoginFailure value) failure,
+    required TResult Function(_LoginConfirmCodeRequired value)
+        confirmCodeRequired,
     required TResult Function(LoginLoading value) loading,
   }) {
     return initial(this);
@@ -175,6 +189,7 @@ class _$LoginInitialImpl extends _LoginInitial {
     TResult? Function(_LoginInitial value)? initial,
     TResult? Function(_LoginSuccess value)? success,
     TResult? Function(_LoginFailure value)? failure,
+    TResult? Function(_LoginConfirmCodeRequired value)? confirmCodeRequired,
     TResult? Function(LoginLoading value)? loading,
   }) {
     return initial?.call(this);
@@ -186,6 +201,7 @@ class _$LoginInitialImpl extends _LoginInitial {
     TResult Function(_LoginInitial value)? initial,
     TResult Function(_LoginSuccess value)? success,
     TResult Function(_LoginFailure value)? failure,
+    TResult Function(_LoginConfirmCodeRequired value)? confirmCodeRequired,
     TResult Function(LoginLoading value)? loading,
     required TResult orElse(),
   }) {
@@ -278,6 +294,8 @@ class _$LoginSuccessImpl extends _LoginSuccess {
     required TResult Function() initial,
     required TResult Function(String login, String password) success,
     required TResult Function(String? errorMessage) failure,
+    required TResult Function(String email, String? errorMessage)
+        confirmCodeRequired,
     required TResult Function() loading,
   }) {
     return success(login, password);
@@ -289,6 +307,7 @@ class _$LoginSuccessImpl extends _LoginSuccess {
     TResult? Function()? initial,
     TResult? Function(String login, String password)? success,
     TResult? Function(String? errorMessage)? failure,
+    TResult? Function(String email, String? errorMessage)? confirmCodeRequired,
     TResult? Function()? loading,
   }) {
     return success?.call(login, password);
@@ -300,6 +319,7 @@ class _$LoginSuccessImpl extends _LoginSuccess {
     TResult Function()? initial,
     TResult Function(String login, String password)? success,
     TResult Function(String? errorMessage)? failure,
+    TResult Function(String email, String? errorMessage)? confirmCodeRequired,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
@@ -315,6 +335,8 @@ class _$LoginSuccessImpl extends _LoginSuccess {
     required TResult Function(_LoginInitial value) initial,
     required TResult Function(_LoginSuccess value) success,
     required TResult Function(_LoginFailure value) failure,
+    required TResult Function(_LoginConfirmCodeRequired value)
+        confirmCodeRequired,
     required TResult Function(LoginLoading value) loading,
   }) {
     return success(this);
@@ -326,6 +348,7 @@ class _$LoginSuccessImpl extends _LoginSuccess {
     TResult? Function(_LoginInitial value)? initial,
     TResult? Function(_LoginSuccess value)? success,
     TResult? Function(_LoginFailure value)? failure,
+    TResult? Function(_LoginConfirmCodeRequired value)? confirmCodeRequired,
     TResult? Function(LoginLoading value)? loading,
   }) {
     return success?.call(this);
@@ -337,6 +360,7 @@ class _$LoginSuccessImpl extends _LoginSuccess {
     TResult Function(_LoginInitial value)? initial,
     TResult Function(_LoginSuccess value)? success,
     TResult Function(_LoginFailure value)? failure,
+    TResult Function(_LoginConfirmCodeRequired value)? confirmCodeRequired,
     TResult Function(LoginLoading value)? loading,
     required TResult orElse(),
   }) {
@@ -428,6 +452,8 @@ class _$LoginFailureImpl extends _LoginFailure {
     required TResult Function() initial,
     required TResult Function(String login, String password) success,
     required TResult Function(String? errorMessage) failure,
+    required TResult Function(String email, String? errorMessage)
+        confirmCodeRequired,
     required TResult Function() loading,
   }) {
     return failure(errorMessage);
@@ -439,6 +465,7 @@ class _$LoginFailureImpl extends _LoginFailure {
     TResult? Function()? initial,
     TResult? Function(String login, String password)? success,
     TResult? Function(String? errorMessage)? failure,
+    TResult? Function(String email, String? errorMessage)? confirmCodeRequired,
     TResult? Function()? loading,
   }) {
     return failure?.call(errorMessage);
@@ -450,6 +477,7 @@ class _$LoginFailureImpl extends _LoginFailure {
     TResult Function()? initial,
     TResult Function(String login, String password)? success,
     TResult Function(String? errorMessage)? failure,
+    TResult Function(String email, String? errorMessage)? confirmCodeRequired,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
@@ -465,6 +493,8 @@ class _$LoginFailureImpl extends _LoginFailure {
     required TResult Function(_LoginInitial value) initial,
     required TResult Function(_LoginSuccess value) success,
     required TResult Function(_LoginFailure value) failure,
+    required TResult Function(_LoginConfirmCodeRequired value)
+        confirmCodeRequired,
     required TResult Function(LoginLoading value) loading,
   }) {
     return failure(this);
@@ -476,6 +506,7 @@ class _$LoginFailureImpl extends _LoginFailure {
     TResult? Function(_LoginInitial value)? initial,
     TResult? Function(_LoginSuccess value)? success,
     TResult? Function(_LoginFailure value)? failure,
+    TResult? Function(_LoginConfirmCodeRequired value)? confirmCodeRequired,
     TResult? Function(LoginLoading value)? loading,
   }) {
     return failure?.call(this);
@@ -487,6 +518,7 @@ class _$LoginFailureImpl extends _LoginFailure {
     TResult Function(_LoginInitial value)? initial,
     TResult Function(_LoginSuccess value)? success,
     TResult Function(_LoginFailure value)? failure,
+    TResult Function(_LoginConfirmCodeRequired value)? confirmCodeRequired,
     TResult Function(LoginLoading value)? loading,
     required TResult orElse(),
   }) {
@@ -506,6 +538,176 @@ abstract class _LoginFailure extends LoginState {
   @JsonKey(ignore: true)
   _$$LoginFailureImplCopyWith<_$LoginFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoginConfirmCodeRequiredImplCopyWith<$Res> {
+  factory _$$LoginConfirmCodeRequiredImplCopyWith(
+          _$LoginConfirmCodeRequiredImpl value,
+          $Res Function(_$LoginConfirmCodeRequiredImpl) then) =
+      __$$LoginConfirmCodeRequiredImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String email, String? errorMessage});
+}
+
+/// @nodoc
+class __$$LoginConfirmCodeRequiredImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginConfirmCodeRequiredImpl>
+    implements _$$LoginConfirmCodeRequiredImplCopyWith<$Res> {
+  __$$LoginConfirmCodeRequiredImplCopyWithImpl(
+      _$LoginConfirmCodeRequiredImpl _value,
+      $Res Function(_$LoginConfirmCodeRequiredImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+    Object? errorMessage = freezed,
+  }) {
+    return _then(_$LoginConfirmCodeRequiredImpl(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      errorMessage: freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoginConfirmCodeRequiredImpl extends _LoginConfirmCodeRequired {
+  const _$LoginConfirmCodeRequiredImpl({required this.email, this.errorMessage})
+      : super._();
+
+  @override
+  final String email;
+  @override
+  final String? errorMessage;
+
+  @override
+  String toString() {
+    return 'LoginState.confirmCodeRequired(email: $email, errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoginConfirmCodeRequiredImpl &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, email, errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoginConfirmCodeRequiredImplCopyWith<_$LoginConfirmCodeRequiredImpl>
+      get copyWith => __$$LoginConfirmCodeRequiredImplCopyWithImpl<
+          _$LoginConfirmCodeRequiredImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String login, String password) success,
+    required TResult Function(String? errorMessage) failure,
+    required TResult Function(String email, String? errorMessage)
+        confirmCodeRequired,
+    required TResult Function() loading,
+  }) {
+    return confirmCodeRequired(email, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String login, String password)? success,
+    TResult? Function(String? errorMessage)? failure,
+    TResult? Function(String email, String? errorMessage)? confirmCodeRequired,
+    TResult? Function()? loading,
+  }) {
+    return confirmCodeRequired?.call(email, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String login, String password)? success,
+    TResult Function(String? errorMessage)? failure,
+    TResult Function(String email, String? errorMessage)? confirmCodeRequired,
+    TResult Function()? loading,
+    required TResult orElse(),
+  }) {
+    if (confirmCodeRequired != null) {
+      return confirmCodeRequired(email, errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoginInitial value) initial,
+    required TResult Function(_LoginSuccess value) success,
+    required TResult Function(_LoginFailure value) failure,
+    required TResult Function(_LoginConfirmCodeRequired value)
+        confirmCodeRequired,
+    required TResult Function(LoginLoading value) loading,
+  }) {
+    return confirmCodeRequired(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoginInitial value)? initial,
+    TResult? Function(_LoginSuccess value)? success,
+    TResult? Function(_LoginFailure value)? failure,
+    TResult? Function(_LoginConfirmCodeRequired value)? confirmCodeRequired,
+    TResult? Function(LoginLoading value)? loading,
+  }) {
+    return confirmCodeRequired?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoginInitial value)? initial,
+    TResult Function(_LoginSuccess value)? success,
+    TResult Function(_LoginFailure value)? failure,
+    TResult Function(_LoginConfirmCodeRequired value)? confirmCodeRequired,
+    TResult Function(LoginLoading value)? loading,
+    required TResult orElse(),
+  }) {
+    if (confirmCodeRequired != null) {
+      return confirmCodeRequired(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoginConfirmCodeRequired extends LoginState {
+  const factory _LoginConfirmCodeRequired(
+      {required final String email,
+      final String? errorMessage}) = _$LoginConfirmCodeRequiredImpl;
+  const _LoginConfirmCodeRequired._() : super._();
+
+  String get email;
+  String? get errorMessage;
+  @JsonKey(ignore: true)
+  _$$LoginConfirmCodeRequiredImplCopyWith<_$LoginConfirmCodeRequiredImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -549,6 +751,8 @@ class _$LoginLoadingImpl extends LoginLoading {
     required TResult Function() initial,
     required TResult Function(String login, String password) success,
     required TResult Function(String? errorMessage) failure,
+    required TResult Function(String email, String? errorMessage)
+        confirmCodeRequired,
     required TResult Function() loading,
   }) {
     return loading();
@@ -560,6 +764,7 @@ class _$LoginLoadingImpl extends LoginLoading {
     TResult? Function()? initial,
     TResult? Function(String login, String password)? success,
     TResult? Function(String? errorMessage)? failure,
+    TResult? Function(String email, String? errorMessage)? confirmCodeRequired,
     TResult? Function()? loading,
   }) {
     return loading?.call();
@@ -571,6 +776,7 @@ class _$LoginLoadingImpl extends LoginLoading {
     TResult Function()? initial,
     TResult Function(String login, String password)? success,
     TResult Function(String? errorMessage)? failure,
+    TResult Function(String email, String? errorMessage)? confirmCodeRequired,
     TResult Function()? loading,
     required TResult orElse(),
   }) {
@@ -586,6 +792,8 @@ class _$LoginLoadingImpl extends LoginLoading {
     required TResult Function(_LoginInitial value) initial,
     required TResult Function(_LoginSuccess value) success,
     required TResult Function(_LoginFailure value) failure,
+    required TResult Function(_LoginConfirmCodeRequired value)
+        confirmCodeRequired,
     required TResult Function(LoginLoading value) loading,
   }) {
     return loading(this);
@@ -597,6 +805,7 @@ class _$LoginLoadingImpl extends LoginLoading {
     TResult? Function(_LoginInitial value)? initial,
     TResult? Function(_LoginSuccess value)? success,
     TResult? Function(_LoginFailure value)? failure,
+    TResult? Function(_LoginConfirmCodeRequired value)? confirmCodeRequired,
     TResult? Function(LoginLoading value)? loading,
   }) {
     return loading?.call(this);
@@ -608,6 +817,7 @@ class _$LoginLoadingImpl extends LoginLoading {
     TResult Function(_LoginInitial value)? initial,
     TResult Function(_LoginSuccess value)? success,
     TResult Function(_LoginFailure value)? failure,
+    TResult Function(_LoginConfirmCodeRequired value)? confirmCodeRequired,
     TResult Function(LoginLoading value)? loading,
     required TResult orElse(),
   }) {
