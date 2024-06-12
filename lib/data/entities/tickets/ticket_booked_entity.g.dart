@@ -10,13 +10,13 @@ _$TicketBookedEntityImpl _$$TicketBookedEntityImplFromJson(
         Map<String, dynamic> json) =>
     _$TicketBookedEntityImpl(
       id: json['id'] as String,
-      rowNumber: json['rowNumber'] as int,
-      placeNumber: json['placeNumber'] as int,
+      rowNumber: (json['rowNumber'] as num).toInt(),
+      placeNumber: (json['placeNumber'] as num).toInt(),
       ticketStatus: $enumDecode(_$TicketStatusEnumMap, json['ticketStatus'],
           unknownValue: TicketStatus.unknown),
       price: (json['price'] as num).toDouble(),
       qrCode: json['qrCode'] as String?,
-      type: json['type'] as int,
+      type: (json['type'] as num).toInt(),
       ticketType: TicketKeyValueEntity.fromJson(
           json['ticketType'] as Map<String, dynamic>),
       seatingType: $enumDecode(_$TicketSeatingTypeEnumMap, json['seatingType'],

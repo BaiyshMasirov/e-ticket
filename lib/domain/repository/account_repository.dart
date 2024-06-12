@@ -84,7 +84,7 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
     return response;
   }
 
-  Future<Either<RequestFailure, ResponseResult>> confirmAccount({
+  Future<Either<RequestFailure, AuthResult>> confirmAccount({
     required String email,
     required String code,
   }) async {
@@ -108,7 +108,7 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
     return response;
   }
 
-  Future<Either<RequestFailure, ResponseResult>> recoveryPassword({
+  Future<Either<RequestFailure, AuthResult>> recoveryPassword({
     required String email,
     required String code,
     required String password,

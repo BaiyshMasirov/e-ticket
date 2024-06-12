@@ -15,7 +15,9 @@ class Constants {
 
   static const heroHistoryCachedTitleTag = 'heroHistoryCachedTitleTag';
 
-  static const maxDigitsCount = 4;
+  static const pinCodeMaxDigitsCount = 4;
+
+  static const confirmationCodeMaxDigitsCount = 6;
 }
 
 final double seatSvgSize = 4.8.w;

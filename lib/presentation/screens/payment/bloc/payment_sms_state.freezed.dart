@@ -12,7 +12,7 @@ part of 'payment_sms_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PaymentSMSState {
@@ -150,7 +150,7 @@ class _$PaymentSMSStateInitialImpl extends _PaymentSMSStateInitial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentSMSStateInitialImpl);
@@ -321,7 +321,7 @@ class _$PaymentSMSStateCreatingImpl extends PaymentSMSStateCreating {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentSMSStateCreatingImpl &&
@@ -517,7 +517,7 @@ class _$PaymentSMSStateCreateErrorImpl extends _PaymentSMSStateCreateError {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentSMSStateCreateErrorImpl &&
@@ -709,7 +709,7 @@ class _$PaymentSMSStateCreateSuccessImpl extends _PaymentSMSStateCreateSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentSMSStateCreateSuccessImpl &&
@@ -906,7 +906,7 @@ class _$PaymentSMSStateConfirmingImpl extends PaymentSMSStateConfirming {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentSMSStateConfirmingImpl &&
@@ -1106,7 +1106,7 @@ class _$PaymentSMSStateConfirmSuccessImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentSMSStateConfirmSuccessImpl &&
@@ -1316,7 +1316,7 @@ class _$PaymentSMSStateConfirmErrorImpl extends _PaymentSMSStateConfirmError {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentSMSStateConfirmErrorImpl &&

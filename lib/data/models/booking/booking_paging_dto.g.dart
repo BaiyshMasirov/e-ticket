@@ -9,9 +9,9 @@ part of 'booking_paging_dto.dart';
 _$BookingPagingDtoImpl _$$BookingPagingDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$BookingPagingDtoImpl(
-      currentPageIndex: json['currentPageIndex'] as int,
-      pageSize: json['pageSize'] as int,
-      totalItemCount: json['totalItemCount'] as int,
+      currentPageIndex: (json['currentPageIndex'] as num).toInt(),
+      pageSize: (json['pageSize'] as num).toInt(),
+      totalItemCount: (json['totalItemCount'] as num).toInt(),
       bookings: (json['list'] as List<dynamic>)
           .map((e) => BookingDto.fromJson(e as Map<String, dynamic>))
           .toList(),

@@ -12,7 +12,7 @@ part of 'payment_phone_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PaymentPhoneState {
@@ -126,7 +126,7 @@ class _$PaymentPhoneStateInitialImpl extends _PaymentPhoneStateInitial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentPhoneStateInitialImpl);
@@ -275,7 +275,7 @@ class _$PaymentPhoneStatePaymentCreatingImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentPhoneStatePaymentCreatingImpl &&
@@ -449,7 +449,7 @@ class _$PaymentPhoneStateCreateErrorImpl extends _PaymentPhoneStateCreateError {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentPhoneStateCreateErrorImpl &&
@@ -628,7 +628,7 @@ class _$PaymentPhoneStateCreateSuccessImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentPhoneStateCreateSuccessImpl &&

@@ -9,12 +9,12 @@ part of 'ticket_dto.dart';
 _$TicketDtoImpl _$$TicketDtoImplFromJson(Map<String, dynamic> json) =>
     _$TicketDtoImpl(
       id: json['id'] as String,
-      ticketType: json['type'] as int,
-      placeNumber: json['placeNumber'] as int,
-      rowNumber: json['rowNumber'] as int,
-      branchIndex: json['branchIndex'] as int,
-      branchType: json['branchType'] as int,
-      index: json['index'] as int,
+      ticketType: (json['type'] as num).toInt(),
+      placeNumber: (json['placeNumber'] as num).toInt(),
+      rowNumber: (json['rowNumber'] as num).toInt(),
+      branchIndex: (json['branchIndex'] as num).toInt(),
+      branchType: (json['branchType'] as num).toInt(),
+      index: (json['index'] as num).toInt(),
       price: (json['price'] as num).toDouble(),
       ticketStatus: $enumDecode(_$TicketStatusEnumMap, json['status'],
           unknownValue: TicketStatus.unknown),

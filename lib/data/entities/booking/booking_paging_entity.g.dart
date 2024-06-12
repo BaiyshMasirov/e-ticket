@@ -9,9 +9,9 @@ part of 'booking_paging_entity.dart';
 _$BookingPagingEntityImpl _$$BookingPagingEntityImplFromJson(
         Map<String, dynamic> json) =>
     _$BookingPagingEntityImpl(
-      currentPageIndex: json['currentPageIndex'] as int,
-      pageSize: json['pageSize'] as int,
-      totalItemCount: json['totalItemCount'] as int,
+      currentPageIndex: (json['currentPageIndex'] as num).toInt(),
+      pageSize: (json['pageSize'] as num).toInt(),
+      totalItemCount: (json['totalItemCount'] as num).toInt(),
       bookings: (json['bookings'] as List<dynamic>)
           .map((e) => BookingEntity.fromJson(e as Map<String, dynamic>))
           .toList(),

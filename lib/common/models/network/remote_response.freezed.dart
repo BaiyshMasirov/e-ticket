@@ -12,7 +12,7 @@ part of 'remote_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$RemoteResponse<T> {
@@ -238,7 +238,7 @@ class _$DataWithHeadersImpl<T> extends _DataWithHeaders<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DataWithHeadersImpl<T> &&
@@ -466,7 +466,7 @@ class _$CreatedImpl<T> extends _Created<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$CreatedImpl<T>);
   }
@@ -678,7 +678,7 @@ class _$NotModifiedImpl<T> extends _NotModified<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$NotModifiedImpl<T>);
   }
@@ -890,7 +890,7 @@ class _$UnAuthorizedImpl<T> extends _UnAuthorized<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$UnAuthorizedImpl<T>);
   }
@@ -1130,7 +1130,7 @@ class _$ForbiddenImpl<T> extends _Forbidden<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ForbiddenImpl<T> &&
@@ -1385,7 +1385,7 @@ class _$ContentTooLargeImpl<T> extends _ContentTooLarge<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ContentTooLargeImpl<T> &&
@@ -1641,7 +1641,7 @@ class _$BadRequestImpl<T> extends _BadRequest<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BadRequestImpl<T> &&
@@ -1896,7 +1896,7 @@ class _$NotFoundImpl<T> extends _NotFound<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NotFoundImpl<T> &&
@@ -2151,7 +2151,7 @@ class _$MethodNotAllowedImpl<T> extends _MethodNotAllowed<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MethodNotAllowedImpl<T> &&
@@ -2407,7 +2407,7 @@ class _$TooManyRequestImpl<T> extends _TooManyRequest<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TooManyRequestImpl<T> &&
@@ -2663,7 +2663,7 @@ class _$ConflictImpl<T> extends _Conflict<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConflictImpl<T> &&
@@ -2918,7 +2918,7 @@ class _$LockedImpl<T> extends _Locked<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LockedImpl<T> &&
@@ -3172,7 +3172,7 @@ class _$UpgradeRequiredImpl<T> extends _UpgradeRequired<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpgradeRequiredImpl<T> &&
@@ -3400,7 +3400,7 @@ class _$InternalServerErrorImpl<T> extends _InternalServerError<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InternalServerErrorImpl<T>);
@@ -3613,7 +3613,7 @@ class _$ServiceUnavailableImpl<T> extends _ServiceUnavailable<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ServiceUnavailableImpl<T>);
@@ -3826,7 +3826,7 @@ class _$UnknownErrorImpl<T> extends _UnknownError<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$UnknownErrorImpl<T>);
   }
@@ -4038,7 +4038,7 @@ class _$NoConnectionImpl<T> extends _NoConnection<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$NoConnectionImpl<T>);
   }
@@ -4250,7 +4250,7 @@ class _$ConnectionTimeoutImpl<T> extends _ConnectionTimeout<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConnectionTimeoutImpl<T>);
@@ -4491,7 +4491,7 @@ class _$StatusNotHandledImpl<T> extends _StatusNotHandled<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StatusNotHandledImpl<T> &&
@@ -4719,7 +4719,7 @@ class _$ParsingErrorImpl<T> extends _ParsingError<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$ParsingErrorImpl<T>);
   }

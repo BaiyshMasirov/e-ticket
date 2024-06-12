@@ -9,10 +9,10 @@ part of 'ticket_type_count_dto.dart';
 _$TicketTypeCountDtoImpl _$$TicketTypeCountDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$TicketTypeCountDtoImpl(
-      count: json['count'] as int,
-      availableCount: json['availableCount'] as int,
+      count: (json['count'] as num).toInt(),
+      availableCount: (json['availableCount'] as num).toInt(),
       price: (json['price'] as num).toDouble(),
-      type: json['type'] as int,
+      type: (json['type'] as num).toInt(),
       ticketType:
           KeyValueMapDto.fromJson(json['ticketType'] as Map<String, dynamic>),
     );

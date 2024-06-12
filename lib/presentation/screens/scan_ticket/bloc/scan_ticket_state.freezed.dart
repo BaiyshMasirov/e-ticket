@@ -12,7 +12,7 @@ part of 'scan_ticket_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ScanTicketState {
@@ -116,7 +116,7 @@ class _$ScanTicketInitialStateImpl extends _ScanTicketInitialState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ScanTicketInitialStateImpl);
@@ -253,7 +253,7 @@ class _$ScanTicketCheckingStateImpl extends ScanTicketCheckingState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ScanTicketCheckingStateImpl &&
@@ -406,7 +406,7 @@ class _$ScanTicketCheckErrorStateImpl extends _ScanTicketCheckErrorState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ScanTicketCheckErrorStateImpl &&
@@ -568,7 +568,7 @@ class _$ScanTicketCheckSuccessStateImpl extends _ScanTicketCheckSuccessState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ScanTicketCheckSuccessStateImpl &&

@@ -12,7 +12,7 @@ part of 'seat_layout_state_model_v2.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SeatLayoutStateModelV2 {
@@ -68,7 +68,7 @@ class _$SeatLayoutStateModelV2CopyWithImpl<$Res,
     Object? pathUnSelectedSeat = null,
     Object? pathSoldSeat = null,
     Object? pathDisabledSeat = null,
-    Object? seatPlaceTextPadding = null,
+    Object? seatPlaceTextPadding = freezed,
     Object? seatSvgSize = null,
   }) {
     return _then(_value.copyWith(
@@ -96,7 +96,7 @@ class _$SeatLayoutStateModelV2CopyWithImpl<$Res,
           ? _value.pathDisabledSeat
           : pathDisabledSeat // ignore: cast_nullable_to_non_nullable
               as String,
-      seatPlaceTextPadding: null == seatPlaceTextPadding
+      seatPlaceTextPadding: freezed == seatPlaceTextPadding
           ? _value.seatPlaceTextPadding
           : seatPlaceTextPadding // ignore: cast_nullable_to_non_nullable
               as EdgeInsets,
@@ -147,7 +147,7 @@ class __$$SeatLayoutStateModelV2ImplCopyWithImpl<$Res>
     Object? pathUnSelectedSeat = null,
     Object? pathSoldSeat = null,
     Object? pathDisabledSeat = null,
-    Object? seatPlaceTextPadding = null,
+    Object? seatPlaceTextPadding = freezed,
     Object? seatSvgSize = null,
   }) {
     return _then(_$SeatLayoutStateModelV2Impl(
@@ -175,7 +175,7 @@ class __$$SeatLayoutStateModelV2ImplCopyWithImpl<$Res>
           ? _value.pathDisabledSeat
           : pathDisabledSeat // ignore: cast_nullable_to_non_nullable
               as String,
-      seatPlaceTextPadding: null == seatPlaceTextPadding
+      seatPlaceTextPadding: freezed == seatPlaceTextPadding
           ? _value.seatPlaceTextPadding
           : seatPlaceTextPadding // ignore: cast_nullable_to_non_nullable
               as EdgeInsets,
@@ -233,7 +233,7 @@ class _$SeatLayoutStateModelV2Impl extends _SeatLayoutStateModelV2 {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SeatLayoutStateModelV2Impl &&
@@ -248,8 +248,8 @@ class _$SeatLayoutStateModelV2Impl extends _SeatLayoutStateModelV2 {
                 other.pathSoldSeat == pathSoldSeat) &&
             (identical(other.pathDisabledSeat, pathDisabledSeat) ||
                 other.pathDisabledSeat == pathDisabledSeat) &&
-            (identical(other.seatPlaceTextPadding, seatPlaceTextPadding) ||
-                other.seatPlaceTextPadding == seatPlaceTextPadding) &&
+            const DeepCollectionEquality()
+                .equals(other.seatPlaceTextPadding, seatPlaceTextPadding) &&
             (identical(other.seatSvgSize, seatSvgSize) ||
                 other.seatSvgSize == seatSvgSize));
   }
@@ -263,7 +263,7 @@ class _$SeatLayoutStateModelV2Impl extends _SeatLayoutStateModelV2 {
       pathUnSelectedSeat,
       pathSoldSeat,
       pathDisabledSeat,
-      seatPlaceTextPadding,
+      const DeepCollectionEquality().hash(seatPlaceTextPadding),
       seatSvgSize);
 
   @JsonKey(ignore: true)

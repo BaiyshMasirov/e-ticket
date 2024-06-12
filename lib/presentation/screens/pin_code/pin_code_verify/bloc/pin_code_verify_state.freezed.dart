@@ -12,7 +12,7 @@ part of 'pin_code_verify_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PinCodeVerifyState {
@@ -116,7 +116,7 @@ class _$PinCodeVerifyInitialStateImpl extends _PinCodeVerifyInitialState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PinCodeVerifyInitialStateImpl);
@@ -235,7 +235,7 @@ class _$PinCodeVerifyLoadingStateImpl extends _PinCodeVerifyLoadingState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PinCodeVerifyLoadingStateImpl);
@@ -354,7 +354,7 @@ class _$PinCodeVerifySuccessStateImpl extends _PinCodeVerifySuccessState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PinCodeVerifySuccessStateImpl);
@@ -473,7 +473,7 @@ class _$PinCodeVerifyErrorStateImpl extends _PinCodeVerifyErrorState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PinCodeVerifyErrorStateImpl);

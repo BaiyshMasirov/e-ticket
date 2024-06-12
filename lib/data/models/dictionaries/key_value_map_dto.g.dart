@@ -8,7 +8,7 @@ part of 'key_value_map_dto.dart';
 
 _$KeyValueMapDtoImpl _$$KeyValueMapDtoImplFromJson(Map<String, dynamic> json) =>
     _$KeyValueMapDtoImpl(
-      key: json['key'] as int,
+      key: (json['key'] as num).toInt(),
       value: json['value'] as String,
     );
 

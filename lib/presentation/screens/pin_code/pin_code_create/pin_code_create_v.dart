@@ -40,13 +40,13 @@ class PinCodeCreateV extends HookWidget {
               SizedBox(height: 24.h),
               PinCodeInput(
                 onNumberPress: (value) {
-                  if (pinCode.value.length == Constants.maxDigitsCount) {
+                  if (pinCode.value.length == Constants.pinCodeMaxDigitsCount) {
                     return;
                   }
 
                   pinCode.value = pinCode.value + value.toString();
 
-                  if (pinCode.value.length == Constants.maxDigitsCount) {
+                  if (pinCode.value.length == Constants.pinCodeMaxDigitsCount) {
                     context
                         .read<PinCodeCreateCubit>()
                         .savePinCode(pinCode: pinCode.value);

@@ -50,7 +50,7 @@ class PinCodeDots extends StatelessWidget {
             );
           },
           separatorBuilder: (_, i) => SizedBox(width: 18.w),
-          itemCount: Constants.maxDigitsCount,
+          itemCount: Constants.pinCodeMaxDigitsCount,
         ),
       ),
     );

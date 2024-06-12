@@ -12,7 +12,7 @@ part of 'booking_history_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$BookingHistoryState {
@@ -248,7 +248,7 @@ class _$BookingHistoryStateInitialImpl extends _BookingHistoryStateInitial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BookingHistoryStateInitialImpl &&
@@ -480,7 +480,7 @@ class _$BookingHistoryProgressImpl extends BookingHistoryProgress {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BookingHistoryProgressImpl &&
@@ -721,7 +721,7 @@ class _$BookingHistoryStateSuccessImpl extends _BookingHistoryStateSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BookingHistoryStateSuccessImpl &&
@@ -961,7 +961,7 @@ class _$BookingHistoryStateEmptyImpl extends _BookingHistoryStateEmpty {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BookingHistoryStateEmptyImpl &&
@@ -1202,7 +1202,7 @@ class _$BookingHistoryStateErrorImpl extends _BookingHistoryStateError {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BookingHistoryStateErrorImpl &&

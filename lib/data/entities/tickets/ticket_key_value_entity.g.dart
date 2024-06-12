@@ -9,7 +9,7 @@ part of 'ticket_key_value_entity.dart';
 _$TicketKeyValueEntityImpl _$$TicketKeyValueEntityImplFromJson(
         Map<String, dynamic> json) =>
     _$TicketKeyValueEntityImpl(
-      key: json['key'] as int,
+      key: (json['key'] as num).toInt(),
       value: json['value'] as String,
     );
 

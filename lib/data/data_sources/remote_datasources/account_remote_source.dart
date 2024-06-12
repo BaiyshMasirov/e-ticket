@@ -80,7 +80,8 @@ class AccountRemoteSource {
     return response;
   }
 
-  Future<RemoteResponse<ResponseResult>> confirmAccount({
+  /// result с токеном
+  Future<RemoteResponse<AuthResult>> confirmAccount({
     required String email,
     required String code,
   }) async {
@@ -92,7 +93,7 @@ class AccountRemoteSource {
           'code': code,
         },
       ),
-      parse: (json) => ResponseResult.fromJson(json),
+      parse: (json) => AuthResult.fromJson(json),
     );
 
     return response;
@@ -114,7 +115,8 @@ class AccountRemoteSource {
     return response;
   }
 
-  Future<RemoteResponse<ResponseResult>> recoveryPassword({
+  /// result с токеном
+  Future<RemoteResponse<AuthResult>> recoveryPassword({
     required String email,
     required String code,
     required String password,
@@ -130,7 +132,7 @@ class AccountRemoteSource {
           'confirmPassword': confirmPassword,
         },
       ),
-      parse: (json) => ResponseResult.fromJson(json),
+      parse: (json) => AuthResult.fromJson(json),
     );
 
     return response;

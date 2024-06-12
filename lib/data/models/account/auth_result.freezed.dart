@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'response_result.dart';
+part of 'auth_result.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,34 +14,37 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ResponseResult _$ResponseResultFromJson(Map<String, dynamic> json) {
-  return _ResponseResult.fromJson(json);
+AuthResult _$AuthResultFromJson(Map<String, dynamic> json) {
+  return _AuthResult.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ResponseResult {
+mixin _$AuthResult {
   bool get succeed => throw _privateConstructorUsedError;
   List<String> get messages => throw _privateConstructorUsedError;
+  ApiUserTokenDto? get token => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ResponseResultCopyWith<ResponseResult> get copyWith =>
+  $AuthResultCopyWith<AuthResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ResponseResultCopyWith<$Res> {
-  factory $ResponseResultCopyWith(
-          ResponseResult value, $Res Function(ResponseResult) then) =
-      _$ResponseResultCopyWithImpl<$Res, ResponseResult>;
+abstract class $AuthResultCopyWith<$Res> {
+  factory $AuthResultCopyWith(
+          AuthResult value, $Res Function(AuthResult) then) =
+      _$AuthResultCopyWithImpl<$Res, AuthResult>;
   @useResult
-  $Res call({bool succeed, List<String> messages});
+  $Res call({bool succeed, List<String> messages, ApiUserTokenDto? token});
+
+  $ApiUserTokenDtoCopyWith<$Res>? get token;
 }
 
 /// @nodoc
-class _$ResponseResultCopyWithImpl<$Res, $Val extends ResponseResult>
-    implements $ResponseResultCopyWith<$Res> {
-  _$ResponseResultCopyWithImpl(this._value, this._then);
+class _$AuthResultCopyWithImpl<$Res, $Val extends AuthResult>
+    implements $AuthResultCopyWith<$Res> {
+  _$AuthResultCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -53,6 +56,7 @@ class _$ResponseResultCopyWithImpl<$Res, $Val extends ResponseResult>
   $Res call({
     Object? succeed = null,
     Object? messages = null,
+    Object? token = freezed,
   }) {
     return _then(_value.copyWith(
       succeed: null == succeed
@@ -63,27 +67,46 @@ class _$ResponseResultCopyWithImpl<$Res, $Val extends ResponseResult>
           ? _value.messages
           : messages // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      token: freezed == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as ApiUserTokenDto?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ApiUserTokenDtoCopyWith<$Res>? get token {
+    if (_value.token == null) {
+      return null;
+    }
+
+    return $ApiUserTokenDtoCopyWith<$Res>(_value.token!, (value) {
+      return _then(_value.copyWith(token: value) as $Val);
+    });
   }
 }
 
 /// @nodoc
-abstract class _$$ResponseResultImplCopyWith<$Res>
-    implements $ResponseResultCopyWith<$Res> {
-  factory _$$ResponseResultImplCopyWith(_$ResponseResultImpl value,
-          $Res Function(_$ResponseResultImpl) then) =
-      __$$ResponseResultImplCopyWithImpl<$Res>;
+abstract class _$$AuthResultImplCopyWith<$Res>
+    implements $AuthResultCopyWith<$Res> {
+  factory _$$AuthResultImplCopyWith(
+          _$AuthResultImpl value, $Res Function(_$AuthResultImpl) then) =
+      __$$AuthResultImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool succeed, List<String> messages});
+  $Res call({bool succeed, List<String> messages, ApiUserTokenDto? token});
+
+  @override
+  $ApiUserTokenDtoCopyWith<$Res>? get token;
 }
 
 /// @nodoc
-class __$$ResponseResultImplCopyWithImpl<$Res>
-    extends _$ResponseResultCopyWithImpl<$Res, _$ResponseResultImpl>
-    implements _$$ResponseResultImplCopyWith<$Res> {
-  __$$ResponseResultImplCopyWithImpl(
-      _$ResponseResultImpl _value, $Res Function(_$ResponseResultImpl) _then)
+class __$$AuthResultImplCopyWithImpl<$Res>
+    extends _$AuthResultCopyWithImpl<$Res, _$AuthResultImpl>
+    implements _$$AuthResultImplCopyWith<$Res> {
+  __$$AuthResultImplCopyWithImpl(
+      _$AuthResultImpl _value, $Res Function(_$AuthResultImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -91,8 +114,9 @@ class __$$ResponseResultImplCopyWithImpl<$Res>
   $Res call({
     Object? succeed = null,
     Object? messages = null,
+    Object? token = freezed,
   }) {
-    return _then(_$ResponseResultImpl(
+    return _then(_$AuthResultImpl(
       succeed: null == succeed
           ? _value.succeed
           : succeed // ignore: cast_nullable_to_non_nullable
@@ -101,20 +125,26 @@ class __$$ResponseResultImplCopyWithImpl<$Res>
           ? _value._messages
           : messages // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      token: freezed == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as ApiUserTokenDto?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ResponseResultImpl extends _ResponseResult {
-  const _$ResponseResultImpl(
-      {required this.succeed, final List<String> messages = const []})
+class _$AuthResultImpl extends _AuthResult {
+  const _$AuthResultImpl(
+      {required this.succeed,
+      final List<String> messages = const [],
+      this.token})
       : _messages = messages,
         super._();
 
-  factory _$ResponseResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ResponseResultImplFromJson(json);
+  factory _$AuthResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AuthResultImplFromJson(json);
 
   @override
   final bool succeed;
@@ -128,54 +158,60 @@ class _$ResponseResultImpl extends _ResponseResult {
   }
 
   @override
+  final ApiUserTokenDto? token;
+
+  @override
   String toString() {
-    return 'ResponseResult(succeed: $succeed, messages: $messages)';
+    return 'AuthResult(succeed: $succeed, messages: $messages, token: $token)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ResponseResultImpl &&
+            other is _$AuthResultImpl &&
             (identical(other.succeed, succeed) || other.succeed == succeed) &&
-            const DeepCollectionEquality().equals(other._messages, _messages));
+            const DeepCollectionEquality().equals(other._messages, _messages) &&
+            (identical(other.token, token) || other.token == token));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, succeed, const DeepCollectionEquality().hash(_messages));
+  int get hashCode => Object.hash(runtimeType, succeed,
+      const DeepCollectionEquality().hash(_messages), token);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ResponseResultImplCopyWith<_$ResponseResultImpl> get copyWith =>
-      __$$ResponseResultImplCopyWithImpl<_$ResponseResultImpl>(
-          this, _$identity);
+  _$$AuthResultImplCopyWith<_$AuthResultImpl> get copyWith =>
+      __$$AuthResultImplCopyWithImpl<_$AuthResultImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ResponseResultImplToJson(
+    return _$$AuthResultImplToJson(
       this,
     );
   }
 }
 
-abstract class _ResponseResult extends ResponseResult {
-  const factory _ResponseResult(
+abstract class _AuthResult extends AuthResult {
+  const factory _AuthResult(
       {required final bool succeed,
-      final List<String> messages}) = _$ResponseResultImpl;
-  const _ResponseResult._() : super._();
+      final List<String> messages,
+      final ApiUserTokenDto? token}) = _$AuthResultImpl;
+  const _AuthResult._() : super._();
 
-  factory _ResponseResult.fromJson(Map<String, dynamic> json) =
-      _$ResponseResultImpl.fromJson;
+  factory _AuthResult.fromJson(Map<String, dynamic> json) =
+      _$AuthResultImpl.fromJson;
 
   @override
   bool get succeed;
   @override
   List<String> get messages;
   @override
+  ApiUserTokenDto? get token;
+  @override
   @JsonKey(ignore: true)
-  _$$ResponseResultImplCopyWith<_$ResponseResultImpl> get copyWith =>
+  _$$AuthResultImplCopyWith<_$AuthResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

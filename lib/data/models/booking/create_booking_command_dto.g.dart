@@ -12,9 +12,9 @@ _$CreateBookingCommandDtoImpl _$$CreateBookingCommandDtoImplFromJson(
       customerName: json['customerName'] as String?,
       customerEmail: json['customerEmail'] as String?,
       customerPhone: json['customerPhone'] as String?,
-      paymentType: json['paymentType'] as int,
+      paymentType: (json['paymentType'] as num).toInt(),
       eventId: json['eventId'] as String,
-      ticketCount: json['ticketCount'] as int,
+      ticketCount: (json['ticketCount'] as num).toInt(),
       bookingSum: (json['bookingSum'] as num).toDouble(),
     );
 

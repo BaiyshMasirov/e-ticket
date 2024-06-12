@@ -10,7 +10,7 @@ _$CategoryDtoImpl _$$CategoryDtoImplFromJson(Map<String, dynamic> json) =>
     _$CategoryDtoImpl(
       image: json['image'] as String,
       name: json['name'] as String,
-      type: json['type'] as int,
+      type: (json['type'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$CategoryDtoImplToJson(_$CategoryDtoImpl instance) =>
