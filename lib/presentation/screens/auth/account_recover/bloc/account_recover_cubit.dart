@@ -4,18 +4,18 @@ import 'package:eticket/domain/domain.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
 import 'package:eticket/presentation/app_blocs/settings/settings_cubit.dart';
-import 'package:eticket/presentation/screens/auth/account_confirm/bloc/account_confirm_state.dart';
+import 'package:eticket/presentation/screens/auth/account_recover/bloc/account_recover_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
-class AccountConfirmCubit extends Cubit<AccountConfirmState> {
+class AccountRecoverCubit extends Cubit<AccountRecoverState> {
   final AccountRepository _accountRepository;
   final SnackbarCubit _snackbarCubit;
   final AuthCubit _authCubit;
   final SettingsCubit _settingsCubit;
   final UserPrefsRepository _userPrefsRepository;
 
-  AccountConfirmCubit._({
+  AccountRecoverCubit._({
     required AccountRepository accountRepository,
     required SnackbarCubit snackbarCubit,
     required AuthCubit authCubit,
@@ -26,10 +26,10 @@ class AccountConfirmCubit extends Cubit<AccountConfirmState> {
         _authCubit = authCubit,
         _settingsCubit = settingsCubit,
         _userPrefsRepository = userPrefsRepository,
-        super(const AccountConfirmState.initial());
+        super(const AccountRecoverState.initial());
 
-  factory AccountConfirmCubit.initialize() {
-    return AccountConfirmCubit._(
+  static AccountRecoverCubit initialize() {
+    return AccountRecoverCubit._(
       accountRepository: GetIt.I.get(),
       snackbarCubit: GetIt.I.get(),
       authCubit: GetIt.I.get(),
@@ -38,20 +38,32 @@ class AccountConfirmCubit extends Cubit<AccountConfirmState> {
     );
   }
 
-  Future<void> confirmAccount({
+  Future<void> sendRecoverCode({
+    required String email,
+  }) async {
+    _accountRepository.sendRecoveryCode(email: email);
+
+    emit(const AccountRecoverState.confirmCodeSent());
+  }
+
+  Future<void> recoverAccount({
     required String email,
     required String code,
+    required String password,
+    required String passwordConfirm,
   }) async {
-    emit(const AccountConfirmState.loading());
+    emit(const AccountRecoverState.loading());
 
-    final tokenResult = await _accountRepository.confirmAccount(
+    final tokenResult = await _accountRepository.recoveryPassword(
       email: email,
       code: code,
+      password: password,
+      confirmPassword: passwordConfirm,
     );
 
     tokenResult.fold(
       (failure) => emit(
-        AccountConfirmState.failure(errorMessage: failure.errorMessage),
+        AccountRecoverState.recoverError(errorMessage: failure.errorMessage),
       ),
       (userCreds) async {
         await _userPrefsRepository.needToSetPinCode(needToSetPinCode: true);
@@ -62,10 +74,7 @@ class AccountConfirmCubit extends Cubit<AccountConfirmState> {
           message: LocaleKeys.confirm_success.tr(),
         );
 
-        emit(AccountConfirmState.success(
-          userCreds: userCreds,
-          email: email,
-        ));
+        emit(const AccountRecoverState.recoverSuccess());
       },
     );
   }

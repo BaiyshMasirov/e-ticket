@@ -3,7 +3,6 @@ import 'package:eticket/common/common.dart';
 import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/screens/auth/account_confirm/bloc/bloc.dart';
 import 'package:eticket/presentation/theme/theme.dart';
-import 'package:eticket/presentation/widgets/forms/forms.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:eticket/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +60,9 @@ class AccountConfirmView extends HookWidget {
                   controller: useCodeTC,
                   textInputType: TextInputType.number,
                   inputFormatters: [
-                    LengthLimitingTextInputFormatter(10),
+                    LengthLimitingTextInputFormatter(
+                      Constants.confirmationCodeMaxDigitsCount,
+                    ),
                   ],
                   label: LocaleKeys.confirmation_code.tr(),
                   validate: (value) {

@@ -23,6 +23,7 @@
   "phoneNumber": "Номер телефона",
   "wrongPhoneFormat": "Неверный формат номер телефона",
   "password": "Пароль",
+  "password_confirm": "Подтверждение пароля",
   "email": "Почта",
   "first_name": "Имя",
   "surname": "Фамилия",
@@ -171,5 +172,9 @@
   "website": "Веб-сайт",
   "customer_support": "Служба поддержки",
   "copied": "Скопировано",
-  "confirm_code_sent_on_mail": "Код подтверждения отправлен на вашу почту {}"
+  "confirm_code_sent_on_mail": "Код подтверждения отправлен на вашу почту {}",
+  "forget_password": "Забыли пароль?",
+  "send_recovery_code": "Отправить код подтверждения",
+  "passwords_do_not_match": "Пароли не совпадают",
+  "recover_password": "Восстановление пароля"
 }

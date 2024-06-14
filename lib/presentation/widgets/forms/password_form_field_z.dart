@@ -10,6 +10,8 @@ class PasswordFormFieldZ extends HookWidget {
   final String? label;
   final bool checkForNullEmpty;
   final TextInputAction textInputAction;
+  final bool readonly;
+  final bool enabled;
 
   const PasswordFormFieldZ({
     required this.controller,
@@ -17,6 +19,8 @@ class PasswordFormFieldZ extends HookWidget {
     this.validate,
     this.label,
     this.textInputAction = TextInputAction.done,
+    this.enabled = true,
+    this.readonly = false,
     Key? key,
   }) : super(key: key);
 
@@ -28,6 +32,8 @@ class PasswordFormFieldZ extends HookWidget {
       controller: controller,
       obscureText: hidePassword.value,
       textInputAction: textInputAction,
+      readonly: readonly,
+      enabled: enabled,
       suffix: IconButton(
         onPressed: () {
           hidePassword.value = !hidePassword.value;

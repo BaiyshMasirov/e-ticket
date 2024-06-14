@@ -126,7 +126,7 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
     return response;
   }
 
-  Future<Either<RequestFailure, AuthResult>> recoveryPassword({
+  Future<Either<RequestFailure, UserCredentials>> recoveryPassword({
     required String email,
     required String code,
     required String password,
@@ -141,6 +141,26 @@ class AccountRepository with NetworkRemoteRepositoryMixin {
       ),
     );
 
-    return response;
+    return response.fold(
+      (l) => left(l),
+      (r) {
+        if (r.succeed && r.token != null) {
+          return right(
+            UserCredentials(
+              accessToken: r.token!.jwtToken,
+              refreshToken: r.token!.rtToken,
+              accessTokenExpiresAt:
+                  JwtDecoder.getExpirationDate(r.token!.jwtToken),
+              isAdmin: JwtDecoder.isAdmin(r.token!.jwtToken),
+            ),
+          );
+        }
+
+        return left(RequestFailure.badRequest(
+          HttpStatus.badRequest,
+          r.message,
+        ));
+      },
+    );
   }
 }

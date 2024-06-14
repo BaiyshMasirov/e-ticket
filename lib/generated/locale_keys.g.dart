@@ -24,6 +24,7 @@ abstract class  LocaleKeys {
   static const phoneNumber = 'phoneNumber';
   static const wrongPhoneFormat = 'wrongPhoneFormat';
   static const password = 'password';
+  static const password_confirm = 'password_confirm';
   static const email = 'email';
   static const first_name = 'first_name';
   static const surname = 'surname';
@@ -169,5 +170,9 @@ abstract class  LocaleKeys {
   static const customer_support = 'customer_support';
   static const copied = 'copied';
   static const confirm_code_sent_on_mail = 'confirm_code_sent_on_mail';
+  static const forget_password = 'forget_password';
+  static const send_recovery_code = 'send_recovery_code';
+  static const passwords_do_not_match = 'passwords_do_not_match';
+  static const recover_password = 'recover_password';
 
 }
