@@ -9,11 +9,17 @@ class TicketStandingPlacesState with _$TicketStandingPlacesState {
   const TicketStandingPlacesState._();
   const factory TicketStandingPlacesState.initial() =
       _TicketStandingPlacesStateInitial;
+
   const factory TicketStandingPlacesState.loading() =
       TicketStandingPlacesStateLoading;
+
   const factory TicketStandingPlacesState.success({
     required List<TicketTypeCountDto> tickets,
   }) = _TicketStandingPlacesStateSuccess;
+
+  const factory TicketStandingPlacesState.empty() =
+      _TicketStandingPlacesStateEmpty;
+
   const factory TicketStandingPlacesState.error({
     String? errorMessage,
   }) = _TicketStandingPlacesStateError;

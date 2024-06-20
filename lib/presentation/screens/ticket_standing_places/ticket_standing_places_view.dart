@@ -33,7 +33,7 @@ class TicketStandingPlacesView extends StatelessWidget {
         BlocListener<TicketStandingPlaceHoldCubit,
             TicketStandingPlaceHoldState>(
           listener: (ctx, state) => state.maybeWhen(
-            orElse: () {},
+            orElse: () => null,
             holdingSuccess: (_, bookingId, totalSum) => context.replaceRoute(
               PaymentMethodsRoute(bookingId: bookingId, preciseCost: totalSum),
             ),
@@ -86,6 +86,7 @@ class TicketStandingPlacesView extends StatelessWidget {
               ],
             ),
           ),
+          empty: () => const EmptyContent(),
           error: (error) => Column(
             mainAxisSize: MainAxisSize.min,
             children: [

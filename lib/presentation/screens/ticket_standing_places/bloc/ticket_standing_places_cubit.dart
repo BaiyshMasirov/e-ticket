@@ -32,9 +32,11 @@ class TicketStandingPlacesCubit extends Cubit<TicketStandingPlacesState> {
       (e) => emit(TicketStandingPlacesState.error(
         errorMessage: e.errorMessage,
       )),
-      (r) => emit(TicketStandingPlacesState.success(
-        tickets: r,
-      )),
+      (tickets) {
+        tickets.isEmpty
+            ? emit(const TicketStandingPlacesState.empty())
+            : emit(TicketStandingPlacesState.success(tickets: tickets));
+      },
     );
   }
 

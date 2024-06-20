@@ -1,11 +1,10 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:eticket/domain/domain.dart';
-import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:map_launcher/map_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MapPicker extends StatelessWidget {
   final LatLngModel location;
@@ -29,13 +28,25 @@ class MapPicker extends StatelessWidget {
       itemBuilder: (_, i) {
         final map = maps[i];
 
+        final Function() onTap;
+
+        switch (map.mapType) {
+          case MapType.doubleGis:
+            onTap = () => launchUrl(Uri.parse(
+                'dgis://2gis.ru/geo/${location.lng},${location.lat}'));
+            break;
+          default:
+            onTap = () => map.showMarker(
+                  coords: Coords(location.lat, location.lng),
+                  zoom: 14,
+                  title: '',
+                );
+            break;
+        }
+
         return ListTile(
           title: Text(map.mapName),
-          onTap: () => map.showMarker(
-            coords: Coords(location.lat, location.lat),
-            zoom: 14,
-            title: '',
-          ),
+          onTap: () => onTap(),
           leading: SvgPicture.asset(
             map.icon,
             width: 30.w,

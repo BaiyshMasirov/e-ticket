@@ -21,6 +21,7 @@ mixin _$TicketStandingPlacesState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<TicketTypeCountDto> tickets) success,
+    required TResult Function() empty,
     required TResult Function(String? errorMessage) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +30,7 @@ mixin _$TicketStandingPlacesState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<TicketTypeCountDto> tickets)? success,
+    TResult? Function()? empty,
     TResult? Function(String? errorMessage)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +39,7 @@ mixin _$TicketStandingPlacesState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<TicketTypeCountDto> tickets)? success,
+    TResult Function()? empty,
     TResult Function(String? errorMessage)? error,
     required TResult orElse(),
   }) =>
@@ -46,6 +49,7 @@ mixin _$TicketStandingPlacesState {
     required TResult Function(_TicketStandingPlacesStateInitial value) initial,
     required TResult Function(TicketStandingPlacesStateLoading value) loading,
     required TResult Function(_TicketStandingPlacesStateSuccess value) success,
+    required TResult Function(_TicketStandingPlacesStateEmpty value) empty,
     required TResult Function(_TicketStandingPlacesStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +58,7 @@ mixin _$TicketStandingPlacesState {
     TResult? Function(_TicketStandingPlacesStateInitial value)? initial,
     TResult? Function(TicketStandingPlacesStateLoading value)? loading,
     TResult? Function(_TicketStandingPlacesStateSuccess value)? success,
+    TResult? Function(_TicketStandingPlacesStateEmpty value)? empty,
     TResult? Function(_TicketStandingPlacesStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +67,7 @@ mixin _$TicketStandingPlacesState {
     TResult Function(_TicketStandingPlacesStateInitial value)? initial,
     TResult Function(TicketStandingPlacesStateLoading value)? loading,
     TResult Function(_TicketStandingPlacesStateSuccess value)? success,
+    TResult Function(_TicketStandingPlacesStateEmpty value)? empty,
     TResult Function(_TicketStandingPlacesStateError value)? error,
     required TResult orElse(),
   }) =>
@@ -133,6 +139,7 @@ class _$TicketStandingPlacesStateInitialImpl
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<TicketTypeCountDto> tickets) success,
+    required TResult Function() empty,
     required TResult Function(String? errorMessage) error,
   }) {
     return initial();
@@ -144,6 +151,7 @@ class _$TicketStandingPlacesStateInitialImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<TicketTypeCountDto> tickets)? success,
+    TResult? Function()? empty,
     TResult? Function(String? errorMessage)? error,
   }) {
     return initial?.call();
@@ -155,6 +163,7 @@ class _$TicketStandingPlacesStateInitialImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<TicketTypeCountDto> tickets)? success,
+    TResult Function()? empty,
     TResult Function(String? errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -170,6 +179,7 @@ class _$TicketStandingPlacesStateInitialImpl
     required TResult Function(_TicketStandingPlacesStateInitial value) initial,
     required TResult Function(TicketStandingPlacesStateLoading value) loading,
     required TResult Function(_TicketStandingPlacesStateSuccess value) success,
+    required TResult Function(_TicketStandingPlacesStateEmpty value) empty,
     required TResult Function(_TicketStandingPlacesStateError value) error,
   }) {
     return initial(this);
@@ -181,6 +191,7 @@ class _$TicketStandingPlacesStateInitialImpl
     TResult? Function(_TicketStandingPlacesStateInitial value)? initial,
     TResult? Function(TicketStandingPlacesStateLoading value)? loading,
     TResult? Function(_TicketStandingPlacesStateSuccess value)? success,
+    TResult? Function(_TicketStandingPlacesStateEmpty value)? empty,
     TResult? Function(_TicketStandingPlacesStateError value)? error,
   }) {
     return initial?.call(this);
@@ -192,6 +203,7 @@ class _$TicketStandingPlacesStateInitialImpl
     TResult Function(_TicketStandingPlacesStateInitial value)? initial,
     TResult Function(TicketStandingPlacesStateLoading value)? loading,
     TResult Function(_TicketStandingPlacesStateSuccess value)? success,
+    TResult Function(_TicketStandingPlacesStateEmpty value)? empty,
     TResult Function(_TicketStandingPlacesStateError value)? error,
     required TResult orElse(),
   }) {
@@ -255,6 +267,7 @@ class _$TicketStandingPlacesStateLoadingImpl
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<TicketTypeCountDto> tickets) success,
+    required TResult Function() empty,
     required TResult Function(String? errorMessage) error,
   }) {
     return loading();
@@ -266,6 +279,7 @@ class _$TicketStandingPlacesStateLoadingImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<TicketTypeCountDto> tickets)? success,
+    TResult? Function()? empty,
     TResult? Function(String? errorMessage)? error,
   }) {
     return loading?.call();
@@ -277,6 +291,7 @@ class _$TicketStandingPlacesStateLoadingImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<TicketTypeCountDto> tickets)? success,
+    TResult Function()? empty,
     TResult Function(String? errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -292,6 +307,7 @@ class _$TicketStandingPlacesStateLoadingImpl
     required TResult Function(_TicketStandingPlacesStateInitial value) initial,
     required TResult Function(TicketStandingPlacesStateLoading value) loading,
     required TResult Function(_TicketStandingPlacesStateSuccess value) success,
+    required TResult Function(_TicketStandingPlacesStateEmpty value) empty,
     required TResult Function(_TicketStandingPlacesStateError value) error,
   }) {
     return loading(this);
@@ -303,6 +319,7 @@ class _$TicketStandingPlacesStateLoadingImpl
     TResult? Function(_TicketStandingPlacesStateInitial value)? initial,
     TResult? Function(TicketStandingPlacesStateLoading value)? loading,
     TResult? Function(_TicketStandingPlacesStateSuccess value)? success,
+    TResult? Function(_TicketStandingPlacesStateEmpty value)? empty,
     TResult? Function(_TicketStandingPlacesStateError value)? error,
   }) {
     return loading?.call(this);
@@ -314,6 +331,7 @@ class _$TicketStandingPlacesStateLoadingImpl
     TResult Function(_TicketStandingPlacesStateInitial value)? initial,
     TResult Function(TicketStandingPlacesStateLoading value)? loading,
     TResult Function(_TicketStandingPlacesStateSuccess value)? success,
+    TResult Function(_TicketStandingPlacesStateEmpty value)? empty,
     TResult Function(_TicketStandingPlacesStateError value)? error,
     required TResult orElse(),
   }) {
@@ -413,6 +431,7 @@ class _$TicketStandingPlacesStateSuccessImpl
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<TicketTypeCountDto> tickets) success,
+    required TResult Function() empty,
     required TResult Function(String? errorMessage) error,
   }) {
     return success(tickets);
@@ -424,6 +443,7 @@ class _$TicketStandingPlacesStateSuccessImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<TicketTypeCountDto> tickets)? success,
+    TResult? Function()? empty,
     TResult? Function(String? errorMessage)? error,
   }) {
     return success?.call(tickets);
@@ -435,6 +455,7 @@ class _$TicketStandingPlacesStateSuccessImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<TicketTypeCountDto> tickets)? success,
+    TResult Function()? empty,
     TResult Function(String? errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -450,6 +471,7 @@ class _$TicketStandingPlacesStateSuccessImpl
     required TResult Function(_TicketStandingPlacesStateInitial value) initial,
     required TResult Function(TicketStandingPlacesStateLoading value) loading,
     required TResult Function(_TicketStandingPlacesStateSuccess value) success,
+    required TResult Function(_TicketStandingPlacesStateEmpty value) empty,
     required TResult Function(_TicketStandingPlacesStateError value) error,
   }) {
     return success(this);
@@ -461,6 +483,7 @@ class _$TicketStandingPlacesStateSuccessImpl
     TResult? Function(_TicketStandingPlacesStateInitial value)? initial,
     TResult? Function(TicketStandingPlacesStateLoading value)? loading,
     TResult? Function(_TicketStandingPlacesStateSuccess value)? success,
+    TResult? Function(_TicketStandingPlacesStateEmpty value)? empty,
     TResult? Function(_TicketStandingPlacesStateError value)? error,
   }) {
     return success?.call(this);
@@ -472,6 +495,7 @@ class _$TicketStandingPlacesStateSuccessImpl
     TResult Function(_TicketStandingPlacesStateInitial value)? initial,
     TResult Function(TicketStandingPlacesStateLoading value)? loading,
     TResult Function(_TicketStandingPlacesStateSuccess value)? success,
+    TResult Function(_TicketStandingPlacesStateEmpty value)? empty,
     TResult Function(_TicketStandingPlacesStateError value)? error,
     required TResult orElse(),
   }) {
@@ -494,6 +518,134 @@ abstract class _TicketStandingPlacesStateSuccess
   _$$TicketStandingPlacesStateSuccessImplCopyWith<
           _$TicketStandingPlacesStateSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TicketStandingPlacesStateEmptyImplCopyWith<$Res> {
+  factory _$$TicketStandingPlacesStateEmptyImplCopyWith(
+          _$TicketStandingPlacesStateEmptyImpl value,
+          $Res Function(_$TicketStandingPlacesStateEmptyImpl) then) =
+      __$$TicketStandingPlacesStateEmptyImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$TicketStandingPlacesStateEmptyImplCopyWithImpl<$Res>
+    extends _$TicketStandingPlacesStateCopyWithImpl<$Res,
+        _$TicketStandingPlacesStateEmptyImpl>
+    implements _$$TicketStandingPlacesStateEmptyImplCopyWith<$Res> {
+  __$$TicketStandingPlacesStateEmptyImplCopyWithImpl(
+      _$TicketStandingPlacesStateEmptyImpl _value,
+      $Res Function(_$TicketStandingPlacesStateEmptyImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$TicketStandingPlacesStateEmptyImpl
+    extends _TicketStandingPlacesStateEmpty {
+  const _$TicketStandingPlacesStateEmptyImpl() : super._();
+
+  @override
+  String toString() {
+    return 'TicketStandingPlacesState.empty()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TicketStandingPlacesStateEmptyImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<TicketTypeCountDto> tickets) success,
+    required TResult Function() empty,
+    required TResult Function(String? errorMessage) error,
+  }) {
+    return empty();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<TicketTypeCountDto> tickets)? success,
+    TResult? Function()? empty,
+    TResult? Function(String? errorMessage)? error,
+  }) {
+    return empty?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<TicketTypeCountDto> tickets)? success,
+    TResult Function()? empty,
+    TResult Function(String? errorMessage)? error,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TicketStandingPlacesStateInitial value) initial,
+    required TResult Function(TicketStandingPlacesStateLoading value) loading,
+    required TResult Function(_TicketStandingPlacesStateSuccess value) success,
+    required TResult Function(_TicketStandingPlacesStateEmpty value) empty,
+    required TResult Function(_TicketStandingPlacesStateError value) error,
+  }) {
+    return empty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TicketStandingPlacesStateInitial value)? initial,
+    TResult? Function(TicketStandingPlacesStateLoading value)? loading,
+    TResult? Function(_TicketStandingPlacesStateSuccess value)? success,
+    TResult? Function(_TicketStandingPlacesStateEmpty value)? empty,
+    TResult? Function(_TicketStandingPlacesStateError value)? error,
+  }) {
+    return empty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TicketStandingPlacesStateInitial value)? initial,
+    TResult Function(TicketStandingPlacesStateLoading value)? loading,
+    TResult Function(_TicketStandingPlacesStateSuccess value)? success,
+    TResult Function(_TicketStandingPlacesStateEmpty value)? empty,
+    TResult Function(_TicketStandingPlacesStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TicketStandingPlacesStateEmpty
+    extends TicketStandingPlacesState {
+  const factory _TicketStandingPlacesStateEmpty() =
+      _$TicketStandingPlacesStateEmptyImpl;
+  const _TicketStandingPlacesStateEmpty._() : super._();
 }
 
 /// @nodoc
@@ -570,6 +722,7 @@ class _$TicketStandingPlacesStateErrorImpl
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<TicketTypeCountDto> tickets) success,
+    required TResult Function() empty,
     required TResult Function(String? errorMessage) error,
   }) {
     return error(errorMessage);
@@ -581,6 +734,7 @@ class _$TicketStandingPlacesStateErrorImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<TicketTypeCountDto> tickets)? success,
+    TResult? Function()? empty,
     TResult? Function(String? errorMessage)? error,
   }) {
     return error?.call(errorMessage);
@@ -592,6 +746,7 @@ class _$TicketStandingPlacesStateErrorImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<TicketTypeCountDto> tickets)? success,
+    TResult Function()? empty,
     TResult Function(String? errorMessage)? error,
     required TResult orElse(),
   }) {
@@ -607,6 +762,7 @@ class _$TicketStandingPlacesStateErrorImpl
     required TResult Function(_TicketStandingPlacesStateInitial value) initial,
     required TResult Function(TicketStandingPlacesStateLoading value) loading,
     required TResult Function(_TicketStandingPlacesStateSuccess value) success,
+    required TResult Function(_TicketStandingPlacesStateEmpty value) empty,
     required TResult Function(_TicketStandingPlacesStateError value) error,
   }) {
     return error(this);
@@ -618,6 +774,7 @@ class _$TicketStandingPlacesStateErrorImpl
     TResult? Function(_TicketStandingPlacesStateInitial value)? initial,
     TResult? Function(TicketStandingPlacesStateLoading value)? loading,
     TResult? Function(_TicketStandingPlacesStateSuccess value)? success,
+    TResult? Function(_TicketStandingPlacesStateEmpty value)? empty,
     TResult? Function(_TicketStandingPlacesStateError value)? error,
   }) {
     return error?.call(this);
@@ -629,6 +786,7 @@ class _$TicketStandingPlacesStateErrorImpl
     TResult Function(_TicketStandingPlacesStateInitial value)? initial,
     TResult Function(TicketStandingPlacesStateLoading value)? loading,
     TResult Function(_TicketStandingPlacesStateSuccess value)? success,
+    TResult Function(_TicketStandingPlacesStateEmpty value)? empty,
     TResult Function(_TicketStandingPlacesStateError value)? error,
     required TResult orElse(),
   }) {
