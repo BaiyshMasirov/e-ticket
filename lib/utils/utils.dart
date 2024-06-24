@@ -5,3 +5,4 @@ export 'logger/logger.dart';
 export 'jwt/jwt_decoder.dart';
 export 'alias/alias.dart';
 export 'redirects/map_redirect.dart';
+export 'ticker/ticker.dart';

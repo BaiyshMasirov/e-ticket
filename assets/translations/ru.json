@@ -24,6 +24,7 @@
   "wrongPhoneFormat": "Неверный формат номер телефона",
   "password": "Пароль",
   "password_confirm": "Подтверждение пароля",
+  "email_confirm": "Подтверждение почты",
   "email": "Почта",
   "first_name": "Имя",
   "surname": "Фамилия",
@@ -174,7 +175,11 @@
   "copied": "Скопировано",
   "confirm_code_sent_on_mail": "Код подтверждения отправлен на вашу почту {}",
   "forget_password": "Забыли пароль?",
-  "send_recovery_code": "Отправить код подтверждения",
+  "send_recovery_code_again": "Отправить код для восстановления повторно",
+  "send_confirm_code_again": "Отправить код для подтверждения повторно",
+  "send_confirm_code": "Отправить код для подтверждения",
   "passwords_do_not_match": "Пароли не совпадают",
-  "recover_password": "Восстановление пароля"
+  "recover_password": "Восстановление пароля",
+  "resend_email_code_after": "Повторная отправка кода будет доступна через {}",
+  "account_doesnt_confirmed": "Аккаунт не подтверждён, пожалуйста подтвердите свой аккаунт {}"
 }

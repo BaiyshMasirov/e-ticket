@@ -7,3 +7,4 @@ export 'remote_datasources/payment_remote_source.dart';
 export 'local_datasources/booking_history_local_datasources.dart';
 export 'local_datasources/app_settings_local_source.dart';
 export 'local_datasources/user_prefs_local_source.dart';
+export 'local_datasources/email_code_timer_local_source.dart';

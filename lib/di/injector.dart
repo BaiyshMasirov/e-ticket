@@ -2,6 +2,7 @@ import 'package:eticket/auth/authentication.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/domain/domain.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
+import 'package:eticket/presentation/app_blocs/email_code_timer/email_code_timer.dart';
 import 'package:eticket/presentation/app_blocs/settings/settings_cubit.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -37,10 +38,17 @@ Future<void> injectDependencies() async {
     sharedPreferences: prefs,
   )..read();
 
+  // region timer
+  final emailCodeTimerLocalSource = EmailCodeTimerLocalSource(
+    sharedPreferences: prefs,
+  );
+
   // remote sources
   getIt.registerSingleton<UserPrefsLocalSource>(userPrefsLocalSource);
 
   getIt.registerSingleton<AppSettingsLocalSource>(appSettingsLocalSource);
+
+  getIt.registerSingleton<EmailCodeTimerLocalSource>(emailCodeTimerLocalSource);
 
   getIt.registerSingleton<UserPrefsRepository>(
     UserPrefsRepository(userLocalSource: getIt.get<UserPrefsLocalSource>()),
@@ -49,6 +57,12 @@ Future<void> injectDependencies() async {
   getIt.registerSingleton<AppSettingsRepository>(AppSettingsRepository(
     appSettingsLocalSource: getIt.get<AppSettingsLocalSource>(),
   ));
+
+  getIt.registerSingleton<EmailCodeTimerRepository>(
+    EmailCodeTimerRepository(
+      emailCodeTimerLocalSource: getIt.get<EmailCodeTimerLocalSource>(),
+    ),
+  );
   // endregion
 
   // region AUTH MODULE
@@ -140,6 +154,9 @@ Future<void> injectDependencies() async {
   // end of repositories
   // endregion END OF PROJECT MODULE
 
+  getIt.registerSingleton<EmailCodeTimerCubit>(EmailCodeTimerCubit.initialize(
+    emailCodeTimerRepository: getIt.get<EmailCodeTimerRepository>(),
+  ));
   getIt.registerSingleton<SettingsCubit>(SettingsCubit.initialize());
   getIt.registerSingleton<SnackbarCubit>(SnackbarCubit());
 }

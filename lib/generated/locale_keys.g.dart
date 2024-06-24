@@ -25,6 +25,7 @@ abstract class  LocaleKeys {
   static const wrongPhoneFormat = 'wrongPhoneFormat';
   static const password = 'password';
   static const password_confirm = 'password_confirm';
+  static const email_confirm = 'email_confirm';
   static const email = 'email';
   static const first_name = 'first_name';
   static const surname = 'surname';
@@ -171,8 +172,12 @@ abstract class  LocaleKeys {
   static const copied = 'copied';
   static const confirm_code_sent_on_mail = 'confirm_code_sent_on_mail';
   static const forget_password = 'forget_password';
-  static const send_recovery_code = 'send_recovery_code';
+  static const send_recovery_code_again = 'send_recovery_code_again';
+  static const send_confirm_code_again = 'send_confirm_code_again';
+  static const send_confirm_code = 'send_confirm_code';
   static const passwords_do_not_match = 'passwords_do_not_match';
   static const recover_password = 'recover_password';
+  static const resend_email_code_after = 'resend_email_code_after';
+  static const account_doesnt_confirmed = 'account_doesnt_confirmed';
 
 }

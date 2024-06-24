@@ -38,6 +38,12 @@ class AccountConfirmCubit extends Cubit<AccountConfirmState> {
     );
   }
 
+  Future<void> sendConfirmCode({
+    required String email,
+  }) async {
+    _accountRepository.sendConfirmCode(email: email);
+  }
+
   Future<void> confirmAccount({
     required String email,
     required String code,

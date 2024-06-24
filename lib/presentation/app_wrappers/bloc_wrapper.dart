@@ -1,5 +1,6 @@
 import 'package:eticket/auth/authentication.dart';
 import 'package:eticket/presentation/app_blocs/app_blocs.dart';
+import 'package:eticket/presentation/app_blocs/email_code_timer/email_code_timer.dart';
 import 'package:eticket/presentation/app_blocs/settings/settings_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,6 +26,9 @@ class BlocWrapper extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => GetIt.I.get<SettingsCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => GetIt.I.get<EmailCodeTimerCubit>(),
         ),
       ],
       child: child,

@@ -6,3 +6,4 @@ export 'dictionary_repository.dart';
 export 'payment_repository.dart';
 export 'user_prefs_repository.dart';
 export 'app_settings_repository.dart';
+export 'email_code_timer_repository.dart';

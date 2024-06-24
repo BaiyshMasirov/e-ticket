@@ -47,10 +47,9 @@ class LoginCubit extends Cubit<LoginState> {
             emit(LoginState.failure(errorMessage: l.errorMessage));
           },
           forbidden: (_) {
-            final errorMessage = LocaleKeys.confirm_code_sent_on_mail.tr(
+            final errorMessage = LocaleKeys.account_doesnt_confirmed.tr(
               args: [loginCommandDto.email],
             );
-            _accountRepository.sendConfirmCode(email: loginCommandDto.email);
 
             _snackbarCubit.showErrorSnackbar(message: errorMessage);
 
