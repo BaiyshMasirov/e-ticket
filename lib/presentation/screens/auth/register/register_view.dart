@@ -26,13 +26,14 @@ class RegisterView extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final emailController = useTextEditingController();
-    final firstNameController = useTextEditingController();
-    final lastNameController = useTextEditingController();
-    final middleNameController = useTextEditingController();
-    final passwordController = useTextEditingController();
-    final phoneNumberController = useTextEditingController();
-    final offerPolicyS = useState(false);
+    final useEmailTC = useTextEditingController();
+    final useFirstNameTC = useTextEditingController();
+    final useLastNameTC = useTextEditingController();
+    final useMiddleNameTC = useTextEditingController();
+    final usePasswordTC = useTextEditingController();
+    final usePasswordConfirmTC = useTextEditingController();
+    final usePhoneNumberTC = useTextEditingController();
+    final useOfferPolicy = useState(false);
 
     return BlocListener<RegisterCubit, RegisterState>(
       listener: (_, s) => s.maybeMap(
@@ -58,13 +59,13 @@ class RegisterView extends HookWidget {
                   ),
                   SizedBox(height: 30.h),
                   EmailFormFieldZ(
-                    controller: emailController,
+                    controller: useEmailTC,
                     textInputAction: TextInputAction.next,
                     validate: true,
                   ),
                   SizedBox(height: 10.h),
                   TextFormFieldZ(
-                    controller: firstNameController,
+                    controller: useFirstNameTC,
                     checkForNullEmpty: true,
                     label: LocaleKeys.first_name.tr(),
                     textCapitalization: TextCapitalization.words,
@@ -72,7 +73,7 @@ class RegisterView extends HookWidget {
                   ),
                   SizedBox(height: 10.h),
                   TextFormFieldZ(
-                    controller: lastNameController,
+                    controller: useLastNameTC,
                     checkForNullEmpty: true,
                     label: LocaleKeys.surname.tr(),
                     textCapitalization: TextCapitalization.words,
@@ -80,7 +81,7 @@ class RegisterView extends HookWidget {
                   ),
                   SizedBox(height: 10.h),
                   TextFormFieldZ(
-                    controller: middleNameController,
+                    controller: useMiddleNameTC,
                     checkForNullEmpty: true,
                     label: LocaleKeys.middle_name.tr(),
                     textCapitalization: TextCapitalization.words,
@@ -88,19 +89,37 @@ class RegisterView extends HookWidget {
                   ),
                   SizedBox(height: 10.h),
                   PasswordFormFieldZ(
-                    controller: passwordController,
+                    controller: usePasswordTC,
                     checkForNullEmpty: true,
                     textInputAction: TextInputAction.next,
                   ),
                   SizedBox(height: 10.h),
+                  PasswordFormFieldZ(
+                    label: LocaleKeys.password_confirm.tr(),
+                    controller: usePasswordConfirmTC,
+                    checkForNullEmpty: true,
+                    textInputAction: TextInputAction.next,
+                    validate: (value) {
+                      if (value == null || value.isEmpty) {
+                        return LocaleKeys.fillEmptyField.tr();
+                      }
+
+                      if (value != usePasswordTC.text) {
+                        return LocaleKeys.passwords_do_not_match.tr();
+                      }
+
+                      return null;
+                    },
+                  ),
+                  SizedBox(height: 10.h),
                   PhoneFormFieldZ(
-                    controller: phoneNumberController,
+                    controller: usePhoneNumberTC,
                     validate: true,
                     textInputAction: TextInputAction.done,
                   ),
                   SizedBox(height: 10.h),
                   CheckboxListTile(
-                    value: offerPolicyS.value,
+                    value: useOfferPolicy.value,
                     controlAffinity: ListTileControlAffinity.leading,
                     title: ExcludeSemantics(
                       child: RichText(
@@ -150,14 +169,14 @@ class RegisterView extends HookWidget {
                     onChanged: (value) {
                       if (value == null) return;
 
-                      offerPolicyS.value = value;
+                      useOfferPolicy.value = value;
                     },
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: ErrorFFZ(
                       validator: () {
-                        if (!offerPolicyS.value) {
+                        if (!useOfferPolicy.value) {
                           return LocaleKeys.check_agreement.tr();
                         }
 
@@ -174,13 +193,13 @@ class RegisterView extends HookWidget {
                       if (formKey.currentState?.validate() ?? false) {
                         context.read<RegisterCubit>().register(
                               registerCommandDto: RegisterUserCommandDto(
-                                email: emailController.text,
-                                firstName: firstNameController.text,
-                                lastName: lastNameController.text,
-                                middleName: middleNameController.text,
-                                password: passwordController.text,
+                                email: useEmailTC.text,
+                                firstName: useFirstNameTC.text,
+                                lastName: useLastNameTC.text,
+                                middleName: useMiddleNameTC.text,
+                                password: usePasswordTC.text,
                                 phoneNumber: PhoneFormatters.unMaskPhoneNumber(
-                                  phoneNumberController.text,
+                                  usePhoneNumberTC.text,
                                 ),
                               ),
                             );

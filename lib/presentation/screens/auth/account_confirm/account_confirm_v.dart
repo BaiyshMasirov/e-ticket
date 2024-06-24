@@ -112,7 +112,6 @@ class AccountConfirmView extends HookWidget {
                     ],
                   ),
                   SizedBox(height: 8.h),
-
                   s.maybeMap(
                     orElse: () => const SizedBox.shrink(),
                     failure: (f) => Align(
@@ -131,7 +130,6 @@ class AccountConfirmView extends HookWidget {
                       ),
                     ),
                   ),
-                  // TODO: add code resend button
                   PrimaryButton(
                     title: LocaleKeys.confirm.tr(),
                     onPressed: () {

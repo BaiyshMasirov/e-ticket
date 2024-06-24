@@ -150,7 +150,6 @@ class AccountRecoverV extends HookWidget {
                               return null;
                             },
                           ),
-
                           Visibility(
                             visible: enabledOtherFields,
                             child: Column(
@@ -226,7 +225,6 @@ class AccountRecoverV extends HookWidget {
                               ),
                             ),
                           ),
-                          // TODO: add code resend button
                           Visibility(
                             visible: enabledOtherFields,
                             child: Column(

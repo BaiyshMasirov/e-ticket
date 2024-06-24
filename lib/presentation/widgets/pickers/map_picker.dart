@@ -32,8 +32,11 @@ class MapPicker extends StatelessWidget {
 
         switch (map.mapType) {
           case MapType.doubleGis:
-            onTap = () => launchUrl(Uri.parse(
-                'dgis://2gis.ru/geo/${location.lng},${location.lat}'));
+            onTap = () => launchUrl(
+                  Uri.parse(
+                      'https://2gis.ru/geo/${location.lng},${location.lat}'),
+                  mode: LaunchMode.externalApplication,
+                );
             break;
           default:
             onTap = () => map.showMarker(
