@@ -157,6 +157,7 @@ abstract class  LocaleKeys {
   static const authentication_is_required_to_log_in_to_the_application = 'authentication_is_required_to_log_in_to_the_application';
   static const are_you_sure_you_want_to_logout_form_application = 'are_you_sure_you_want_to_logout_form_application';
   static const create_pin_code = 'create_pin_code';
+  static const confirm_pin_code = 'confirm_pin_code';
   static const repeat_pin_code = 'repeat_pin_code';
   static const enter_pin_code = 'enter_pin_code';
   static const dont_remember_pin_code = 'dont_remember_pin_code';
@@ -179,5 +180,7 @@ abstract class  LocaleKeys {
   static const recover_password = 'recover_password';
   static const resend_email_code_after = 'resend_email_code_after';
   static const account_doesnt_confirmed = 'account_doesnt_confirmed';
+  static const pin_code_does_not_match = 'pin_code_does_not_match';
+  static const back = 'back';
 
 }
