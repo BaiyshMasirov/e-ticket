@@ -1,0 +1,1 @@
+export 'shimmer_v.dart';

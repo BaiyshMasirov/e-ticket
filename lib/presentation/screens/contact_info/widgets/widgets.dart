@@ -1,0 +1,1 @@
+export 'contact_item_v.dart';
