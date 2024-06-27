@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/auth/authentication.dart';
@@ -17,6 +19,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get_it/get_it.dart';
+import 'package:upgrader/upgrader.dart';
 
 class App extends StatelessWidget {
   final _appRouter = AppRouter();
@@ -103,24 +106,34 @@ class App extends StatelessWidget {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         routerConfig: _appRouter.config(),
-        builder: (context, child) => Overlay(
-          initialEntries: [
-            OverlayEntry(
-              builder: (context) => BlocListener<SnackbarCubit, SnackbarState>(
-                listener: (context, state) => state.whenOrNull(
-                  error: (message) => SnackbarAlert.showError(
-                    context: context,
-                    message: message?.tr() ?? LocaleKeys.unknown_error.tr(),
+        builder: (context, child) => UpgradeAlert(
+          navigatorKey: _appRouter.navigatorKey,
+          upgrader: Upgrader(
+            countryCode: context.locale.countryCode,
+          ),
+          dialogStyle: Platform.isIOS
+              ? UpgradeDialogStyle.cupertino
+              : UpgradeDialogStyle.material,
+          child: Overlay(
+            initialEntries: [
+              OverlayEntry(
+                builder: (context) =>
+                    BlocListener<SnackbarCubit, SnackbarState>(
+                  listener: (context, state) => state.whenOrNull(
+                    error: (message) => SnackbarAlert.showError(
+                      context: context,
+                      message: message?.tr() ?? LocaleKeys.unknown_error.tr(),
+                    ),
+                    success: (message) => SnackbarAlert.showSuccess(
+                      context: context,
+                      message: message.tr(),
+                    ),
                   ),
-                  success: (message) => SnackbarAlert.showSuccess(
-                    context: context,
-                    message: message.tr(),
-                  ),
+                  child: UnfocusPointer(child: child),
                 ),
-                child: UnfocusPointer(child: child),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
