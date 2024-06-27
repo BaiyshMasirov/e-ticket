@@ -1,5 +1,4 @@
 import 'package:auto_route/annotations.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:eticket/common/common.dart';
 import 'package:eticket/data/data.dart';
 import 'package:eticket/presentation/screens/ticket_seat_places/bloc/bloc.dart';
@@ -54,7 +53,7 @@ class TicketSeatPlacesScreen extends StatelessWidget {
           eventDate: eventDate,
         ),
         floatingActionButton: const TicketSeatPlacePurchaseFab(),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }

@@ -32,7 +32,7 @@ class TicketSeatPlacesView extends StatelessWidget {
         holdSuccess: (tickets, totalSum, bookingId) => context.replaceRoute(
           PaymentMethodsRoute(bookingId: bookingId, preciseCost: totalSum),
         ),
-        orElse: () {},
+        orElse: () => null,
       ),
       child: BlocBuilder<TicketSeatPlacesCubit, TicketSeatPlacesState>(
         builder: (context, state) => state.maybeWhen(
@@ -72,14 +72,12 @@ class TicketSeatPlacesView extends StatelessWidget {
 
             return Column(
               children: [
-                const SeatPlaceInfoV(),
-                SizedBox(height: 10.h),
-                Visibility(
-                  visible: event.seatingType == EventSeatingType.combo,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      TextButton(
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Visibility(
+                      visible: event.seatingType == EventSeatingType.combo,
+                      child: TextButton(
                         style: TextButton.styleFrom(
                           backgroundColor: Colors.blue.withOpacity(0.1),
                         ),
@@ -91,12 +89,12 @@ class TicketSeatPlacesView extends StatelessWidget {
                         },
                         child: Text(LocaleKeys.standing_places.tr()),
                       ),
-                      SizedBox(height: 10.h),
-                    ],
-                  ),
+                    ),
+                    const Expanded(child: SeatPlaceInfoV()),
+                  ],
                 ),
+                SizedBox(height: 2.h),
                 Expanded(child: Center(child: child)),
-                SizedBox(height: 60.h),
               ],
             );
           },

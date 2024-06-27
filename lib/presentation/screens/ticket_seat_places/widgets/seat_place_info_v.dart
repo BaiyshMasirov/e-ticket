@@ -58,14 +58,24 @@ class SeatPlaceInfoV extends HookWidget {
       const [],
     );
 
-    return SizedBox(
-      height: 20.h,
-      child: ListView.separated(
-        padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-        scrollDirection: Axis.horizontal,
-        itemCount: placeInfos.length,
-        itemBuilder: (_, i) => placeInfos[i],
-        separatorBuilder: (_, i) => SizedBox(width: 10.w),
+    return Scrollbar(
+      thickness: 1.h,
+      thumbVisibility: true,
+      radius: Radius.circular(20.r),
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 4.h),
+        child: SizedBox(
+          height: 25.h,
+          child: ListView.separated(
+            padding: EdgeInsets.symmetric(
+              horizontal: kDefaultPadding,
+            ),
+            scrollDirection: Axis.horizontal,
+            itemCount: placeInfos.length,
+            itemBuilder: (_, i) => placeInfos[i],
+            separatorBuilder: (_, i) => SizedBox(width: 10.w),
+          ),
+        ),
       ),
     );
   }

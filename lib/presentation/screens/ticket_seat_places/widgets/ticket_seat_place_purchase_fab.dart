@@ -7,6 +7,7 @@ import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TicketSeatPlacePurchaseFab extends StatelessWidget {
   const TicketSeatPlacePurchaseFab({
@@ -43,7 +44,7 @@ class TicketSeatPlacePurchaseFab extends StatelessWidget {
                 ),
         ),
         PrimaryButton(
-          horizontalPadding: kDefaultPadding,
+          br: BorderRadius.zero,
           title: '${LocaleKeys.confirm.tr()} '
               '(${state.tickets.fold(0.0, (prev, curr) => prev + curr.price)})',
           onPressed: state.tickets.isNotEmpty
@@ -59,6 +60,7 @@ class TicketSeatPlacePurchaseFab extends StatelessWidget {
                 }
               : null,
         ),
+        SizedBox(height: 4.h),
       ],
     );
   }

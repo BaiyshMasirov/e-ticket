@@ -3,6 +3,7 @@ import 'package:eticket/presentation/theme/theme.dart';
 import 'package:eticket/presentation/widgets/book_my_seat_v2/book_my_seat_v2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zoom_widget/zoom_widget.dart' show Zoom;
 
 final key = GlobalKey();
@@ -46,7 +47,8 @@ class SeatLayoutWidgetV2 extends HookWidget {
           maxScale: 10.0,
           backgroundColor: Colors.transparent,
           canvasColor: Colors.transparent,
-          colorScrollBars: context.colorScheme.primary,
+          colorScrollBars: context.colorScheme.error,
+          scrollWeight: 5.w,
           // maxScale: 10.0,
           child: Padding(
             padding: EdgeInsets.all(kDefaultPadding / 2),
