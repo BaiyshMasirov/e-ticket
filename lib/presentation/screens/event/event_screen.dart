@@ -32,6 +32,9 @@ class EventScreen extends StatelessWidget {
                 EventDatepickerDialog.showEventDatepickerDialog(
                   context: context,
                   eventDateTimes: event.dateRange,
+                  datePickRestrictBefore: DateTime.now().subtract(
+                    const Duration(hours: 5),
+                  ),
                   onDatePick: (pickedDatetime) {
                     navigateToBooking(
                       dateTime: pickedDatetime,
@@ -61,8 +64,8 @@ class EventScreen extends StatelessWidget {
     if (event.seatingType == EventSeatingType.noSeating) {
       context.navigateTo(
         TicketStandingPlacesRoute(
-          eventId: event.id,
-          dateTime: dateTime,
+          event: event,
+          eventDate: dateTime,
         ),
       );
 

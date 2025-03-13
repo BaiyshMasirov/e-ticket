@@ -222,8 +222,8 @@ abstract class $AppRouter extends _i21.RootStackRouter {
       return _i21.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i20.TicketStandingPlacesScreen(
-          eventId: args.eventId,
-          dateTime: args.dateTime,
+          eventDate: args.eventDate,
+          event: args.event,
           key: args.key,
         ),
       );
@@ -754,15 +754,15 @@ class TicketSeatPlacesRouteArgs {
 class TicketStandingPlacesRoute
     extends _i21.PageRouteInfo<TicketStandingPlacesRouteArgs> {
   TicketStandingPlacesRoute({
-    required String eventId,
-    required DateTime dateTime,
+    required DateTime eventDate,
+    required _i24.EventDto event,
     _i23.Key? key,
     List<_i21.PageRouteInfo>? children,
   }) : super(
           TicketStandingPlacesRoute.name,
           args: TicketStandingPlacesRouteArgs(
-            eventId: eventId,
-            dateTime: dateTime,
+            eventDate: eventDate,
+            event: event,
             key: key,
           ),
           initialChildren: children,
@@ -776,19 +776,19 @@ class TicketStandingPlacesRoute
 
 class TicketStandingPlacesRouteArgs {
   const TicketStandingPlacesRouteArgs({
-    required this.eventId,
-    required this.dateTime,
+    required this.eventDate,
+    required this.event,
     this.key,
   });
 
-  final String eventId;
+  final DateTime eventDate;
 
-  final DateTime dateTime;
+  final _i24.EventDto event;
 
   final _i23.Key? key;
 
   @override
   String toString() {
-    return 'TicketStandingPlacesRouteArgs{eventId: $eventId, dateTime: $dateTime, key: $key}';
+    return 'TicketStandingPlacesRouteArgs{eventDate: $eventDate, event: $event, key: $key}';
   }
 }

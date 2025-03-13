@@ -170,8 +170,8 @@ class BishkekArenaBlocksView extends HookWidget {
                       flipX: true,
                       onPressed: () {
                         context.navigateTo(TicketStandingPlacesRoute(
-                          eventId: event.id,
-                          dateTime: eventDate,
+                          event: event,
+                          eventDate: eventDate,
                         ));
                       },
                       size: const Size(192, 140),

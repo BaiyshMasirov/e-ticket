@@ -83,8 +83,8 @@ class TicketSeatPlacesView extends StatelessWidget {
                         ),
                         onPressed: () {
                           context.navigateTo(TicketStandingPlacesRoute(
-                            eventId: event.id,
-                            dateTime: eventDate,
+                            event: event,
+                            eventDate: eventDate,
                           ));
                         },
                         child: Text(LocaleKeys.standing_places.tr()),
