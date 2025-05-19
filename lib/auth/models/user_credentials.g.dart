@@ -17,20 +17,12 @@ _$UserCredentialsImpl _$$UserCredentialsImplFromJson(
     );
 
 Map<String, dynamic> _$$UserCredentialsImplToJson(
-    _$UserCredentialsImpl instance) {
-  final val = <String, dynamic>{
-    'accessToken': instance.accessToken,
-    'refreshToken': instance.refreshToken,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('accessTokenExpiresAt',
-      const DateTimeUTCSerializer().toJson(instance.accessTokenExpiresAt));
-  val['isAdmin'] = instance.isAdmin;
-  return val;
-}
+        _$UserCredentialsImpl instance) =>
+    <String, dynamic>{
+      'accessToken': instance.accessToken,
+      'refreshToken': instance.refreshToken,
+      if (const DateTimeUTCSerializer().toJson(instance.accessTokenExpiresAt)
+          case final value?)
+        'accessTokenExpiresAt': value,
+      'isAdmin': instance.isAdmin,
+    };

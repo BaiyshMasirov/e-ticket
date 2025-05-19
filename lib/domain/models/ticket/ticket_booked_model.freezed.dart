@@ -30,7 +30,9 @@ mixin _$TicketBookedModel {
   TicketKeyValueModel get ticketType => throw _privateConstructorUsedError;
   TicketSeatingType get seatingType => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketBookedModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TicketBookedModelCopyWith<TicketBookedModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -65,6 +67,8 @@ class _$TicketBookedModelCopyWithImpl<$Res, $Val extends TicketBookedModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TicketBookedModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -118,6 +122,8 @@ class _$TicketBookedModelCopyWithImpl<$Res, $Val extends TicketBookedModel>
     ) as $Val);
   }
 
+  /// Create a copy of TicketBookedModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TicketKeyValueModelCopyWith<$Res> get ticketType {
@@ -158,6 +164,8 @@ class __$$TicketBookedModelImplCopyWithImpl<$Res>
       $Res Function(_$TicketBookedModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketBookedModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -280,7 +288,9 @@ class _$TicketBookedModelImpl extends _TicketBookedModel {
   int get hashCode => Object.hash(runtimeType, id, rowNumber, placeNumber,
       ticketStatus, price, qrCode, type, ticketType, seatingType);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketBookedModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketBookedModelImplCopyWith<_$TicketBookedModelImpl> get copyWith =>
@@ -313,18 +323,21 @@ abstract class _TicketBookedModel extends TicketBookedModel {
   double get price;
   @override
   String? get qrCode;
-  @override
 
   /// type == [TicketType]
-  int get type;
   @override
+  int get type;
 
   /// ticketType == [TicketType]
+  @override
   TicketKeyValueModel get ticketType;
   @override
   TicketSeatingType get seatingType;
+
+  /// Create a copy of TicketBookedModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketBookedModelImplCopyWith<_$TicketBookedModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

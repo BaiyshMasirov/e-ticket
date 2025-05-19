@@ -32,39 +32,32 @@ _$EventDtoImpl _$$EventDtoImplFromJson(Map<String, dynamic> json) =>
       dateRange: DateTimeUTCSerializer.fromListJson(json['dateRange'] as List),
     );
 
-Map<String, dynamic> _$$EventDtoImplToJson(_$EventDtoImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('name', instance.name);
-  writeNotNull('description', instance.description);
-  val['status'] = _$EventStatusEnumMap[instance.status]!;
-  val['ageLimit'] = instance.ageLimit;
-  val['minPrice'] = instance.minPrice;
-  val['sold'] = instance.sold;
-  val['count'] = instance.count;
-  writeNotNull('locationName', instance.locationName);
-  val['locationId'] = instance.locationId;
-  val['locationType'] = _$LocationTypeEnumMap[instance.locationType]!;
-  writeNotNull('poster', instance.poster);
-  val['type'] = instance.type;
-  writeNotNull('video', instance.video);
-  writeNotNull('image', instance.image);
-  val['seatingType'] = _$EventSeatingTypeEnumMap[instance.seatingType]!;
-  writeNotNull(
-      'yCordinate', DoubleSerializers.toJsonZeroNullable(instance.yCordinate));
-  writeNotNull(
-      'xCordinate', DoubleSerializers.toJsonZeroNullable(instance.xCordinate));
-  val['dateRange'] = DateTimeUTCSerializer.toListJson(instance.dateRange);
-  return val;
-}
+Map<String, dynamic> _$$EventDtoImplToJson(_$EventDtoImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      if (instance.name case final value?) 'name': value,
+      if (instance.description case final value?) 'description': value,
+      'status': _$EventStatusEnumMap[instance.status]!,
+      'ageLimit': instance.ageLimit,
+      'minPrice': instance.minPrice,
+      'sold': instance.sold,
+      'count': instance.count,
+      if (instance.locationName case final value?) 'locationName': value,
+      'locationId': instance.locationId,
+      'locationType': _$LocationTypeEnumMap[instance.locationType]!,
+      if (instance.poster case final value?) 'poster': value,
+      'type': instance.type,
+      if (instance.video case final value?) 'video': value,
+      if (instance.image case final value?) 'image': value,
+      'seatingType': _$EventSeatingTypeEnumMap[instance.seatingType]!,
+      if (DoubleSerializers.toJsonZeroNullable(instance.yCordinate)
+          case final value?)
+        'yCordinate': value,
+      if (DoubleSerializers.toJsonZeroNullable(instance.xCordinate)
+          case final value?)
+        'xCordinate': value,
+      'dateRange': DateTimeUTCSerializer.toListJson(instance.dateRange),
+    };
 
 const _$EventStatusEnumMap = {
   EventStatus.none: 0,

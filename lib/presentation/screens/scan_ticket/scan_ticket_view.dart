@@ -39,7 +39,7 @@ class ScanTicketView extends HookWidget {
             text: errorMessage ?? LocaleKeys.unknown_error.tr(),
             isError: true,
             context: context,
-            onClose: () => context.popRoute(),
+            onClose: () => context.maybePop(),
           );
         },
         checkSuccess: (ticketQrCode, successMessage) =>
@@ -47,7 +47,7 @@ class ScanTicketView extends HookWidget {
           text: successMessage,
           isError: true,
           context: context,
-          onClose: () => context.popRoute(),
+          onClose: () => context.maybePop(),
         ),
       ),
       child: Stack(
@@ -57,7 +57,7 @@ class ScanTicketView extends HookWidget {
             errorBuilder: (p0, p1, p2) => ScanPermissionDeniedView(
               setPermission: () {},
             ),
-            overlay: QRScannerOverlay(
+            overlayBuilder: (context, constraints) => QRScannerOverlay(
               qrScannerController: qrScannerController,
               overlayColor: Colors.black.withOpacity(0.5),
               scanArea: _scanArea,

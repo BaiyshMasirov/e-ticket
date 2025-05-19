@@ -85,6 +85,9 @@ class _$ScanTicketStateCopyWithImpl<$Res, $Val extends ScanTicketState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ScanTicketState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -103,6 +106,9 @@ class __$$ScanTicketInitialStateImplCopyWithImpl<$Res>
       _$ScanTicketInitialStateImpl _value,
       $Res Function(_$ScanTicketInitialStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ScanTicketState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -225,6 +231,8 @@ class __$$ScanTicketCheckingStateImplCopyWithImpl<$Res>
       $Res Function(_$ScanTicketCheckingStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ScanTicketState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -264,7 +272,9 @@ class _$ScanTicketCheckingStateImpl extends ScanTicketCheckingState {
   @override
   int get hashCode => Object.hash(runtimeType, ticketQrCode);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ScanTicketState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ScanTicketCheckingStateImplCopyWith<_$ScanTicketCheckingStateImpl>
@@ -353,7 +363,10 @@ abstract class ScanTicketCheckingState extends ScanTicketState {
   const ScanTicketCheckingState._() : super._();
 
   String get ticketQrCode;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ScanTicketState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ScanTicketCheckingStateImplCopyWith<_$ScanTicketCheckingStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -377,6 +390,8 @@ class __$$ScanTicketCheckErrorStateImplCopyWithImpl<$Res>
       $Res Function(_$ScanTicketCheckErrorStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ScanTicketState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -417,7 +432,9 @@ class _$ScanTicketCheckErrorStateImpl extends _ScanTicketCheckErrorState {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ScanTicketState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ScanTicketCheckErrorStateImplCopyWith<_$ScanTicketCheckErrorStateImpl>
@@ -506,7 +523,10 @@ abstract class _ScanTicketCheckErrorState extends ScanTicketState {
   const _ScanTicketCheckErrorState._() : super._();
 
   String? get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ScanTicketState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ScanTicketCheckErrorStateImplCopyWith<_$ScanTicketCheckErrorStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -531,6 +551,8 @@ class __$$ScanTicketCheckSuccessStateImplCopyWithImpl<$Res>
       $Res Function(_$ScanTicketCheckSuccessStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ScanTicketState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -581,7 +603,9 @@ class _$ScanTicketCheckSuccessStateImpl extends _ScanTicketCheckSuccessState {
   @override
   int get hashCode => Object.hash(runtimeType, ticketQrCode, successMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ScanTicketState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ScanTicketCheckSuccessStateImplCopyWith<_$ScanTicketCheckSuccessStateImpl>
@@ -673,7 +697,10 @@ abstract class _ScanTicketCheckSuccessState extends ScanTicketState {
 
   String get ticketQrCode;
   String get successMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ScanTicketState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ScanTicketCheckSuccessStateImplCopyWith<_$ScanTicketCheckSuccessStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -23,8 +23,12 @@ mixin _$ResponseResult {
   bool get succeed => throw _privateConstructorUsedError;
   List<String> get messages => throw _privateConstructorUsedError;
 
+  /// Serializes this ResponseResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ResponseResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ResponseResultCopyWith<ResponseResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$ResponseResultCopyWithImpl<$Res, $Val extends ResponseResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ResponseResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$ResponseResultImplCopyWithImpl<$Res>
       _$ResponseResultImpl _value, $Res Function(_$ResponseResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ResponseResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -141,12 +149,14 @@ class _$ResponseResultImpl extends _ResponseResult {
             const DeepCollectionEquality().equals(other._messages, _messages));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, succeed, const DeepCollectionEquality().hash(_messages));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ResponseResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ResponseResultImplCopyWith<_$ResponseResultImpl> get copyWith =>
@@ -174,8 +184,11 @@ abstract class _ResponseResult extends ResponseResult {
   bool get succeed;
   @override
   List<String> get messages;
+
+  /// Create a copy of ResponseResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ResponseResultImplCopyWith<_$ResponseResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -85,6 +85,9 @@ class _$PaymentWebStateCopyWithImpl<$Res, $Val extends PaymentWebState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of PaymentWebState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -103,6 +106,9 @@ class __$$PaymentWebStateInitialImplCopyWithImpl<$Res>
       _$PaymentWebStateInitialImpl _value,
       $Res Function(_$PaymentWebStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PaymentWebState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -222,6 +228,9 @@ class __$$PaymentWebStateLoadingImplCopyWithImpl<$Res>
       _$PaymentWebStateLoadingImpl _value,
       $Res Function(_$PaymentWebStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PaymentWebState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -344,6 +353,8 @@ class __$$PaymentWebStateSuccessImplCopyWithImpl<$Res>
       $Res Function(_$PaymentWebStateSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentWebState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -395,7 +406,9 @@ class _$PaymentWebStateSuccessImpl extends _PaymentWebStateSuccess {
   int get hashCode =>
       Object.hash(runtimeType, acquiringUrl, successRedirectUrl);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentWebState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentWebStateSuccessImplCopyWith<_$PaymentWebStateSuccessImpl>
@@ -486,7 +499,10 @@ abstract class _PaymentWebStateSuccess extends PaymentWebState {
 
   String get acquiringUrl;
   String get successRedirectUrl;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentWebState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentWebStateSuccessImplCopyWith<_$PaymentWebStateSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -508,6 +524,8 @@ class __$$PaymentWebStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$PaymentWebStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentWebState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -547,7 +565,9 @@ class _$PaymentWebStateErrorImpl extends _PaymentWebStateError {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentWebState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentWebStateErrorImplCopyWith<_$PaymentWebStateErrorImpl>
@@ -637,7 +657,10 @@ abstract class _PaymentWebStateError extends PaymentWebState {
   const _PaymentWebStateError._() : super._();
 
   String? get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentWebState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentWebStateErrorImplCopyWith<_$PaymentWebStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

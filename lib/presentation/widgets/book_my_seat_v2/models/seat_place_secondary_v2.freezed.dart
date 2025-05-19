@@ -22,7 +22,9 @@ mixin _$SeatPlaceSecondaryV2 {
   int get placeIndex => throw _privateConstructorUsedError;
   int get placeNumber => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SeatPlaceSecondaryV2
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SeatPlaceSecondaryV2CopyWith<SeatPlaceSecondaryV2> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +54,8 @@ class _$SeatPlaceSecondaryV2CopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SeatPlaceSecondaryV2
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -110,6 +114,8 @@ class __$$SeatPlaceSecondaryV2ImplCopyWithImpl<$Res>
       $Res Function(_$SeatPlaceSecondaryV2Impl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SeatPlaceSecondaryV2
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -192,7 +198,9 @@ class _$SeatPlaceSecondaryV2Impl extends _SeatPlaceSecondaryV2 {
   int get hashCode => Object.hash(runtimeType, branchIndex, rowLabel,
       currentRowIndex, placeIndex, placeNumber);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SeatPlaceSecondaryV2
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SeatPlaceSecondaryV2ImplCopyWith<_$SeatPlaceSecondaryV2Impl>
@@ -220,8 +228,11 @@ abstract class _SeatPlaceSecondaryV2 extends SeatPlaceSecondaryV2 {
   int get placeIndex;
   @override
   int get placeNumber;
+
+  /// Create a copy of SeatPlaceSecondaryV2
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SeatPlaceSecondaryV2ImplCopyWith<_$SeatPlaceSecondaryV2Impl>
       get copyWith => throw _privateConstructorUsedError;
 }

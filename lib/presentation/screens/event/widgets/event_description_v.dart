@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 
 class EventDescriptionV extends StatefulWidget {
@@ -53,8 +52,8 @@ class _EventDescriptionVState extends State<EventDescriptionV> {
   Widget build(BuildContext context) {
     return QuillEditor.basic(
       focusNode: _focusNode,
-      configurations: QuillEditorConfigurations(
-        controller: _quillController,
+      controller: _quillController,
+      config: QuillEditorConfig(
         showCursor: false,
         floatingCursorDisabled: true,
       ),

@@ -32,7 +32,9 @@ mixin _$BookingModel {
   String? get eventName => throw _privateConstructorUsedError;
   String? get eventImage => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BookingModelCopyWith<BookingModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -73,6 +75,8 @@ class _$BookingModelCopyWithImpl<$Res, $Val extends BookingModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BookingModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -156,6 +160,8 @@ class _$BookingModelCopyWithImpl<$Res, $Val extends BookingModel>
     ) as $Val);
   }
 
+  /// Create a copy of BookingModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $LatLngModelCopyWith<$Res>? get latLng {
@@ -206,6 +212,8 @@ class __$$BookingModelImplCopyWithImpl<$Res>
       _$BookingModelImpl _value, $Res Function(_$BookingModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -405,7 +413,9 @@ class _$BookingModelImpl extends _BookingModel {
       eventName,
       eventImage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookingModelImplCopyWith<_$BookingModelImpl> get copyWith =>
@@ -461,8 +471,11 @@ abstract class _BookingModel extends BookingModel {
   String? get eventName;
   @override
   String? get eventImage;
+
+  /// Create a copy of BookingModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookingModelImplCopyWith<_$BookingModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

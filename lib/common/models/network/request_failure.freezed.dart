@@ -172,7 +172,9 @@ mixin _$RequestFailure {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RequestFailureCopyWith<RequestFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -196,6 +198,8 @@ class _$RequestFailureCopyWithImpl<$Res, $Val extends RequestFailure>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -234,6 +238,8 @@ class __$$NoConnectionImplCopyWithImpl<$Res>
       _$NoConnectionImpl _value, $Res Function(_$NoConnectionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -282,7 +288,9 @@ class _$NoConnectionImpl extends _NoConnection {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NoConnectionImplCopyWith<_$NoConnectionImpl> get copyWith =>
@@ -475,8 +483,11 @@ abstract class _NoConnection extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NoConnectionImplCopyWith<_$NoConnectionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -500,6 +511,8 @@ class __$$BadRequestImplCopyWithImpl<$Res>
       _$BadRequestImpl _value, $Res Function(_$BadRequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -548,7 +561,9 @@ class _$BadRequestImpl extends _BadRequest {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BadRequestImplCopyWith<_$BadRequestImpl> get copyWith =>
@@ -741,8 +756,11 @@ abstract class _BadRequest extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BadRequestImplCopyWith<_$BadRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -766,6 +784,8 @@ class __$$NotFoundImplCopyWithImpl<$Res>
       _$NotFoundImpl _value, $Res Function(_$NotFoundImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -814,7 +834,9 @@ class _$NotFoundImpl extends _NotFound {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NotFoundImplCopyWith<_$NotFoundImpl> get copyWith =>
@@ -1007,8 +1029,11 @@ abstract class _NotFound extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NotFoundImplCopyWith<_$NotFoundImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1032,6 +1057,8 @@ class __$$MethodNotAllowedImplCopyWithImpl<$Res>
       $Res Function(_$MethodNotAllowedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1080,7 +1107,9 @@ class _$MethodNotAllowedImpl extends _MethodNotAllowed {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MethodNotAllowedImplCopyWith<_$MethodNotAllowedImpl> get copyWith =>
@@ -1275,8 +1304,11 @@ abstract class _MethodNotAllowed extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MethodNotAllowedImplCopyWith<_$MethodNotAllowedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1300,6 +1332,8 @@ class __$$TooManyRequestImplCopyWithImpl<$Res>
       _$TooManyRequestImpl _value, $Res Function(_$TooManyRequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1348,7 +1382,9 @@ class _$TooManyRequestImpl extends _TooManyRequest {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TooManyRequestImplCopyWith<_$TooManyRequestImpl> get copyWith =>
@@ -1542,8 +1578,11 @@ abstract class _TooManyRequest extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TooManyRequestImplCopyWith<_$TooManyRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1567,6 +1606,8 @@ class __$$ConflictImplCopyWithImpl<$Res>
       _$ConflictImpl _value, $Res Function(_$ConflictImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1615,7 +1656,9 @@ class _$ConflictImpl extends _Conflict {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ConflictImplCopyWith<_$ConflictImpl> get copyWith =>
@@ -1808,8 +1851,11 @@ abstract class _Conflict extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ConflictImplCopyWith<_$ConflictImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1833,6 +1879,8 @@ class __$$LockedImplCopyWithImpl<$Res>
       _$LockedImpl _value, $Res Function(_$LockedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1881,7 +1929,9 @@ class _$LockedImpl extends _Locked {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LockedImplCopyWith<_$LockedImpl> get copyWith =>
@@ -2074,8 +2124,11 @@ abstract class _Locked extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LockedImplCopyWith<_$LockedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2099,6 +2152,8 @@ class __$$UpgradeRequiredImplCopyWithImpl<$Res>
       _$UpgradeRequiredImpl _value, $Res Function(_$UpgradeRequiredImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2147,7 +2202,9 @@ class _$UpgradeRequiredImpl extends _UpgradeRequired {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpgradeRequiredImplCopyWith<_$UpgradeRequiredImpl> get copyWith =>
@@ -2341,8 +2398,11 @@ abstract class _UpgradeRequired extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpgradeRequiredImplCopyWith<_$UpgradeRequiredImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2366,6 +2426,8 @@ class __$$InternalServerErrorImplCopyWithImpl<$Res>
       $Res Function(_$InternalServerErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2415,7 +2477,9 @@ class _$InternalServerErrorImpl extends _InternalServerError {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InternalServerErrorImplCopyWith<_$InternalServerErrorImpl> get copyWith =>
@@ -2610,8 +2674,11 @@ abstract class _InternalServerError extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InternalServerErrorImplCopyWith<_$InternalServerErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2635,6 +2702,8 @@ class __$$ServiceUnavailableImplCopyWithImpl<$Res>
       $Res Function(_$ServiceUnavailableImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2683,7 +2752,9 @@ class _$ServiceUnavailableImpl extends _ServiceUnavailable {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ServiceUnavailableImplCopyWith<_$ServiceUnavailableImpl> get copyWith =>
@@ -2878,8 +2949,11 @@ abstract class _ServiceUnavailable extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ServiceUnavailableImplCopyWith<_$ServiceUnavailableImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2903,6 +2977,8 @@ class __$$UnknownErrorImplCopyWithImpl<$Res>
       _$UnknownErrorImpl _value, $Res Function(_$UnknownErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2951,7 +3027,9 @@ class _$UnknownErrorImpl extends _UnknownError {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UnknownErrorImplCopyWith<_$UnknownErrorImpl> get copyWith =>
@@ -3144,8 +3222,11 @@ abstract class _UnknownError extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UnknownErrorImplCopyWith<_$UnknownErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3169,6 +3250,8 @@ class __$$StatusNotHandledImplCopyWithImpl<$Res>
       $Res Function(_$StatusNotHandledImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3217,7 +3300,9 @@ class _$StatusNotHandledImpl extends _StatusNotHandled {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StatusNotHandledImplCopyWith<_$StatusNotHandledImpl> get copyWith =>
@@ -3412,8 +3497,11 @@ abstract class _StatusNotHandled extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StatusNotHandledImplCopyWith<_$StatusNotHandledImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3437,6 +3525,8 @@ class __$$CreatedImplCopyWithImpl<$Res>
       _$CreatedImpl _value, $Res Function(_$CreatedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3485,7 +3575,9 @@ class _$CreatedImpl extends _Created {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CreatedImplCopyWith<_$CreatedImpl> get copyWith =>
@@ -3678,8 +3770,11 @@ abstract class _Created extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CreatedImplCopyWith<_$CreatedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3703,6 +3798,8 @@ class __$$NotModifiedImplCopyWithImpl<$Res>
       _$NotModifiedImpl _value, $Res Function(_$NotModifiedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3751,7 +3848,9 @@ class _$NotModifiedImpl extends _NotModified {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NotModifiedImplCopyWith<_$NotModifiedImpl> get copyWith =>
@@ -3944,8 +4043,11 @@ abstract class _NotModified extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NotModifiedImplCopyWith<_$NotModifiedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3969,6 +4071,8 @@ class __$$ConnectionTimeoutImplCopyWithImpl<$Res>
       $Res Function(_$ConnectionTimeoutImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4017,7 +4121,9 @@ class _$ConnectionTimeoutImpl extends _ConnectionTimeout {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ConnectionTimeoutImplCopyWith<_$ConnectionTimeoutImpl> get copyWith =>
@@ -4212,8 +4318,11 @@ abstract class _ConnectionTimeout extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ConnectionTimeoutImplCopyWith<_$ConnectionTimeoutImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4237,6 +4346,8 @@ class __$$ContentTooLargeImplCopyWithImpl<$Res>
       _$ContentTooLargeImpl _value, $Res Function(_$ContentTooLargeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4285,7 +4396,9 @@ class _$ContentTooLargeImpl extends _ContentTooLarge {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ContentTooLargeImplCopyWith<_$ContentTooLargeImpl> get copyWith =>
@@ -4479,8 +4592,11 @@ abstract class _ContentTooLarge extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ContentTooLargeImplCopyWith<_$ContentTooLargeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4504,6 +4620,8 @@ class __$$ForbiddenImplCopyWithImpl<$Res>
       _$ForbiddenImpl _value, $Res Function(_$ForbiddenImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4552,7 +4670,9 @@ class _$ForbiddenImpl extends _Forbidden {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ForbiddenImplCopyWith<_$ForbiddenImpl> get copyWith =>
@@ -4745,8 +4865,11 @@ abstract class _Forbidden extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ForbiddenImplCopyWith<_$ForbiddenImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4770,6 +4893,8 @@ class __$$UnAuthorizedImplCopyWithImpl<$Res>
       _$UnAuthorizedImpl _value, $Res Function(_$UnAuthorizedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4818,7 +4943,9 @@ class _$UnAuthorizedImpl extends _UnAuthorized {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UnAuthorizedImplCopyWith<_$UnAuthorizedImpl> get copyWith =>
@@ -5011,8 +5138,11 @@ abstract class _UnAuthorized extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UnAuthorizedImplCopyWith<_$UnAuthorizedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5036,6 +5166,8 @@ class __$$ParsingErrorImplCopyWithImpl<$Res>
       _$ParsingErrorImpl _value, $Res Function(_$ParsingErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5084,7 +5216,9 @@ class _$ParsingErrorImpl extends _ParsingError {
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ParsingErrorImplCopyWith<_$ParsingErrorImpl> get copyWith =>
@@ -5277,8 +5411,11 @@ abstract class _ParsingError extends RequestFailure {
   int? get errorCode;
   @override
   String? get errorMessage;
+
+  /// Create a copy of RequestFailure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ParsingErrorImplCopyWith<_$ParsingErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

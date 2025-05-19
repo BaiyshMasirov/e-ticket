@@ -74,7 +74,7 @@ class PinCodeVerifyV extends HookWidget {
                   title: LocaleKeys
                       .are_you_sure_you_want_to_logout_form_application
                       .tr(),
-                  onNoPress: () => context.popRoute(),
+                  onNoPress: () => context.maybePop(),
                   onYesPress: context.read<AuthCubit>().signOut,
                 ),
                 child: Text(LocaleKeys.dont_remember_pin_code.tr()),

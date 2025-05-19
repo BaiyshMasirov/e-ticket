@@ -21,7 +21,9 @@ mixin _$BookingPagingModel {
   int get totalItemCount => throw _privateConstructorUsedError;
   List<BookingModel> get bookings => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingPagingModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BookingPagingModelCopyWith<BookingPagingModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +51,8 @@ class _$BookingPagingModelCopyWithImpl<$Res, $Val extends BookingPagingModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BookingPagingModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -101,6 +105,8 @@ class __$$BookingPagingModelImplCopyWithImpl<$Res>
       $Res Function(_$BookingPagingModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingPagingModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -178,7 +184,9 @@ class _$BookingPagingModelImpl extends _BookingPagingModel {
   int get hashCode => Object.hash(runtimeType, currentPageIndex, pageSize,
       totalItemCount, const DeepCollectionEquality().hash(_bookings));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingPagingModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookingPagingModelImplCopyWith<_$BookingPagingModelImpl> get copyWith =>
@@ -202,8 +210,11 @@ abstract class _BookingPagingModel extends BookingPagingModel {
   int get totalItemCount;
   @override
   List<BookingModel> get bookings;
+
+  /// Create a copy of BookingPagingModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookingPagingModelImplCopyWith<_$BookingPagingModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

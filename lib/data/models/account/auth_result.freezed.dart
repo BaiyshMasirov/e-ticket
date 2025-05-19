@@ -24,8 +24,12 @@ mixin _$AuthResult {
   List<String> get messages => throw _privateConstructorUsedError;
   ApiUserTokenDto? get token => throw _privateConstructorUsedError;
 
+  /// Serializes this AuthResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AuthResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AuthResultCopyWith<AuthResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +55,8 @@ class _$AuthResultCopyWithImpl<$Res, $Val extends AuthResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AuthResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -74,6 +80,8 @@ class _$AuthResultCopyWithImpl<$Res, $Val extends AuthResult>
     ) as $Val);
   }
 
+  /// Create a copy of AuthResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ApiUserTokenDtoCopyWith<$Res>? get token {
@@ -109,6 +117,8 @@ class __$$AuthResultImplCopyWithImpl<$Res>
       _$AuthResultImpl _value, $Res Function(_$AuthResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AuthResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -175,12 +185,14 @@ class _$AuthResultImpl extends _AuthResult {
             (identical(other.token, token) || other.token == token));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, succeed,
       const DeepCollectionEquality().hash(_messages), token);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AuthResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AuthResultImplCopyWith<_$AuthResultImpl> get copyWith =>
@@ -210,8 +222,11 @@ abstract class _AuthResult extends AuthResult {
   List<String> get messages;
   @override
   ApiUserTokenDto? get token;
+
+  /// Create a copy of AuthResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AuthResultImplCopyWith<_$AuthResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

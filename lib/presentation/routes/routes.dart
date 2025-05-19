@@ -3,7 +3,7 @@ import 'package:eticket/presentation/routes/route_constants.dart';
 import 'package:eticket/presentation/routes/routes.gr.dart';
 
 @AutoRouterConfig()
-class AppRouter extends $AppRouter {
+class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(

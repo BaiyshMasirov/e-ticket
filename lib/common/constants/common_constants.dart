@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Constants {
-  static String envFileName = '.env';
+  static String envFileName = 'env';
 
   static String ticketBookingDB = 'ticket.booking';
 

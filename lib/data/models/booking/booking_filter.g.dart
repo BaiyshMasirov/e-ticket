@@ -13,17 +13,10 @@ _$BookingFilterImpl _$$BookingFilterImplFromJson(Map<String, dynamic> json) =>
           const DateTimeUTCSerializer().fromJson(json['eventDate'] as String?),
     );
 
-Map<String, dynamic> _$$BookingFilterImplToJson(_$BookingFilterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('eventName', instance.eventName);
-  writeNotNull(
-      'eventDate', const DateTimeUTCSerializer().toJson(instance.eventDate));
-  return val;
-}
+Map<String, dynamic> _$$BookingFilterImplToJson(_$BookingFilterImpl instance) =>
+    <String, dynamic>{
+      if (instance.eventName case final value?) 'eventName': value,
+      if (const DateTimeUTCSerializer().toJson(instance.eventDate)
+          case final value?)
+        'eventDate': value,
+    };

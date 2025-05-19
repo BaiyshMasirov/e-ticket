@@ -84,6 +84,9 @@ class _$CategoriesStateCopyWithImpl<$Res, $Val extends CategoriesState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of CategoriesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -102,6 +105,9 @@ class __$$CategoriesStateInitialImplCopyWithImpl<$Res>
       _$CategoriesStateInitialImpl _value,
       $Res Function(_$CategoriesStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of CategoriesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -220,6 +226,9 @@ class __$$CategoriesStateLoadingImplCopyWithImpl<$Res>
       _$CategoriesStateLoadingImpl _value,
       $Res Function(_$CategoriesStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of CategoriesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -341,6 +350,8 @@ class __$$CategoriesStateSuccessImplCopyWithImpl<$Res>
       $Res Function(_$CategoriesStateSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CategoriesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -387,7 +398,9 @@ class _$CategoriesStateSuccessImpl extends _CategoriesStateSuccess {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_items));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CategoriesStateSuccessImplCopyWith<_$CategoriesStateSuccessImpl>
@@ -475,7 +488,10 @@ abstract class _CategoriesStateSuccess extends CategoriesState {
   const _CategoriesStateSuccess._() : super._();
 
   List<CategoryDto> get items;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CategoriesStateSuccessImplCopyWith<_$CategoriesStateSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -497,6 +513,8 @@ class __$$CategoriesStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$CategoriesStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CategoriesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -536,7 +554,9 @@ class _$CategoriesStateErrorImpl extends _CategoriesStateError {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CategoriesStateErrorImplCopyWith<_$CategoriesStateErrorImpl>
@@ -625,7 +645,10 @@ abstract class _CategoriesStateError extends CategoriesState {
   const _CategoriesStateError._() : super._();
 
   String? get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CategoriesStateErrorImplCopyWith<_$CategoriesStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

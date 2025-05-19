@@ -25,8 +25,12 @@ mixin _$EventsFilter {
   @DateTimeUTCSerializer()
   DateTime? get date => throw _privateConstructorUsedError;
 
+  /// Serializes this EventsFilter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EventsFilter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EventsFilterCopyWith<EventsFilter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -53,6 +57,8 @@ class _$EventsFilterCopyWithImpl<$Res, $Val extends EventsFilter>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EventsFilter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -99,6 +105,8 @@ class __$$EventsFilterImplCopyWithImpl<$Res>
       _$EventsFilterImpl _value, $Res Function(_$EventsFilterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EventsFilter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -158,11 +166,13 @@ class _$EventsFilterImpl extends _EventsFilter {
             (identical(other.date, date) || other.date == date));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, type, status, date);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EventsFilter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EventsFilterImplCopyWith<_$EventsFilterImpl> get copyWith =>
@@ -193,8 +203,11 @@ abstract class _EventsFilter extends EventsFilter {
   @override
   @DateTimeUTCSerializer()
   DateTime? get date;
+
+  /// Create a copy of EventsFilter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EventsFilterImplCopyWith<_$EventsFilterImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

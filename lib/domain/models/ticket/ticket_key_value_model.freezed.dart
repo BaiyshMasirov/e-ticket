@@ -19,7 +19,9 @@ mixin _$TicketKeyValueModel {
   int get key => throw _privateConstructorUsedError;
   String get value => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketKeyValueModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TicketKeyValueModelCopyWith<TicketKeyValueModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -43,6 +45,8 @@ class _$TicketKeyValueModelCopyWithImpl<$Res, $Val extends TicketKeyValueModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TicketKeyValueModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +85,8 @@ class __$$TicketKeyValueModelImplCopyWithImpl<$Res>
       $Res Function(_$TicketKeyValueModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketKeyValueModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -128,7 +134,9 @@ class _$TicketKeyValueModelImpl extends _TicketKeyValueModel {
   @override
   int get hashCode => Object.hash(runtimeType, key, value);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketKeyValueModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketKeyValueModelImplCopyWith<_$TicketKeyValueModelImpl> get copyWith =>
@@ -146,8 +154,11 @@ abstract class _TicketKeyValueModel extends TicketKeyValueModel {
   int get key;
   @override
   String get value;
+
+  /// Create a copy of TicketKeyValueModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketKeyValueModelImplCopyWith<_$TicketKeyValueModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

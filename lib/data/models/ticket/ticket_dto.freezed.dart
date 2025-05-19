@@ -34,8 +34,12 @@ mixin _$TicketDto {
   @JsonKey(name: 'status', unknownEnumValue: TicketStatus.unknown)
   TicketStatus get ticketStatus => throw _privateConstructorUsedError;
 
+  /// Serializes this TicketDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TicketDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TicketDtoCopyWith<TicketDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -68,6 +72,8 @@ class _$TicketDtoCopyWithImpl<$Res, $Val extends TicketDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TicketDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -151,6 +157,8 @@ class __$$TicketDtoImplCopyWithImpl<$Res>
       _$TicketDtoImpl _value, $Res Function(_$TicketDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -274,12 +282,14 @@ class _$TicketDtoImpl extends _TicketDto {
                 other.ticketStatus == ticketStatus));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, ticketType, placeNumber,
       rowNumber, branchIndex, branchType, index, price, ticketStatus);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketDtoImplCopyWith<_$TicketDtoImpl> get copyWith =>
@@ -312,9 +322,9 @@ abstract class _TicketDto extends TicketDto {
 
   @override
   String get id;
-  @override
 
   /// ticketType == [TicketType]
+  @override
   @JsonKey(name: 'type')
   int get ticketType;
   @override
@@ -332,8 +342,11 @@ abstract class _TicketDto extends TicketDto {
   @override
   @JsonKey(name: 'status', unknownEnumValue: TicketStatus.unknown)
   TicketStatus get ticketStatus;
+
+  /// Create a copy of TicketDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketDtoImplCopyWith<_$TicketDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

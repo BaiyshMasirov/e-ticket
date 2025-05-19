@@ -52,8 +52,12 @@ mixin _$EventDto {
       fromJson: DateTimeUTCSerializer.fromListJson)
   List<DateTime> get dateRange => throw _privateConstructorUsedError;
 
+  /// Serializes this EventDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EventDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EventDtoCopyWith<EventDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -106,6 +110,8 @@ class _$EventDtoCopyWithImpl<$Res, $Val extends EventDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EventDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -259,6 +265,8 @@ class __$$EventDtoImplCopyWithImpl<$Res>
       _$EventDtoImpl _value, $Res Function(_$EventDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EventDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -500,7 +508,7 @@ class _$EventDtoImpl extends _EventDto {
                 .equals(other._dateRange, _dateRange));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -525,7 +533,9 @@ class _$EventDtoImpl extends _EventDto {
         const DeepCollectionEquality().hash(_dateRange)
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EventDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EventDtoImplCopyWith<_$EventDtoImpl> get copyWith =>
@@ -627,8 +637,11 @@ abstract class _EventDto extends EventDto {
       toJson: DateTimeUTCSerializer.toListJson,
       fromJson: DateTimeUTCSerializer.fromListJson)
   List<DateTime> get dateRange;
+
+  /// Create a copy of EventDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EventDtoImplCopyWith<_$EventDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -19,7 +19,9 @@ mixin _$SeatRowPlaceV2 {
   String get rowPlaceLabel => throw _privateConstructorUsedError;
   List<SeatPlaceV2> get seatPlaces => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SeatRowPlaceV2
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SeatRowPlaceV2CopyWith<SeatRowPlaceV2> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -43,6 +45,8 @@ class _$SeatRowPlaceV2CopyWithImpl<$Res, $Val extends SeatRowPlaceV2>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SeatRowPlaceV2
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +85,8 @@ class __$$SeatRowPlaceV2ImplCopyWithImpl<$Res>
       _$SeatRowPlaceV2Impl _value, $Res Function(_$SeatRowPlaceV2Impl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SeatRowPlaceV2
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -139,7 +145,9 @@ class _$SeatRowPlaceV2Impl extends _SeatRowPlaceV2 {
   int get hashCode => Object.hash(runtimeType, rowPlaceLabel,
       const DeepCollectionEquality().hash(_seatPlaces));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SeatRowPlaceV2
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SeatRowPlaceV2ImplCopyWith<_$SeatRowPlaceV2Impl> get copyWith =>
@@ -157,8 +165,11 @@ abstract class _SeatRowPlaceV2 extends SeatRowPlaceV2 {
   String get rowPlaceLabel;
   @override
   List<SeatPlaceV2> get seatPlaces;
+
+  /// Create a copy of SeatRowPlaceV2
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SeatRowPlaceV2ImplCopyWith<_$SeatRowPlaceV2Impl> get copyWith =>
       throw _privateConstructorUsedError;
 }

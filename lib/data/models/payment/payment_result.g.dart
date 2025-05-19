@@ -17,19 +17,10 @@ _$PaymentResultImpl _$$PaymentResultImplFromJson(Map<String, dynamic> json) =>
       redirectUrl: json['redirectUrl'] as String?,
     );
 
-Map<String, dynamic> _$$PaymentResultImplToJson(_$PaymentResultImpl instance) {
-  final val = <String, dynamic>{
-    'succeded': instance.succeded,
-    'messages': instance.messages,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('link', instance.link);
-  writeNotNull('redirectUrl', instance.redirectUrl);
-  return val;
-}
+Map<String, dynamic> _$$PaymentResultImplToJson(_$PaymentResultImpl instance) =>
+    <String, dynamic>{
+      'succeded': instance.succeded,
+      'messages': instance.messages,
+      if (instance.link case final value?) 'link': value,
+      if (instance.redirectUrl case final value?) 'redirectUrl': value,
+    };

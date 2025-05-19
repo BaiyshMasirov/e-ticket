@@ -119,7 +119,7 @@ class SettingsView extends StatelessWidget {
                   onPress: () => YesNoDialog.showModal(
                     context: context,
                     title: LocaleKeys.delete_account_title.tr(),
-                    onNoPress: context.popRoute,
+                    onNoPress: context.maybePop,
                     onYesPress:
                         context.read<AccountDeleteCubit>().deleteAccount,
                   ),
@@ -134,7 +134,7 @@ class SettingsView extends StatelessWidget {
                 title: LocaleKeys
                     .are_you_sure_you_want_to_logout_form_application
                     .tr(),
-                onNoPress: () => context.popRoute(),
+                onNoPress: () => context.maybePop(),
                 onYesPress: context.read<AuthCubit>().signOut,
               ),
             ),

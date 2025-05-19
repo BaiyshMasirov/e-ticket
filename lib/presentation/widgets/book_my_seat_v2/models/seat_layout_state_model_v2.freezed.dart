@@ -26,7 +26,9 @@ mixin _$SeatLayoutStateModelV2 {
   EdgeInsets get seatPlaceTextPadding => throw _privateConstructorUsedError;
   double get seatSvgSize => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SeatLayoutStateModelV2
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SeatLayoutStateModelV2CopyWith<SeatLayoutStateModelV2> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -59,6 +61,8 @@ class _$SeatLayoutStateModelV2CopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SeatLayoutStateModelV2
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -138,6 +142,8 @@ class __$$SeatLayoutStateModelV2ImplCopyWithImpl<$Res>
       $Res Function(_$SeatLayoutStateModelV2Impl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SeatLayoutStateModelV2
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -266,7 +272,9 @@ class _$SeatLayoutStateModelV2Impl extends _SeatLayoutStateModelV2 {
       seatPlaceTextPadding,
       seatSvgSize);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SeatLayoutStateModelV2
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SeatLayoutStateModelV2ImplCopyWith<_$SeatLayoutStateModelV2Impl>
@@ -302,8 +310,11 @@ abstract class _SeatLayoutStateModelV2 extends SeatLayoutStateModelV2 {
   EdgeInsets get seatPlaceTextPadding;
   @override
   double get seatSvgSize;
+
+  /// Create a copy of SeatLayoutStateModelV2
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SeatLayoutStateModelV2ImplCopyWith<_$SeatLayoutStateModelV2Impl>
       get copyWith => throw _privateConstructorUsedError;
 }

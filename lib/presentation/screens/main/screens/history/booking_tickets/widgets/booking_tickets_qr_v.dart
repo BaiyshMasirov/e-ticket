@@ -148,7 +148,7 @@ class BookingTicketsQRV extends HookWidget {
         TertiaryButton(
           horizontalPadding: 20.w,
           title: LocaleKeys.close.tr(),
-          onPressed: () => context.popRoute(),
+          onPressed: () => context.maybePop(),
         ),
         SizedBox(height: 5.h),
       ],

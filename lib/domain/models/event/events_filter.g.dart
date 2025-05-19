@@ -13,21 +13,13 @@ _$EventsFilterImpl _$$EventsFilterImplFromJson(Map<String, dynamic> json) =>
       date: const DateTimeUTCSerializer().fromJson(json['date'] as String?),
     );
 
-Map<String, dynamic> _$$EventsFilterImplToJson(_$EventsFilterImpl instance) {
-  final val = <String, dynamic>{
-    'type': _$EventTypeEnumMap[instance.type]!,
-    'status': _$EventStatusEnumMap[instance.status]!,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('date', const DateTimeUTCSerializer().toJson(instance.date));
-  return val;
-}
+Map<String, dynamic> _$$EventsFilterImplToJson(_$EventsFilterImpl instance) =>
+    <String, dynamic>{
+      'type': _$EventTypeEnumMap[instance.type]!,
+      'status': _$EventStatusEnumMap[instance.status]!,
+      if (const DateTimeUTCSerializer().toJson(instance.date) case final value?)
+        'date': value,
+    };
 
 const _$EventTypeEnumMap = {
   EventType.none: 0,

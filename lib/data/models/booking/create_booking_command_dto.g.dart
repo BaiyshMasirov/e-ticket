@@ -19,21 +19,13 @@ _$CreateBookingCommandDtoImpl _$$CreateBookingCommandDtoImplFromJson(
     );
 
 Map<String, dynamic> _$$CreateBookingCommandDtoImplToJson(
-    _$CreateBookingCommandDtoImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customerName', instance.customerName);
-  writeNotNull('customerEmail', instance.customerEmail);
-  writeNotNull('customerPhone', instance.customerPhone);
-  val['paymentType'] = instance.paymentType;
-  val['eventId'] = instance.eventId;
-  val['ticketCount'] = instance.ticketCount;
-  val['bookingSum'] = instance.bookingSum;
-  return val;
-}
+        _$CreateBookingCommandDtoImpl instance) =>
+    <String, dynamic>{
+      if (instance.customerName case final value?) 'customerName': value,
+      if (instance.customerEmail case final value?) 'customerEmail': value,
+      if (instance.customerPhone case final value?) 'customerPhone': value,
+      'paymentType': instance.paymentType,
+      'eventId': instance.eventId,
+      'ticketCount': instance.ticketCount,
+      'bookingSum': instance.bookingSum,
+    };

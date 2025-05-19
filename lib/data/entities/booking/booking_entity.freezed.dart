@@ -43,8 +43,12 @@ mixin _$BookingEntity {
   String? get eventName => throw _privateConstructorUsedError;
   String? get eventImage => throw _privateConstructorUsedError;
 
+  /// Serializes this BookingEntity to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BookingEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BookingEntityCopyWith<BookingEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -88,6 +92,8 @@ class _$BookingEntityCopyWithImpl<$Res, $Val extends BookingEntity>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BookingEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -171,6 +177,8 @@ class _$BookingEntityCopyWithImpl<$Res, $Val extends BookingEntity>
     ) as $Val);
   }
 
+  /// Create a copy of BookingEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $LatLngEntityCopyWith<$Res>? get latLng {
@@ -224,6 +232,8 @@ class __$$BookingEntityImplCopyWithImpl<$Res>
       _$BookingEntityImpl _value, $Res Function(_$BookingEntityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -417,7 +427,7 @@ class _$BookingEntityImpl extends _BookingEntity {
                 other.eventImage == eventImage));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -437,7 +447,9 @@ class _$BookingEntityImpl extends _BookingEntity {
       eventName,
       eventImage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookingEntityImplCopyWith<_$BookingEntityImpl> get copyWith =>
@@ -515,8 +527,11 @@ abstract class _BookingEntity extends BookingEntity {
   String? get eventName;
   @override
   String? get eventImage;
+
+  /// Create a copy of BookingEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookingEntityImplCopyWith<_$BookingEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

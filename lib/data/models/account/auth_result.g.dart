@@ -18,18 +18,9 @@ _$AuthResultImpl _$$AuthResultImplFromJson(Map<String, dynamic> json) =>
           : ApiUserTokenDto.fromJson(json['token'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$AuthResultImplToJson(_$AuthResultImpl instance) {
-  final val = <String, dynamic>{
-    'succeed': instance.succeed,
-    'messages': instance.messages,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('token', instance.token?.toJson());
-  return val;
-}
+Map<String, dynamic> _$$AuthResultImplToJson(_$AuthResultImpl instance) =>
+    <String, dynamic>{
+      'succeed': instance.succeed,
+      'messages': instance.messages,
+      if (instance.token?.toJson() case final value?) 'token': value,
+    };

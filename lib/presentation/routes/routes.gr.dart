@@ -54,183 +54,6 @@ import 'package:eticket/presentation/screens/ticket_standing_places/ticket_stand
 import 'package:flutter/cupertino.dart' as _i25;
 import 'package:flutter/material.dart' as _i23;
 
-abstract class $AppRouter extends _i21.RootStackRouter {
-  $AppRouter({super.navigatorKey});
-
-  @override
-  final Map<String, _i21.PageFactory> pagesMap = {
-    BookingHistoryRoute.name: (routeData) {
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i1.BookingHistoryScreen(),
-      );
-    },
-    BookingTicketsRoute.name: (routeData) {
-      final args = routeData.argsAs<BookingTicketsRouteArgs>();
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i2.BookingTicketsScreen(
-          booking: args.booking,
-          key: args.key,
-        ),
-      );
-    },
-    CategoriesRoute.name: (routeData) {
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i3.CategoriesScreen(),
-      );
-    },
-    ChangePasswordRoute.name: (routeData) {
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i4.ChangePasswordScreen(),
-      );
-    },
-    ContactInfoRoute.name: (routeData) {
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i5.ContactInfoScreen(),
-      );
-    },
-    EventRoute.name: (routeData) {
-      final args = routeData.argsAs<EventRouteArgs>();
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i6.EventScreen(
-          event: args.event,
-          key: args.key,
-        ),
-      );
-    },
-    EventsByTypeRoute.name: (routeData) {
-      final args = routeData.argsAs<EventsByTypeRouteArgs>();
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i7.EventsByTypeScreen(
-          eventType: args.eventType,
-          key: args.key,
-        ),
-      );
-    },
-    LoginRoute.name: (routeData) {
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i8.LoginScreen(),
-      );
-    },
-    MainRoute.name: (routeData) {
-      final args =
-          routeData.argsAs<MainRouteArgs>(orElse: () => const MainRouteArgs());
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i9.MainScreen(
-          initialTab: args.initialTab,
-          key: args.key,
-        ),
-      );
-    },
-    PaymentMethodsRoute.name: (routeData) {
-      final args = routeData.argsAs<PaymentMethodsRouteArgs>();
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i10.PaymentMethodsScreen(
-          preciseCost: args.preciseCost,
-          bookingId: args.bookingId,
-          key: args.key,
-        ),
-      );
-    },
-    PaymentWebViewRoute.name: (routeData) {
-      final args = routeData.argsAs<PaymentWebViewRouteArgs>();
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i11.PaymentWebViewScreen(
-          bookingId: args.bookingId,
-          paymentType: args.paymentType,
-          onSuccess: args.onSuccess,
-          key: args.key,
-        ),
-      );
-    },
-    PinCodeCreateRoute.name: (routeData) {
-      final args = routeData.argsAs<PinCodeCreateRouteArgs>();
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i12.PinCodeCreateScreen(
-          onBackPressed: args.onBackPressed,
-          navigateOnPinCodeCreate: args.navigateOnPinCodeCreate,
-          key: args.key,
-        ),
-      );
-    },
-    PinCodeVerifyRoute.name: (routeData) {
-      final args = routeData.argsAs<PinCodeVerifyRouteArgs>();
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i13.PinCodeVerifyScreen(
-          onBackPressed: args.onBackPressed,
-          navigateOnPinCodeCreate: args.navigateOnPinCodeCreate,
-          key: args.key,
-        ),
-      );
-    },
-    RegisterRoute.name: (routeData) {
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i14.RegisterScreen(),
-      );
-    },
-    ScanTicketRoute.name: (routeData) {
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i15.ScanTicketScreen(),
-      );
-    },
-    SearchRoute.name: (routeData) {
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i16.SearchScreen(),
-      );
-    },
-    SettingsRoute.name: (routeData) {
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i17.SettingsScreen(),
-      );
-    },
-    SplashRoute.name: (routeData) {
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i18.SplashScreen(),
-      );
-    },
-    TicketSeatPlacesRoute.name: (routeData) {
-      final args = routeData.argsAs<TicketSeatPlacesRouteArgs>();
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i19.TicketSeatPlacesScreen(
-          locationType: args.locationType,
-          event: args.event,
-          eventDate: args.eventDate,
-          key: args.key,
-        ),
-      );
-    },
-    TicketStandingPlacesRoute.name: (routeData) {
-      final args = routeData.argsAs<TicketStandingPlacesRouteArgs>();
-      return _i21.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i20.TicketStandingPlacesScreen(
-          eventDate: args.eventDate,
-          event: args.event,
-          key: args.key,
-        ),
-      );
-    },
-  };
-}
-
 /// generated route for
 /// [_i1.BookingHistoryScreen]
 class BookingHistoryRoute extends _i21.PageRouteInfo<void> {
@@ -242,7 +65,12 @@ class BookingHistoryRoute extends _i21.PageRouteInfo<void> {
 
   static const String name = 'BookingHistoryRoute';
 
-  static const _i21.PageInfo<void> page = _i21.PageInfo<void>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      return const _i1.BookingHistoryScreen();
+    },
+  );
 }
 
 /// generated route for
@@ -263,8 +91,16 @@ class BookingTicketsRoute extends _i21.PageRouteInfo<BookingTicketsRouteArgs> {
 
   static const String name = 'BookingTicketsRoute';
 
-  static const _i21.PageInfo<BookingTicketsRouteArgs> page =
-      _i21.PageInfo<BookingTicketsRouteArgs>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<BookingTicketsRouteArgs>();
+      return _i2.BookingTicketsScreen(
+        booking: args.booking,
+        key: args.key,
+      );
+    },
+  );
 }
 
 class BookingTicketsRouteArgs {
@@ -294,7 +130,12 @@ class CategoriesRoute extends _i21.PageRouteInfo<void> {
 
   static const String name = 'CategoriesRoute';
 
-  static const _i21.PageInfo<void> page = _i21.PageInfo<void>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      return const _i3.CategoriesScreen();
+    },
+  );
 }
 
 /// generated route for
@@ -308,7 +149,12 @@ class ChangePasswordRoute extends _i21.PageRouteInfo<void> {
 
   static const String name = 'ChangePasswordRoute';
 
-  static const _i21.PageInfo<void> page = _i21.PageInfo<void>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      return const _i4.ChangePasswordScreen();
+    },
+  );
 }
 
 /// generated route for
@@ -322,7 +168,12 @@ class ContactInfoRoute extends _i21.PageRouteInfo<void> {
 
   static const String name = 'ContactInfoRoute';
 
-  static const _i21.PageInfo<void> page = _i21.PageInfo<void>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      return const _i5.ContactInfoScreen();
+    },
+  );
 }
 
 /// generated route for
@@ -343,8 +194,16 @@ class EventRoute extends _i21.PageRouteInfo<EventRouteArgs> {
 
   static const String name = 'EventRoute';
 
-  static const _i21.PageInfo<EventRouteArgs> page =
-      _i21.PageInfo<EventRouteArgs>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<EventRouteArgs>();
+      return _i6.EventScreen(
+        event: args.event,
+        key: args.key,
+      );
+    },
+  );
 }
 
 class EventRouteArgs {
@@ -381,8 +240,16 @@ class EventsByTypeRoute extends _i21.PageRouteInfo<EventsByTypeRouteArgs> {
 
   static const String name = 'EventsByTypeRoute';
 
-  static const _i21.PageInfo<EventsByTypeRouteArgs> page =
-      _i21.PageInfo<EventsByTypeRouteArgs>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<EventsByTypeRouteArgs>();
+      return _i7.EventsByTypeScreen(
+        eventType: args.eventType,
+        key: args.key,
+      );
+    },
+  );
 }
 
 class EventsByTypeRouteArgs {
@@ -412,7 +279,12 @@ class LoginRoute extends _i21.PageRouteInfo<void> {
 
   static const String name = 'LoginRoute';
 
-  static const _i21.PageInfo<void> page = _i21.PageInfo<void>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      return const _i8.LoginScreen();
+    },
+  );
 }
 
 /// generated route for
@@ -433,8 +305,17 @@ class MainRoute extends _i21.PageRouteInfo<MainRouteArgs> {
 
   static const String name = 'MainRoute';
 
-  static const _i21.PageInfo<MainRouteArgs> page =
-      _i21.PageInfo<MainRouteArgs>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      final args =
+          data.argsAs<MainRouteArgs>(orElse: () => const MainRouteArgs());
+      return _i9.MainScreen(
+        initialTab: args.initialTab,
+        key: args.key,
+      );
+    },
+  );
 }
 
 class MainRouteArgs {
@@ -473,8 +354,17 @@ class PaymentMethodsRoute extends _i21.PageRouteInfo<PaymentMethodsRouteArgs> {
 
   static const String name = 'PaymentMethodsRoute';
 
-  static const _i21.PageInfo<PaymentMethodsRouteArgs> page =
-      _i21.PageInfo<PaymentMethodsRouteArgs>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<PaymentMethodsRouteArgs>();
+      return _i10.PaymentMethodsScreen(
+        preciseCost: args.preciseCost,
+        bookingId: args.bookingId,
+        key: args.key,
+      );
+    },
+  );
 }
 
 class PaymentMethodsRouteArgs {
@@ -518,8 +408,18 @@ class PaymentWebViewRoute extends _i21.PageRouteInfo<PaymentWebViewRouteArgs> {
 
   static const String name = 'PaymentWebViewRoute';
 
-  static const _i21.PageInfo<PaymentWebViewRouteArgs> page =
-      _i21.PageInfo<PaymentWebViewRouteArgs>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<PaymentWebViewRouteArgs>();
+      return _i11.PaymentWebViewScreen(
+        bookingId: args.bookingId,
+        paymentType: args.paymentType,
+        onSuccess: args.onSuccess,
+        key: args.key,
+      );
+    },
+  );
 }
 
 class PaymentWebViewRouteArgs {
@@ -564,8 +464,17 @@ class PinCodeCreateRoute extends _i21.PageRouteInfo<PinCodeCreateRouteArgs> {
 
   static const String name = 'PinCodeCreateRoute';
 
-  static const _i21.PageInfo<PinCodeCreateRouteArgs> page =
-      _i21.PageInfo<PinCodeCreateRouteArgs>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<PinCodeCreateRouteArgs>();
+      return _i12.PinCodeCreateScreen(
+        onBackPressed: args.onBackPressed,
+        navigateOnPinCodeCreate: args.navigateOnPinCodeCreate,
+        key: args.key,
+      );
+    },
+  );
 }
 
 class PinCodeCreateRouteArgs {
@@ -607,8 +516,17 @@ class PinCodeVerifyRoute extends _i21.PageRouteInfo<PinCodeVerifyRouteArgs> {
 
   static const String name = 'PinCodeVerifyRoute';
 
-  static const _i21.PageInfo<PinCodeVerifyRouteArgs> page =
-      _i21.PageInfo<PinCodeVerifyRouteArgs>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<PinCodeVerifyRouteArgs>();
+      return _i13.PinCodeVerifyScreen(
+        onBackPressed: args.onBackPressed,
+        navigateOnPinCodeCreate: args.navigateOnPinCodeCreate,
+        key: args.key,
+      );
+    },
+  );
 }
 
 class PinCodeVerifyRouteArgs {
@@ -641,7 +559,12 @@ class RegisterRoute extends _i21.PageRouteInfo<void> {
 
   static const String name = 'RegisterRoute';
 
-  static const _i21.PageInfo<void> page = _i21.PageInfo<void>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      return const _i14.RegisterScreen();
+    },
+  );
 }
 
 /// generated route for
@@ -655,7 +578,12 @@ class ScanTicketRoute extends _i21.PageRouteInfo<void> {
 
   static const String name = 'ScanTicketRoute';
 
-  static const _i21.PageInfo<void> page = _i21.PageInfo<void>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      return const _i15.ScanTicketScreen();
+    },
+  );
 }
 
 /// generated route for
@@ -669,7 +597,12 @@ class SearchRoute extends _i21.PageRouteInfo<void> {
 
   static const String name = 'SearchRoute';
 
-  static const _i21.PageInfo<void> page = _i21.PageInfo<void>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      return const _i16.SearchScreen();
+    },
+  );
 }
 
 /// generated route for
@@ -683,7 +616,12 @@ class SettingsRoute extends _i21.PageRouteInfo<void> {
 
   static const String name = 'SettingsRoute';
 
-  static const _i21.PageInfo<void> page = _i21.PageInfo<void>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      return const _i17.SettingsScreen();
+    },
+  );
 }
 
 /// generated route for
@@ -697,7 +635,12 @@ class SplashRoute extends _i21.PageRouteInfo<void> {
 
   static const String name = 'SplashRoute';
 
-  static const _i21.PageInfo<void> page = _i21.PageInfo<void>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      return const _i18.SplashScreen();
+    },
+  );
 }
 
 /// generated route for
@@ -723,8 +666,18 @@ class TicketSeatPlacesRoute
 
   static const String name = 'TicketSeatPlacesRoute';
 
-  static const _i21.PageInfo<TicketSeatPlacesRouteArgs> page =
-      _i21.PageInfo<TicketSeatPlacesRouteArgs>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<TicketSeatPlacesRouteArgs>();
+      return _i19.TicketSeatPlacesScreen(
+        locationType: args.locationType,
+        event: args.event,
+        eventDate: args.eventDate,
+        key: args.key,
+      );
+    },
+  );
 }
 
 class TicketSeatPlacesRouteArgs {
@@ -770,8 +723,17 @@ class TicketStandingPlacesRoute
 
   static const String name = 'TicketStandingPlacesRoute';
 
-  static const _i21.PageInfo<TicketStandingPlacesRouteArgs> page =
-      _i21.PageInfo<TicketStandingPlacesRouteArgs>(name);
+  static _i21.PageInfo page = _i21.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<TicketStandingPlacesRouteArgs>();
+      return _i20.TicketStandingPlacesScreen(
+        eventDate: args.eventDate,
+        event: args.event,
+        key: args.key,
+      );
+    },
+  );
 }
 
 class TicketStandingPlacesRouteArgs {

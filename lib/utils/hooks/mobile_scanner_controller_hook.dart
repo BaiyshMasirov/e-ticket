@@ -6,7 +6,7 @@ class _MobileScannerControllerHook extends Hook<MobileScannerController> {
   final CameraFacing facing;
   final bool torchEnabled;
   final bool returnImage;
-  final List<BarcodeFormat>? formats;
+  final List<BarcodeFormat> formats;
   final DetectionSpeed detectionSpeed;
   final int detectionTimeoutMs;
   final bool autoStart;
@@ -76,7 +76,7 @@ MobileScannerController useMobileScannerController({
   bool returnImage = false,
 
   /// If provided, the scanner will only detect those specific formats
-  List<BarcodeFormat>? formats,
+  List<BarcodeFormat> formats = const [],
 
   /// Sets the speed of detections.
   ///

@@ -64,7 +64,9 @@ mixin _$EmailCodeTimerState {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EmailCodeTimerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EmailCodeTimerStateCopyWith<EmailCodeTimerState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -88,6 +90,8 @@ class _$EmailCodeTimerStateCopyWithImpl<$Res, $Val extends EmailCodeTimerState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EmailCodeTimerState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -124,6 +128,8 @@ class __$$EmailCodeTimerStateInitialImplCopyWithImpl<$Res>
       $Res Function(_$EmailCodeTimerStateInitialImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EmailCodeTimerState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -163,7 +169,9 @@ class _$EmailCodeTimerStateInitialImpl extends _EmailCodeTimerStateInitial {
   @override
   int get hashCode => Object.hash(runtimeType, duration);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EmailCodeTimerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EmailCodeTimerStateInitialImplCopyWith<_$EmailCodeTimerStateInitialImpl>
@@ -248,8 +256,11 @@ abstract class _EmailCodeTimerStateInitial extends EmailCodeTimerState {
 
   @override
   int get duration;
+
+  /// Create a copy of EmailCodeTimerState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EmailCodeTimerStateInitialImplCopyWith<_$EmailCodeTimerStateInitialImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -276,6 +287,8 @@ class __$$EmailCodeTimerStateRunInProgressImplCopyWithImpl<$Res>
       $Res Function(_$EmailCodeTimerStateRunInProgressImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EmailCodeTimerState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -317,7 +330,9 @@ class _$EmailCodeTimerStateRunInProgressImpl
   @override
   int get hashCode => Object.hash(runtimeType, duration);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EmailCodeTimerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EmailCodeTimerStateRunInProgressImplCopyWith<
@@ -403,8 +418,11 @@ abstract class _EmailCodeTimerStateRunInProgress extends EmailCodeTimerState {
 
   @override
   int get duration;
+
+  /// Create a copy of EmailCodeTimerState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EmailCodeTimerStateRunInProgressImplCopyWith<
           _$EmailCodeTimerStateRunInProgressImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -432,6 +450,8 @@ class __$$EmailCodeTimerStateRunCompleteImplCopyWithImpl<$Res>
       $Res Function(_$EmailCodeTimerStateRunCompleteImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EmailCodeTimerState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -473,7 +493,9 @@ class _$EmailCodeTimerStateRunCompleteImpl
   @override
   int get hashCode => Object.hash(runtimeType, duration);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EmailCodeTimerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EmailCodeTimerStateRunCompleteImplCopyWith<
@@ -559,8 +581,11 @@ abstract class _EmailCodeTimerStateRunComplete extends EmailCodeTimerState {
 
   @override
   int get duration;
+
+  /// Create a copy of EmailCodeTimerState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EmailCodeTimerStateRunCompleteImplCopyWith<
           _$EmailCodeTimerStateRunCompleteImpl>
       get copyWith => throw _privateConstructorUsedError;

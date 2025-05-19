@@ -24,7 +24,9 @@ mixin _$SeatPlaceV2 {
   int get seatPlace => throw _privateConstructorUsedError;
   String? get ticketId => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SeatPlaceV2
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SeatPlaceV2CopyWith<SeatPlaceV2> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +56,8 @@ class _$SeatPlaceV2CopyWithImpl<$Res, $Val extends SeatPlaceV2>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SeatPlaceV2
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -118,6 +122,8 @@ class __$$SeatPlaceV2ImplCopyWithImpl<$Res>
       _$SeatPlaceV2Impl _value, $Res Function(_$SeatPlaceV2Impl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SeatPlaceV2
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -210,7 +216,9 @@ class _$SeatPlaceV2Impl extends _SeatPlaceV2 {
   int get hashCode => Object.hash(runtimeType, currentRowIndex, rowLabel,
       bigText, seatState, seatPlace, ticketId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SeatPlaceV2
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SeatPlaceV2ImplCopyWith<_$SeatPlaceV2Impl> get copyWith =>
@@ -227,9 +235,8 @@ abstract class _SeatPlaceV2 extends SeatPlaceV2 {
       final String? ticketId}) = _$SeatPlaceV2Impl;
   const _SeatPlaceV2._() : super._();
 
-  @override
-
   /// currentIndex row index *can be different fot the same row*
+  @override
   int get currentRowIndex;
   @override
   String get rowLabel;
@@ -241,8 +248,11 @@ abstract class _SeatPlaceV2 extends SeatPlaceV2 {
   int get seatPlace;
   @override
   String? get ticketId;
+
+  /// Create a copy of SeatPlaceV2
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SeatPlaceV2ImplCopyWith<_$SeatPlaceV2Impl> get copyWith =>
       throw _privateConstructorUsedError;
 }

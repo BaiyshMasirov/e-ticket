@@ -94,6 +94,9 @@ class _$PaymentPhoneStateCopyWithImpl<$Res, $Val extends PaymentPhoneState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of PaymentPhoneState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -113,6 +116,9 @@ class __$$PaymentPhoneStateInitialImplCopyWithImpl<$Res>
       _$PaymentPhoneStateInitialImpl _value,
       $Res Function(_$PaymentPhoneStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PaymentPhoneState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -245,6 +251,8 @@ class __$$PaymentPhoneStatePaymentCreatingImplCopyWithImpl<$Res>
       $Res Function(_$PaymentPhoneStatePaymentCreatingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentPhoneState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -286,7 +294,9 @@ class _$PaymentPhoneStatePaymentCreatingImpl
   @override
   int get hashCode => Object.hash(runtimeType, phoneNumber);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentPhoneState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentPhoneStatePaymentCreatingImplCopyWith<
@@ -386,7 +396,10 @@ abstract class _PaymentPhoneStatePaymentCreating extends PaymentPhoneState {
   const _PaymentPhoneStatePaymentCreating._() : super._();
 
   String get phoneNumber;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentPhoneState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentPhoneStatePaymentCreatingImplCopyWith<
           _$PaymentPhoneStatePaymentCreatingImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -412,6 +425,8 @@ class __$$PaymentPhoneStateCreateErrorImplCopyWithImpl<$Res>
       $Res Function(_$PaymentPhoneStateCreateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentPhoneState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -462,7 +477,9 @@ class _$PaymentPhoneStateCreateErrorImpl extends _PaymentPhoneStateCreateError {
   @override
   int get hashCode => Object.hash(runtimeType, phoneNumber, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentPhoneState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentPhoneStateCreateErrorImplCopyWith<
@@ -564,7 +581,10 @@ abstract class _PaymentPhoneStateCreateError extends PaymentPhoneState {
 
   String get phoneNumber;
   String? get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentPhoneState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentPhoneStateCreateErrorImplCopyWith<
           _$PaymentPhoneStateCreateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -590,6 +610,8 @@ class __$$PaymentPhoneStateCreateSuccessImplCopyWithImpl<$Res>
       $Res Function(_$PaymentPhoneStateCreateSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentPhoneState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -641,7 +663,9 @@ class _$PaymentPhoneStateCreateSuccessImpl
   @override
   int get hashCode => Object.hash(runtimeType, phoneNumber, deepLink);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentPhoneState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentPhoneStateCreateSuccessImplCopyWith<
@@ -742,7 +766,10 @@ abstract class _PaymentPhoneStateCreateSuccess extends PaymentPhoneState {
 
   String get phoneNumber;
   String get deepLink;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentPhoneState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentPhoneStateCreateSuccessImplCopyWith<
           _$PaymentPhoneStateCreateSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;

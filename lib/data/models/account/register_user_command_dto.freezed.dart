@@ -28,8 +28,12 @@ mixin _$RegisterUserCommandDto {
   String? get password => throw _privateConstructorUsedError;
   String? get phoneNumber => throw _privateConstructorUsedError;
 
+  /// Serializes this RegisterUserCommandDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RegisterUserCommandDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RegisterUserCommandDtoCopyWith<RegisterUserCommandDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +64,8 @@ class _$RegisterUserCommandDtoCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RegisterUserCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,6 +133,8 @@ class __$$RegisterUserCommandDtoImplCopyWithImpl<$Res>
       $Res Function(_$RegisterUserCommandDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RegisterUserCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -217,12 +225,14 @@ class _$RegisterUserCommandDtoImpl extends _RegisterUserCommandDto {
                 other.phoneNumber == phoneNumber));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, email, firstName, lastName,
       middleName, password, phoneNumber);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RegisterUserCommandDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RegisterUserCommandDtoImplCopyWith<_$RegisterUserCommandDtoImpl>
@@ -262,8 +272,11 @@ abstract class _RegisterUserCommandDto extends RegisterUserCommandDto {
   String? get password;
   @override
   String? get phoneNumber;
+
+  /// Create a copy of RegisterUserCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RegisterUserCommandDtoImplCopyWith<_$RegisterUserCommandDtoImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

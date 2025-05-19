@@ -72,6 +72,9 @@ class _$PinCodeCreateStateCopyWithImpl<$Res, $Val extends PinCodeCreateState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of PinCodeCreateState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -91,6 +94,9 @@ class __$$PinCodeCreateInitialStateImplCopyWithImpl<$Res>
       _$PinCodeCreateInitialStateImpl _value,
       $Res Function(_$PinCodeCreateInitialStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PinCodeCreateState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -198,6 +204,9 @@ class __$$PinCodeCreateSuccessStateImplCopyWithImpl<$Res>
       _$PinCodeCreateSuccessStateImpl _value,
       $Res Function(_$PinCodeCreateSuccessStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PinCodeCreateState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc

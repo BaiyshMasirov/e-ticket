@@ -51,7 +51,7 @@ class App extends StatelessWidget {
                       title: LocaleKeys
                           .are_you_sure_you_want_to_logout_form_application
                           .tr(),
-                      onNoPress: () => _appRouter.pop(),
+                      onNoPress: () => _appRouter.maybePop(),
                       onYesPress: context.read<AuthCubit>().signOut,
                     ),
                     navigateOnPinCodeCreate: () => _appRouter.pushAndPopUntil(

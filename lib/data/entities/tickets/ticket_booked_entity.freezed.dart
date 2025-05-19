@@ -36,8 +36,12 @@ mixin _$TicketBookedEntity {
   @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
   TicketSeatingType get seatingType => throw _privateConstructorUsedError;
 
+  /// Serializes this TicketBookedEntity to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TicketBookedEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TicketBookedEntityCopyWith<TicketBookedEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -74,6 +78,8 @@ class _$TicketBookedEntityCopyWithImpl<$Res, $Val extends TicketBookedEntity>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TicketBookedEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,6 +133,8 @@ class _$TicketBookedEntityCopyWithImpl<$Res, $Val extends TicketBookedEntity>
     ) as $Val);
   }
 
+  /// Create a copy of TicketBookedEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TicketKeyValueEntityCopyWith<$Res> get ticketType {
@@ -169,6 +177,8 @@ class __$$TicketBookedEntityImplCopyWithImpl<$Res>
       $Res Function(_$TicketBookedEntityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketBookedEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -294,12 +304,14 @@ class _$TicketBookedEntityImpl extends _TicketBookedEntity {
                 other.seatingType == seatingType));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, rowNumber, placeNumber,
       ticketStatus, price, qrCode, type, ticketType, seatingType);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketBookedEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketBookedEntityImplCopyWith<_$TicketBookedEntityImpl> get copyWith =>
@@ -345,19 +357,22 @@ abstract class _TicketBookedEntity extends TicketBookedEntity {
   double get price;
   @override
   String? get qrCode;
-  @override
 
   /// type == [TicketType]
-  int get type;
   @override
+  int get type;
 
   /// ticketType == [TicketType]
+  @override
   TicketKeyValueEntity get ticketType;
   @override
   @JsonKey(unknownEnumValue: TicketSeatingType.unknown)
   TicketSeatingType get seatingType;
+
+  /// Create a copy of TicketBookedEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketBookedEntityImplCopyWith<_$TicketBookedEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

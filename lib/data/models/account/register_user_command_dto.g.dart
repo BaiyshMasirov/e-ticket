@@ -18,20 +18,12 @@ _$RegisterUserCommandDtoImpl _$$RegisterUserCommandDtoImplFromJson(
     );
 
 Map<String, dynamic> _$$RegisterUserCommandDtoImplToJson(
-    _$RegisterUserCommandDtoImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('email', instance.email);
-  writeNotNull('firstName', instance.firstName);
-  writeNotNull('lastName', instance.lastName);
-  writeNotNull('middleName', instance.middleName);
-  writeNotNull('password', instance.password);
-  writeNotNull('phoneNumber', instance.phoneNumber);
-  return val;
-}
+        _$RegisterUserCommandDtoImpl instance) =>
+    <String, dynamic>{
+      if (instance.email case final value?) 'email': value,
+      if (instance.firstName case final value?) 'firstName': value,
+      if (instance.lastName case final value?) 'lastName': value,
+      if (instance.middleName case final value?) 'middleName': value,
+      if (instance.password case final value?) 'password': value,
+      if (instance.phoneNumber case final value?) 'phoneNumber': value,
+    };

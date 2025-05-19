@@ -29,8 +29,12 @@ mixin _$CreateBookingCommandDto {
   int get ticketCount => throw _privateConstructorUsedError;
   double get bookingSum => throw _privateConstructorUsedError;
 
+  /// Serializes this CreateBookingCommandDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CreateBookingCommandDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CreateBookingCommandDtoCopyWith<CreateBookingCommandDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -62,6 +66,8 @@ class _$CreateBookingCommandDtoCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CreateBookingCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -135,6 +141,8 @@ class __$$CreateBookingCommandDtoImplCopyWithImpl<$Res>
       $Res Function(_$CreateBookingCommandDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CreateBookingCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -235,12 +243,14 @@ class _$CreateBookingCommandDtoImpl extends _CreateBookingCommandDto {
                 other.bookingSum == bookingSum));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, customerName, customerEmail,
       customerPhone, paymentType, eventId, ticketCount, bookingSum);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CreateBookingCommandDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CreateBookingCommandDtoImplCopyWith<_$CreateBookingCommandDtoImpl>
@@ -283,8 +293,11 @@ abstract class _CreateBookingCommandDto extends CreateBookingCommandDto {
   int get ticketCount;
   @override
   double get bookingSum;
+
+  /// Create a copy of CreateBookingCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CreateBookingCommandDtoImplCopyWith<_$CreateBookingCommandDtoImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

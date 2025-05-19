@@ -25,8 +25,12 @@ mixin _$PaymentResult {
   String? get link => throw _privateConstructorUsedError;
   String? get redirectUrl => throw _privateConstructorUsedError;
 
+  /// Serializes this PaymentResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PaymentResultCopyWith<PaymentResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$PaymentResultCopyWithImpl<$Res, $Val extends PaymentResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PaymentResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -106,6 +112,8 @@ class __$$PaymentResultImplCopyWithImpl<$Res>
       _$PaymentResultImpl _value, $Res Function(_$PaymentResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -183,12 +191,14 @@ class _$PaymentResultImpl extends _PaymentResult {
                 other.redirectUrl == redirectUrl));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, succeded,
       const DeepCollectionEquality().hash(_messages), link, redirectUrl);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentResultImplCopyWith<_$PaymentResultImpl> get copyWith =>
@@ -221,8 +231,11 @@ abstract class _PaymentResult extends PaymentResult {
   String? get link;
   @override
   String? get redirectUrl;
+
+  /// Create a copy of PaymentResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentResultImplCopyWith<_$PaymentResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

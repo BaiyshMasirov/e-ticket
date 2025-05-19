@@ -22,13 +22,13 @@ Future<void> showPermissionDialog({
         actions: [
           CupertinoDialogAction(
             onPressed: () {
-              context.popRoute(context);
+              context.maybePop(context);
             },
             child: Text(LocaleKeys.cancel.tr()),
           ),
           CupertinoDialogAction(
             onPressed: () {
-              context.popRoute(context);
+              context.maybePop(context);
               openAppSettings();
             },
             child: Text(LocaleKeys.settings.tr()),
@@ -48,13 +48,13 @@ Future<void> showPermissionDialog({
         actions: <Widget>[
           TextButton(
             onPressed: () {
-              context.popRoute(context);
+              context.maybePop(context);
             },
             child: Text(LocaleKeys.cancel.tr()),
           ),
           TextButton(
             onPressed: () {
-              context.popRoute(context);
+              context.maybePop(context);
               openAppSettings();
             },
             child: Text(LocaleKeys.settings.tr()),

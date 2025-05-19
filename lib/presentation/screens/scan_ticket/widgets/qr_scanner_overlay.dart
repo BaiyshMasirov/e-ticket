@@ -3,10 +3,11 @@ import 'package:eticket/generated/locale_keys.g.dart';
 import 'package:eticket/presentation/widgets/buttons/buttons.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
-class QRScannerOverlay extends StatelessWidget {
+class QRScannerOverlay extends HookWidget {
   final Color overlayColor;
   final MobileScannerController qrScannerController;
   final double scanArea;
@@ -20,6 +21,9 @@ class QRScannerOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final useTorchEnabled =
+        useValueNotifier(qrScannerController.value.torchState);
+
     return Stack(
       children: [
         ColorFiltered(
@@ -86,9 +90,12 @@ class QRScannerOverlay extends StatelessWidget {
                     backgroundColor: Colors.white.withOpacity(0.1),
                     onPress: qrScannerController.toggleTorch,
                     child: ValueListenableBuilder<TorchState>(
-                      valueListenable: qrScannerController.torchState,
-                      builder: (BuildContext context, TorchState value,
-                          Widget? child) {
+                      valueListenable: useTorchEnabled,
+                      builder: (
+                        BuildContext context,
+                        TorchState value,
+                        Widget? child,
+                      ) {
                         switch (value) {
                           case TorchState.off:
                             return Icon(
@@ -102,6 +109,14 @@ class QRScannerOverlay extends StatelessWidget {
                               color: Colors.white,
                               size: 44.w,
                             );
+                          case TorchState.auto:
+                            return Icon(
+                              Icons.flash_auto,
+                              color: Colors.white,
+                              size: 44.w,
+                            );
+                          case TorchState.unavailable:
+                            return const SizedBox.shrink();
                         }
                       },
                     ),

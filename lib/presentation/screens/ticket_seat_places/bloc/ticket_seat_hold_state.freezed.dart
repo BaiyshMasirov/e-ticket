@@ -74,7 +74,9 @@ mixin _$TicketSeatHoldState {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketSeatHoldState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TicketSeatHoldStateCopyWith<TicketSeatHoldState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -98,6 +100,8 @@ class _$TicketSeatHoldStateCopyWithImpl<$Res, $Val extends TicketSeatHoldState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TicketSeatHoldState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -134,6 +138,8 @@ class __$$TicketSeatHoldDataStateImplCopyWithImpl<$Res>
       $Res Function(_$TicketSeatHoldDataStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketSeatHoldState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -180,7 +186,9 @@ class _$TicketSeatHoldDataStateImpl extends _TicketSeatHoldDataState {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_tickets));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketSeatHoldState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketSeatHoldDataStateImplCopyWith<_$TicketSeatHoldDataStateImpl>
@@ -275,8 +283,11 @@ abstract class _TicketSeatHoldDataState extends TicketSeatHoldState {
 
   @override
   List<TicketDto> get tickets;
+
+  /// Create a copy of TicketSeatHoldState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketSeatHoldDataStateImplCopyWith<_$TicketSeatHoldDataStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -303,6 +314,8 @@ class __$$TicketSeatHoldingStateImplCopyWithImpl<$Res>
       $Res Function(_$TicketSeatHoldingStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketSeatHoldState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -349,7 +362,9 @@ class _$TicketSeatHoldingStateImpl extends TicketSeatHoldingState {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_tickets));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketSeatHoldState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketSeatHoldingStateImplCopyWith<_$TicketSeatHoldingStateImpl>
@@ -444,8 +459,11 @@ abstract class TicketSeatHoldingState extends TicketSeatHoldState {
 
   @override
   List<TicketDto> get tickets;
+
+  /// Create a copy of TicketSeatHoldState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketSeatHoldingStateImplCopyWith<_$TicketSeatHoldingStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -472,6 +490,8 @@ class __$$TicketSeatHoldSuccessStateImplCopyWithImpl<$Res>
       $Res Function(_$TicketSeatHoldSuccessStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketSeatHoldState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -540,7 +560,9 @@ class _$TicketSeatHoldSuccessStateImpl extends _TicketSeatHoldSuccessState {
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_tickets), totalSum, bookingId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketSeatHoldState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketSeatHoldSuccessStateImplCopyWith<_$TicketSeatHoldSuccessStateImpl>
@@ -639,8 +661,11 @@ abstract class _TicketSeatHoldSuccessState extends TicketSeatHoldState {
   List<TicketDto> get tickets;
   double get totalSum;
   String get bookingId;
+
+  /// Create a copy of TicketSeatHoldState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketSeatHoldSuccessStateImplCopyWith<_$TicketSeatHoldSuccessStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -667,6 +692,8 @@ class __$$TicketSeatHoldErrorStateImplCopyWithImpl<$Res>
       $Res Function(_$TicketSeatHoldErrorStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketSeatHoldState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -713,7 +740,9 @@ class _$TicketSeatHoldErrorStateImpl extends _TicketSeatHoldErrorState {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_tickets));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketSeatHoldState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketSeatHoldErrorStateImplCopyWith<_$TicketSeatHoldErrorStateImpl>
@@ -809,8 +838,11 @@ abstract class _TicketSeatHoldErrorState extends TicketSeatHoldState {
 
   @override
   List<TicketDto> get tickets;
+
+  /// Create a copy of TicketSeatHoldState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketSeatHoldErrorStateImplCopyWith<_$TicketSeatHoldErrorStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

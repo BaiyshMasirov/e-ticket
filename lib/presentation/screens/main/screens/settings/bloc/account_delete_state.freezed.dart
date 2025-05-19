@@ -78,6 +78,9 @@ class _$AccountDeleteStateCopyWithImpl<$Res, $Val extends AccountDeleteState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AccountDeleteState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -97,6 +100,9 @@ class __$$AccountDeleteStatInitialImplCopyWithImpl<$Res>
       _$AccountDeleteStatInitialImpl _value,
       $Res Function(_$AccountDeleteStatInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AccountDeleteState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -210,6 +216,9 @@ class __$$AccountDeleteStatSuccessImplCopyWithImpl<$Res>
       _$AccountDeleteStatSuccessImpl _value,
       $Res Function(_$AccountDeleteStatSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AccountDeleteState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -326,6 +335,8 @@ class __$$AccountDeleteStatFailedImplCopyWithImpl<$Res>
       $Res Function(_$AccountDeleteStatFailedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AccountDeleteState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -365,7 +376,9 @@ class _$AccountDeleteStatFailedImpl extends _AccountDeleteStatFailed {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AccountDeleteState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AccountDeleteStatFailedImplCopyWith<_$AccountDeleteStatFailedImpl>
@@ -447,7 +460,10 @@ abstract class _AccountDeleteStatFailed extends AccountDeleteState {
   const _AccountDeleteStatFailed._() : super._();
 
   String? get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AccountDeleteState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AccountDeleteStatFailedImplCopyWith<_$AccountDeleteStatFailedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

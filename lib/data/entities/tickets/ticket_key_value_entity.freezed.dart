@@ -23,8 +23,12 @@ mixin _$TicketKeyValueEntity {
   int get key => throw _privateConstructorUsedError;
   String get value => throw _privateConstructorUsedError;
 
+  /// Serializes this TicketKeyValueEntity to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TicketKeyValueEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TicketKeyValueEntityCopyWith<TicketKeyValueEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$TicketKeyValueEntityCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TicketKeyValueEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -87,6 +93,8 @@ class __$$TicketKeyValueEntityImplCopyWithImpl<$Res>
       $Res Function(_$TicketKeyValueEntityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketKeyValueEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -134,11 +142,13 @@ class _$TicketKeyValueEntityImpl extends _TicketKeyValueEntity {
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, key, value);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketKeyValueEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketKeyValueEntityImplCopyWith<_$TicketKeyValueEntityImpl>
@@ -167,8 +177,11 @@ abstract class _TicketKeyValueEntity extends TicketKeyValueEntity {
   int get key;
   @override
   String get value;
+
+  /// Create a copy of TicketKeyValueEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketKeyValueEntityImplCopyWith<_$TicketKeyValueEntityImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

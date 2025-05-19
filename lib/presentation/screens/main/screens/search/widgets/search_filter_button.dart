@@ -31,7 +31,7 @@ class SearchFilterButton extends StatelessWidget {
               date: date,
               status: eventStatus,
             );
-            context.popRoute();
+            context.maybePop();
 
             context.read<SearchCubit>().refreshPage(filter: filter);
           },

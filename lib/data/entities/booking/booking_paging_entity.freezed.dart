@@ -25,8 +25,12 @@ mixin _$BookingPagingEntity {
   int get totalItemCount => throw _privateConstructorUsedError;
   List<BookingEntity> get bookings => throw _privateConstructorUsedError;
 
+  /// Serializes this BookingPagingEntity to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BookingPagingEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BookingPagingEntityCopyWith<BookingPagingEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$BookingPagingEntityCopyWithImpl<$Res, $Val extends BookingPagingEntity>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BookingPagingEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -106,6 +112,8 @@ class __$$BookingPagingEntityImplCopyWithImpl<$Res>
       $Res Function(_$BookingPagingEntityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingPagingEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -182,12 +190,14 @@ class _$BookingPagingEntityImpl extends _BookingPagingEntity {
             const DeepCollectionEquality().equals(other._bookings, _bookings));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, currentPageIndex, pageSize,
       totalItemCount, const DeepCollectionEquality().hash(_bookings));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingPagingEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookingPagingEntityImplCopyWith<_$BookingPagingEntityImpl> get copyWith =>
@@ -221,8 +231,11 @@ abstract class _BookingPagingEntity extends BookingPagingEntity {
   int get totalItemCount;
   @override
   List<BookingEntity> get bookings;
+
+  /// Create a copy of BookingPagingEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookingPagingEntityImplCopyWith<_$BookingPagingEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

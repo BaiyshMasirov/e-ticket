@@ -106,7 +106,9 @@ mixin _$BookingHistoryState {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BookingHistoryStateCopyWith<BookingHistoryState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -135,6 +137,8 @@ class _$BookingHistoryStateCopyWithImpl<$Res, $Val extends BookingHistoryState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -158,6 +162,8 @@ class _$BookingHistoryStateCopyWithImpl<$Res, $Val extends BookingHistoryState>
     ) as $Val);
   }
 
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BookingFilterCopyWith<$Res> get filter {
@@ -195,6 +201,8 @@ class __$$BookingHistoryStateInitialImplCopyWithImpl<$Res>
       $Res Function(_$BookingHistoryStateInitialImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -262,7 +270,9 @@ class _$BookingHistoryStateInitialImpl extends _BookingHistoryStateInitial {
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_bookings), filter, isFreshData);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookingHistoryStateInitialImplCopyWith<_$BookingHistoryStateInitialImpl>
@@ -393,8 +403,11 @@ abstract class _BookingHistoryStateInitial extends BookingHistoryState {
   BookingFilter get filter;
   @override
   bool? get isFreshData;
+
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookingHistoryStateInitialImplCopyWith<_$BookingHistoryStateInitialImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -427,6 +440,8 @@ class __$$BookingHistoryProgressImplCopyWithImpl<$Res>
       $Res Function(_$BookingHistoryProgressImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -494,7 +509,9 @@ class _$BookingHistoryProgressImpl extends BookingHistoryProgress {
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_bookings), filter, isFreshData);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookingHistoryProgressImplCopyWith<_$BookingHistoryProgressImpl>
@@ -625,8 +642,11 @@ abstract class BookingHistoryProgress extends BookingHistoryState {
   BookingFilter get filter;
   @override
   bool? get isFreshData;
+
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookingHistoryProgressImplCopyWith<_$BookingHistoryProgressImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -660,6 +680,8 @@ class __$$BookingHistoryStateSuccessImplCopyWithImpl<$Res>
       $Res Function(_$BookingHistoryStateSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -741,7 +763,9 @@ class _$BookingHistoryStateSuccessImpl extends _BookingHistoryStateSuccess {
       isNextPageAvailable,
       isFreshData);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookingHistoryStateSuccessImplCopyWith<_$BookingHistoryStateSuccessImpl>
@@ -874,8 +898,11 @@ abstract class _BookingHistoryStateSuccess extends BookingHistoryState {
   bool get isNextPageAvailable;
   @override
   bool? get isFreshData;
+
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookingHistoryStateSuccessImplCopyWith<_$BookingHistoryStateSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -908,6 +935,8 @@ class __$$BookingHistoryStateEmptyImplCopyWithImpl<$Res>
       $Res Function(_$BookingHistoryStateEmptyImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -975,7 +1004,9 @@ class _$BookingHistoryStateEmptyImpl extends _BookingHistoryStateEmpty {
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_bookings), filter, isFreshData);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookingHistoryStateEmptyImplCopyWith<_$BookingHistoryStateEmptyImpl>
@@ -1106,8 +1137,11 @@ abstract class _BookingHistoryStateEmpty extends BookingHistoryState {
   BookingFilter get filter;
   @override
   bool? get isFreshData;
+
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookingHistoryStateEmptyImplCopyWith<_$BookingHistoryStateEmptyImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1141,6 +1175,8 @@ class __$$BookingHistoryStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$BookingHistoryStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1222,7 +1258,9 @@ class _$BookingHistoryStateErrorImpl extends _BookingHistoryStateError {
       isFreshData,
       errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookingHistoryStateErrorImplCopyWith<_$BookingHistoryStateErrorImpl>
@@ -1355,8 +1393,11 @@ abstract class _BookingHistoryStateError extends BookingHistoryState {
   @override
   bool? get isFreshData;
   String? get errorMessage;
+
+  /// Create a copy of BookingHistoryState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookingHistoryStateErrorImplCopyWith<_$BookingHistoryStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

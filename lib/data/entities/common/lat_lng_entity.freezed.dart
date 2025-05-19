@@ -23,8 +23,12 @@ mixin _$LatLngEntity {
   double get lat => throw _privateConstructorUsedError;
   double get lng => throw _privateConstructorUsedError;
 
+  /// Serializes this LatLngEntity to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LatLngEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LatLngEntityCopyWith<LatLngEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$LatLngEntityCopyWithImpl<$Res, $Val extends LatLngEntity>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LatLngEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$LatLngEntityImplCopyWithImpl<$Res>
       _$LatLngEntityImpl _value, $Res Function(_$LatLngEntityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LatLngEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -132,11 +140,13 @@ class _$LatLngEntityImpl extends _LatLngEntity {
             (identical(other.lng, lng) || other.lng == lng));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, lat, lng);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LatLngEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LatLngEntityImplCopyWith<_$LatLngEntityImpl> get copyWith =>
@@ -163,8 +173,11 @@ abstract class _LatLngEntity extends LatLngEntity {
   double get lat;
   @override
   double get lng;
+
+  /// Create a copy of LatLngEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LatLngEntityImplCopyWith<_$LatLngEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

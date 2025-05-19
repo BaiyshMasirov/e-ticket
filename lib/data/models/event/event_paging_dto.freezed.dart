@@ -26,8 +26,12 @@ mixin _$EventPagingDto {
   @JsonKey(name: 'list')
   List<EventDto> get events => throw _privateConstructorUsedError;
 
+  /// Serializes this EventPagingDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EventPagingDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EventPagingDtoCopyWith<EventPagingDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$EventPagingDtoCopyWithImpl<$Res, $Val extends EventPagingDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EventPagingDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -107,6 +113,8 @@ class __$$EventPagingDtoImplCopyWithImpl<$Res>
       _$EventPagingDtoImpl _value, $Res Function(_$EventPagingDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EventPagingDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -184,12 +192,14 @@ class _$EventPagingDtoImpl extends _EventPagingDto {
             const DeepCollectionEquality().equals(other._events, _events));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, currentPageIndex, pageSize,
       totalItemCount, const DeepCollectionEquality().hash(_events));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EventPagingDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EventPagingDtoImplCopyWith<_$EventPagingDtoImpl> get copyWith =>
@@ -225,8 +235,11 @@ abstract class _EventPagingDto extends EventPagingDto {
   @override
   @JsonKey(name: 'list')
   List<EventDto> get events;
+
+  /// Create a copy of EventPagingDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EventPagingDtoImplCopyWith<_$EventPagingDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

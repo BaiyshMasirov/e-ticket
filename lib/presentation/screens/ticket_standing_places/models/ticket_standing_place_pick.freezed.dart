@@ -24,7 +24,9 @@ mixin _$TicketStandingPlacePick {
   int get count => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketStandingPlacePick
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TicketStandingPlacePickCopyWith<TicketStandingPlacePick> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +54,8 @@ class _$TicketStandingPlacePickCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TicketStandingPlacePick
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -80,6 +84,8 @@ class _$TicketStandingPlacePickCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of TicketStandingPlacePick
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TicketKeyValueModelCopyWith<$Res> get ticketType {
@@ -115,6 +121,8 @@ class __$$TicketStandingPlacePickImplCopyWithImpl<$Res>
       $Res Function(_$TicketStandingPlacePickImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketStandingPlacePick
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -186,7 +194,9 @@ class _$TicketStandingPlacePickImpl extends _TicketStandingPlacePick {
   @override
   int get hashCode => Object.hash(runtimeType, ticketType, type, count, price);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketStandingPlacePick
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketStandingPlacePickImplCopyWith<_$TicketStandingPlacePickImpl>
@@ -202,20 +212,22 @@ abstract class _TicketStandingPlacePick extends TicketStandingPlacePick {
       required final double price}) = _$TicketStandingPlacePickImpl;
   const _TicketStandingPlacePick._() : super._();
 
-  @override
-
   /// ticketType = [TicketType]
+  @override
   TicketKeyValueModel get ticketType;
-  @override
 
   /// ticketType = [TicketType]
+  @override
   int get type;
   @override
   int get count;
   @override
   double get price;
+
+  /// Create a copy of TicketStandingPlacePick
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketStandingPlacePickImplCopyWith<_$TicketStandingPlacePickImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -51,9 +51,9 @@ class TicketSeatPlacePurchaseFab extends StatelessWidget {
               ? () async {
                   HoldTicketDialog.showHoldTicketDialog(
                     context: context,
-                    onCancel: context.popRoute,
+                    onCancel: context.maybePop,
                     onConfirm: () {
-                      context.popRoute();
+                      context.maybePop();
                       context.read<TicketSeatHoldCubit>().holdTickets();
                     },
                   );

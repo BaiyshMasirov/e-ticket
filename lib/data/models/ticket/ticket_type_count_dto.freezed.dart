@@ -30,8 +30,12 @@ mixin _$TicketTypeCountDto {
   /// ticketType == [TicketType]
   KeyValueMapDto get ticketType => throw _privateConstructorUsedError;
 
+  /// Serializes this TicketTypeCountDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TicketTypeCountDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TicketTypeCountDtoCopyWith<TicketTypeCountDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -62,6 +66,8 @@ class _$TicketTypeCountDtoCopyWithImpl<$Res, $Val extends TicketTypeCountDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TicketTypeCountDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -95,6 +101,8 @@ class _$TicketTypeCountDtoCopyWithImpl<$Res, $Val extends TicketTypeCountDto>
     ) as $Val);
   }
 
+  /// Create a copy of TicketTypeCountDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $KeyValueMapDtoCopyWith<$Res> get ticketType {
@@ -131,6 +139,8 @@ class __$$TicketTypeCountDtoImplCopyWithImpl<$Res>
       $Res Function(_$TicketTypeCountDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketTypeCountDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -213,12 +223,14 @@ class _$TicketTypeCountDtoImpl extends _TicketTypeCountDto {
                 other.ticketType == ticketType));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, count, availableCount, price, type, ticketType);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketTypeCountDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketTypeCountDtoImplCopyWith<_$TicketTypeCountDtoImpl> get copyWith =>
@@ -251,16 +263,19 @@ abstract class _TicketTypeCountDto extends TicketTypeCountDto {
   int get availableCount;
   @override
   double get price;
-  @override
 
   /// type == [TicketType]
-  int get type;
   @override
+  int get type;
 
   /// ticketType == [TicketType]
-  KeyValueMapDto get ticketType;
   @override
-  @JsonKey(ignore: true)
+  KeyValueMapDto get ticketType;
+
+  /// Create a copy of TicketTypeCountDto
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketTypeCountDtoImplCopyWith<_$TicketTypeCountDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

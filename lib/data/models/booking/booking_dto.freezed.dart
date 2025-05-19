@@ -50,8 +50,12 @@ mixin _$BookingDto {
   String? get eventName => throw _privateConstructorUsedError;
   String? get eventImage => throw _privateConstructorUsedError;
 
+  /// Serializes this BookingDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BookingDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BookingDtoCopyWith<BookingDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -100,6 +104,8 @@ class _$BookingDtoCopyWithImpl<$Res, $Val extends BookingDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BookingDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -233,6 +239,8 @@ class __$$BookingDtoImplCopyWithImpl<$Res>
       _$BookingDtoImpl _value, $Res Function(_$BookingDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -450,7 +458,7 @@ class _$BookingDtoImpl extends _BookingDto {
                 other.eventImage == eventImage));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -471,7 +479,9 @@ class _$BookingDtoImpl extends _BookingDto {
       eventName,
       eventImage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookingDtoImplCopyWith<_$BookingDtoImpl> get copyWith =>
@@ -564,8 +574,11 @@ abstract class _BookingDto extends BookingDto {
   String? get eventName;
   @override
   String? get eventImage;
+
+  /// Create a copy of BookingDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookingDtoImplCopyWith<_$BookingDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

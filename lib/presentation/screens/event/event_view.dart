@@ -84,7 +84,7 @@ class EventView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(50.r),
                         ),
                         child: AppBackButton(
-                          onTapped: () => context.popRoute(),
+                          onTapped: () => context.maybePop(),
                         ),
                       ),
                     ),

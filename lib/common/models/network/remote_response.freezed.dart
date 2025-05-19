@@ -181,6 +181,9 @@ class _$RemoteResponseCopyWithImpl<T, $Res, $Val extends RemoteResponse<T>>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -202,6 +205,8 @@ class __$$DataWithHeadersImplCopyWithImpl<T, $Res>
       $Res Function(_$DataWithHeadersImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -215,6 +220,8 @@ class __$$DataWithHeadersImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ResponseDataCopyWith<T, $Res> get response {
@@ -249,7 +256,9 @@ class _$DataWithHeadersImpl<T> extends _DataWithHeaders<T> {
   @override
   int get hashCode => Object.hash(runtimeType, response);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DataWithHeadersImplCopyWith<T, _$DataWithHeadersImpl<T>> get copyWith =>
@@ -434,7 +443,10 @@ abstract class _DataWithHeaders<T> extends RemoteResponse<T> {
   const _DataWithHeaders._() : super._();
 
   ResponseData<T> get response;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DataWithHeadersImplCopyWith<T, _$DataWithHeadersImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -453,6 +465,9 @@ class __$$CreatedImplCopyWithImpl<T, $Res>
   __$$CreatedImplCopyWithImpl(
       _$CreatedImpl<T> _value, $Res Function(_$CreatedImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -665,6 +680,9 @@ class __$$NotModifiedImplCopyWithImpl<T, $Res>
   __$$NotModifiedImplCopyWithImpl(
       _$NotModifiedImpl<T> _value, $Res Function(_$NotModifiedImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -877,6 +895,9 @@ class __$$UnAuthorizedImplCopyWithImpl<T, $Res>
   __$$UnAuthorizedImplCopyWithImpl(
       _$UnAuthorizedImpl<T> _value, $Res Function(_$UnAuthorizedImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1094,6 +1115,8 @@ class __$$ForbiddenImplCopyWithImpl<T, $Res>
       _$ForbiddenImpl<T> _value, $Res Function(_$ForbiddenImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1107,6 +1130,8 @@ class __$$ForbiddenImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorResponseCopyWith<$Res> get errorResponse {
@@ -1141,7 +1166,9 @@ class _$ForbiddenImpl<T> extends _Forbidden<T> {
   @override
   int get hashCode => Object.hash(runtimeType, errorResponse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ForbiddenImplCopyWith<T, _$ForbiddenImpl<T>> get copyWith =>
@@ -1325,7 +1352,10 @@ abstract class _Forbidden<T> extends RemoteResponse<T> {
   const _Forbidden._() : super._();
 
   ErrorResponse get errorResponse;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ForbiddenImplCopyWith<T, _$ForbiddenImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1349,6 +1379,8 @@ class __$$ContentTooLargeImplCopyWithImpl<T, $Res>
       $Res Function(_$ContentTooLargeImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1362,6 +1394,8 @@ class __$$ContentTooLargeImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorResponseCopyWith<$Res> get errorResponse {
@@ -1396,7 +1430,9 @@ class _$ContentTooLargeImpl<T> extends _ContentTooLarge<T> {
   @override
   int get hashCode => Object.hash(runtimeType, errorResponse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ContentTooLargeImplCopyWith<T, _$ContentTooLargeImpl<T>> get copyWith =>
@@ -1581,7 +1617,10 @@ abstract class _ContentTooLarge<T> extends RemoteResponse<T> {
   const _ContentTooLarge._() : super._();
 
   ErrorResponse get errorResponse;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ContentTooLargeImplCopyWith<T, _$ContentTooLargeImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1605,6 +1644,8 @@ class __$$BadRequestImplCopyWithImpl<T, $Res>
       _$BadRequestImpl<T> _value, $Res Function(_$BadRequestImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1618,6 +1659,8 @@ class __$$BadRequestImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorResponseCopyWith<$Res> get errorResponse {
@@ -1652,7 +1695,9 @@ class _$BadRequestImpl<T> extends _BadRequest<T> {
   @override
   int get hashCode => Object.hash(runtimeType, errorResponse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BadRequestImplCopyWith<T, _$BadRequestImpl<T>> get copyWith =>
@@ -1836,7 +1881,10 @@ abstract class _BadRequest<T> extends RemoteResponse<T> {
   const _BadRequest._() : super._();
 
   ErrorResponse get errorResponse;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BadRequestImplCopyWith<T, _$BadRequestImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1860,6 +1908,8 @@ class __$$NotFoundImplCopyWithImpl<T, $Res>
       _$NotFoundImpl<T> _value, $Res Function(_$NotFoundImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1873,6 +1923,8 @@ class __$$NotFoundImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorResponseCopyWith<$Res> get errorResponse {
@@ -1907,7 +1959,9 @@ class _$NotFoundImpl<T> extends _NotFound<T> {
   @override
   int get hashCode => Object.hash(runtimeType, errorResponse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NotFoundImplCopyWith<T, _$NotFoundImpl<T>> get copyWith =>
@@ -2091,7 +2145,10 @@ abstract class _NotFound<T> extends RemoteResponse<T> {
   const _NotFound._() : super._();
 
   ErrorResponse get errorResponse;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NotFoundImplCopyWith<T, _$NotFoundImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2115,6 +2172,8 @@ class __$$MethodNotAllowedImplCopyWithImpl<T, $Res>
       $Res Function(_$MethodNotAllowedImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2128,6 +2187,8 @@ class __$$MethodNotAllowedImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorResponseCopyWith<$Res> get errorResponse {
@@ -2162,7 +2223,9 @@ class _$MethodNotAllowedImpl<T> extends _MethodNotAllowed<T> {
   @override
   int get hashCode => Object.hash(runtimeType, errorResponse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MethodNotAllowedImplCopyWith<T, _$MethodNotAllowedImpl<T>> get copyWith =>
@@ -2347,7 +2410,10 @@ abstract class _MethodNotAllowed<T> extends RemoteResponse<T> {
   const _MethodNotAllowed._() : super._();
 
   ErrorResponse get errorResponse;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MethodNotAllowedImplCopyWith<T, _$MethodNotAllowedImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2371,6 +2437,8 @@ class __$$TooManyRequestImplCopyWithImpl<T, $Res>
       $Res Function(_$TooManyRequestImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2384,6 +2452,8 @@ class __$$TooManyRequestImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorResponseCopyWith<$Res> get errorResponse {
@@ -2418,7 +2488,9 @@ class _$TooManyRequestImpl<T> extends _TooManyRequest<T> {
   @override
   int get hashCode => Object.hash(runtimeType, errorResponse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TooManyRequestImplCopyWith<T, _$TooManyRequestImpl<T>> get copyWith =>
@@ -2603,7 +2675,10 @@ abstract class _TooManyRequest<T> extends RemoteResponse<T> {
   const _TooManyRequest._() : super._();
 
   ErrorResponse get errorResponse;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TooManyRequestImplCopyWith<T, _$TooManyRequestImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2627,6 +2702,8 @@ class __$$ConflictImplCopyWithImpl<T, $Res>
       _$ConflictImpl<T> _value, $Res Function(_$ConflictImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2640,6 +2717,8 @@ class __$$ConflictImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorResponseCopyWith<$Res> get errorResponse {
@@ -2674,7 +2753,9 @@ class _$ConflictImpl<T> extends _Conflict<T> {
   @override
   int get hashCode => Object.hash(runtimeType, errorResponse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ConflictImplCopyWith<T, _$ConflictImpl<T>> get copyWith =>
@@ -2858,7 +2939,10 @@ abstract class _Conflict<T> extends RemoteResponse<T> {
   const _Conflict._() : super._();
 
   ErrorResponse get errorResponse;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ConflictImplCopyWith<T, _$ConflictImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2882,6 +2966,8 @@ class __$$LockedImplCopyWithImpl<T, $Res>
       _$LockedImpl<T> _value, $Res Function(_$LockedImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2895,6 +2981,8 @@ class __$$LockedImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorResponseCopyWith<$Res> get errorResponse {
@@ -2929,7 +3017,9 @@ class _$LockedImpl<T> extends _Locked<T> {
   @override
   int get hashCode => Object.hash(runtimeType, errorResponse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LockedImplCopyWith<T, _$LockedImpl<T>> get copyWith =>
@@ -3112,7 +3202,10 @@ abstract class _Locked<T> extends RemoteResponse<T> {
   const _Locked._() : super._();
 
   ErrorResponse get errorResponse;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LockedImplCopyWith<T, _$LockedImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3136,6 +3229,8 @@ class __$$UpgradeRequiredImplCopyWithImpl<T, $Res>
       $Res Function(_$UpgradeRequiredImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3149,6 +3244,8 @@ class __$$UpgradeRequiredImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorResponseCopyWith<$Res> get errorResponse {
@@ -3183,7 +3280,9 @@ class _$UpgradeRequiredImpl<T> extends _UpgradeRequired<T> {
   @override
   int get hashCode => Object.hash(runtimeType, errorResponse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpgradeRequiredImplCopyWith<T, _$UpgradeRequiredImpl<T>> get copyWith =>
@@ -3368,7 +3467,10 @@ abstract class _UpgradeRequired<T> extends RemoteResponse<T> {
   const _UpgradeRequired._() : super._();
 
   ErrorResponse get errorResponse;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpgradeRequiredImplCopyWith<T, _$UpgradeRequiredImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3387,6 +3489,9 @@ class __$$InternalServerErrorImplCopyWithImpl<T, $Res>
   __$$InternalServerErrorImplCopyWithImpl(_$InternalServerErrorImpl<T> _value,
       $Res Function(_$InternalServerErrorImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3600,6 +3705,9 @@ class __$$ServiceUnavailableImplCopyWithImpl<T, $Res>
   __$$ServiceUnavailableImplCopyWithImpl(_$ServiceUnavailableImpl<T> _value,
       $Res Function(_$ServiceUnavailableImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3813,6 +3921,9 @@ class __$$UnknownErrorImplCopyWithImpl<T, $Res>
   __$$UnknownErrorImplCopyWithImpl(
       _$UnknownErrorImpl<T> _value, $Res Function(_$UnknownErrorImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -4025,6 +4136,9 @@ class __$$NoConnectionImplCopyWithImpl<T, $Res>
   __$$NoConnectionImplCopyWithImpl(
       _$NoConnectionImpl<T> _value, $Res Function(_$NoConnectionImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -4237,6 +4351,9 @@ class __$$ConnectionTimeoutImplCopyWithImpl<T, $Res>
   __$$ConnectionTimeoutImplCopyWithImpl(_$ConnectionTimeoutImpl<T> _value,
       $Res Function(_$ConnectionTimeoutImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -4455,6 +4572,8 @@ class __$$StatusNotHandledImplCopyWithImpl<T, $Res>
       $Res Function(_$StatusNotHandledImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4468,6 +4587,8 @@ class __$$StatusNotHandledImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorResponseCopyWith<$Res> get response {
@@ -4502,7 +4623,9 @@ class _$StatusNotHandledImpl<T> extends _StatusNotHandled<T> {
   @override
   int get hashCode => Object.hash(runtimeType, response);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StatusNotHandledImplCopyWith<T, _$StatusNotHandledImpl<T>> get copyWith =>
@@ -4687,7 +4810,10 @@ abstract class _StatusNotHandled<T> extends RemoteResponse<T> {
   const _StatusNotHandled._() : super._();
 
   ErrorResponse get response;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StatusNotHandledImplCopyWith<T, _$StatusNotHandledImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4706,6 +4832,9 @@ class __$$ParsingErrorImplCopyWithImpl<T, $Res>
   __$$ParsingErrorImplCopyWithImpl(
       _$ParsingErrorImpl<T> _value, $Res Function(_$ParsingErrorImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of RemoteResponse
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc

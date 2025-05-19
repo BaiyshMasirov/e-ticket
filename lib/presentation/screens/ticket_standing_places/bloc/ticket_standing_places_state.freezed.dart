@@ -91,6 +91,9 @@ class _$TicketStandingPlacesStateCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of TicketStandingPlacesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -110,6 +113,9 @@ class __$$TicketStandingPlacesStateInitialImplCopyWithImpl<$Res>
       _$TicketStandingPlacesStateInitialImpl _value,
       $Res Function(_$TicketStandingPlacesStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of TicketStandingPlacesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -238,6 +244,9 @@ class __$$TicketStandingPlacesStateLoadingImplCopyWithImpl<$Res>
       _$TicketStandingPlacesStateLoadingImpl _value,
       $Res Function(_$TicketStandingPlacesStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of TicketStandingPlacesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -369,6 +378,8 @@ class __$$TicketStandingPlacesStateSuccessImplCopyWithImpl<$Res>
       $Res Function(_$TicketStandingPlacesStateSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketStandingPlacesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -417,7 +428,9 @@ class _$TicketStandingPlacesStateSuccessImpl
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_tickets));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketStandingPlacesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketStandingPlacesStateSuccessImplCopyWith<
@@ -514,7 +527,10 @@ abstract class _TicketStandingPlacesStateSuccess
   const _TicketStandingPlacesStateSuccess._() : super._();
 
   List<TicketTypeCountDto> get tickets;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TicketStandingPlacesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketStandingPlacesStateSuccessImplCopyWith<
           _$TicketStandingPlacesStateSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -537,6 +553,9 @@ class __$$TicketStandingPlacesStateEmptyImplCopyWithImpl<$Res>
       _$TicketStandingPlacesStateEmptyImpl _value,
       $Res Function(_$TicketStandingPlacesStateEmptyImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of TicketStandingPlacesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -668,6 +687,8 @@ class __$$TicketStandingPlacesStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$TicketStandingPlacesStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketStandingPlacesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -708,7 +729,9 @@ class _$TicketStandingPlacesStateErrorImpl
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketStandingPlacesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketStandingPlacesStateErrorImplCopyWith<
@@ -804,7 +827,10 @@ abstract class _TicketStandingPlacesStateError
   const _TicketStandingPlacesStateError._() : super._();
 
   String? get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TicketStandingPlacesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketStandingPlacesStateErrorImplCopyWith<
           _$TicketStandingPlacesStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;

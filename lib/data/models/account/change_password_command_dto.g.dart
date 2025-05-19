@@ -16,18 +16,10 @@ _$ChangePasswordCommandDtoImpl _$$ChangePasswordCommandDtoImplFromJson(
     );
 
 Map<String, dynamic> _$$ChangePasswordCommandDtoImplToJson(
-    _$ChangePasswordCommandDtoImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('email', instance.email);
-  writeNotNull('phoneNumber', instance.phoneNumber);
-  writeNotNull('password', instance.password);
-  writeNotNull('confirmPassword', instance.confirmPassword);
-  return val;
-}
+        _$ChangePasswordCommandDtoImpl instance) =>
+    <String, dynamic>{
+      if (instance.email case final value?) 'email': value,
+      if (instance.phoneNumber case final value?) 'phoneNumber': value,
+      if (instance.password case final value?) 'password': value,
+      if (instance.confirmPassword case final value?) 'confirmPassword': value,
+    };

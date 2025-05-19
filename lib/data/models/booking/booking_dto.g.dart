@@ -34,36 +34,29 @@ _$BookingDtoImpl _$$BookingDtoImplFromJson(Map<String, dynamic> json) =>
       eventImage: json['eventImage'] as String?,
     );
 
-Map<String, dynamic> _$$BookingDtoImplToJson(_$BookingDtoImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'created': instance.created.toIso8601String(),
-    'eventDate': instance.eventDate.toIso8601String(),
-    'status': _$BookingStatusEnumMap[instance.bookingStatus]!,
-    'eventStatus': _$EventStatusEnumMap[instance.eventStatus]!,
-    'eventId': instance.eventId,
-    'bookingSum': instance.bookingSum,
-    'type': _$LocationTypeEnumMap[instance.locationType]!,
-    'locationName': instance.locationName,
-    'paymentType': _$PaymentTypeEnumMap[instance.paymentType]!,
-    'seatingType': _$EventSeatingTypeEnumMap[instance.seatingType]!,
-    'tickets': instance.tickets.map((e) => e.toJson()).toList(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'yCordinate', DoubleSerializers.toJsonZeroNullable(instance.yCordinate));
-  writeNotNull(
-      'xCordinate', DoubleSerializers.toJsonZeroNullable(instance.xCordinate));
-  writeNotNull('eventName', instance.eventName);
-  writeNotNull('eventImage', instance.eventImage);
-  return val;
-}
+Map<String, dynamic> _$$BookingDtoImplToJson(_$BookingDtoImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'created': instance.created.toIso8601String(),
+      'eventDate': instance.eventDate.toIso8601String(),
+      'status': _$BookingStatusEnumMap[instance.bookingStatus]!,
+      'eventStatus': _$EventStatusEnumMap[instance.eventStatus]!,
+      'eventId': instance.eventId,
+      'bookingSum': instance.bookingSum,
+      'type': _$LocationTypeEnumMap[instance.locationType]!,
+      'locationName': instance.locationName,
+      'paymentType': _$PaymentTypeEnumMap[instance.paymentType]!,
+      'seatingType': _$EventSeatingTypeEnumMap[instance.seatingType]!,
+      'tickets': instance.tickets.map((e) => e.toJson()).toList(),
+      if (DoubleSerializers.toJsonZeroNullable(instance.yCordinate)
+          case final value?)
+        'yCordinate': value,
+      if (DoubleSerializers.toJsonZeroNullable(instance.xCordinate)
+          case final value?)
+        'xCordinate': value,
+      if (instance.eventName case final value?) 'eventName': value,
+      if (instance.eventImage case final value?) 'eventImage': value,
+    };
 
 const _$BookingStatusEnumMap = {
   BookingStatus.none: 0,

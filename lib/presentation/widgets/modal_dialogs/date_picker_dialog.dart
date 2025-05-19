@@ -63,7 +63,7 @@ class IOSDatePicker extends DatePicker {
             CupertinoButton(
               child: const Text('OK'),
               onPressed: () {
-                context.router.pop<DateTime?>(pickedTime);
+                context.router.maybePop<DateTime?>(pickedTime);
               },
             )
           ],

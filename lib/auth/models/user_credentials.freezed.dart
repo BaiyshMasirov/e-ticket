@@ -26,8 +26,12 @@ mixin _$UserCredentials {
   DateTime? get accessTokenExpiresAt => throw _privateConstructorUsedError;
   bool get isAdmin => throw _privateConstructorUsedError;
 
+  /// Serializes this UserCredentials to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UserCredentials
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserCredentialsCopyWith<UserCredentials> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$UserCredentialsCopyWithImpl<$Res, $Val extends UserCredentials>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UserCredentials
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -107,6 +113,8 @@ class __$$UserCredentialsImplCopyWithImpl<$Res>
       _$UserCredentialsImpl _value, $Res Function(_$UserCredentialsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserCredentials
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -178,12 +186,14 @@ class _$UserCredentialsImpl extends _UserCredentials {
             (identical(other.isAdmin, isAdmin) || other.isAdmin == isAdmin));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, accessToken, refreshToken, accessTokenExpiresAt, isAdmin);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserCredentials
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserCredentialsImplCopyWith<_$UserCredentialsImpl> get copyWith =>
@@ -218,8 +228,11 @@ abstract class _UserCredentials extends UserCredentials {
   DateTime? get accessTokenExpiresAt;
   @override
   bool get isAdmin;
+
+  /// Create a copy of UserCredentials
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserCredentialsImplCopyWith<_$UserCredentialsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

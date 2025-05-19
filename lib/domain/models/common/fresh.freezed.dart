@@ -19,7 +19,9 @@ mixin _$Fresh<T> {
   T get entity => throw _privateConstructorUsedError;
   bool get isFresh => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Fresh
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FreshCopyWith<T, Fresh<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -42,6 +44,8 @@ class _$FreshCopyWithImpl<T, $Res, $Val extends Fresh<T>>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Fresh
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -80,6 +84,8 @@ class __$$FreshImplCopyWithImpl<T, $Res>
       _$FreshImpl<T> _value, $Res Function(_$FreshImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of Fresh
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,7 +133,9 @@ class _$FreshImpl<T> extends _Fresh<T> {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(entity), isFresh);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Fresh
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FreshImplCopyWith<T, _$FreshImpl<T>> get copyWith =>
@@ -143,8 +151,11 @@ abstract class _Fresh<T> extends Fresh<T> {
   T get entity;
   @override
   bool get isFresh;
+
+  /// Create a copy of Fresh
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FreshImplCopyWith<T, _$FreshImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

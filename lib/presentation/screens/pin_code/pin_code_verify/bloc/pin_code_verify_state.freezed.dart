@@ -84,6 +84,9 @@ class _$PinCodeVerifyStateCopyWithImpl<$Res, $Val extends PinCodeVerifyState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of PinCodeVerifyState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -103,6 +106,9 @@ class __$$PinCodeVerifyInitialStateImplCopyWithImpl<$Res>
       _$PinCodeVerifyInitialStateImpl _value,
       $Res Function(_$PinCodeVerifyInitialStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PinCodeVerifyState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -222,6 +228,9 @@ class __$$PinCodeVerifyLoadingStateImplCopyWithImpl<$Res>
       _$PinCodeVerifyLoadingStateImpl _value,
       $Res Function(_$PinCodeVerifyLoadingStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PinCodeVerifyState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -341,6 +350,9 @@ class __$$PinCodeVerifySuccessStateImplCopyWithImpl<$Res>
       _$PinCodeVerifySuccessStateImpl _value,
       $Res Function(_$PinCodeVerifySuccessStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PinCodeVerifyState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -460,6 +472,9 @@ class __$$PinCodeVerifyErrorStateImplCopyWithImpl<$Res>
       _$PinCodeVerifyErrorStateImpl _value,
       $Res Function(_$PinCodeVerifyErrorStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PinCodeVerifyState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc

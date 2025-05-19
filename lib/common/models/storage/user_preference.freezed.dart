@@ -25,8 +25,12 @@ mixin _$UserPreference {
   String get pinCode => throw _privateConstructorUsedError;
   bool get needToSetPinCode => throw _privateConstructorUsedError;
 
+  /// Serializes this UserPreference to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UserPreference
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserPreferenceCopyWith<UserPreference> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$UserPreferenceCopyWithImpl<$Res, $Val extends UserPreference>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UserPreference
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -106,6 +112,8 @@ class __$$UserPreferenceImplCopyWithImpl<$Res>
       _$UserPreferenceImpl _value, $Res Function(_$UserPreferenceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserPreference
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -181,12 +189,14 @@ class _$UserPreferenceImpl extends _UserPreference {
                 other.needToSetPinCode == needToSetPinCode));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, isOnboardingShown,
       isPrivacyPolicyAccepted, pinCode, needToSetPinCode);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserPreference
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserPreferenceImplCopyWith<_$UserPreferenceImpl> get copyWith =>
@@ -220,8 +230,11 @@ abstract class _UserPreference extends UserPreference {
   String get pinCode;
   @override
   bool get needToSetPinCode;
+
+  /// Create a copy of UserPreference
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserPreferenceImplCopyWith<_$UserPreferenceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

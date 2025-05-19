@@ -172,15 +172,15 @@ class $AssetsSvgsBookingGen {
 class Assets {
   Assets._();
 
-  static const String aEnv = '.env';
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLogosGen logos = $AssetsLogosGen();
   static const $AssetsLottiesGen lotties = $AssetsLottiesGen();
   static const $AssetsSvgsGen svgs = $AssetsSvgsGen();
   static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
+  static const String env = 'env';
 
   /// List of all assets
-  static List<String> get values => [aEnv];
+  static List<String> get values => [env];
 }
 
 class AssetGenImage {

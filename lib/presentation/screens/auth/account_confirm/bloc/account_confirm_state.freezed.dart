@@ -84,6 +84,9 @@ class _$AccountConfirmStateCopyWithImpl<$Res, $Val extends AccountConfirmState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AccountConfirmState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -103,6 +106,9 @@ class __$$AccountConfirmStateInitialImplCopyWithImpl<$Res>
       _$AccountConfirmStateInitialImpl _value,
       $Res Function(_$AccountConfirmStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AccountConfirmState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -223,6 +229,9 @@ class __$$AccountConfirmStateLoadingImplCopyWithImpl<$Res>
       _$AccountConfirmStateLoadingImpl _value,
       $Res Function(_$AccountConfirmStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AccountConfirmState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -348,6 +357,8 @@ class __$$AccountConfirmStateSuccessImplCopyWithImpl<$Res>
       $Res Function(_$AccountConfirmStateSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AccountConfirmState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -366,6 +377,8 @@ class __$$AccountConfirmStateSuccessImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of AccountConfirmState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCredentialsCopyWith<$Res> get userCreds {
@@ -405,7 +418,9 @@ class _$AccountConfirmStateSuccessImpl extends _AccountConfirmStateSuccess {
   @override
   int get hashCode => Object.hash(runtimeType, userCreds, email);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AccountConfirmState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AccountConfirmStateSuccessImplCopyWith<_$AccountConfirmStateSuccessImpl>
@@ -495,7 +510,10 @@ abstract class _AccountConfirmStateSuccess extends AccountConfirmState {
 
   UserCredentials get userCreds;
   String get email;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AccountConfirmState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AccountConfirmStateSuccessImplCopyWith<_$AccountConfirmStateSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -520,6 +538,8 @@ class __$$AccountConfirmStateFailureImplCopyWithImpl<$Res>
       $Res Function(_$AccountConfirmStateFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AccountConfirmState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -559,7 +579,9 @@ class _$AccountConfirmStateFailureImpl extends _AccountConfirmStateFailure {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AccountConfirmState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AccountConfirmStateFailureImplCopyWith<_$AccountConfirmStateFailureImpl>
@@ -647,7 +669,10 @@ abstract class _AccountConfirmStateFailure extends AccountConfirmState {
   const _AccountConfirmStateFailure._() : super._();
 
   String? get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AccountConfirmState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AccountConfirmStateFailureImplCopyWith<_$AccountConfirmStateFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -23,8 +23,12 @@ RefreshTokenCommandDto _$RefreshTokenCommandDtoFromJson(
 mixin _$RefreshTokenCommandDto {
   String get token => throw _privateConstructorUsedError;
 
+  /// Serializes this RefreshTokenCommandDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RefreshTokenCommandDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RefreshTokenCommandDtoCopyWith<RefreshTokenCommandDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$RefreshTokenCommandDtoCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RefreshTokenCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -85,6 +91,8 @@ class __$$RefreshTokenCommandDtoImplCopyWithImpl<$Res>
       $Res Function(_$RefreshTokenCommandDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RefreshTokenCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -123,11 +131,13 @@ class _$RefreshTokenCommandDtoImpl extends _RefreshTokenCommandDto {
             (identical(other.token, token) || other.token == token));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, token);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RefreshTokenCommandDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RefreshTokenCommandDtoImplCopyWith<_$RefreshTokenCommandDtoImpl>
@@ -152,8 +162,11 @@ abstract class _RefreshTokenCommandDto extends RefreshTokenCommandDto {
 
   @override
   String get token;
+
+  /// Create a copy of RefreshTokenCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RefreshTokenCommandDtoImplCopyWith<_$RefreshTokenCommandDtoImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

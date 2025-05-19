@@ -26,8 +26,12 @@ mixin _$ChangePasswordCommandDto {
   String? get password => throw _privateConstructorUsedError;
   String? get confirmPassword => throw _privateConstructorUsedError;
 
+  /// Serializes this ChangePasswordCommandDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ChangePasswordCommandDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ChangePasswordCommandDtoCopyWith<ChangePasswordCommandDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -56,6 +60,8 @@ class _$ChangePasswordCommandDtoCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ChangePasswordCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -111,6 +117,8 @@ class __$$ChangePasswordCommandDtoImplCopyWithImpl<$Res>
       $Res Function(_$ChangePasswordCommandDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChangePasswordCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -181,12 +189,14 @@ class _$ChangePasswordCommandDtoImpl extends _ChangePasswordCommandDto {
                 other.confirmPassword == confirmPassword));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, email, phoneNumber, password, confirmPassword);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChangePasswordCommandDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ChangePasswordCommandDtoImplCopyWith<_$ChangePasswordCommandDtoImpl>
@@ -220,8 +230,11 @@ abstract class _ChangePasswordCommandDto extends ChangePasswordCommandDto {
   String? get password;
   @override
   String? get confirmPassword;
+
+  /// Create a copy of ChangePasswordCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChangePasswordCommandDtoImplCopyWith<_$ChangePasswordCommandDtoImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -85,6 +85,9 @@ class _$TicketSeatPlacesStateCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of TicketSeatPlacesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -104,6 +107,9 @@ class __$$TicketSeatPlacesInitialStateImplCopyWithImpl<$Res>
       _$TicketSeatPlacesInitialStateImpl _value,
       $Res Function(_$TicketSeatPlacesInitialStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of TicketSeatPlacesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -224,6 +230,9 @@ class __$$TicketSeatPlacesLoadingStateImplCopyWithImpl<$Res>
       _$TicketSeatPlacesLoadingStateImpl _value,
       $Res Function(_$TicketSeatPlacesLoadingStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of TicketSeatPlacesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -347,6 +356,8 @@ class __$$TicketSeatPlacesErrorStateImplCopyWithImpl<$Res>
       $Res Function(_$TicketSeatPlacesErrorStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketSeatPlacesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -386,7 +397,9 @@ class _$TicketSeatPlacesErrorStateImpl extends _TicketSeatPlacesErrorState {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketSeatPlacesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketSeatPlacesErrorStateImplCopyWith<_$TicketSeatPlacesErrorStateImpl>
@@ -474,7 +487,10 @@ abstract class _TicketSeatPlacesErrorState extends TicketSeatPlacesState {
   const _TicketSeatPlacesErrorState._() : super._();
 
   String? get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TicketSeatPlacesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketSeatPlacesErrorStateImplCopyWith<_$TicketSeatPlacesErrorStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -499,6 +515,8 @@ class __$$TicketSeatPlacesDataStateImplCopyWithImpl<$Res>
       $Res Function(_$TicketSeatPlacesDataStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TicketSeatPlacesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -546,7 +564,9 @@ class _$TicketSeatPlacesDataStateImpl extends _TicketSeatPlacesDataState {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_tickets));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TicketSeatPlacesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TicketSeatPlacesDataStateImplCopyWith<_$TicketSeatPlacesDataStateImpl>
@@ -635,7 +655,10 @@ abstract class _TicketSeatPlacesDataState extends TicketSeatPlacesState {
   const _TicketSeatPlacesDataState._() : super._();
 
   List<TicketDto> get tickets;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TicketSeatPlacesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TicketSeatPlacesDataStateImplCopyWith<_$TicketSeatPlacesDataStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

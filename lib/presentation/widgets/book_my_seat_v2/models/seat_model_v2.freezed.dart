@@ -29,7 +29,9 @@ mixin _$SeatModelV2 {
   String? get ticketId => throw _privateConstructorUsedError;
   double get seatSvgSize => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SeatModelV2
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SeatModelV2CopyWith<SeatModelV2> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -65,6 +67,8 @@ class _$SeatModelV2CopyWithImpl<$Res, $Val extends SeatModelV2>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SeatModelV2
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -165,6 +169,8 @@ class __$$SeatModelV2ImplCopyWithImpl<$Res>
       _$SeatModelV2Impl _value, $Res Function(_$SeatModelV2Impl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SeatModelV2
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -329,7 +335,9 @@ class _$SeatModelV2Impl extends _SeatModelV2 {
       ticketId,
       seatSvgSize);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SeatModelV2
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SeatModelV2ImplCopyWith<_$SeatModelV2Impl> get copyWith =>
@@ -376,8 +384,11 @@ abstract class _SeatModelV2 extends SeatModelV2 {
   String? get ticketId;
   @override
   double get seatSvgSize;
+
+  /// Create a copy of SeatModelV2
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SeatModelV2ImplCopyWith<_$SeatModelV2Impl> get copyWith =>
       throw _privateConstructorUsedError;
 }

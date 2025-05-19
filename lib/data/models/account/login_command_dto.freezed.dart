@@ -24,8 +24,12 @@ mixin _$LoginCommandDto {
   String get password => throw _privateConstructorUsedError;
   String? get firebaseToken => throw _privateConstructorUsedError;
 
+  /// Serializes this LoginCommandDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LoginCommandDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LoginCommandDtoCopyWith<LoginCommandDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$LoginCommandDtoCopyWithImpl<$Res, $Val extends LoginCommandDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LoginCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$LoginCommandDtoImplCopyWithImpl<$Res>
       _$LoginCommandDtoImpl _value, $Res Function(_$LoginCommandDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,11 +160,13 @@ class _$LoginCommandDtoImpl extends _LoginCommandDto {
                 other.firebaseToken == firebaseToken));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, email, password, firebaseToken);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginCommandDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoginCommandDtoImplCopyWith<_$LoginCommandDtoImpl> get copyWith =>
@@ -187,8 +197,11 @@ abstract class _LoginCommandDto extends LoginCommandDto {
   String get password;
   @override
   String? get firebaseToken;
+
+  /// Create a copy of LoginCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoginCommandDtoImplCopyWith<_$LoginCommandDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

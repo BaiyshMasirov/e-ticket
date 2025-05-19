@@ -23,8 +23,12 @@ mixin _$ApiUserTokenDto {
   String get jwtToken => throw _privateConstructorUsedError;
   String get rtToken => throw _privateConstructorUsedError;
 
+  /// Serializes this ApiUserTokenDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ApiUserTokenDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ApiUserTokenDtoCopyWith<ApiUserTokenDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$ApiUserTokenDtoCopyWithImpl<$Res, $Val extends ApiUserTokenDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ApiUserTokenDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$ApiUserTokenDtoImplCopyWithImpl<$Res>
       _$ApiUserTokenDtoImpl _value, $Res Function(_$ApiUserTokenDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApiUserTokenDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -134,11 +142,13 @@ class _$ApiUserTokenDtoImpl extends _ApiUserTokenDto {
             (identical(other.rtToken, rtToken) || other.rtToken == rtToken));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, jwtToken, rtToken);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApiUserTokenDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ApiUserTokenDtoImplCopyWith<_$ApiUserTokenDtoImpl> get copyWith =>
@@ -166,8 +176,11 @@ abstract class _ApiUserTokenDto extends ApiUserTokenDto {
   String get jwtToken;
   @override
   String get rtToken;
+
+  /// Create a copy of ApiUserTokenDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ApiUserTokenDtoImplCopyWith<_$ApiUserTokenDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

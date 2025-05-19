@@ -83,6 +83,9 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -99,6 +102,9 @@ class __$$AuthStateInitialImplCopyWithImpl<$Res>
   __$$AuthStateInitialImplCopyWithImpl(_$AuthStateInitialImpl _value,
       $Res Function(_$AuthStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -216,6 +222,9 @@ class __$$AuthStateUnauthenticatedImplCopyWithImpl<$Res>
       _$AuthStateUnauthenticatedImpl _value,
       $Res Function(_$AuthStateUnauthenticatedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -334,6 +343,9 @@ class __$$AuthStateAuthenticatedImplCopyWithImpl<$Res>
       _$AuthStateAuthenticatedImpl _value,
       $Res Function(_$AuthStateAuthenticatedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -453,6 +465,8 @@ class __$$AuthStateFailureImplCopyWithImpl<$Res>
       $Res Function(_$AuthStateFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -492,7 +506,9 @@ class _$AuthStateFailureImpl extends _AuthStateFailure {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AuthStateFailureImplCopyWith<_$AuthStateFailureImpl> get copyWith =>
@@ -580,7 +596,10 @@ abstract class _AuthStateFailure extends AuthState {
   const _AuthStateFailure._() : super._();
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AuthStateFailureImplCopyWith<_$AuthStateFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

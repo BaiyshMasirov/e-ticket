@@ -84,6 +84,9 @@ class _$ChangePasswordStateCopyWithImpl<$Res, $Val extends ChangePasswordState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ChangePasswordState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -101,6 +104,9 @@ class __$$ChangePasswordInitialImplCopyWithImpl<$Res>
   __$$ChangePasswordInitialImplCopyWithImpl(_$ChangePasswordInitialImpl _value,
       $Res Function(_$ChangePasswordInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ChangePasswordState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -218,6 +224,9 @@ class __$$ChangePasswordSuccessImplCopyWithImpl<$Res>
   __$$ChangePasswordSuccessImplCopyWithImpl(_$ChangePasswordSuccessImpl _value,
       $Res Function(_$ChangePasswordSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ChangePasswordState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -338,6 +347,8 @@ class __$$ChangePasswordFailureImplCopyWithImpl<$Res>
       $Res Function(_$ChangePasswordFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChangePasswordState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -377,7 +388,9 @@ class _$ChangePasswordFailureImpl extends _ChangePasswordFailure {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChangePasswordState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ChangePasswordFailureImplCopyWith<_$ChangePasswordFailureImpl>
@@ -465,7 +478,10 @@ abstract class _ChangePasswordFailure extends ChangePasswordState {
   const _ChangePasswordFailure._() : super._();
 
   String? get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ChangePasswordState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChangePasswordFailureImplCopyWith<_$ChangePasswordFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -485,6 +501,9 @@ class __$$ChangePasswordLoadingImplCopyWithImpl<$Res>
   __$$ChangePasswordLoadingImplCopyWithImpl(_$ChangePasswordLoadingImpl _value,
       $Res Function(_$ChangePasswordLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ChangePasswordState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc

@@ -119,6 +119,9 @@ class _$PaymentSMSStateCopyWithImpl<$Res, $Val extends PaymentSMSState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -137,6 +140,9 @@ class __$$PaymentSMSStateInitialImplCopyWithImpl<$Res>
       _$PaymentSMSStateInitialImpl _value,
       $Res Function(_$PaymentSMSStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -293,6 +299,8 @@ class __$$PaymentSMSStateCreatingImplCopyWithImpl<$Res>
       $Res Function(_$PaymentSMSStateCreatingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -332,7 +340,9 @@ class _$PaymentSMSStateCreatingImpl extends PaymentSMSStateCreating {
   @override
   int get hashCode => Object.hash(runtimeType, phoneNumber);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentSMSStateCreatingImplCopyWith<_$PaymentSMSStateCreatingImpl>
@@ -455,7 +465,10 @@ abstract class PaymentSMSStateCreating extends PaymentSMSState {
   const PaymentSMSStateCreating._() : super._();
 
   String get phoneNumber;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentSMSStateCreatingImplCopyWith<_$PaymentSMSStateCreatingImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -480,6 +493,8 @@ class __$$PaymentSMSStateCreateErrorImplCopyWithImpl<$Res>
       $Res Function(_$PaymentSMSStateCreateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -530,7 +545,9 @@ class _$PaymentSMSStateCreateErrorImpl extends _PaymentSMSStateCreateError {
   @override
   int get hashCode => Object.hash(runtimeType, phoneNumber, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentSMSStateCreateErrorImplCopyWith<_$PaymentSMSStateCreateErrorImpl>
@@ -655,7 +672,10 @@ abstract class _PaymentSMSStateCreateError extends PaymentSMSState {
 
   String get phoneNumber;
   String? get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentSMSStateCreateErrorImplCopyWith<_$PaymentSMSStateCreateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -680,6 +700,8 @@ class __$$PaymentSMSStateCreateSuccessImplCopyWithImpl<$Res>
       $Res Function(_$PaymentSMSStateCreateSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -720,7 +742,9 @@ class _$PaymentSMSStateCreateSuccessImpl extends _PaymentSMSStateCreateSuccess {
   @override
   int get hashCode => Object.hash(runtimeType, phoneNumber);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentSMSStateCreateSuccessImplCopyWith<
@@ -844,7 +868,10 @@ abstract class _PaymentSMSStateCreateSuccess extends PaymentSMSState {
   const _PaymentSMSStateCreateSuccess._() : super._();
 
   String get phoneNumber;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentSMSStateCreateSuccessImplCopyWith<
           _$PaymentSMSStateCreateSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -869,6 +896,8 @@ class __$$PaymentSMSStateConfirmingImplCopyWithImpl<$Res>
       $Res Function(_$PaymentSMSStateConfirmingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -918,7 +947,9 @@ class _$PaymentSMSStateConfirmingImpl extends PaymentSMSStateConfirming {
   @override
   int get hashCode => Object.hash(runtimeType, phoneNumber, code);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentSMSStateConfirmingImplCopyWith<_$PaymentSMSStateConfirmingImpl>
@@ -1043,7 +1074,10 @@ abstract class PaymentSMSStateConfirming extends PaymentSMSState {
 
   String get phoneNumber;
   String get code;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentSMSStateConfirmingImplCopyWith<_$PaymentSMSStateConfirmingImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1068,6 +1102,8 @@ class __$$PaymentSMSStateConfirmSuccessImplCopyWithImpl<$Res>
       $Res Function(_$PaymentSMSStateConfirmSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1118,7 +1154,9 @@ class _$PaymentSMSStateConfirmSuccessImpl
   @override
   int get hashCode => Object.hash(runtimeType, phoneNumber, code);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentSMSStateConfirmSuccessImplCopyWith<
@@ -1244,7 +1282,10 @@ abstract class _PaymentSMSStateConfirmSuccess extends PaymentSMSState {
 
   String get phoneNumber;
   String get code;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentSMSStateConfirmSuccessImplCopyWith<
           _$PaymentSMSStateConfirmSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1270,6 +1311,8 @@ class __$$PaymentSMSStateConfirmErrorImplCopyWithImpl<$Res>
       $Res Function(_$PaymentSMSStateConfirmErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1330,7 +1373,9 @@ class _$PaymentSMSStateConfirmErrorImpl extends _PaymentSMSStateConfirmError {
   @override
   int get hashCode => Object.hash(runtimeType, phoneNumber, code, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentSMSStateConfirmErrorImplCopyWith<_$PaymentSMSStateConfirmErrorImpl>
@@ -1457,7 +1502,10 @@ abstract class _PaymentSMSStateConfirmError extends PaymentSMSState {
   String get phoneNumber;
   String get code;
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentSMSState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentSMSStateConfirmErrorImplCopyWith<_$PaymentSMSStateConfirmErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -26,8 +26,12 @@ mixin _$RecoveryPasswordCommandDto {
   String get password => throw _privateConstructorUsedError;
   String get confirmPassword => throw _privateConstructorUsedError;
 
+  /// Serializes this RecoveryPasswordCommandDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RecoveryPasswordCommandDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RecoveryPasswordCommandDtoCopyWith<RecoveryPasswordCommandDto>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$RecoveryPasswordCommandDtoCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RecoveryPasswordCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -106,6 +112,8 @@ class __$$RecoveryPasswordCommandDtoImplCopyWithImpl<$Res>
       $Res Function(_$RecoveryPasswordCommandDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RecoveryPasswordCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -176,12 +184,14 @@ class _$RecoveryPasswordCommandDtoImpl extends _RecoveryPasswordCommandDto {
                 other.confirmPassword == confirmPassword));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, code, email, password, confirmPassword);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RecoveryPasswordCommandDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RecoveryPasswordCommandDtoImplCopyWith<_$RecoveryPasswordCommandDtoImpl>
@@ -216,8 +226,11 @@ abstract class _RecoveryPasswordCommandDto extends RecoveryPasswordCommandDto {
   String get password;
   @override
   String get confirmPassword;
+
+  /// Create a copy of RecoveryPasswordCommandDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RecoveryPasswordCommandDtoImplCopyWith<_$RecoveryPasswordCommandDtoImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

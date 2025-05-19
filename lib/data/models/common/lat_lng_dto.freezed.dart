@@ -23,8 +23,12 @@ mixin _$LatLngDto {
   double get lat => throw _privateConstructorUsedError;
   double get lng => throw _privateConstructorUsedError;
 
+  /// Serializes this LatLngDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LatLngDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LatLngDtoCopyWith<LatLngDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -47,6 +51,8 @@ class _$LatLngDtoCopyWithImpl<$Res, $Val extends LatLngDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LatLngDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -85,6 +91,8 @@ class __$$LatLngDtoImplCopyWithImpl<$Res>
       _$LatLngDtoImpl _value, $Res Function(_$LatLngDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LatLngDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -131,11 +139,13 @@ class _$LatLngDtoImpl extends _LatLngDto {
             (identical(other.lng, lng) || other.lng == lng));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, lat, lng);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LatLngDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LatLngDtoImplCopyWith<_$LatLngDtoImpl> get copyWith =>
@@ -161,8 +171,11 @@ abstract class _LatLngDto extends LatLngDto {
   double get lat;
   @override
   double get lng;
+
+  /// Create a copy of LatLngDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LatLngDtoImplCopyWith<_$LatLngDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

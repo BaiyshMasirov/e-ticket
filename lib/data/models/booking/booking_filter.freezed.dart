@@ -24,8 +24,12 @@ mixin _$BookingFilter {
   @DateTimeUTCSerializer()
   DateTime? get eventDate => throw _privateConstructorUsedError;
 
+  /// Serializes this BookingFilter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BookingFilter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BookingFilterCopyWith<BookingFilter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$BookingFilterCopyWithImpl<$Res, $Val extends BookingFilter>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BookingFilter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -87,6 +93,8 @@ class __$$BookingFilterImplCopyWithImpl<$Res>
       _$BookingFilterImpl _value, $Res Function(_$BookingFilterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingFilter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -138,11 +146,13 @@ class _$BookingFilterImpl extends _BookingFilter {
                 other.eventDate == eventDate));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, eventName, eventDate);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingFilter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookingFilterImplCopyWith<_$BookingFilterImpl> get copyWith =>
@@ -171,8 +181,11 @@ abstract class _BookingFilter extends BookingFilter {
   @override
   @DateTimeUTCSerializer()
   DateTime? get eventDate;
+
+  /// Create a copy of BookingFilter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookingFilterImplCopyWith<_$BookingFilterImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

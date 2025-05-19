@@ -31,7 +31,7 @@ class ChangePasswordView extends HookWidget {
         state.maybeWhen(
           orElse: () {},
           success: () {
-            context.popRoute();
+            context.maybePop();
           },
         );
       },

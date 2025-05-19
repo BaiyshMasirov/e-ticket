@@ -26,8 +26,12 @@ mixin _$BookingPagingDto {
   @JsonKey(name: 'list')
   List<BookingDto> get bookings => throw _privateConstructorUsedError;
 
+  /// Serializes this BookingPagingDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BookingPagingDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BookingPagingDtoCopyWith<BookingPagingDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$BookingPagingDtoCopyWithImpl<$Res, $Val extends BookingPagingDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BookingPagingDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -107,6 +113,8 @@ class __$$BookingPagingDtoImplCopyWithImpl<$Res>
       $Res Function(_$BookingPagingDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingPagingDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -184,12 +192,14 @@ class _$BookingPagingDtoImpl extends _BookingPagingDto {
             const DeepCollectionEquality().equals(other._bookings, _bookings));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, currentPageIndex, pageSize,
       totalItemCount, const DeepCollectionEquality().hash(_bookings));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingPagingDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookingPagingDtoImplCopyWith<_$BookingPagingDtoImpl> get copyWith =>
@@ -225,8 +235,11 @@ abstract class _BookingPagingDto extends BookingPagingDto {
   @override
   @JsonKey(name: 'list')
   List<BookingDto> get bookings;
+
+  /// Create a copy of BookingPagingDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookingPagingDtoImplCopyWith<_$BookingPagingDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

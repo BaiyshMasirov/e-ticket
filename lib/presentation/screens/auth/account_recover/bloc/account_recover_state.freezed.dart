@@ -95,6 +95,9 @@ class _$AccountRecoverStateCopyWithImpl<$Res, $Val extends AccountRecoverState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AccountRecoverState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -114,6 +117,9 @@ class __$$AccountRecoverStateInitialImplCopyWithImpl<$Res>
       _$AccountRecoverStateInitialImpl _value,
       $Res Function(_$AccountRecoverStateInitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AccountRecoverState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -245,6 +251,9 @@ class __$$AccountRecoverStateLoadingImplCopyWithImpl<$Res>
       _$AccountRecoverStateLoadingImpl _value,
       $Res Function(_$AccountRecoverStateLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AccountRecoverState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -376,6 +385,9 @@ class __$$AccountRecoverStateConfirmCodeSentImplCopyWithImpl<$Res>
       _$AccountRecoverStateConfirmCodeSentImpl _value,
       $Res Function(_$AccountRecoverStateConfirmCodeSentImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AccountRecoverState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -508,6 +520,9 @@ class __$$AccountRecoverStateRecoverSuccessImplCopyWithImpl<$Res>
       _$AccountRecoverStateRecoverSuccessImpl _value,
       $Res Function(_$AccountRecoverStateRecoverSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AccountRecoverState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -643,6 +658,8 @@ class __$$AccountRecoverStateRecoverErrorImplCopyWithImpl<$Res>
       $Res Function(_$AccountRecoverStateRecoverErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AccountRecoverState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -684,7 +701,9 @@ class _$AccountRecoverStateRecoverErrorImpl
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AccountRecoverState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AccountRecoverStateRecoverErrorImplCopyWith<
@@ -785,7 +804,10 @@ abstract class _AccountRecoverStateRecoverError extends AccountRecoverState {
   const _AccountRecoverStateRecoverError._() : super._();
 
   String? get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AccountRecoverState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AccountRecoverStateRecoverErrorImplCopyWith<
           _$AccountRecoverStateRecoverErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
